@@ -138,8 +138,9 @@ const ContactSection = () => {
                   <div>
                     <div className="font-medium text-gray-900">Adresse</div>
                     <div className="text-gray-600">
-                      Musterstraße 123<br />
-                      14467 Potsdam
+                      WEBERPARK<br />
+                      Tuchmacherstraße 45b<br />
+                      14482 Potsdam
                     </div>
                   </div>
                 </div>
@@ -184,9 +185,9 @@ const ContactSection = () => {
                 <MapPin className="w-16 h-16 text-blue-600 mx-auto" />
                 <div>
                   <h4 className="text-xl font-semibold text-gray-900">Google Maps</h4>
-                  <p className="text-gray-600">Finden Sie uns in Potsdam</p>
+                  <p className="text-gray-600">Finden Sie uns im WEBERPARK</p>
                   <a 
-                    href="https://maps.google.com/?q=Potsdam+Fahrschule" 
+                    href="https://maps.google.com/?q=WEBERPARK+Tuchmacherstraße+45b+14482+Potsdam" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="inline-block mt-2 text-blue-600 hover:text-blue-700 underline"

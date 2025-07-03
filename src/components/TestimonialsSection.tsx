@@ -23,14 +23,14 @@ const TestimonialsSection = () => {
       age: "18 Jahre",
       text: "Tolle Fahrschule! Moderne Ausbildung und die Fahrlehrer kennen Potsdam wirklich perfekt. Kann ich nur empfehlen.",
       rating: 5,
-      image: "👩‍🎓"
+      imageUrl: "/lovable-uploads/9ced3172-d239-4e48-a0fa-f404241572e0.png"
     },
     {
       name: "Jonas R.",
       age: "20 Jahre",
       text: "Hatte Anfangs viel Respekt vorm Fahren, aber bei ABF fühlte ich mich vom ersten Tag an sicher. Danke für die tolle Zeit!",
       rating: 5,
-      image: "👨‍🎓"
+      imageUrl: "/lovable-uploads/ea64eff6-beb0-41ae-85ed-8f8441ce9777.png"
     }
   ];
 
@@ -66,8 +66,16 @@ const TestimonialsSection = () => {
 
               {/* Author */}
               <div className="flex items-center space-x-3 pt-4 border-t border-gray-100">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                  <span className="text-2xl">{testimonial.image}</span>
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center overflow-hidden">
+                  {testimonial.imageUrl ? (
+                    <img 
+                      src={testimonial.imageUrl} 
+                      alt={testimonial.name}
+                      className="w-full h-full object-cover rounded-full"
+                    />
+                  ) : (
+                    <span className="text-2xl">{testimonial.image}</span>
+                  )}
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">{testimonial.name}</div>

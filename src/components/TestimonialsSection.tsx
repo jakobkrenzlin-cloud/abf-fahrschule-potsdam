@@ -16,7 +16,7 @@ const TestimonialsSection = () => {
       age: "22 Jahre",
       text: "Nach längerer Pause wieder Fahrstunden zu nehmen war bei ABF kein Problem. Sehr einfühlsam und professionell!",
       rating: 5,
-      image: "👨‍💼"
+      imageUrl: "/lovable-uploads/e4aa199d-dc76-4ecc-9e8e-e6519d01a51e.png"
     },
     {
       name: "Maria L.",

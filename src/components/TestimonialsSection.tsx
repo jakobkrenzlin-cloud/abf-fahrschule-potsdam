@@ -71,7 +71,8 @@ const TestimonialsSection = () => {
                     <img 
                       src={testimonial.imageUrl} 
                       alt={testimonial.name}
-                      className="w-full h-full object-cover rounded-full"
+                      className="w-full h-full object-cover rounded-full object-top"
+                      style={{ objectPosition: '50% 20%' }}
                     />
                   ) : (
                     <span className="text-2xl">{testimonial.image}</span>

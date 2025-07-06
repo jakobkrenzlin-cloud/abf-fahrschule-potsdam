@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
 
@@ -38,10 +39,10 @@ const TestimonialsSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            Das sagen unsere Fahrschüler
+            Das sagen unsere Fahrschüler aus Potsdam
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Echte Bewertungen von echten Menschen, die ihren Führerschein bei ABF gemacht haben.
+            Echte Bewertungen von echten Menschen, die ihren Führerschein bei der ABF Fahrschule Potsdam gemacht haben.
           </p>
         </div>
 
@@ -69,12 +70,12 @@ const TestimonialsSection = () => {
                   {testimonial.imageUrl ? (
                     <img 
                       src={testimonial.imageUrl} 
-                      alt={testimonial.name}
-                      className="w-full h-full object-cover rounded-full object-top"
-                      style={{ objectPosition: '50% 20%' }}
+                      alt={`${testimonial.name} - Fahrschüler der ABF Fahrschule Potsdam`}
+                      className="w-full h-full object-cover rounded-full"
+                      style={{ objectPosition: '50% 35%' }}
                     />
                   ) : (
-                    <span className="text-2xl">{testimonial.image}</span>
+                    <span className="text-2xl">👤</span>
                   )}
                 </div>
                 <div>
@@ -92,14 +93,14 @@ const TestimonialsSection = () => {
             <div className="flex items-center space-x-2">
               <Star className="w-6 h-6 text-yellow-400 fill-current" />
               <span className="font-semibold text-gray-900">4.9/5</span>
-              <span className="text-gray-600">Google Bewertungen</span>
+              <span className="text-gray-600">Google Bewertungen Potsdam</span>
             </div>
             <div className="w-px h-8 bg-gray-200"></div>
             <div className="flex items-center space-x-2">
               <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center">
                 <span className="text-white text-xs font-bold">✓</span>
               </div>
-              <span className="text-gray-700">100+ positive Bewertungen</span>
+              <span className="text-gray-700">100+ positive Bewertungen in Potsdam</span>
             </div>
           </div>
         </div>

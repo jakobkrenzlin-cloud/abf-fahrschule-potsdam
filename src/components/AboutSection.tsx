@@ -10,24 +10,25 @@ const AboutSection = () => {
           {/* Left Content */}
           <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Über ABF Fahrschule Potsdam
+              Über ABF Fahrschule Potsdam - Ihre vertrauensvolle Fahrschule
             </h2>
             
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                Seit über 15 Jahren bilden wir in Potsdam erfolgreich Fahrschüler aus. Unser Team besteht aus erfahrenen, 
-                geduldigen Fahrlehrern, die mit Leidenschaft und Kompetenz jeden Schüler individuell betreuen.
+                Seit über 15 Jahren bilden wir in Potsdam erfolgreich Fahrschüler aus. Unser erfahrenes Team der ABF Fahrschule Potsdam 
+                besteht aus geduldigen, lokalen Fahrlehrern, die mit Leidenschaft und Kompetenz jeden Fahrschüler individuell betreuen. 
+                Wir kennen die Straßen Potsdams perfekt und bereiten Sie optimal auf die Prüfung vor.
               </p>
               
               <p>
-                Wir glauben, dass Fahrschule mehr ist als nur das Bestehen einer Prüfung. Bei uns lernen Sie 
-                verantwortungsvolles Fahren für das ganze Leben. Mit ruhiger Hand und modernen Ausbildungsmethoden 
-                begleiten wir Sie sicher durch Ihre Fahrausbildung.
+                Wir glauben, dass eine gute Fahrschule in Potsdam mehr ist als nur das Bestehen einer Prüfung. Bei der ABF Fahrschule 
+                lernen Sie verantwortungsvolles Fahren für das ganze Leben. Mit ruhiger Hand und modernen Ausbildungsmethoden 
+                begleiten wir Sie sicher durch Ihre Führerscheinausbildung in Potsdam.
               </p>
               
               <p>
-                Unsere Mission ist es, jeden Fahrschüler mit Vertrauen, Geduld und Fachkompetenz zum Erfolg zu führen. 
-                Dabei setzen wir auf eine entspannte Lernatmosphäre, in der Sie ohne Stress und Druck Ihre Fähigkeiten entwickeln können.
+                Unsere Mission als Fahrschule in Potsdam ist es, jeden Fahrschüler mit Vertrauen, Geduld und Fachkompetenz zum Erfolg zu führen. 
+                Dabei setzen wir auf eine entspannte Lernatmosphäre, in der Sie ohne Stress und Druck Ihre Fahrkünste in Potsdam entwickeln können.
               </p>
             </div>
 
@@ -35,19 +36,19 @@ const AboutSection = () => {
             <div className="grid grid-cols-2 gap-4 mt-8">
               <div className="flex items-center space-x-3">
                 <Users className="w-6 h-6 text-blue-600" />
-                <span className="font-medium text-gray-900">Erfahrenes Team</span>
+                <span className="font-medium text-gray-900">Erfahrenes Fahrlehrer-Team Potsdam</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Clock className="w-6 h-6 text-blue-600" />
-                <span className="font-medium text-gray-900">Flexible Zeiten</span>
+                <span className="font-medium text-gray-900">Flexible Fahrstunden in Potsdam</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Award className="w-6 h-6 text-blue-600" />
-                <span className="font-medium text-gray-900">Top Ausbildung</span>
+                <span className="font-medium text-gray-900">Top Fahrausbildung Potsdam</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Heart className="w-6 h-6 text-blue-600" />
-                <span className="font-medium text-gray-900">Mit Herzblut</span>
+                <span className="font-medium text-gray-900">Mit Herzblut in Potsdam</span>
               </div>
             </div>
           </div>
@@ -58,23 +59,23 @@ const AboutSection = () => {
               <div className="w-48 h-48 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-6xl">👨‍🏫</span>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Unser Fahrlehrer-Team</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Unser Fahrlehrer-Team Potsdam</h3>
               <p className="text-gray-600">
-                Erfahren, geduldig und immer für Sie da
+                Erfahren, geduldig und immer für Sie da - lokale Fahrlehrer mit Potsdam-Expertise
               </p>
             </div>
 
             {/* Certifications */}
             <div className="bg-gray-50 rounded-xl p-6">
-              <h4 className="font-semibold text-gray-900 mb-4">Unsere Qualifikationen</h4>
+              <h4 className="font-semibold text-gray-900 mb-4">Unsere Qualifikationen als Fahrschule Potsdam</h4>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span className="text-gray-700">Staatlich anerkannte Fahrschule</span>
+                  <span className="text-gray-700">Staatlich anerkannte Fahrschule in Potsdam</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span className="text-gray-700">Zertifizierte Fahrlehrer</span>
+                  <span className="text-gray-700">Zertifizierte Fahrlehrer für Potsdam</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
@@ -82,7 +83,7 @@ const AboutSection = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span className="text-gray-700">Moderne Fahrzeugflotte</span>
+                  <span className="text-gray-700">Moderne Fahrzeugflotte für Potsdam</span>
                 </div>
               </div>
             </div>

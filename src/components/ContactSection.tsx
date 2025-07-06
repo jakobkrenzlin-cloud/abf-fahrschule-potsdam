@@ -14,7 +14,7 @@ const ContactSection = () => {
     e.preventDefault();
     console.log('Form submitted:', formData);
     // Handle form submission logic here
-    alert('Vielen Dank für Ihre Anfrage! Wir melden uns bald bei Ihnen.');
+    alert('Vielen Dank für Ihre Anfrage bei der ABF Fahrschule Potsdam! Wir melden uns bald bei Ihnen.');
     setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
@@ -30,10 +30,11 @@ const ContactSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            Kontakt & Standort
+            Kontakt ABF Fahrschule Potsdam & Standort
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Haben Sie Fragen oder möchten Sie sich anmelden? Wir freuen uns auf Ihre Nachricht!
+            Haben Sie Fragen zu unserer Fahrschule in Potsdam oder möchten Sie sich für den Führerschein anmelden? 
+            Wir freuen uns auf Ihre Nachricht und beraten Sie gerne kostenlos!
           </p>
         </div>
 
@@ -42,10 +43,11 @@ const ContactSection = () => {
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                Kostenlose Beratung anfragen
+                Kostenlose Beratung Fahrschule Potsdam
               </h3>
               <p className="text-gray-600 mb-6">
-                Füllen Sie das Formular aus und wir melden uns innerhalb von 24 Stunden bei Ihnen.
+                Füllen Sie das Formular aus und wir melden uns innerhalb von 24 Stunden bei Ihnen. 
+                Gerne beraten wir Sie zu allen Fragen rund um den Führerschein in Potsdam.
               </p>
             </div>
 
@@ -101,7 +103,7 @@ const ContactSection = () => {
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Nachricht
+                  Nachricht - Interesse an Führerschein Potsdam
                 </label>
                 <textarea
                   id="message"
@@ -110,7 +112,7 @@ const ContactSection = () => {
                   value={formData.message}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                  placeholder="Erzählen Sie uns von Ihren Wünschen und Fragen..."
+                  placeholder="Erzählen Sie uns von Ihren Wünschen zum Führerschein in Potsdam, B197 Interesse, Terminwünschen..."
                 ></textarea>
               </div>
 
@@ -119,7 +121,7 @@ const ContactSection = () => {
                 className="w-full bg-blue-600 text-white px-6 py-4 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2 text-lg font-semibold"
               >
                 <Send className="w-5 h-5" />
-                <span>Anfrage senden</span>
+                <span>Anfrage an Fahrschule Potsdam senden</span>
               </button>
             </form>
           </div>
@@ -129,18 +131,19 @@ const ContactSection = () => {
             {/* Contact Details */}
             <div className="bg-blue-50 rounded-xl p-8 space-y-6">
               <h3 className="text-2xl font-semibold text-gray-900">
-                ABF Fahrschule Potsdam
+                ABF Fahrschule Potsdam - Ihr Kontakt
               </h3>
 
               <div className="space-y-4">
                 <div className="flex items-start space-x-4">
                   <MapPin className="w-6 h-6 text-blue-600 mt-1" />
                   <div>
-                    <div className="font-medium text-gray-900">Adresse</div>
+                    <div className="font-medium text-gray-900">Fahrschule Potsdam Adresse</div>
                     <div className="text-gray-600">
                       WEBERPARK<br />
                       Tuchmacherstraße 45b<br />
-                      14482 Potsdam
+                      14482 Potsdam<br />
+                      Brandenburg
                     </div>
                   </div>
                 </div>
@@ -148,7 +151,7 @@ const ContactSection = () => {
                 <div className="flex items-start space-x-4">
                   <Phone className="w-6 h-6 text-blue-600 mt-1" />
                   <div>
-                    <div className="font-medium text-gray-900">Telefon</div>
+                    <div className="font-medium text-gray-900">Telefon Fahrschule Potsdam</div>
                     <a href="tel:+4933112345678" className="text-blue-600 hover:text-blue-700">
                       0331 / 123 456 78
                     </a>
@@ -158,7 +161,7 @@ const ContactSection = () => {
                 <div className="flex items-start space-x-4">
                   <Mail className="w-6 h-6 text-blue-600 mt-1" />
                   <div>
-                    <div className="font-medium text-gray-900">E-Mail</div>
+                    <div className="font-medium text-gray-900">E-Mail Fahrschule Potsdam</div>
                     <a href="mailto:info@abf-fahrschule-potsdam.de" className="text-blue-600 hover:text-blue-700">
                       info@abf-fahrschule-potsdam.de
                     </a>
@@ -168,7 +171,7 @@ const ContactSection = () => {
                 <div className="flex items-start space-x-4">
                   <Clock className="w-6 h-6 text-blue-600 mt-1" />
                   <div>
-                    <div className="font-medium text-gray-900">Öffnungszeiten</div>
+                    <div className="font-medium text-gray-900">Öffnungszeiten Fahrschule Potsdam</div>
                     <div className="text-gray-600 space-y-1">
                       <div>Mo - Fr: 15:00 - 19:00 Uhr</div>
                       <div>Sa: 10:00 - 14:00 Uhr</div>
@@ -184,15 +187,15 @@ const ContactSection = () => {
               <div className="text-center space-y-4">
                 <MapPin className="w-16 h-16 text-blue-600 mx-auto" />
                 <div>
-                  <h4 className="text-xl font-semibold text-gray-900">Google Maps</h4>
-                  <p className="text-gray-600">Finden Sie uns im WEBERPARK</p>
+                  <h4 className="text-xl font-semibold text-gray-900">Google Maps - Fahrschule Potsdam</h4>
+                  <p className="text-gray-600">Finden Sie unsere Fahrschule im WEBERPARK Potsdam</p>
                   <a 
-                    href="https://maps.google.com/?q=WEBERPARK+Tuchmacherstraße+45b+14482+Potsdam" 
+                    href="https://maps.google.com/?q=ABF+Fahrschule+WEBERPARK+Tuchmacherstraße+45b+14482+Potsdam" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="inline-block mt-2 text-blue-600 hover:text-blue-700 underline"
                   >
-                    Route planen
+                    Route zur Fahrschule Potsdam planen
                   </a>
                 </div>
               </div>

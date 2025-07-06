@@ -8,19 +8,19 @@ const ProcessSection = () => {
   const steps = [
     {
       icon: Phone,
-      title: "Anmeldung",
-      description: "Starte mit einer unverbindlichen Beratung und melde dich unkompliziert bei uns an. Wir erklären dir alles zum Ablauf, zu Terminen und zur passenden Ausbildung – inklusive B197 Option."
+      title: "Anmeldung Fahrschule Potsdam",
+      description: "Starte mit einer unverbindlichen Beratung in unserer Fahrschule in Potsdam. Wir erklären dir alles zum Ablauf, zu Terminen und zur passenden Führerscheinausbildung in Potsdam – inklusive B197 Option."
     },
     {
       icon: BookOpen,
-      title: "Theorie & Praxis",
-      description: "Besuche moderne, interaktive Theorieeinheiten in kleinen Gruppen und starte zeitnah mit deinen Fahrstunden. Bei uns fährst du stressfrei mit erfahrenen Fahrlehrern.",
+      title: "Theorieunterricht & Praktische Fahrstunden Potsdam",
+      description: "Besuche modernen, interaktiven Theorieunterricht in Potsdam in kleinen Gruppen und starte zeitnah mit deinen praktischen Fahrstunden. Bei unserer Fahrschule in Potsdam fährst du stressfrei mit lokalen, erfahrenen Fahrlehrern.",
       hasB197: true
     },
     {
       icon: Trophy,
-      title: "Prüfung",
-      description: "Wir bereiten dich gezielt auf Theorie- und Praxisprüfung vor. Sobald du bereit bist, begleiten wir dich bis zum erfolgreichen Bestehen."
+      title: "Führerscheinprüfung Potsdam",
+      description: "Wir bereiten dich gezielt auf Theorie- und Praxisprüfung in Potsdam vor. Sobald du bereit bist, begleiten wir dich bis zum erfolgreichen Bestehen deines Führerscheins."
     }
   ];
 
@@ -29,11 +29,11 @@ const ProcessSection = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            Dein Führerschein in nur drei Schritten
+            Dein Führerschein in Potsdam in nur drei Schritten
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Schnell, entspannt und modern zu deinem Führerschein in Potsdam – 
-            mit der innovativen B197 Ausbildung für mehr Flexibilität.
+            mit der innovativen B197 Ausbildung bei der ABF Fahrschule für mehr Flexibilität in Potsdam.
           </p>
         </div>
 
@@ -65,7 +65,7 @@ const ProcessSection = () => {
                 {step.hasB197 && (
                   <div className="mt-4 pt-4 border-t border-gray-100">
                     <div className="flex items-center justify-center space-x-2 mb-2">
-                      <span className="text-sm font-semibold text-blue-600">B197 Ausbildung</span>
+                      <span className="text-sm font-semibold text-blue-600">B197 Ausbildung Potsdam</span>
                       <button
                         onClick={() => setShowB197Info(true)}
                         className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-200 transition-colors"
@@ -74,7 +74,7 @@ const ProcessSection = () => {
                       </button>
                     </div>
                     <p className="text-sm text-gray-500 text-center">
-                      Automatik lernen, Schaltwagen fahren
+                      Automatik lernen, Schaltwagen fahren - in Potsdam
                     </p>
                   </div>
                 )}
@@ -94,7 +94,7 @@ const ProcessSection = () => {
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
-            Jetzt kostenlose Beratung anfragen
+            Jetzt kostenlose Beratung Fahrschule Potsdam anfragen
           </button>
         </div>
       </div>
@@ -115,20 +115,20 @@ const ProcessSection = () => {
                 <BookOpen className="w-8 h-8 text-green-600" />
               </div>
               
-              <h3 className="text-2xl font-bold text-gray-900">B197 Ausbildung</h3>
+              <h3 className="text-2xl font-bold text-gray-900">B197 Ausbildung in Potsdam</h3>
               
               <div className="text-left space-y-3 text-gray-600">
                 <p>
-                  <strong className="text-gray-900">Mehr Freiheit, weniger Stress:</strong> 
-                  Du kannst den Großteil deiner Ausbildung mit einem Automatikfahrzeug machen und trotzdem einen Schaltwagen fahren.
+                  <strong className="text-gray-900">Mehr Freiheit in Potsdam:</strong> 
+                  Du kannst den Großteil deiner Fahrausbildung mit einem Automatikfahrzeug in Potsdam machen und trotzdem einen Schaltwagen fahren.
                 </p>
                 <p>
-                  <strong className="text-gray-900">So funktioniert's:</strong> 
+                  <strong className="text-gray-900">So funktioniert's in Potsdam:</strong> 
                   Nach mindestens 10 Fahrstunden im Automatik machst du eine kurze Testfahrt im Schaltwagen – fertig!
                 </p>
                 <p>
-                  <strong className="text-gray-900">Dein Vorteil:</strong> 
-                  Entspannter lernen, trotzdem alle Fahrzeugtypen fahren können.
+                  <strong className="text-gray-900">Ihr Vorteil bei ABF Potsdam:</strong> 
+                  Entspannter lernen in Potsdam, trotzdem alle Fahrzeugtypen fahren können.
                 </p>
               </div>
             </div>

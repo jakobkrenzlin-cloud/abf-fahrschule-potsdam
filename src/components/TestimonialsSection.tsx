@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
 
@@ -6,10 +5,10 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       name: "Sarah M.",
-      age: "19 Jahre",
+      age: "19 Jahre", 
       text: "Die Fahrlehrer bei ABF sind super geduldig und erklären alles sehr verständlich. Ich hatte nie Stress und habe beim ersten Mal bestanden!",
       rating: 5,
-      image: "👩‍🦰"
+      imageUrl: "/lovable-uploads/f33db684-e682-4fc6-a6e1-cf09ae07d2cf.png"
     },
     {
       name: "Tim K.",

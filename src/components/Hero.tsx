@@ -63,13 +63,21 @@ const Hero = () => {
 
           {/* Right Content - Hero Image */}
           <div className="relative">
-            <div className="bg-blue-100 rounded-2xl p-8 aspect-square flex items-center justify-center">
-              <div className="text-center space-y-4">
-                <div className="w-32 h-32 bg-blue-600 rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-white text-4xl font-bold">🚗</span>
+            <div className="bg-blue-100 rounded-2xl p-4 aspect-square flex items-center justify-center overflow-hidden">
+              <div className="w-full h-full relative">
+                <img 
+                  src="/lovable-uploads/942a3ff6-c3ad-407e-8bda-5cd7d40335d8.png"
+                  alt="ABF Fahrschule Potsdam Gebäude - Moderne Fahrausbildung in Potsdam im WEBERPARK Tuchmacherstraße"
+                  className="w-full h-full object-cover rounded-xl"
+                  loading="eager"
+                  title="ABF Fahrschule Potsdam - Ihr vertrauensvoller Partner für den Führerschein"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-20 rounded-xl flex items-end p-6">
+                  <div className="text-white">
+                    <h3 className="text-2xl font-bold mb-2">Moderne Fahrausbildung in Potsdam</h3>
+                    <p className="text-white/90">Unser modernes Fahrschulgebäude im WEBERPARK Potsdam - Ihr Weg zum Führerschein</p>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">Moderne Fahrausbildung in Potsdam</h3>
-                <p className="text-gray-600">Lernen Sie fahren in entspannter Atmosphäre auf den Straßen Potsdams mit lokalen Fahrlehrern</p>
               </div>
             </div>
             

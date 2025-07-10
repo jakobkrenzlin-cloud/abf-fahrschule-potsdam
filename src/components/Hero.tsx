@@ -72,7 +72,7 @@ const Hero = () => {
                   loading="eager"
                   title="ABF Fahrschule Potsdam - Ihr vertrauensvoller Partner für den Führerschein"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-20 rounded-xl flex items-center justify-center p-6">
+                <div className="absolute inset-0 bg-black bg-opacity-20 rounded-xl flex items-center justify-center p-6" style={{ alignItems: 'center', paddingTop: '60%' }}>
                   <div className="text-white text-center">
                     <h3 className="text-2xl font-bold mb-2">Moderne Fahrausbildung in Potsdam</h3>
                     <p className="text-white/90">Unser modernes Fahrschulgebäude im WEBERPARK Potsdam - Ihr Weg zum Führerschein</p>

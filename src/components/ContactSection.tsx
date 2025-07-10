@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 
@@ -173,9 +172,8 @@ const ContactSection = () => {
                   <div>
                     <div className="font-medium text-gray-900">Öffnungszeiten Fahrschule Potsdam</div>
                     <div className="text-gray-600 space-y-1">
-                      <div>Mo - Fr: 15:00 - 19:00 Uhr</div>
-                      <div>Sa: 10:00 - 14:00 Uhr</div>
-                      <div>So: Nach Vereinbarung</div>
+                      <div>Mo - Fr: 12:00 - 18:00 Uhr</div>
+                      <div>Wochenende: Nach Absprache</div>
                     </div>
                   </div>
                 </div>

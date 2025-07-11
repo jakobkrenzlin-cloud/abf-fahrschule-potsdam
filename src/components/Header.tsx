@@ -20,13 +20,13 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <div className="flex items-center">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">ABF</span>
-              </div>
-              <div className="ml-3">
-                <h1 className="text-xl font-bold text-gray-900">ABF Fahrschule</h1>
-                <p className="text-sm text-gray-600">Potsdam</p>
-              </div>
+              <img 
+                src="/lovable-uploads/043122ac-3ad6-402e-85ea-565401e53982.png"
+                alt="ABF Fahrschule Potsdam Logo - Professionelle Fahrausbildung"
+                className="h-12 w-auto"
+                loading="eager"
+                title="ABF Fahrschule Potsdam - Ihr vertrauensvoller Partner für den Führerschein"
+              />
             </div>
           </div>
 

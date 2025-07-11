@@ -23,7 +23,7 @@ const Header = () => {
               <img 
                 src="/lovable-uploads/043122ac-3ad6-402e-85ea-565401e53982.png"
                 alt="ABF Fahrschule Potsdam Logo - Professionelle Fahrausbildung"
-                className="h-20 w-auto"
+                className="h-22 w-auto"
                 loading="eager"
                 title="ABF Fahrschule Potsdam - Ihr vertrauensvoller Partner für den Führerschein"
               />

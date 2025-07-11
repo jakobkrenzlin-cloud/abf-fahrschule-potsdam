@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { MapPin, Phone, Mail, Instagram, Facebook } from 'lucide-react';
 
@@ -17,9 +18,9 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <img 
-                src="/lovable-uploads/043122ac-3ad6-402e-85ea-565401e53982.png"
+                src="/lovable-uploads/be0365c9-6495-4129-8061-539de20befe7.png"
                 alt="ABF Fahrschule Potsdam Logo"
-                className="h-12 w-auto"
+                className="h-20 w-auto"
               />
             </div>
             <p className="text-gray-400 leading-relaxed">

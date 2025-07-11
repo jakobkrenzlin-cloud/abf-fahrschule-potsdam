@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MapPin, Phone, Mail, Instagram, Facebook } from 'lucide-react';
 
@@ -17,13 +16,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">ABF</span>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold">ABF Fahrschule</h3>
-                <p className="text-gray-400">Potsdam</p>
-              </div>
+              <img 
+                src="/lovable-uploads/043122ac-3ad6-402e-85ea-565401e53982.png"
+                alt="ABF Fahrschule Potsdam Logo"
+                className="h-12 w-auto"
+              />
             </div>
             <p className="text-gray-400 leading-relaxed">
               Ihre vertrauensvolle Fahrschule in Potsdam. Mit über 15 Jahren Erfahrung 

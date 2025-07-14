@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowRight, Shield, Users, Award } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
@@ -20,14 +19,13 @@ const Hero = () => {
       overlayTitle: "Moderne Fahrausbildung in Potsdam",
       overlayText: "Unser modernes Fahrschulgebäude im WEBERPARK Potsdam - Ihr Weg zum Führerschein"
     },
-    // Add more images here as needed
-    // {
-    //   src: "/path-to-your-second-image.jpg",
-    //   alt: "Description for second image",
-    //   title: "Title for second image",
-    //   overlayTitle: "Second Image Title",
-    //   overlayText: "Description for second image overlay"
-    // }
+    {
+      src: "/lovable-uploads/69a50505-01b3-473d-9dbb-6f8b0def978d.png",
+      alt: "Theorieunterricht ABF Fahrschule Potsdam - Moderner Unterrichtsraum mit roter Bestuhlung",
+      title: "Theorieunterricht in der ABF Fahrschule Potsdam - Lernen in angenehmer Atmosphäre",
+      overlayTitle: "Theorieunterricht in Potsdam",
+      overlayText: "Moderner Unterrichtsraum für entspanntes Lernen der Fahrtheorie"
+    }
   ];
 
   return (

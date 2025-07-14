@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ArrowRight, Shield, Users, Award } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
@@ -49,7 +50,7 @@ const Hero = () => {
             <div className="flex flex-wrap gap-6 text-sm text-gray-700">
               <div className="flex items-center space-x-2">
                 <Shield className="w-5 h-5 text-blue-600" />
-                <span>Über 15 Jahre Fahrschule in Potsdam</span>
+                <span>Neue Fahrschule in Potsdam</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Users className="w-5 h-5 text-blue-600" />

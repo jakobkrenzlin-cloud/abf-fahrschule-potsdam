@@ -59,8 +59,8 @@ const WhyABF = () => {
               <div className="text-gray-700 font-medium">Erfolgreiche Fahrschüler in Potsdam</div>
             </div>
             <div className="space-y-2">
-              <div className="text-4xl font-bold text-blue-600">15+</div>
-              <div className="text-gray-700 font-medium">Jahre Fahrschule in Potsdam</div>
+              <div className="text-4xl font-bold text-blue-600">Neu</div>
+              <div className="text-gray-700 font-medium">Fahrschule in Potsdam</div>
             </div>
             <div className="space-y-2">
               <div className="text-4xl font-bold text-blue-600">98%</div>

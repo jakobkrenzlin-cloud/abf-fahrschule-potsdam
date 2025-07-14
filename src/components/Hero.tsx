@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { ArrowRight, Shield, Users, Award } from 'lucide-react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -9,6 +10,25 @@ const Hero = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  // Hero images array - you can easily add more images here
+  const heroImages = [
+    {
+      src: "/lovable-uploads/942a3ff6-c3ad-407e-8bda-5cd7d40335d8.png",
+      alt: "ABF Fahrschule Potsdam Gebäude - Moderne Fahrausbildung in Potsdam im WEBERPARK Tuchmacherstraße",
+      title: "ABF Fahrschule Potsdam - Ihr vertrauensvoller Partner für den Führerschein",
+      overlayTitle: "Moderne Fahrausbildung in Potsdam",
+      overlayText: "Unser modernes Fahrschulgebäude im WEBERPARK Potsdam - Ihr Weg zum Führerschein"
+    },
+    // Add more images here as needed
+    // {
+    //   src: "/path-to-your-second-image.jpg",
+    //   alt: "Description for second image",
+    //   title: "Title for second image",
+    //   overlayTitle: "Second Image Title",
+    //   overlayText: "Description for second image overlay"
+    // }
+  ];
 
   return (
     <section id="home" className="pt-16 bg-gradient-to-br from-blue-50 to-white">
@@ -61,25 +81,39 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Hero Image */}
+          {/* Right Content - Hero Image Carousel */}
           <div className="relative">
             <div className="bg-blue-100 rounded-2xl p-4 aspect-square flex items-center justify-center overflow-hidden">
-              <div className="w-full h-full relative">
-                <img 
-                  src="/lovable-uploads/942a3ff6-c3ad-407e-8bda-5cd7d40335d8.png"
-                  alt="ABF Fahrschule Potsdam Gebäude - Moderne Fahrausbildung in Potsdam im WEBERPARK Tuchmacherstraße"
-                  className="w-full h-full object-cover rounded-xl"
-                  loading="eager"
-                  title="ABF Fahrschule Potsdam - Ihr vertrauensvoller Partner für den Führerschein"
-                />
-                {/* Text overlay - hidden on mobile, visible on larger screens */}
-                <div className="absolute inset-0 bg-black bg-opacity-20 rounded-xl items-center justify-center p-6 hidden md:flex" style={{ alignItems: 'center', paddingTop: '60%' }}>
-                  <div className="text-white text-center">
-                    <h3 className="text-2xl font-bold mb-2">Moderne Fahrausbildung in Potsdam</h3>
-                    <p className="text-white/90">Unser modernes Fahrschulgebäude im WEBERPARK Potsdam - Ihr Weg zum Führerschein</p>
-                  </div>
-                </div>
-              </div>
+              <Carousel className="w-full h-full" opts={{ loop: true }}>
+                <CarouselContent>
+                  {heroImages.map((image, index) => (
+                    <CarouselItem key={index}>
+                      <div className="w-full h-full relative">
+                        <img 
+                          src={image.src}
+                          alt={image.alt}
+                          className="w-full h-full object-cover rounded-xl"
+                          loading={index === 0 ? "eager" : "lazy"}
+                          title={image.title}
+                        />
+                        {/* Text overlay - hidden on mobile, visible on larger screens */}
+                        <div className="absolute inset-0 bg-black bg-opacity-20 rounded-xl items-center justify-center p-6 hidden md:flex" style={{ alignItems: 'center', paddingTop: '60%' }}>
+                          <div className="text-white text-center">
+                            <h3 className="text-2xl font-bold mb-2">{image.overlayTitle}</h3>
+                            <p className="text-white/90">{image.overlayText}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                {heroImages.length > 1 && (
+                  <>
+                    <CarouselPrevious className="left-4" />
+                    <CarouselNext className="right-4" />
+                  </>
+                )}
+              </Carousel>
             </div>
             
             {/* Floating elements */}

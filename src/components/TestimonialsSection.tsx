@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
 
@@ -92,7 +91,7 @@ const TestimonialsSection = () => {
           <div className="inline-flex items-center space-x-8 bg-white rounded-xl px-8 py-4 shadow-sm">
             <div className="flex items-center space-x-2">
               <Star className="w-6 h-6 text-yellow-400 fill-current" />
-              <span className="font-semibold text-gray-900">4.9/5</span>
+              <span className="font-semibold text-gray-900">Top</span>
               <span className="text-gray-600">Google Bewertungen Potsdam</span>
             </div>
             <div className="w-px h-8 bg-gray-200"></div>

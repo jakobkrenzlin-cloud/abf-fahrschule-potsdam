@@ -1,18 +1,16 @@
-
 import React from 'react';
 import { Check, Phone, Mail, MapPin, Car, Truck, Clock, Award } from 'lucide-react';
 import { Button } from './ui/button';
-
 const OffersSection = () => {
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section id="offers" className="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-white">
+  return <section id="offers" className="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
@@ -38,7 +36,7 @@ const OffersSection = () => {
               </div>
               <div className="bg-white/20 rounded-lg p-4">
                 <div className="text-3xl font-bold mb-1">479 €</div>
-                <div className="text-sm text-blue-100">Gültig bis 31.03.2025</div>
+                <div className="text-sm text-blue-100">Sommer Angebot</div>
               </div>
             </div>
 
@@ -50,31 +48,17 @@ const OffersSection = () => {
 
               <div className="space-y-3">
                 <h4 className="font-semibold text-gray-900 mb-3">Alles inklusive:</h4>
-                {[
-                  '14 Theoriestunden inklusive',
-                  'LernApp vom Vogel Verlag inklusive',
-                  'Erste Hilfe Kurs & Sehtest inklusive',
-                  '2x 45 Minuten Fahrtraining auf dem Fahrschulsimulator inklusive'
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center space-x-3">
+                {['14 Theoriestunden inklusive', 'LernApp vom Vogel Verlag inklusive', 'Erste Hilfe Kurs & Sehtest inklusive', '2x 45 Minuten Fahrtraining auf dem Fahrschulsimulator inklusive'].map((item, index) => <div key={index} className="flex items-center space-x-3">
                     <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
                     <span className="text-gray-700">{item}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
 
               <div className="pt-4 space-y-3">
-                <Button 
-                  onClick={scrollToContact}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 text-lg"
-                >
+                <Button onClick={scrollToContact} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 text-lg">
                   Jetzt für 479 € anmelden
                 </Button>
-                <Button 
-                  onClick={scrollToContact}
-                  variant="outline"
-                  className="w-full border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold py-3"
-                >
+                <Button onClick={scrollToContact} variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold py-3">
                   Kostenlos beraten lassen
                 </Button>
               </div>
@@ -105,30 +89,17 @@ const OffersSection = () => {
 
               <div className="space-y-3">
                 <h4 className="font-semibold text-gray-900 mb-3">Ihre Vorteile:</h4>
-                {[
-                  'Bis zu 100% Förderung möglich',
-                  'Kursstart jederzeit möglich',
-                  'Zukunftssicherer Beruf',
-                  'Anerkannte Ausbildungsstätte (BKrFQG & AZAV)'
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center space-x-3">
+                {['Bis zu 100% Förderung möglich', 'Kursstart jederzeit möglich', 'Zukunftssicherer Beruf', 'Anerkannte Ausbildungsstätte (BKrFQG & AZAV)'].map((item, index) => <div key={index} className="flex items-center space-x-3">
                     <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
                     <span className="text-gray-700">{item}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
 
               <div className="pt-4 space-y-3">
-                <Button 
-                  onClick={scrollToContact}
-                  className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 text-lg"
-                >
+                <Button onClick={scrollToContact} className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 text-lg">
                   Jetzt Kurierfahrer/in werden
                 </Button>
-                <Button 
-                  onClick={scrollToContact}
-                  className="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3"
-                >
+                <Button onClick={scrollToContact} className="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3">
                   Ausbildung zum Berufskraftfahrer starten
                 </Button>
               </div>
@@ -152,10 +123,7 @@ const OffersSection = () => {
             <div className="text-center p-4 bg-blue-50 rounded-xl">
               <Phone className="w-8 h-8 text-blue-600 mx-auto mb-3" />
               <h4 className="font-semibold text-gray-900 mb-2">Telefon</h4>
-              <a 
-                href="tel:+493312369696" 
-                className="text-blue-600 hover:text-blue-700 font-medium"
-              >
+              <a href="tel:+493312369696" className="text-blue-600 hover:text-blue-700 font-medium">
                 0331 / 236 96 96
               </a>
             </div>
@@ -164,10 +132,7 @@ const OffersSection = () => {
             <div className="text-center p-4 bg-green-50 rounded-xl">
               <Mail className="w-8 h-8 text-green-600 mx-auto mb-3" />
               <h4 className="font-semibold text-gray-900 mb-2">E-Mail</h4>
-              <a 
-                href="mailto:info@abf-fahrschule.de" 
-                className="text-green-600 hover:text-green-700 font-medium"
-              >
+              <a href="mailto:info@abf-fahrschule.de" className="text-green-600 hover:text-green-700 font-medium">
                 info@abf-fahrschule.de
               </a>
             </div>
@@ -176,12 +141,7 @@ const OffersSection = () => {
             <div className="text-center p-4 bg-orange-50 rounded-xl">
               <MapPin className="w-8 h-8 text-orange-600 mx-auto mb-3" />
               <h4 className="font-semibold text-gray-900 mb-2">Adresse</h4>
-              <a 
-                href="https://maps.google.com/?q=ABF+Bildungszentrum+Fahrschule+Potsdam+Tuchmacherstraße+WEBERPARK"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-orange-600 hover:text-orange-700 font-medium"
-              >
+              <a href="https://maps.google.com/?q=ABF+Bildungszentrum+Fahrschule+Potsdam+Tuchmacherstraße+WEBERPARK" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:text-orange-700 font-medium">
                 WEBERPARK Potsdam<br />
                 Tuchmacherstraße
               </a>
@@ -209,8 +169,6 @@ const OffersSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default OffersSection;

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 
@@ -151,8 +152,8 @@ const ContactSection = () => {
                   <Phone className="w-6 h-6 text-blue-600 mt-1" />
                   <div>
                     <div className="font-medium text-gray-900">Telefon Fahrschule Potsdam</div>
-                    <a href="tel:+4933112345678" className="text-blue-600 hover:text-blue-700">
-                      0331 / 123 456 78
+                    <a href="tel:+4933196795854" className="text-blue-600 hover:text-blue-700">
+                      0331 / 967 958 54
                     </a>
                   </div>
                 </div>
@@ -161,8 +162,8 @@ const ContactSection = () => {
                   <Mail className="w-6 h-6 text-blue-600 mt-1" />
                   <div>
                     <div className="font-medium text-gray-900">E-Mail Fahrschule Potsdam</div>
-                    <a href="mailto:info@abf-fahrschule-potsdam.de" className="text-blue-600 hover:text-blue-700">
-                      info@abf-fahrschule-potsdam.de
+                    <a href="mailto:potsdam@fahrschuleabf.de" className="text-blue-600 hover:text-blue-700">
+                      potsdam@fahrschuleabf.de
                     </a>
                   </div>
                 </div>

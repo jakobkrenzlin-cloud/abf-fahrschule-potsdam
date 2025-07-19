@@ -1,6 +1,8 @@
+
 import React from 'react';
 import { Check, Phone, Mail, MapPin, Car, Truck, Clock, Award } from 'lucide-react';
 import { Button } from './ui/button';
+
 const OffersSection = () => {
   const scrollToContact = () => {
     const element = document.getElementById('contact');
@@ -10,7 +12,9 @@ const OffersSection = () => {
       });
     }
   };
-  return <section id="offers" className="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-white">
+
+  return (
+    <section id="offers" className="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
@@ -123,8 +127,8 @@ const OffersSection = () => {
             <div className="text-center p-4 bg-blue-50 rounded-xl">
               <Phone className="w-8 h-8 text-blue-600 mx-auto mb-3" />
               <h4 className="font-semibold text-gray-900 mb-2">Telefon</h4>
-              <a href="tel:+493312369696" className="text-blue-600 hover:text-blue-700 font-medium">
-                0331 / 236 96 96
+              <a href="tel:+4933196795854" className="text-blue-600 hover:text-blue-700 font-medium">
+                0331 / 967 958 54
               </a>
             </div>
 
@@ -132,8 +136,8 @@ const OffersSection = () => {
             <div className="text-center p-4 bg-green-50 rounded-xl">
               <Mail className="w-8 h-8 text-green-600 mx-auto mb-3" />
               <h4 className="font-semibold text-gray-900 mb-2">E-Mail</h4>
-              <a href="mailto:info@abf-fahrschule.de" className="text-green-600 hover:text-green-700 font-medium">
-                info@abf-fahrschule.de
+              <a href="mailto:potsdam@fahrschuleabf.de" className="text-green-600 hover:text-green-700 font-medium">
+                potsdam@fahrschuleabf.de
               </a>
             </div>
 
@@ -169,6 +173,8 @@ const OffersSection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default OffersSection;

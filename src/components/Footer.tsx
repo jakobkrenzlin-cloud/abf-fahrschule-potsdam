@@ -86,15 +86,15 @@ const Footer = () => {
               
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-blue-400" />
-                <a href="tel:+4933112345678" className="text-gray-400 hover:text-white transition-colors">
-                  0331 / 123 456 78
+                <a href="tel:+4933196795854" className="text-gray-400 hover:text-white transition-colors">
+                  0331 / 967 958 54
                 </a>
               </div>
               
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-blue-400" />
-                <a href="mailto:info@abf-fahrschule-potsdam.de" className="text-gray-400 hover:text-white transition-colors">
-                  info@abf-fahrschule-potsdam.de
+                <a href="mailto:potsdam@fahrschuleabf.de" className="text-gray-400 hover:text-white transition-colors">
+                  potsdam@fahrschuleabf.de
                 </a>
               </div>
             </div>

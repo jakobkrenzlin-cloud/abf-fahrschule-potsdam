@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check, Phone, Mail, MapPin, Car, Truck, Clock, Award } from 'lucide-react';
 import { Button } from './ui/button';
@@ -40,7 +39,7 @@ const OffersSection = () => {
               </div>
               <div className="bg-white/20 rounded-lg p-4">
                 <div className="text-3xl font-bold mb-1">479 €</div>
-                <div className="text-sm text-blue-100">Sommer Angebot</div>
+                <div className="text-sm text-blue-100">Sommer Angebot bis 21.10.2025</div>
               </div>
             </div>
 

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   Carousel,
@@ -10,12 +9,6 @@ import {
 
 const TeamSlideshow = () => {
   const teamImages = [
-    {
-      src: "/lovable-uploads/82513385-015d-4a52-9a1c-41fa99af52db.png",
-      alt: "Erfahrener Fahrlehrer der ABF Fahrschule Potsdam - Professionelle Fahrausbildung",
-      title: "Unser Fahrlehrer-Team",
-      description: "Erfahrene und geduldige Fahrlehrer in Potsdam"
-    },
     {
       src: "/lovable-uploads/b2892b58-bc6f-41af-a0c6-2d1c6c48dcfe.png",
       alt: "Moderner Unterrichtsraum der ABF Fahrschule Potsdam - Theorieunterricht",

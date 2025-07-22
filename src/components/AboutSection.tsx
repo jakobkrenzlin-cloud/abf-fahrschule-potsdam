@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { Users, Clock, Award, Heart } from 'lucide-react';
+import TeamSlideshow from './TeamSlideshow';
 
 const AboutSection = () => {
   return (
@@ -53,13 +53,11 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Right Content - Team Image */}
+          {/* Right Content - Team Slideshow */}
           <div className="space-y-6">
             <div className="bg-blue-50 rounded-2xl p-8 text-center">
-              <div className="w-48 h-48 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-6xl">👨‍🏫</span>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Unser Fahrlehrer-Team Potsdam</h3>
+              <TeamSlideshow />
+              <h3 className="text-2xl font-bold text-gray-900 mb-2 mt-6">Unser Fahrlehrer-Team Potsdam</h3>
               <p className="text-gray-600">
                 Erfahren, geduldig und immer für Sie da - lokale Fahrlehrer mit Potsdam-Expertise
               </p>

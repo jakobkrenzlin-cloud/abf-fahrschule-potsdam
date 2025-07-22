@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {
   Carousel,
@@ -33,7 +34,9 @@ const TeamSlideshow = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-64 object-cover rounded-xl"
+                  className={`w-full h-64 rounded-xl ${
+                    index === 0 ? 'object-cover object-top' : 'object-cover'
+                  }`}
                   loading={index === 0 ? "eager" : "lazy"}
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent rounded-b-xl p-4">

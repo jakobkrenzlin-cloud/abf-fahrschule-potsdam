@@ -1,28 +1,8 @@
 
 import React from 'react';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
 
 const ContactSection = () => {
-  // Images for the contact section slideshow
-  const contactImages = [
-    {
-      src: "/lovable-uploads/82513385-015d-4a52-9a1c-41fa99af52db.png",
-      alt: "Fahrlehrer ABF Fahrschule Potsdam - Persönliche Betreuung und professionelle Fahrausbildung",
-      title: "Ihr Fahrlehrer bei ABF Fahrschule Potsdam - Erfahrene und geduldige Fahrausbildung"
-    },
-    {
-      src: "/lovable-uploads/b2892b58-bc6f-41af-a0c6-2d1c6c48dcfe.png",
-      alt: "Theorieraum ABF Fahrschule Potsdam - Moderner Unterrichtsraum für Führerschein Theorie",
-      title: "Theorieunterricht ABF Fahrschule Potsdam - Moderne Ausstattung und angenehme Lernumgebung"
-    },
-    {
-      src: "/lovable-uploads/14e1fc8e-30ef-4aa2-9a73-8f9b43779d83.png",
-      alt: "ABF Fahrschule Potsdam Büro - Anmeldung und Beratung für den Führerschein in Potsdam",
-      title: "ABF Fahrschule Potsdam Büro - Kompetente Beratung und Anmeldung für Ihren Führerschein"
-    }
-  ];
-
   return (
     <section id="contact" className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,7 +17,7 @@ const ContactSection = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          {/* Contact Info & Images */}
+          {/* Contact Info & Map */}
           <div className="space-y-8">
             {/* Contact Details */}
             <div className="bg-blue-50 rounded-xl p-8 space-y-6">
@@ -92,31 +72,23 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* Image Slideshow */}
-            <div className="bg-gray-100 rounded-xl p-8 h-64 flex items-center justify-center overflow-hidden">
-              <Carousel className="w-full h-full" opts={{ loop: true }}>
-                <CarouselContent>
-                  {contactImages.map((image, index) => (
-                    <CarouselItem key={index}>
-                      <div className="w-full h-full relative">
-                        <img 
-                          src={image.src}
-                          alt={image.alt}
-                          className="w-full h-full object-cover rounded-xl"
-                          loading={index === 0 ? "eager" : "lazy"}
-                          title={image.title}
-                        />
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                {contactImages.length > 1 && (
-                  <>
-                    <CarouselPrevious className="left-4" />
-                    <CarouselNext className="right-4" />
-                  </>
-                )}
-              </Carousel>
+            {/* Map Placeholder */}
+            <div className="bg-gray-100 rounded-xl p-8 h-64 flex items-center justify-center">
+              <div className="text-center space-y-4">
+                <MapPin className="w-16 h-16 text-blue-600 mx-auto" />
+                <div>
+                  <h4 className="text-xl font-semibold text-gray-900">Google Maps - Fahrschule Potsdam</h4>
+                  <p className="text-gray-600">Finden Sie unsere Fahrschule im WEBERPARK Potsdam</p>
+                  <a 
+                    href="https://maps.google.com/?q=ABF+Fahrschule+WEBERPARK+Tuchmacherstraße+45b+14482+Potsdam" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block mt-2 text-blue-600 hover:text-blue-700 underline"
+                  >
+                    Route zur Fahrschule Potsdam planen
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import {
   Carousel,
@@ -35,7 +36,7 @@ const TeamSlideshow = () => {
                   src={image.src}
                   alt={image.alt}
                   className={`w-full h-64 rounded-xl ${
-                    index === 0 ? 'object-cover object-top' : 'object-cover'
+                    index === 0 ? 'object-cover object-bottom' : 'object-cover'
                   }`}
                   loading={index === 0 ? "eager" : "lazy"}
                 />
@@ -75,3 +76,4 @@ const TeamSlideshow = () => {
 };
 
 export default TeamSlideshow;
+

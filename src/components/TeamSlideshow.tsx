@@ -11,13 +11,13 @@ import {
 const TeamSlideshow = () => {
   const teamImages = [
     {
-      src: "/lovable-uploads/b2892b58-bc6f-41af-a0c6-2d1c6c48dcfe.png",
+      src: "/lovable-uploads/unterrichtsraum.jpg",
       alt: "Moderner Unterrichtsraum der ABF Fahrschule Potsdam - Theorieunterricht",
       title: "Unser Unterrichtsraum",
       description: "Moderne Ausstattung für optimalen Theorieunterricht in Potsdam"
     },
     {
-      src: "/lovable-uploads/14e1fc8e-30ef-4aa2-9a73-8f9b43779d83.png",
+      src: "/lovable-uploads/buero-team.jpg",
       alt: "Büro und Team der ABF Fahrschule Potsdam - Fahrschule vor Ort",
       title: "Unser Büro-Team",
       description: "Freundliche Beratung und Service in der ABF Fahrschule Potsdam"

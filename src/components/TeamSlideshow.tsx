@@ -11,18 +11,6 @@ import {
 const TeamSlideshow = () => {
   const teamImages = [
     {
-      src: "/lovable-uploads/unterrichtsraum.jpg",
-      alt: "Moderner Unterrichtsraum der ABF Fahrschule Potsdam - Theorieunterricht",
-      title: "Unser Unterrichtsraum",
-      description: "Moderne Ausstattung für optimalen Theorieunterricht in Potsdam"
-    },
-    {
-      src: "/lovable-uploads/buero-team.jpg",
-      alt: "Büro und Team der ABF Fahrschule Potsdam - Fahrschule vor Ort",
-      title: "Unser Büro-Team",
-      description: "Freundliche Beratung und Service in der ABF Fahrschule Potsdam"
-    },
-    {
       src: "/lovable-uploads/33f9b1ad-70eb-4e0b-8b28-b88ae8f04da5.png",
       alt: "Moderner Theorieraum der ABF Fahrschule Potsdam mit roten Stühlen",
       title: "Unser Theorieraum",
@@ -47,7 +35,6 @@ const TeamSlideshow = () => {
                   src={image.src}
                   alt={image.alt}
                   className="w-full h-64 object-cover rounded-xl"
-                  style={index === 0 ? { objectPosition: '50% 65%' } : {}}
                   loading={index === 0 ? "eager" : "lazy"}
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent rounded-b-xl p-4">

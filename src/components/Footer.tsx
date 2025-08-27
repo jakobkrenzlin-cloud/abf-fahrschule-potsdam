@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { MapPin, Phone, Mail, Instagram, Facebook } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -108,15 +108,15 @@ const Footer = () => {
               © 2024 ABF Fahrschule Potsdam. Alle Rechte vorbehalten.
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <Link to="/impressum" className="text-gray-400 hover:text-white transition-colors">
                 Impressum
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              </Link>
+              <Link to="/datenschutz" className="text-gray-400 hover:text-white transition-colors">
                 Datenschutz
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              </Link>
+              <Link to="/agb" className="text-gray-400 hover:text-white transition-colors">
                 AGB
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, TrendingUp, DollarSign, Calendar, CheckCircle, Star, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import OfferBox from "@/components/OfferBox";
+import TestimonialsBox from "@/components/TestimonialsBox";
+import ProcessSteps from "@/components/ProcessSteps";
+import ConversionFAQ from "@/components/ConversionFAQ";
 
 const Landing = () => {
   const [formData, setFormData] = useState({
@@ -41,182 +44,137 @@ const Landing = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-700 text-white py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-white py-16 lg:py-24 relative overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-48 translate-x-48"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-32 -translate-x-32"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
+              {/* Urgency Badge */}
+              <div className="inline-flex items-center gap-2 bg-red-500/90 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 animate-pulse">
+                🔥 Limitiertes Angebot
+              </div>
+              
               <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-                🚗 Führerschein in Potsdam-Babelsberg
-                <span className="block text-yellow-300">schnell, fair & sicher bestehen</span>
+                🚗 Dein Führerschein in Potsdam-Babelsberg
+                <span className="block text-yellow-300 text-5xl lg:text-7xl mt-2">
+                  Jetzt für nur 479 €!
+                </span>
               </h1>
-              <p className="text-xl lg:text-2xl mb-8 text-blue-100">
-                Jetzt anmelden & 50 € sparen
+              <p className="text-xl lg:text-2xl mb-8 text-blue-100 font-medium">
+                Nur für kurze Zeit: Komplettpaket mit Theorie, Lern-App & Erste Hilfe inklusive
               </p>
               <Button 
                 size="lg" 
-                className="bg-white text-blue-700 hover:bg-gray-100 text-lg px-8 py-4 rounded-lg font-semibold"
+                className="bg-white text-primary hover:bg-gray-100 text-lg px-12 py-6 rounded-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
                 onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Jetzt anmelden
+                Jetzt anmelden & Platz sichern 🚀
               </Button>
             </div>
-            <div className="bg-white/10 rounded-xl p-8 backdrop-blur-sm">
-              <div className="aspect-video bg-white/20 rounded-lg flex items-center justify-center text-white/70">
-                Fahrschüler im Auto - Bild Platzhalter
+            <div className="bg-white/10 rounded-2xl p-8 backdrop-blur-sm border border-white/20">
+              <div className="aspect-video bg-white/20 rounded-xl flex items-center justify-center text-white/70 text-lg font-medium">
+                Fahrschüler & Fahrlehrer - Bild Platzhalter
+              </div>
+              <div className="mt-6 bg-white/20 rounded-lg p-4 text-center backdrop-blur-sm">
+                <p className="text-sm font-semibold text-white">
+                  ✨ Echte Fahrschüler bei ABF Fahrschule
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="flex justify-center items-center gap-2 mb-4">
-              {[1,2,3,4,5].map((star) => (
-                <Star key={star} className="w-6 h-6 text-yellow-400 fill-current" />
-              ))}
-              <span className="text-lg font-semibold ml-2">4.9/5 (200+ Bewertungen)</span>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8 mt-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
-                <div className="text-gray-600">Fahrschüler erfolgreich bestanden</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-2">95%</div>
-                <div className="text-gray-600">Erfolgsquote beim ersten Versuch</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-2">15+</div>
-                <div className="text-gray-600">Jahre Erfahrung</div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Trust Logos */}
-          <div className="flex justify-center items-center gap-8 flex-wrap opacity-60">
-            <div className="w-20 h-12 bg-muted rounded flex items-center justify-center text-xs">TÜV</div>
-            <div className="w-20 h-12 bg-muted rounded flex items-center justify-center text-xs">DEKRA</div>
-            <div className="w-20 h-12 bg-muted rounded flex items-center justify-center text-xs">Google</div>
-          </div>
-        </div>
-      </section>
+      {/* Big Value Proposition - Offer Box */}
+      <OfferBox />
 
-      {/* USPs/Benefits */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12 text-gray-900">
-            Warum ABF Fahrschule?
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-6 bg-white rounded-xl shadow-sm">
-              <MapPin className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Zentrale Lage</h3>
-              <p className="text-gray-600">Mitten in Potsdam-Babelsberg, perfekt erreichbar</p>
-            </div>
-            <div className="text-center p-6 bg-white rounded-xl shadow-sm">
-              <TrendingUp className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Hohe Erfolgsquote</h3>
-              <p className="text-gray-600">95% bestehen beim ersten Versuch</p>
-            </div>
-            <div className="text-center p-6 bg-white rounded-xl shadow-sm">
-              <DollarSign className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Faire Preise</h3>
-              <p className="text-gray-600">Transparente Kosten ohne versteckte Gebühren</p>
-            </div>
-            <div className="text-center p-6 bg-white rounded-xl shadow-sm">
-              <Calendar className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Flexible Termine</h3>
-              <p className="text-gray-600">Fahrstunden auch abends und am Wochenende</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Social Proof & Testimonials */}
+      <TestimonialsBox />
 
       {/* CTA Block */}
-      <section className="py-16 bg-blue-600 text-white text-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            Starte jetzt deinen Führerschein
+      <section className="py-16 bg-primary text-white text-center relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-y-32 -translate-x-32"></div>
+        <div className="absolute bottom-0 right-0 w-48 h-48 bg-white/5 rounded-full translate-y-24 translate-x-24"></div>
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h2 className="text-3xl lg:text-5xl font-bold mb-6">
+            Starte jetzt deinen Führerschein in Potsdam
           </h2>
+          <p className="text-xl lg:text-2xl mb-8 text-blue-100 font-medium">
+            Sichere dir das 479 € Angebot – nur für kurze Zeit!
+          </p>
           <Button 
             size="lg" 
-            className="bg-white text-blue-700 hover:bg-gray-100 text-lg px-8 py-4"
+            className="bg-white text-primary hover:bg-gray-100 text-lg px-12 py-6 rounded-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
             onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Kostenlose Beratung sichern
+            Jetzt anmelden & 479€ Angebot sichern 🎯
           </Button>
-        </div>
-      </section>
-
-      {/* Process Steps */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12 text-gray-900">
-            So läuft deine Fahrausbildung ab
-          </h2>
-          <div className="grid md:grid-cols-5 gap-8">
-            {[
-              { step: 1, title: 'Anmeldung', desc: 'Einfache Anmeldung vor Ort oder online' },
-              { step: 2, title: 'Theorie', desc: 'Theorieunterricht in kleinen Gruppen' },
-              { step: 3, title: 'Praxis', desc: 'Fahrstunden mit erfahrenen Lehrern' },
-              { step: 4, title: 'Theorieprüfung', desc: 'Prüfung beim TÜV mit Vorbereitung' },
-              { step: 5, title: 'Praxisprüfung', desc: 'Praktische Prüfung und Führerschein' }
-            ].map((item) => (
-              <div key={item.step} className="text-center">
-                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  {item.step}
-                </div>
-                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.desc}</p>
-              </div>
-            ))}
+          <div className="mt-6 text-sm opacity-90">
+            ⏰ Limitiert auf die ersten 50 Anmeldungen
           </div>
         </div>
       </section>
 
-      {/* Contact Form */}
-      <section id="contact-form" className="py-16 bg-gray-50">
+      {/* Process Steps - How it Works */}
+      <ProcessSteps />
+
+      {/* Contact Form - Lead Capture */}
+      <section id="contact-form" className="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-xl shadow-lg p-8">
+          <div className="bg-white rounded-2xl shadow-2xl p-8 lg:p-12 border border-gray-100">
+            {/* Offer Reminder */}
+            <div className="text-center mb-8 p-4 bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl border-l-4 border-primary">
+              <p className="text-primary font-bold text-lg">
+                🎯 Sichere dir jetzt das 479€ Komplettpaket!
+              </p>
+              <p className="text-sm text-gray-600 mt-1">
+                Limitiert auf die ersten 50 Anmeldungen
+              </p>
+            </div>
+
             <h2 className="text-2xl lg:text-3xl font-bold text-center mb-2 text-gray-900">
               Kostenlose Beratung sichern
             </h2>
             <p className="text-center text-gray-600 mb-8">
-              Wir melden uns in 24h bei dir zurück
+              Wir melden uns innerhalb von 24h bei dir zurück
             </p>
             
             <form onSubmit={handleFormSubmit} className="space-y-6">
               <div>
-                <Label htmlFor="name">Vollständiger Name *</Label>
+                <Label htmlFor="name" className="text-sm font-semibold text-gray-700">Vollständiger Name *</Label>
                 <Input
                   id="name"
                   type="text"
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  className="mt-1"
+                  className="mt-2 h-12 border-2 border-gray-200 focus:border-primary rounded-lg"
+                  placeholder="Dein vollständiger Name"
                 />
               </div>
               
               <div>
-                <Label htmlFor="phone">Telefonnummer *</Label>
+                <Label htmlFor="phone" className="text-sm font-semibold text-gray-700">Telefonnummer *</Label>
                 <Input
                   id="phone"
                   type="tel"
                   required
                   value={formData.phone}
                   onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                  className="mt-1"
+                  className="mt-2 h-12 border-2 border-gray-200 focus:border-primary rounded-lg"
+                  placeholder="Deine Telefonnummer"
                 />
               </div>
               
               <div>
-                <Label htmlFor="license">Führerscheinklasse *</Label>
+                <Label htmlFor="license" className="text-sm font-semibold text-gray-700">Führerscheinklasse *</Label>
                 <Select onValueChange={(value) => setFormData({...formData, licenseClass: value})}>
-                  <SelectTrigger className="mt-1">
+                  <SelectTrigger className="mt-2 h-12 border-2 border-gray-200 focus:border-primary rounded-lg">
                     <SelectValue placeholder="Wähle deine Führerscheinklasse" />
                   </SelectTrigger>
                   <SelectContent>
@@ -229,8 +187,12 @@ const Landing = () => {
                 </Select>
               </div>
               
-              <Button type="submit" size="lg" className="w-full bg-blue-600 hover:bg-blue-700">
-                Jetzt Anfrage senden
+              <Button 
+                type="submit" 
+                size="lg" 
+                className="w-full bg-primary hover:bg-primary/90 h-14 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              >
+                🚀 Jetzt Anfrage senden & 479€ Angebot sichern
               </Button>
             </form>
             
@@ -240,88 +202,68 @@ const Landing = () => {
                 onClick={handleWhatsApp}
                 variant="outline"
                 size="lg"
-                className="flex-1 border-green-500 text-green-600 hover:bg-green-50"
+                className="flex-1 border-2 border-green-500 text-green-600 hover:bg-green-50 h-12 font-semibold rounded-xl"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
-                WhatsApp
+                WhatsApp Chat
               </Button>
               <Button 
                 onClick={handleCall}
                 variant="outline"
                 size="lg"
-                className="flex-1 border-blue-500 text-blue-600 hover:bg-blue-50"
+                className="flex-1 border-2 border-primary text-primary hover:bg-primary/10 h-12 font-semibold rounded-xl"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Anrufen
+                Sofort anrufen
               </Button>
+            </div>
+
+            <div className="text-center mt-6 text-sm text-gray-500">
+              <p>🔒 Deine Daten sind sicher und werden vertraulich behandelt</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12 text-gray-900">
-            Häufig gestellte Fragen
-          </h2>
-          
-          <Accordion type="single" collapsible className="space-y-4">
-            <AccordionItem value="item-1" className="border rounded-lg px-6">
-              <AccordionTrigger className="text-left">
-                Wie lange dauert die Fahrausbildung?
-              </AccordionTrigger>
-              <AccordionContent>
-                Die Dauer hängt von verschiedenen Faktoren ab. Im Durchschnitt benötigen unsere Fahrschüler 3-6 Monate für den Führerschein Klasse B, inklusive Theorie- und Praxisausbildung.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-2" className="border rounded-lg px-6">
-              <AccordionTrigger className="text-left">
-                Was kostet der Führerschein?
-              </AccordionTrigger>
-              <AccordionContent>
-                Die Kosten variieren je nach Führerscheinklasse und benötigten Fahrstunden. Gerne erstellen wir dir ein individuelles und transparentes Angebot. Kontaktiere uns für Details.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-3" className="border rounded-lg px-6">
-              <AccordionTrigger className="text-left">
-                Kann ich auch abends Fahrstunden nehmen?
-              </AccordionTrigger>
-              <AccordionContent>
-                Ja, wir bieten flexible Termine auch abends und am Wochenende an. So kannst du die Fahrausbildung optimal in deinen Alltag integrieren.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-4" className="border rounded-lg px-6">
-              <AccordionTrigger className="text-left">
-                Welche Unterlagen brauche ich zur Anmeldung?
-              </AccordionTrigger>
-              <AccordionContent>
-                Du benötigst: Personalausweis, Passbild, Sehtest, Erste-Hilfe-Kurs-Bescheinigung und gegebenenfalls weitere Dokumente je nach Führerscheinklasse.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-      </section>
+      {/* FAQ - Objection Handling */}
+      <ConversionFAQ />
 
-      {/* Final CTA */}
-      <section className="py-16 bg-blue-600 text-white text-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+      {/* Final CTA - Last Chance */}
+      <section className="py-16 bg-gradient-to-r from-primary via-primary/95 to-primary text-white text-center relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/4 w-32 h-32 bg-white/5 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-0 right-1/4 w-24 h-24 bg-white/10 rounded-full animate-pulse delay-1000"></div>
+        </div>
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Urgency Reminder */}
+          <div className="inline-flex items-center gap-2 bg-red-500/90 text-white px-6 py-3 rounded-full text-sm font-bold mb-6 animate-pulse">
+            ⏰ Nur noch wenige Plätze verfügbar!
+          </div>
+          
+          <h2 className="text-3xl lg:text-5xl font-bold mb-6">
             Jetzt anmelden & Führerschein starten
           </h2>
-          <p className="text-xl mb-8 text-blue-100">
-            Sichere dir jetzt deinen Platz und spare 50 €
+          <p className="text-xl lg:text-2xl mb-4 text-blue-100 font-medium">
+            Sichere dir das 479€ Komplettpaket
           </p>
+          <p className="text-lg mb-8 text-blue-200">
+            ✅ Theorie ✅ LernApp ✅ Erste Hilfe - alles inklusive!
+          </p>
+          
           <Button 
             size="lg" 
-            className="bg-white text-blue-700 hover:bg-gray-100 text-lg px-8 py-4"
+            className="bg-white text-primary hover:bg-gray-100 text-xl px-16 py-6 rounded-2xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110"
             onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Jetzt anmelden
+            🎯 Jetzt 479€ Angebot sichern
           </Button>
+          
+          <div className="mt-8 text-sm opacity-90">
+            <p className="mb-2">🔥 Limitiert auf die ersten 50 Anmeldungen</p>
+            <p>💪 Über 500 zufriedene Fahrschüler vertrauen uns bereits</p>
+          </div>
         </div>
       </section>
 

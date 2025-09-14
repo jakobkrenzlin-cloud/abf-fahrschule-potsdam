@@ -36,9 +36,12 @@ const Landing = () => {
       <header className="bg-white shadow-sm py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center">
-            <div className="w-32 h-12 bg-muted rounded flex items-center justify-center text-xs text-muted-foreground">
-              Logo Platzhalter
-            </div>
+            <img 
+              src="/abf-logo.png"
+              alt="Fahrschule ABF Logo - Professionelle Fahrausbildung in Potsdam-Babelsberg"
+              className="h-12 w-auto"
+              loading="eager"
+            />
           </div>
         </div>
       </header>

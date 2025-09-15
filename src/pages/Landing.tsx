@@ -23,7 +23,7 @@ const Landing = () => {
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/4933196795854', '_blank');
+    window.open('https://wa.me/4915752387583', '_blank');
   };
 
   const handleCall = () => {

@@ -86,7 +86,7 @@ const ProcessSteps = () => {
               <PartyPopper className="w-8 h-8 text-primary" />
             </div>
             <p className="text-lg text-gray-600">
-              🎉 Herzlichen Glückwunsch – ab jetzt fährst du selbstständig!
+              Herzlichen Glückwunsch – ab jetzt fährst du selbstständig!
             </p>
           </div>
         </div>

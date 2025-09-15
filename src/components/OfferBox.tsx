@@ -29,7 +29,7 @@ const OfferBox = () => {
 
             <div className="text-center mb-8">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                🎯 Sonderangebot: Anmeldung nur 
+                Sonderangebot: Anmeldung nur 
                 <span className="text-primary text-5xl lg:text-6xl block mt-2">479 €</span>
               </h2>
               <p className="text-xl text-gray-600 font-medium">
@@ -53,14 +53,14 @@ const OfferBox = () => {
 
             <div className="text-center mb-8">
               <p className="text-lg font-semibold text-red-600 mb-4">
-                ⏰ Nur bis {deadlineStr} gültig – jetzt handeln!
+                Nur bis {deadlineStr} gültig – jetzt handeln!
               </p>
               <Button 
                 size="lg"
                 onClick={scrollToForm}
                 className="bg-primary hover:bg-primary/90 text-white px-12 py-4 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
-                Jetzt anmelden & Platz sichern 🚀
+                Jetzt anmelden & Platz sichern
               </Button>
             </div>
 

@@ -68,7 +68,7 @@ const TestimonialsBox = () => {
             <span className="text-sm font-medium">DEKRA Partner</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center text-xs font-semibold">⭐</div>
+            <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center text-xs font-semibold">G</div>
             <span className="text-sm font-medium">Google Bewertungen</span>
           </div>
         </div>

@@ -57,11 +57,11 @@ const Landing = () => {
             <div>
               {/* Urgency Badge */}
               <div className="inline-flex items-center gap-2 bg-red-500/90 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 animate-pulse">
-                🔥 Limitiertes Angebot
+                Limitiertes Angebot
               </div>
               
               <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-                🚗 Dein Führerschein in Potsdam-Babelsberg
+                Dein Führerschein in Potsdam-Babelsberg
                 <span className="block text-yellow-300 text-5xl lg:text-7xl mt-2">
                   Jetzt für nur 479 €!
                 </span>
@@ -74,7 +74,7 @@ const Landing = () => {
                 className="bg-white text-primary hover:bg-gray-100 text-lg px-12 py-6 rounded-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
                 onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Jetzt anmelden & Platz sichern 🚀
+                Jetzt anmelden & Platz sichern
               </Button>
             </div>
             <div className="bg-white/10 rounded-2xl p-8 backdrop-blur-sm border border-white/20">
@@ -83,7 +83,7 @@ const Landing = () => {
               </div>
               <div className="mt-6 bg-white/20 rounded-lg p-4 text-center backdrop-blur-sm">
                 <p className="text-sm font-semibold text-white">
-                  ✨ Echte Fahrschüler bei ABF Fahrschule
+                  Echte Fahrschüler bei ABF Fahrschule
                 </p>
               </div>
             </div>
@@ -115,10 +115,10 @@ const Landing = () => {
             className="bg-white text-primary hover:bg-gray-100 text-lg px-12 py-6 rounded-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
             onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Jetzt anmelden & 479€ Angebot sichern 🎯
+            Jetzt anmelden & 479€ Angebot sichern
           </Button>
           <div className="mt-6 text-sm opacity-90">
-            ⏰ Limitiert auf die ersten 50 Anmeldungen
+            Limitiert auf die ersten 50 Anmeldungen
           </div>
         </div>
       </section>
@@ -133,7 +133,7 @@ const Landing = () => {
             {/* Offer Reminder */}
             <div className="text-center mb-8 p-4 bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl border-l-4 border-primary">
               <p className="text-primary font-bold text-lg">
-                🎯 Sichere dir jetzt das 479€ Komplettpaket!
+                Sichere dir jetzt das 479€ Komplettpaket!
               </p>
               <p className="text-sm text-gray-600 mt-1">
                 Limitiert auf die ersten 50 Anmeldungen
@@ -195,7 +195,7 @@ const Landing = () => {
                 size="lg" 
                 className="w-full bg-primary hover:bg-primary/90 h-14 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
-                🚀 Jetzt Anfrage senden & 479€ Angebot sichern
+                Jetzt Anfrage senden & 479€ Angebot sichern
               </Button>
             </form>
             
@@ -222,7 +222,7 @@ const Landing = () => {
             </div>
 
             <div className="text-center mt-6 text-sm text-gray-500">
-              <p>🔒 Deine Daten sind sicher und werden vertraulich behandelt</p>
+              <p>Deine Daten sind sicher und werden vertraulich behandelt</p>
             </div>
           </div>
         </div>
@@ -242,7 +242,7 @@ const Landing = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Urgency Reminder */}
           <div className="inline-flex items-center gap-2 bg-red-500/90 text-white px-6 py-3 rounded-full text-sm font-bold mb-6 animate-pulse">
-            ⏰ Nur noch wenige Plätze verfügbar!
+            Nur noch wenige Plätze verfügbar!
           </div>
           
           <h2 className="text-3xl lg:text-5xl font-bold mb-6">
@@ -252,7 +252,7 @@ const Landing = () => {
             Sichere dir das 479€ Komplettpaket
           </p>
           <p className="text-lg mb-8 text-blue-200">
-            ✅ Theorie ✅ LernApp ✅ Erste Hilfe - alles inklusive!
+            Theorie • LernApp • Erste Hilfe - alles inklusive!
           </p>
           
           <Button 
@@ -260,12 +260,12 @@ const Landing = () => {
             className="bg-white text-primary hover:bg-gray-100 text-xl px-16 py-6 rounded-2xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110"
             onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            🎯 Jetzt 479€ Angebot sichern
+            Jetzt 479€ Angebot sichern
           </Button>
           
           <div className="mt-8 text-sm opacity-90">
-            <p className="mb-2">🔥 Limitiert auf die ersten 50 Anmeldungen</p>
-            <p>💪 Über 500 zufriedene Fahrschüler vertrauen uns bereits</p>
+            <p className="mb-2">Limitiert auf die ersten 50 Anmeldungen</p>
+            <p>Über 500 zufriedene Fahrschüler vertrauen uns bereits</p>
           </div>
         </div>
       </section>

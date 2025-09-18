@@ -17,10 +17,6 @@ const ConversionFAQ = () => {
       answer: "Selbstverständlich! Wir haben sowohl Schaltgetriebe- als auch Automatik-Fahrzeuge in unserer Flotte. Bei der Anmeldung kannst du einfach angeben, welche Art von Fahrzeug du bevorzugst."
     },
     {
-      question: "Was kostet der Führerschein insgesamt mit dem 479€ Paket?",
-      answer: "Das 479€ Paket deckt die Anmeldung, 14 Theoriestunden, die LernApp und den Erste-Hilfe-Kurs ab. Zusätzlich benötigst du noch Fahrstunden (ab 55€/Stunde), Sonderfahrten und Prüfungsgebühren. Im Schnitt liegen die Gesamtkosten bei 1.400-1.800€ - je nach benötigten Fahrstunden."
-    },
-    {
       question: "Was passiert, wenn ich länger brauche als geplant?",
       answer: "Kein Problem! Jeder lernt in seinem eigenen Tempo. Das 479€ Paket bleibt gültig und weitere Fahrstunden buchst du einfach dazu. Wir begleiten dich, bis du sicher fährst und die Prüfung bestehst."
     },

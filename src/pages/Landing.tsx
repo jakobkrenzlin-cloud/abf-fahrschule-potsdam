@@ -4,8 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/lib/supabase";
 import OfferBox from "@/components/OfferBox";
 import TestimonialsBox from "@/components/TestimonialsBox";
 import ProcessSteps from "@/components/ProcessSteps";
@@ -17,64 +15,11 @@ const Landing = () => {
     phone: '',
     licenseClass: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
 
-  const handleFormSubmit = async (e: React.FormEvent) => {
+  const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!formData.name || !formData.phone || !formData.licenseClass) {
-      toast({
-        title: "Fehler",
-        description: "Bitte fülle alle Felder aus.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    try {
-      const { error } = await supabase
-        .from('contact_submissions')
-        .insert([
-          {
-            name: formData.name,
-            phone: formData.phone,
-            license_class: formData.licenseClass,
-          }
-        ]);
-
-      if (error) {
-        console.error('Error submitting form:', error);
-        toast({
-          title: "Fehler",
-          description: "Deine Anfrage konnte nicht gesendet werden. Bitte versuche es erneut.",
-          variant: "destructive",
-        });
-      } else {
-        toast({
-          title: "Anfrage gesendet!",
-          description: "Wir melden uns innerhalb von 24h bei dir zurück.",
-        });
-        
-        // Reset form
-        setFormData({
-          name: '',
-          phone: '',
-          licenseClass: ''
-        });
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      toast({
-        title: "Fehler",
-        description: "Ein unerwarteter Fehler ist aufgetreten.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Form submission logic
+    console.log('Form submitted:', formData);
   };
 
   const handleWhatsApp = () => {
@@ -248,10 +193,9 @@ const Landing = () => {
               <Button 
                 type="submit" 
                 size="lg" 
-                disabled={isSubmitting}
-                className="w-full bg-primary hover:bg-primary/90 h-14 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-primary hover:bg-primary/90 h-14 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
-                {isSubmitting ? 'Wird gesendet...' : 'Jetzt Anfrage senden & 479€ Angebot sichern'}
+                Jetzt Anfrage senden & 479€ Angebot sichern
               </Button>
             </form>
             

@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import OfferBox from "@/components/OfferBox";
 import TestimonialsBox from "@/components/TestimonialsBox";
 import ProcessSteps from "@/components/ProcessSteps";
@@ -15,11 +17,52 @@ const Landing = () => {
     phone: '',
     licenseClass: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase
+        .from('leads')
+        .insert([
+          {
+            name: formData.name,
+            phone: formData.phone,
+            license_class: formData.licenseClass,
+            source: 'landingpage',
+            consent: true
+          }
+        ]);
+
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: "Anfrage erfolgreich gesendet!",
+        description: "Wir melden uns innerhalb von 24h bei dir zurück.",
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        phone: '',
+        licenseClass: ''
+      });
+
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Fehler beim Senden",
+        description: "Bitte versuche es nochmal oder rufe uns direkt an.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleWhatsApp = () => {
@@ -193,9 +236,10 @@ const Landing = () => {
               <Button 
                 type="submit" 
                 size="lg" 
-                className="w-full bg-primary hover:bg-primary/90 h-14 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                disabled={isSubmitting}
+                className="w-full bg-primary hover:bg-primary/90 h-14 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50"
               >
-                Jetzt Anfrage senden & 479€ Angebot sichern
+                {isSubmitting ? "Wird gesendet..." : "Jetzt Anfrage senden & 479€ Angebot sichern"}
               </Button>
             </form>
             

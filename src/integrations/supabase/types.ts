@@ -14,7 +14,51 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      leads: {
+        Row: {
+          consent: boolean | null
+          created_at: string
+          email: string | null
+          id: string
+          license_class: string | null
+          message: string | null
+          name: string | null
+          phone: string | null
+          source: string | null
+          utm_campaign: string | null
+          utm_medium: string | null
+          utm_source: string | null
+        }
+        Insert: {
+          consent?: boolean | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          license_class?: string | null
+          message?: string | null
+          name?: string | null
+          phone?: string | null
+          source?: string | null
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+        }
+        Update: {
+          consent?: boolean | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          license_class?: string | null
+          message?: string | null
+          name?: string | null
+          phone?: string | null
+          source?: string | null
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

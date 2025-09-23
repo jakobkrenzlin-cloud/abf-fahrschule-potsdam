@@ -128,59 +128,59 @@ const Landing = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="mt-6 bg-white/20 rounded-lg p-4 text-center backdrop-blur-sm">
-                <p className="text-sm font-semibold text-white mb-4">
+              <div className="mt-6 bg-white/20 rounded-lg p-3 text-center backdrop-blur-sm">
+                <p className="text-xs font-semibold text-white mb-2">
                   Echte Fahrschüler bei ABF Fahrschule
                 </p>
-                <div className="grid grid-cols-3 gap-2">
-                  <div className="aspect-square rounded-lg overflow-hidden">
+                <div className="grid grid-cols-6 gap-1">
+                  <div className="aspect-square rounded overflow-hidden">
                     <img 
                       src="/lovable-uploads/success-students-1.jpg" 
                       alt="Erfolgreiche Fahrschüler vor der ABF Fahrschule"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="aspect-square rounded-lg overflow-hidden">
+                  <div className="aspect-square rounded overflow-hidden">
                     <img 
                       src="/lovable-uploads/success-students-2.jpg" 
                       alt="Fahrschüler mit Fahrlehrer nach bestandener Prüfung"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="aspect-square rounded-lg overflow-hidden">
+                  <div className="aspect-square rounded overflow-hidden">
                     <img 
                       src="/lovable-uploads/success-students-3.jpg" 
                       alt="Glückliche Fahrschüler mit Führerschein"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="aspect-square rounded-lg overflow-hidden">
+                  <div className="aspect-square rounded overflow-hidden">
                     <img 
                       src="/lovable-uploads/success-students-4.jpg" 
                       alt="Erfolgreiche Fahrschülerinnen vor der Fahrschule"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="aspect-square rounded-lg overflow-hidden">
+                  <div className="aspect-square rounded overflow-hidden">
                     <img 
                       src="/lovable-uploads/success-students-5.jpg" 
                       alt="Fahrschülerin mit Führerschein vor ABF Fahrschule"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="aspect-square rounded-lg overflow-hidden">
+                  <div className="aspect-square rounded overflow-hidden">
                     <img 
                       src="/lovable-uploads/success-students-6.jpg" 
                       alt="Fahrschülerin und Fahrlehrer nach erfolgreichem Abschluss"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </section>
 
       {/* Big Value Proposition - Offer Box */}
       <OfferBox />

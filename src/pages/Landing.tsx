@@ -121,8 +121,12 @@ const Landing = () => {
               </Button>
             </div>
             <div className="bg-white/10 rounded-2xl p-8 backdrop-blur-sm border border-white/20">
-              <div className="aspect-video bg-white/20 rounded-xl flex items-center justify-center text-white/70 text-lg font-medium">
-                Fahrschüler & Fahrlehrer - Bild Platzhalter
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img 
+                  src="/lovable-uploads/abf-storefront.jpg" 
+                  alt="ABF Fahrschule Potsdam - Bildungszentrum mit Motorrädern vor dem Geschäft"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="mt-6 bg-white/20 rounded-lg p-4 text-center backdrop-blur-sm">
                 <p className="text-sm font-semibold text-white">

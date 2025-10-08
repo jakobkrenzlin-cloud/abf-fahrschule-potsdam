@@ -1,6 +1,7 @@
 import React from 'react';
 import { Check, Phone, Mail, MapPin, Car, Clock, Award } from 'lucide-react';
 import { Button } from './ui/button';
+import { Link } from 'react-router-dom';
 
 const OffersSection = () => {
   const scrollToContact = () => {
@@ -58,9 +59,11 @@ const OffersSection = () => {
               </div>
 
               <div className="pt-4 space-y-3">
-                <Button onClick={scrollToContact} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 text-lg">
-                  Jetzt für 479 € anmelden
-                </Button>
+                <Link to="/Anmeldung">
+                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 text-lg">
+                    Jetzt für 479 € anmelden
+                  </Button>
+                </Link>
                 <Button onClick={scrollToContact} variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold py-3">
                   Kostenlos beraten lassen
                 </Button>

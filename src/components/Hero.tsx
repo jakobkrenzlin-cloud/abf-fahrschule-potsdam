@@ -1,7 +1,8 @@
 
 import React from 'react';
-import { ArrowRight, Shield, Users, Award } from 'lucide-react';
+import { ArrowRight, Shield, Users, Award, Sparkles } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -64,18 +65,26 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
+              <Link 
+                to="/Anmeldung"
+                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 text-lg font-bold animate-pulse"
+              >
+                <Sparkles className="w-5 h-5" />
+                <span>Jetzt anmelden & durchstarten!</span>
+                <ArrowRight className="w-5 h-5" />
+              </Link>
               <button 
                 onClick={scrollToContact}
                 className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2 text-lg font-semibold"
               >
-                <span>Kostenlose Beratung Fahrschule Potsdam</span>
+                <span>Kostenlose Beratung</span>
                 <ArrowRight className="w-5 h-5" />
               </button>
               <button 
                 onClick={() => document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })}
                 className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors text-lg font-semibold"
               >
-                Führerschein in Potsdam
+                Führerschein-Ablauf
               </button>
             </div>
           </div>

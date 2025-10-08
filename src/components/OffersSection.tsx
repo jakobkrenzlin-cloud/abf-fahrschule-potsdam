@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, Phone, Mail, MapPin, Car, Truck, Clock, Award } from 'lucide-react';
+import { Check, Phone, Mail, MapPin, Car, Clock, Award } from 'lucide-react';
 import { Button } from './ui/button';
 
 const OffersSection = () => {
@@ -21,12 +21,12 @@ const OffersSection = () => {
             Unsere Angebote für Ihren Erfolg in Potsdam
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Starten Sie jetzt Ihre Fahrausbildung oder beginnen Sie eine neue Karriere als Berufskraftfahrer – 
-            mit professioneller Betreuung und attraktiven Förderungsmöglichkeiten.
+            Starten Sie jetzt Ihre Fahrausbildung mit professioneller Betreuung und 
+            modernem Unterricht in Potsdam.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div className="max-w-2xl mx-auto mb-16">
           {/* Führerschein Angebot */}
           <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
             <div className="bg-blue-600 text-white p-6">
@@ -63,47 +63,6 @@ const OffersSection = () => {
                 </Button>
                 <Button onClick={scrollToContact} variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold py-3">
                   Kostenlos beraten lassen
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          {/* Berufsausbildung Angebot */}
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-            <div className="bg-green-600 text-white p-6">
-              <div className="flex items-center space-x-3 mb-4">
-                <Truck className="w-8 h-8" />
-                <div>
-                  <h3 className="text-2xl font-bold">Berufsausbildung</h3>
-                  <p className="text-green-100">Mit 100% Förderung zum neuen Job als Fahrer</p>
-                </div>
-              </div>
-              <div className="bg-white/20 rounded-lg p-4">
-                <div className="text-2xl font-bold mb-1">100% Förderung</div>
-                <div className="text-sm text-green-100">durch Jobcenter oder Agentur für Arbeit möglich</div>
-              </div>
-            </div>
-
-            <div className="p-6 space-y-6">
-              <p className="text-gray-700 leading-relaxed">
-                Starte deine Ausbildung zum Kurierfahrer/in oder Berufskraftfahrer/in im Güterverkehr – 
-                bis zu 100% Förderung durch das Jobcenter oder die Agentur für Arbeit möglich!
-              </p>
-
-              <div className="space-y-3">
-                <h4 className="font-semibold text-gray-900 mb-3">Ihre Vorteile:</h4>
-                {['Bis zu 100% Förderung möglich', 'Kursstart jederzeit möglich', 'Zukunftssicherer Beruf', 'Anerkannte Ausbildungsstätte (BKrFQG & AZAV)'].map((item, index) => <div key={index} className="flex items-center space-x-3">
-                    <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
-                    <span className="text-gray-700">{item}</span>
-                  </div>)}
-              </div>
-
-              <div className="pt-4 space-y-3">
-                <Button onClick={scrollToContact} className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 text-lg">
-                  Jetzt Kurierfahrer/in werden
-                </Button>
-                <Button onClick={scrollToContact} className="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3">
-                  Ausbildung zum Berufskraftfahrer starten
                 </Button>
               </div>
             </div>
@@ -163,11 +122,6 @@ const OffersSection = () => {
             <div className="flex items-center space-x-2">
               <Clock className="w-6 h-6 text-green-600" />
               <span className="text-gray-700 font-medium">Schnelle Terminvergabe</span>
-            </div>
-            <div className="w-px h-8 bg-gray-200"></div>
-            <div className="flex items-center space-x-2">
-              <Check className="w-6 h-6 text-orange-600" />
-              <span className="text-gray-700 font-medium">100% Förderung möglich</span>
             </div>
           </div>
         </div>

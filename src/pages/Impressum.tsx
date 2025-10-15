@@ -42,12 +42,6 @@ const Impressum = () => {
           </div>
 
           <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Umsatzsteuer-ID</h3>
-            <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-            [USt-ID noch zu ergänzen]</p>
-          </div>
-
-          <div className="mb-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Aufsichtsbehörde</h3>
             <p>Fahrerlaubnisbehörde Potsdam<br />
             Friedrich-Ebert-Straße 79/81<br />

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 interface Lead {
   id: string;
@@ -15,10 +17,42 @@ interface Lead {
 const Admin = () => {
   const [leads, setLeads] = useState<Lead[]>([]);
   const [loading, setLoading] = useState(true);
+  const [hasAccess, setHasAccess] = useState<boolean | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    fetchLeads();
+    checkAuthAndFetch();
   }, []);
+
+  const checkAuthAndFetch = async () => {
+    const { data: { session } } = await supabase.auth.getSession();
+    
+    if (!session) {
+      navigate('/auth');
+      return;
+    }
+
+    const { data: roles, error } = await supabase
+      .from('user_roles')
+      .select('role')
+      .eq('user_id', session.user.id)
+      .eq('role', 'admin')
+      .single();
+
+    if (error || !roles) {
+      setHasAccess(false);
+      setLoading(false);
+      return;
+    }
+
+    setHasAccess(true);
+    fetchLeads();
+  };
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    navigate('/auth');
+  };
 
   const fetchLeads = async () => {
     try {
@@ -54,12 +88,32 @@ const Admin = () => {
     );
   }
 
+  if (hasAccess === false) {
+    return (
+      <div className="min-h-screen bg-background p-8 flex items-center justify-center">
+        <Card className="max-w-md">
+          <CardContent className="p-8 text-center">
+            <p className="text-lg text-destructive mb-4">
+              Zugriff verweigert. Sie benötigen Admin-Rechte.
+            </p>
+            <Button onClick={handleLogout}>Abmelden</Button>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background p-8">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8 text-foreground">
-          Kontaktanfragen ({leads.length})
-        </h1>
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-3xl font-bold text-foreground">
+            Kontaktanfragen ({leads.length})
+          </h1>
+          <Button onClick={handleLogout} variant="outline">
+            Abmelden
+          </Button>
+        </div>
         
         {leads.length === 0 ? (
           <Card>

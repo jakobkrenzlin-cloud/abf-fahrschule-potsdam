@@ -135,5 +135,21 @@
       gtag('js', new Date());
       gtag('config', 'AW-17551238202');
     </script>
+    
+    <!-- Google Ads Conversion Tracking -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-17551238202/UhzpCN_gq6YbELrIirFB',
+            'event_callback': callback
+        });
+        return false;
+      }
+    </script>
   </body>
 </html>

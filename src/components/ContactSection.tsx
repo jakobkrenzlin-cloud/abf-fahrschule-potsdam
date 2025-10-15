@@ -71,6 +71,11 @@ const ContactSection = () => {
         description: "Wir melden uns innerhalb von 24h bei dir zurück.",
       });
 
+      // Trigger Google Ads conversion tracking
+      if (typeof (window as any).gtag_report_conversion === 'function') {
+        (window as any).gtag_report_conversion();
+      }
+
       // Reset form
       setFormData({
         name: '',

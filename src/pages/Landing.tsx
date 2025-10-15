@@ -10,6 +10,18 @@ import OfferBox from "@/components/OfferBox";
 import TestimonialsBox from "@/components/TestimonialsBox";
 import ProcessSteps from "@/components/ProcessSteps";
 import ConversionFAQ from "@/components/ConversionFAQ";
+import { z } from "zod";
+
+const leadSchema = z.object({
+  name: z.string().trim()
+    .min(2, 'Name muss mindestens 2 Zeichen lang sein')
+    .max(100, 'Name darf maximal 100 Zeichen lang sein'),
+  phone: z.string().trim()
+    .regex(/^[+]?[0-9\s()-]{6,20}$/, 'Ungültige Telefonnummer'),
+  licenseClass: z.enum(['b', 'a1', 'a2', 'a', 'be'], {
+    errorMap: () => ({ message: 'Ungültige Führerscheinklasse' })
+  })
+});
 
 const Landing = () => {
   const [formData, setFormData] = useState({
@@ -25,6 +37,23 @@ const Landing = () => {
     setIsSubmitting(true);
 
     try {
+      // Validate input
+      const result = leadSchema.safeParse({
+        name: formData.name,
+        phone: formData.phone,
+        licenseClass: formData.licenseClass
+      });
+
+      if (!result.success) {
+        toast({
+          title: "Ungültige Eingabe",
+          description: result.error.errors[0].message,
+          variant: "destructive",
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
       const { error } = await supabase
         .from('leads')
         .insert([
@@ -54,7 +83,6 @@ const Landing = () => {
       });
 
     } catch (error) {
-      console.error('Error submitting form:', error);
       toast({
         title: "Fehler beim Senden",
         description: "Bitte versuche es nochmal oder rufe uns direkt an.",

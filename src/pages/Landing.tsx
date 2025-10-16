@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -24,6 +25,7 @@ const leadSchema = z.object({
 });
 
 const Landing = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -77,17 +79,8 @@ const Landing = () => {
         });
       }
 
-      toast({
-        title: "Anfrage erfolgreich gesendet!",
-        description: "Wir melden uns innerhalb von 24h bei dir zurück.",
-      });
-
-      // Reset form
-      setFormData({
-        name: '',
-        phone: '',
-        licenseClass: ''
-      });
+      // Redirect to thank you page
+      navigate('/danke');
 
     } catch (error) {
       toast({

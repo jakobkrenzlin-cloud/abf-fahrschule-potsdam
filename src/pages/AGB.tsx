@@ -50,8 +50,6 @@ const AGB = () => {
           <ul className="mb-4 ml-6 list-disc">
             <li>Fahrstunden können bis 48 Stunden (2 Tage) vor dem vereinbarten Termin kostenfrei storniert werden</li>
             <li>Bei späterer Stornierung oder Nichterscheinen werden 75% der Stundengebühr fällig</li>
-            <li>Bei Rücktritt vom Ausbildungsvertrag werden bereits geleistete Fahrstunden nach Aufwand abgerechnet</li>
-            <li>Die Grundgebühr wird bei Rücktritt anteilig erstattet, soweit noch keine Leistungen erbracht wurden</li>
           </ul>
           <p className="mb-4 text-sm italic">[Diese Regelungen sind noch anzupassen - bitte finale Stornobedingungen nachreichen]</p>
 

@@ -48,16 +48,16 @@ const AGB = () => {
             <li>Fahrstunden können bis 48 Stunden (2 Tage) vor dem vereinbarten Termin kostenfrei storniert werden</li>
             <li>Bei späterer Stornierung oder Nichterscheinen werden 75% der Stundengebühr fällig</li>
           </ul>
-          <p className="mb-4 text-sm italic">[Diese Regelungen sind noch anzupassen - bitte finale Stornobedingungen nachreichen]</p>
+          
 
           
           <p className="mb-4">Die Haftung der Fahrschule ist ausgeschlossen für:</p>
           <ul className="mb-4 ml-6 list-disc">
-            <li>Verspätungen durch höhere Gewalt oder Verkehrsstörungen</li>
-            <li>Schäden, die durch das Verhalten des Fahrschülers entstehen</li>
-            <li>Den Ausgang der Führerscheinprüfung</li>
+            
+            
+            
           </ul>
-          <p className="mb-4">Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt. Die Haftung für leichte Fahrlässigkeit ist auf die Verletzung wesentlicher Vertragspflichten beschränkt.</p>
+          
 
           <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">§ 8 Kündigung</h2>
           <p className="mb-4">Beide Parteien können den Ausbildungsvertrag jederzeit mit einer Frist von 14 Tagen kündigen. Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt.</p>

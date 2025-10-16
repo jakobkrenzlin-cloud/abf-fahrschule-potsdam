@@ -1,8 +1,11 @@
+
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+
 const AGB = () => {
-  return <div className="min-h-screen bg-white">
+  return (
+    <div className="min-h-screen bg-white">
       <Header />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Allgemeine Geschäftsbedingungen (AGB)</h1>
@@ -43,21 +46,23 @@ const AGB = () => {
           <p className="mb-4">Die Grundgebühr ist bei Vertragsabschluss fällig. Fahrstunden sind vor Antritt zu bezahlen, sofern nicht anders vereinbart.</p>
 
           <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">§ 6 Rücktritt und Stornierung</h2>
-          
+          <p className="mb-4"><strong>[Platzhalter - Musterregelung bis zur finalen Abstimmung:]</strong></p>
           <ul className="mb-4 ml-6 list-disc">
             <li>Fahrstunden können bis 48 Stunden (2 Tage) vor dem vereinbarten Termin kostenfrei storniert werden</li>
             <li>Bei späterer Stornierung oder Nichterscheinen werden 75% der Stundengebühr fällig</li>
+            <li>Bei Rücktritt vom Ausbildungsvertrag werden bereits geleistete Fahrstunden nach Aufwand abgerechnet</li>
+            <li>Die Grundgebühr wird bei Rücktritt anteilig erstattet, soweit noch keine Leistungen erbracht wurden</li>
           </ul>
-          
+          <p className="mb-4 text-sm italic">[Diese Regelungen sind noch anzupassen - bitte finale Stornobedingungen nachreichen]</p>
 
-          
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">§ 7 Haftung</h2>
           <p className="mb-4">Die Haftung der Fahrschule ist ausgeschlossen für:</p>
           <ul className="mb-4 ml-6 list-disc">
-            
-            
-            
+            <li>Verspätungen durch höhere Gewalt oder Verkehrsstörungen</li>
+            <li>Schäden, die durch das Verhalten des Fahrschülers entstehen</li>
+            <li>Den Ausgang der Führerscheinprüfung</li>
           </ul>
-          
+          <p className="mb-4">Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt. Die Haftung für leichte Fahrlässigkeit ist auf die Verletzung wesentlicher Vertragspflichten beschränkt.</p>
 
           <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">§ 8 Kündigung</h2>
           <p className="mb-4">Beide Parteien können den Ausbildungsvertrag jederzeit mit einer Frist von 14 Tagen kündigen. Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt.</p>
@@ -73,6 +78,8 @@ const AGB = () => {
         </div>
       </div>
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default AGB;

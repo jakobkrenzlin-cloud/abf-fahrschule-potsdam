@@ -70,15 +70,17 @@ const Landing = () => {
         throw error;
       }
 
+      // Trigger Google Ads conversion tracking
+      if (typeof (window as any).gtag === 'function') {
+        (window as any).gtag('event', 'conversion', {
+          'send_to': 'AW-17551238202/UhzpCN_gq6YbELrIirFB'
+        });
+      }
+
       toast({
         title: "Anfrage erfolgreich gesendet!",
         description: "Wir melden uns innerhalb von 24h bei dir zurück.",
       });
-
-      // Trigger Google Ads conversion tracking
-      if (typeof (window as any).gtag_report_conversion === 'function') {
-        (window as any).gtag_report_conversion();
-      }
 
       // Reset form
       setFormData({

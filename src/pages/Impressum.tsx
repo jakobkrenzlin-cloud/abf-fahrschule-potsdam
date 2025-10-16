@@ -20,7 +20,7 @@ const Impressum = () => {
 
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Vertreten durch:</h3>
-            <p>Aslihan Elik (Geschäftsführerin)</p>
+            <p>Aslihan Celik (Geschäftsführerin)</p>
           </div>
 
           <div className="mb-6">
@@ -50,7 +50,7 @@ const Impressum = () => {
 
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
-            <p>Aslihan Elik<br />
+            <p>Aslihan Celik<br />
             Tuchmacherstraße 45b<br />
             14482 Potsdam</p>
           </div>

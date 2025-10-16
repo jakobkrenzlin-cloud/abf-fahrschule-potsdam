@@ -19,7 +19,7 @@ const Datenschutz = () => {
           <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">2. Verantwortliche Stelle</h2>
           <p className="mb-4">Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
           <p className="mb-4"><strong>ABF Bildungszentrum und Fahrschule GmbH</strong><br />
-          Aslihan Elik<br />
+          Aslihan Celik<br />
           Tuchmacherstraße 45b<br />
           14482 Potsdam<br />
           Telefon: 0331 / 967 958 54<br />
@@ -61,7 +61,7 @@ const Datenschutz = () => {
 
           <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">7. Datenschutzbeauftragte</h2>
           <p className="mb-4">Bei Fragen zum Datenschutz wenden Sie sich bitte an:</p>
-          <p className="mb-4">Aslihan Elik<br />
+          <p className="mb-4">Aslihan Celik<br />
           ABF Bildungszentrum und Fahrschule GmbH<br />
           Tuchmacherstraße 45b<br />
           14482 Potsdam<br />

@@ -48,8 +48,8 @@ const AGB = () => {
           <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">§ 6 Rücktritt und Stornierung</h2>
           <p className="mb-4"><strong>[Platzhalter - Musterregelung bis zur finalen Abstimmung:]</strong></p>
           <ul className="mb-4 ml-6 list-disc">
-            <li>Fahrstunden können bis 24 Stunden vor dem vereinbarten Termin kostenfrei storniert werden</li>
-            <li>Bei späterer Stornierung oder Nichterscheinen wird die volle Stundengebühr fällig</li>
+            <li>Fahrstunden können bis 48 Stunden (2 Tage) vor dem vereinbarten Termin kostenfrei storniert werden</li>
+            <li>Bei späterer Stornierung oder Nichterscheinen werden 75% der Stundengebühr fällig</li>
             <li>Bei Rücktritt vom Ausbildungsvertrag werden bereits geleistete Fahrstunden nach Aufwand abgerechnet</li>
             <li>Die Grundgebühr wird bei Rücktritt anteilig erstattet, soweit noch keine Leistungen erbracht wurden</li>
           </ul>

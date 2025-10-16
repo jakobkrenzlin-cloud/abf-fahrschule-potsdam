@@ -45,14 +45,14 @@ const AGB = () => {
           <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">§ 6 Rücktritt und Stornierung</h2>
           
           <ul className="mb-4 ml-6 list-disc">
-            <li>Fahrstunden können bis 2 Werktage vor dem vereinbarten Termin kostenfrei storniert werden</li>
+            <li>Fahrstunden können bis 48 Stunden (2 Werktage) vor dem vereinbarten Termin kostenfrei storniert werden</li>
             <li>Bei späterer Stornierung oder Nichterscheinen werden 75% der Stundengebühr fällig</li>
             
             
           </ul>
           
 
-          <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">§ 7 Haftung</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">§ 7 Die Haftung der Fahrschule ist ausgeschlossen für</h2>
           <p className="mb-4">Die Haftung der Fahrschule ist ausgeschlossen für:</p>
           <ul className="mb-4 ml-6 list-disc">
             <li>Verspätungen durch höhere Gewalt oder Verkehrsstörungen</li>

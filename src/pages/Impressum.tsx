@@ -15,43 +15,50 @@ const Impressum = () => {
           
           <div className="mb-6">
             <p><strong>ABF Bildungszentrum und Fahrschule GmbH</strong></p>
-            <p>Tuchmacherstraße 45b<br />14482 Potsdam</p>
+            <p>Weber Park<br />
+            Tuchmacherstraße 45 B<br />
+            14482 Potsdam</p>
           </div>
 
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Vertreten durch:</h3>
-            <p>Aslihan Celik (Geschäftsführerin)</p>
+            <p>Alishan Celik (Geschäftsführer)</p>
           </div>
 
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Kontakt</h3>
-            <p>Telefon: 0331 / 967 958 54<br />
-            E-Mail: potsdam@fahrschuleabf.de</p>
+            <p>Telefon: 0331 / 9679 58 54<br />
+            E-Mail: <a href="mailto:kontakt@abf-fahrschule.de" className="text-blue-600 hover:text-blue-800">kontakt@abf-fahrschule.de</a></p>
           </div>
 
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Registereintrag</h3>
             <p>Eintragung im Handelsregister<br />
-            Registergericht: [Noch zu ergänzen]<br />
-            Registernummer: [HRB-Nummer noch zu ergänzen]</p>
+            Registergericht: Amtsgericht Potsdam<br />
+            Registernummer: HRB 40850</p>
           </div>
 
           <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Steuernummer</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Umsatzsteuer-Identifikationsnummer</h3>
             <p>Steuernummer: 3720153721</p>
           </div>
 
           <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Aufsichtsbehörde</h3>
-            <p>Fahrerlaubnisbehörde Potsdam<br />
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Zuständige Aufsichtsbehörde</h3>
+            <p>Landesamt für Verkehr Brandenburg<br />
+            Horstweg 102-109<br />
+            14478 Potsdam<br />
+            <br />
+            Fahrerlaubnisbehörde:<br />
+            Landeshauptstadt Potsdam<br />
             Friedrich-Ebert-Straße 79/81<br />
             14469 Potsdam</p>
           </div>
 
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
-            <p>Aslihan Celik<br />
-            Tuchmacherstraße 45b<br />
+            <p>Alishan Celik<br />
+            Weber Park, Tuchmacherstraße 45 B<br />
             14482 Potsdam</p>
           </div>
 

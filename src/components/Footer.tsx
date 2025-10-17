@@ -88,8 +88,8 @@ const Footer = () => {
               
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-blue-400" />
-                <a href="mailto:potsdam@fahrschuleabf.de" className="text-gray-400 hover:text-white transition-colors">
-                  potsdam@fahrschuleabf.de
+                <a href="mailto:kontakt@abf-fahrschule.de" className="text-gray-400 hover:text-white transition-colors">
+                  kontakt@abf-fahrschule.de
                 </a>
               </div>
             </div>

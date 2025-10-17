@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
+import { CookieConsentManager } from '@/lib/cookieConsent';
 
 const leadSchema = z.object({
   name: z.string().trim()
@@ -66,12 +67,8 @@ const ContactSection = () => {
         throw error;
       }
 
-      // Trigger Google Ads conversion tracking
-      if (typeof (window as any).gtag === 'function') {
-        (window as any).gtag('event', 'conversion', {
-          'send_to': 'AW-17551238202/UhzpCN_gq6YbELrIirFB'
-        });
-      }
+      // Trigger Google Ads conversion tracking with consent check
+      CookieConsentManager.triggerConversion();
 
       toast({
         title: "Anfrage erfolgreich gesendet!",

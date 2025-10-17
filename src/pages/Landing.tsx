@@ -12,6 +12,7 @@ import TestimonialsBox from "@/components/TestimonialsBox";
 import ProcessSteps from "@/components/ProcessSteps";
 import ConversionFAQ from "@/components/ConversionFAQ";
 import { z } from "zod";
+import { CookieConsentManager } from '@/lib/cookieConsent';
 
 const leadSchema = z.object({
   name: z.string().trim()
@@ -72,12 +73,8 @@ const Landing = () => {
         throw error;
       }
 
-      // Trigger Google Ads conversion tracking
-      if (typeof (window as any).gtag === 'function') {
-        (window as any).gtag('event', 'conversion', {
-          'send_to': 'AW-17551238202/UhzpCN_gq6YbELrIirFB'
-        });
-      }
+      // Trigger Google Ads conversion tracking with consent check
+      CookieConsentManager.triggerConversion();
 
       // Redirect to thank you page
       navigate('/danke');

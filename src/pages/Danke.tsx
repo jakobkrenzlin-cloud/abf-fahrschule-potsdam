@@ -4,15 +4,12 @@ import { CheckCircle, Phone, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { CookieConsentManager } from '@/lib/cookieConsent';
 
 const Danke = () => {
   useEffect(() => {
-    // Trigger Google Ads conversion tracking when page loads
-    if (typeof (window as any).gtag === 'function') {
-      (window as any).gtag('event', 'conversion', {
-        'send_to': 'AW-17551238202/UhzpCN_gq6YbELrIirFB'
-      });
-    }
+    // Trigger Google Ads conversion tracking with consent check
+    CookieConsentManager.triggerConversion();
   }, []);
 
   return (

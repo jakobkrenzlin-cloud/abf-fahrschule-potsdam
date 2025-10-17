@@ -70,28 +70,42 @@ const Datenschutz = () => {
           <h3 className="text-lg font-semibold text-gray-900 mb-2 mt-6">4.2 Google Fonts (lokal eingebunden)</h3>
           <p className="mb-4">Diese Website nutzt Google Fonts. Die Schriftarten sind lokal auf unserem Server gespeichert, sodass keine Verbindung zu Google-Servern hergestellt wird und keine personenbezogenen Daten an Google übermittelt werden.</p>
 
-          <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">5. Analyse- und Marketing-Tools</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">5. Cookie-Banner & Einwilligung</h2>
           
-          <h3 className="text-lg font-semibold text-gray-900 mb-2 mt-6">5.1 Google Ads Conversion-Tracking</h3>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2 mt-6">5.1 Cookie-Consent-Banner</h3>
+          <p className="mb-4">Beim ersten Besuch unserer Website erscheint ein Cookie-Banner, über den Sie Ihre Einwilligung zur Nutzung verschiedener Cookie-Kategorien erteilen können:</p>
+          <ul className="mb-4 ml-6 list-disc">
+            <li><strong>Essenziell:</strong> Technisch notwendige Cookies für den Betrieb der Website (immer aktiv)</li>
+            <li><strong>Statistik:</strong> Cookies zur Analyse des Nutzerverhaltens (z.B. Google Analytics)</li>
+            <li><strong>Marketing:</strong> Cookies zur Conversion-Messung (z.B. Google Ads)</li>
+          </ul>
+          <p className="mb-4"><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).</p>
+          <p className="mb-4"><strong>Speicherung der Einwilligung:</strong> Ihre Einwilligungsentscheidung wird lokal in Ihrem Browser gespeichert (localStorage) und ist 12 Monate gültig.</p>
+          <p className="mb-4"><strong>Widerruf:</strong> Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie Ihren Browser-Cache leeren oder über die Cookie-Einstellungen auf unserer Website.</p>
+
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">6. Analyse- und Marketing-Tools</h2>
+          
+          <h3 className="text-lg font-semibold text-gray-900 mb-2 mt-6">6.1 Google Ads Conversion-Tracking</h3>
           <p className="mb-4">Diese Website nutzt Google Ads Conversion-Tracking. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.</p>
           <p className="mb-4"><strong>Zweck:</strong> Messung der Wirksamkeit unserer Online-Werbung.</p>
           <p className="mb-4"><strong>Umfang:</strong> Es wird ein Cookie gesetzt, das 30 Tage gültig ist und pseudonyme Daten über Ihr Nutzungsverhalten sammelt.</p>
           <p className="mb-4"><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung über Cookie-Banner).</p>
           <p className="mb-4"><strong>Drittlandübermittlung:</strong> Google verarbeitet Daten in den USA. Google ist nach dem EU-US Data Privacy Framework zertifiziert.</p>
-          <p className="mb-4">Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie die Cookie-Einstellungen ändern.</p>
+          <p className="mb-4"><strong>Widerruf:</strong> Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie die Cookie-Einstellungen zurücksetzen. Dies verhindert zukünftige Datenverarbeitung, bereits gesendete Daten können jedoch nicht zurückgeholt werden.</p>
+          <p className="mb-4"><strong>Hinweis:</strong> Google Ads Tracking-Scripts werden erst nach Ihrer Einwilligung geladen und ausgeführt.</p>
           <p className="mb-4">Weitere Informationen: <a href="https://policies.google.com/privacy" className="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener noreferrer">Google Datenschutzerklärung</a></p>
 
-          <h3 className="text-lg font-semibold text-gray-900 mb-2 mt-6">5.2 Google Analytics (optional)</h3>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2 mt-6">6.2 Google Analytics (optional)</h3>
           <p className="mb-4">Falls aktiviert, nutzen wir Google Analytics. Die Nutzung erfolgt nur mit Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). IP-Adressen werden anonymisiert. Sie können Ihre Einwilligung jederzeit über den Cookie-Banner widerrufen.</p>
 
-          <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">6. Externe Kommunikationskanäle</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">7. Externe Kommunikationskanäle</h2>
           
-          <h3 className="text-lg font-semibold text-gray-900 mb-2 mt-6">6.1 WhatsApp-Kontakt</h3>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2 mt-6">7.1 WhatsApp-Kontakt</h3>
           <p className="mb-4">Auf unserer Website befindet sich ein Link/Button zur Kontaktaufnahme über WhatsApp. Wenn Sie diesen Button nutzen, werden Sie zur WhatsApp-Website bzw. -App weitergeleitet.</p>
           <p className="mb-4"><strong>Hinweis:</strong> Sobald Sie auf den Link klicken, gelten die Datenschutzbestimmungen von WhatsApp (Meta Platforms Ireland Limited).</p>
           <p className="mb-4">Wir haben keinen Einfluss auf die durch WhatsApp verarbeiteten Daten. Weitere Informationen: <a href="https://www.whatsapp.com/legal/privacy-policy" className="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener noreferrer">WhatsApp Datenschutz</a></p>
 
-          <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">7. Ihre Rechte als betroffene Person</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">8. Ihre Rechte als betroffene Person</h2>
           <p className="mb-4">Sie haben nach der DSGVO folgende Rechte:</p>
           <ul className="mb-4 ml-6 list-disc">
             <li><strong>Auskunftsrecht (Art. 15 DSGVO):</strong> Sie können Auskunft über die von uns verarbeiteten personenbezogenen Daten verlangen.</li>
@@ -113,14 +127,14 @@ const Datenschutz = () => {
             E-Mail: <a href="mailto:poststelle@lda.brandenburg.de" className="text-blue-600 hover:text-blue-800">poststelle@lda.brandenburg.de</a>
           </p>
 
-          <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">8. Speicherdauer</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">9. Speicherdauer</h2>
           <p className="mb-4">Wir speichern personenbezogene Daten nur so lange, wie es für die Erfüllung der Zwecke erforderlich ist, zu denen die Daten erhoben wurden, oder soweit dies durch gesetzliche Aufbewahrungsfristen vorgeschrieben ist (z.B. steuerrechtliche Aufbewahrungspflichten von 10 Jahren).</p>
           <p className="mb-4">Nach Ablauf der Speicherdauer werden die Daten routinemäßig gelöscht, sofern keine weitere Verarbeitung erforderlich ist.</p>
 
-          <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">9. Datensicherheit</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">10. Datensicherheit</h2>
           <p className="mb-4">Wir verwenden SSL/TLS-Verschlüsselung für die Übertragung sensibler Daten. Die Website ist über HTTPS abgesichert. Zusätzlich setzen wir technische und organisatorische Maßnahmen ein, um Ihre Daten vor unberechtigtem Zugriff, Verlust oder Missbrauch zu schützen.</p>
 
-          <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">10. Kontakt in Datenschutzfragen</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">11. Kontakt in Datenschutzfragen</h2>
           <p className="mb-4">Bei Fragen zum Datenschutz wenden Sie sich bitte an:</p>
           <p className="mb-4">
             Alishan Celik<br />

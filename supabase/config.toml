@@ -1,1 +1,47 @@
 project_id = "jxxhrldcmwjnjqfpfeti"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "storage", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 15
+
+[studio]
+enabled = true
+port = 54323
+
+[auth]
+enabled = true
+site_url = "https://abf-fahrschule.de"
+additional_redirect_urls = ["https://lovable.app", "http://localhost:3000"]
+jwt_expiry = 3600
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+double_confirm_changes = true
+enable_confirmations = true
+
+# Security Headers (HSTS & Content Security)
+[edge_runtime]
+policy = "per_worker"
+
+[edge_runtime.inspector]
+enabled = false
+
+# CORS and Security Settings
+[[headers]]
+source = "/(.*)"
+[headers.headers]
+X-Content-Type-Options = "nosniff"
+X-Frame-Options = "DENY"
+X-XSS-Protection = "1; mode=block"
+Referrer-Policy = "strict-origin-when-cross-origin"
+Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"

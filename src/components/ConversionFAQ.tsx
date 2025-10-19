@@ -9,6 +9,10 @@ const ConversionFAQ = () => {
       answer: "Du kannst sofort nach der Anmeldung beginnen! Die Theoriestunden starten wöchentlich neu, und deine erste Fahrstunde kann bereits in der ersten Woche stattfinden. Die LernApp erhältst du direkt nach der Anmeldung."
     },
     {
+      question: "Was ist mit BF17 / Begleitetes Fahren ab 17?",
+      answer: "Selbstverständlich bieten wir auch BF17 (Begleitetes Fahren ab 17) an! Bei Minderjährigen benötigen wir die schriftliche Einwilligung der Erziehungsberechtigten. Die entsprechenden Formulare erhältst du nach der Anmeldung automatisch von uns zugeschickt."
+    },
+    {
       question: "Kann ich das 479€ Angebot in Raten zahlen?", 
       answer: "Ja, das ist möglich! Du kannst das Paket in 2-3 bequemen Raten aufteilen. Weitere Fahrstunden können einzeln oder in Paketen dazu gebucht werden. Sprich uns einfach auf flexible Zahlungsmöglichkeiten an."
     },
@@ -22,7 +26,7 @@ const ConversionFAQ = () => {
     },
     {
       question: "Ist das 479€ Angebot wirklich ohne versteckte Kosten?",
-      answer: "Absolut! Im 479€ Paket ist genau das enthalten, was wir versprechen. Alle weiteren Kosten (Fahrstunden, Prüfungsgebühren) teilen wir dir transparent mit. Du weißt immer, was auf dich zukommt."
+      answer: "Absolut! Die Anmeldegebühr von 479€ enthält 14 Theoriestunden, LernApp, Erste Hilfe & Fahrsimulator. Fahrstunden und Prüfungsgebühren sind individuell nach Bedarf zu zahlen. Du weißt immer transparent, was auf dich zukommt – keine versteckten Kosten!"
     }
   ];
 

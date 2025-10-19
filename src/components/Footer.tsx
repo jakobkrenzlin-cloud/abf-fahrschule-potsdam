@@ -96,8 +96,12 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Photo Consent Notice */}
         <div className="border-t border-gray-800 mt-12 pt-8">
+          <div className="text-center text-gray-500 text-xs mb-6">
+            Alle abgebildeten Personen haben der Veröffentlichung ihrer Bilder zugestimmt.
+          </div>
+          
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm">
               © 2025 ABF Fahrschule Potsdam. Alle Rechte vorbehalten.

@@ -40,11 +40,20 @@ const OffersSection = () => {
               </div>
               <div className="bg-white/20 rounded-lg p-4">
                 <div className="text-3xl font-bold mb-1">479 €</div>
-                <div className="text-sm text-blue-100">Sommer Angebot bis 21.10.2025</div>
+                <div className="text-sm text-blue-100">Anmeldegebühr - Gültig bis 21.10.2025</div>
               </div>
             </div>
 
             <div className="p-6 space-y-6">
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+                <p className="text-sm text-gray-700 font-medium">
+                  <strong>Anmeldegebühr 479 €</strong> inkl. 14 Theoriestunden, LernApp, Erste Hilfe & Fahrsimulator.
+                </p>
+                <p className="text-xs text-gray-600 mt-2">
+                  Nicht enthalten: Fahrstunden (individuell nach Bedarf), Prüfungsgebühren TÜV, Lernmaterial & Sehtest.
+                </p>
+              </div>
+
               <p className="text-gray-700 leading-relaxed">
                 Werde Teil unserer erfolgreichen Fahrschüler – starte deine Ausbildung in Potsdam mit 
                 kompletter Theorie, Lern-App, Erste Hilfe Kurs und Fahrsimulator inklusive!

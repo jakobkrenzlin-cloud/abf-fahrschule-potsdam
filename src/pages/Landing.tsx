@@ -144,11 +144,14 @@ const Landing = () => {
               <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
                 Dein Führerschein in Potsdam-Babelsberg
                 <span className="block text-yellow-300 text-5xl lg:text-7xl mt-2">
-                  Jetzt für nur 479 €!
+                  Jetzt Anmeldung für 479 €!
                 </span>
               </h1>
-              <p className="text-xl lg:text-2xl mb-8 text-blue-100 font-medium">
-                Nur für kurze Zeit: Komplettpaket mit Theorie, Lern-App & Erste Hilfe inklusive
+              <p className="text-xl lg:text-2xl mb-6 text-blue-100 font-medium">
+                Anmeldegebühr inkl. 14 Theoriestunden, Lern-App, Erste Hilfe & Fahrsimulator
+              </p>
+              <p className="text-sm text-blue-200 mb-8">
+                Fahrstunden & Prüfungsgebühren nicht enthalten – individuelle Preise auf Anfrage
               </p>
               <Button 
                 size="lg" 
@@ -262,10 +265,13 @@ const Landing = () => {
             {/* Offer Reminder */}
             <div className="text-center mb-8 p-4 bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl border-l-4 border-primary">
               <p className="text-primary font-bold text-lg">
-                Sichere dir jetzt das 479€ Komplettpaket!
+                Sichere dir jetzt die 479€ Anmeldegebühr!
               </p>
-              <p className="text-sm text-gray-600 mt-1">
-                Limitiert auf die ersten 50 Anmeldungen
+              <p className="text-xs text-gray-600 mt-2">
+                Inkl. 14 Theoriestunden, LernApp, Erste Hilfe & Fahrsimulator. Fahrstunden & Prüfungsgebühren nicht enthalten.
+              </p>
+              <p className="text-xs text-gray-500 mt-1">
+                Angebot gültig bis 21.10.2025
               </p>
             </div>
 

@@ -130,10 +130,13 @@ const ContactSection = () => {
             {/* Offer Reminder */}
             <div className="text-center mb-8 p-4 bg-gradient-to-r from-blue-600/10 to-blue-600/5 rounded-xl border-l-4 border-blue-600">
               <p className="text-blue-600 font-bold text-lg">
-                Sichere dir jetzt das 479€ Komplettpaket!
+                Sichere dir jetzt die 479€ Anmeldegebühr!
               </p>
-              <p className="text-sm text-gray-600 mt-1">
-                Limitiert auf die ersten 50 Anmeldungen
+              <p className="text-xs text-gray-600 mt-2">
+                Inkl. 14 Theoriestunden, LernApp, Erste Hilfe & Fahrsimulator. Fahrstunden & Prüfungsgebühren nicht enthalten.
+              </p>
+              <p className="text-xs text-gray-500 mt-1">
+                Angebot gültig bis 21.10.2025
               </p>
             </div>
 

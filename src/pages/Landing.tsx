@@ -22,6 +22,13 @@ const leadSchema = z.object({
     .regex(/^[+]?[0-9\s()-]{6,20}$/, 'Ungültige Telefonnummer'),
   licenseClass: z.enum(['b', 'a1', 'a2', 'a', 'be'], {
     errorMap: () => ({ message: 'Ungültige Führerscheinklasse' })
+  }),
+  honeyPot: z.string().max(0, 'Spam erkannt'),
+  privacyConsent: z.boolean().refine(val => val === true, {
+    message: 'Bitte stimme der Datenschutzerklärung zu'
+  }),
+  agbConsent: z.boolean().refine(val => val === true, {
+    message: 'Bitte stimme den AGB zu'
   })
 });
 
@@ -30,7 +37,10 @@ const Landing = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    licenseClass: ''
+    licenseClass: '',
+    honeyPot: '',
+    privacyConsent: false,
+    agbConsent: false
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -44,7 +54,10 @@ const Landing = () => {
       const result = leadSchema.safeParse({
         name: formData.name,
         phone: formData.phone,
-        licenseClass: formData.licenseClass
+        licenseClass: formData.licenseClass,
+        honeyPot: formData.honeyPot,
+        privacyConsent: formData.privacyConsent,
+        agbConsent: formData.agbConsent
       });
 
       if (!result.success) {
@@ -305,8 +318,69 @@ const Landing = () => {
                   </SelectContent>
                 </Select>
               </div>
+
+              {/* Honeypot Field - Hidden from users, catches bots */}
+              <div className="hidden" aria-hidden="true">
+                <Label htmlFor="website">Website (Bitte leer lassen)</Label>
+                <Input
+                  id="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={formData.honeyPot}
+                  onChange={(e) => setFormData({...formData, honeyPot: e.target.value})}
+                />
+              </div>
+
+              {/* Privacy Consent Checkbox */}
+              <div className="space-y-4 pt-2">
+                <div className="flex items-start space-x-3">
+                  <input
+                    type="checkbox"
+                    id="privacyConsent"
+                    checked={formData.privacyConsent}
+                    onChange={(e) => setFormData({...formData, privacyConsent: e.target.checked})}
+                    className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                    required
+                  />
+                  <Label htmlFor="privacyConsent" className="text-sm text-gray-700 leading-tight cursor-pointer">
+                    Ich stimme der Verarbeitung meiner Daten gemäß der{' '}
+                    <a href="/datenschutz" target="_blank" className="text-primary underline hover:text-primary/80">
+                      Datenschutzerklärung
+                    </a>{' '}
+                    zu. *
+                  </Label>
+                </div>
+
+                <div className="flex items-start space-x-3">
+                  <input
+                    type="checkbox"
+                    id="agbConsent"
+                    checked={formData.agbConsent}
+                    onChange={(e) => setFormData({...formData, agbConsent: e.target.checked})}
+                    className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                    required
+                  />
+                  <Label htmlFor="agbConsent" className="text-sm text-gray-700 leading-tight cursor-pointer">
+                    Ich habe die{' '}
+                    <a href="/agb" target="_blank" className="text-primary underline hover:text-primary/80">
+                      AGB
+                    </a>{' '}
+                    und{' '}
+                    <a href="/agb#widerruf" target="_blank" className="text-primary underline hover:text-primary/80">
+                      Widerrufsbelehrung
+                    </a>{' '}
+                    gelesen und stimme zu. *
+                  </Label>
+                </div>
+
+                {/* BF17 Notice */}
+                <div className="text-xs text-gray-600 bg-blue-50 border border-blue-200 rounded-lg p-3">
+                  <strong>Hinweis für Minderjährige (BF17):</strong> Bei Begleiteten Fahren ab 17 benötigen wir die Einwilligung deiner Erziehungsberechtigten. Diese Unterlagen erhältst du nach der Anmeldung.
+                </div>
+              </div>
               
-              <Button 
+              <Button
                 type="submit" 
                 size="lg" 
                 disabled={isSubmitting}

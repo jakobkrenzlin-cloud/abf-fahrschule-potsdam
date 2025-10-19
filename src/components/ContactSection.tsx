@@ -17,6 +17,10 @@ const leadSchema = z.object({
     .regex(/^[+]?[0-9\s()-]{6,20}$/, 'Ungültige Telefonnummer'),
   licenseClass: z.enum(['b', 'a1', 'a2', 'a', 'be'], {
     errorMap: () => ({ message: 'Ungültige Führerscheinklasse' })
+  }),
+  honeyPot: z.string().max(0, 'Spam erkannt'),
+  privacyConsent: z.boolean().refine(val => val === true, {
+    message: 'Bitte stimme der Datenschutzerklärung zu'
   })
 });
 
@@ -24,7 +28,9 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    licenseClass: ''
+    licenseClass: '',
+    honeyPot: '',
+    privacyConsent: false
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -38,7 +44,9 @@ const ContactSection = () => {
       const result = leadSchema.safeParse({
         name: formData.name,
         phone: formData.phone,
-        licenseClass: formData.licenseClass
+        licenseClass: formData.licenseClass,
+        honeyPot: formData.honeyPot,
+        privacyConsent: formData.privacyConsent
       });
 
       if (!result.success) {
@@ -79,7 +87,9 @@ const ContactSection = () => {
       setFormData({
         name: '',
         phone: '',
-        licenseClass: ''
+        licenseClass: '',
+        honeyPot: '',
+        privacyConsent: false
       });
 
     } catch (error) {
@@ -176,8 +186,42 @@ const ContactSection = () => {
                   </SelectContent>
                 </Select>
               </div>
+
+              {/* Honeypot Field - Hidden from users, catches bots */}
+              <div className="hidden" aria-hidden="true">
+                <Label htmlFor="contact-website">Website (Bitte leer lassen)</Label>
+                <Input
+                  id="contact-website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={formData.honeyPot}
+                  onChange={(e) => setFormData({...formData, honeyPot: e.target.value})}
+                />
+              </div>
+
+              {/* Privacy Consent Checkbox */}
+              <div className="pt-2">
+                <div className="flex items-start space-x-3">
+                  <input
+                    type="checkbox"
+                    id="contact-privacyConsent"
+                    checked={formData.privacyConsent}
+                    onChange={(e) => setFormData({...formData, privacyConsent: e.target.checked})}
+                    className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-600"
+                    required
+                  />
+                  <Label htmlFor="contact-privacyConsent" className="text-sm text-gray-700 leading-tight cursor-pointer">
+                    Ich stimme der Verarbeitung meiner Daten gemäß der{' '}
+                    <a href="/datenschutz" target="_blank" className="text-blue-600 underline hover:text-blue-700">
+                      Datenschutzerklärung
+                    </a>{' '}
+                    zu. *
+                  </Label>
+                </div>
+              </div>
               
-              <Button 
+              <Button
                 type="submit" 
                 size="lg" 
                 disabled={isSubmitting}

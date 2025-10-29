@@ -142,7 +142,9 @@ const Preise = () => {
                   Jetzt Angebot sichern
                 </Button>
               </Link>
-              <p className="text-sm text-muted-foreground mt-4">⏱️ Angebot gültig bis 30.04.2026 • Begrenzte Plätze verfügbar</p>
+              <p className="text-sm text-muted-foreground mt-4">Ratenzahlung möglich
+
+Wir bieten flexible Zahlungsoptionen an. Sprich uns einfach bei der Anmeldung darauf an.</p>
             </div>
           </div>
 

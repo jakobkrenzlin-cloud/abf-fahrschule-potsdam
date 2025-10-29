@@ -36,14 +36,9 @@ const Kontakt = () => {
           "url": "https://www.abf-fahrschule.de",
           "openingHoursSpecification": [{
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
-            "opens": "09:00",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "12:00",
             "closes": "18:00"
-          }, {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": "Friday",
-            "opens": "09:00",
-            "closes": "16:00"
           }],
           "priceRange": "€€"
         })}
@@ -96,12 +91,8 @@ const Kontakt = () => {
                   <h2 className="text-xl font-bold text-foreground mb-4">Öffnungszeiten</h2>
                   <div className="space-y-2 text-muted-foreground">
                     <div className="flex justify-between">
-                      <span>Montag – Donnerstag:</span>
-                      <span className="font-semibold text-foreground">09:00 – 18:00 Uhr</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Freitag:</span>
-                      <span className="font-semibold text-foreground">09:00 – 16:00 Uhr</span>
+                      <span>Montag – Freitag:</span>
+                      <span className="font-semibold text-foreground">12:00 – 18:00 Uhr</span>
                     </div>
                     <div className="flex justify-between pt-2 border-t border-border">
                       <span>Samstag & Sonntag:</span>

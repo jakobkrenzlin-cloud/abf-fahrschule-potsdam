@@ -14,6 +14,9 @@ import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import AGB from "./pages/AGB";
 import Danke from "./pages/Danke";
+import Preise from "./pages/Preise";
+import Kontakt from "./pages/Kontakt";
+import Theorie from "./pages/Theorie";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +36,9 @@ const App = () => (
           <Route path="/datenschutz" element={<Datenschutz />} />
           <Route path="/agb" element={<AGB />} />
           <Route path="/danke" element={<Danke />} />
+          <Route path="/preise" element={<Preise />} />
+          <Route path="/kontakt" element={<Kontakt />} />
+          <Route path="/theorie" element={<Theorie />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

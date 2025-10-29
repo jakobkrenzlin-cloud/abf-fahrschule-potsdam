@@ -5,10 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-
 const Kontakt = () => {
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Kontakt & Standort Weber Park | ABF Fahrschule Potsdam-Babelsberg</title>
         <meta name="description" content="ABF Fahrschule im Weber Park Potsdam-Babelsberg. Tuchmacherstraße 45 B. ☎ 0331 / 967 958 54. Öffnungszeiten, Anfahrt & direkter Kontakt." />
@@ -16,42 +14,39 @@ const Kontakt = () => {
         <link rel="canonical" href="https://www.abf-fahrschule.de/kontakt" />
         <script type="application/ld+json">
           {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "ABF Bildungszentrum und Fahrschule GmbH",
-            "image": "https://www.abf-fahrschule.de/abf-logo.png",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Weber Park, Tuchmacherstraße 45 B",
-              "addressLocality": "Potsdam",
-              "addressRegion": "Brandenburg",
-              "postalCode": "14482",
-              "addressCountry": "DE"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": 52.3906,
-              "longitude": 13.0945
-            },
-            "telephone": "+49-331-9679-5854",
-            "email": "kontakt@abf-fahrschule.de",
-            "url": "https://www.abf-fahrschule.de",
-            "openingHoursSpecification": [
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
-                "opens": "09:00",
-                "closes": "18:00"
-              },
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": "Friday",
-                "opens": "09:00",
-                "closes": "16:00"
-              }
-            ],
-            "priceRange": "€€"
-          })}
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "ABF Bildungszentrum und Fahrschule GmbH",
+          "image": "https://www.abf-fahrschule.de/abf-logo.png",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Weber Park, Tuchmacherstraße 45 B",
+            "addressLocality": "Potsdam",
+            "addressRegion": "Brandenburg",
+            "postalCode": "14482",
+            "addressCountry": "DE"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 52.3906,
+            "longitude": 13.0945
+          },
+          "telephone": "+49-331-9679-5854",
+          "email": "kontakt@abf-fahrschule.de",
+          "url": "https://www.abf-fahrschule.de",
+          "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }, {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Friday",
+            "opens": "09:00",
+            "closes": "16:00"
+          }],
+          "priceRange": "€€"
+        })}
         </script>
       </Helmet>
       <div className="min-h-screen bg-gradient-to-b from-background to-secondary/5">
@@ -84,11 +79,7 @@ const Kontakt = () => {
                   </p>
                 </div>
               </div>
-              <a 
-                href="https://maps.google.com/?q=ABF+Fahrschule+Weber+Park+Potsdam" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
+              <a href="https://maps.google.com/?q=ABF+Fahrschule+Weber+Park+Potsdam" target="_blank" rel="noopener noreferrer">
                 <Button className="w-full" variant="outline">
                   📍 In Google Maps öffnen
                 </Button>
@@ -157,39 +148,16 @@ const Kontakt = () => {
 
           {/* Google Maps Einbettung */}
           <div className="rounded-2xl overflow-hidden shadow-lg mb-12 border border-border">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2429.5!2d13.0945!3d52.3906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDIzJzI2LjIiTiAxM8KwMDUnNDAuMiJF!5e0!3m2!1sde!2sde!4v1234567890"
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="ABF Fahrschule Standort im Weber Park Potsdam"
-            />
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2429.5!2d13.0945!3d52.3906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDIzJzI2LjIiTiAxM8KwMDUnNDAuMiJF!5e0!3m2!1sde!2sde!4v1234567890" width="100%" height="450" style={{
+            border: 0
+          }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="ABF Fahrschule Standort im Weber Park Potsdam" />
           </div>
 
           {/* Anfahrt */}
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-card rounded-xl p-6 border border-border">
-              <h3 className="text-xl font-semibold text-foreground mb-3">🚗 Mit dem Auto</h3>
-              <p className="text-muted-foreground mb-2">
-                Kostenlose Parkplätze direkt vor Ort im Weber Park verfügbar.
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Aus der Innenstadt: über Nutheschnellstraße, Ausfahrt Babelsberg
-              </p>
-            </div>
+            
 
-            <div className="bg-card rounded-xl p-6 border border-border">
-              <h3 className="text-xl font-semibold text-foreground mb-3">🚊 Mit ÖPNV</h3>
-              <p className="text-muted-foreground mb-2">
-                Straßenbahn Linie 96 & Buslinie 690 – Haltestelle "Weber Park"
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Nur 3 Minuten Fußweg zur Fahrschule
-              </p>
-            </div>
+            
           </div>
 
           {/* CTA */}
@@ -209,8 +177,6 @@ const Kontakt = () => {
         </main>
         <Footer />
       </div>
-    </>
-  );
+    </>;
 };
-
 export default Kontakt;

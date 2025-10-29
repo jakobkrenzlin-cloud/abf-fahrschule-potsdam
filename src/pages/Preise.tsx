@@ -5,10 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Check, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-
 const Preise = () => {
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Faire Preise für deinen Führerschein | ABF Fahrschule Potsdam</title>
         <meta name="description" content="Transparente Preise für Führerschein Klasse B in Potsdam-Babelsberg. 479€ Anmeldegebühr inkl. 14 Theoriestunden, LernApp & Erste Hilfe. Jetzt Angebot sichern!" />
@@ -16,34 +14,32 @@ const Preise = () => {
         <link rel="canonical" href="https://www.abf-fahrschule.de/preise" />
         <script type="application/ld+json">
           {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "ABF Bildungszentrum und Fahrschule GmbH",
-            "image": "https://www.abf-fahrschule.de/abf-logo.png",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Weber Park, Tuchmacherstraße 45 B",
-              "addressLocality": "Potsdam",
-              "addressRegion": "Brandenburg",
-              "postalCode": "14482",
-              "addressCountry": "DE"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": 52.3906,
-              "longitude": 13.0945
-            },
-            "telephone": "+49-331-9679-5854",
-            "priceRange": "€€",
-            "openingHoursSpecification": [
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                "opens": "09:00",
-                "closes": "18:00"
-              }
-            ]
-          })}
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "ABF Bildungszentrum und Fahrschule GmbH",
+          "image": "https://www.abf-fahrschule.de/abf-logo.png",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Weber Park, Tuchmacherstraße 45 B",
+            "addressLocality": "Potsdam",
+            "addressRegion": "Brandenburg",
+            "postalCode": "14482",
+            "addressCountry": "DE"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 52.3906,
+            "longitude": 13.0945
+          },
+          "telephone": "+49-331-9679-5854",
+          "priceRange": "€€",
+          "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }]
+        })}
         </script>
       </Helmet>
       <div className="min-h-screen bg-gradient-to-b from-background to-secondary/5">
@@ -61,9 +57,7 @@ const Preise = () => {
           {/* Hauptangebot */}
           <div className="bg-card border-2 border-primary rounded-2xl p-8 mb-8 shadow-lg">
             <div className="text-center mb-6">
-              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                ⚡ Aktuelles Angebot – Nur bis 30.04.2025
-              </div>
+              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">⚡ Aktuelles Angebot – Nur bis 30.04.2026</div>
               <h2 className="text-3xl font-bold text-foreground mb-2">Führerschein Klasse B</h2>
               <div className="text-5xl font-bold text-primary mb-4">
                 479 €
@@ -148,9 +142,7 @@ const Preise = () => {
                   Jetzt Angebot sichern
                 </Button>
               </Link>
-              <p className="text-sm text-muted-foreground mt-4">
-                ⏱️ Angebot gültig bis 30.04.2025 • Begrenzte Plätze verfügbar
-              </p>
+              <p className="text-sm text-muted-foreground mt-4">⏱️ Angebot gültig bis 30.04.2026 • Begrenzte Plätze verfügbar</p>
             </div>
           </div>
 
@@ -195,8 +187,6 @@ const Preise = () => {
         </main>
         <Footer />
       </div>
-    </>
-  );
+    </>;
 };
-
 export default Preise;

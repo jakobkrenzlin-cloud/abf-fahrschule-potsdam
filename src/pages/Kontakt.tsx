@@ -28,8 +28,8 @@ const Kontakt = () => {
           },
           "geo": {
             "@type": "GeoCoordinates",
-            "latitude": 52.3906,
-            "longitude": 13.0945
+            "latitude": 52.3923,
+            "longitude": 13.0955
           },
           "telephone": "+49-331-9679-5854",
           "email": "kontakt@abf-fahrschule.de",
@@ -74,7 +74,7 @@ const Kontakt = () => {
                   </p>
                 </div>
               </div>
-              <a href="https://maps.google.com/?q=ABF+Fahrschule+Weber+Park+Potsdam" target="_blank" rel="noopener noreferrer">
+              <a href="https://maps.google.com/?q=Tuchmacherstraße+45+B,+14482+Potsdam" target="_blank" rel="noopener noreferrer">
                 <Button className="w-full" variant="outline">
                   📍 In Google Maps öffnen
                 </Button>
@@ -139,7 +139,7 @@ const Kontakt = () => {
 
           {/* Google Maps Einbettung */}
           <div className="rounded-2xl overflow-hidden shadow-lg mb-12 border border-border">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2429.5!2d13.0945!3d52.3906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDIzJzI2LjIiTiAxM8KwMDUnNDAuMiJF!5e0!3m2!1sde!2sde!4v1234567890" width="100%" height="450" style={{
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2429.123!2d13.0955!3d52.3923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851b7e3e7e0e1%3A0x0!2zNTLCsDIzJzMyLjMiTiAxM8KwMDUnNDMuOCJF!5e0!3m2!1sde!2sde!4v1640000000000" width="100%" height="450" style={{
             border: 0
           }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="ABF Fahrschule Standort im Weber Park Potsdam" />
           </div>

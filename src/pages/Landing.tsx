@@ -142,23 +142,70 @@ const Landing = () => {
               </div>
               
               <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-                Dein Führerschein in Potsdam-Babelsberg
-                <span className="block text-yellow-300 text-5xl lg:text-7xl mt-2">
-                  Jetzt Anmeldung für 479 €!
+                Dein Führerschein in nur
+                <span className="block text-accent text-5xl lg:text-7xl mt-2">
+                  4 Wochen!
                 </span>
               </h1>
               <p className="text-xl lg:text-2xl mb-6 text-blue-100 font-medium">
-                Anmeldegebühr inkl. 14 Theoriestunden, Lern-App, Erste Hilfe & Fahrsimulator
+                Starte jetzt in Potsdam-Babelsberg – ab 479 € Anmeldegebühr
               </p>
-              <p className="text-sm text-blue-200 mb-8">
-                Fahrstunden & Prüfungsgebühren nicht enthalten – individuelle Preise auf Anfrage
+              
+              {/* USP Bulletpoints with Icons */}
+              <div className="space-y-3 mb-8 text-left">
+                <div className="flex items-center gap-3">
+                  <div className="bg-accent rounded-full p-2 flex-shrink-0">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-lg font-medium">14 Theoriestunden, LernApp & Erste Hilfe inklusive</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="bg-accent rounded-full p-2 flex-shrink-0">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <span className="text-lg font-medium">Flexible Termine – schnell & stressfrei</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="bg-accent rounded-full p-2 flex-shrink-0">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                  <span className="text-lg font-medium">Erfahrene, geduldige Fahrlehrer</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="bg-accent rounded-full p-2 flex-shrink-0">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <span className="text-lg font-medium">Auch mit Automatik & B197 (Schaltberechtigung)</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="bg-accent rounded-full p-2 flex-shrink-0">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <span className="text-lg font-medium">Zentrale Lage im Weber Park</span>
+                </div>
+              </div>
+
+              <p className="text-sm text-blue-200 mb-6 opacity-90">
+                Fahrstunden & Prüfungsgebühren nicht im Preis enthalten
               </p>
+              
               <Button 
                 size="lg" 
-                className="bg-white text-primary hover:bg-gray-100 text-lg px-12 py-6 rounded-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
+                className="bg-accent text-white hover:bg-accent/90 text-lg px-12 py-6 rounded-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
                 onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Jetzt anmelden & Platz sichern
+                Jetzt Platz sichern
               </Button>
             </div>
             <div className="bg-white/10 rounded-2xl p-8 backdrop-blur-sm border border-white/20">
@@ -223,40 +270,178 @@ const Landing = () => {
          </div>
        </section>
 
-      {/* Big Value Proposition - Offer Box */}
-      <OfferBox />
-
-      {/* Social Proof & Testimonials */}
-      <TestimonialsBox />
-
-      {/* CTA Block */}
-      <section className="py-16 bg-primary text-white text-center relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-y-32 -translate-x-32"></div>
-        <div className="absolute bottom-0 right-0 w-48 h-48 bg-white/5 rounded-full translate-y-24 translate-x-24"></div>
-        
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-6">
-            Starte jetzt deinen Führerschein in Potsdam
+      {/* Value Proposition - What's Included */}
+      <section className="py-16 bg-background">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-center mb-4">
+            Das bekommst du für 479 €
           </h2>
-          <p className="text-xl lg:text-2xl mb-8 text-blue-100 font-medium">
-            Sichere dir das 479 € Angebot – nur für kurze Zeit!
+          <p className="text-center text-muted-foreground mb-12 text-lg">
+            Alles, was du für deinen Führerschein-Start brauchst
           </p>
-          <Button 
-            size="lg" 
-            className="bg-white text-primary hover:bg-gray-100 text-lg px-12 py-6 rounded-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
-            onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Jetzt anmelden & 479€ Angebot sichern
-          </Button>
-          <div className="mt-6 text-sm opacity-90">
-            Limitiert auf die ersten 50 Anmeldungen
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-card border-2 border-primary/20 rounded-xl p-6 text-center hover:border-primary transition-colors">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-lg mb-2">14 Theoriestunden</h3>
+              <p className="text-sm text-muted-foreground">Komplett inklusive</p>
+            </div>
+            
+            <div className="bg-card border-2 border-primary/20 rounded-xl p-6 text-center hover:border-primary transition-colors">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-lg mb-2">Lern-App</h3>
+              <p className="text-sm text-muted-foreground">Vogel Verlag</p>
+            </div>
+            
+            <div className="bg-card border-2 border-primary/20 rounded-xl p-6 text-center hover:border-primary transition-colors">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-lg mb-2">Erste-Hilfe-Kurs</h3>
+              <p className="text-sm text-muted-foreground">Komplett inklusive</p>
+            </div>
+            
+            <div className="bg-card border-2 border-primary/20 rounded-xl p-6 text-center hover:border-primary transition-colors">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-lg mb-2">Fahrsimulator</h3>
+              <p className="text-sm text-muted-foreground">Training inklusive</p>
+            </div>
+          </div>
+          
+          <div className="mt-8 text-center">
+            <p className="text-sm text-muted-foreground bg-muted p-4 rounded-lg inline-block">
+              <strong>Hinweis:</strong> Fahrstunden und Prüfungsgebühren sind individuell und nicht im Anmeldepreis enthalten.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Process Steps - How it Works */}
-      <ProcessSteps />
+      {/* Social Proof - Real Testimonials */}
+      <section className="py-16 bg-muted/30">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-center mb-4">
+            Das sagen unsere Fahrschüler
+          </h2>
+          <p className="text-center text-muted-foreground mb-12 text-lg">
+            Über 500 zufriedene Fahrschüler haben bei uns bestanden
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-card rounded-xl p-6 shadow-lg border border-border">
+              <div className="flex items-center mb-4">
+                <div className="flex text-yellow-400 text-xl">
+                  ⭐⭐⭐⭐⭐
+                </div>
+              </div>
+              <p className="text-foreground mb-4 italic">
+                "Ich hab meinen Führerschein beim ersten Anlauf geschafft! Die Fahrlehrer bei ABF sind super geduldig und erklären alles perfekt. Kann ich nur weiterempfehlen!"
+              </p>
+              <p className="text-sm font-semibold text-primary">Max, 19 Jahre</p>
+            </div>
+            
+            <div className="bg-card rounded-xl p-6 shadow-lg border border-border">
+              <div className="flex items-center mb-4">
+                <div className="flex text-yellow-400 text-xl">
+                  ⭐⭐⭐⭐⭐
+                </div>
+              </div>
+              <p className="text-foreground mb-4 italic">
+                "Die Lern-App ist mega praktisch und die Theoriestunden waren nie langweilig. Nach nur 6 Wochen hatte ich meinen Schein – schneller als gedacht!"
+              </p>
+              <p className="text-sm font-semibold text-primary">Lisa, 20 Jahre</p>
+            </div>
+            
+            <div className="bg-card rounded-xl p-6 shadow-lg border border-border">
+              <div className="flex items-center mb-4">
+                <div className="flex text-yellow-400 text-xl">
+                  ⭐⭐⭐⭐⭐
+                </div>
+              </div>
+              <p className="text-foreground mb-4 italic">
+                "Zentrale Lage, moderne Autos und ein richtig gutes Team. Die B197-Ausbildung mit Automatik war perfekt für mich. Danke ABF!"
+              </p>
+              <p className="text-sm font-semibold text-primary">Tim, 18 Jahre</p>
+            </div>
+          </div>
+          
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center gap-4 bg-card border-2 border-primary/30 rounded-full px-8 py-4">
+              <div className="bg-primary/10 rounded-full px-4 py-2">
+                <span className="text-2xl font-bold text-primary">500+</span>
+              </div>
+              <span className="font-semibold">erfolgreiche Fahrschüler</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How it Works - 3 Simple Steps */}
+      <section className="py-16 bg-background">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-center mb-4">
+            So einfach geht's zum Führerschein
+          </h2>
+          <p className="text-center text-muted-foreground mb-12 text-lg">
+            In nur 3 Schritten zu deinem Führerschein
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center relative">
+              <div className="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-primary">
+                <span className="text-3xl font-bold text-primary">1</span>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Beratung & Anmeldung</h3>
+              <p className="text-muted-foreground">
+                Fülle das Formular aus oder ruf uns an. Wir beraten dich kostenlos und kümmern uns um alles Weitere.
+              </p>
+            </div>
+            
+            <div className="text-center relative">
+              <div className="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-primary">
+                <span className="text-3xl font-bold text-primary">2</span>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Theorie & Praxis</h3>
+              <p className="text-muted-foreground">
+                Besuche die 14 Theoriestunden und absolviere deine Fahrstunden mit unseren erfahrenen Fahrlehrern.
+              </p>
+            </div>
+            
+            <div className="text-center relative">
+              <div className="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-primary">
+                <span className="text-3xl font-bold text-primary">3</span>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Prüfung bestehen</h3>
+              <p className="text-muted-foreground">
+                Wir begleiten dich bis zur Prüfung – und dann hältst du deinen Führerschein in den Händen!
+              </p>
+            </div>
+          </div>
+          
+          <div className="text-center mt-12">
+            <Button 
+              size="lg" 
+              className="bg-accent text-white hover:bg-accent/90 text-lg px-12 py-6 rounded-xl font-bold shadow-xl transition-all duration-300 transform hover:scale-105"
+              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Jetzt starten
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* Contact Form - Lead Capture */}
       <section id="contact-form" className="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
@@ -276,10 +461,10 @@ const Landing = () => {
             </div>
 
             <h2 className="text-2xl lg:text-3xl font-bold text-center mb-2 text-gray-900">
-              Kostenlose Beratung sichern
+              Unverbindliche Beratung anfragen
             </h2>
             <p className="text-center text-gray-600 mb-8">
-              Wir melden uns innerhalb von 24h bei dir zurück
+              Wir melden uns innerhalb von 24 Stunden bei dir – kostenfrei & unverbindlich
             </p>
             
             <form onSubmit={handleFormSubmit} className="space-y-6">
@@ -425,43 +610,93 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* FAQ - Objection Handling */}
-      <ConversionFAQ />
+      {/* FAQ - Häufige Fragen */}
+      <section className="py-16 bg-muted/30">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-center mb-4">
+            Deine Fragen – unsere Antworten
+          </h2>
+          <p className="text-center text-muted-foreground mb-12 text-lg">
+            Hier findest du Antworten auf die häufigsten Fragen
+          </p>
+          
+          <div className="space-y-4">
+            <div className="bg-card rounded-xl p-6 shadow-md border border-border">
+              <h3 className="font-bold text-lg mb-2 text-primary">Wie melde ich mich an?</h3>
+              <p className="text-muted-foreground">
+                Ganz einfach! Fülle das Formular auf dieser Seite aus oder ruf uns direkt an. Wir kümmern uns um alles Weitere und begleiten dich durch den gesamten Prozess.
+              </p>
+            </div>
+            
+            <div className="bg-card rounded-xl p-6 shadow-md border border-border">
+              <h3 className="font-bold text-lg mb-2 text-primary">Wie schnell kann ich starten?</h3>
+              <p className="text-muted-foreground">
+                In der Regel kannst du innerhalb weniger Tage mit der Theorie beginnen. Wir planen flexibel nach deinen Wünschen und Terminen.
+              </p>
+            </div>
+            
+            <div className="bg-card rounded-xl p-6 shadow-md border border-border">
+              <h3 className="font-bold text-lg mb-2 text-primary">Kann ich in Raten zahlen?</h3>
+              <p className="text-muted-foreground">
+                Ja! Sprich uns einfach an – wir finden gemeinsam eine faire und flexible Zahlungslösung, die zu deiner Situation passt.
+              </p>
+            </div>
+            
+            <div className="bg-card rounded-xl p-6 shadow-md border border-border">
+              <h3 className="font-bold text-lg mb-2 text-primary">Was ist B197 / Automatik mit Schaltberechtigung?</h3>
+              <p className="text-muted-foreground">
+                Mit B197 lernst du hauptsächlich auf einem Automatikfahrzeug, absolvierst aber auch 10 Fahrstunden plus eine 15-minütige Testfahrt auf einem Schaltwagen. So bekommst du die volle Berechtigung für beide Getriebe – modern und flexibel!
+              </p>
+            </div>
+            
+            <div className="bg-card rounded-xl p-6 shadow-md border border-border">
+              <h3 className="font-bold text-lg mb-2 text-primary">Wie lange dauert die Ausbildung?</h3>
+              <p className="text-muted-foreground">
+                Das hängt von deinem Tempo und der Verfügbarkeit ab. Viele unserer Fahrschüler schaffen es in 4-8 Wochen. Wir passen uns deinem Zeitplan an!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Final CTA - Last Chance */}
       <section className="py-16 bg-gradient-to-r from-primary via-primary/95 to-primary text-white text-center relative overflow-hidden">
-        {/* Animated Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-32 h-32 bg-white/5 rounded-full animate-pulse"></div>
           <div className="absolute bottom-0 right-1/4 w-24 h-24 bg-white/10 rounded-full animate-pulse delay-1000"></div>
         </div>
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Urgency Reminder */}
-          <div className="inline-flex items-center gap-2 bg-red-500/90 text-white px-6 py-3 rounded-full text-sm font-bold mb-6 animate-pulse">
-            Nur noch wenige Plätze verfügbar!
-          </div>
-          
           <h2 className="text-3xl lg:text-5xl font-bold mb-6">
-            Jetzt anmelden & Führerschein starten
+            Bist du bereit, in 4 Wochen mobil zu sein?
           </h2>
           <p className="text-xl lg:text-2xl mb-4 text-blue-100 font-medium">
-            Sichere dir das 479€ Komplettpaket
+            Starte jetzt deine Fahrausbildung in Potsdam-Babelsberg
           </p>
           <p className="text-lg mb-8 text-blue-200">
-            Theorie • LernApp • Erste Hilfe - alles inklusive!
+            479 € Anmeldegebühr – Theorie, LernApp, Erste Hilfe & Fahrsimulator inklusive
           </p>
           
-          <Button 
-            size="lg" 
-            className="bg-white text-primary hover:bg-gray-100 text-xl px-16 py-6 rounded-2xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110"
-            onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Jetzt 479€ Angebot sichern
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button 
+              size="lg" 
+              className="bg-accent text-white hover:bg-accent/90 text-xl px-16 py-6 rounded-2xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110"
+              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Jetzt Platz sichern
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="bg-white/10 text-white border-2 border-white hover:bg-white/20 text-lg px-12 py-6 rounded-2xl font-bold backdrop-blur-sm"
+              onClick={handleCall}
+            >
+              <Phone className="w-5 h-5 mr-2" />
+              Direkt anrufen
+            </Button>
+          </div>
           
           <div className="mt-8 text-sm opacity-90">
-            <p className="mb-2">Limitiert auf die ersten 50 Anmeldungen</p>
             <p>Über 500 zufriedene Fahrschüler vertrauen uns bereits</p>
           </div>
         </div>

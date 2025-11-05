@@ -594,9 +594,9 @@ const Landing = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="bg-accent text-white hover:bg-accent/90 text-xl px-16 py-6 rounded-2xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110" onClick={() => document.getElementById('contact-form')?.scrollIntoView({
+            <Button size="lg" onClick={() => document.getElementById('contact-form')?.scrollIntoView({
             behavior: 'smooth'
-          })}>
+          })} className="bg-accent hover:bg-accent/90 text-xl px-16 py-6 rounded-2xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110 text-slate-900">
               Jetzt Platz sichern
             </Button>
             <Button size="lg" variant="outline" className="bg-white/10 text-white border-2 border-white hover:bg-white/20 text-lg px-12 py-6 rounded-2xl font-bold backdrop-blur-sm" onClick={handleCall}>

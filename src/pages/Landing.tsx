@@ -13,15 +13,13 @@ import ProcessSteps from "@/components/ProcessSteps";
 import ConversionFAQ from "@/components/ConversionFAQ";
 import { z } from "zod";
 import { CookieConsentManager } from '@/lib/cookieConsent';
-
 const leadSchema = z.object({
-  name: z.string().trim()
-    .min(2, 'Name muss mindestens 2 Zeichen lang sein')
-    .max(100, 'Name darf maximal 100 Zeichen lang sein'),
-  phone: z.string().trim()
-    .regex(/^[+]?[0-9\s()-]{6,20}$/, 'Ungültige Telefonnummer'),
+  name: z.string().trim().min(2, 'Name muss mindestens 2 Zeichen lang sein').max(100, 'Name darf maximal 100 Zeichen lang sein'),
+  phone: z.string().trim().regex(/^[+]?[0-9\s()-]{6,20}$/, 'Ungültige Telefonnummer'),
   licenseClass: z.enum(['b', 'a1', 'a2', 'a', 'be'], {
-    errorMap: () => ({ message: 'Ungültige Führerscheinklasse' })
+    errorMap: () => ({
+      message: 'Ungültige Führerscheinklasse'
+    })
   }),
   honeyPot: z.string().max(0, 'Spam erkannt'),
   privacyConsent: z.boolean().refine(val => val === true, {
@@ -31,7 +29,6 @@ const leadSchema = z.object({
     message: 'Bitte stimme den AGB zu'
   })
 });
-
 const Landing = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -43,12 +40,12 @@ const Landing = () => {
     agbConsent: false
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     try {
       // Validate input
       const result = leadSchema.safeParse({
@@ -59,29 +56,24 @@ const Landing = () => {
         privacyConsent: formData.privacyConsent,
         agbConsent: formData.agbConsent
       });
-
       if (!result.success) {
         toast({
           title: "Ungültige Eingabe",
           description: result.error.errors[0].message,
-          variant: "destructive",
+          variant: "destructive"
         });
         setIsSubmitting(false);
         return;
       }
-
-      const { error } = await supabase
-        .from('leads')
-        .insert([
-          {
-            name: formData.name,
-            phone: formData.phone,
-            license_class: formData.licenseClass,
-            source: 'landingpage',
-            consent: true
-          }
-        ]);
-
+      const {
+        error
+      } = await supabase.from('leads').insert([{
+        name: formData.name,
+        phone: formData.phone,
+        license_class: formData.licenseClass,
+        source: 'landingpage',
+        consent: true
+      }]);
       if (error) {
         throw error;
       }
@@ -91,38 +83,28 @@ const Landing = () => {
 
       // Redirect to thank you page
       navigate('/danke');
-
     } catch (error) {
       toast({
         title: "Fehler beim Senden",
         description: "Bitte versuche es nochmal oder rufe uns direkt an.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
     }
   };
-
   const handleWhatsApp = () => {
     window.open('https://wa.me/4915752387583', '_blank');
   };
-
   const handleCall = () => {
     window.location.href = 'tel:+4933196795854';
   };
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Header with Logo */}
       <header className="bg-white shadow-sm py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center">
-            <img 
-              src="/abf-logo.png"
-              alt="Fahrschule ABF Logo - Professionelle Fahrausbildung in Potsdam-Babelsberg"
-              className="h-12 w-auto"
-              loading="eager"
-            />
+            <img src="/abf-logo.png" alt="Fahrschule ABF Logo - Professionelle Fahrausbildung in Potsdam-Babelsberg" className="h-12 w-auto" loading="eager" />
           </div>
         </div>
       </header>
@@ -200,21 +182,15 @@ const Landing = () => {
                 Fahrstunden & Prüfungsgebühren nicht im Preis enthalten
               </p>
               
-              <Button 
-                size="lg" 
-                className="bg-accent text-white hover:bg-accent/90 text-lg px-12 py-6 rounded-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
-                onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-              >
+              <Button size="lg" onClick={() => document.getElementById('contact-form')?.scrollIntoView({
+              behavior: 'smooth'
+            })} className="bg-accent hover:bg-accent/90 text-lg px-12 py-6 rounded-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 text-slate-800">
                 Jetzt Platz sichern
               </Button>
             </div>
             <div className="bg-white/10 rounded-2xl p-8 backdrop-blur-sm border border-white/20">
               <div className="aspect-video rounded-xl overflow-hidden">
-                <img 
-                  src="/lovable-uploads/abf-storefront.jpg" 
-                  alt="ABF Fahrschule Potsdam - Bildungszentrum mit Motorrädern vor dem Geschäft"
-                  className="w-full h-full object-cover"
-                />
+                <img src="/lovable-uploads/abf-storefront.jpg" alt="ABF Fahrschule Potsdam - Bildungszentrum mit Motorrädern vor dem Geschäft" className="w-full h-full object-cover" />
               </div>
               <div className="mt-6 bg-white/20 rounded-lg p-3 text-center backdrop-blur-sm">
                 <p className="text-xs font-semibold text-white mb-2">
@@ -222,46 +198,22 @@ const Landing = () => {
                 </p>
                 <div className="grid grid-cols-6 gap-1">
                   <div className="aspect-square rounded overflow-hidden">
-                    <img 
-                      src="/lovable-uploads/success-students-1.jpg" 
-                      alt="Erfolgreiche Fahrschüler vor der ABF Fahrschule"
-                      className="w-full h-full object-cover"
-                    />
+                    <img src="/lovable-uploads/success-students-1.jpg" alt="Erfolgreiche Fahrschüler vor der ABF Fahrschule" className="w-full h-full object-cover" />
                   </div>
                   <div className="aspect-square rounded overflow-hidden">
-                    <img 
-                      src="/lovable-uploads/success-students-2.jpg" 
-                      alt="Fahrschüler mit Fahrlehrer nach bestandener Prüfung"
-                      className="w-full h-full object-cover"
-                    />
+                    <img src="/lovable-uploads/success-students-2.jpg" alt="Fahrschüler mit Fahrlehrer nach bestandener Prüfung" className="w-full h-full object-cover" />
                   </div>
                   <div className="aspect-square rounded overflow-hidden">
-                    <img 
-                      src="/lovable-uploads/success-students-3.jpg" 
-                      alt="Glückliche Fahrschüler mit Führerschein"
-                      className="w-full h-full object-cover"
-                    />
+                    <img src="/lovable-uploads/success-students-3.jpg" alt="Glückliche Fahrschüler mit Führerschein" className="w-full h-full object-cover" />
                   </div>
                   <div className="aspect-square rounded overflow-hidden">
-                    <img 
-                      src="/lovable-uploads/success-students-4.jpg" 
-                      alt="Erfolgreiche Fahrschülerinnen vor der Fahrschule"
-                      className="w-full h-full object-cover"
-                    />
+                    <img src="/lovable-uploads/success-students-4.jpg" alt="Erfolgreiche Fahrschülerinnen vor der Fahrschule" className="w-full h-full object-cover" />
                   </div>
                   <div className="aspect-square rounded overflow-hidden">
-                    <img 
-                      src="/lovable-uploads/success-students-5.jpg" 
-                      alt="Fahrschülerin mit Führerschein vor ABF Fahrschule"
-                      className="w-full h-full object-cover"
-                    />
+                    <img src="/lovable-uploads/success-students-5.jpg" alt="Fahrschülerin mit Führerschein vor ABF Fahrschule" className="w-full h-full object-cover" />
                   </div>
                   <div className="aspect-square rounded overflow-hidden">
-                    <img 
-                      src="/lovable-uploads/success-students-6.jpg" 
-                      alt="Fahrschülerin und Fahrlehrer nach erfolgreichem Abschluss"
-                      className="w-full h-full object-cover"
-                    />
+                    <img src="/lovable-uploads/success-students-6.jpg" alt="Fahrschülerin und Fahrlehrer nach erfolgreichem Abschluss" className="w-full h-full object-cover" />
                   </div>
                  </div>
                </div>
@@ -432,11 +384,9 @@ const Landing = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button 
-              size="lg" 
-              className="bg-accent text-white hover:bg-accent/90 text-lg px-12 py-6 rounded-xl font-bold shadow-xl transition-all duration-300 transform hover:scale-105"
-              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-            >
+            <Button size="lg" className="bg-accent text-white hover:bg-accent/90 text-lg px-12 py-6 rounded-xl font-bold shadow-xl transition-all duration-300 transform hover:scale-105" onClick={() => document.getElementById('contact-form')?.scrollIntoView({
+            behavior: 'smooth'
+          })}>
               Jetzt starten
             </Button>
           </div>
@@ -470,33 +420,26 @@ const Landing = () => {
             <form onSubmit={handleFormSubmit} className="space-y-6">
               <div>
                 <Label htmlFor="name" className="text-sm font-semibold text-gray-700">Vollständiger Name *</Label>
-                <Input
-                  id="name"
-                  type="text"
-                  required
-                  value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  className="mt-2 h-12 border-2 border-gray-200 focus:border-primary rounded-lg"
-                  placeholder="Dein vollständiger Name"
-                />
+                <Input id="name" type="text" required value={formData.name} onChange={e => setFormData({
+                ...formData,
+                name: e.target.value
+              })} className="mt-2 h-12 border-2 border-gray-200 focus:border-primary rounded-lg" placeholder="Dein vollständiger Name" />
               </div>
               
               <div>
                 <Label htmlFor="phone" className="text-sm font-semibold text-gray-700">Telefonnummer *</Label>
-                <Input
-                  id="phone"
-                  type="tel"
-                  required
-                  value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                  className="mt-2 h-12 border-2 border-gray-200 focus:border-primary rounded-lg"
-                  placeholder="Deine Telefonnummer"
-                />
+                <Input id="phone" type="tel" required value={formData.phone} onChange={e => setFormData({
+                ...formData,
+                phone: e.target.value
+              })} className="mt-2 h-12 border-2 border-gray-200 focus:border-primary rounded-lg" placeholder="Deine Telefonnummer" />
               </div>
               
               <div>
                 <Label htmlFor="license" className="text-sm font-semibold text-gray-700">Führerscheinklasse *</Label>
-                <Select onValueChange={(value) => setFormData({...formData, licenseClass: value})}>
+                <Select onValueChange={value => setFormData({
+                ...formData,
+                licenseClass: value
+              })}>
                   <SelectTrigger className="mt-2 h-12 border-2 border-gray-200 focus:border-primary rounded-lg">
                     <SelectValue placeholder="Wähle deine Führerscheinklasse" />
                   </SelectTrigger>
@@ -513,27 +456,19 @@ const Landing = () => {
               {/* Honeypot Field - Hidden from users, catches bots */}
               <div className="hidden" aria-hidden="true">
                 <Label htmlFor="website">Website (Bitte leer lassen)</Label>
-                <Input
-                  id="website"
-                  type="text"
-                  tabIndex={-1}
-                  autoComplete="off"
-                  value={formData.honeyPot}
-                  onChange={(e) => setFormData({...formData, honeyPot: e.target.value})}
-                />
+                <Input id="website" type="text" tabIndex={-1} autoComplete="off" value={formData.honeyPot} onChange={e => setFormData({
+                ...formData,
+                honeyPot: e.target.value
+              })} />
               </div>
 
               {/* Privacy Consent Checkbox */}
               <div className="space-y-4 pt-2">
                 <div className="flex items-start space-x-3">
-                  <input
-                    type="checkbox"
-                    id="privacyConsent"
-                    checked={formData.privacyConsent}
-                    onChange={(e) => setFormData({...formData, privacyConsent: e.target.checked})}
-                    className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
-                    required
-                  />
+                  <input type="checkbox" id="privacyConsent" checked={formData.privacyConsent} onChange={e => setFormData({
+                  ...formData,
+                  privacyConsent: e.target.checked
+                })} className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" required />
                   <Label htmlFor="privacyConsent" className="text-sm text-gray-700 leading-tight cursor-pointer">
                     Ich stimme der Verarbeitung meiner Daten gemäß der{' '}
                     <a href="/datenschutz" target="_blank" className="text-primary underline hover:text-primary/80">
@@ -544,14 +479,10 @@ const Landing = () => {
                 </div>
 
                 <div className="flex items-start space-x-3">
-                  <input
-                    type="checkbox"
-                    id="agbConsent"
-                    checked={formData.agbConsent}
-                    onChange={(e) => setFormData({...formData, agbConsent: e.target.checked})}
-                    className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
-                    required
-                  />
+                  <input type="checkbox" id="agbConsent" checked={formData.agbConsent} onChange={e => setFormData({
+                  ...formData,
+                  agbConsent: e.target.checked
+                })} className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" required />
                   <Label htmlFor="agbConsent" className="text-sm text-gray-700 leading-tight cursor-pointer">
                     Ich habe die{' '}
                     <a href="/agb" target="_blank" className="text-primary underline hover:text-primary/80">
@@ -571,33 +502,18 @@ const Landing = () => {
                 </div>
               </div>
               
-              <Button
-                type="submit" 
-                size="lg" 
-                disabled={isSubmitting}
-                className="w-full bg-primary hover:bg-primary/90 h-14 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50"
-              >
+              <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-primary hover:bg-primary/90 h-14 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50">
                 {isSubmitting ? "Wird gesendet..." : "Jetzt Anfrage senden & 479€ Angebot sichern"}
               </Button>
             </form>
             
             {/* WhatsApp & Call Buttons */}
             <div className="flex gap-4 mt-6">
-              <Button 
-                onClick={handleWhatsApp}
-                variant="outline"
-                size="lg"
-                className="flex-1 border-2 border-green-500 text-green-600 hover:bg-green-50 h-12 font-semibold rounded-xl"
-              >
+              <Button onClick={handleWhatsApp} variant="outline" size="lg" className="flex-1 border-2 border-green-500 text-green-600 hover:bg-green-50 h-12 font-semibold rounded-xl">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 WhatsApp Chat
               </Button>
-              <Button 
-                onClick={handleCall}
-                variant="outline"
-                size="lg"
-                className="flex-1 border-2 border-primary text-primary hover:bg-primary/10 h-12 font-semibold rounded-xl"
-              >
+              <Button onClick={handleCall} variant="outline" size="lg" className="flex-1 border-2 border-primary text-primary hover:bg-primary/10 h-12 font-semibold rounded-xl">
                 <Phone className="w-5 h-5 mr-2" />
                 Sofort anrufen
               </Button>
@@ -678,19 +594,12 @@ const Landing = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              className="bg-accent text-white hover:bg-accent/90 text-xl px-16 py-6 rounded-2xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110"
-              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-            >
+            <Button size="lg" className="bg-accent text-white hover:bg-accent/90 text-xl px-16 py-6 rounded-2xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110" onClick={() => document.getElementById('contact-form')?.scrollIntoView({
+            behavior: 'smooth'
+          })}>
               Jetzt Platz sichern
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="bg-white/10 text-white border-2 border-white hover:bg-white/20 text-lg px-12 py-6 rounded-2xl font-bold backdrop-blur-sm"
-              onClick={handleCall}
-            >
+            <Button size="lg" variant="outline" className="bg-white/10 text-white border-2 border-white hover:bg-white/20 text-lg px-12 py-6 rounded-2xl font-bold backdrop-blur-sm" onClick={handleCall}>
               <Phone className="w-5 h-5 mr-2" />
               Direkt anrufen
             </Button>
@@ -740,8 +649,6 @@ const Landing = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Landing;

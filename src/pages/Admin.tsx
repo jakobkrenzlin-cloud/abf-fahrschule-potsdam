@@ -62,12 +62,18 @@ const Admin = () => {
         .order('created_at', { ascending: false });
 
       if (error) {
-        console.error('Error fetching leads:', error);
+        // Don't log detailed errors in production - they expose schema details
+        if (import.meta.env.DEV) {
+          console.error('Error fetching leads:', error);
+        }
       } else {
         setLeads(data || []);
       }
     } catch (error) {
-      console.error('Error:', error);
+      // Don't log detailed errors in production
+      if (import.meta.env.DEV) {
+        console.error('Error:', error);
+      }
     } finally {
       setLoading(false);
     }

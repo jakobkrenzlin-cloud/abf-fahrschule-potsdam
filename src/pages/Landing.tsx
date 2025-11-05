@@ -384,9 +384,9 @@ const Landing = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button size="lg" className="bg-accent text-white hover:bg-accent/90 text-lg px-12 py-6 rounded-xl font-bold shadow-xl transition-all duration-300 transform hover:scale-105" onClick={() => document.getElementById('contact-form')?.scrollIntoView({
+            <Button size="lg" onClick={() => document.getElementById('contact-form')?.scrollIntoView({
             behavior: 'smooth'
-          })}>
+          })} className="bg-accent hover:bg-accent/90 text-lg px-12 py-6 rounded-xl font-bold shadow-xl transition-all duration-300 transform hover:scale-105 text-slate-900">
               Jetzt starten
             </Button>
           </div>

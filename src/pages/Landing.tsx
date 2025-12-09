@@ -405,9 +405,7 @@ const Landing = () => {
               <p className="text-xs text-gray-600 mt-2">
                 Inkl. 14 Theoriestunden, LernApp, Erste Hilfe & Fahrsimulator. Fahrstunden & Prüfungsgebühren nicht enthalten.
               </p>
-              <p className="text-xs text-gray-500 mt-1">
-                Angebot gültig bis 21.10.2025
-              </p>
+              <p className="text-xs text-gray-500 mt-1">Angebot gültig bis 31.12.2025</p>
             </div>
 
             <h2 className="text-2xl lg:text-3xl font-bold text-center mb-2 text-gray-900">

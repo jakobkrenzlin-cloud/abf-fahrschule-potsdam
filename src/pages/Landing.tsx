@@ -12,7 +12,7 @@ import { CookieConsentManager } from '@/lib/cookieConsent';
 
 const leadSchema = z.object({
   name: z.string().trim().min(2, 'Name muss mindestens 2 Zeichen lang sein').max(100, 'Name darf maximal 100 Zeichen lang sein'),
-  contact: z.string().trim().min(5, 'Bitte gib eine gültige Telefonnummer oder E-Mail ein').max(100, 'Kontakt darf maximal 100 Zeichen lang sein'),
+  contact: z.string().trim().min(5, 'Bitte gib eine gültige Telefonnummer ein').max(30, 'Telefonnummer darf maximal 30 Zeichen lang sein'),
   licenseClass: z.enum(['b', 'a1', 'a2', 'a', 'be'], {
     errorMap: () => ({ message: 'Ungültige Führerscheinklasse' })
   }),
@@ -80,11 +80,10 @@ const Landing = () => {
         return;
       }
 
-      const isEmail = formData.contact.includes('@');
       const { error } = await supabase.from('leads').insert([{
         name: formData.name,
-        phone: isEmail ? null : formData.contact,
-        email: isEmail ? formData.contact : null,
+        phone: formData.contact,
+        email: null,
         license_class: formData.licenseClass,
         source: 'landingpage',
         consent: true
@@ -231,19 +230,19 @@ const Landing = () => {
                   />
                 </div>
 
-                {/* Contact Field (Phone or Email) */}
+                {/* Phone Field */}
                 <div>
                   <Label htmlFor="contact" className="text-sm font-semibold text-card-foreground">
-                    Telefon oder E-Mail *
+                    Telefonnummer *
                   </Label>
                   <Input
                     id="contact"
-                    type="text"
+                    type="tel"
                     required
                     value={formData.contact}
                     onChange={e => setFormData({ ...formData, contact: e.target.value })}
                     className="mt-1.5 h-12 border-2 border-input focus:border-primary rounded-lg text-base"
-                    placeholder="0151 12345678 oder max@email.de"
+                    placeholder="0151 12345678"
                   />
                 </div>
 

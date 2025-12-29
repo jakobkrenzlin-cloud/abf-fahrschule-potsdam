@@ -126,13 +126,13 @@ const AGB = () => {
           <p className="mb-4"><strong>Ordentliche Kündigung:</strong> Beide Parteien können den Ausbildungsvertrag jederzeit mit einer Frist von 14 Tagen schriftlich kündigen.</p>
           <p className="mb-4"><strong>Außerordentliche Kündigung:</strong>Außerordentliche Kündigung: Der Ausbildungsvertrag kann sowohl von Fahrschüler als auch von der Fahrschule nur aus wichtigem Grund gekündigt werden. Ein wichtiger grund liegt vor wenn:</p>
           <ul className="mb-4 ml-6 list-disc">
-            <li>Wiederholtem unentschuldigtem Fernbleiben vom Unterricht
-
-          </li>
+            <li>Wiederholtem unentschuldigtem Fernbleiben vom Unterricht</li>
             <li>Zahlungsverzug trotz Mahnung</li>
             <li>Erscheinen unter Alkohol- oder Drogeneinfluss</li>
             <li>Groben Verstößen gegen die Hausordnung</li>
             <li>Beleidigung oder Bedrohung von Fahrlehrern oder Mitschülern</li>
+            <li>Die Fahrschule keine Leistung wie Theorie oder Praxis innerhalb von 3 Monaten erbringt</li>
+            <li>Die Fahrschule den Standort verlegt</li>
           </ul>
           <p className="mb-4"><strong>Abrechnung bei Kündigung:</strong> Bei Kündigung werden bereits gebuchte, aber noch nicht durchgeführte Fahrstunden erstattet. Die Anmeldegebühr wird nicht erstattet, da die Verwaltungs- und Vorbereitungsleistungen bereits erbracht wurden.</p>
 

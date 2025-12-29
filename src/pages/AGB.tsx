@@ -132,7 +132,7 @@ const AGB = () => {
             <li>Groben Verstößen gegen die Hausordnung</li>
             <li>Beleidigung oder Bedrohung von Fahrlehrern oder Mitschülern</li>
             <li>Die Fahrschule keine Leistung wie Theorie oder Praxis innerhalb von 3 Monaten erbringt</li>
-            <li>Die Fahrschule den Standort verlegt</li>
+            <li>Die Fahrschule vom Fahrschüler Verleugnet wird</li>
           </ul>
           <p className="mb-4"><strong>Abrechnung bei Kündigung:</strong> Bei Kündigung werden bereits gebuchte, aber noch nicht durchgeführte Fahrstunden erstattet. Die Anmeldegebühr wird nicht erstattet, da die Verwaltungs- und Vorbereitungsleistungen bereits erbracht wurden.</p>
 

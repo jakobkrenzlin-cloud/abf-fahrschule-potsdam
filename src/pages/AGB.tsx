@@ -23,21 +23,34 @@ const AGB = () => {
           </ul>
           <p className="mb-4">Bei Online-Anmeldung erfolgt die Vertragsannahme durch eine Bestätigungs-E-Mail der Fahrschule. Der Vertrag gilt ab diesem Zeitpunkt als abgeschlossen.</p>
 
-          <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">§ 3 Leistungen der Fahrschule</h2>
-          <p className="mb-4"><strong>Anmeldegebühr (479 €) beinhaltet:</strong></p>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">§ 3 Leistungen und Preise der Fahrschule (gemäß § 32 FahrlG)</h2>
+          <p className="mb-4"><strong>Grundbetrag (479 €) beinhaltet:</strong></p>
           <ul className="mb-4 ml-6 list-disc">
-            <li>14 Theoriestunden (à 90 Minuten)</li>
-            <li>Zugang zur LernApp für Theorieprüfung</li>
+            <li>Kompletter Theorieunterricht (12 × Grundstoff à 90 Minuten + 2 × klassenspezifischer Zusatzstoff à 90 Minuten)</li>
+            <li>Zugang zur LernApp für Theorieprüfung (Vogel Verlag)</li>
             <li>Erste-Hilfe-Kurs</li>
+            <li>Fahrsimulator-Training</li>
+            <li>Vorstellung zur theoretischen Prüfung</li>
             <li>Anmeldebearbeitung und Verwaltung</li>
           </ul>
-          <p className="mb-4"><strong>Nicht in der Anmeldegebühr enthalten:</strong></p>
+          <p className="mb-4"><strong>Preise für praktische Fahrstunden (je 45 Minuten):</strong></p>
           <ul className="mb-4 ml-6 list-disc">
-            <li>Praktische Fahrstunden (separat zu buchen und zu bezahlen)</li>
-            <li>Prüfungsgebühren (TÜV/DEKRA)</li>
-            <li>Sehtest</li>
-            <li>Passbilder</li>
-            <li>Lernmaterialien (optional)</li>
+            <li>Übungsfahrt: 69 €</li>
+            <li>Sonderfahrt Überland: 79 €</li>
+            <li>Sonderfahrt Autobahn: 79 €</li>
+            <li>Sonderfahrt Nachtfahrt: 79 €</li>
+          </ul>
+          <p className="mb-4"><strong>Vorstellung zur Prüfung:</strong></p>
+          <ul className="mb-4 ml-6 list-disc">
+            <li>Theoretische Prüfung: Im Grundbetrag enthalten</li>
+            <li>Praktische Prüfung: 189 €</li>
+          </ul>
+          <p className="mb-4"><strong>Externe Gebühren (nicht an die Fahrschule):</strong></p>
+          <ul className="mb-4 ml-6 list-disc">
+            <li>TÜV Theorieprüfung: ca. 23 €</li>
+            <li>TÜV Praxisprüfung: ca. 117 €</li>
+            <li>Führerscheinantrag (Behörde): ca. 44 €</li>
+            <li>Sehtest & Passbilder: ca. 15 €</li>
           </ul>
           <p className="mb-4">Die Fahrschule verpflichtet sich zur ordnungsgemäßen Durchführung der Fahrausbildung nach den geltenden gesetzlichen Bestimmungen, insbesondere:</p>
           <ul className="mb-4 ml-6 list-disc">
@@ -65,7 +78,7 @@ const AGB = () => {
           
           <p className="mb-4"><strong>Zahlungsmodalitäten:</strong></p>
           <ul className="mb-4 ml-6 list-disc">
-            <li>Die Anmeldegebühr (479 €) ist bei Vertragsabschluss fällig</li>
+            <li>Der Grundbetrag (479 €) ist bei Vertragsabschluss fällig</li>
             <li>Fahrstunden sind vor Fahrtantritt zu bezahlen (Barzahlung oder Kartenzahlung)</li>
             <li>Sonderfahrten (Autobahn, Überland, Nachtfahrt) sind spätestens 2 Werktage vor Fahrtantritt zu bezahlen</li>
           </ul>
@@ -134,7 +147,7 @@ const AGB = () => {
             <li>Die Fahrschule keine Leistung wie Theorie oder Praxis innerhalb von 3 Monaten erbringt</li>
             <li>Die Fahrschule vom Fahrschüler Verleugnet wird</li>
           </ul>
-          <p className="mb-4"><strong>Abrechnung bei Kündigung:</strong> Bei Kündigung werden bereits gebuchte, aber noch nicht durchgeführte Fahrstunden erstattet. Die Anmeldegebühr wird nicht erstattet, da die Verwaltungs- und Vorbereitungsleistungen bereits erbracht wurden.</p>
+          <p className="mb-4"><strong>Abrechnung bei Kündigung:</strong> Bei Kündigung werden bereits gebuchte, aber noch nicht durchgeführte Fahrstunden erstattet. Der Grundbetrag wird nicht erstattet, da die Verwaltungs- und Vorbereitungsleistungen bereits erbracht wurden.</p>
 
           <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">§ 10 Datenschutz</h2>
           <p className="mb-4">Die Fahrschule verpflichtet sich zur Einhaltung der datenschutzrechtlichen Bestimmungen gemäß DSGVO. Personenbezogene Daten werden ausschließlich zur Vertragsabwicklung und zur Erfüllung gesetzlicher Pflichten (z.B. Meldung bei der Führerscheinstelle) verarbeitet.</p>

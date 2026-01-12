@@ -35,6 +35,10 @@ policy = "per_worker"
 [edge_runtime.inspector]
 enabled = false
 
+# Edge Function: submit-lead (no JWT required - public lead form)
+[functions.submit-lead]
+verify_jwt = false
+
 # CORS and Security Settings
 [[headers]]
 source = "/(.*)"

@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
 import { CookieConsentManager } from '@/lib/cookieConsent';
 
@@ -80,16 +79,28 @@ const Landing = () => {
         return;
       }
 
-      const { error } = await supabase.from('leads').insert([{
-        name: formData.name,
-        phone: formData.contact,
-        email: null,
-        license_class: formData.licenseClass,
-        source: 'landingpage',
-        consent: true
-      }]);
+      // Submit via edge function with rate limiting
+      const response = await fetch(
+        'https://jxxhrldcmwjnjqfpfeti.supabase.co/functions/v1/submit-lead',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            phone: formData.contact,
+            license_class: formData.licenseClass,
+            source: 'landingpage',
+          }),
+        }
+      );
 
-      if (error) throw error;
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || 'Submission failed');
+      }
+      
       CookieConsentManager.triggerConversion();
       navigate('/danke');
     } catch (error) {

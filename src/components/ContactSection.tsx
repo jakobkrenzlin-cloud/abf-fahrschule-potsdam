@@ -130,13 +130,13 @@ const ContactSection = () => {
             {/* Offer Reminder */}
             <div className="text-center mb-8 p-4 bg-gradient-to-r from-blue-600/10 to-blue-600/5 rounded-xl border-l-4 border-blue-600">
               <p className="text-blue-600 font-bold text-lg">
-                Sichere dir jetzt die 479€ Anmeldegebühr!
+                Sichere dir jetzt den 479€ Grundbetrag!
               </p>
               <p className="text-xs text-gray-600 mt-2">
-                Inkl. 14 Theoriestunden, LernApp, Erste Hilfe & Fahrsimulator. Fahrstunden & Prüfungsgebühren nicht enthalten.
+                Inkl. komplettem Theorieunterricht, LernApp, Erste Hilfe & Fahrsimulator. Fahrstunden ab 69€/45 Min.
               </p>
               <p className="text-xs text-gray-500 mt-1">
-                Angebot gültig bis 21.10.2025
+                Angebot gültig bis 30.04.2026
               </p>
             </div>
 

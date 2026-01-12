@@ -40,17 +40,17 @@ const OffersSection = () => {
               </div>
               <div className="bg-white/20 rounded-lg p-4">
                 <div className="text-3xl font-bold mb-1">479 €</div>
-                <div className="text-sm text-blue-100">Anmeldegebühr - Gültig bis 21.10.2025</div>
+                <div className="text-sm text-blue-100">Grundbetrag - Gültig bis 30.04.2026</div>
               </div>
             </div>
 
             <div className="p-6 space-y-6">
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
                 <p className="text-sm text-gray-700 font-medium">
-                  <strong>Anmeldegebühr 479 €</strong> inkl. 14 Theoriestunden, LernApp, Erste Hilfe & Fahrsimulator.
+                  <strong>Grundbetrag 479 €</strong> inkl. komplettem Theorieunterricht, LernApp, Erste Hilfe & Fahrsimulator.
                 </p>
                 <p className="text-xs text-gray-600 mt-2">
-                  Nicht enthalten: Fahrstunden (individuell nach Bedarf), Prüfungsgebühren TÜV, Lernmaterial & Sehtest.
+                  Zusätzlich: Fahrstunden ab 69 €/45 Min., Vorstellung zur praktischen Prüfung 189 €, TÜV-Gebühren extern.
                 </p>
               </div>
 
@@ -60,8 +60,8 @@ const OffersSection = () => {
               </p>
 
               <div className="space-y-3">
-                <h4 className="font-semibold text-gray-900 mb-3">Alles inklusive:</h4>
-                {['14 Theoriestunden inklusive', 'LernApp vom Vogel Verlag inklusive', 'Erste Hilfe Kurs & Sehtest inklusive', '2x 45 Minuten Fahrtraining auf dem Fahrschulsimulator inklusive'].map((item, index) => <div key={index} className="flex items-center space-x-3">
+                <h4 className="font-semibold text-gray-900 mb-3">Im Grundbetrag enthalten:</h4>
+                {['Kompletter Theorieunterricht (12× Grundstoff + 2× Zusatzstoff)', 'LernApp vom Vogel Verlag', 'Erste-Hilfe-Kurs', 'Fahrsimulator-Training', 'Vorstellung zur theoretischen Prüfung'].map((item, index) => <div key={index} className="flex items-center space-x-3">
                     <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
                     <span className="text-gray-700">{item}</span>
                   </div>)}

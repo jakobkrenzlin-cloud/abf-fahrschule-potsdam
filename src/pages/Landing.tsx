@@ -356,9 +356,14 @@ const Landing = () => {
       {/* Social Proof Section */}
       <section className="py-12 bg-muted/30">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-2xl lg:text-3xl font-bold text-center mb-8 text-foreground">
+          <h2 className="text-2xl lg:text-3xl font-bold text-center mb-2 text-foreground">
             Das sagen unsere Fahrschüler
           </h2>
+          <p className="text-center text-xs text-muted-foreground mb-8">
+            <a href="https://maps.google.com/?q=ABF+Fahrschule+Potsdam" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">
+              Verifizierte Bewertungen über Google Maps
+            </a>
+          </p>
           
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-card rounded-xl p-5 shadow-lg border border-border">
@@ -411,11 +416,16 @@ const Landing = () => {
           </div>
 
           <div className="mt-8 text-center">
-            <div className="inline-flex items-center gap-3 bg-card border border-border rounded-full px-6 py-3 shadow">
+            <a 
+              href="https://maps.google.com/?q=ABF+Fahrschule+Potsdam" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-card border border-border rounded-full px-6 py-3 shadow hover:shadow-md transition-shadow"
+            >
               <div className="flex text-cta">★★★★★</div>
               <span className="font-semibold text-card-foreground">4,9 / 5</span>
-              <span className="text-muted-foreground text-sm">bei Google</span>
-            </div>
+              <span className="text-muted-foreground text-sm">bei Google Maps</span>
+            </a>
           </div>
         </div>
       </section>
@@ -424,19 +434,19 @@ const Landing = () => {
       <section className="py-12 bg-background">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-2xl lg:text-3xl font-bold text-center mb-3 text-foreground">
-            Das bekommst du für 479 €
+            Das bekommst du für 479 € Grundbetrag
           </h2>
           <p className="text-center text-muted-foreground mb-8">
-            Alles für deinen Führerschein-Start – ohne versteckte Kosten
+            Alles für deinen Führerschein-Start – transparent nach § 32 FahrlG
           </p>
           
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
             <div className="bg-card border border-border rounded-xl p-5 text-center hover:border-primary transition-colors">
               <div className="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
                 <span className="text-2xl">📚</span>
               </div>
-              <h3 className="font-bold text-card-foreground mb-1">14 Theoriestunden</h3>
-              <p className="text-xs text-muted-foreground">Komplett inklusive</p>
+              <h3 className="font-bold text-card-foreground mb-1">Theorie komplett</h3>
+              <p className="text-xs text-muted-foreground">12+2 Unterrichtseinheiten</p>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-5 text-center hover:border-primary transition-colors">
@@ -462,11 +472,24 @@ const Landing = () => {
               <h3 className="font-bold text-card-foreground mb-1">Fahrsimulator</h3>
               <p className="text-xs text-muted-foreground">Training inklusive</p>
             </div>
+
+            <div className="bg-card border border-border rounded-xl p-5 text-center hover:border-primary transition-colors col-span-2 lg:col-span-1">
+              <div className="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span className="text-2xl">📝</span>
+              </div>
+              <h3 className="font-bold text-card-foreground mb-1">Theorieprüfung</h3>
+              <p className="text-xs text-muted-foreground">Vorstellung inkl.</p>
+            </div>
           </div>
 
-          <p className="text-center text-xs text-muted-foreground mt-6 bg-muted/50 rounded-lg p-3">
-            Fahrstunden & Prüfungsgebühren individuell – transparent bei der Beratung besprochen.
-          </p>
+          <div className="mt-6 bg-muted/50 rounded-lg p-4">
+            <p className="text-center text-sm text-muted-foreground">
+              <strong>Zusätzliche Kosten:</strong> Fahrstunden ab 69 €/45 Min. | Sonderfahrten 79 €/45 Min. | Prakt. Prüfung 189 €
+            </p>
+            <p className="text-center text-xs text-muted-foreground mt-2">
+              Externe Gebühren (TÜV, Behörde) werden separat berechnet. <a href="/preise" className="underline hover:text-foreground">Vollständige Preisliste</a>
+            </p>
+          </div>
         </div>
       </section>
 

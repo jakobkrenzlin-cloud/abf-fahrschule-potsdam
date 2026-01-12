@@ -137,7 +137,7 @@ const Theorie = () => {
                   <div>
                     <h3 className="text-xl font-semibold text-foreground mb-2">Anmeldung zur Theorieprüfung</h3>
                     <p className="text-muted-foreground">
-                      Sobald du bereit bist, melden wir dich zur theoretischen Prüfung beim TÜV an. Die Vorstellung ist bei uns bereits in der Anmeldegebühr enthalten.
+                      Sobald du bereit bist, melden wir dich zur theoretischen Prüfung beim TÜV an. Die Vorstellung ist bei uns bereits im Grundbetrag enthalten.
                     </p>
                   </div>
                 </div>

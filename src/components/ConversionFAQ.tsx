@@ -25,8 +25,8 @@ const ConversionFAQ = () => {
       answer: "Kein Problem! Jeder lernt in seinem eigenen Tempo. Das 479€ Paket bleibt gültig und weitere Fahrstunden buchst du einfach dazu. Wir begleiten dich, bis du sicher fährst und die Prüfung bestehst."
     },
     {
-      question: "Ist das 479€ Angebot wirklich ohne versteckte Kosten?",
-      answer: "Absolut! Die Anmeldegebühr von 479€ enthält 14 Theoriestunden, LernApp, Erste Hilfe & Fahrsimulator. Fahrstunden und Prüfungsgebühren sind individuell nach Bedarf zu zahlen. Du weißt immer transparent, was auf dich zukommt – keine versteckten Kosten!"
+      question: "Was ist im 479€ Grundbetrag enthalten?",
+      answer: "Der Grundbetrag von 479€ enthält den kompletten Theorieunterricht (12× Grundstoff + 2× Zusatzstoff), die LernApp, Erste-Hilfe-Kurs, Fahrsimulator und die Vorstellung zur Theorieprüfung. Fahrstunden kosten 69€/45 Min., Sonderfahrten 79€/45 Min., Vorstellung zur praktischen Prüfung 189€. Alle Preise gemäß § 32 FahrlG transparent aufgelistet."
     }
   ];
 

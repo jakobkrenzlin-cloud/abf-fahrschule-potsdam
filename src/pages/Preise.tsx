@@ -9,7 +9,7 @@ const Preise = () => {
   return <>
       <Helmet>
         <title>Faire Preise für deinen Führerschein | ABF Fahrschule Potsdam</title>
-        <meta name="description" content="Transparente Preise für Führerschein Klasse B in Potsdam-Babelsberg. 479€ Anmeldegebühr inkl. 14 Theoriestunden, LernApp & Erste Hilfe. Jetzt Angebot sichern!" />
+        <meta name="description" content="Transparente Preise für Führerschein Klasse B in Potsdam-Babelsberg. 479€ Grundbetrag inkl. komplettem Theorieunterricht, LernApp & Erste Hilfe. Jetzt Angebot sichern!" />
         <meta name="keywords" content="Fahrschule Potsdam Preise, Führerschein Kosten Potsdam, Fahrschule Babelsberg Preise, Führerschein Klasse B Kosten" />
         <link rel="canonical" href="https://www.abf-fahrschule.de/preise" />
         <script type="application/ld+json">
@@ -50,89 +50,140 @@ const Preise = () => {
               Faire Preise – volle Leistung
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Transparente Kosten ohne versteckte Gebühren. Bei uns weißt du genau, was dich erwartet.
+              Transparente Kosten gemäß § 32 Fahrlehrergesetz. Bei uns wissen Sie genau, was Sie erwartet.
             </p>
           </div>
 
-          {/* Hauptangebot */}
+          {/* Vollständige Preisliste gemäß § 32 FahrlG */}
           <div className="bg-card border-2 border-primary rounded-2xl p-8 mb-8 shadow-lg">
-            <div className="text-center mb-6">
-              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">⚡ Aktuelles Angebot – Nur bis 30.04.2026</div>
-              <h2 className="text-3xl font-bold text-foreground mb-2">Führerschein Klasse B</h2>
-              <div className="text-5xl font-bold text-primary mb-4">
-                479 €
-                <span className="text-lg text-muted-foreground font-normal"> Anmeldegebühr</span>
-              </div>
+            <div className="text-center mb-8">
+              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">⚡ Aktuelles Angebot – Gültig bis 30.04.2026</div>
+              <h2 className="text-3xl font-bold text-foreground mb-2">Preisliste Führerschein Klasse B</h2>
+              <p className="text-muted-foreground">Alle Preise inkl. MwSt. gemäß § 32 FahrlG</p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              {/* Im Preis enthalten */}
-              <div className="bg-secondary/30 rounded-xl p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                  <Check className="text-primary" size={24} />
-                  Im Preis enthalten
-                </h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
-                    <Check className="text-primary mt-1 flex-shrink-0" size={18} />
-                    <span className="text-foreground">14 Theoriestunden (Grundstoff + klassenspezifisch)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="text-primary mt-1 flex-shrink-0" size={18} />
-                    <span className="text-foreground">Digitale LernApp vom Vogel Verlag</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="text-primary mt-1 flex-shrink-0" size={18} />
-                    <span className="text-foreground">Erste-Hilfe-Kurs</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="text-primary mt-1 flex-shrink-0" size={18} />
-                    <span className="text-foreground">Fahrsimulator-Training</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="text-primary mt-1 flex-shrink-0" size={18} />
-                    <span className="text-foreground">Vorstellung zur theoretischen Prüfung</span>
-                  </li>
-                </ul>
+            {/* Hauptpreistabelle */}
+            <div className="space-y-6 mb-8">
+              {/* Grundbetrag */}
+              <div className="bg-primary/5 rounded-xl p-6 border-2 border-primary">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                  <div>
+                    <h3 className="text-2xl font-bold text-foreground">Grundbetrag</h3>
+                    <p className="text-muted-foreground mt-1">
+                      Einmalige Gebühr für Verwaltung und vollständige Theorieausbildung
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-4xl font-bold text-primary">479 €</div>
+                  </div>
+                </div>
+                <div className="mt-4 pt-4 border-t border-primary/20">
+                  <p className="text-sm font-semibold text-foreground mb-2">Der Grundbetrag beinhaltet:</p>
+                  <ul className="grid md:grid-cols-2 gap-2 text-sm text-muted-foreground">
+                    <li className="flex items-center gap-2">
+                      <Check className="text-primary flex-shrink-0" size={16} />
+                      Kompletter Theorieunterricht (12 × Grundstoff + 2 × Zusatzstoff)
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="text-primary flex-shrink-0" size={16} />
+                      Digitale LernApp (Vogel Verlag)
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="text-primary flex-shrink-0" size={16} />
+                      Erste-Hilfe-Kurs
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="text-primary flex-shrink-0" size={16} />
+                      Fahrsimulator-Training
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="text-primary flex-shrink-0" size={16} />
+                      Vorstellung zur theoretischen Prüfung
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="text-primary flex-shrink-0" size={16} />
+                      Anmeldebearbeitung & Verwaltung
+                    </li>
+                  </ul>
+                </div>
               </div>
 
-              {/* Zusätzliche Kosten */}
+              {/* Fahrstunden */}
               <div className="bg-secondary/30 rounded-xl p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                  <X className="text-muted-foreground" size={24} />
-                  Zusätzlich anfallende Kosten
+                <h3 className="text-xl font-bold text-foreground mb-4">Praktische Fahrstunden</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
+                    <span className="text-foreground">Übungsfahrt (45 Min.)</span>
+                    <span className="font-bold text-foreground">69 €</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
+                    <span className="text-foreground">Sonderfahrt Überland (45 Min.)</span>
+                    <span className="font-bold text-foreground">79 €</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
+                    <span className="text-foreground">Sonderfahrt Autobahn (45 Min.)</span>
+                    <span className="font-bold text-foreground">79 €</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
+                    <span className="text-foreground">Sonderfahrt Nachtfahrt (45 Min.)</span>
+                    <span className="font-bold text-foreground">79 €</span>
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground mt-3">
+                  Gesetzlich vorgeschrieben für Klasse B: mind. 5× Überland, 4× Autobahn, 3× Nachtfahrt
+                </p>
+              </div>
+
+              {/* Prüfungsvorstellung */}
+              <div className="bg-secondary/30 rounded-xl p-6">
+                <h3 className="text-xl font-bold text-foreground mb-4">Vorstellung zur Prüfung</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
+                    <span className="text-foreground">Theoretische Prüfung</span>
+                    <span className="font-bold text-primary">Im Grundbetrag enthalten</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
+                    <span className="text-foreground">Praktische Prüfung</span>
+                    <span className="font-bold text-foreground">189 €</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Externe Gebühren */}
+              <div className="bg-muted/50 rounded-xl p-6">
+                <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+                  <X className="text-muted-foreground" size={20} />
+                  Externe Gebühren (nicht an uns)
                 </h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
-                    <span className="text-muted-foreground mt-1">•</span>
-                    <span className="text-foreground">Fahrpraxis (Übungsfahrten & Sonderfahrten nach Bedarf)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-muted-foreground mt-1">•</span>
-                    <span className="text-foreground">Vorstellung zur praktischen Prüfung</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-muted-foreground mt-1">•</span>
-                    <span className="text-foreground">TÜV-Prüfungsgebühren (Theorie & Praxis)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-muted-foreground mt-1">•</span>
-                    <span className="text-foreground">Sehtest & biometrisches Passfoto</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-muted-foreground mt-1">•</span>
-                    <span className="text-foreground">Behördengebühren für Führerscheinantrag</span>
-                  </li>
-                </ul>
+                <div className="grid md:grid-cols-2 gap-4 text-sm">
+                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
+                    <span className="text-muted-foreground">TÜV Theorieprüfung</span>
+                    <span className="text-muted-foreground">ca. 23 €</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
+                    <span className="text-muted-foreground">TÜV Praxisprüfung</span>
+                    <span className="text-muted-foreground">ca. 117 €</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
+                    <span className="text-muted-foreground">Führerscheinantrag (Behörde)</span>
+                    <span className="text-muted-foreground">ca. 44 €</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
+                    <span className="text-muted-foreground">Sehtest & Passfoto</span>
+                    <span className="text-muted-foreground">ca. 15 €</span>
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground mt-3">
+                  Diese Gebühren werden direkt an TÜV/DEKRA bzw. Behörden gezahlt.
+                </p>
               </div>
             </div>
 
             <div className="bg-primary/5 rounded-xl p-6 mb-6">
-              <h3 className="font-semibold text-foreground mb-2">💡 Warum Qualität günstiger ist, als du denkst</h3>
+              <h3 className="font-semibold text-foreground mb-2">💡 Warum Qualität günstiger ist, als Sie denken</h3>
               <p className="text-muted-foreground">
-                Bei ABF Fahrschule investierst du in erfahrene Fahrlehrer, moderne Fahrzeuge und eine effiziente Ausbildung. 
-                Das bedeutet: weniger Fahrstunden nötig, schnellerer Prüfungserfolg und am Ende sogar niedrigere Gesamtkosten. 
-                Billig-Angebote kosten dich oft mehr – durch mehr Fahrstunden und Prüfungswiederholungen.
+                Bei ABF Fahrschule investieren Sie in erfahrene Fahrlehrer, moderne Fahrzeuge und eine effiziente Ausbildung. 
+                Das bedeutet: weniger Fahrstunden nötig, schnellerer Prüfungserfolg und am Ende sogar niedrigere Gesamtkosten.
               </p>
             </div>
 
@@ -142,9 +193,9 @@ const Preise = () => {
                   Jetzt Angebot sichern
                 </Button>
               </Link>
-              <p className="text-sm text-muted-foreground mt-4">Ratenzahlung möglich
-
-Wir bieten flexible Zahlungsoptionen an. Sprich uns einfach bei der Anmeldung darauf an.</p>
+              <p className="text-sm text-muted-foreground mt-4">
+                Ratenzahlung möglich – sprechen Sie uns bei der Anmeldung darauf an.
+              </p>
             </div>
           </div>
 

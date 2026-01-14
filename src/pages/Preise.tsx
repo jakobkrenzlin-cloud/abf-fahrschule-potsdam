@@ -108,30 +108,45 @@ const Preise = () => {
                 </div>
               </div>
 
-              {/* Fahrstunden */}
+              {/* Fahrstunden Klasse B */}
               <div className="bg-secondary/30 rounded-xl p-6">
-                <h3 className="text-xl font-bold text-foreground mb-4">Praktische Fahrstunden</h3>
+                <h3 className="text-xl font-bold text-foreground mb-4">Praktische Fahrstunden – Klasse B</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="flex justify-between items-center p-3 bg-background rounded-lg">
-                    <span className="text-foreground">Übungsfahrt (45 Min.)</span>
-                    <span className="font-bold text-foreground">69 €</span>
+                    <span className="text-foreground">Unterweisung (45 Min.)</span>
+                    <span className="font-bold text-foreground">67,50 €</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-background rounded-lg">
-                    <span className="text-foreground">Sonderfahrt Überland (45 Min.)</span>
-                    <span className="font-bold text-foreground">79 €</span>
+                    <span className="text-foreground">Übungsstunde (45 Min.)</span>
+                    <span className="font-bold text-foreground">67,50 €</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-background rounded-lg">
-                    <span className="text-foreground">Sonderfahrt Autobahn (45 Min.)</span>
-                    <span className="font-bold text-foreground">79 €</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
-                    <span className="text-foreground">Sonderfahrt Nachtfahrt (45 Min.)</span>
-                    <span className="font-bold text-foreground">79 €</span>
+                    <span className="text-foreground">Besondere Ausbildungsfahrten (45 Min.)</span>
+                    <span className="font-bold text-foreground">75 €</span>
                   </div>
                 </div>
                 <p className="text-xs text-muted-foreground mt-3">
-                  Gesetzlich vorgeschrieben für Klasse B: mind. 5× Überland, 4× Autobahn, 3× Nachtfahrt
+                  Besondere Ausbildungsfahrten: 5× Überland, 4× Autobahn, 3× Nachtfahrt (gesetzlich vorgeschrieben)
                 </p>
+              </div>
+
+              {/* Fahrstunden Klasse A + A2 */}
+              <div className="bg-secondary/30 rounded-xl p-6">
+                <h3 className="text-xl font-bold text-foreground mb-4">Praktische Fahrstunden – Klasse A + A2</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
+                    <span className="text-foreground">Unterweisung (45 Min.)</span>
+                    <span className="font-bold text-foreground">75 €</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
+                    <span className="text-foreground">Übungsstunde (45 Min.)</span>
+                    <span className="font-bold text-foreground">75 €</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
+                    <span className="text-foreground">Besondere Ausbildungsfahrten (45 Min.)</span>
+                    <span className="font-bold text-foreground">85 €</span>
+                  </div>
+                </div>
               </div>
 
               {/* Prüfungsvorstellung */}

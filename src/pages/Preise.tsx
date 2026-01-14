@@ -92,10 +92,7 @@ const Preise = () => {
                       <Check className="text-primary flex-shrink-0" size={16} />
                       Erste-Hilfe-Kurs
                     </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="text-primary flex-shrink-0" size={16} />
-                      Fahrsimulator-Training
-                    </li>
+                    
                     <li className="flex items-center gap-2">
                       <Check className="text-primary flex-shrink-0" size={16} />
                       Vorstellung zur theoretischen Prüfung

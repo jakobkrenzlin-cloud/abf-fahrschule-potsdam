@@ -413,10 +413,10 @@ const Landing = () => {
 
             <div className="bg-card border border-border rounded-xl p-5 text-center hover:border-primary transition-colors">
               <div className="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-2xl">🖥️</span>
+                <span className="text-2xl">🚗</span>
               </div>
-              <h3 className="font-bold text-card-foreground mb-1">Fahrsimulator</h3>
-              <p className="text-xs text-muted-foreground">Training inklusive</p>
+              <h3 className="font-bold text-card-foreground mb-1">ADAC Mitgliedschaft</h3>
+              <p className="text-xs text-muted-foreground">1 Jahr kostenlos</p>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-5 text-center hover:border-primary transition-colors col-span-2 lg:col-span-1">

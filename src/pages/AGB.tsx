@@ -29,7 +29,7 @@ const AGB = () => {
             <li>Kompletter Theorieunterricht (12 × Grundstoff à 90 Minuten + 2 × klassenspezifischer Zusatzstoff à 90 Minuten)</li>
             <li>Zugang zur LernApp für Theorieprüfung (Vogel Verlag)</li>
             <li>Erste-Hilfe-Kurs</li>
-            <li>Fahrsimulator-Training</li>
+            <li>ADAC 1 Jahr kostenlos</li>
             <li>Vorstellung zur theoretischen Prüfung</li>
             <li>Anmeldebearbeitung und Verwaltung</li>
           </ul>

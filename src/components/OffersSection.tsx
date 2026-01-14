@@ -56,7 +56,7 @@ const OffersSection = () => {
 
               <p className="text-gray-700 leading-relaxed">
                 Werde Teil unserer erfolgreichen Fahrschüler – starte deine Ausbildung in Potsdam mit 
-                kompletter Theorie, Lern-App, Erste Hilfe Kurs und Fahrsimulator inklusive!
+                kompletter Theorie, Lern-App, Erste Hilfe Kurs und ADAC 1 Jahr kostenlos!
               </p>
 
               <div className="space-y-3">

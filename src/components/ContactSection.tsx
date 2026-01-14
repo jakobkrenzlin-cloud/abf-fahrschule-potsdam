@@ -138,7 +138,7 @@ const ContactSection = () => {
                 Sichere dir jetzt den 479€ Grundbetrag!
               </p>
               <p className="text-xs text-gray-600 mt-2">
-                Inkl. komplettem Theorieunterricht, LernApp, Erste Hilfe & Fahrsimulator. Fahrstunden ab 69€/45 Min.
+                Inkl. komplettem Theorieunterricht, LernApp, Erste Hilfe & ADAC 1 Jahr. Fahrstunden ab 67,50€/45 Min.
               </p>
               <p className="text-xs text-gray-500 mt-1">
                 Angebot gültig bis 30.04.2026

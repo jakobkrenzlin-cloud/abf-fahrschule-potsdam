@@ -127,6 +127,43 @@ const Preise = () => {
                 </p>
               </div>
 
+              {/* Grundbetrag Klasse A + A2 */}
+              <div className="bg-primary/5 rounded-xl p-6 border-2 border-primary">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                  <div>
+                    <h3 className="text-2xl font-bold text-foreground">Grundbetrag Klasse A + A2</h3>
+                    <p className="text-muted-foreground mt-1">
+                      Einmalige Gebühr für Verwaltung und vollständige Theorieausbildung
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-sm text-muted-foreground line-through">statt 650 €</div>
+                    <div className="text-4xl font-bold text-primary">550 €</div>
+                  </div>
+                </div>
+                <div className="mt-4 pt-4 border-t border-primary/20">
+                  <p className="text-sm font-semibold text-foreground mb-2">Der Grundbetrag beinhaltet:</p>
+                  <ul className="grid md:grid-cols-2 gap-2 text-sm text-muted-foreground">
+                    <li className="flex items-center gap-2">
+                      <Check className="text-primary flex-shrink-0" size={16} />
+                      Erste-Hilfe-Kurs
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="text-primary flex-shrink-0" size={16} />
+                      Digitale LernApp (Vogel Verlag)
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="text-primary flex-shrink-0" size={16} />
+                      100 € Gutschein für Louis (Motorradzubehör)
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="text-primary flex-shrink-0" size={16} />
+                      ADAC Mitgliedschaft 1 Jahr kostenlos
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
               {/* Fahrstunden Klasse A + A2 */}
               <div className="bg-secondary/30 rounded-xl p-6">
                 <h3 className="text-xl font-bold text-foreground mb-4">Praktische Fahrstunden – Klasse A + A2</h3>

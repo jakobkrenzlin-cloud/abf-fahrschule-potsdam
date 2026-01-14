@@ -39,7 +39,7 @@ const OfferBox = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
               {[
-                '14 Theoriestunden inklusive',
+                'Gesamter theoretischer Unterricht inklusive',
                 'LernApp vom Vogel Verlag inklusive', 
                 'Erste Hilfe inklusive',
                 'Alles drin – keine versteckten Kosten'

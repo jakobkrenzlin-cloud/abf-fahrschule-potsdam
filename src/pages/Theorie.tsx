@@ -9,7 +9,7 @@ const Theorie = () => {
   return <>
       <Helmet>
         <title>Theorieunterricht Führerschein Klasse B | ABF Fahrschule Potsdam</title>
-        <meta name="description" content="14 Theoriestunden kompakt & effektiv. LernApp vom Vogel Verlag inklusive. Flexible Kurszeiten in Potsdam-Babelsberg. Jetzt Theorie-Kursplatz sichern!" />
+        <meta name="description" content="Kompletter Theorieunterricht kompakt & effektiv. LernApp vom Vogel Verlag inklusive. Flexible Kurszeiten in Potsdam-Babelsberg. Jetzt Theorie-Kursplatz sichern!" />
         <meta name="keywords" content="Theorieunterricht Potsdam, Führerschein Theorie Babelsberg, Fahrschule Theorie Potsdam, Führerschein Klasse B Theorie" />
         <link rel="canonical" href="https://www.abf-fahrschule.de/theorie" />
         <script type="application/ld+json">
@@ -17,7 +17,7 @@ const Theorie = () => {
           "@context": "https://schema.org",
           "@type": "Course",
           "name": "Theorieunterricht Führerschein Klasse B",
-          "description": "14 Theoriestunden für Führerschein Klasse B mit digitaler LernApp",
+          "description": "Kompletter Theorieunterricht für Führerschein Klasse B mit digitaler LernApp",
           "provider": {
             "@type": "LocalBusiness",
             "name": "ABF Bildungszentrum und Fahrschule GmbH",
@@ -40,7 +40,7 @@ const Theorie = () => {
         <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              14 Theoriestunden kompakt & effektiv
+              Kompletter Theorieunterricht – kompakt & effektiv
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Alles, was du für die theoretische Prüfung brauchst – verständlich erklärt, praxisnah und mit digitaler Unterstützung.
@@ -107,7 +107,7 @@ const Theorie = () => {
                     2
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">14 Theoriestunden im Unterrichtsraum</h3>
+                    <h3 className="text-xl font-semibold text-foreground mb-2">Theorieunterricht im Unterrichtsraum</h3>
                     <p className="text-muted-foreground">
                       Präsenzunterricht in modernen Räumen mit erfahrenen Fahrlehrern. Hier werden die wichtigen Themen verständlich erklärt – von Verkehrsregeln bis hin zu Vorfahrt und Technik.
                     </p>
@@ -208,7 +208,7 @@ const Theorie = () => {
               <div>
                 <h3 className="font-semibold text-foreground mb-1">Wann kann ich zur Prüfung?</h3>
                 <p className="text-muted-foreground text-sm">
-                  Sobald du alle 14 Theoriestunden absolviert hast und dich in der App sicher fühlst, melden wir dich an.
+                  Sobald du den gesamten Theorieunterricht absolviert hast und dich in der App sicher fühlst, melden wir dich an.
                 </p>
               </div>
               <div>

@@ -68,7 +68,7 @@ const Preise = () => {
               <div className="bg-primary/5 rounded-xl p-6 border-2 border-primary">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                   <div>
-                    <h3 className="text-2xl font-bold text-foreground">Grundbetrag</h3>
+                    <h3 className="text-2xl font-bold text-foreground">Grundbetrag Klasse B</h3>
                     <p className="text-muted-foreground mt-1">
                       Einmalige Gebühr für Verwaltung und vollständige Theorieausbildung
                     </p>

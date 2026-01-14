@@ -32,21 +32,56 @@ const Admin = () => {
       return;
     }
 
-    const { data: roles, error } = await supabase
-      .from('user_roles')
-      .select('role')
-      .eq('user_id', session.user.id)
-      .eq('role', 'admin')
-      .single();
+    // Server-side admin verification via edge function
+    try {
+      const response = await fetch(
+        'https://jxxhrldcmwjnjqfpfeti.supabase.co/functions/v1/verify-admin',
+        {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${session.access_token}`,
+            'Content-Type': 'application/json',
+          },
+        }
+      );
 
-    if (error || !roles) {
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        if (response.status === 401) {
+          // Token expired or invalid, redirect to auth
+          navigate('/auth');
+          return;
+        }
+        if (response.status === 403) {
+          // Not an admin
+          setHasAccess(false);
+          setLoading(false);
+          return;
+        }
+        // Other errors
+        console.error('Admin verification failed:', errorData);
+        setHasAccess(false);
+        setLoading(false);
+        return;
+      }
+
+      const data = await response.json();
+      if (!data.isAdmin) {
+        setHasAccess(false);
+        setLoading(false);
+        return;
+      }
+
+      setHasAccess(true);
+      fetchLeads();
+    } catch (error) {
+      // Network error or other issues
+      if (import.meta.env.DEV) {
+        console.error('Admin verification error:', error);
+      }
       setHasAccess(false);
       setLoading(false);
-      return;
     }
-
-    setHasAccess(true);
-    fetchLeads();
   };
 
   const handleLogout = async () => {

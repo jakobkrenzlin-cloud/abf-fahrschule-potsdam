@@ -8,12 +8,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 import { CookieConsentManager } from '@/lib/cookieConsent';
-
 const leadSchema = z.object({
   name: z.string().trim().min(2, 'Name muss mindestens 2 Zeichen lang sein').max(100, 'Name darf maximal 100 Zeichen lang sein'),
   contact: z.string().trim().min(5, 'Bitte gib eine gültige Telefonnummer ein').max(30, 'Telefonnummer darf maximal 30 Zeichen lang sein'),
   licenseClass: z.enum(['b', 'a1', 'a2', 'a', 'be'], {
-    errorMap: () => ({ message: 'Ungültige Führerscheinklasse' })
+    errorMap: () => ({
+      message: 'Ungültige Führerscheinklasse'
+    })
   }),
   honeyPot: z.string().max(0, 'Spam erkannt'),
   privacyConsent: z.boolean().refine(val => val === true, {
@@ -23,7 +24,6 @@ const leadSchema = z.object({
     message: 'Bitte stimme den AGB zu'
   })
 });
-
 const Landing = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -36,8 +36,9 @@ const Landing = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showStickyButton, setShowStickyButton] = useState(false);
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   useEffect(() => {
     const handleScroll = () => {
       const heroSection = document.getElementById('hero-section');
@@ -46,19 +47,17 @@ const Landing = () => {
         setShowStickyButton(heroBottom < 0);
       }
     };
-    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const scrollToForm = () => {
-    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('contact-form')?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     try {
       const result = leadSchema.safeParse({
         name: formData.name,
@@ -68,7 +67,6 @@ const Landing = () => {
         privacyConsent: formData.privacyConsent,
         agbConsent: formData.agbConsent
       });
-
       if (!result.success) {
         toast({
           title: "Ungültige Eingabe",
@@ -80,27 +78,22 @@ const Landing = () => {
       }
 
       // Submit via edge function with rate limiting
-      const response = await fetch(
-        'https://jxxhrldcmwjnjqfpfeti.supabase.co/functions/v1/submit-lead',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name: formData.name,
-            phone: formData.contact,
-            license_class: formData.licenseClass,
-            source: 'landingpage',
-          }),
-        }
-      );
-
+      const response = await fetch('https://jxxhrldcmwjnjqfpfeti.supabase.co/functions/v1/submit-lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.contact,
+          license_class: formData.licenseClass,
+          source: 'landingpage'
+        })
+      });
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
         throw new Error(errorData.error || 'Submission failed');
       }
-      
       CookieConsentManager.triggerConversion();
       navigate('/danke');
     } catch (error) {
@@ -113,26 +106,17 @@ const Landing = () => {
       setIsSubmitting(false);
     }
   };
-
   const handleWhatsApp = () => {
     window.open('https://wa.me/4915752387583', '_blank');
   };
-
   const handleCall = () => {
     window.location.href = 'tel:+4933196795854';
   };
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Minimal Header - Logo Only */}
       <header className="bg-background py-3 border-b border-border">
         <div className="max-w-7xl mx-auto px-4">
-          <img 
-            src="/abf-logo.png" 
-            alt="Fahrschule ABF Potsdam-Babelsberg" 
-            className="h-10 w-auto" 
-            loading="eager"
-          />
+          <img src="/abf-logo.png" alt="Fahrschule ABF Potsdam-Babelsberg" className="h-10 w-auto" loading="eager" />
         </div>
       </header>
 
@@ -158,9 +142,7 @@ const Landing = () => {
               </h1>
               
               {/* Subheadline for Parents */}
-              <p className="text-lg lg:text-xl mb-6 text-primary-foreground/90 font-medium">
-                Vertrauen Sie auf 15 Jahre Erfahrung – die sichere Fahrschulwahl für Ihr Kind in Potsdam.
-              </p>
+              
               
               {/* Pain Points (Hormozi Style) */}
               <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-xl p-4 mb-6 border border-primary-foreground/20">
@@ -174,14 +156,8 @@ const Landing = () => {
               
               {/* Key Benefits - Quick Scan */}
               <div className="grid grid-cols-2 gap-3 mb-6">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
-                  <span className="text-sm font-medium">In 4 Wochen fertig</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
-                  <span className="text-sm font-medium">Festpreis ab 479 €</span>
-                </div>
+                
+                
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
                   <span className="text-sm font-medium">Theorie + Erste Hilfe inkl.</span>
@@ -202,11 +178,7 @@ const Landing = () => {
 
               {/* Mobile: CTA Button to scroll to form */}
               <div className="lg:hidden">
-                <Button 
-                  size="lg" 
-                  onClick={scrollToForm}
-                  className="w-full bg-cta hover:bg-cta/90 text-cta-foreground text-lg py-6 rounded-xl font-bold shadow-xl"
-                >
+                <Button size="lg" onClick={scrollToForm} className="w-full bg-cta hover:bg-cta/90 text-cta-foreground text-lg py-6 rounded-xl font-bold shadow-xl">
                   Jetzt unverbindlich anmelden
                   <ChevronDown className="w-5 h-5 ml-2 animate-bounce" />
                 </Button>
@@ -230,15 +202,10 @@ const Landing = () => {
                   <Label htmlFor="name" className="text-sm font-semibold text-card-foreground">
                     Dein Name *
                   </Label>
-                  <Input
-                    id="name"
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={e => setFormData({ ...formData, name: e.target.value })}
-                    className="mt-1.5 h-12 border-2 border-input focus:border-primary rounded-lg text-base"
-                    placeholder="Vor- und Nachname"
-                  />
+                  <Input id="name" type="text" required value={formData.name} onChange={e => setFormData({
+                  ...formData,
+                  name: e.target.value
+                })} className="mt-1.5 h-12 border-2 border-input focus:border-primary rounded-lg text-base" placeholder="Vor- und Nachname" />
                 </div>
 
                 {/* Phone Field */}
@@ -246,15 +213,10 @@ const Landing = () => {
                   <Label htmlFor="contact" className="text-sm font-semibold text-card-foreground">
                     Telefonnummer *
                   </Label>
-                  <Input
-                    id="contact"
-                    type="tel"
-                    required
-                    value={formData.contact}
-                    onChange={e => setFormData({ ...formData, contact: e.target.value })}
-                    className="mt-1.5 h-12 border-2 border-input focus:border-primary rounded-lg text-base"
-                    placeholder="0151 12345678"
-                  />
+                  <Input id="contact" type="tel" required value={formData.contact} onChange={e => setFormData({
+                  ...formData,
+                  contact: e.target.value
+                })} className="mt-1.5 h-12 border-2 border-input focus:border-primary rounded-lg text-base" placeholder="0151 12345678" />
                 </div>
 
                 {/* License Class Dropdown - Preselected B */}
@@ -262,10 +224,10 @@ const Landing = () => {
                   <Label htmlFor="license" className="text-sm font-semibold text-card-foreground">
                     Führerscheinklasse
                   </Label>
-                  <Select 
-                    value={formData.licenseClass}
-                    onValueChange={value => setFormData({ ...formData, licenseClass: value })}
-                  >
+                  <Select value={formData.licenseClass} onValueChange={value => setFormData({
+                  ...formData,
+                  licenseClass: value
+                })}>
                     <SelectTrigger className="mt-1.5 h-12 border-2 border-input focus:border-primary rounded-lg">
                       <SelectValue />
                     </SelectTrigger>
@@ -281,25 +243,19 @@ const Landing = () => {
 
                 {/* Honeypot */}
                 <div className="hidden" aria-hidden="true">
-                  <Input
-                    type="text"
-                    tabIndex={-1}
-                    autoComplete="off"
-                    value={formData.honeyPot}
-                    onChange={e => setFormData({ ...formData, honeyPot: e.target.value })}
-                  />
+                  <Input type="text" tabIndex={-1} autoComplete="off" value={formData.honeyPot} onChange={e => setFormData({
+                  ...formData,
+                  honeyPot: e.target.value
+                })} />
                 </div>
 
                 {/* Consent Checkboxes */}
                 <div className="space-y-3 pt-2">
                   <label className="flex items-start gap-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={formData.privacyConsent}
-                      onChange={e => setFormData({ ...formData, privacyConsent: e.target.checked })}
-                      className="mt-1 h-4 w-4 rounded border-input text-primary focus:ring-primary"
-                      required
-                    />
+                    <input type="checkbox" checked={formData.privacyConsent} onChange={e => setFormData({
+                    ...formData,
+                    privacyConsent: e.target.checked
+                  })} className="mt-1 h-4 w-4 rounded border-input text-primary focus:ring-primary" required />
                     <span className="text-xs text-muted-foreground leading-tight">
                       Ich stimme der{' '}
                       <a href="/datenschutz" target="_blank" className="text-primary underline">Datenschutzerklärung</a> zu. *
@@ -307,13 +263,10 @@ const Landing = () => {
                   </label>
 
                   <label className="flex items-start gap-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={formData.agbConsent}
-                      onChange={e => setFormData({ ...formData, agbConsent: e.target.checked })}
-                      className="mt-1 h-4 w-4 rounded border-input text-primary focus:ring-primary"
-                      required
-                    />
+                    <input type="checkbox" checked={formData.agbConsent} onChange={e => setFormData({
+                    ...formData,
+                    agbConsent: e.target.checked
+                  })} className="mt-1 h-4 w-4 rounded border-input text-primary focus:ring-primary" required />
                     <span className="text-xs text-muted-foreground leading-tight">
                       Ich habe die <a href="/agb" target="_blank" className="text-primary underline">AGB</a> gelesen und stimme zu. *
                     </span>
@@ -321,12 +274,7 @@ const Landing = () => {
                 </div>
 
                 {/* Submit Button */}
-                <Button
-                  type="submit"
-                  size="lg"
-                  disabled={isSubmitting}
-                  className="w-full bg-cta hover:bg-cta/90 text-cta-foreground h-14 text-lg font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50"
-                >
+                <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-cta hover:bg-cta/90 text-cta-foreground h-14 text-lg font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50">
                   {isSubmitting ? "Wird gesendet..." : "Jetzt unverbindlich anmelden"}
                 </Button>
 
@@ -342,19 +290,11 @@ const Landing = () => {
 
               {/* Alternative Contact */}
               <div className="flex gap-3 mt-4">
-                <Button
-                  onClick={handleWhatsApp}
-                  variant="outline"
-                  className="flex-1 border-accent text-accent hover:bg-accent hover:text-accent-foreground h-11 font-semibold rounded-lg"
-                >
+                <Button onClick={handleWhatsApp} variant="outline" className="flex-1 border-accent text-accent hover:bg-accent hover:text-accent-foreground h-11 font-semibold rounded-lg">
                   <MessageCircle className="w-4 h-4 mr-2" />
                   WhatsApp
                 </Button>
-                <Button
-                  onClick={handleCall}
-                  variant="outline"
-                  className="flex-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground h-11 font-semibold rounded-lg"
-                >
+                <Button onClick={handleCall} variant="outline" className="flex-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground h-11 font-semibold rounded-lg">
                   <Phone className="w-4 h-4 mr-2" />
                   Anrufen
                 </Button>
@@ -427,12 +367,7 @@ const Landing = () => {
           </div>
 
           <div className="mt-8 text-center">
-            <a 
-              href="https://maps.google.com/?q=ABF+Fahrschule+Potsdam" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-card border border-border rounded-full px-6 py-3 shadow hover:shadow-md transition-shadow"
-            >
+            <a href="https://maps.google.com/?q=ABF+Fahrschule+Potsdam" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-card border border-border rounded-full px-6 py-3 shadow hover:shadow-md transition-shadow">
               <div className="flex text-cta">★★★★★</div>
               <span className="font-semibold text-card-foreground">4,9 / 5</span>
               <span className="text-muted-foreground text-sm">bei Google Maps</span>
@@ -544,11 +479,7 @@ const Landing = () => {
           </div>
 
           <div className="text-center mt-8">
-            <Button
-              size="lg"
-              onClick={scrollToForm}
-              className="bg-cta hover:bg-cta/90 text-cta-foreground text-lg px-10 py-6 rounded-xl font-bold shadow-xl"
-            >
+            <Button size="lg" onClick={scrollToForm} className="bg-cta hover:bg-cta/90 text-cta-foreground text-lg px-10 py-6 rounded-xl font-bold shadow-xl">
               Jetzt starten – unverbindlich anfragen
             </Button>
           </div>
@@ -597,11 +528,7 @@ const Landing = () => {
             Jetzt Platz sichern – Ausbildung startet laufend!
           </p>
           
-          <Button
-            size="lg"
-            onClick={scrollToForm}
-            className="bg-cta hover:bg-cta/90 text-cta-foreground text-xl px-12 py-6 rounded-xl font-bold shadow-xl"
-          >
+          <Button size="lg" onClick={scrollToForm} className="bg-cta hover:bg-cta/90 text-cta-foreground text-xl px-12 py-6 rounded-xl font-bold shadow-xl">
             Jetzt unverbindlich anmelden
           </Button>
 
@@ -626,19 +553,11 @@ const Landing = () => {
       </footer>
 
       {/* Sticky Mobile CTA */}
-      {showStickyButton && (
-        <div className="fixed bottom-0 left-0 right-0 p-3 bg-background/95 backdrop-blur border-t border-border lg:hidden z-50 shadow-2xl">
-          <Button
-            size="lg"
-            onClick={scrollToForm}
-            className="w-full bg-cta hover:bg-cta/90 text-cta-foreground text-lg py-5 rounded-xl font-bold shadow-lg"
-          >
+      {showStickyButton && <div className="fixed bottom-0 left-0 right-0 p-3 bg-background/95 backdrop-blur border-t border-border lg:hidden z-50 shadow-2xl">
+          <Button size="lg" onClick={scrollToForm} className="w-full bg-cta hover:bg-cta/90 text-cta-foreground text-lg py-5 rounded-xl font-bold shadow-lg">
             Jetzt unverbindlich anmelden
           </Button>
-        </div>
-      )}
-    </div>
-  );
+        </div>}
+    </div>;
 };
-
 export default Landing;

@@ -39,6 +39,10 @@ enabled = false
 [functions.submit-lead]
 verify_jwt = false
 
+# Edge Function: verify-admin (JWT verified in code for flexibility)
+[functions.verify-admin]
+verify_jwt = false
+
 # CORS and Security Settings
 [[headers]]
 source = "/(.*)"

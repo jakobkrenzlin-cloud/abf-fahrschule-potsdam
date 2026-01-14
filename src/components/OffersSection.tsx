@@ -47,7 +47,7 @@ const OffersSection = () => {
             <div className="p-6 space-y-6">
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
                 <p className="text-sm text-gray-700 font-medium">
-                  <strong>Grundbetrag 479 €</strong> inkl. komplettem Theorieunterricht, LernApp, Erste Hilfe & Fahrsimulator.
+                  <strong>Grundbetrag 479 €</strong> inkl. komplettem Theorieunterricht, LernApp, Erste Hilfe & ADAC 1 Jahr.
                 </p>
                 <p className="text-xs text-gray-600 mt-2">
                   Zusätzlich: Fahrstunden ab 67,50 €/45 Min., Vorstellung zur praktischen Prüfung 189 €, TÜV-Gebühren extern.
@@ -61,7 +61,7 @@ const OffersSection = () => {
 
               <div className="space-y-3">
                 <h4 className="font-semibold text-gray-900 mb-3">Im Grundbetrag enthalten:</h4>
-                {['Kompletter Theorieunterricht (12× Grundstoff + 2× Zusatzstoff)', 'LernApp vom Vogel Verlag', 'Erste-Hilfe-Kurs', 'Fahrsimulator-Training', 'Vorstellung zur theoretischen Prüfung'].map((item, index) => <div key={index} className="flex items-center space-x-3">
+                {['Kompletter Theorieunterricht (12× Grundstoff + 2× Zusatzstoff)', 'LernApp vom Vogel Verlag', 'Erste-Hilfe-Kurs', 'ADAC 1 Jahr kostenlos', 'Vorstellung zur theoretischen Prüfung'].map((item, index) => <div key={index} className="flex items-center space-x-3">
                     <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
                     <span className="text-gray-700">{item}</span>
                   </div>)}

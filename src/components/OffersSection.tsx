@@ -50,7 +50,7 @@ const OffersSection = () => {
                   <strong>Grundbetrag 479 €</strong> inkl. komplettem Theorieunterricht, LernApp, Erste Hilfe & Fahrsimulator.
                 </p>
                 <p className="text-xs text-gray-600 mt-2">
-                  Zusätzlich: Fahrstunden ab 69 €/45 Min., Vorstellung zur praktischen Prüfung 189 €, TÜV-Gebühren extern.
+                  Zusätzlich: Fahrstunden ab 67,50 €/45 Min., Vorstellung zur praktischen Prüfung 189 €, TÜV-Gebühren extern.
                 </p>
               </div>
 

@@ -58,7 +58,7 @@ const Preise = () => {
           <div className="bg-card border-2 border-primary rounded-2xl p-8 mb-8 shadow-lg">
             <div className="text-center mb-8">
               <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">⚡ Aktuelles Angebot – Gültig bis 30.04.2026</div>
-              <h2 className="text-3xl font-bold text-foreground mb-2">Preisliste Führerschein Klasse B</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-2">Preisliste Führerschein </h2>
               <p className="text-muted-foreground">Alle Preise inkl. MwSt. gemäß § 32 FahrlG</p>
             </div>
 

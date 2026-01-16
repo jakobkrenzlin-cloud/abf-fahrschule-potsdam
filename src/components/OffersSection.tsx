@@ -41,18 +41,13 @@ const OffersSection = () => {
               <div className="bg-white/20 rounded-lg p-4">
                 <div className="text-3xl font-bold mb-1">479 €</div>
                 <div className="text-sm text-blue-100">Grundbetrag - Gültig bis 30.04.2026</div>
+                <div className="text-xs text-blue-100 mt-2">
+                  Zusätzlich: Fahrstunde ab 67,50 €/45 Min., Übungsstunde 67,50 €/45 Min. und Besondere Ausbildungsfahrten 75 €/45 Min.
+                </div>
               </div>
             </div>
 
             <div className="p-6 space-y-6">
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
-                <p className="text-sm text-gray-700 font-medium">
-                  <strong>Grundbetrag 479 €</strong> inkl. komplettem Theorieunterricht, LernApp, Erste Hilfe & ADAC 1 Jahr.
-                </p>
-                <p className="text-xs text-gray-600 mt-2">
-                  Zusätzlich: Fahrstunden ab 67,50 €/45 Min., Vorstellung zur praktischen Prüfung 189 €, TÜV-Gebühren extern.
-                </p>
-              </div>
 
               <p className="text-gray-700 leading-relaxed">
                 Werde Teil unserer erfolgreichen Fahrschüler – starte deine Ausbildung in Potsdam mit 

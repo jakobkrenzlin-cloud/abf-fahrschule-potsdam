@@ -430,7 +430,7 @@ const Landing = () => {
 
           <div className="mt-6 bg-muted/50 rounded-lg p-4">
             <p className="text-center text-sm text-muted-foreground">
-              <strong>Zusätzliche Kosten:</strong> Fahrstunden ab 69 €/45 Min. | Sonderfahrten 79 €/45 Min. | Prakt. Prüfung 189 €
+              <strong>Zusätzliche Kosten:</strong> Fahrstunden 67,50 €/45 Min. | Besondere Ausbildungsfahrten 75 €/45 Min. | Prakt. Prüfung 189 €
             </p>
             <p className="text-center text-xs text-muted-foreground mt-2">
               Externe Gebühren (TÜV, Behörde) werden separat berechnet. <a href="/preise" className="underline hover:text-foreground">Vollständige Preisliste</a>

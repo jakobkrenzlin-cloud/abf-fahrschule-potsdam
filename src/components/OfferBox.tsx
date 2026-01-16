@@ -39,9 +39,9 @@ const OfferBox = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
               {[
-                'Gesamter theoretischer Unterricht inklusive',
-                'LernApp vom Vogel Verlag inklusive', 
-                'Erste Hilfe inklusive',
+                'Gesamter theoretischer Unterricht zusätzlich',
+                'LernApp vom Vogel Verlag zusätzlich', 
+                'Erste Hilfe zusätzlich',
                 'Alles drin – keine versteckten Kosten'
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-3 p-4 bg-green-50 rounded-lg">

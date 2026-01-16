@@ -9,7 +9,7 @@ const Theorie = () => {
   return <>
       <Helmet>
         <title>Theorieunterricht Führerschein Klasse B | ABF Fahrschule Potsdam</title>
-        <meta name="description" content="Kompletter Theorieunterricht kompakt & effektiv. LernApp vom Vogel Verlag inklusive. Flexible Kurszeiten in Potsdam-Babelsberg. Jetzt Theorie-Kursplatz sichern!" />
+        <meta name="description" content="Kompletter Theorieunterricht kompakt & effektiv. LernApp vom Vogel Verlag zusätzlich. Flexible Kurszeiten in Potsdam-Babelsberg. Jetzt Theorie-Kursplatz sichern!" />
         <meta name="keywords" content="Theorieunterricht Potsdam, Führerschein Theorie Babelsberg, Fahrschule Theorie Potsdam, Führerschein Klasse B Theorie" />
         <link rel="canonical" href="https://www.abf-fahrschule.de/theorie" />
         <script type="application/ld+json">
@@ -69,7 +69,7 @@ const Theorie = () => {
                   <CheckCircle className="text-primary" size={32} />
                 </div>
                 <h3 className="font-bold text-foreground text-xl mb-2">Prüfung</h3>
-                <p className="text-muted-foreground text-sm">Vorstellung zur Theorieprüfung inklusive</p>
+                <p className="text-muted-foreground text-sm">Vorstellung zur Theorieprüfung zusätzlich</p>
               </div>
             </div>
             <div className="text-center pt-6 border-t border-border">
@@ -137,7 +137,7 @@ const Theorie = () => {
                   <div>
                     <h3 className="text-xl font-semibold text-foreground mb-2">Anmeldung zur Theorieprüfung</h3>
                     <p className="text-muted-foreground">
-                      Sobald du bereit bist, melden wir dich zur theoretischen Prüfung beim TÜV an. Die Vorstellung ist bei uns bereits im Grundbetrag enthalten.
+                      Sobald du bereit bist, melden wir dich zur theoretischen Prüfung beim TÜV an. Die Vorstellung erfolgt zusätzlich.
                     </p>
                   </div>
                 </div>

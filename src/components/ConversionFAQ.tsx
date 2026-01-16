@@ -26,7 +26,7 @@ const ConversionFAQ = () => {
     },
     {
       question: "Was ist im 479€ Grundbetrag enthalten?",
-      answer: "Der Grundbetrag von 479€ enthält den kompletten Theorieunterricht (12× Grundstoff + 2× Zusatzstoff), die LernApp, Erste-Hilfe-Kurs, ADAC 1 Jahr kostenlos und die Vorstellung zur Theorieprüfung. Fahrstunden kosten 67,50€/45 Min., Sonderfahrten 75€/45 Min., Vorstellung zur praktischen Prüfung 189€. Alle Preise gemäß § 32 FahrlG transparent aufgelistet."
+      answer: "Der Grundbetrag von 479€ enthält den kompletten Theorieunterricht, die LernApp, Erste-Hilfe-Kurs und ADAC 1 Jahr kostenlos. Zusätzlich: Fahrstunden 67,50€/45 Min., Übungsstunden 67,50€/45 Min., Besondere Ausbildungsfahrten 75€/45 Min. Alle Preise gemäß § 32 FahrlG transparent aufgelistet."
     }
   ];
 

@@ -31,15 +31,16 @@ const Header = () => {
   return (
     <header className="bg-white shadow-sm fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+        <div className="flex justify-between items-center h-12 md:h-16">
+          {/* Logo - 30% smaller on mobile */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
               <img 
                 src="/lovable-uploads/043122ac-3ad6-402e-85ea-565401e53982.png"
                 alt="ABF Fahrschule Potsdam Logo - Professionelle Fahrausbildung"
-                className="h-20 w-auto"
+                className="h-14 md:h-20 w-auto"
                 loading="eager"
+                fetchPriority="high"
                 title="ABF Fahrschule Potsdam - Ihr vertrauensvoller Partner für den Führerschein"
               />
             </Link>

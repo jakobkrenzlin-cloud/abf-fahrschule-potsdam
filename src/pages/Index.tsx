@@ -10,10 +10,11 @@ import AboutSection from '../components/AboutSection';
 import SuccessfulStudentsSection from '../components/SuccessfulStudentsSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
+import MobileStickyFooter from '../components/MobileStickyFooter';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pb-20 md:pb-0">
       <Header />
       <Hero />
       <QuickContact />
@@ -24,6 +25,7 @@ const Index = () => {
       <SuccessfulStudentsSection />
       <ContactSection />
       <Footer />
+      <MobileStickyFooter />
     </div>
   );
 };

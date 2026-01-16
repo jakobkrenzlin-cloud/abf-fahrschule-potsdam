@@ -72,6 +72,8 @@ const TestimonialsSection = () => {
                       alt={`${testimonial.name} - Fahrschüler der ABF Fahrschule Potsdam`}
                       className="w-full h-full object-cover rounded-full"
                       style={{ objectPosition: '50% 35%' }}
+                      loading="lazy"
+                      decoding="async"
                     />
                   ) : (
                     <span className="text-2xl">👤</span>
@@ -86,8 +88,21 @@ const TestimonialsSection = () => {
           ))}
         </div>
 
-        {/* Trust Badges */}
-        <div className="mt-16 text-center">
+        {/* Verified Reviews Badge & Trust Badges */}
+        <div className="mt-16 text-center space-y-4">
+          {/* Verifizierte Bewertungen Badge */}
+          <a 
+            href="https://maps.app.goo.gl/ABFPotsdam" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold hover:bg-green-200 transition-colors"
+          >
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+            </svg>
+            Verifizierte Bewertungen auf Google Maps
+          </a>
+          
           <div className="inline-flex items-center space-x-8 bg-white rounded-xl px-8 py-4 shadow-sm">
             <div className="flex items-center space-x-2">
               <Star className="w-6 h-6 text-yellow-400 fill-current" />

@@ -36,7 +36,8 @@ const TeamSlideshow = () => {
                   alt={image.alt}
                   className="w-full h-64 object-cover rounded-xl"
                   style={index === 0 ? { objectPosition: '50% 65%' } : {}}
-                  loading={index === 0 ? "eager" : "lazy"}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent rounded-b-xl p-4">
                   <h4 className="text-white font-semibold text-lg">{image.title}</h4>

@@ -49,7 +49,8 @@ const SuccessfulStudentsSection = () => {
                 src={student.imageUrl}
                 alt={student.alt}
                 className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
-                loading={index < 3 ? "eager" : "lazy"}
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute top-4 right-4">
                 <div className="bg-green-500 text-white p-2 rounded-full shadow-lg">

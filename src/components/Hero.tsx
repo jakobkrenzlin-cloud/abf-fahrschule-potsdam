@@ -25,7 +25,7 @@ const Hero = () => {
     overlayTitle: "Theorieunterricht in Potsdam",
     overlayText: "Moderner Unterrichtsraum für entspanntes Lernen der Fahrtheorie"
   }];
-  return <section id="home" className="pt-16 bg-gradient-to-br from-blue-50 to-white">
+  return <section id="home" className="pt-12 md:pt-16 bg-gradient-to-br from-blue-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -77,7 +77,15 @@ const Hero = () => {
                 <CarouselContent>
                   {heroImages.map((image, index) => <CarouselItem key={index}>
                       <div className="w-full h-full relative">
-                        <img src={image.src} alt={image.alt} className="w-full h-full object-cover rounded-xl" loading={index === 0 ? "eager" : "lazy"} title={image.title} />
+                        <img 
+                          src={image.src} 
+                          alt={image.alt} 
+                          className="w-full h-full object-cover rounded-xl" 
+                          loading={index === 0 ? "eager" : "lazy"} 
+                          fetchPriority={index === 0 ? "high" : "auto"}
+                          decoding={index === 0 ? "sync" : "async"}
+                          title={image.title} 
+                        />
                         {/* Text overlay - hidden on mobile, visible on larger screens */}
                         <div className="absolute inset-0 bg-black bg-opacity-20 rounded-xl items-center justify-center p-6 hidden md:flex" style={{
                       alignItems: 'center',

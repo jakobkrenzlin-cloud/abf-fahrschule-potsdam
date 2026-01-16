@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 import { CookieConsentManager } from '@/lib/cookieConsent';
+import MobileStickyFooter from '@/components/MobileStickyFooter';
 const leadSchema = z.object({
   name: z.string().trim().min(2, 'Name muss mindestens 2 Zeichen lang sein').max(100, 'Name darf maximal 100 Zeichen lang sein'),
   contact: z.string().trim().min(5, 'Bitte gib eine gültige Telefonnummer ein').max(30, 'Telefonnummer darf maximal 30 Zeichen lang sein'),
@@ -202,10 +203,19 @@ const Landing = () => {
                   <Label htmlFor="name" className="text-sm font-semibold text-card-foreground">
                     Dein Name *
                   </Label>
-                  <Input id="name" type="text" required value={formData.name} onChange={e => setFormData({
-                  ...formData,
-                  name: e.target.value
-                })} className="mt-1.5 h-12 border-2 border-input focus:border-primary rounded-lg text-base" placeholder="Vor- und Nachname" />
+                  <Input 
+                    id="name" 
+                    type="text" 
+                    required 
+                    value={formData.name} 
+                    onChange={e => setFormData({
+                      ...formData,
+                      name: e.target.value
+                    })} 
+                    className="mt-1.5 h-12 border-2 border-input focus:border-primary rounded-lg text-base p-[15px]" 
+                    placeholder="Vor- und Nachname" 
+                    autoComplete="name"
+                  />
                 </div>
 
                 {/* Phone Field */}
@@ -213,10 +223,20 @@ const Landing = () => {
                   <Label htmlFor="contact" className="text-sm font-semibold text-card-foreground">
                     Telefonnummer *
                   </Label>
-                  <Input id="contact" type="tel" required value={formData.contact} onChange={e => setFormData({
-                  ...formData,
-                  contact: e.target.value
-                })} className="mt-1.5 h-12 border-2 border-input focus:border-primary rounded-lg text-base" placeholder="0151 12345678" />
+                  <Input 
+                    id="contact" 
+                    type="tel" 
+                    inputMode="tel"
+                    required 
+                    value={formData.contact} 
+                    onChange={e => setFormData({
+                      ...formData,
+                      contact: e.target.value
+                    })} 
+                    className="mt-1.5 h-12 border-2 border-input focus:border-primary rounded-lg text-base p-[15px]" 
+                    placeholder="0151 12345678" 
+                    autoComplete="tel"
+                  />
                 </div>
 
                 {/* License Class Dropdown - Preselected B */}
@@ -539,7 +559,7 @@ const Landing = () => {
       </section>
 
       {/* Minimal Footer */}
-      <footer className="bg-muted py-6 text-center">
+      <footer className="bg-muted py-6 pb-24 md:pb-6 text-center">
         <div className="max-w-7xl mx-auto px-4">
           <p className="text-sm text-muted-foreground mb-2">
             ABF Fahrschule Potsdam-Babelsberg | Tuchmacherstraße 45b, 14482 Potsdam
@@ -552,12 +572,8 @@ const Landing = () => {
         </div>
       </footer>
 
-      {/* Sticky Mobile CTA */}
-      {showStickyButton && <div className="fixed bottom-0 left-0 right-0 p-3 bg-background/95 backdrop-blur border-t border-border lg:hidden z-50 shadow-2xl">
-          <Button size="lg" onClick={scrollToForm} className="w-full bg-cta hover:bg-cta/90 text-cta-foreground text-lg py-5 rounded-xl font-bold shadow-lg">
-            Jetzt unverbindlich anmelden
-          </Button>
-        </div>}
+      {/* Sticky Mobile Action Bar */}
+      <MobileStickyFooter />
     </div>;
 };
 export default Landing;

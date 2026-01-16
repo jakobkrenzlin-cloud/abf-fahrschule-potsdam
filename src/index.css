@@ -102,3 +102,16 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Safe area for mobile sticky footer */
+.safe-area-inset-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Optimize touch targets for mobile */
+@layer utilities {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}

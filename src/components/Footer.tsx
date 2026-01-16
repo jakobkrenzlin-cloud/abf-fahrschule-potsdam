@@ -42,9 +42,9 @@ const Footer = () => {
               <button onClick={() => scrollToSection('process')} className="block text-gray-400 hover:text-white transition-colors">
                 Führerschein
               </button>
-              <button onClick={() => scrollToSection('testimonials')} className="block text-gray-400 hover:text-white transition-colors">
+              <a href="https://maps.google.com/?q=ABF+Fahrschule+Potsdam" target="_blank" rel="noopener noreferrer" className="block text-gray-400 hover:text-white transition-colors">
                 Bewertungen
-              </button>
+              </a>
               <button onClick={() => scrollToSection('contact')} className="block text-gray-400 hover:text-white transition-colors">
                 Kontakt
               </button>

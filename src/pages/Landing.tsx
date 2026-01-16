@@ -325,74 +325,24 @@ const Landing = () => {
       </section>
 
       {/* Social Proof Section */}
+      {/* Google Reviews Link */}
       <section className="py-12 bg-muted/30">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-2xl lg:text-3xl font-bold text-center mb-2 text-foreground">
-            Das sagen unsere Fahrschüler
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-foreground">
+            Bewertungen unserer Fahrschüler
           </h2>
-          <p className="text-center text-xs text-muted-foreground mb-8">
-            <a href="https://maps.google.com/?q=ABF+Fahrschule+Potsdam" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">
-              Verifizierte Bewertungen über Google Maps
-            </a>
+          <p className="text-muted-foreground mb-6">
+            Lies echte Erfahrungsberichte von unseren Fahrschülern auf Google Maps
           </p>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-card rounded-xl p-5 shadow-lg border border-border">
-              <div className="flex text-cta text-lg mb-3">★★★★★</div>
-              <p className="text-card-foreground mb-4 text-sm italic">
-                "Ich hab meinen Führerschein beim ersten Anlauf geschafft! Die Fahrlehrer bei ABF sind super geduldig und erklären alles perfekt."
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="text-primary font-bold">M</span>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-card-foreground">Max, 19</p>
-                  <p className="text-xs text-muted-foreground">Klasse B</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-xl p-5 shadow-lg border border-border">
-              <div className="flex text-cta text-lg mb-3">★★★★★</div>
-              <p className="text-card-foreground mb-4 text-sm italic">
-                "Die Lern-App ist mega praktisch! Nach nur 6 Wochen hatte ich meinen Schein – schneller als gedacht!"
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="text-primary font-bold">L</span>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-card-foreground">Lisa, 20</p>
-                  <p className="text-xs text-muted-foreground">Klasse B197</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-xl p-5 shadow-lg border border-border">
-              <div className="flex text-cta text-lg mb-3">★★★★★</div>
-              <p className="text-card-foreground mb-4 text-sm italic">
-                "Als Mutter war mir wichtig, dass mein Sohn gut aufgehoben ist. ABF hat alles super organisiert – volle Empfehlung!"
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="text-primary font-bold">S</span>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-card-foreground">Sandra, 48</p>
-                  <p className="text-xs text-muted-foreground">Mutter von Tim</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-8 text-center">
-            <a href="https://maps.google.com/?q=ABF+Fahrschule+Potsdam" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-card border border-border rounded-full px-6 py-3 shadow hover:shadow-md transition-shadow">
-              <div className="flex text-cta">★★★★★</div>
-              <span className="font-semibold text-card-foreground">4,9 / 5</span>
-              <span className="text-muted-foreground text-sm">bei Google Maps</span>
-            </a>
-          </div>
+          <a 
+            href="https://maps.google.com/?q=ABF+Fahrschule+Potsdam" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="inline-flex items-center gap-3 bg-card border border-border rounded-full px-6 py-3 shadow hover:shadow-md transition-shadow"
+          >
+            <div className="flex text-cta">★★★★★</div>
+            <span className="font-semibold text-card-foreground">Bewertungen auf Google Maps lesen</span>
+          </a>
         </div>
       </section>
 

@@ -57,9 +57,9 @@ const Header = () => {
             <button onClick={() => navigateToSection('process')} className="text-gray-700 hover:text-blue-600 transition-colors">
               Führerschein
             </button>
-            <button onClick={() => navigateToSection('testimonials')} className="text-gray-700 hover:text-blue-600 transition-colors">
+            <a href="https://maps.google.com/?q=ABF+Fahrschule+Potsdam" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-600 transition-colors">
               Bewertungen
-            </button>
+            </a>
             <button onClick={() => navigateToSection('contact')} className="text-gray-700 hover:text-blue-600 transition-colors">
               Kontakt
             </button>
@@ -101,9 +101,9 @@ const Header = () => {
             <button onClick={() => navigateToSection('process')} className="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">
               Führerschein
             </button>
-            <button onClick={() => navigateToSection('testimonials')} className="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">
+            <a href="https://maps.google.com/?q=ABF+Fahrschule+Potsdam" target="_blank" rel="noopener noreferrer" className="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">
               Bewertungen
-            </button>
+            </a>
             <button onClick={() => navigateToSection('contact')} className="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">
               Kontakt
             </button>

@@ -160,7 +160,7 @@ const Landing = () => {
                 
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
-                  <span className="text-sm font-medium">Theorie + Erste Hilfe inkl.</span>
+                  <span className="text-sm font-medium">Theorie + Erste Hilfe zusätzlich</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
@@ -408,7 +408,7 @@ const Landing = () => {
                 <span className="text-2xl">🚑</span>
               </div>
               <h3 className="font-bold text-card-foreground mb-1">Erste-Hilfe-Kurs</h3>
-              <p className="text-xs text-muted-foreground">Inklusive</p>
+              <p className="text-xs text-muted-foreground">Zusätzlich</p>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-5 text-center hover:border-primary transition-colors">
@@ -424,7 +424,7 @@ const Landing = () => {
                 <span className="text-2xl">📝</span>
               </div>
               <h3 className="font-bold text-card-foreground mb-1">Theorieprüfung</h3>
-              <p className="text-xs text-muted-foreground">Vorstellung inkl.</p>
+              <p className="text-xs text-muted-foreground">Vorstellung zusätzlich</p>
             </div>
           </div>
 

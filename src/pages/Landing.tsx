@@ -203,19 +203,10 @@ const Landing = () => {
                   <Label htmlFor="name" className="text-sm font-semibold text-card-foreground">
                     Dein Name *
                   </Label>
-                  <Input 
-                    id="name" 
-                    type="text" 
-                    required 
-                    value={formData.name} 
-                    onChange={e => setFormData({
-                      ...formData,
-                      name: e.target.value
-                    })} 
-                    className="mt-1.5 h-12 border-2 border-input focus:border-primary rounded-lg text-base p-[15px]" 
-                    placeholder="Vor- und Nachname" 
-                    autoComplete="name"
-                  />
+                  <Input id="name" type="text" required value={formData.name} onChange={e => setFormData({
+                  ...formData,
+                  name: e.target.value
+                })} className="mt-1.5 h-12 border-2 border-input focus:border-primary rounded-lg text-base p-[15px]" placeholder="Vor- und Nachname" autoComplete="name" />
                 </div>
 
                 {/* Phone Field */}
@@ -223,20 +214,10 @@ const Landing = () => {
                   <Label htmlFor="contact" className="text-sm font-semibold text-card-foreground">
                     Telefonnummer *
                   </Label>
-                  <Input 
-                    id="contact" 
-                    type="tel" 
-                    inputMode="tel"
-                    required 
-                    value={formData.contact} 
-                    onChange={e => setFormData({
-                      ...formData,
-                      contact: e.target.value
-                    })} 
-                    className="mt-1.5 h-12 border-2 border-input focus:border-primary rounded-lg text-base p-[15px]" 
-                    placeholder="0151 12345678" 
-                    autoComplete="tel"
-                  />
+                  <Input id="contact" type="tel" inputMode="tel" required value={formData.contact} onChange={e => setFormData({
+                  ...formData,
+                  contact: e.target.value
+                })} className="mt-1.5 h-12 border-2 border-input focus:border-primary rounded-lg text-base p-[15px]" placeholder="0151 12345678" autoComplete="tel" />
                 </div>
 
                 {/* License Class Dropdown - Preselected B */}
@@ -334,12 +315,7 @@ const Landing = () => {
           <p className="text-muted-foreground mb-6">
             Lies echte Erfahrungsberichte von unseren Fahrschülern auf Google Maps
           </p>
-          <a 
-            href="https://maps.google.com/?q=ABF+Fahrschule+Potsdam" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="inline-flex items-center gap-3 bg-card border border-border rounded-full px-6 py-3 shadow hover:shadow-md transition-shadow"
-          >
+          <a href="https://maps.google.com/?q=ABF+Fahrschule+Potsdam" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-card border border-border rounded-full px-6 py-3 shadow hover:shadow-md transition-shadow">
             <div className="flex text-cta">★★★★★</div>
             <span className="font-semibold text-card-foreground">Bewertungen auf Google Maps lesen</span>
           </a>
@@ -349,9 +325,7 @@ const Landing = () => {
       {/* What's Included */}
       <section className="py-12 bg-background">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-2xl lg:text-3xl font-bold text-center mb-3 text-foreground">
-            🌸 Das bekommst du für 179 € Frühjahrs Angebot
-          </h2>
+          <h2 className="text-2xl lg:text-3xl font-bold text-center mb-3 text-foreground"> Das bekommst du für 179 € Frühjahrs Angebot</h2>
           <p className="text-center text-muted-foreground mb-8">
             Alles für deinen Führerschein-Start – transparent nach § 32 FahrlG
           </p>

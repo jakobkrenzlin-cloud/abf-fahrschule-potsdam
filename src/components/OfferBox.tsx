@@ -29,8 +29,8 @@ const OfferBox = () => {
 
             <div className="text-center mb-8">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                Sonderangebot: Anmeldung nur 
-                <span className="text-primary text-5xl lg:text-6xl block mt-2">479 €</span>
+                🌸 Frühjahrs Angebot: Anmeldung nur 
+                <span className="text-primary text-5xl lg:text-6xl block mt-2">179 €</span>
               </h2>
               <p className="text-xl text-gray-600 font-medium">
                 Komplettpaket mit allem was du brauchst

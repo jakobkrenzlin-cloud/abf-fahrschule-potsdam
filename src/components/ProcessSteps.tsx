@@ -6,7 +6,7 @@ const ProcessSteps = () => {
     { 
       number: 1, 
       title: 'Anmeldung', 
-      description: 'Einfache Anmeldung vor Ort oder online mit dem 479€ Paket',
+      description: 'Einfache Anmeldung vor Ort oder online mit dem 179€ Frühjahrs Angebot',
       icon: UserPlus,
       color: 'bg-blue-500'
     },

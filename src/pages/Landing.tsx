@@ -350,7 +350,7 @@ const Landing = () => {
       <section className="py-12 bg-background">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-2xl lg:text-3xl font-bold text-center mb-3 text-foreground">
-            Das bekommst du für 479 € Grundbetrag
+            🌸 Das bekommst du für 179 € Frühjahrs Angebot
           </h2>
           <p className="text-center text-muted-foreground mb-8">
             Alles für deinen Führerschein-Start – transparent nach § 32 FahrlG

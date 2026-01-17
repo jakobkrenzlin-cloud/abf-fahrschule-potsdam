@@ -9,7 +9,7 @@ const Preise = () => {
   return <>
       <Helmet>
         <title>Faire Preise für deinen Führerschein | ABF Fahrschule Potsdam</title>
-        <meta name="description" content="Transparente Preise für Führerschein Klasse B in Potsdam-Babelsberg. 479€ Grundbetrag. Zusätzlich: Kompletter Theorieunterricht, LernApp & Erste Hilfe. Jetzt Angebot sichern!" />
+        <meta name="description" content="Transparente Preise für Führerschein Klasse B in Potsdam-Babelsberg. 179€ Frühjahrs Angebot Grundbetrag. Zusätzlich: Kompletter Theorieunterricht, LernApp & Erste Hilfe. Jetzt Angebot sichern!" />
         <meta name="keywords" content="Fahrschule Potsdam Preise, Führerschein Kosten Potsdam, Fahrschule Babelsberg Preise, Führerschein Klasse B Kosten" />
         <link rel="canonical" href="https://www.abf-fahrschule.de/preise" />
         <script type="application/ld+json">
@@ -57,7 +57,7 @@ const Preise = () => {
           {/* Vollständige Preisliste gemäß § 32 FahrlG */}
           <div className="bg-card border-2 border-primary rounded-2xl p-8 mb-8 shadow-lg">
             <div className="text-center mb-8">
-              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">⚡ Aktuelles Angebot – Gültig bis 30.04.2026</div>
+              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">🌸 Frühjahrs Angebot – Jetzt sparen!</div>
               <h2 className="text-3xl font-bold text-foreground mb-2">Preisliste Führerschein </h2>
               <p className="text-muted-foreground">Alle Preise inkl. MwSt. gemäß § 32 FahrlG</p>
             </div>
@@ -74,7 +74,8 @@ const Preise = () => {
                     </p>
                   </div>
                   <div className="text-right">
-                    <div className="text-4xl font-bold text-primary">479 €</div>
+                    <div className="text-sm text-muted-foreground line-through">statt 479 €</div>
+                    <div className="text-4xl font-bold text-primary">179 €</div>
                   </div>
                 </div>
                 <div className="mt-4 pt-4 border-t border-primary/20">

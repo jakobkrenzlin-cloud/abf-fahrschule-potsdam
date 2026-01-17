@@ -35,12 +35,12 @@ const OffersSection = () => {
                 <Car className="w-8 h-8" />
                 <div>
                   <h3 className="text-2xl font-bold">Führerschein-Ausbildung</h3>
-                  <p className="text-blue-100">jetzt starten – nur 479 €!</p>
+                  <p className="text-blue-100">🌸 Frühjahrs Angebot – nur 179 €!</p>
                 </div>
               </div>
               <div className="bg-white/20 rounded-lg p-4">
-                <div className="text-3xl font-bold mb-1">479 €</div>
-                <div className="text-sm text-blue-100">Grundbetrag - Gültig bis 30.04.2026</div>
+                <div className="text-3xl font-bold mb-1">179 €</div>
+                <div className="text-sm text-blue-100">Frühjahrs Angebot - Grundbetrag</div>
                 <div className="text-xs text-blue-100 mt-2">
                   Zusätzlich: Fahrstunde ab 67,50 €/45 Min., Übungsstunde 67,50 €/45 Min. und Besondere Ausbildungsfahrten 75 €/45 Min.
                 </div>
@@ -65,7 +65,7 @@ const OffersSection = () => {
               <div className="pt-4 space-y-3">
                 <Link to="/Anmeldung">
                   <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 text-lg">
-                    Jetzt für 479 € anmelden
+                    Jetzt für 179 € anmelden
                   </Button>
                 </Link>
                 <Button onClick={scrollToContact} variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold py-3">

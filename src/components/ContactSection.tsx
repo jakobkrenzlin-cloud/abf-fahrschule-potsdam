@@ -135,13 +135,13 @@ const ContactSection = () => {
             {/* Offer Reminder */}
             <div className="text-center mb-8 p-4 bg-gradient-to-r from-blue-600/10 to-blue-600/5 rounded-xl border-l-4 border-blue-600">
               <p className="text-blue-600 font-bold text-lg">
-                Sichere dir jetzt den 479€ Grundbetrag!
+                🌸 Frühjahrs Angebot: nur 179€ Grundbetrag!
               </p>
               <p className="text-xs text-gray-600 mt-2">
                 Zusätzlich: Kompletter Theorieunterricht, LernApp, Erste Hilfe & ADAC 1 Jahr. Fahrstunden ab 67,50€/45 Min.
               </p>
               <p className="text-xs text-gray-500 mt-1">
-                Angebot gültig bis 30.04.2026
+                Limitiertes Frühjahrs Angebot
               </p>
             </div>
 
@@ -235,7 +235,7 @@ const ContactSection = () => {
                 disabled={isSubmitting}
                 className="w-full bg-blue-600 hover:bg-blue-700 h-14 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50"
               >
-                {isSubmitting ? "Wird gesendet..." : "Jetzt Anfrage senden & 479€ Angebot sichern"}
+                {isSubmitting ? "Wird gesendet..." : "Jetzt Anfrage senden & 179€ Frühjahrs Angebot sichern"}
               </Button>
             </form>
             

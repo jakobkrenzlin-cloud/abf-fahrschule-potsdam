@@ -2,7 +2,6 @@ import React from 'react';
 import { Check, Phone, Mail, MapPin, Car, Clock, Award } from 'lucide-react';
 import { Button } from './ui/button';
 import { Link } from 'react-router-dom';
-
 const OffersSection = () => {
   const scrollToContact = () => {
     const element = document.getElementById('contact');
@@ -12,9 +11,7 @@ const OffersSection = () => {
       });
     }
   };
-
-  return (
-    <section id="offers" className="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-white">
+  return <section id="offers" className="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
@@ -35,7 +32,7 @@ const OffersSection = () => {
                 <Car className="w-8 h-8" />
                 <div>
                   <h3 className="text-2xl font-bold">Führerschein-Ausbildung</h3>
-                  <p className="text-blue-100">🌸 Frühjahrs Angebot – nur 179 €!</p>
+                  <p className="text-blue-100"> Frühjahrs Angebot – nur 179 €!</p>
                 </div>
               </div>
               <div className="bg-white/20 rounded-lg p-4">
@@ -133,8 +130,6 @@ const OffersSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default OffersSection;

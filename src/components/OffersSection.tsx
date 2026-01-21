@@ -38,7 +38,7 @@ const OffersSection = () => {
               <div className="bg-white/20 rounded-lg p-4">
                 <div className="text-3xl font-bold mb-1">179 €</div>
                 <div className="text-sm text-blue-100">Frühjahrs Angebot - Grundbetrag</div>
-                <div className="text-xs text-blue-100 mt-2">Preis gemäß § 32 Fahrlehrergesätz: Fahrstunde ab 67,50 €/45 Min., Übungsstunde 67,50 €/45 Min. und Besondere Ausbildungsfahrten 75 €/45 Min.</div>
+                <div className="text-xs text-blue-100 mt-2">Preis gemäß § 32 Fahrlehrergesetz: Fahrstunde ab 67,50 €/45 Min., Übungsstunde 67,50 €/45 Min. und Besondere Ausbildungsfahrten 75 €/45 Min.</div>
               </div>
             </div>
 

@@ -50,8 +50,16 @@ const OffersSection = () => {
               </p>
 
               <div className="space-y-3">
+                <h4 className="font-semibold text-gray-900 mb-3">Im Grundbetrag enthalten:</h4>
+                <div className="flex items-center space-x-3">
+                  <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+                  <span className="text-gray-700">Kompletter Theorieunterricht</span>
+                </div>
+              </div>
+
+              <div className="space-y-3">
                 <h4 className="font-semibold text-gray-900 mb-3">Im Grundbetrag zusätzlich:</h4>
-                {['Kompletter Theorieunterricht', 'LernApp vom Vogel Verlag', 'Erste-Hilfe-Kurs', 'ADAC 1 Jahr kostenlos'].map((item, index) => <div key={index} className="flex items-center space-x-3">
+                {['LernApp vom Vogel Verlag', 'Erste-Hilfe-Kurs', 'ADAC 1 Jahr kostenlos'].map((item, index) => <div key={index} className="flex items-center space-x-3">
                     <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
                     <span className="text-gray-700">{item}</span>
                   </div>)}

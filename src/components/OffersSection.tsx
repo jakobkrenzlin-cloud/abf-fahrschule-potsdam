@@ -32,7 +32,7 @@ const OffersSection = () => {
                 <Car className="w-8 h-8" />
                 <div>
                   <h3 className="text-2xl font-bold">Führerschein-Ausbildung</h3>
-                  <p className="text-blue-100"> Frühjahrs Angebot – nur 179 €!</p>
+                  <p className="text-blue-100"> Frühjahrs Angebot vom 01.02.2026 bis zum 31.03.2026 nur 179 €!</p>
                 </div>
               </div>
               <div className="bg-white/20 rounded-lg p-4">

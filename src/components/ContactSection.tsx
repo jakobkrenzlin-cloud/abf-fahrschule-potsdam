@@ -121,9 +121,7 @@ const ContactSection = () => {
             {/* Offer Reminder */}
             <div className="text-center mb-8 p-4 bg-gradient-to-r from-blue-600/10 to-blue-600/5 rounded-xl border-l-4 border-blue-600">
               <p className="text-blue-600 font-bold text-lg"> Frühjahrs Angebot: nur 179€ Grundbetrag!</p>
-              <p className="text-xs text-gray-600 mt-2">
-                Zusätzlich: Kompletter Theorieunterricht, LernApp, Erste Hilfe & ADAC 1 Jahr. Fahrstunden ab 67,50€/45 Min.
-              </p>
+              <p className="text-xs text-gray-600 mt-2">Zusätzlich: LernApp, Erste Hilfe & ADAC 1 Jahr. Fahrstunden ab 67,50€/45 Min.</p>
               <p className="text-xs text-gray-500 mt-1">
                 Limitiertes Frühjahrs Angebot
               </p>

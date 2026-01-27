@@ -17,10 +17,10 @@ const Index = () => {
     <div className="min-h-screen bg-white pb-20 md:pb-0">
       <Header />
       <Hero />
+      <OffersSection />
       <QuickContact />
       <WhyABF />
       <ProcessSection />
-      <OffersSection />
       <AboutSection />
       <SuccessfulStudentsSection />
       <ContactSection />

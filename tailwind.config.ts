@@ -48,6 +48,10 @@ export default {
 					DEFAULT: 'hsl(var(--cta))',
 					foreground: 'hsl(var(--cta-foreground))'
 				},
+				'spring-green': {
+					DEFAULT: 'hsl(var(--spring-green))',
+					foreground: 'hsl(var(--spring-green-foreground))'
+				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
 					foreground: 'hsl(var(--popover-foreground))'

@@ -46,7 +46,8 @@ export default {
 				},
 				cta: {
 					DEFAULT: 'hsl(var(--cta))',
-					foreground: 'hsl(var(--cta-foreground))'
+					foreground: 'hsl(var(--cta-foreground))',
+					hover: 'hsl(var(--cta-hover))'
 				},
 				'spring-green': {
 					DEFAULT: 'hsl(var(--spring-green))',

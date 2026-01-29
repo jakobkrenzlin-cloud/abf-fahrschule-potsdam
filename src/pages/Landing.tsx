@@ -99,7 +99,7 @@ const Landing = () => {
     }
   };
   const handleWhatsApp = () => {
-    window.open('https://wa.me/4915752387583?text=Hallo,%20ich%20möchte%20das%20179€%20Frühjahrs-Angebot%20sichern!', '_blank');
+    window.open('https://wa.me/4915752387583?text=Hallo,%20ich%20möchte%20das%20279€%20Frühjahrs-Angebot%20sichern!', '_blank');
   };
   const handleCall = () => {
     window.location.href = 'tel:+4933196795854';
@@ -182,8 +182,8 @@ const Landing = () => {
 
                 {/* Mobile CTA to scroll */}
                 <div className="lg:hidden">
-                  <Button size="lg" onClick={scrollToForm} className="w-full bg-primary hover:bg-cta-hover text-primary-foreground text-lg py-6 rounded-xl font-bold shadow-lg">
-                    Ja, 179 € Angebot sichern!
+                <Button size="lg" onClick={scrollToForm} className="w-full bg-primary hover:bg-cta-hover text-primary-foreground text-lg py-6 rounded-xl font-bold shadow-lg">
+                    Ja, 279 € Angebot sichern!
                     <ChevronDown className="w-5 h-5 ml-2 animate-bounce" />
                   </Button>
                 </div>
@@ -192,8 +192,9 @@ const Landing = () => {
               {/* Right: Conversion Form */}
               <div id="contact-form" className="bg-card rounded-2xl shadow-xl p-6 lg:p-8 border border-border">
                 <div className="text-center mb-6">
-                  <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold mb-3">Frühjahrs-Spezial 279 €<Flower2 className="w-4 h-4" />
-                    Frühjahrs-Spezial 179 €
+                  <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold mb-3">
+                    <Flower2 className="w-4 h-4" />
+                    Frühjahrs-Spezial 279 €
                   </div>
                   <h2 className="text-2xl lg:text-3xl font-bold text-card-foreground mb-2">
                     Jetzt Platz sichern!
@@ -249,7 +250,8 @@ const Landing = () => {
                     </div>}
 
                   {/* CTA Button */}
-                  <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-primary hover:bg-cta-hover text-primary-foreground h-16 text-xl font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50">Ja, 279 € Angebot sichern!{isSubmitting ? "Wird gesendet..." : showPrivacyConsent ? "Jetzt absenden" : "Ja, 179 € Angebot sichern!"}
+                  <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-primary hover:bg-cta-hover text-primary-foreground h-16 text-xl font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50">
+                    {isSubmitting ? "Wird gesendet..." : showPrivacyConsent ? "Jetzt absenden" : "Ja, 279 € Angebot sichern!"}
                   </Button>
 
                   {/* Trust Elements */}
@@ -524,7 +526,7 @@ const Landing = () => {
         <div className="max-w-3xl mx-auto px-4 text-center text-primary-foreground">
           <div className="mb-6">
             <span className="inline-block bg-card text-primary text-4xl lg:text-5xl font-black px-6 py-3 rounded-xl">
-              179 €
+              279 €
             </span>
           </div>
           
@@ -539,7 +541,7 @@ const Landing = () => {
           <CountdownTimer targetDate={OFFER_END_DATE} className="justify-center mb-8" />
           
           <Button size="lg" onClick={scrollToForm} className="bg-card hover:bg-card/90 text-primary text-xl px-12 py-7 rounded-xl font-bold shadow-lg">
-            Ja, 179 € Angebot sichern!
+            Ja, 279 € Angebot sichern!
           </Button>
 
           <p className="mt-6 text-sm text-primary-foreground/80">
@@ -567,7 +569,7 @@ const Landing = () => {
       <div className="fixed bottom-0 left-0 right-0 bg-card border-t border-border shadow-xl z-50 md:hidden safe-area-inset-bottom">
         <div className="p-3">
           <Button onClick={scrollToForm} className="w-full bg-primary hover:bg-cta-hover text-primary-foreground py-4 rounded-xl font-bold text-lg shadow-lg">
-            Ja, 179 € Angebot sichern!
+            Ja, 279 € Angebot sichern!
           </Button>
         </div>
       </div>

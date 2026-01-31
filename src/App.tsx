@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CookieConsent } from "@/components/CookieConsent";
 import Index from "./pages/Index";
 import Landing from "./pages/Landing";
+import AnmeldungMotorrad from "./pages/AnmeldungMotorrad";
 import Admin from "./pages/Admin";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
@@ -30,6 +31,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/Anmeldung" element={<Landing />} />
+          <Route path="/anmeldungmotorrad" element={<AnmeldungMotorrad />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/impressum" element={<Impressum />} />

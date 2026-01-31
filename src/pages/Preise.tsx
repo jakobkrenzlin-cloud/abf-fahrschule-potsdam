@@ -82,10 +82,6 @@ const Preise = () => {
                   <p className="text-sm font-semibold text-foreground mb-2">Im Grundbetrag zusätzlich:</p>
                   <ul className="grid md:grid-cols-2 gap-2 text-sm text-muted-foreground">
                     <li className="flex items-center gap-2">
-                    <Check className="text-primary flex-shrink-0" size={16} />
-                      Kompletter Theorieunterricht (12 × Grundstoff + 2 × Zusatzstoff)
-                    </li>
-                    <li className="flex items-center gap-2">
                       <Check className="text-primary flex-shrink-0" size={16} />
                       Digitale LernApp (Vogel Verlag)
                     </li>
@@ -93,14 +89,9 @@ const Preise = () => {
                       <Check className="text-primary flex-shrink-0" size={16} />
                       Erste-Hilfe-Kurs
                     </li>
-                    
                     <li className="flex items-center gap-2">
                       <Check className="text-primary flex-shrink-0" size={16} />
                       Vorstellung zur theoretischen Prüfung
-                    </li>
-                    <li className="flex items-center gap-2">
-                    <Check className="text-primary flex-shrink-0" size={16} />
-                      Anmeldebearbeitung & Verwaltung
                     </li>
                   </ul>
                 </div>

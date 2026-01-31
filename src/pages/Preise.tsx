@@ -75,14 +75,14 @@ const Preise = () => {
                   </div>
                   <div className="text-right">
                     <div className="text-sm text-muted-foreground line-through">statt 479 €</div>
-                    <div className="text-4xl font-bold text-primary">179 €</div>
+                    <div className="text-4xl font-bold text-primary">279 €</div>
                   </div>
                 </div>
                 <div className="mt-4 pt-4 border-t border-primary/20">
-                  <p className="text-sm font-semibold text-foreground mb-2">Der Grundbetrag beinhaltet:</p>
+                  <p className="text-sm font-semibold text-foreground mb-2">Im Grundbetrag zusätzlich:</p>
                   <ul className="grid md:grid-cols-2 gap-2 text-sm text-muted-foreground">
                     <li className="flex items-center gap-2">
-                      <Check className="text-primary flex-shrink-0" size={16} />
+                    <Check className="text-primary flex-shrink-0" size={16} />
                       Kompletter Theorieunterricht (12 × Grundstoff + 2 × Zusatzstoff)
                     </li>
                     <li className="flex items-center gap-2">
@@ -99,7 +99,7 @@ const Preise = () => {
                       Vorstellung zur theoretischen Prüfung
                     </li>
                     <li className="flex items-center gap-2">
-                      <Check className="text-primary flex-shrink-0" size={16} />
+                    <Check className="text-primary flex-shrink-0" size={16} />
                       Anmeldebearbeitung & Verwaltung
                     </li>
                   </ul>
@@ -143,7 +143,7 @@ const Preise = () => {
                   </div>
                 </div>
                 <div className="mt-4 pt-4 border-t border-primary/20">
-                  <p className="text-sm font-semibold text-foreground mb-2">Der Grundbetrag beinhaltet:</p>
+                  <p className="text-sm font-semibold text-foreground mb-2">Im Grundbetrag zusätzlich:</p>
                   <ul className="grid md:grid-cols-2 gap-2 text-sm text-muted-foreground">
                     <li className="flex items-center gap-2">
                       <Check className="text-primary flex-shrink-0" size={16} />

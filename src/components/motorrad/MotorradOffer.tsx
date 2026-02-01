@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle, Gift } from 'lucide-react';
+import storefrontImage from '@/assets/abf-motorrad-storefront.jpg';
 
 const MotorradOffer: React.FC = () => {
   return (
@@ -15,8 +16,8 @@ const MotorradOffer: React.FC = () => {
           {/* Left Column - Image */}
           <div className="relative rounded-2xl overflow-hidden shadow-xl">
             <img 
-              src="/lovable-uploads/fahrlehrer-portrait.jpg" 
-              alt="Glücklicher Fahrschüler auf modernem Motorrad"
+              src={storefrontImage} 
+              alt="ABF Fahrschule Potsdam mit Ausbildungs-Motorrädern vor dem Standort"
               className="w-full h-[400px] object-cover"
               loading="lazy"
             />

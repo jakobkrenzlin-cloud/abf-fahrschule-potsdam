@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Phone } from 'lucide-react';
+import { Phone, ArrowDown } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import MotorradHero from '@/components/motorrad/MotorradHero';
 import MotorradOffer from '@/components/motorrad/MotorradOffer';
@@ -15,6 +15,28 @@ const AnmeldungMotorrad = () => {
       behavior: 'smooth'
     });
   };
+
+  // Inline CTA Component
+  const InlineCTA = ({ text, variant = "default" }: { text: string; variant?: "default" | "dark" }) => (
+    <div className={`py-10 ${variant === "dark" ? "bg-neutral-900" : "bg-orange-500"}`}>
+      <div className="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p className="text-white text-lg sm:text-xl font-semibold text-center sm:text-left">
+          {text}
+        </p>
+        <Button
+          onClick={scrollToForm}
+          size="lg"
+          className={`${variant === "dark" 
+            ? "bg-orange-500 hover:bg-orange-600" 
+            : "bg-white text-orange-600 hover:bg-neutral-100"
+          } font-bold rounded-xl px-8 py-6 text-lg whitespace-nowrap transition-all hover:scale-105`}
+        >
+          Jetzt Platz sichern
+          <ArrowDown className="w-5 h-5 ml-2" />
+        </Button>
+      </div>
+    </div>
+  );
 
   return (
     <>
@@ -33,11 +55,18 @@ const AnmeldungMotorrad = () => {
         <header className="bg-black py-3 border-b border-neutral-800">
           <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
             <img src="/abf-logo.png" alt="ABF Fahrschule Potsdam" className="h-10 w-auto brightness-0 invert" loading="eager" />
-            <div className="hidden md:flex items-center gap-2 text-sm">
-              <Phone className="w-4 h-4 text-orange-500" />
-              <a href="tel:+4933196795854" className="font-semibold text-white hover:text-orange-500">
-                0331 / 967 958 54
+            <div className="hidden md:flex items-center gap-4">
+              <a href="tel:+4933196795854" className="flex items-center gap-2 text-white hover:text-orange-500 transition-colors">
+                <Phone className="w-4 h-4 text-orange-500" />
+                <span className="font-semibold">0331 / 967 958 54</span>
               </a>
+              <Button
+                onClick={scrollToForm}
+                size="sm"
+                className="bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg"
+              >
+                Jetzt anmelden
+              </Button>
             </div>
           </div>
         </header>
@@ -45,14 +74,23 @@ const AnmeldungMotorrad = () => {
         {/* Hero Section */}
         <MotorradHero onCtaClick={scrollToForm} />
 
+        {/* CTA after Hero */}
+        <InlineCTA text="Nur noch wenige Plätze für die Saison 2026 verfügbar!" />
+
         {/* Offer Section with Value Stacking */}
         <MotorradOffer />
+
+        {/* CTA after Offer */}
+        <InlineCTA text="Spare jetzt über 280€ – Angebot gilt nur bis 31. August!" variant="dark" />
 
         {/* Trust & Authority Section */}
         <MotorradAdvantages />
 
         {/* Social Proof / Testimonials */}
         <MotorradTestimonials />
+
+        {/* CTA after Testimonials */}
+        <InlineCTA text="Werde auch du Teil unserer Biker-Community!" />
 
         {/* Process Steps */}
         <MotorradProcess />
@@ -61,7 +99,7 @@ const AnmeldungMotorrad = () => {
         <MotorradContactForm />
 
         {/* Footer */}
-        <footer className="bg-black text-neutral-400 py-8">
+        <footer className="bg-black text-neutral-400 py-8 pb-24 md:pb-8">
           <div className="max-w-5xl mx-auto px-4 text-center">
             <p className="text-sm">
               © {new Date().getFullYear()} ABF Fahrschule Potsdam |{' '}

@@ -18,9 +18,9 @@ const AnmeldungMotorrad = () => {
 
   // Inline CTA Component
   const InlineCTA = ({ text, variant = "default" }: { text: string; variant?: "default" | "dark" }) => (
-    <div className={`py-10 ${variant === "dark" ? "bg-neutral-900" : "bg-orange-500"}`}>
-      <div className="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-white text-lg sm:text-xl font-semibold text-center sm:text-left">
+    <div className={`py-6 sm:py-10 ${variant === "dark" ? "bg-neutral-900" : "bg-orange-500"}`}>
+      <div className="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+        <p className="text-white text-base sm:text-lg lg:text-xl font-semibold text-center sm:text-left">
           {text}
         </p>
         <Button
@@ -29,10 +29,10 @@ const AnmeldungMotorrad = () => {
           className={`${variant === "dark" 
             ? "bg-orange-500 hover:bg-orange-600" 
             : "bg-white text-orange-600 hover:bg-neutral-100"
-          } font-bold rounded-xl px-8 py-6 text-lg whitespace-nowrap transition-all hover:scale-105`}
+          } font-bold rounded-xl px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg whitespace-nowrap transition-all hover:scale-105 w-full sm:w-auto`}
         >
           Jetzt Platz sichern
-          <ArrowDown className="w-5 h-5 ml-2" />
+          <ArrowDown className="w-4 sm:w-5 h-4 sm:h-5 ml-2" />
         </Button>
       </div>
     </div>

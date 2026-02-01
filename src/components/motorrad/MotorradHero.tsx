@@ -9,7 +9,7 @@ interface MotorradHeroProps {
 
 const MotorradHero: React.FC<MotorradHeroProps> = ({ onCtaClick }) => {
   return (
-    <section className="relative min-h-[80vh] flex items-center">
+    <section className="relative min-h-[70vh] sm:min-h-[80vh] flex items-center">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -18,35 +18,35 @@ const MotorradHero: React.FC<MotorradHeroProps> = ({ onCtaClick }) => {
           className="w-full h-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 py-16 lg:py-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 py-10 sm:py-16 lg:py-24">
         <div className="max-w-2xl">
           {/* H1 Headline with SEO keyword */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-4 leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white mb-3 sm:mb-4 leading-tight">
             Dein Weg in die Freiheit:
             <span className="block text-orange-500">Motorradführerschein in Potsdam</span>
           </h1>
           
           {/* Sub-Headline with offer */}
-          <p className="text-xl lg:text-2xl text-neutral-200 mb-8">
+          <p className="text-lg sm:text-xl lg:text-2xl text-neutral-200 mb-6 sm:mb-8">
             Sichere dir jetzt das Saison-Angebot: <span className="line-through text-neutral-400">Statt 650€</span>{' '}
             <span className="text-orange-500 font-bold">nur 599€</span> Grundbetrag!
           </p>
 
           {/* USP Bar */}
-          <div className="flex flex-wrap gap-4 mb-8">
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
-              <CheckCircle className="w-5 h-5 text-orange-500" />
+          <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-4 mb-6 sm:mb-8">
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2">
+              <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-orange-500 flex-shrink-0" />
               <span className="text-white text-sm font-medium">Inkl. Erste-Hilfe-Kurs</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
-              <CheckCircle className="w-5 h-5 text-orange-500" />
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2">
+              <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-orange-500 flex-shrink-0" />
               <span className="text-white text-sm font-medium">Inkl. 100€ Louis-Gutschein</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
-              <CheckCircle className="w-5 h-5 text-orange-500" />
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2">
+              <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-orange-500 flex-shrink-0" />
               <span className="text-white text-sm font-medium">Inkl. 1 Jahr ADAC</span>
             </div>
           </div>
@@ -55,7 +55,7 @@ const MotorradHero: React.FC<MotorradHeroProps> = ({ onCtaClick }) => {
           <Button 
             size="lg" 
             onClick={onCtaClick}
-            className="bg-orange-500 hover:bg-orange-600 text-white text-lg py-6 px-8 rounded-xl font-bold shadow-lg transition-all duration-300 hover:scale-105"
+            className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white text-base sm:text-lg py-5 sm:py-6 px-6 sm:px-8 rounded-xl font-bold shadow-lg transition-all duration-300 hover:scale-105"
           >
             Jetzt Platz sichern & 50€ sparen
           </Button>

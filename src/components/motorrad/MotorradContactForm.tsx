@@ -105,23 +105,23 @@ const MotorradContactForm: React.FC = () => {
   };
 
   return (
-    <section id="motorrad-form" className="py-16 lg:py-20 bg-black">
+    <section id="motorrad-form" className="py-10 sm:py-16 lg:py-20 bg-black">
       <div className="max-w-xl mx-auto px-4">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-3">
+        <div className="text-center mb-6 sm:mb-8">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3">
             Sichere dir jetzt deinen Platz für die Saison 2026!
           </h2>
           <div className="flex items-center justify-center gap-2 text-orange-500 mb-2">
-            <Clock className="w-5 h-5" />
-            <p className="font-semibold">Angebot nur gültig bis zum 31. August</p>
+            <Clock className="w-4 sm:w-5 h-4 sm:h-5" />
+            <p className="font-semibold text-sm sm:text-base">Angebot nur gültig bis zum 31. August</p>
           </div>
-          <p className="text-neutral-400">
+          <p className="text-neutral-400 text-sm sm:text-base">
             Die Plätze sind begrenzt – wir melden uns innerhalb von 24 Stunden
           </p>
         </div>
 
-        <div className="bg-neutral-900 rounded-2xl p-6 lg:p-8 border border-neutral-800">
-          <form onSubmit={handleFormSubmit} className="space-y-5">
+        <div className="bg-neutral-900 rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 border border-neutral-800">
+          <form onSubmit={handleFormSubmit} className="space-y-4 sm:space-y-5">
             {/* Name Field */}
             <div>
               <Label htmlFor="name" className="text-sm font-semibold text-neutral-200">
@@ -133,7 +133,7 @@ const MotorradContactForm: React.FC = () => {
                 required
                 value={formData.name}
                 onChange={e => setFormData({ ...formData, name: e.target.value })}
-                className="mt-1.5 h-14 border-neutral-700 bg-neutral-800 text-white placeholder:text-neutral-500 focus:border-orange-500 focus:ring-orange-500 rounded-xl text-lg p-4"
+                className="mt-1.5 h-12 sm:h-14 border-neutral-700 bg-neutral-800 text-white placeholder:text-neutral-500 focus:border-orange-500 focus:ring-orange-500 rounded-xl text-base sm:text-lg p-3 sm:p-4"
                 placeholder="Vor- und Nachname"
                 autoComplete="name"
               />
@@ -151,7 +151,7 @@ const MotorradContactForm: React.FC = () => {
                 required
                 value={formData.email}
                 onChange={e => setFormData({ ...formData, email: e.target.value })}
-                className="mt-1.5 h-14 border-neutral-700 bg-neutral-800 text-white placeholder:text-neutral-500 focus:border-orange-500 focus:ring-orange-500 rounded-xl text-lg p-4"
+                className="mt-1.5 h-12 sm:h-14 border-neutral-700 bg-neutral-800 text-white placeholder:text-neutral-500 focus:border-orange-500 focus:ring-orange-500 rounded-xl text-base sm:text-lg p-3 sm:p-4"
                 placeholder="deine@email.de"
                 autoComplete="email"
               />
@@ -169,7 +169,7 @@ const MotorradContactForm: React.FC = () => {
                 required
                 value={formData.phone}
                 onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                className="mt-1.5 h-14 border-neutral-700 bg-neutral-800 text-white placeholder:text-neutral-500 focus:border-orange-500 focus:ring-orange-500 rounded-xl text-lg p-4"
+                className="mt-1.5 h-12 sm:h-14 border-neutral-700 bg-neutral-800 text-white placeholder:text-neutral-500 focus:border-orange-500 focus:ring-orange-500 rounded-xl text-base sm:text-lg p-3 sm:p-4"
                 placeholder="0151 12345678"
                 autoComplete="tel"
               />
@@ -188,15 +188,15 @@ const MotorradContactForm: React.FC = () => {
 
             {/* Privacy Consent - Shows after first click */}
             {showPrivacyConsent && (
-              <div className="bg-neutral-800 rounded-xl p-4 space-y-3 animate-in fade-in slide-in-from-top-2">
-                <label className="flex items-start gap-3 cursor-pointer">
+              <div className="bg-neutral-800 rounded-xl p-3 sm:p-4 space-y-3 animate-in fade-in slide-in-from-top-2">
+                <label className="flex items-start gap-2 sm:gap-3 cursor-pointer">
                   <input
                     type="checkbox"
                     checked={privacyConsent}
                     onChange={e => setPrivacyConsent(e.target.checked)}
-                    className="mt-1 h-5 w-5 rounded border-neutral-600 bg-neutral-700 text-orange-500 focus:ring-orange-500"
+                    className="mt-1 h-5 w-5 rounded border-neutral-600 bg-neutral-700 text-orange-500 focus:ring-orange-500 flex-shrink-0"
                   />
-                  <span className="text-sm text-neutral-300 leading-tight">
+                  <span className="text-xs sm:text-sm text-neutral-300 leading-tight">
                     Ich stimme der{' '}
                     <a href="/datenschutz" target="_blank" className="text-orange-500 underline font-medium hover:text-orange-400">
                       Datenschutzerklärung
@@ -212,37 +212,37 @@ const MotorradContactForm: React.FC = () => {
               type="submit"
               size="lg"
               disabled={isSubmitting}
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white h-16 text-xl font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50"
+              className="w-full bg-orange-500 hover:bg-orange-600 text-white h-14 sm:h-16 text-base sm:text-lg font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50"
             >
-              {isSubmitting ? "Wird gesendet..." : "Jetzt unverbindlich anfragen & Platz sichern"}
+              {isSubmitting ? "Wird gesendet..." : "Jetzt anfragen & Platz sichern"}
             </Button>
 
             {/* Trust Elements */}
-            <div className="flex items-center justify-center gap-2 text-sm text-neutral-400 pt-2">
-              <Lock className="w-4 h-4 text-orange-500" />
-              <span>Deine Daten sind sicher. Wir rufen dich zur Terminabstimmung zurück.</span>
+            <div className="flex items-center justify-center gap-2 text-xs sm:text-sm text-neutral-400 pt-2 text-center">
+              <Lock className="w-4 h-4 text-orange-500 flex-shrink-0" />
+              <span>Deine Daten sind sicher. Wir rufen dich zurück.</span>
             </div>
           </form>
 
           {/* Alternative Contact */}
-          <div className="mt-8 pt-6 border-t border-neutral-800">
-            <p className="text-center text-neutral-400 text-sm mb-4">Oder kontaktiere uns direkt:</p>
-            <div className="flex gap-3">
+          <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-neutral-800">
+            <p className="text-center text-neutral-400 text-xs sm:text-sm mb-3 sm:mb-4">Oder kontaktiere uns direkt:</p>
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
               <Button
                 onClick={handleWhatsApp}
                 variant="outline"
-                className="flex-1 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white h-12 font-semibold rounded-xl bg-transparent"
+                className="flex-1 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white h-11 sm:h-12 font-semibold rounded-xl bg-transparent text-sm sm:text-base"
               >
-                <MessageCircle className="w-5 h-5 mr-2" />
+                <MessageCircle className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
                 WhatsApp
               </Button>
               <Button
                 onClick={handleCall}
                 variant="outline"
-                className="flex-1 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white h-12 font-semibold rounded-xl bg-transparent"
+                className="flex-1 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white h-11 sm:h-12 font-semibold rounded-xl bg-transparent text-sm sm:text-base"
               >
-                <Phone className="w-5 h-5 mr-2" />
-                0331 / 967 958 54
+                <Phone className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
+                Anrufen
               </Button>
             </div>
           </div>

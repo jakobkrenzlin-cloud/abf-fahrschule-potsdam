@@ -27,51 +27,51 @@ const MotorradTestimonials: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-20 bg-neutral-900">
+    <section className="py-10 sm:py-16 lg:py-20 bg-neutral-900">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
             Was unsere Biker sagen
           </h2>
-          <p className="text-neutral-400 mt-4">
+          <p className="text-neutral-400 mt-3 sm:mt-4 text-sm sm:text-base">
             Echte Bewertungen von echten Fahrschülern aus Potsdam
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-neutral-800 rounded-2xl p-6 relative">
-              <Quote className="absolute top-4 right-4 w-8 h-8 text-orange-500/30" />
+            <div key={index} className="bg-neutral-800 rounded-xl sm:rounded-2xl p-5 sm:p-6 relative">
+              <Quote className="absolute top-3 sm:top-4 right-3 sm:right-4 w-6 sm:w-8 h-6 sm:h-8 text-orange-500/30" />
               
               {/* Stars */}
-              <div className="flex gap-1 mb-4">
+              <div className="flex gap-1 mb-3 sm:mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-orange-500 fill-orange-500" />
+                  <Star key={i} className="w-4 sm:w-5 h-4 sm:h-5 text-orange-500 fill-orange-500" />
                 ))}
               </div>
 
               {/* Quote */}
-              <p className="text-neutral-300 mb-6 leading-relaxed">
+              <p className="text-neutral-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                 "{testimonial.quote}"
               </p>
 
               {/* Author */}
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">
+                <div className="w-10 sm:w-12 h-10 sm:h-12 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-white font-bold text-base sm:text-lg">
                     {testimonial.name.charAt(0)}
                   </span>
                 </div>
                 <div>
-                  <p className="text-white font-semibold">{testimonial.name}, {testimonial.age}</p>
-                  <p className="text-neutral-500 text-sm">Klasse A2 Führerschein</p>
+                  <p className="text-white font-semibold text-sm sm:text-base">{testimonial.name}, {testimonial.age}</p>
+                  <p className="text-neutral-500 text-xs sm:text-sm">Klasse A2 Führerschein</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <p className="text-center text-neutral-500 text-sm mt-8">
+        <p className="text-center text-neutral-500 text-xs sm:text-sm mt-6 sm:mt-8">
           * Alle Bewertungen stammen von verifizierten Google Maps Rezensionen
         </p>
       </div>

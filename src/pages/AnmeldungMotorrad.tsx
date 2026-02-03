@@ -55,7 +55,7 @@ const AnmeldungMotorrad = () => {
         {/* Minimal Header - Blue gradient theme */}
         <header className="bg-gradient-to-r from-[#1a2d4a] to-black py-3 border-b border-[#3b5998]/30">
           <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
-            <img src="/abf-logo.png" alt="ABF Fahrschule Potsdam" className="h-10 w-auto brightness-0 invert" loading="eager" />
+            <img src="/abf-logo.png" alt="ABF Fahrschule Potsdam" className="h-12 w-auto" loading="eager" />
             <div className="hidden md:flex items-center gap-4">
               <a href="tel:+4933196795854" className="flex items-center gap-2 text-white hover:text-[#6d8fd4] transition-colors">
                 <Phone className="w-4 h-4 text-[#3b5998]" />

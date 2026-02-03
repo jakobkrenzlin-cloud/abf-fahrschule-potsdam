@@ -114,10 +114,13 @@ function validateLeadData(data: unknown): { valid: boolean; error?: string; sani
     return { valid: false, error: 'Ungültige Führerscheinklasse' };
   }
 
-  // Source validation
-  const validSources = ['homepage', 'landingpage', 'kontakt'];
-  if (source && !validSources.includes(source as string)) {
-    return { valid: false, error: 'Ungültige Quelle' };
+  // Source validation - allow base sources and their variants
+  const validSourcePrefixes = ['homepage', 'landingpage', 'kontakt'];
+  if (source && typeof source === 'string') {
+    const sourceBase = source.split('-')[0];
+    if (!validSourcePrefixes.includes(sourceBase)) {
+      return { valid: false, error: 'Ungültige Quelle' };
+    }
   }
 
   // Optional email validation

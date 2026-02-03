@@ -8,6 +8,7 @@ import MotorradAdvantages from '@/components/motorrad/MotorradAdvantages';
 import MotorradTestimonials from '@/components/motorrad/MotorradTestimonials';
 import MotorradProcess from '@/components/motorrad/MotorradProcess';
 import MotorradContactForm from '@/components/motorrad/MotorradContactForm';
+import MotorradFlyerSection from '@/components/motorrad/MotorradFlyerSection';
 
 const AnmeldungMotorrad = () => {
   const scrollToForm = () => {
@@ -16,9 +17,9 @@ const AnmeldungMotorrad = () => {
     });
   };
 
-  // Inline CTA Component
+  // Inline CTA Component - Updated to blue theme
   const InlineCTA = ({ text, variant = "default" }: { text: string; variant?: "default" | "dark" }) => (
-    <div className={`py-6 sm:py-10 ${variant === "dark" ? "bg-neutral-900" : "bg-orange-500"}`}>
+    <div className={`py-6 sm:py-10 ${variant === "dark" ? "bg-gradient-to-r from-[#2a4a7f] to-black" : "bg-[#3b5998]"}`}>
       <div className="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
         <p className="text-white text-base sm:text-lg lg:text-xl font-semibold text-center sm:text-left">
           {text}
@@ -27,8 +28,8 @@ const AnmeldungMotorrad = () => {
           onClick={scrollToForm}
           size="lg"
           className={`${variant === "dark" 
-            ? "bg-orange-500 hover:bg-orange-600" 
-            : "bg-white text-orange-600 hover:bg-neutral-100"
+            ? "bg-[#3b5998] hover:bg-[#4a6cb3]" 
+            : "bg-white text-[#3b5998] hover:bg-neutral-100"
           } font-bold rounded-xl px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg whitespace-nowrap transition-all hover:scale-105 w-full sm:w-auto`}
         >
           Jetzt Platz sichern
@@ -50,20 +51,20 @@ const AnmeldungMotorrad = () => {
         <link rel="canonical" href="https://abf-fahrschule-potsdam.lovable.app/anmeldungmotorrad" />
       </Helmet>
 
-      <div className="min-h-screen bg-white">
-        {/* Minimal Header */}
-        <header className="bg-black py-3 border-b border-neutral-800">
+      <div className="min-h-screen bg-black">
+        {/* Minimal Header - Blue gradient theme */}
+        <header className="bg-gradient-to-r from-[#1a2d4a] to-black py-3 border-b border-[#3b5998]/30">
           <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
             <img src="/abf-logo.png" alt="ABF Fahrschule Potsdam" className="h-10 w-auto brightness-0 invert" loading="eager" />
             <div className="hidden md:flex items-center gap-4">
-              <a href="tel:+4933196795854" className="flex items-center gap-2 text-white hover:text-orange-500 transition-colors">
-                <Phone className="w-4 h-4 text-orange-500" />
+              <a href="tel:+4933196795854" className="flex items-center gap-2 text-white hover:text-[#6d8fd4] transition-colors">
+                <Phone className="w-4 h-4 text-[#3b5998]" />
                 <span className="font-semibold">0331 / 967 958 54</span>
               </a>
               <Button
                 onClick={scrollToForm}
                 size="sm"
-                className="bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg"
+                className="bg-[#3b5998] hover:bg-[#4a6cb3] text-white font-semibold rounded-lg"
               >
                 Jetzt anmelden
               </Button>
@@ -79,6 +80,9 @@ const AnmeldungMotorrad = () => {
 
         {/* Offer Section with Value Stacking */}
         <MotorradOffer />
+
+        {/* Flyer Section */}
+        <MotorradFlyerSection />
 
         {/* CTA after Offer */}
         <InlineCTA text="Spare jetzt über 280€ – Angebot gilt nur bis 31. August!" variant="dark" />
@@ -98,23 +102,23 @@ const AnmeldungMotorrad = () => {
         {/* Contact Form Section */}
         <MotorradContactForm />
 
-        {/* Footer */}
-        <footer className="bg-black text-neutral-400 py-8 pb-24 md:pb-8">
+        {/* Footer - Blue gradient */}
+        <footer className="bg-gradient-to-r from-[#1a2d4a] to-black text-neutral-400 py-8 pb-24 md:pb-8">
           <div className="max-w-5xl mx-auto px-4 text-center">
             <p className="text-sm">
               © {new Date().getFullYear()} ABF Fahrschule Potsdam |{' '}
-              <a href="/impressum" className="hover:text-orange-500 underline">Impressum</a> |{' '}
-              <a href="/datenschutz" className="hover:text-orange-500 underline">Datenschutz</a> |{' '}
-              <a href="/agb" className="hover:text-orange-500 underline">AGB</a>
+              <a href="/impressum" className="hover:text-[#6d8fd4] underline">Impressum</a> |{' '}
+              <a href="/datenschutz" className="hover:text-[#6d8fd4] underline">Datenschutz</a> |{' '}
+              <a href="/agb" className="hover:text-[#6d8fd4] underline">AGB</a>
             </p>
           </div>
         </footer>
 
-        {/* Mobile Sticky CTA */}
-        <div className="fixed bottom-0 left-0 right-0 p-4 bg-black/95 backdrop-blur-sm border-t border-neutral-800 md:hidden z-50 safe-area-inset-bottom">
+        {/* Mobile Sticky CTA - Blue theme */}
+        <div className="fixed bottom-0 left-0 right-0 p-4 bg-black/95 backdrop-blur-sm border-t border-[#3b5998]/30 md:hidden z-50 safe-area-inset-bottom">
           <Button
             onClick={scrollToForm}
-            className="w-full bg-orange-500 hover:bg-orange-600 text-white h-14 text-lg font-bold rounded-xl shadow-lg"
+            className="w-full bg-[#3b5998] hover:bg-[#4a6cb3] text-white h-14 text-lg font-bold rounded-xl shadow-lg"
           >
             Jetzt Platz sichern & 50€ sparen
           </Button>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText } from 'lucide-react';
+import motorradFlyer from '@/assets/motorrad-flyer.jpg';
 
 const MotorradFlyerSection: React.FC = () => {
   return (
@@ -14,15 +14,14 @@ const MotorradFlyerSection: React.FC = () => {
           </p>
         </div>
         
-        {/* Flyer Placeholder */}
+        {/* Flyer Image */}
         <div className="relative mx-auto max-w-md">
-          <div 
-            className="aspect-[3/4] border-2 border-dashed border-[#3b5998]/50 rounded-xl flex flex-col items-center justify-center bg-neutral-900/50 hover:border-[#3b5998] hover:bg-neutral-900/70 transition-all duration-300 cursor-pointer"
-          >
-            <FileText className="w-16 h-16 text-[#3b5998]/60 mb-4" />
-            <p className="text-[#6d8fd4] font-semibold text-lg">Hier Flyer ansehen</p>
-            <p className="text-neutral-500 text-sm mt-2">Flyerabf2.pdf</p>
-          </div>
+          <img 
+            src={motorradFlyer} 
+            alt="ABF Motorrad Führerschein Angebot Flyer - 599€ Grundbetrag inkl. Erste Hilfe, LernApp und Louis Gutschein"
+            className="w-full rounded-xl border-2 border-[#3b5998]/30 shadow-2xl hover:border-[#3b5998] transition-all duration-300"
+            loading="lazy"
+          />
         </div>
       </div>
     </section>

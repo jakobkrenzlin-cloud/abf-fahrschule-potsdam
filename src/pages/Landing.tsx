@@ -132,7 +132,7 @@ const Landing = () => {
       {/* Minimal Header - Blue gradient theme */}
       <header className="bg-gradient-to-r from-[#1a2d4a] to-black py-3 border-b border-[#3b5998]/30">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
-          <img src="/abf-logo.png" alt="ABF Fahrschule Potsdam" className="h-10 w-auto brightness-0 invert" loading="eager" />
+          <img src="/abf-logo.png" alt="ABF Fahrschule Potsdam" className="h-12 w-auto" loading="eager" />
           <div className="hidden md:flex items-center gap-4">
             <a href="tel:+4933196795854" className="flex items-center gap-2 text-white hover:text-[#6d8fd4] transition-colors">
               <Phone className="w-4 h-4 text-[#3b5998]" />
@@ -633,7 +633,7 @@ const Landing = () => {
       {/* Footer - Blue gradient */}
       <footer className="bg-gradient-to-r from-[#1a2d4a] to-black text-neutral-400 py-8 pb-24 md:pb-8">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <img src="/abf-logo.png" alt="ABF Fahrschule Potsdam" className="h-10 w-auto mx-auto mb-4 brightness-0 invert" />
+          <img src="/abf-logo.png" alt="ABF Fahrschule Potsdam" className="h-12 w-auto mx-auto mb-4" />
           <p className="text-sm text-neutral-400 mb-4">
             ABF Fahrschule Potsdam-Babelsberg | Tuchmacherstraße 45b, 14482 Potsdam
           </p>

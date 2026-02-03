@@ -21,13 +21,13 @@ const MotorradAdvantages: React.FC = () => {
   ];
 
   return (
-    <section className="py-10 sm:py-16 lg:py-20 bg-white">
+    <section className="py-10 sm:py-16 lg:py-20 bg-black">
       <div className="max-w-5xl mx-auto px-4">
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
             Mehr als nur Fahren lernen: Deine Vorteile bei ABF
           </h2>
-          <p className="text-neutral-600 mt-3 sm:mt-4 text-base sm:text-lg">
+          <p className="text-neutral-400 mt-3 sm:mt-4 text-base sm:text-lg">
             Als Motorrad Fahrschule in Potsdam setzen wir auf Qualität und persönliche Betreuung
           </p>
         </div>
@@ -36,12 +36,12 @@ const MotorradAdvantages: React.FC = () => {
           {advantages.map((advantage, index) => {
             const Icon = advantage.icon;
             return (
-              <div key={index} className="text-center p-5 sm:p-6 rounded-xl sm:rounded-2xl bg-neutral-50 hover:shadow-lg transition-shadow duration-300">
-                <div className="bg-orange-100 w-16 sm:w-20 h-16 sm:h-20 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
-                  <Icon className="w-8 sm:w-10 h-8 sm:h-10 text-orange-500" />
+              <div key={index} className="text-center p-5 sm:p-6 rounded-xl sm:rounded-2xl bg-neutral-900 border border-[#3b5998]/20 hover:border-[#3b5998]/40 hover:shadow-lg hover:shadow-[#3b5998]/10 transition-all duration-300">
+                <div className="bg-[#3b5998]/20 w-16 sm:w-20 h-16 sm:h-20 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                  <Icon className="w-8 sm:w-10 h-8 sm:h-10 text-[#6d8fd4]" />
                 </div>
-                <h3 className="font-bold text-lg sm:text-xl text-neutral-900 mb-2 sm:mb-3">{advantage.title}</h3>
-                <p className="text-neutral-600 text-sm sm:text-base">
+                <h3 className="font-bold text-lg sm:text-xl text-white mb-2 sm:mb-3">{advantage.title}</h3>
+                <p className="text-neutral-400 text-sm sm:text-base">
                   {advantage.description}
                 </p>
               </div>

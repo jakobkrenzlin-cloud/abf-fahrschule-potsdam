@@ -215,7 +215,7 @@ const Landing = () => {
                     <img src="/lovable-uploads/eca56e27-4a5a-47dc-925b-7e8a54a01629.png" alt="Bestandene Prüfung" className="w-8 h-8 rounded-full border-2 border-[#3b5998] object-cover" loading="eager" decoding="async" />
                     <img src="/lovable-uploads/8c2d1108-a7d1-4072-b602-eb0f992cd15d.png" alt="Motorradschüler" className="w-8 h-8 rounded-full border-2 border-[#3b5998] object-cover" loading="eager" decoding="async" />
                   </div>
-                  <span className="text-sm text-neutral-400">500+ Fahrschüler haben bestanden</span>
+                  <span className="text-sm text-neutral-400">Diese Fahrschüler haben bestanden</span>
                 </div>
 
                 {/* Mobile CTA to scroll */}

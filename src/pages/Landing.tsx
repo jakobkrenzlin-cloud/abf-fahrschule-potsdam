@@ -192,7 +192,7 @@ const Landing = () => {
                 </p>
                 
                 {/* Key Benefits - Visual Pills */}
-                <div className="flex flex-wrap gap-3 mb-6">
+                <div className="flex flex-wrap gap-3 mb-4">
                   <div className="flex items-center gap-2 bg-[#3b5998]/20 border border-[#3b5998]/40 rounded-full px-4 py-2 text-white">
                     <CheckCircle className="w-5 h-5 text-[#6d8fd4]" />
                     <span className="font-medium">Geduldige Fahrlehrer</span>
@@ -205,6 +205,17 @@ const Landing = () => {
                     <CheckCircle className="w-5 h-5 text-[#6d8fd4]" />
                     <span className="font-medium">Keine versteckten Kosten</span>
                   </div>
+                </div>
+
+                {/* Social Proof - Successful Students Avatars */}
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="flex -space-x-2">
+                    <img src="/lovable-uploads/3bdfd6a0-7166-40d9-8196-2bbd6a98655d.png" alt="Erfolgreiche Fahrschülerin" className="w-8 h-8 rounded-full border-2 border-[#3b5998] object-cover" loading="eager" decoding="async" />
+                    <img src="/lovable-uploads/753c5aba-03ff-465a-aa50-7ea8dc8b796b.png" alt="Erfolgreiche Fahrschülerinnen" className="w-8 h-8 rounded-full border-2 border-[#3b5998] object-cover" loading="eager" decoding="async" />
+                    <img src="/lovable-uploads/eca56e27-4a5a-47dc-925b-7e8a54a01629.png" alt="Bestandene Prüfung" className="w-8 h-8 rounded-full border-2 border-[#3b5998] object-cover" loading="eager" decoding="async" />
+                    <img src="/lovable-uploads/8c2d1108-a7d1-4072-b602-eb0f992cd15d.png" alt="Motorradschüler" className="w-8 h-8 rounded-full border-2 border-[#3b5998] object-cover" loading="eager" decoding="async" />
+                  </div>
+                  <span className="text-sm text-neutral-400">500+ Fahrschüler haben bestanden</span>
                 </div>
 
                 {/* Mobile CTA to scroll */}

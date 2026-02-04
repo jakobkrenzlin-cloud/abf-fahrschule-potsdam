@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import { Phone, MessageCircle, Shield, CheckCircle, Star, ChevronDown, Flower2, Sun, Lock, BookOpen, Smartphone, Heart, Car, ClipboardCheck, Award, HelpCircle, ArrowDown } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -128,7 +129,13 @@ const Landing = () => {
   );
 
   return (
-    <div className="min-h-screen bg-black">
+    <>
+      <Helmet>
+        <title>Fahrschule Potsdam | Führerschein Klasse B ab 279€ | ABF</title>
+        <meta name="description" content="Führerschein machen in Potsdam? ABF Fahrschule bietet Klasse B ab 279€ inkl. Theorie, Erste Hilfe & Lern-App. Jetzt Platz sichern!" />
+      </Helmet>
+      
+      <div className="min-h-screen bg-black">
       {/* Minimal Header - Blue gradient theme */}
       <header className="bg-gradient-to-r from-[#1a2d4a] to-black py-3 border-b border-[#3b5998]/30">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
@@ -185,14 +192,14 @@ const Landing = () => {
                 
                 {/* Main Headline */}
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight text-white">
-                  Führerschein Frühjahrs-Spezial
-                  <span className="block text-[#6d8fd4]">Starte frei in den Frühling!</span>
+                  Deine Fahrschule in Potsdam
+                  <span className="block text-[#6d8fd4]">Führerschein Klasse B in 4 Wochen</span>
                 </h1>
                 
-                {/* Value Subheadline */}
+                {/* SEO-optimized intro paragraph */}
                 <p className="text-xl lg:text-2xl text-neutral-300 mb-6 font-medium">
-                  Theorie komplett + Lern-App + Erste Hilfe + ADAC 1 Jahr.
-                  <span className="block mt-1 text-[#6d8fd4] font-bold">Alles dabei. Nur bis 30. April.</span>
+                  Willkommen bei der ABF Fahrschule in Potsdam! Mache jetzt deinen Führerschein Klasse B in nur 4 Wochen – mit Theorie, Lern-App, Erste Hilfe & ADAC.
+                  <span className="block mt-1 text-[#6d8fd4] font-bold">Frühjahrs-Spezial nur bis 30. April!</span>
                 </p>
                 
                 {/* Key Benefits - Visual Pills */}
@@ -651,10 +658,11 @@ const Landing = () => {
           onClick={scrollToForm}
           className="w-full bg-[#3b5998] hover:bg-[#4a6cb3] text-white h-14 text-lg font-bold rounded-xl shadow-lg"
         >
-          Ja, 279 € Angebot sichern!
+          Jetzt 279 € Angebot sichern!
         </Button>
       </div>
     </div>
+    </>
   );
 };
 

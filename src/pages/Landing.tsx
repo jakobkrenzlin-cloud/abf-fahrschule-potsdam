@@ -20,7 +20,6 @@ const leadSchema = z.object({
 
 // Offer end date: April 30, 2026 (Note: April has 30 days, not 31)
 const OFFER_END_DATE = new Date('2026-04-30T23:59:59');
-
 const Landing = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -31,14 +30,14 @@ const Landing = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPrivacyConsent, setShowPrivacyConsent] = useState(false);
   const [privacyConsent, setPrivacyConsent] = useState(false);
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const scrollToForm = () => {
     document.getElementById('contact-form')?.scrollIntoView({
       behavior: 'smooth'
     });
   };
-
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -100,36 +99,30 @@ const Landing = () => {
       setIsSubmitting(false);
     }
   };
-
   const handleWhatsApp = () => {
     window.open('https://wa.me/4915752387583?text=Hallo,%20ich%20möchte%20das%20279€%20Frühjahrs-Angebot%20sichern!', '_blank');
   };
-
   const handleCall = () => {
     window.location.href = 'tel:+4933196795854';
   };
 
   // Inline CTA Component - Blue theme matching motorrad page
-  const InlineCTA = ({ text }: { text: string }) => (
-    <div className="py-6 sm:py-10 bg-gradient-to-r from-[#2a4a7f] to-black">
+  const InlineCTA = ({
+    text
+  }: {
+    text: string;
+  }) => <div className="py-6 sm:py-10 bg-gradient-to-r from-[#2a4a7f] to-black">
       <div className="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
         <p className="text-white text-base sm:text-lg lg:text-xl font-semibold text-center sm:text-left">
           {text}
         </p>
-        <Button
-          onClick={scrollToForm}
-          size="lg"
-          className="bg-[#3b5998] hover:bg-[#4a6cb3] text-white font-bold rounded-xl px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg whitespace-nowrap transition-all hover:scale-105 w-full sm:w-auto"
-        >
+        <Button onClick={scrollToForm} size="lg" className="bg-[#3b5998] hover:bg-[#4a6cb3] text-white font-bold rounded-xl px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg whitespace-nowrap transition-all hover:scale-105 w-full sm:w-auto">
           Jetzt Platz sichern
           <ArrowDown className="w-4 sm:w-5 h-4 sm:h-5 ml-2" />
         </Button>
       </div>
-    </div>
-  );
-
-  return (
-    <>
+    </div>;
+  return <>
       <Helmet>
         <title>Fahrschule Potsdam | Führerschein Klasse B ab 279€ | ABF</title>
         <meta name="description" content="Führerschein machen in Potsdam? ABF Fahrschule bietet Klasse B ab 279€ inkl. Theorie, Erste Hilfe & Lern-App. Jetzt Platz sichern!" />
@@ -145,11 +138,7 @@ const Landing = () => {
               <Phone className="w-4 h-4 text-[#3b5998]" />
               <span className="font-semibold">0331 / 967 958 54</span>
             </a>
-            <Button
-              onClick={scrollToForm}
-              size="sm"
-              className="bg-[#3b5998] hover:bg-[#4a6cb3] text-white font-semibold rounded-lg"
-            >
+            <Button onClick={scrollToForm} size="sm" className="bg-[#3b5998] hover:bg-[#4a6cb3] text-white font-semibold rounded-lg">
               Jetzt anmelden
             </Button>
           </div>
@@ -248,16 +237,10 @@ const Landing = () => {
                     <Label htmlFor="name" className="text-sm font-semibold text-neutral-300">
                       Dein Name
                     </Label>
-                    <Input 
-                      id="name" 
-                      type="text" 
-                      required 
-                      value={formData.name} 
-                      onChange={e => setFormData({ ...formData, name: e.target.value })} 
-                      className="mt-1.5 h-14 border border-[#3b5998]/30 bg-neutral-800 text-white focus:border-[#3b5998] focus:ring-[#3b5998] rounded-xl text-lg p-4 placeholder:text-neutral-500" 
-                      placeholder="Vor- und Nachname" 
-                      autoComplete="name" 
-                    />
+                    <Input id="name" type="text" required value={formData.name} onChange={e => setFormData({
+                      ...formData,
+                      name: e.target.value
+                    })} className="mt-1.5 h-14 border border-[#3b5998]/30 bg-neutral-800 text-white focus:border-[#3b5998] focus:ring-[#3b5998] rounded-xl text-lg p-4 placeholder:text-neutral-500" placeholder="Vor- und Nachname" autoComplete="name" />
                   </div>
 
                   {/* Phone Field */}
@@ -265,40 +248,24 @@ const Landing = () => {
                     <Label htmlFor="phone" className="text-sm font-semibold text-neutral-300">
                       Telefonnummer
                     </Label>
-                    <Input 
-                      id="phone" 
-                      type="tel" 
-                      inputMode="tel" 
-                      required 
-                      value={formData.phone} 
-                      onChange={e => setFormData({ ...formData, phone: e.target.value })} 
-                      className="mt-1.5 h-14 border border-[#3b5998]/30 bg-neutral-800 text-white focus:border-[#3b5998] focus:ring-[#3b5998] rounded-xl text-lg p-4 placeholder:text-neutral-500" 
-                      placeholder="0151 12345678" 
-                      autoComplete="tel" 
-                    />
+                    <Input id="phone" type="tel" inputMode="tel" required value={formData.phone} onChange={e => setFormData({
+                      ...formData,
+                      phone: e.target.value
+                    })} className="mt-1.5 h-14 border border-[#3b5998]/30 bg-neutral-800 text-white focus:border-[#3b5998] focus:ring-[#3b5998] rounded-xl text-lg p-4 placeholder:text-neutral-500" placeholder="0151 12345678" autoComplete="tel" />
                   </div>
 
                   {/* Honeypot - Hidden */}
                   <div className="hidden" aria-hidden="true">
-                    <Input 
-                      type="text" 
-                      tabIndex={-1} 
-                      autoComplete="off" 
-                      value={formData.honeyPot} 
-                      onChange={e => setFormData({ ...formData, honeyPot: e.target.value })} 
-                    />
+                    <Input type="text" tabIndex={-1} autoComplete="off" value={formData.honeyPot} onChange={e => setFormData({
+                      ...formData,
+                      honeyPot: e.target.value
+                    })} />
                   </div>
 
                   {/* Privacy Consent - Shows after first click */}
-                  {showPrivacyConsent && (
-                    <div className="bg-neutral-800 rounded-xl p-4 space-y-3 animate-in fade-in slide-in-from-top-2">
+                  {showPrivacyConsent && <div className="bg-neutral-800 rounded-xl p-4 space-y-3 animate-in fade-in slide-in-from-top-2">
                       <label className="flex items-start gap-3 cursor-pointer">
-                        <input 
-                          type="checkbox" 
-                          checked={privacyConsent} 
-                          onChange={e => setPrivacyConsent(e.target.checked)} 
-                          className="mt-1 h-5 w-5 rounded border-neutral-600 text-[#3b5998] focus:ring-[#3b5998] bg-neutral-700" 
-                        />
+                        <input type="checkbox" checked={privacyConsent} onChange={e => setPrivacyConsent(e.target.checked)} className="mt-1 h-5 w-5 rounded border-neutral-600 text-[#3b5998] focus:ring-[#3b5998] bg-neutral-700" />
                         <span className="text-sm text-neutral-300 leading-tight">
                           Ich stimme der{' '}
                           <a href="/datenschutz" target="_blank" className="text-[#6d8fd4] underline font-medium hover:text-[#8aa8e0]">
@@ -307,16 +274,10 @@ const Landing = () => {
                           zu und bin damit einverstanden, dass mich ABF Fahrschule kontaktiert.
                         </span>
                       </label>
-                    </div>
-                  )}
+                    </div>}
 
                   {/* CTA Button */}
-                  <Button 
-                    type="submit" 
-                    size="lg" 
-                    disabled={isSubmitting} 
-                    className="w-full bg-[#3b5998] hover:bg-[#4a6cb3] text-white h-16 text-xl font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50"
-                  >
+                  <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-[#3b5998] hover:bg-[#4a6cb3] text-white h-16 text-xl font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50">
                     {isSubmitting ? "Wird gesendet..." : showPrivacyConsent ? "Jetzt absenden" : "Ja, 279 € Angebot sichern!"}
                   </Button>
 
@@ -329,19 +290,11 @@ const Landing = () => {
 
                 {/* Alternative Contact */}
                 <div className="flex gap-3 mt-6 pt-6 border-t border-[#3b5998]/30">
-                  <Button 
-                    onClick={handleWhatsApp} 
-                    variant="outline" 
-                    className="flex-1 border-green-500 text-green-400 hover:bg-green-500/10 h-12 font-semibold rounded-xl bg-transparent"
-                  >
+                  <Button onClick={handleWhatsApp} variant="outline" className="flex-1 border-green-500 text-green-400 hover:bg-green-500/10 h-12 font-semibold rounded-xl bg-transparent">
                     <MessageCircle className="w-5 h-5 mr-2" />
                     WhatsApp
                   </Button>
-                  <Button 
-                    onClick={handleCall} 
-                    variant="outline" 
-                    className="flex-1 border-[#3b5998] text-[#6d8fd4] hover:bg-[#3b5998]/10 h-12 font-semibold rounded-xl bg-transparent"
-                  >
+                  <Button onClick={handleCall} variant="outline" className="flex-1 border-[#3b5998] text-[#6d8fd4] hover:bg-[#3b5998]/10 h-12 font-semibold rounded-xl bg-transparent">
                     <Phone className="w-5 h-5 mr-2" />
                     Anrufen
                   </Button>
@@ -402,8 +355,7 @@ const Landing = () => {
           </div>
 
           <div className="mt-8 bg-neutral-900/50 border border-[#3b5998]/20 rounded-xl p-6">
-            <p className="text-center text-sm text-neutral-400">
-              <strong className="text-white">Transparente Zusatzkosten:</strong> Fahrstunden 67,50 €/45 Min. | Besondere Ausbildungsfahrten 75 €/45 Min. | Prakt. Prüfung 189 €
+            <p className="text-center text-sm text-neutral-400">Transparente Zusatzkosten: Fahrstunden 67,50 €/45 Min. | Besondere Ausbildungsfahrten 75 €/45 Min. | <strong className="text-white">Transparente Zusatzkosten:</strong> Fahrstunden 67,50 €/45 Min. | Besondere Ausbildungsfahrten 75 €/45 Min. | Prakt. Prüfung 189 €
             </p>
             <p className="text-center text-xs text-neutral-500 mt-2">
               Externe Gebühren (TÜV, Behörde) werden separat berechnet.{' '}
@@ -422,7 +374,7 @@ const Landing = () => {
             </h2>
             <div className="inline-flex items-center gap-2 text-[#6d8fd4]">
               <span className="text-2xl">★★★★★</span>
-              <span className="font-bold">4,9 bei Google Maps</span>
+              <span className="font-bold">5 Sterne bei Google Maps</span>
             </div>
           </div>
 
@@ -520,11 +472,7 @@ const Landing = () => {
           </div>
 
           <div className="text-center mt-10">
-            <Button 
-              size="lg" 
-              onClick={scrollToForm} 
-              className="bg-[#3b5998] hover:bg-[#4a6cb3] text-white text-lg px-10 py-6 rounded-xl font-bold shadow-lg"
-            >
+            <Button size="lg" onClick={scrollToForm} className="bg-[#3b5998] hover:bg-[#4a6cb3] text-white text-lg px-10 py-6 rounded-xl font-bold shadow-lg">
               Jetzt 279 € Angebot sichern
             </Button>
           </div>
@@ -623,11 +571,7 @@ const Landing = () => {
 
           <CountdownTimer targetDate={OFFER_END_DATE} className="justify-center mb-8" />
           
-          <Button 
-            size="lg" 
-            onClick={scrollToForm} 
-            className="bg-white hover:bg-neutral-100 text-[#3b5998] text-xl px-12 py-7 rounded-xl font-bold shadow-lg"
-          >
+          <Button size="lg" onClick={scrollToForm} className="bg-white hover:bg-neutral-100 text-[#3b5998] text-xl px-12 py-7 rounded-xl font-bold shadow-lg">
             Ja, 279 € Angebot sichern!
           </Button>
 
@@ -654,16 +598,11 @@ const Landing = () => {
 
       {/* Mobile Sticky CTA - Blue theme */}
       <div className="fixed bottom-0 left-0 right-0 p-4 bg-black/95 backdrop-blur-sm border-t border-[#3b5998]/30 md:hidden z-50 safe-area-inset-bottom">
-        <Button
-          onClick={scrollToForm}
-          className="w-full bg-[#3b5998] hover:bg-[#4a6cb3] text-white h-14 text-lg font-bold rounded-xl shadow-lg"
-        >
+        <Button onClick={scrollToForm} className="w-full bg-[#3b5998] hover:bg-[#4a6cb3] text-white h-14 text-lg font-bold rounded-xl shadow-lg">
           Jetzt 279 € Angebot sichern!
         </Button>
       </div>
     </div>
-    </>
-  );
+    </>;
 };
-
 export default Landing;

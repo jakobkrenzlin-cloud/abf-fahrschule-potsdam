@@ -355,7 +355,7 @@ const Landing = () => {
           </div>
 
           <div className="mt-8 bg-neutral-900/50 border border-[#3b5998]/20 rounded-xl p-6">
-            <p className="text-center text-sm text-neutral-400">Transparente Zusatzkosten: Fahrstunden 67,50 €/45 Min. | Besondere Ausbildungsfahrten 75 €/45 Min. | <strong className="text-white">Transparente Zusatzkosten:</strong> Fahrstunden 67,50 €/45 Min. | Besondere Ausbildungsfahrten 75 €/45 Min. | Prakt. Prüfung 189 €
+            <p className="text-center text-sm text-neutral-400">Preis gemäß § 32 Fahrlehrergesetz: Unterweisungsstunde 67,50€/45min., Übungsstunde 67,50€/45min., Besondere Ausbildungsfahrten 75€/45min.               <strong className="text-white">Transparente Zusatzkosten:</strong> Fahrstunden 67,50 €/45 Min. | Besondere Ausbildungsfahrten 75 €/45 Min. | Prakt. Prüfung 189 €
             </p>
             <p className="text-center text-xs text-neutral-500 mt-2">
               Externe Gebühren (TÜV, Behörde) werden separat berechnet.{' '}

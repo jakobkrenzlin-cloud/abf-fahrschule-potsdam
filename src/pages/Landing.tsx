@@ -169,8 +169,7 @@ const Landing = () => {
               {/* Left: Headlines & Value Proposition */}
               <div className="lg:pr-8">
                 {/* Trust Badge */}
-                <div className="inline-flex items-center gap-2 bg-[#3b5998]/20 border border-[#3b5998]/40 px-4 py-2 rounded-full text-sm font-bold mb-6 text-white">
-                  <Star className="w-4 h-4 fill-current text-[#6d8fd4]" />
+                <div className="inline-flex items-center gap-2 bg-[#3b5998]/20 border border-[#3b5998]/40 px-4 py-2 rounded-full text-sm font-bold mb-6 text-white">         5★ bei Google – Zahllose zufriedene Fahrschüler<Star className="w-4 h-4 fill-current text-[#6d8fd4]" />
                   4,9 ★ bei Google – 500+ zufriedene Fahrschüler
                 </div>
                 

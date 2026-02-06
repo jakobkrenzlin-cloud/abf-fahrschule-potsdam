@@ -14,26 +14,26 @@ const OffersSection = () => {
     }
   };
 
-  return <section id="offers" className="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-white">
+  return <section id="offers" className="py-10 md:py-24 bg-gradient-to-br from-blue-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            Unsere Angebote für Ihren Erfolg in Potsdam
+        <div className="text-center space-y-3 md:space-y-4 mb-8 md:mb-16">
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
+            Unsere Angebote in Potsdam
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto">
             Starten Sie jetzt Ihre Fahrausbildung mit professioneller Betreuung und 
             modernem Unterricht in Potsdam.
           </p>
         </div>
 
         {/* Two Column Grid: Auto + Motorrad */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-10 md:mb-16">
           {/* Führerschein Angebot */}
           <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-            <div className="bg-blue-600 text-white p-6">
-              <div className="flex items-center space-x-3 mb-4">
-                <Car className="w-8 h-8" />
+            <div className="bg-blue-600 text-white p-4 md:p-6">
+              <div className="flex items-center space-x-3 mb-3 md:mb-4">
+                <Car className="w-7 h-7 md:w-8 md:h-8 flex-shrink-0" />
                 <div>
                   <h3 className="text-2xl font-bold">Führerschein-Ausbildung</h3>
                   <p className="text-blue-100"> Frühjahrs Angebot vom 01.02.2026 bis zum 31.03.2026 nur 179 €!</p>
@@ -46,7 +46,7 @@ const OffersSection = () => {
               </div>
             </div>
 
-            <div className="p-6 space-y-6">
+            <div className="p-4 md:p-6 space-y-4 md:space-y-6">
 
               <p className="text-gray-700 leading-relaxed">
                 Werde Teil unserer erfolgreichen Fahrschüler – starte deine Ausbildung in Potsdam mit 
@@ -84,12 +84,12 @@ const OffersSection = () => {
 
           {/* Motorrad Flyer Card */}
           <div className="bg-black rounded-2xl shadow-lg overflow-hidden flex flex-col">
-            <div className="bg-gradient-to-r from-[#3b5998] to-[#1a2d4a] text-white p-6">
+            <div className="bg-gradient-to-r from-[#3b5998] to-[#1a2d4a] text-white p-4 md:p-6">
               <div className="flex items-center space-x-3 mb-2">
-                <Bike className="w-8 h-8" />
+                <Bike className="w-7 h-7 md:w-8 md:h-8 flex-shrink-0" />
                 <div>
-                  <h3 className="text-2xl font-bold">Motorrad-Führerschein</h3>
-                  <p className="text-blue-100">Klasse A/A2 – Jetzt nur 599€ Grundbetrag!</p>
+                  <h3 className="text-xl md:text-2xl font-bold">Motorrad-Führerschein</h3>
+                  <p className="text-blue-100 text-sm md:text-base">Klasse A/A2 – Jetzt nur 599€!</p>
                 </div>
               </div>
             </div>
@@ -115,7 +115,7 @@ const OffersSection = () => {
         </div>
 
         {/* Kontaktinformationen */}
-        <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+        <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 md:p-8">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-2">
               Jetzt Kontakt aufnehmen

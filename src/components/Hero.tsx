@@ -26,51 +26,51 @@ const Hero = () => {
     overlayText: "Moderner Unterrichtsraum für entspanntes Lernen der Fahrtheorie"
   }];
   return <section id="home" className="pt-12 md:pt-16 bg-gradient-to-br from-blue-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+          <div className="space-y-5 md:space-y-8">
+            <div className="space-y-3 md:space-y-4">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                 <span className="text-blue-600">Fahrschule Potsdam</span> – 
-                Sicher fahren lernen in Potsdam
+                Sicher fahren lernen
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-base md:text-xl text-gray-600 leading-relaxed">
                 ABF Fahrschule Potsdam: Mit ruhiger Hand, persönlicher Betreuung und moderner Fahrausbildung zum Führerschein. 
-                Praktische Fahrstunden und Theorieunterricht in Potsdam - seit über 15 Jahren Ihre vertrauensvolle Fahrschule.
+                Seit über 15 Jahren Ihre vertrauensvolle Fahrschule in Potsdam.
               </p>
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex flex-wrap gap-6 text-sm text-gray-700">
+            <div className="flex flex-wrap gap-4 md:gap-6 text-sm text-gray-700">
               <div className="flex items-center space-x-2">
-                <Shield className="w-5 h-5 text-blue-600" />
+                <Shield className="w-5 h-5 text-blue-600 flex-shrink-0" />
                 <span>Neue Fahrschule in Potsdam</span>
               </div>
               
               <div className="flex items-center space-x-2">
-                <Award className="w-5 h-5 text-blue-600" />
-                <span>Beste Bewertungen Fahrschule Potsdam</span>
+                <Award className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                <span>Beste Bewertungen</span>
               </div>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button onClick={scrollToContact} className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2 text-lg font-semibold">
-                <span>Kostenlose Beratung Fahrschule Potsdam</span>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <button onClick={scrollToContact} className="bg-blue-600 text-white px-6 py-3.5 md:px-8 md:py-4 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2 text-base md:text-lg font-semibold touch-target">
+                <span>Kostenlose Beratung</span>
                 <ArrowRight className="w-5 h-5" />
               </button>
               <button onClick={() => document.getElementById('process')?.scrollIntoView({
               behavior: 'smooth'
-            })} className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors text-lg font-semibold">
-                Führerschein in Potsdam
+            })} className="border-2 border-blue-600 text-blue-600 px-6 py-3.5 md:px-8 md:py-4 rounded-lg hover:bg-blue-50 transition-colors text-base md:text-lg font-semibold touch-target">
+                Führerschein Info
               </button>
             </div>
           </div>
 
           {/* Right Content - Hero Image Carousel */}
           <div className="relative">
-            <div className="bg-blue-100 rounded-2xl p-4 aspect-square flex items-center justify-center overflow-hidden">
+            <div className="bg-blue-100 rounded-2xl p-3 md:p-4 aspect-[4/3] lg:aspect-square flex items-center justify-center overflow-hidden">
               <Carousel className="w-full h-full" opts={{
               loop: true
             }}>
@@ -107,10 +107,10 @@ const Hero = () => {
             </div>
             
             {/* Floating elements */}
-            <div className="absolute -top-4 -right-4 bg-white rounded-lg shadow-lg p-4">
+            <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 bg-white rounded-lg shadow-lg p-2 md:p-4">
               <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium text-gray-700">Termine verfügbar in Potsdam</span>
+                <div className="w-2.5 h-2.5 md:w-3 md:h-3 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-xs md:text-sm font-medium text-gray-700">Termine verfügbar</span>
               </div>
             </div>
             

@@ -33,7 +33,7 @@ const AboutSection = () => {
             </div>
 
             {/* Team Values */}
-            <div className="grid grid-cols-2 gap-4 mt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mt-6 md:mt-8">
               <div className="flex items-center space-x-3">
                 <Users className="w-6 h-6 text-blue-600" />
                 <span className="font-medium text-gray-900">Erfahrenes Fahrlehrer-Team Potsdam</span>

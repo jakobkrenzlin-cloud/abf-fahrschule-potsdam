@@ -197,8 +197,8 @@ Fahrstunden ab 67,50€/45 Min.</p>
                 </div>
               </div>
               
-              <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-blue-600 hover:bg-blue-700 h-14 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50">
-                {isSubmitting ? "Wird gesendet..." : "Jetzt Anfrage senden & 179€ Frühjahrs Angebot sichern"}
+              <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-blue-600 hover:bg-blue-700 h-14 text-base md:text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50">
+                {isSubmitting ? "Wird gesendet..." : <><span className="hidden sm:inline">Jetzt Anfrage senden & 179€ Frühjahrs Angebot sichern</span><span className="sm:hidden">Jetzt für 179€ anmelden</span></>}
               </Button>
             </form>
             

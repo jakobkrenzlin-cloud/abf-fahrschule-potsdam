@@ -8,6 +8,7 @@ import ProcessSection from '../components/ProcessSection';
 import OffersSection from '../components/OffersSection';
 import AboutSection from '../components/AboutSection';
 import SuccessfulStudentsSection from '../components/SuccessfulStudentsSection';
+import FAQSection from '../components/FAQSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import MobileStickyFooter from '../components/MobileStickyFooter';
@@ -23,6 +24,7 @@ const Index = () => {
       <ProcessSection />
       <AboutSection />
       <SuccessfulStudentsSection />
+      <FAQSection />
       <ContactSection />
       <Footer />
       <MobileStickyFooter />

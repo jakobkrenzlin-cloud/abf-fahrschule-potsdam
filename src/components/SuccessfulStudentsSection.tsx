@@ -48,7 +48,7 @@ const SuccessfulStudentsSection = () => {
               <img
                 src={student.imageUrl}
                 alt={student.alt}
-                className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-56 md:h-80 object-cover group-hover:scale-105 transition-transform duration-300"
                 loading="lazy"
                 decoding="async"
               />

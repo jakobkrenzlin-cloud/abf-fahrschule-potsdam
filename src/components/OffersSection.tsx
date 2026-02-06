@@ -1,7 +1,9 @@
 import React from 'react';
-import { Check, Phone, Mail, MapPin, Car, Clock, Award } from 'lucide-react';
+import { Check, Phone, Mail, MapPin, Car, Clock, Award, Bike } from 'lucide-react';
 import { Button } from './ui/button';
 import { Link } from 'react-router-dom';
+import motorradFlyer from '@/assets/motorrad-flyer-homepage.jpg';
+
 const OffersSection = () => {
   const scrollToContact = () => {
     const element = document.getElementById('contact');
@@ -11,6 +13,7 @@ const OffersSection = () => {
       });
     }
   };
+
   return <section id="offers" className="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -24,7 +27,8 @@ const OffersSection = () => {
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto mb-16">
+        {/* Two Column Grid: Auto + Motorrad */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {/* Führerschein Angebot */}
           <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
             <div className="bg-blue-600 text-white p-6">
@@ -74,6 +78,37 @@ const OffersSection = () => {
                 <Button onClick={scrollToContact} variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold py-3">
                   Kostenlos beraten lassen
                 </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Motorrad Flyer Card */}
+          <div className="bg-black rounded-2xl shadow-lg overflow-hidden flex flex-col">
+            <div className="bg-gradient-to-r from-[#3b5998] to-[#1a2d4a] text-white p-6">
+              <div className="flex items-center space-x-3 mb-2">
+                <Bike className="w-8 h-8" />
+                <div>
+                  <h3 className="text-2xl font-bold">Motorrad-Führerschein</h3>
+                  <p className="text-blue-100">Klasse A/A2 – Jetzt nur 599€ Grundbetrag!</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex-1 p-4 flex flex-col">
+              <Link to="/anmeldungmotorrad" className="block flex-1">
+                <img 
+                  src={motorradFlyer} 
+                  alt="ABF Motorrad Führerschein Angebot - 599€ Grundbetrag inkl. Erste Hilfe, LernApp und 100€ Louis Gutschein"
+                  className="w-full h-auto rounded-lg hover:opacity-90 transition-opacity cursor-pointer"
+                  loading="lazy"
+                />
+              </Link>
+              <div className="pt-4">
+                <Link to="/anmeldungmotorrad">
+                  <Button className="w-full bg-[#3b5998] hover:bg-[#4a6cb3] text-white font-semibold py-3 text-lg">
+                    Jetzt Motorrad-Angebot sichern
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

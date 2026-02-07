@@ -3,11 +3,11 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2.49.1";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version',
 };
 
-const RATE_LIMIT_MAX = 5; // Max submissions per window
-const RATE_LIMIT_WINDOW_MINUTES = 60; // 1 hour window
+const RATE_LIMIT_MAX = 10; // Max submissions per window
+const RATE_LIMIT_WINDOW_MINUTES = 30; // 30 min window
 
 // Persistent rate limiting using database
 async function checkRateLimit(supabase: ReturnType<typeof createClient>, ip: string, endpoint: string): Promise<{ limited: boolean; error?: string }> {

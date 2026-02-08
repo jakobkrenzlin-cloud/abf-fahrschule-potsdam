@@ -7,6 +7,7 @@ import WhyABF from '../components/WhyABF';
 import ProcessSection from '../components/ProcessSection';
 import OffersSection from '../components/OffersSection';
 import AboutSection from '../components/AboutSection';
+import JobSection from '../components/JobSection';
 import SuccessfulStudentsSection from '../components/SuccessfulStudentsSection';
 import FAQSection from '../components/FAQSection';
 import ContactSection from '../components/ContactSection';
@@ -23,6 +24,7 @@ const Index = () => {
       <WhyABF />
       <ProcessSection />
       <AboutSection />
+      <JobSection />
       <SuccessfulStudentsSection />
       <FAQSection />
       <ContactSection />

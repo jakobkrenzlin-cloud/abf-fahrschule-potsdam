@@ -110,8 +110,8 @@ const Landing = () => {
   };
 
   // Inline CTA Component - Blue theme matching motorrad page
-  const InlineCTA = ({ text }: { text: string }) => (
-    <div className="py-6 sm:py-10 bg-gradient-to-r from-[#2a4a7f] to-black">
+  const InlineCTA = ({ text }: {text: string;}) =>
+  <div className="py-6 sm:py-10 bg-gradient-to-r from-[#2a4a7f] to-black">
       <div className="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
         <p className="text-white text-base sm:text-lg lg:text-xl font-semibold text-center sm:text-left">
           {text}
@@ -121,8 +121,8 @@ const Landing = () => {
           <ArrowDown className="w-4 sm:w-5 h-4 sm:h-5 ml-2" />
         </Button>
       </div>
-    </div>
-  );
+    </div>;
+
 
   return (
     <>
@@ -162,7 +162,7 @@ const Landing = () => {
             {/* Countdown Timer Bar */}
             <div className="bg-[#3b5998] text-white py-3 mb-6">
               <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-2">
-                <span className="text-sm font-medium">🌸 Frühjahrs-Spezial – Nur bis 30. April 2026!</span>
+                <span className="text-sm font-medium"> Frühjahrs-Spezial – Nur bis 30. April 2026!</span>
                 <CountdownTimer targetDate={OFFER_END_DATE} className="text-sm" />
               </div>
             </div>
@@ -179,7 +179,7 @@ const Landing = () => {
                   
                   {/* Price Anchor - BIG & BOLD */}
                   <div className="mb-4">
-                    <span className="inline-block text-[#6d8fd4] text-5xl lg:text-7xl font-black">279 €</span>
+                    <span className="inline-block text-[#6d8fd4] text-5xl lg:text-7xl font-black">179 €</span>
                   </div>
                   
                   {/* Main Headline */}
@@ -233,7 +233,7 @@ const Landing = () => {
                 {/* Right: Conversion Form */}
                 <div id="contact-form" className="bg-neutral-900 rounded-2xl shadow-xl p-6 lg:p-8 border border-[#3b5998]/30">
                   <div className="text-center mb-6">
-                    <div className="inline-flex items-center gap-2 bg-[#3b5998]/20 text-[#6d8fd4] px-4 py-2 rounded-full text-sm font-bold mb-3">
+                    <div className="inline-flex items-center gap-2 bg-[#3b5998]/20 text-[#6d8fd4] px-4 py-2 rounded-full text-sm font-bold mb-3">Frühjahrs-Spezial 179 €
                       <Flower2 className="w-4 h-4" />
                       Frühjahrs-Spezial 279 €
                     </div>
@@ -251,16 +251,16 @@ const Landing = () => {
                       <Label htmlFor="name" className="text-sm font-semibold text-neutral-300">
                         Dein Name
                       </Label>
-                      <Input 
-                        id="name" 
-                        type="text" 
-                        required 
-                        value={formData.name} 
-                        onChange={e => setFormData({ ...formData, name: e.target.value })} 
-                        className="mt-1.5 h-14 border border-[#3b5998]/30 bg-neutral-800 text-white focus:border-[#3b5998] focus:ring-[#3b5998] rounded-xl text-lg p-4 placeholder:text-neutral-500" 
-                        placeholder="Vor- und Nachname" 
-                        autoComplete="name" 
-                      />
+                      <Input
+                        id="name"
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="mt-1.5 h-14 border border-[#3b5998]/30 bg-neutral-800 text-white focus:border-[#3b5998] focus:ring-[#3b5998] rounded-xl text-lg p-4 placeholder:text-neutral-500"
+                        placeholder="Vor- und Nachname"
+                        autoComplete="name" />
+
                     </div>
 
                     {/* Phone Field */}
@@ -268,40 +268,40 @@ const Landing = () => {
                       <Label htmlFor="phone" className="text-sm font-semibold text-neutral-300">
                         Telefonnummer
                       </Label>
-                      <Input 
-                        id="phone" 
-                        type="tel" 
-                        inputMode="tel" 
-                        required 
-                        value={formData.phone} 
-                        onChange={e => setFormData({ ...formData, phone: e.target.value })} 
-                        className="mt-1.5 h-14 border border-[#3b5998]/30 bg-neutral-800 text-white focus:border-[#3b5998] focus:ring-[#3b5998] rounded-xl text-lg p-4 placeholder:text-neutral-500" 
-                        placeholder="0151 12345678" 
-                        autoComplete="tel" 
-                      />
+                      <Input
+                        id="phone"
+                        type="tel"
+                        inputMode="tel"
+                        required
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="mt-1.5 h-14 border border-[#3b5998]/30 bg-neutral-800 text-white focus:border-[#3b5998] focus:ring-[#3b5998] rounded-xl text-lg p-4 placeholder:text-neutral-500"
+                        placeholder="0151 12345678"
+                        autoComplete="tel" />
+
                     </div>
 
                     {/* Honeypot - Hidden */}
                     <div className="hidden" aria-hidden="true">
-                      <Input 
-                        type="text" 
-                        tabIndex={-1} 
-                        autoComplete="off" 
-                        value={formData.honeyPot} 
-                        onChange={e => setFormData({ ...formData, honeyPot: e.target.value })} 
-                      />
+                      <Input
+                        type="text"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={formData.honeyPot}
+                        onChange={(e) => setFormData({ ...formData, honeyPot: e.target.value })} />
+
                     </div>
 
                     {/* Privacy Consent - Shows after first click */}
-                    {showPrivacyConsent && (
-                      <div className="bg-neutral-800 rounded-xl p-4 space-y-3 animate-in fade-in slide-in-from-top-2">
+                    {showPrivacyConsent &&
+                    <div className="bg-neutral-800 rounded-xl p-4 space-y-3 animate-in fade-in slide-in-from-top-2">
                         <label className="flex items-start gap-3 cursor-pointer">
-                          <input 
-                            type="checkbox" 
-                            checked={privacyConsent} 
-                            onChange={e => setPrivacyConsent(e.target.checked)} 
-                            className="mt-1 h-5 w-5 rounded border-neutral-600 text-[#3b5998] focus:ring-[#3b5998] bg-neutral-700" 
-                          />
+                          <input
+                          type="checkbox"
+                          checked={privacyConsent}
+                          onChange={(e) => setPrivacyConsent(e.target.checked)}
+                          className="mt-1 h-5 w-5 rounded border-neutral-600 text-[#3b5998] focus:ring-[#3b5998] bg-neutral-700" />
+
                           <span className="text-sm text-neutral-300 leading-tight">
                             Ich stimme der{' '}
                             <a href="/datenschutz" target="_blank" className="text-[#6d8fd4] underline font-medium hover:text-[#8aa8e0]">
@@ -311,15 +311,15 @@ const Landing = () => {
                           </span>
                         </label>
                       </div>
-                    )}
+                    }
 
                     {/* CTA Button */}
-                    <Button 
-                      type="submit" 
-                      size="lg" 
-                      disabled={isSubmitting} 
-                      className="w-full bg-[#3b5998] hover:bg-[#4a6cb3] text-white h-16 text-xl font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50"
-                    >
+                    <Button
+                      type="submit"
+                      size="lg"
+                      disabled={isSubmitting}
+                      className="w-full bg-[#3b5998] hover:bg-[#4a6cb3] text-white h-16 text-xl font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50">Ja, 179 € Angebot sichern!
+
                       {isSubmitting ? "Wird gesendet..." : showPrivacyConsent ? "Jetzt absenden" : "Ja, 279 € Angebot sichern!"}
                     </Button>
 
@@ -355,7 +355,7 @@ const Landing = () => {
           <div className="max-w-5xl mx-auto px-4">
             <div className="text-center mb-10">
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-3">
-                Das bekommst du für <span className="text-[#6d8fd4]">279 €</span>
+                Das bekommst du für <span className="text-[#6d8fd4]">179 €</span>
               </h2>
               <p className="text-lg text-neutral-400">
                 Komplett transparent – keine versteckten Gebühren
@@ -515,8 +515,8 @@ const Landing = () => {
             </div>
 
             <div className="text-center mt-10">
-              <Button size="lg" onClick={scrollToForm} className="bg-[#3b5998] hover:bg-[#4a6cb3] text-white text-lg px-10 py-6 rounded-xl font-bold shadow-lg">
-                Jetzt 279 € Angebot sichern
+              <Button size="lg" onClick={scrollToForm} className="bg-[#3b5998] hover:bg-[#4a6cb3] text-white text-lg px-10 py-6 rounded-xl font-bold shadow-lg">Jetzt 179 € Angebot sichern
+
               </Button>
             </div>
           </div>
@@ -599,8 +599,8 @@ const Landing = () => {
         <section className="py-16 bg-[#3b5998]">
           <div className="max-w-3xl mx-auto px-4 text-center text-white">
             <div className="mb-6">
-              <span className="inline-block bg-white text-[#3b5998] text-4xl lg:text-5xl font-black px-6 py-3 rounded-xl">
-                279 €
+              <span className="inline-block bg-white text-[#3b5998] text-4xl lg:text-5xl font-black px-6 py-3 rounded-xl">179 €
+
               </span>
             </div>
             
@@ -614,8 +614,8 @@ const Landing = () => {
 
             <CountdownTimer targetDate={OFFER_END_DATE} className="justify-center mb-8" />
             
-            <Button size="lg" onClick={scrollToForm} className="bg-white hover:bg-neutral-100 text-[#3b5998] text-xl px-12 py-7 rounded-xl font-bold shadow-lg">
-              Ja, 279 € Angebot sichern!
+            <Button size="lg" onClick={scrollToForm} className="bg-white hover:bg-neutral-100 text-[#3b5998] text-xl px-12 py-7 rounded-xl font-bold shadow-lg">Ja, 179 € Angebot sichern!
+
             </Button>
 
             <p className="mt-6 text-sm text-white/80">
@@ -646,8 +646,8 @@ const Landing = () => {
           </Button>
         </div>
       </div>
-    </>
-  );
+    </>);
+
 };
 
 export default Landing;

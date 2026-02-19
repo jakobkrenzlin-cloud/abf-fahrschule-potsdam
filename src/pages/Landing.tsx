@@ -394,9 +394,9 @@ const Landing = () => {
                 Jetzt Platz für März sichern
               </Button>
             </div>
-            <p className="text-center text-xs sm:text-sm text-white/80 max-w-3xl mx-auto leading-relaxed">
-              Preise gemäß § 32 Fahrlehrergesetz: Unterweisungsstunde 67,50 €/45 Min., Übungsstunde 67,50 €/45 Min. und Besondere Ausbildungsfahrten 75 €/45 Min.
-            </p>
+            
+
+
           </div>
         </section>
 
@@ -700,16 +700,16 @@ const Landing = () => {
             <button
               onClick={handleCall}
               className="flex-1 flex items-center justify-center gap-2 bg-[#3b5998] text-white py-3.5 px-4 rounded-xl font-semibold text-base shadow-md active:scale-95 transition-transform"
-              aria-label="Jetzt anrufen"
-            >
+              aria-label="Jetzt anrufen">
+
               <Phone className="w-5 h-5" />
               <span>Anrufen</span>
             </button>
             <button
               onClick={handleWhatsApp}
               className="flex-1 flex items-center justify-center gap-2 bg-green-600 text-white py-3.5 px-4 rounded-xl font-semibold text-base shadow-md active:scale-95 transition-transform"
-              aria-label="WhatsApp öffnen"
-            >
+              aria-label="WhatsApp öffnen">
+
               <MessageCircle className="w-5 h-5" />
               <span>WhatsApp</span>
             </button>

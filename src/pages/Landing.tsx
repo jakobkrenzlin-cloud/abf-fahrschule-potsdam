@@ -226,7 +226,7 @@ const Landing = () => {
                   {/* Mobile CTA to scroll */}
                   <div className="lg:hidden">
                     <Button size="lg" onClick={scrollToForm} className="w-full bg-[#3b5998] hover:bg-[#4a6cb3] text-white text-lg py-6 rounded-xl font-bold shadow-lg">
-                      Ja, 279 € Angebot sichern!
+                      Ja, 179 € Angebot sichern!
                       <ChevronDown className="w-5 h-5 ml-2 animate-bounce" />
                     </Button>
                   </div>
@@ -339,7 +339,7 @@ const Landing = () => {
                       size="lg"
                       disabled={isSubmitting}
                       className="w-full bg-[#3b5998] hover:bg-[#4a6cb3] text-white h-16 text-xl font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50">
-                      {isSubmitting ? "Wird gesendet..." : showPrivacyConsent ? "Jetzt absenden" : "Ja, 279 € Angebot sichern!"}
+                      {isSubmitting ? "Wird gesendet..." : showPrivacyConsent ? "Jetzt absenden" : "Ja, 179 € Angebot sichern!"}
                     </Button>
 
                     {/* Trust Elements */}
@@ -408,7 +408,7 @@ const Landing = () => {
           <div className="max-w-5xl mx-auto px-4">
             <div className="text-center mb-10">
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-3">
-                Das bekommst du für <span className="text-[#6d8fd4]">279 €</span> Grundbetrag
+                Das bekommst du für <span className="text-[#6d8fd4]">179 €</span> Grundbetrag
               </h2>
               <p className="text-lg text-neutral-400">
                 Der Grundbetrag umfasst den gesamten Theorieunterricht – komplett & ohne Aufpreis
@@ -572,7 +572,7 @@ const Landing = () => {
 
             <div className="text-center mt-10">
               <Button size="lg" onClick={scrollToForm} className="bg-[#3b5998] hover:bg-[#4a6cb3] text-white text-lg px-10 py-6 rounded-xl font-bold shadow-lg">
-                Jetzt 279 € Angebot sichern
+                Jetzt 179 € Angebot sichern
               </Button>
             </div>
           </div>
@@ -655,7 +655,7 @@ const Landing = () => {
         <section className="py-16 bg-[#3b5998]">
           <div className="max-w-3xl mx-auto px-4 text-center text-white">
             <div className="mb-6">
-              <span className="inline-block bg-white text-[#3b5998] text-4xl lg:text-5xl font-black px-6 py-3 rounded-xl">279 €</span>
+              <span className="inline-block bg-white text-[#3b5998] text-4xl lg:text-5xl font-black px-6 py-3 rounded-xl">179 €</span>
               <span className="block text-lg text-white/80 mt-2 font-normal">Grundbetrag – inkl. gesamter Theorieunterricht</span>
             </div>
             
@@ -670,7 +670,7 @@ const Landing = () => {
             <CountdownTimer targetDate={OFFER_END_DATE} className="justify-center mb-8" />
             
             <Button size="lg" onClick={scrollToForm} className="bg-white hover:bg-neutral-100 text-[#3b5998] text-xl px-12 py-7 rounded-xl font-bold shadow-lg">
-              Ja, 279 € Angebot sichern!
+              Ja, 179 € Angebot sichern!
             </Button>
 
             <p className="mt-6 text-sm text-white/80">

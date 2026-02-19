@@ -12,9 +12,9 @@ const MotorradTestimonials: React.FC = () => {
           </h2>
           <div className="flex items-center justify-center gap-2 mt-3">
             <div className="flex gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 text-[#6d8fd4] fill-[#6d8fd4]" />
-              ))}
+              {[...Array(5)].map((_, i) =>
+              <Star key={i} className="w-5 h-5 text-[#6d8fd4] fill-[#6d8fd4]" />
+              )}
             </div>
             <span className="text-white font-bold text-lg">4,9</span>
             <span className="text-neutral-400 text-sm">bei Google Maps</span>
@@ -27,7 +27,7 @@ const MotorradTestimonials: React.FC = () => {
             <Star className="w-10 h-10 text-[#6d8fd4] fill-[#6d8fd4]" />
           </div>
           <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
-            Über 500 zufriedene Fahrschüler
+            Unzählige zufriedene Fahrschüler
           </h3>
           <p className="text-neutral-400 mb-6 text-sm sm:text-base">
             Lies die echten Bewertungen unserer Fahrschüler direkt auf Google Maps –
@@ -36,12 +36,12 @@ const MotorradTestimonials: React.FC = () => {
           <a
             href="https://maps.google.com/?q=ABF+Fahrschule+Potsdam"
             target="_blank"
-            rel="noopener noreferrer"
-          >
+            rel="noopener noreferrer">
+
             <Button
               size="lg"
-              className="bg-[#3b5998] hover:bg-[#4a6cb3] text-white font-bold rounded-xl px-8 py-6 text-base sm:text-lg gap-2"
-            >
+              className="bg-[#3b5998] hover:bg-[#4a6cb3] text-white font-bold rounded-xl px-8 py-6 text-base sm:text-lg gap-2">
+
               Alle Google Bewertungen lesen
               <ExternalLink className="w-5 h-5" />
             </Button>
@@ -51,8 +51,8 @@ const MotorradTestimonials: React.FC = () => {
           </p>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default MotorradTestimonials;

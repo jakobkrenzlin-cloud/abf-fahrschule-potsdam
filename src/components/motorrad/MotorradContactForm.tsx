@@ -22,7 +22,8 @@ const MotorradContactForm: React.FC = () => {
     name: '',
     email: '',
     phone: '',
-    honeyPot: ''
+    honeyPot: '',
+    license_class: 'a2'
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPrivacyConsent, setShowPrivacyConsent] = useState(false);
@@ -73,7 +74,7 @@ const MotorradContactForm: React.FC = () => {
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          license_class: 'a',
+          license_class: formData.license_class,
           source: 'landingpage-motorrad'
         })
       });
@@ -173,6 +174,24 @@ const MotorradContactForm: React.FC = () => {
                 placeholder="0151 12345678"
                 autoComplete="tel"
               />
+            </div>
+
+            {/* License Class Field */}
+            <div>
+              <Label htmlFor="license_class" className="text-sm font-semibold text-neutral-200">
+                Führerscheinklasse
+              </Label>
+              <select
+                id="license_class"
+                value={formData.license_class}
+                onChange={e => setFormData({ ...formData, license_class: e.target.value })}
+                className="mt-1.5 w-full h-12 sm:h-14 border border-neutral-700 bg-neutral-800 text-white focus:border-[#3b5998] focus:ring-[#3b5998] rounded-xl text-base sm:text-lg px-4 appearance-none cursor-pointer"
+              >
+                <option value="a2">Motorradführerschein A2 (vorausgewählt)</option>
+                <option value="a">Motorradführerschein A – unbeschränkt</option>
+                <option value="a1">Motorradführerschein A1 – Leichtkraftrad</option>
+                <option value="b">Klasse B – PKW</option>
+              </select>
             </div>
 
             {/* Honeypot - Hidden */}

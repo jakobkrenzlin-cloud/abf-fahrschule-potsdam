@@ -27,7 +27,8 @@ const Landing = () => {
     name: '',
     phone: '',
     honeyPot: '',
-    crashkurs: false
+    crashkurs: false,
+    license_class: 'b'
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPrivacyConsent, setShowPrivacyConsent] = useState(false);
@@ -81,7 +82,7 @@ const Landing = () => {
         body: JSON.stringify({
           name: formData.name,
           phone: formData.phone,
-          license_class: 'b',
+          license_class: formData.license_class,
           source: 'landingpage-fruehling',
           message: formData.crashkurs ? 'Interesse am Crashkurs März 2026' : undefined
         })
@@ -281,6 +282,25 @@ const Landing = () => {
                         placeholder="0151 12345678"
                         autoComplete="tel" />
 
+                    </div>
+
+                    {/* License Class Field */}
+                    <div>
+                      <Label htmlFor="license_class" className="text-sm font-semibold text-neutral-300">
+                        Führerscheinklasse
+                      </Label>
+                      <select
+                        id="license_class"
+                        value={formData.license_class}
+                        onChange={(e) => setFormData({ ...formData, license_class: e.target.value })}
+                        className="mt-1.5 w-full h-14 border border-[#3b5998]/30 bg-neutral-800 text-white focus:border-[#3b5998] focus:ring-[#3b5998] rounded-xl text-lg px-4 appearance-none cursor-pointer"
+                      >
+                        <option value="b">Klasse B – PKW (vorausgewählt)</option>
+                        <option value="be">Klasse BE – PKW mit Anhänger</option>
+                        <option value="a1">Klasse A1 – Leichtkraftrad</option>
+                        <option value="a2">Klasse A2 – Motorrad (mittlere Leistung)</option>
+                        <option value="a">Klasse A – Motorrad (unbeschränkt)</option>
+                      </select>
                     </div>
 
                     {/* Crashkurs Interest Checkbox */}

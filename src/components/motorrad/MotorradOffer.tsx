@@ -36,7 +36,10 @@ const MotorradOffer: React.FC = () => {
                 <span className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#6d8fd4]">599€</span>
                 <span className="text-xl sm:text-2xl text-neutral-500 line-through">650€</span>
               </div>
-              <p className="text-neutral-400 mt-2 text-sm sm:text-base">Grundbetrag für Klasse A / A2</p>
+              <p className="text-neutral-400 mt-2 text-sm sm:text-base">Grundbetrag für Klasse A / A2 – inkl. gesamter Theorieunterricht</p>
+              <p className="text-xs text-neutral-500 mt-1 max-w-xs mx-auto leading-tight">
+                Preise gemäß § 32 FahrlG: Übungsstunde 75 €/45 Min., Besondere Ausbildungsfahrten 85 €/45 Min.
+              </p>
             </div>
 
             {/* Value Items */}

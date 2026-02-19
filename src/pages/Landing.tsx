@@ -235,9 +235,9 @@ const Landing = () => {
                 {/* Right: Conversion Form */}
                 <div id="contact-form" className="bg-neutral-900 rounded-2xl shadow-xl p-6 lg:p-8 border border-[#3b5998]/30">
                   <div className="text-center mb-6">
-                    <div className="inline-flex items-center gap-2 bg-[#3b5998]/20 text-[#6d8fd4] px-4 py-2 rounded-full text-sm font-bold mb-3">Frühjahrs-Spezial 179 €
+                    <div className="inline-flex items-center gap-2 bg-[#3b5998]/20 text-[#6d8fd4] px-4 py-2 rounded-full text-sm font-bold mb-3">
                       <Flower2 className="w-4 h-4" />
-                      Frühjahrs-Spezial 279 €
+                      Frühjahrs-Spezial – nur bis 30. April 2026!
                     </div>
                     <h2 className="text-2xl lg:text-3xl font-bold text-white mb-2">
                       Jetzt Platz sichern!
@@ -338,8 +338,7 @@ const Landing = () => {
                       type="submit"
                       size="lg"
                       disabled={isSubmitting}
-                      className="w-full bg-[#3b5998] hover:bg-[#4a6cb3] text-white h-16 text-xl font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50">Ja, 179 € Angebot sichern!
-
+                      className="w-full bg-[#3b5998] hover:bg-[#4a6cb3] text-white h-16 text-xl font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50">
                       {isSubmitting ? "Wird gesendet..." : showPrivacyConsent ? "Jetzt absenden" : "Ja, 279 € Angebot sichern!"}
                     </Button>
 
@@ -409,10 +408,13 @@ const Landing = () => {
           <div className="max-w-5xl mx-auto px-4">
             <div className="text-center mb-10">
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-3">
-                Das bekommst du für <span className="text-[#6d8fd4]">179 €</span>
+                Das bekommst du für <span className="text-[#6d8fd4]">279 €</span> Grundbetrag
               </h2>
               <p className="text-lg text-neutral-400">
-                Komplett transparent – keine versteckten Gebühren
+                Der Grundbetrag umfasst den gesamten Theorieunterricht – komplett & ohne Aufpreis
+              </p>
+              <p className="text-xs text-neutral-500 mt-2 max-w-2xl mx-auto">
+                Preise gemäß § 32 Fahrlehrergesetz: Unterweisungsstunde 67,50 €/45 Min., Übungsstunde 67,50 €/45 Min. und Besondere Ausbildungsfahrten 75 €/45 Min.
               </p>
             </div>
             
@@ -569,8 +571,8 @@ const Landing = () => {
             </div>
 
             <div className="text-center mt-10">
-              <Button size="lg" onClick={scrollToForm} className="bg-[#3b5998] hover:bg-[#4a6cb3] text-white text-lg px-10 py-6 rounded-xl font-bold shadow-lg">Jetzt 179 € Angebot sichern
-
+              <Button size="lg" onClick={scrollToForm} className="bg-[#3b5998] hover:bg-[#4a6cb3] text-white text-lg px-10 py-6 rounded-xl font-bold shadow-lg">
+                Jetzt 279 € Angebot sichern
               </Button>
             </div>
           </div>
@@ -653,9 +655,8 @@ const Landing = () => {
         <section className="py-16 bg-[#3b5998]">
           <div className="max-w-3xl mx-auto px-4 text-center text-white">
             <div className="mb-6">
-              <span className="inline-block bg-white text-[#3b5998] text-4xl lg:text-5xl font-black px-6 py-3 rounded-xl">179 €
-
-              </span>
+              <span className="inline-block bg-white text-[#3b5998] text-4xl lg:text-5xl font-black px-6 py-3 rounded-xl">279 €</span>
+              <span className="block text-lg text-white/80 mt-2 font-normal">Grundbetrag – inkl. gesamter Theorieunterricht</span>
             </div>
             
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
@@ -668,8 +669,8 @@ const Landing = () => {
 
             <CountdownTimer targetDate={OFFER_END_DATE} className="justify-center mb-8" />
             
-            <Button size="lg" onClick={scrollToForm} className="bg-white hover:bg-neutral-100 text-[#3b5998] text-xl px-12 py-7 rounded-xl font-bold shadow-lg">Ja, 179 € Angebot sichern!
-
+            <Button size="lg" onClick={scrollToForm} className="bg-white hover:bg-neutral-100 text-[#3b5998] text-xl px-12 py-7 rounded-xl font-bold shadow-lg">
+              Ja, 279 € Angebot sichern!
             </Button>
 
             <p className="mt-6 text-sm text-white/80">
@@ -693,11 +694,26 @@ const Landing = () => {
           </div>
         </footer>
 
-        {/* Mobile Sticky CTA - Blue theme */}
-        <div className="fixed bottom-0 left-0 right-0 p-4 bg-black/95 backdrop-blur-sm border-t border-[#3b5998]/30 md:hidden z-50 safe-area-inset-bottom">
-          <Button onClick={scrollToForm} className="w-full bg-[#3b5998] hover:bg-[#4a6cb3] text-white h-14 text-lg font-bold rounded-xl shadow-lg">
-            Jetzt 279 € Angebot sichern!
-          </Button>
+        {/* Mobile Sticky Action Bar */}
+        <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 md:hidden safe-area-inset-bottom">
+          <div className="flex gap-2 p-3">
+            <button
+              onClick={handleCall}
+              className="flex-1 flex items-center justify-center gap-2 bg-[#3b5998] text-white py-3.5 px-4 rounded-xl font-semibold text-base shadow-md active:scale-95 transition-transform"
+              aria-label="Jetzt anrufen"
+            >
+              <Phone className="w-5 h-5" />
+              <span>Anrufen</span>
+            </button>
+            <button
+              onClick={handleWhatsApp}
+              className="flex-1 flex items-center justify-center gap-2 bg-green-600 text-white py-3.5 px-4 rounded-xl font-semibold text-base shadow-md active:scale-95 transition-transform"
+              aria-label="WhatsApp öffnen"
+            >
+              <MessageCircle className="w-5 h-5" />
+              <span>WhatsApp</span>
+            </button>
+          </div>
         </div>
       </div>
     </>);

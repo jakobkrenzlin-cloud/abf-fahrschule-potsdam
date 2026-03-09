@@ -84,7 +84,7 @@ const Landing = () => {
           phone: formData.phone,
           license_class: formData.license_class,
           source: 'landingpage-fruehling',
-          message: formData.crashkurs ? 'Interesse am Crashkurs März 2026' : undefined
+          message: undefined
         })
       });
       if (!response.ok) {

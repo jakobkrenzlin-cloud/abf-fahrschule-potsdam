@@ -27,7 +27,7 @@ const Landing = () => {
     name: '',
     phone: '',
     honeyPot: '',
-    crashkurs: false,
+    
     license_class: 'b'
   });
   const [isSubmitting, setIsSubmitting] = useState(false);

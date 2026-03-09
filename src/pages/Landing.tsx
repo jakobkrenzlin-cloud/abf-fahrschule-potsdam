@@ -303,23 +303,6 @@ const Landing = () => {
                       </select>
                     </div>
 
-                    {/* Crashkurs Interest Checkbox */}
-                    <label className="flex items-start gap-3 cursor-pointer bg-gradient-to-r from-orange-600/20 to-red-600/20 border border-orange-500/40 rounded-xl p-4">
-                      <input
-                        type="checkbox"
-                        checked={formData.crashkurs}
-                        onChange={(e) => setFormData({ ...formData, crashkurs: e.target.checked })}
-                        className="mt-0.5 h-5 w-5 rounded border-orange-400 text-orange-500 focus:ring-orange-500 bg-neutral-700" />
-
-                      <div>
-                        <span className="text-sm font-semibold text-orange-300"> Ich interessiere mich für den Crashkurs im März
-
-                        </span>
-                        <span className="block text-xs text-neutral-400 mt-1">
-                          04.–11. März 2026 | Täglich 16:30–19:30 Uhr
-                        </span>
-                      </div>
-                    </label>
 
                     {/* Honeypot - Hidden */}
                     <div className="hidden" aria-hidden="true">

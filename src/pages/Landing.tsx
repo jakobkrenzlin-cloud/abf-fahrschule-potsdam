@@ -105,7 +105,7 @@ const Landing = () => {
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/4915752387583?text=Hallo,%20ich%20möchte%20das%20279€%20Frühjahrs-Angebot%20sichern!', '_blank');
+    window.open('https://wa.me/4915752387583?text=Hallo,%20ich%20möchte%20das%20179€%20Sommer-Angebot%20sichern!', '_blank');
   };
 
   const handleCall = () => {

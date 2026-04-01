@@ -237,8 +237,8 @@ const Landing = () => {
                 <div id="contact-form" className="bg-neutral-900 rounded-2xl shadow-xl p-6 lg:p-8 border border-[#3b5998]/30">
                   <div className="text-center mb-6">
                     <div className="inline-flex items-center gap-2 bg-[#3b5998]/20 text-[#6d8fd4] px-4 py-2 rounded-full text-sm font-bold mb-3">
-                      <Flower2 className="w-4 h-4" />
-                      Frühjahrs-Spezial – nur bis 30. April 2026!
+                      <Sun className="w-4 h-4" />
+                      ☀️ Sommer-Spezial – nur bis 30. September 2026!
                     </div>
                     <h2 className="text-2xl lg:text-3xl font-bold text-white mb-2">
                       Jetzt Platz sichern!

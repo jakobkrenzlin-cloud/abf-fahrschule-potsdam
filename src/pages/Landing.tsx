@@ -18,8 +18,8 @@ const leadSchema = z.object({
   honeyPot: z.string().max(0, 'Spam erkannt')
 });
 
-// Offer end date: April 30, 2026
-const OFFER_END_DATE = new Date('2026-04-30T23:59:59');
+// Offer end date: September 30, 2026
+const OFFER_END_DATE = new Date('2026-09-30T23:59:59');
 
 const Landing = () => {
   const navigate = useNavigate();

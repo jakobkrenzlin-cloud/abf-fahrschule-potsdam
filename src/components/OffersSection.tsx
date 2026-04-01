@@ -48,10 +48,10 @@ const OffersSection = () => {
 
             <div className="p-4 md:p-6 space-y-4 md:space-y-6">
 
-              <p className="text-gray-700 leading-relaxed">
+               <p className="text-gray-700 leading-relaxed">
                 Werde Teil unserer erfolgreichen Fahrschüler – starte deine Ausbildung in Potsdam mit 
-                kompletter Theorie, Lern-App, Erste Hilfe Kurs und ADAC 1 Jahr kostenlos!
-              </p>
+                kompletter Theorie in nur einer Woche und ADAC 1 Jahr kostenlos!
+               </p>
 
               <div className="space-y-3">
                 <h4 className="font-semibold text-gray-900 mb-3">Im Grundbetrag enthalten:</h4>

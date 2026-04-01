@@ -5,7 +5,7 @@ import { HelpCircle } from 'lucide-react';
 const ConversionFAQ = () => {
   const faqs = [
     {
-      question: "Wie schnell kann ich mit dem 179€ Frühjahrs Angebot starten?",
+      question: "Wie schnell kann ich mit dem 179€ Sommer Angebot starten?",
       answer: "Du kannst sofort nach der Anmeldung beginnen! Der Theorieunterricht startet wöchentlich neu, und deine erste Fahrstunde kann bereits in der ersten Woche stattfinden. Die LernApp erhältst du direkt nach der Anmeldung."
     },
     {

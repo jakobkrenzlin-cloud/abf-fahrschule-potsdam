@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { Phone, MessageCircle, CheckCircle, Star, ChevronDown, Flower2, Sun, Lock, BookOpen, Smartphone, Heart, Car, HelpCircle, ArrowDown, Clock } from 'lucide-react';
+import { Phone, MessageCircle, CheckCircle, Star, ChevronDown, Sun, Lock, BookOpen, Smartphone, Heart, Car, HelpCircle, ArrowDown, Clock } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,8 +18,8 @@ const leadSchema = z.object({
   honeyPot: z.string().max(0, 'Spam erkannt')
 });
 
-// Offer end date: April 30, 2026
-const OFFER_END_DATE = new Date('2026-04-30T23:59:59');
+// Offer end date: September 30, 2026
+const OFFER_END_DATE = new Date('2026-09-30T23:59:59');
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -105,7 +105,7 @@ const Landing = () => {
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/4915752387583?text=Hallo,%20ich%20möchte%20das%20279€%20Frühjahrs-Angebot%20sichern!', '_blank');
+    window.open('https://wa.me/4915752387583?text=Hallo,%20ich%20möchte%20das%20179€%20Sommer-Angebot%20sichern!', '_blank');
   };
 
   const handleCall = () => {
@@ -155,7 +155,7 @@ const Landing = () => {
         <section id="hero-section" className="relative overflow-hidden bg-gradient-to-br from-black via-[#0a1628] to-black">
           {/* Decorative elements */}
           <div className="absolute top-10 left-10 text-[#3b5998]/10">
-            <Flower2 className="w-24 h-24" />
+            <Sun className="w-24 h-24" />
           </div>
           <div className="absolute bottom-20 right-10 text-[#3b5998]/10">
             <Sun className="w-32 h-32" />
@@ -165,7 +165,7 @@ const Landing = () => {
             {/* Countdown Timer Bar */}
             <div className="bg-[#3b5998] text-white py-3 mb-6">
               <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-2">
-                <span className="text-sm font-medium"> Frühjahrs-Spezial – Nur bis 30. April 2026!</span>
+                <span className="text-sm font-medium"> ☀️ Sommer-Spezial – Nur bis 30. September 2026!</span>
                 <CountdownTimer targetDate={OFFER_END_DATE} className="text-sm" />
               </div>
             </div>
@@ -194,7 +194,7 @@ const Landing = () => {
                   {/* SEO-optimized intro paragraph */}
                   <p className="text-xl lg:text-2xl text-neutral-300 mb-6 font-medium">
                     Willkommen bei der ABF Fahrschule in Potsdam! Mache jetzt deinen Führerschein Klasse B in nur 4 Wochen – mit Theorie, Lern-App, Erste Hilfe & ADAC.
-                    <span className="block mt-1 text-[#6d8fd4] font-bold">Frühjahrs-Spezial nur bis 30. April!</span>
+                    <span className="block mt-1 text-[#6d8fd4] font-bold">Sommer-Spezial nur bis 30. September!</span>
                   </p>
                   
                   {/* Key Benefits - Visual Pills */}
@@ -237,8 +237,8 @@ const Landing = () => {
                 <div id="contact-form" className="bg-neutral-900 rounded-2xl shadow-xl p-6 lg:p-8 border border-[#3b5998]/30">
                   <div className="text-center mb-6">
                     <div className="inline-flex items-center gap-2 bg-[#3b5998]/20 text-[#6d8fd4] px-4 py-2 rounded-full text-sm font-bold mb-3">
-                      <Flower2 className="w-4 h-4" />
-                      Frühjahrs-Spezial – nur bis 30. April 2026!
+                      <Sun className="w-4 h-4" />
+                      ☀️ Sommer-Spezial – nur bis 30. September 2026!
                     </div>
                     <h2 className="text-2xl lg:text-3xl font-bold text-white mb-2">
                       Jetzt Platz sichern!
@@ -373,7 +373,7 @@ const Landing = () => {
 
 
         {/* CTA after Hero */}
-        <InlineCTA text="Nur noch wenige Plätze für das Frühjahrs-Spezial verfügbar!" />
+        <InlineCTA text="Nur noch wenige Plätze für das Sommer-Spezial verfügbar!" />
 
         {/* Value Communication Section */}
         <section className="py-16 bg-gradient-to-b from-black to-[#0a1628]">

@@ -24,7 +24,7 @@ const AGB = () => {
           <p className="mb-4">Bei Online-Anmeldung erfolgt die Vertragsannahme durch eine Bestätigungs-E-Mail der Fahrschule. Der Vertrag gilt ab diesem Zeitpunkt als abgeschlossen.</p>
 
           <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">§ 3 Leistungen und Preise der Fahrschule (gemäß § 32 FahrlG)</h2>
-          <p className="mb-4"><strong>Grundbetrag (179 € Frühjahrs Angebot) beinhaltet:</strong></p>
+          <p className="mb-4"><strong>Grundbetrag (179 € Sommer Angebot) beinhaltet:</strong></p>
           <ul className="mb-4 ml-6 list-disc">
             <li>Kompletter Theorieunterricht (12 × Grundstoff à 90 Minuten + 2 × klassenspezifischer Zusatzstoff à 90 Minuten)</li>
             <li>Zugang zur LernApp für Theorieprüfung (Vogel Verlag)</li>
@@ -78,7 +78,7 @@ const AGB = () => {
           
           <p className="mb-4"><strong>Zahlungsmodalitäten:</strong></p>
           <ul className="mb-4 ml-6 list-disc">
-            <li>Der Grundbetrag (179 € Frühjahrs Angebot) ist bei Vertragsabschluss fällig</li>
+            <li>Der Grundbetrag (179 € Sommer Angebot) ist bei Vertragsabschluss fällig</li>
             <li>Fahrstunden sind vor Fahrtantritt zu bezahlen (Barzahlung oder Kartenzahlung)</li>
             <li>Sonderfahrten (Autobahn, Überland, Nachtfahrt) sind spätestens 2 Werktage vor Fahrtantritt zu bezahlen</li>
           </ul>

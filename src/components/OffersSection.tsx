@@ -36,12 +36,12 @@ const OffersSection = () => {
                 <Car className="w-7 h-7 md:w-8 md:h-8 flex-shrink-0" />
                 <div>
                   <h3 className="text-2xl font-bold">Führerschein-Ausbildung</h3>
-                  <p className="text-blue-100"> Frühjahrs Angebot vom 01.02.2026 bis zum 31.03.2026 nur 179 €!</p>
+                  <p className="text-blue-100"> ☀️ Sommer Angebot vom 01.05.2026 bis zum 30.09.2026 nur 179 €!</p>
                 </div>
               </div>
               <div className="bg-white/20 rounded-lg p-4">
                 <div className="text-3xl font-bold mb-1">179 €</div>
-                <div className="text-sm text-blue-100">Frühjahrs Angebot - Grundbetrag</div>
+                <div className="text-sm text-blue-100">Sommer Angebot - Grundbetrag</div>
                 <div className="text-xs text-blue-100 mt-2">Preis gemäß § 32 Fahrlehrergesetz: Unterweisungsstunde 67,50 €/45 Min., Übungsstunde 67,50 €/45 Min. und Besondere Ausbildungsfahrten 75 €/45 Min.</div>
               </div>
             </div>

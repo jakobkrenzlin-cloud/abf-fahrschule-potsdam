@@ -6,7 +6,7 @@ const ConversionFAQ = () => {
   const faqs = [
     {
       question: "Wie schnell kann ich mit dem 179€ Sommer Angebot starten?",
-      answer: "Du kannst sofort nach der Anmeldung beginnen! Der Theorieunterricht startet wöchentlich neu, und deine erste Fahrstunde kann bereits in der ersten Woche stattfinden. Die LernApp erhältst du direkt nach der Anmeldung."
+      answer: "Du kannst sofort nach der Anmeldung beginnen! Der Theorieunterricht startet wöchentlich neu, und in nur einer Woche bist du mit der Theorie fertig. Deine erste Fahrstunde kann bereits in der ersten Woche stattfinden."
     },
     {
       question: "Was ist mit BF17 / Begleitetes Fahren ab 17?",

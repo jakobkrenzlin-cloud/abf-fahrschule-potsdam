@@ -155,7 +155,7 @@ const Landing = () => {
         <section id="hero-section" className="relative overflow-hidden bg-gradient-to-br from-black via-[#0a1628] to-black">
           {/* Decorative elements */}
           <div className="absolute top-10 left-10 text-[#3b5998]/10">
-            <Flower2 className="w-24 h-24" />
+            <Sun className="w-24 h-24" />
           </div>
           <div className="absolute bottom-20 right-10 text-[#3b5998]/10">
             <Sun className="w-32 h-32" />

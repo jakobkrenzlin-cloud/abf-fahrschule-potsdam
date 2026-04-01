@@ -165,7 +165,7 @@ const Landing = () => {
             {/* Countdown Timer Bar */}
             <div className="bg-[#3b5998] text-white py-3 mb-6">
               <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-2">
-                <span className="text-sm font-medium"> Frühjahrs-Spezial – Nur bis 30. April 2026!</span>
+                <span className="text-sm font-medium"> ☀️ Sommer-Spezial – Nur bis 30. September 2026!</span>
                 <CountdownTimer targetDate={OFFER_END_DATE} className="text-sm" />
               </div>
             </div>

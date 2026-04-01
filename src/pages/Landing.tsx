@@ -188,12 +188,12 @@ const Landing = () => {
                   {/* Main Headline */}
                   <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight text-white">
                     Deine Fahrschule in Potsdam
-                    <span className="block text-[#6d8fd4]">Führerschein Klasse B in 4 Wochen</span>
+                    <span className="block text-[#6d8fd4]">In einer Woche Theorie fertig</span>
                   </h1>
                   
                   {/* SEO-optimized intro paragraph */}
-                  <p className="text-xl lg:text-2xl text-neutral-300 mb-6 font-medium">
-                    Willkommen bei der ABF Fahrschule in Potsdam! Mache jetzt deinen Führerschein Klasse B in nur 4 Wochen – mit Theorie, Lern-App, Erste Hilfe & ADAC.
+                   <p className="text-xl lg:text-2xl text-neutral-300 mb-6 font-medium">
+                     Willkommen bei der ABF Fahrschule in Potsdam! In nur einer Woche Theorie fertig – mit kompletter Theorieausbildung & ADAC.
                     <span className="block mt-1 text-[#6d8fd4] font-bold">Sommer-Spezial nur bis 30. September!</span>
                   </p>
                   
@@ -205,7 +205,7 @@ const Landing = () => {
                     </div>
                     <div className="flex items-center gap-2 bg-[#3b5998]/20 border border-[#3b5998]/40 rounded-full px-4 py-2 text-white">
                       <CheckCircle className="w-5 h-5 text-[#6d8fd4]" />
-                      <span className="font-medium">In 4 Wochen fertig</span>
+                      <span className="font-medium">In einer Woche Theorie fertig</span>
                     </div>
                     <div className="flex items-center gap-2 bg-[#3b5998]/20 border border-[#3b5998]/40 rounded-full px-4 py-2 text-white">
                       <CheckCircle className="w-5 h-5 text-[#6d8fd4]" />
@@ -604,7 +604,7 @@ const Landing = () => {
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="text-neutral-400 pb-5">
-                  Bei uns schaffst du den Führerschein in etwa 4-8 Wochen – je nachdem, wie viel Zeit du hast. Wir passen uns flexibel an deinen Zeitplan an. Schneller geht's kaum!
+                  Bei uns schaffst du die Theorie in nur einer Woche! Danach geht's direkt in die Praxis – wir passen uns flexibel an deinen Zeitplan an.
                 </AccordionContent>
               </AccordionItem>
 

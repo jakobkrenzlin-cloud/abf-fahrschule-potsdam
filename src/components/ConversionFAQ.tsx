@@ -6,7 +6,7 @@ const ConversionFAQ = () => {
   const faqs = [
     {
       question: "Wie schnell kann ich mit dem 179€ Sommer Angebot starten?",
-      answer: "Du kannst sofort nach der Anmeldung beginnen! Der Theorieunterricht startet wöchentlich neu, und deine erste Fahrstunde kann bereits in der ersten Woche stattfinden. Die LernApp erhältst du direkt nach der Anmeldung."
+      answer: "Du kannst sofort nach der Anmeldung beginnen! Der Theorieunterricht startet wöchentlich neu, und in nur einer Woche bist du mit der Theorie fertig. Deine erste Fahrstunde kann bereits in der ersten Woche stattfinden."
     },
     {
       question: "Was ist mit BF17 / Begleitetes Fahren ab 17?",
@@ -25,8 +25,8 @@ const ConversionFAQ = () => {
       answer: "Kein Problem! Jeder lernt in seinem eigenen Tempo. Das 179€ Sommer Angebot bleibt gültig und weitere Fahrstunden buchst du einfach dazu. Wir begleiten dich, bis du sicher fährst und die Prüfung bestehst."
     },
     {
-      question: "Was ist im 179€ Grundbetrag enthalten?",
-      answer: "Der Grundbetrag von 179€ enthält den kompletten Theorieunterricht, die LernApp, Erste-Hilfe-Kurs und ADAC 1 Jahr kostenlos. Zusätzlich: Fahrstunden 67,50€/45 Min., Übungsstunden 67,50€/45 Min., Besondere Ausbildungsfahrten 75€/45 Min. Alle Preise gemäß § 32 FahrlG transparent aufgelistet."
+       question: "Was ist im 179€ Grundbetrag enthalten?",
+       answer: "Der Grundbetrag von 179€ enthält den kompletten Theorieunterricht und ADAC 1 Jahr kostenlos. In nur einer Woche bist du mit der Theorie fertig! Zusätzlich: Fahrstunden 67,50€/45 Min., Übungsstunden 67,50€/45 Min., Besondere Ausbildungsfahrten 75€/45 Min. Alle Preise gemäß § 32 FahrlG transparent aufgelistet."
     }
   ];
 

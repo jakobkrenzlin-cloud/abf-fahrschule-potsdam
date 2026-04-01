@@ -26,9 +26,8 @@ const AGB = () => {
           <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-8">§ 3 Leistungen und Preise der Fahrschule (gemäß § 32 FahrlG)</h2>
           <p className="mb-4"><strong>Grundbetrag (179 € Sommer Angebot) beinhaltet:</strong></p>
           <ul className="mb-4 ml-6 list-disc">
-            <li>Kompletter Theorieunterricht (12 × Grundstoff à 90 Minuten + 2 × klassenspezifischer Zusatzstoff à 90 Minuten)</li>
-            <li>Zugang zur LernApp für Theorieprüfung (Vogel Verlag)</li>
-            <li>Erste-Hilfe-Kurs</li>
+             <li>Kompletter Theorieunterricht (12 × Grundstoff à 90 Minuten + 2 × klassenspezifischer Zusatzstoff à 90 Minuten)</li>
+             <li>ADAC 1 Jahr kostenlos</li>
             <li>ADAC 1 Jahr kostenlos</li>
             <li>Vorstellung zur theoretischen Prüfung</li>
             <li>Anmeldebearbeitung und Verwaltung</li>

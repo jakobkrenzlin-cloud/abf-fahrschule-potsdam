@@ -10,12 +10,12 @@ const faqs = [
   {
     question: 'Was kostet der Führerschein bei der ABF Fahrschule in Potsdam?',
     answer:
-      'Der Grundbetrag für die Führerschein-Ausbildung Klasse B beträgt aktuell nur 179 € im Sommer Angebot. Darin enthalten sind der komplette Theorieunterricht, die LernApp, ein Erste-Hilfe-Kurs und 1 Jahr ADAC-Mitgliedschaft. Die Fahrstunden kosten ab 67,50 €/45 Min.',
+      'Der Grundbetrag für die Führerschein-Ausbildung Klasse B beträgt aktuell nur 179 € im Sommer Angebot. Darin enthalten sind der komplette Theorieunterricht und 1 Jahr ADAC-Mitgliedschaft. Die Fahrstunden kosten ab 67,50 €/45 Min.',
   },
   {
     question: 'Wie lange dauert die Führerschein-Ausbildung in Potsdam?',
-    answer:
-      'Bei regelmäßiger Teilnahme kannst du deinen Führerschein in ca. 4–8 Wochen machen. Die genaue Dauer hängt von deiner Verfügbarkeit für Theorie und Praxis ab. Wir bieten flexible Terminoptionen, damit es schnell geht.',
+     answer:
+       'Die Theorie schaffst du bei uns in nur einer Woche! Die genaue Gesamtdauer hängt von deiner Verfügbarkeit für die Praxis ab. Wir bieten flexible Terminoptionen, damit es schnell geht.',
   },
   {
     question: 'Was ist die B197 Ausbildung?',

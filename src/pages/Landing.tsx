@@ -192,8 +192,8 @@ const Landing = () => {
                   </h1>
                   
                   {/* SEO-optimized intro paragraph */}
-                  <p className="text-xl lg:text-2xl text-neutral-300 mb-6 font-medium">
-                    Willkommen bei der ABF Fahrschule in Potsdam! Mache jetzt deinen Führerschein Klasse B in nur 4 Wochen – mit Theorie, Lern-App, Erste Hilfe & ADAC.
+                   <p className="text-xl lg:text-2xl text-neutral-300 mb-6 font-medium">
+                     Willkommen bei der ABF Fahrschule in Potsdam! In nur einer Woche Theorie fertig – mit kompletter Theorieausbildung & ADAC.
                     <span className="block mt-1 text-[#6d8fd4] font-bold">Sommer-Spezial nur bis 30. September!</span>
                   </p>
                   

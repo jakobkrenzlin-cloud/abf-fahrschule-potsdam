@@ -124,7 +124,7 @@ const ContactSection = () => {
               <p className="text-xs text-gray-600 mt-2">Zusätzlich: LernApp, Erste Hilfe & ADAC 1 Jahr. 
 Fahrstunden ab 67,50€/45 Min.</p>
               <p className="text-xs text-gray-500 mt-1">
-                Limitiertes Frühjahrs Angebot
+                Limitiertes Sommer Angebot
               </p>
             </div>
 

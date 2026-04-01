@@ -205,7 +205,7 @@ const Landing = () => {
                     </div>
                     <div className="flex items-center gap-2 bg-[#3b5998]/20 border border-[#3b5998]/40 rounded-full px-4 py-2 text-white">
                       <CheckCircle className="w-5 h-5 text-[#6d8fd4]" />
-                      <span className="font-medium">In 4 Wochen fertig</span>
+                      <span className="font-medium">In einer Woche Theorie fertig</span>
                     </div>
                     <div className="flex items-center gap-2 bg-[#3b5998]/20 border border-[#3b5998]/40 rounded-full px-4 py-2 text-white">
                       <CheckCircle className="w-5 h-5 text-[#6d8fd4]" />

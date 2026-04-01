@@ -188,7 +188,7 @@ const Landing = () => {
                   {/* Main Headline */}
                   <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight text-white">
                     Deine Fahrschule in Potsdam
-                    <span className="block text-[#6d8fd4]">Führerschein Klasse B in 4 Wochen</span>
+                    <span className="block text-[#6d8fd4]">In einer Woche Theorie fertig</span>
                   </h1>
                   
                   {/* SEO-optimized intro paragraph */}

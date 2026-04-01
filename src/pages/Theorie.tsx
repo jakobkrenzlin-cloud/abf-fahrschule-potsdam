@@ -201,9 +201,9 @@ const Theorie = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-foreground mb-1">Wie lange dauert die Theorie insgesamt?</h3>
-                <p className="text-muted-foreground text-sm">
-                  Je nach Kurswahl 2–4 Wochen. Du kannst die 14 Stunden flexibel über mehrere Wochen verteilen.
-                </p>
+                 <p className="text-muted-foreground text-sm">
+                   Bei uns schaffst du die komplette Theorie in nur einer Woche! 14 Stunden kompakt und effizient.
+                 </p>
               </div>
               <div>
                 <h3 className="font-semibold text-foreground mb-1">Wann kann ich zur Prüfung?</h3>

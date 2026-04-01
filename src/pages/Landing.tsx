@@ -373,7 +373,7 @@ const Landing = () => {
 
 
         {/* CTA after Hero */}
-        <InlineCTA text="Nur noch wenige Plätze für das Frühjahrs-Spezial verfügbar!" />
+        <InlineCTA text="Nur noch wenige Plätze für das Sommer-Spezial verfügbar!" />
 
         {/* Value Communication Section */}
         <section className="py-16 bg-gradient-to-b from-black to-[#0a1628]">

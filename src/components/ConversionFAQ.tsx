@@ -22,7 +22,7 @@ const ConversionFAQ = () => {
     },
     {
       question: "Was passiert, wenn ich länger brauche als geplant?",
-      answer: "Kein Problem! Jeder lernt in seinem eigenen Tempo. Das 179€ Frühjahrs Angebot bleibt gültig und weitere Fahrstunden buchst du einfach dazu. Wir begleiten dich, bis du sicher fährst und die Prüfung bestehst."
+      answer: "Kein Problem! Jeder lernt in seinem eigenen Tempo. Das 179€ Sommer Angebot bleibt gültig und weitere Fahrstunden buchst du einfach dazu. Wir begleiten dich, bis du sicher fährst und die Prüfung bestehst."
     },
     {
       question: "Was ist im 179€ Grundbetrag enthalten?",

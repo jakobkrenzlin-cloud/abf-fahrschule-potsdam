@@ -25,8 +25,8 @@ const ConversionFAQ = () => {
       answer: "Kein Problem! Jeder lernt in seinem eigenen Tempo. Das 179€ Sommer Angebot bleibt gültig und weitere Fahrstunden buchst du einfach dazu. Wir begleiten dich, bis du sicher fährst und die Prüfung bestehst."
     },
     {
-      question: "Was ist im 179€ Grundbetrag enthalten?",
-      answer: "Der Grundbetrag von 179€ enthält den kompletten Theorieunterricht, die LernApp, Erste-Hilfe-Kurs und ADAC 1 Jahr kostenlos. Zusätzlich: Fahrstunden 67,50€/45 Min., Übungsstunden 67,50€/45 Min., Besondere Ausbildungsfahrten 75€/45 Min. Alle Preise gemäß § 32 FahrlG transparent aufgelistet."
+       question: "Was ist im 179€ Grundbetrag enthalten?",
+       answer: "Der Grundbetrag von 179€ enthält den kompletten Theorieunterricht und ADAC 1 Jahr kostenlos. In nur einer Woche bist du mit der Theorie fertig! Zusätzlich: Fahrstunden 67,50€/45 Min., Übungsstunden 67,50€/45 Min., Besondere Ausbildungsfahrten 75€/45 Min. Alle Preise gemäß § 32 FahrlG transparent aufgelistet."
     }
   ];
 

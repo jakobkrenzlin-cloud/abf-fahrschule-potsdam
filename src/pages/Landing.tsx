@@ -604,7 +604,7 @@ const Landing = () => {
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="text-neutral-400 pb-5">
-                  Bei uns schaffst du den Führerschein in etwa 4-8 Wochen – je nachdem, wie viel Zeit du hast. Wir passen uns flexibel an deinen Zeitplan an. Schneller geht's kaum!
+                  Bei uns schaffst du die Theorie in nur einer Woche! Danach geht's direkt in die Praxis – wir passen uns flexibel an deinen Zeitplan an.
                 </AccordionContent>
               </AccordionItem>
 

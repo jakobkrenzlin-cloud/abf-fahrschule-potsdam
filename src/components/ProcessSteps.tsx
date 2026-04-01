@@ -13,7 +13,7 @@ const ProcessSteps = () => {
     { 
       number: 2, 
       title: 'Theorie', 
-      description: 'Gesamter theoretischer Unterricht in kleinen Gruppen + LernApp zusätzlich',
+      description: 'Gesamter theoretischer Unterricht in kleinen Gruppen – in einer Woche fertig',
       icon: BookOpen,
       color: 'bg-green-500'
     },

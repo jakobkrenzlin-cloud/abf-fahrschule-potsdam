@@ -14,8 +14,8 @@ const faqs = [
   },
   {
     question: 'Wie lange dauert die Führerschein-Ausbildung in Potsdam?',
-    answer:
-      'Bei regelmäßiger Teilnahme kannst du deinen Führerschein in ca. 4–8 Wochen machen. Die genaue Dauer hängt von deiner Verfügbarkeit für Theorie und Praxis ab. Wir bieten flexible Terminoptionen, damit es schnell geht.',
+     answer:
+       'Die Theorie schaffst du bei uns in nur einer Woche! Die genaue Gesamtdauer hängt von deiner Verfügbarkeit für die Praxis ab. Wir bieten flexible Terminoptionen, damit es schnell geht.',
   },
   {
     question: 'Was ist die B197 Ausbildung?',

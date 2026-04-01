@@ -79,21 +79,13 @@ const Preise = () => {
                   </div>
                 </div>
                 <div className="mt-4 pt-4 border-t border-primary/20">
-                  <p className="text-sm font-semibold text-foreground mb-2">Im Grundbetrag zusätzlich:</p>
-                  <ul className="grid md:grid-cols-2 gap-2 text-sm text-muted-foreground">
-                    <li className="flex items-center gap-2">
-                      <Check className="text-primary flex-shrink-0" size={16} />
-                      Digitale LernApp (Vogel Verlag)
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="text-primary flex-shrink-0" size={16} />
-                      Erste-Hilfe-Kurs
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="text-primary flex-shrink-0" size={16} />
-                      Vorstellung zur theoretischen Prüfung
-                    </li>
-                  </ul>
+                   <p className="text-sm font-semibold text-foreground mb-2">Im Grundbetrag zusätzlich:</p>
+                   <ul className="grid md:grid-cols-2 gap-2 text-sm text-muted-foreground">
+                     <li className="flex items-center gap-2">
+                       <Check className="text-primary flex-shrink-0" size={16} />
+                       Vorstellung zur theoretischen Prüfung
+                     </li>
+                   </ul>
                 </div>
               </div>
 

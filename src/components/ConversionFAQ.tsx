@@ -41,7 +41,7 @@ const ConversionFAQ = () => {
             </h2>
           </div>
           <p className="text-lg text-gray-600">
-            Hier findest du Antworten auf die wichtigsten Fragen zu unserem 179€ Frühjahrs Angebot
+            Hier findest du Antworten auf die wichtigsten Fragen zu unserem 179€ Sommer Angebot
           </p>
         </div>
         

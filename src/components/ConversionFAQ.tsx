@@ -13,7 +13,7 @@ const ConversionFAQ = () => {
       answer: "Selbstverständlich bieten wir auch BF17 (Begleitetes Fahren ab 17) an! Bei Minderjährigen benötigen wir die schriftliche Einwilligung der Erziehungsberechtigten. Die entsprechenden Formulare erhältst du nach der Anmeldung automatisch von uns zugeschickt."
     },
     {
-      question: "Kann ich das 179€ Frühjahrs Angebot in Raten zahlen?", 
+      question: "Kann ich das 179€ Sommer Angebot in Raten zahlen?", 
       answer: "Ja, das ist möglich! Du kannst das Paket in 2-3 bequemen Raten aufteilen. Weitere Fahrstunden können einzeln oder in Paketen dazu gebucht werden. Sprich uns einfach auf flexible Zahlungsmöglichkeiten an."
     },
     {

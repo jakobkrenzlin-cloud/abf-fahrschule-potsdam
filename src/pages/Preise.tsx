@@ -9,7 +9,7 @@ const Preise = () => {
   return <>
       <Helmet>
         <title>Faire Preise für deinen Führerschein | ABF Fahrschule Potsdam</title>
-        <meta name="description" content="Transparente Preise für Führerschein Klasse B in Potsdam-Babelsberg. 179€ Frühjahrs Angebot Grundbetrag. Zusätzlich: Kompletter Theorieunterricht, LernApp & Erste Hilfe. Jetzt Angebot sichern!" />
+        <meta name="description" content="Transparente Preise für Führerschein Klasse B in Potsdam-Babelsberg. 179€ Sommer Angebot Grundbetrag. Zusätzlich: Kompletter Theorieunterricht, LernApp & Erste Hilfe. Jetzt Angebot sichern!" />
         <meta name="keywords" content="Fahrschule Potsdam Preise, Führerschein Kosten Potsdam, Fahrschule Babelsberg Preise, Führerschein Klasse B Kosten" />
         <link rel="canonical" href="https://www.abf-fahrschule.de/preise" />
         <script type="application/ld+json">

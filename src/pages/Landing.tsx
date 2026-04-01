@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { Phone, MessageCircle, CheckCircle, Star, ChevronDown, Flower2, Sun, Lock, BookOpen, Smartphone, Heart, Car, HelpCircle, ArrowDown, Clock } from 'lucide-react';
+import { Phone, MessageCircle, CheckCircle, Star, ChevronDown, Sun, Lock, BookOpen, Smartphone, Heart, Car, HelpCircle, ArrowDown, Clock } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";

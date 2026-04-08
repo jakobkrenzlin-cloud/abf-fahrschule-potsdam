@@ -131,7 +131,7 @@ const Landing = () => {
     <>
       <Helmet>
         <title>Fahrschule Potsdam | Führerschein Klasse B ab 279€ | ABF</title>
-        <meta name="description" content="Führerschein machen in Potsdam? ABF Fahrschule bietet Klasse B ab 279€ inkl. Theorie, Erste Hilfe & Lern-App. Jetzt Platz sichern!" />
+        <meta name="description" content="Führerschein machen in Potsdam? ABF Fahrschule bietet Klasse B ab 179€ inkl. Theorie & ADAC Mitgliedschaft. Jetzt Platz sichern!" />
       </Helmet>
       
       <div className="min-h-screen bg-black">
@@ -390,7 +390,7 @@ const Landing = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               <div className="bg-neutral-900 border border-[#3b5998]/30 rounded-2xl p-6 text-center hover:border-[#3b5998] transition-colors">
                 <div className="bg-[#3b5998]/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <BookOpen className="w-8 h-8 text-[#6d8fd4]" />
@@ -401,18 +401,10 @@ const Landing = () => {
 
               <div className="bg-neutral-900 border border-[#3b5998]/30 rounded-2xl p-6 text-center hover:border-[#3b5998] transition-colors">
                 <div className="bg-[#3b5998]/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Smartphone className="w-8 h-8 text-[#6d8fd4]" />
+                  <Clock className="w-8 h-8 text-[#6d8fd4]" />
                 </div>
-                <h3 className="font-bold text-lg text-white mb-2">Lern-App</h3>
-                <p className="text-sm text-neutral-400">Vogel Verlag – überall lernen</p>
-              </div>
-
-              <div className="bg-neutral-900 border border-[#3b5998]/30 rounded-2xl p-6 text-center hover:border-[#3b5998] transition-colors">
-                <div className="bg-[#3b5998]/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Heart className="w-8 h-8 text-[#6d8fd4]" />
-                </div>
-                <h3 className="font-bold text-lg text-white mb-2">Erste-Hilfe-Kurs</h3>
-                <p className="text-sm text-neutral-400">Zusätzlich inklusive</p>
+                <h3 className="font-bold text-lg text-white mb-2">Schnell fertig</h3>
+                <p className="text-sm text-neutral-400">In einer Woche Theorie fertig</p>
               </div>
 
               <div className="bg-neutral-900 border border-[#3b5998]/30 rounded-2xl p-6 text-center hover:border-[#3b5998] transition-colors">

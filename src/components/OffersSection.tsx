@@ -36,7 +36,7 @@ const OffersSection = () => {
                 <Car className="w-7 h-7 md:w-8 md:h-8 flex-shrink-0" />
                 <div>
                   <h3 className="text-2xl font-bold">Führerschein-Ausbildung</h3>
-                  <p className="text-blue-100"> ☀️ Sommer Angebot vom 01.05.2026 bis zum 30.09.2026 nur 179 €!</p>
+                  <p className="text-blue-100"> <p className="text-blue-100"> ☀️ Sommer Angebot vom 01.05.2026 bis zum 31.07.2026 nur 179 €!</p></p>
                 </div>
               </div>
               <div className="bg-white/20 rounded-lg p-4">

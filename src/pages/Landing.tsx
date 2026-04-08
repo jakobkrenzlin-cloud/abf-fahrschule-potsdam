@@ -18,8 +18,8 @@ const leadSchema = z.object({
   honeyPot: z.string().max(0, 'Spam erkannt')
 });
 
-// Offer end date: September 30, 2026
-const OFFER_END_DATE = new Date('2026-09-30T23:59:59');
+// Offer end date: July 31, 2026
+const OFFER_END_DATE = new Date('2026-07-31T23:59:59');
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -165,7 +165,7 @@ const Landing = () => {
             {/* Countdown Timer Bar */}
             <div className="bg-[#3b5998] text-white py-3 mb-6">
               <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-2">
-                <span className="text-sm font-medium"> ☀️ Sommer-Spezial – Nur bis 30. September 2026!</span>
+                <span className="text-sm font-medium"> <span className="text-sm font-medium"> ☀️ Sommer-Spezial – Nur bis 31. Juli 2026!</span></span>
                 <CountdownTimer targetDate={OFFER_END_DATE} className="text-sm" />
               </div>
             </div>
@@ -194,7 +194,7 @@ const Landing = () => {
                   {/* SEO-optimized intro paragraph */}
                    <p className="text-xl lg:text-2xl text-neutral-300 mb-6 font-medium">
                      Willkommen bei der ABF Fahrschule in Potsdam! In nur einer Woche Theorie fertig – mit kompletter Theorieausbildung & ADAC.
-                    <span className="block mt-1 text-[#6d8fd4] font-bold">Sommer-Spezial nur bis 30. September!</span>
+                    <span className="block mt-1 text-[#6d8fd4] font-bold"><span className="block mt-1 text-[#6d8fd4] font-bold">Sommer-Spezial nur bis 31. Juli!</span></span>
                   </p>
                   
                   {/* Key Benefits - Visual Pills */}
@@ -238,7 +238,7 @@ const Landing = () => {
                   <div className="text-center mb-6">
                     <div className="inline-flex items-center gap-2 bg-[#3b5998]/20 text-[#6d8fd4] px-4 py-2 rounded-full text-sm font-bold mb-3">
                       <Sun className="w-4 h-4" />
-                      ☀️ Sommer-Spezial – nur bis 30. September 2026!
+                      ☀️ Sommer-Spezial – nur bis 31. Juli 2026!
                     </div>
                     <h2 className="text-2xl lg:text-3xl font-bold text-white mb-2">
                       Jetzt Platz sichern!

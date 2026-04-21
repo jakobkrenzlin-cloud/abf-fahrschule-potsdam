@@ -91,6 +91,8 @@ const Landing = () => {
         const errorData = await response.json().catch(() => ({}));
         throw new Error(errorData.error || 'Submission failed');
       }
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'lead_submitted', form_type: 'contact' });
       CookieConsentManager.triggerConversion();
       navigate('/danke');
     } catch (error) {

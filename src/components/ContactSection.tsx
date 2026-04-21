@@ -72,8 +72,8 @@ const ContactSection = () => {
         throw new Error(errorData.error || 'Submission failed');
       }
 
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: 'lead_submitted', form_type: 'contact' });
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      (window as any).dataLayer.push({ event: 'lead_submitted', form_type: 'contact' });
       // Trigger Google Ads conversion tracking with consent check
       CookieConsentManager.triggerConversion();
       toast({

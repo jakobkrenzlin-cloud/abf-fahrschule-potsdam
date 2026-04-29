@@ -138,7 +138,7 @@ const Preise = () => {
                     </li>
                     <li className="flex items-center gap-2">
                       <Check className="text-primary flex-shrink-0" size={16} />
-                      100 € Gutschein für Louis (Motorradzubehör)
+                      100 € Louis und Polo Gutschein (Motorradzubehör)
                     </li>
                     <li className="flex items-center gap-2">
                       <Check className="text-primary flex-shrink-0" size={16} />

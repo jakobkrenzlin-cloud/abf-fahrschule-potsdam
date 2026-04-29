@@ -18,7 +18,7 @@ const MotorradFlyerSection: React.FC = () => {
         <div className="relative mx-auto max-w-md">
           <img 
             src={motorradFlyer} 
-            alt="ABF Motorrad Führerschein Angebot Flyer - 599€ Grundbetrag inkl. Erste Hilfe, LernApp und Louis Gutschein"
+            alt="ABF Motorrad Führerschein Angebot Flyer - 599€ Grundbetrag inkl. Erste Hilfe, LernApp und Louis und Polo Gutschein"
             className="w-full rounded-xl border-2 border-[#3b5998]/30 shadow-2xl hover:border-[#3b5998] transition-all duration-300"
             loading="lazy"
           />

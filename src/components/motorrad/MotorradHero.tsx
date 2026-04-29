@@ -43,7 +43,7 @@ const MotorradHero: React.FC<MotorradHeroProps> = ({ onCtaClick }) => {
             </div>
             <div className="flex items-center gap-2 bg-[#3b5998]/20 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 border border-[#3b5998]/30">
               <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-[#6d8fd4] flex-shrink-0" />
-              <span className="text-white text-sm font-medium">Inkl. 100€ Louis-Gutschein</span>
+              <span className="text-white text-sm font-medium">Inkl. 100€ Louis und Polo Gutschein</span>
             </div>
             <div className="flex items-center gap-2 bg-[#3b5998]/20 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 border border-[#3b5998]/30">
               <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-[#6d8fd4] flex-shrink-0" />

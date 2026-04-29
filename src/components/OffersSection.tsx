@@ -98,7 +98,7 @@ const OffersSection = () => {
               <Link to="/anmeldungmotorrad" className="block flex-1">
                 <img 
                   src={motorradFlyer} 
-                  alt="ABF Motorrad Führerschein Angebot - 599€ Grundbetrag inkl. Erste Hilfe, LernApp und 100€ Louis Gutschein"
+                  alt="ABF Motorrad Führerschein Angebot - 599€ Grundbetrag inkl. Erste Hilfe, LernApp und 100€ Louis und Polo Gutschein"
                   className="w-full h-auto rounded-lg hover:opacity-90 transition-opacity cursor-pointer"
                   loading="lazy"
                 />

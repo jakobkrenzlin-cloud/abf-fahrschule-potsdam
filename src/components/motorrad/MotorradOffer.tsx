@@ -68,7 +68,7 @@ const MotorradOffer: React.FC = () => {
               <li className="flex items-center gap-2 sm:gap-3">
                 <Gift className="w-5 sm:w-6 h-5 sm:h-6 text-[#3b5998] flex-shrink-0" />
                 <div className="flex-1 min-w-0">
-                  <span className="text-white font-medium text-sm sm:text-base">100€ Louis-Gutschein</span>
+                  <span className="text-white font-medium text-sm sm:text-base">100€ Louis und Polo Gutschein</span>
                 </div>
                 <span className="text-[#6d8fd4] text-xs sm:text-sm font-medium whitespace-nowrap">Geschenkt!</span>
               </li>

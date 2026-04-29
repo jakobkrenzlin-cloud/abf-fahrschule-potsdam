@@ -30,7 +30,7 @@ const faqs = [
   {
     question: 'Bietet die ABF Fahrschule auch Motorrad-Führerschein in Potsdam an?',
     answer:
-      'Ja! Wir bieten Motorrad-Führerschein der Klassen A, A1 und A2 an. Aktuell gibt es den Motorrad-Grundbetrag ab 599 € inklusive Erste-Hilfe-Kurs, LernApp und einem 100 € Louis-Gutschein.',
+      'Ja! Wir bieten Motorrad-Führerschein der Klassen A, A1 und A2 an. Aktuell gibt es den Motorrad-Grundbetrag ab 599 € inklusive Erste-Hilfe-Kurs, LernApp und einem 100 € Louis und Polo Gutschein.',
   },
   {
     question: 'Welche Öffnungszeiten hat die Fahrschule in Potsdam?',

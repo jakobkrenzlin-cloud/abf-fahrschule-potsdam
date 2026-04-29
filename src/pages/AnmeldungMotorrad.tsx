@@ -45,7 +45,7 @@ const AnmeldungMotorrad = () => {
         <title>Motorradführerschein Potsdam | Klasse A/A2 für 599€ | ABF Fahrschule</title>
         <meta 
           name="description" 
-          content="Sichere dir jetzt deinen Motorradführerschein (A/A2) in Potsdam! Grundbetrag nur 599€ inkl. Erste Hilfe, LernApp & 100€ Louis-Gutschein. Jetzt Platz sichern!" 
+          content="Sichere dir jetzt deinen Motorradführerschein (A/A2) in Potsdam! Grundbetrag nur 599€ inkl. Erste Hilfe, LernApp & 100€ Louis und Polo Gutschein. Jetzt Platz sichern!" 
         />
         <meta name="keywords" content="Motorradführerschein Potsdam, Motorrad Fahrschule Potsdam, A2 Führerschein Potsdam, Motorradführerschein machen, Motorradführerschein Kosten" />
         <link rel="canonical" href="https://abf-fahrschule-potsdam.lovable.app/anmeldungmotorrad" />

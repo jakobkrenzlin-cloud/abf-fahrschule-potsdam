@@ -82,7 +82,7 @@ const ConversionFAQ = () => {
                 +49 162 2191290
               </a>
               <a 
-                href="https://wa.me/4915752387583" 
+                href="https://wa.me/491622191290" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors"

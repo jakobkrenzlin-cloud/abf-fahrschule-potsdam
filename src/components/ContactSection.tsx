@@ -100,7 +100,7 @@ const ContactSection = () => {
     }
   };
   const handleWhatsApp = () => {
-    window.open('https://wa.me/4915752387583', '_blank');
+    window.open('https://wa.me/491622191290', '_blank');
   };
   const handleCall = () => {
     window.location.href = 'tel:+491622191290';

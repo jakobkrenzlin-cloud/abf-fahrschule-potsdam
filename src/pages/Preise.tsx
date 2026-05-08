@@ -258,9 +258,9 @@ const Preise = () => {
               Ruf uns an oder komm direkt im Weber Park vorbei. Wir beraten dich gerne persönlich.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:+493319679585" className="inline-block">
+              <a href="tel:+491622191290" className="inline-block">
                 <Button size="lg" variant="outline">
-                  📞 0331 / 967 958 54
+                  📞 +49 162 2191290
                 </Button>
               </a>
               <Link to="/kontakt">

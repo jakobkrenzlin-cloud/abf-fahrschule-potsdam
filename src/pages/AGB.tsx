@@ -110,7 +110,7 @@ const AGB = () => {
               <strong>ABF Bildungszentrum und Fahrschule GmbH</strong><br />
               Weber Park, Tuchmacherstraße 45 B<br />
               14482 Potsdam<br />
-              Telefon: 0331 / 9679 58 54<br />
+              Telefon: +49 162 2191290<br />
               E-Mail: kontakt@abf-fahrschule.de
             </p>
             <p className="mb-4">mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren.</p>

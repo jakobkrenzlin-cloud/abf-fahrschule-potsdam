@@ -67,10 +67,10 @@ const JobSection = () => {
             Jetzt per E-Mail bewerben
           </a>
           <a
-            href="tel:033196795854"
+            href="tel:+491622191290"
             className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors text-center"
           >
-            Jetzt anrufen: 0331 / 967 958 54
+            Jetzt anrufen: +49 162 2191290
           </a>
         </div>
       </div>

@@ -104,7 +104,7 @@ const MotorradContactForm: React.FC = () => {
   };
 
   const handleCall = () => {
-    window.location.href = 'tel:+4933196795854';
+    window.location.href = 'tel:+491622191290';
   };
 
   return (

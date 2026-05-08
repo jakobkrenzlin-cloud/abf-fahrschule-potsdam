@@ -3,7 +3,7 @@ import { Phone, MessageCircle } from 'lucide-react';
 
 const MobileStickyFooter = () => {
   const handleCall = () => {
-    window.location.href = 'tel:+4933196795854';
+    window.location.href = 'tel:+491622191290';
   };
 
   const handleWhatsApp = () => {

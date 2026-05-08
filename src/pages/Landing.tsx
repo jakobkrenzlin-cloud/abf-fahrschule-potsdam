@@ -111,7 +111,7 @@ const Landing = () => {
   };
 
   const handleCall = () => {
-    window.location.href = 'tel:+4933196795854';
+    window.location.href = 'tel:+491622191290';
   };
 
   // Inline CTA Component - Blue theme matching motorrad page
@@ -142,9 +142,9 @@ const Landing = () => {
           <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
             <img src="/abf-logo.png" alt="ABF Fahrschule Potsdam" className="h-12 w-auto" loading="eager" />
             <div className="hidden md:flex items-center gap-4">
-              <a href="tel:+4933196795854" className="flex items-center gap-2 text-white hover:text-[#6d8fd4] transition-colors">
+              <a href="tel:+491622191290" className="flex items-center gap-2 text-white hover:text-[#6d8fd4] transition-colors">
                 <Phone className="w-4 h-4 text-[#3b5998]" />
-                <span className="font-semibold">0331 / 967 958 54</span>
+                <span className="font-semibold">+49 162 2191290</span>
               </a>
               <Button onClick={scrollToForm} size="sm" className="bg-[#3b5998] hover:bg-[#4a6cb3] text-white font-semibold rounded-lg">
                 Jetzt anmelden

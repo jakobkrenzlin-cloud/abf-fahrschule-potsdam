@@ -100,10 +100,10 @@ const ContactSection = () => {
     }
   };
   const handleWhatsApp = () => {
-    window.open('https://wa.me/4915752387583', '_blank');
+    window.open('https://wa.me/491622191290', '_blank');
   };
   const handleCall = () => {
-    window.location.href = 'tel:+4933196795854';
+    window.location.href = 'tel:+491622191290';
   };
   return <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -247,8 +247,8 @@ Fahrstunden ab 67,50€/45 Min.</p>
                   <Phone className="w-6 h-6 text-blue-600 mt-1" />
                   <div>
                     <div className="font-medium text-gray-900">Telefon Fahrschule Potsdam</div>
-                    <a href="tel:+4933196795854" className="text-blue-600 hover:text-blue-700">
-                      0331 / 967 958 54
+                    <a href="tel:+491622191290" className="text-blue-600 hover:text-blue-700">
+                      +49 162 2191290
                     </a>
                   </div>
                 </div>

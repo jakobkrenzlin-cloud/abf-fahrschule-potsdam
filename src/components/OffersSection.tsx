@@ -130,8 +130,8 @@ const OffersSection = () => {
             <div className="text-center p-4 bg-blue-50 rounded-xl">
               <Phone className="w-8 h-8 text-blue-600 mx-auto mb-3" />
               <h4 className="font-semibold text-gray-900 mb-2">Telefon</h4>
-              <a href="tel:+4933196795854" className="text-blue-600 hover:text-blue-700 font-medium">
-                0331 / 967 958 54
+              <a href="tel:+491622191290" className="text-blue-600 hover:text-blue-700 font-medium">
+                +49 162 2191290
               </a>
             </div>
 

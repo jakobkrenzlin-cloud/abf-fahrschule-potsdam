@@ -11,8 +11,8 @@ const QuickContact = () => {
             <Phone className="w-5 h-5" />
             <div>
               <div className="text-sm font-medium">Jetzt anrufen</div>
-              <a href="tel:+4933196795854" className="text-blue-100 hover:text-white transition-colors">
-                0331 / 967 958 54
+              <a href="tel:+491622191290" className="text-blue-100 hover:text-white transition-colors">
+                +49 162 2191290
               </a>
             </div>
           </div>

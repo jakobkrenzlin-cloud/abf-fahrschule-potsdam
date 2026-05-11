@@ -21,6 +21,7 @@ const MotorradContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    email: '',
     honeyPot: '',
     license_class: 'a2'
   });

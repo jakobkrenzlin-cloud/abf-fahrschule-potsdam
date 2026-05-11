@@ -131,7 +131,10 @@ const ContactSection = () => {
           <div className="bg-white rounded-2xl shadow-2xl p-8 lg:p-12 border border-gray-100">
             {/* Offer Reminder */}
             <div className="text-center mb-8 p-4 bg-gradient-to-r from-blue-600/10 to-blue-600/5 rounded-xl border-l-4 border-blue-600">
-              <p className="text-blue-600 font-bold text-lg"> ☀️ Sommer Angebot: nur 179€ Grundbetrag!</p>
+              <p className="text-blue-600 font-bold text-lg"> ☀️ Sommer Angebot: nur {currentOffer.price} Grundbetrag!</p>
+              {currentOffer.note && (
+                <p className="text-[11px] text-gray-500 mt-1 italic">{currentOffer.note}</p>
+              )}
                <p className="text-xs text-gray-600 mt-2">Zusätzlich: ADAC 1 Jahr kostenlos. 
 Fahrstunden ab 67,50€/45 Min.</p>
               <p className="text-xs text-gray-500 mt-1">

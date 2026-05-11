@@ -66,6 +66,7 @@ const ContactSection = () => {
         body: JSON.stringify({
           name: formData.name,
           phone: formData.phone,
+          ...(formData.email?.trim() ? { email: formData.email.trim() } : {}),
           license_class: formData.licenseClass,
           source: 'homepage'
         })

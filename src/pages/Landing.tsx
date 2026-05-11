@@ -94,6 +94,7 @@ const Landing = () => {
         body: JSON.stringify({
           name: formData.name,
           phone: formData.phone,
+          ...(formData.email?.trim() ? { email: formData.email.trim() } : {}),
           license_class: formData.license_class,
           source: 'landingpage-fruehling',
           message: undefined

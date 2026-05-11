@@ -170,6 +170,14 @@ Fahrstunden ab 67,50€/45 Min.</p>
                 phone: e.target.value
               })} className="mt-2 h-12 border-2 border-gray-200 focus:border-blue-600 rounded-lg" placeholder="Deine Telefonnummer" />
               </div>
+
+              <div>
+                <Label htmlFor="email" className="text-sm font-semibold text-gray-700">E-Mail <span className="text-gray-400 font-normal">(optional)</span></Label>
+                <Input id="email" type="email" value={formData.email} onChange={e => setFormData({
+                ...formData,
+                email: e.target.value
+              })} className="mt-2 h-12 border-2 border-gray-200 focus:border-blue-600 rounded-lg" placeholder="deine@email.de" autoComplete="email" />
+              </div>
               
               <div>
                 <Label htmlFor="license" className="text-sm font-semibold text-gray-700">Führerscheinklasse *</Label>

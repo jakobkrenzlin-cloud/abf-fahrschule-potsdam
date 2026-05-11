@@ -88,6 +88,7 @@ const ContactSection = () => {
       setFormData({
         name: '',
         phone: '',
+        email: '',
         licenseClass: '',
         honeyPot: '',
         privacyConsent: false

@@ -15,6 +15,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const leadSchema = z.object({
   name: z.string().trim().min(2, 'Name muss mindestens 2 Zeichen lang sein').max(100, 'Name darf maximal 100 Zeichen lang sein'),
   phone: z.string().trim().min(5, 'Bitte gib eine gültige Telefonnummer ein').max(30, 'Telefonnummer darf maximal 30 Zeichen lang sein'),
+  email: z.string().trim().email('Bitte gib eine gültige E-Mail-Adresse ein').max(255).optional().or(z.literal('')),
   honeyPot: z.string().max(0, 'Spam erkannt')
 });
 

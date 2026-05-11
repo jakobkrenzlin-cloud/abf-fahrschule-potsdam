@@ -10,6 +10,7 @@ import { CookieConsentManager } from '@/lib/cookieConsent';
 const leadSchema = z.object({
   name: z.string().trim().min(2, 'Name muss mindestens 2 Zeichen lang sein').max(100, 'Name darf maximal 100 Zeichen lang sein'),
   phone: z.string().trim().regex(/^[+]?[0-9\s()-]{6,20}$/, 'Ungültige Telefonnummer'),
+  email: z.string().trim().email('Ungültige E-Mail-Adresse').max(255).optional().or(z.literal('')),
   licenseClass: z.enum(['b', 'a1', 'a2', 'a', 'be'], {
     errorMap: () => ({
       message: 'Ungültige Führerscheinklasse'
@@ -24,6 +25,7 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    email: '',
     licenseClass: '',
     honeyPot: '',
     privacyConsent: false
@@ -40,6 +42,7 @@ const ContactSection = () => {
       const result = leadSchema.safeParse({
         name: formData.name,
         phone: formData.phone,
+        email: formData.email,
         licenseClass: formData.licenseClass,
         honeyPot: formData.honeyPot,
         privacyConsent: formData.privacyConsent
@@ -63,6 +66,7 @@ const ContactSection = () => {
         body: JSON.stringify({
           name: formData.name,
           phone: formData.phone,
+          ...(formData.email?.trim() ? { email: formData.email.trim() } : {}),
           license_class: formData.licenseClass,
           source: 'homepage'
         })
@@ -85,6 +89,7 @@ const ContactSection = () => {
       setFormData({
         name: '',
         phone: '',
+        email: '',
         licenseClass: '',
         honeyPot: '',
         privacyConsent: false
@@ -164,6 +169,14 @@ Fahrstunden ab 67,50€/45 Min.</p>
                 ...formData,
                 phone: e.target.value
               })} className="mt-2 h-12 border-2 border-gray-200 focus:border-blue-600 rounded-lg" placeholder="Deine Telefonnummer" />
+              </div>
+
+              <div>
+                <Label htmlFor="email" className="text-sm font-semibold text-gray-700">E-Mail <span className="text-gray-400 font-normal">(optional)</span></Label>
+                <Input id="email" type="email" value={formData.email} onChange={e => setFormData({
+                ...formData,
+                email: e.target.value
+              })} className="mt-2 h-12 border-2 border-gray-200 focus:border-blue-600 rounded-lg" placeholder="deine@email.de" autoComplete="email" />
               </div>
               
               <div>

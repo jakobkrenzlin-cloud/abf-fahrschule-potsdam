@@ -12,6 +12,7 @@ import { CookieConsentManager } from '@/lib/cookieConsent';
 const leadSchema = z.object({
   name: z.string().trim().min(2, 'Name muss mindestens 2 Zeichen lang sein').max(100, 'Name darf maximal 100 Zeichen lang sein'),
   phone: z.string().trim().min(5, 'Bitte gib eine gültige Telefonnummer ein').max(30, 'Telefonnummer darf maximal 30 Zeichen lang sein'),
+  email: z.string().trim().email('Bitte gib eine gültige E-Mail-Adresse ein').max(255).optional().or(z.literal('')),
   honeyPot: z.string().max(0, 'Spam erkannt')
 });
 
@@ -20,6 +21,7 @@ const MotorradContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    email: '',
     honeyPot: '',
     license_class: 'a2'
   });
@@ -36,6 +38,7 @@ const MotorradContactForm: React.FC = () => {
       const result = leadSchema.safeParse({
         name: formData.name,
         phone: formData.phone,
+        email: formData.email,
         honeyPot: formData.honeyPot
       });
       if (!result.success) {
@@ -69,7 +72,7 @@ const MotorradContactForm: React.FC = () => {
         },
         body: JSON.stringify({
           name: formData.name,
-          email: `${formData.phone.replace(/\D/g, '')}@no-email.local`,
+          email: formData.email?.trim() ? formData.email.trim() : `${formData.phone.replace(/\D/g, '')}@no-email.local`,
           phone: formData.phone,
           license_class: formData.license_class,
           source: 'landingpage-motorrad'
@@ -154,6 +157,22 @@ const MotorradContactForm: React.FC = () => {
                 className="mt-1.5 h-12 sm:h-14 border-neutral-700 bg-neutral-800 text-white placeholder:text-neutral-500 focus:border-[#3b5998] focus:ring-[#3b5998] rounded-xl text-base sm:text-lg p-3 sm:p-4"
                 placeholder="0151 12345678"
                 autoComplete="tel"
+              />
+            </div>
+
+            {/* Email Field (optional) */}
+            <div>
+              <Label htmlFor="email" className="text-sm font-semibold text-neutral-200">
+                E-Mail <span className="text-neutral-500 font-normal">(optional)</span>
+              </Label>
+              <Input
+                id="email"
+                type="email"
+                value={formData.email}
+                onChange={e => setFormData({ ...formData, email: e.target.value })}
+                className="mt-1.5 h-12 sm:h-14 border-neutral-700 bg-neutral-800 text-white placeholder:text-neutral-500 focus:border-[#3b5998] focus:ring-[#3b5998] rounded-xl text-base sm:text-lg p-3 sm:p-4"
+                placeholder="deine@email.de"
+                autoComplete="email"
               />
             </div>
 

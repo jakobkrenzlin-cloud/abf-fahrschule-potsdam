@@ -15,6 +15,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const leadSchema = z.object({
   name: z.string().trim().min(2, 'Name muss mindestens 2 Zeichen lang sein').max(100, 'Name darf maximal 100 Zeichen lang sein'),
   phone: z.string().trim().min(5, 'Bitte gib eine gültige Telefonnummer ein').max(30, 'Telefonnummer darf maximal 30 Zeichen lang sein'),
+  email: z.string().trim().email('Bitte gib eine gültige E-Mail-Adresse ein').max(255).optional().or(z.literal('')),
   honeyPot: z.string().max(0, 'Spam erkannt')
 });
 
@@ -26,6 +27,7 @@ const Landing = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    email: '',
     honeyPot: '',
     
     license_class: 'b'
@@ -58,6 +60,7 @@ const Landing = () => {
       const result = leadSchema.safeParse({
         name: formData.name,
         phone: formData.phone,
+        email: formData.email,
         honeyPot: formData.honeyPot
       });
       if (!result.success) {
@@ -91,6 +94,7 @@ const Landing = () => {
         body: JSON.stringify({
           name: formData.name,
           phone: formData.phone,
+          ...(formData.email?.trim() ? { email: formData.email.trim() } : {}),
           license_class: formData.license_class,
           source: 'landingpage-fruehling',
           message: undefined
@@ -293,6 +297,21 @@ const Landing = () => {
                         placeholder="0151 12345678"
                         autoComplete="tel" />
 
+                    </div>
+
+                    {/* Email Field (optional) */}
+                    <div>
+                      <Label htmlFor="email" className="text-sm font-semibold text-neutral-300">
+                        E-Mail <span className="text-neutral-500 font-normal">(optional)</span>
+                      </Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="mt-1.5 h-14 border border-[#3b5998]/30 bg-neutral-800 text-white focus:border-[#3b5998] focus:ring-[#3b5998] rounded-xl text-lg p-4 placeholder:text-neutral-500"
+                        placeholder="deine@email.de"
+                        autoComplete="email" />
                     </div>
 
                     {/* License Class Field */}

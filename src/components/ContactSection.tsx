@@ -25,6 +25,7 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    email: '',
     licenseClass: '',
     honeyPot: '',
     privacyConsent: false

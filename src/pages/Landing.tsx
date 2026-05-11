@@ -35,6 +35,15 @@ const Landing = () => {
   const [privacyConsent, setPrivacyConsent] = useState(false);
   const { toast } = useToast();
 
+  const offerByClass: Record<string, { price: string; note: string }> = {
+    b: { price: '179 €', note: 'gilt nur für Klasse B (PKW)' },
+    be: { price: '179 €', note: 'gilt nur für Klasse B/BE' },
+    a1: { price: '300 €', note: 'gilt nur für Klasse A1' },
+    a2: { price: '599 €', note: 'gilt nur für Klasse A2' },
+    a: { price: '599 €', note: 'gilt nur für Klasse A' },
+  };
+  const currentOffer = offerByClass[formData.license_class] || { price: '179 €', note: '' };
+
   const scrollToForm = () => {
     document.getElementById('contact-form')?.scrollIntoView({
       behavior: 'smooth'
@@ -229,7 +238,7 @@ const Landing = () => {
                   {/* Mobile CTA to scroll */}
                   <div className="lg:hidden">
                     <Button size="lg" onClick={scrollToForm} className="w-full bg-[#3b5998] hover:bg-[#4a6cb3] text-white text-lg py-6 rounded-xl font-bold shadow-lg">
-                      Ja, 179 € Angebot sichern!
+                      Ja, {currentOffer.price} Angebot sichern!
                       <ChevronDown className="w-5 h-5 ml-2 animate-bounce" />
                     </Button>
                   </div>
@@ -303,6 +312,9 @@ const Landing = () => {
                         <option value="a2">Klasse A2 – Motorrad (mittlere Leistung)</option>
                         <option value="a">Klasse A – Motorrad (unbeschränkt)</option>
                       </select>
+                      {currentOffer.note && (
+                        <p className="text-[11px] text-neutral-400 mt-1.5 italic">{currentOffer.note}</p>
+                      )}
                     </div>
 
 
@@ -344,7 +356,7 @@ const Landing = () => {
                       size="lg"
                       disabled={isSubmitting}
                       className="w-full bg-[#3b5998] hover:bg-[#4a6cb3] text-white h-16 text-xl font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50">
-                      {isSubmitting ? "Wird gesendet..." : showPrivacyConsent ? "Jetzt absenden" : "Ja, 179 € Angebot sichern!"}
+                      {isSubmitting ? "Wird gesendet..." : showPrivacyConsent ? "Jetzt absenden" : `Ja, ${currentOffer.price} Angebot sichern!`}
                     </Button>
 
                     {/* Trust Elements */}

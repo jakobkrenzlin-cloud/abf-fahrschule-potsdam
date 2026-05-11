@@ -38,6 +38,7 @@ const MotorradContactForm: React.FC = () => {
       const result = leadSchema.safeParse({
         name: formData.name,
         phone: formData.phone,
+        email: formData.email,
         honeyPot: formData.honeyPot
       });
       if (!result.success) {

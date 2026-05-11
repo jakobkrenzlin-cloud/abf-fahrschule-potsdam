@@ -160,6 +160,22 @@ const MotorradContactForm: React.FC = () => {
               />
             </div>
 
+            {/* Email Field (optional) */}
+            <div>
+              <Label htmlFor="email" className="text-sm font-semibold text-neutral-200">
+                E-Mail <span className="text-neutral-500 font-normal">(optional)</span>
+              </Label>
+              <Input
+                id="email"
+                type="email"
+                value={formData.email}
+                onChange={e => setFormData({ ...formData, email: e.target.value })}
+                className="mt-1.5 h-12 sm:h-14 border-neutral-700 bg-neutral-800 text-white placeholder:text-neutral-500 focus:border-[#3b5998] focus:ring-[#3b5998] rounded-xl text-base sm:text-lg p-3 sm:p-4"
+                placeholder="deine@email.de"
+                autoComplete="email"
+              />
+            </div>
+
             {/* License Class Field */}
             <div>
               <Label htmlFor="license_class" className="text-sm font-semibold text-neutral-200">

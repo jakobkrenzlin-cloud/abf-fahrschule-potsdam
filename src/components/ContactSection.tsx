@@ -99,6 +99,15 @@ const ContactSection = () => {
       setIsSubmitting(false);
     }
   };
+  const offerByClass: Record<string, { price: string; note: string }> = {
+    b: { price: '179€', note: 'gilt nur für Klasse B (PKW)' },
+    be: { price: '179€', note: 'gilt nur für Klasse B/BE' },
+    a1: { price: '300€', note: 'gilt nur für Klasse A1' },
+    a2: { price: '599€', note: 'gilt nur für Klasse A2' },
+    a: { price: '599€', note: 'gilt nur für Klasse A' },
+  };
+  const currentOffer = offerByClass[formData.licenseClass] || { price: '179€', note: '' };
+
   const handleWhatsApp = () => {
     window.open('https://wa.me/491622191290', '_blank');
   };

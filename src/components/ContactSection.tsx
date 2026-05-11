@@ -10,6 +10,7 @@ import { CookieConsentManager } from '@/lib/cookieConsent';
 const leadSchema = z.object({
   name: z.string().trim().min(2, 'Name muss mindestens 2 Zeichen lang sein').max(100, 'Name darf maximal 100 Zeichen lang sein'),
   phone: z.string().trim().regex(/^[+]?[0-9\s()-]{6,20}$/, 'Ungültige Telefonnummer'),
+  email: z.string().trim().email('Ungültige E-Mail-Adresse').max(255).optional().or(z.literal('')),
   licenseClass: z.enum(['b', 'a1', 'a2', 'a', 'be'], {
     errorMap: () => ({
       message: 'Ungültige Führerscheinklasse'

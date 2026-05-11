@@ -72,7 +72,7 @@ const MotorradContactForm: React.FC = () => {
         },
         body: JSON.stringify({
           name: formData.name,
-          email: `${formData.phone.replace(/\D/g, '')}@no-email.local`,
+          email: formData.email?.trim() ? formData.email.trim() : `${formData.phone.replace(/\D/g, '')}@no-email.local`,
           phone: formData.phone,
           license_class: formData.license_class,
           source: 'landingpage-motorrad'

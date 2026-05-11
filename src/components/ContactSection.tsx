@@ -42,6 +42,7 @@ const ContactSection = () => {
       const result = leadSchema.safeParse({
         name: formData.name,
         phone: formData.phone,
+        email: formData.email,
         licenseClass: formData.licenseClass,
         honeyPot: formData.honeyPot,
         privacyConsent: formData.privacyConsent

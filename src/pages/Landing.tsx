@@ -27,6 +27,7 @@ const Landing = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    email: '',
     honeyPot: '',
     
     license_class: 'b'

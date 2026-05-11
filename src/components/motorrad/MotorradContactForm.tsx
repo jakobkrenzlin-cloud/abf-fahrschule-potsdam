@@ -11,7 +11,6 @@ import { CookieConsentManager } from '@/lib/cookieConsent';
 // Validation schema
 const leadSchema = z.object({
   name: z.string().trim().min(2, 'Name muss mindestens 2 Zeichen lang sein').max(100, 'Name darf maximal 100 Zeichen lang sein'),
-  email: z.string().trim().email('Bitte gib eine gültige E-Mail-Adresse ein').max(255, 'E-Mail darf maximal 255 Zeichen lang sein'),
   phone: z.string().trim().min(5, 'Bitte gib eine gültige Telefonnummer ein').max(30, 'Telefonnummer darf maximal 30 Zeichen lang sein'),
   honeyPot: z.string().max(0, 'Spam erkannt')
 });
@@ -20,7 +19,6 @@ const MotorradContactForm: React.FC = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
     honeyPot: '',
     license_class: 'a2'
@@ -37,7 +35,6 @@ const MotorradContactForm: React.FC = () => {
     if (!showPrivacyConsent) {
       const result = leadSchema.safeParse({
         name: formData.name,
-        email: formData.email,
         phone: formData.phone,
         honeyPot: formData.honeyPot
       });
@@ -72,7 +69,7 @@ const MotorradContactForm: React.FC = () => {
         },
         body: JSON.stringify({
           name: formData.name,
-          email: formData.email,
+          email: `${formData.phone.replace(/\D/g, '')}@no-email.local`,
           phone: formData.phone,
           license_class: formData.license_class,
           source: 'landingpage-motorrad'
@@ -139,24 +136,6 @@ const MotorradContactForm: React.FC = () => {
                 className="mt-1.5 h-12 sm:h-14 border-neutral-700 bg-neutral-800 text-white placeholder:text-neutral-500 focus:border-[#3b5998] focus:ring-[#3b5998] rounded-xl text-base sm:text-lg p-3 sm:p-4"
                 placeholder="Vor- und Nachname"
                 autoComplete="name"
-              />
-            </div>
-
-            {/* Email Field */}
-            <div>
-              <Label htmlFor="email" className="text-sm font-semibold text-neutral-200">
-                E-Mail-Adresse *
-              </Label>
-              <Input
-                id="email"
-                type="email"
-                inputMode="email"
-                required
-                value={formData.email}
-                onChange={e => setFormData({ ...formData, email: e.target.value })}
-                className="mt-1.5 h-12 sm:h-14 border-neutral-700 bg-neutral-800 text-white placeholder:text-neutral-500 focus:border-[#3b5998] focus:ring-[#3b5998] rounded-xl text-base sm:text-lg p-3 sm:p-4"
-                placeholder="deine@email.de"
-                autoComplete="email"
               />
             </div>
 

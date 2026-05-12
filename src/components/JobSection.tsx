@@ -67,10 +67,16 @@ const JobSection = () => {
             Jetzt per E-Mail bewerben
           </a>
           <a
-            href="tel:+491622191290"
+            href="tel:+4933196795854"
             className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors text-center"
           >
-            Jetzt anrufen: +49 162 2191290
+            Festnetz: +49 331 96795854
+          </a>
+          <a
+            href="tel:+4915172193111"
+            className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors text-center"
+          >
+            Mobil: +49 151 72193111
           </a>
         </div>
       </div>

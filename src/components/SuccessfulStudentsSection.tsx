@@ -83,11 +83,17 @@ const SuccessfulStudentsSection = () => {
               bei der ABF Fahrschule in Potsdam!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="tel:+491622191290" 
+              <a
+                href="tel:+4933196795854"
                 className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
               >
-                Jetzt anrufen
+                Festnetz anrufen
+              </a>
+              <a
+                href="tel:+4915172193111"
+                className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+              >
+                Mobil anrufen
               </a>
               <a 
                 href="mailto:potsdam@fahrschuleabf.de" 

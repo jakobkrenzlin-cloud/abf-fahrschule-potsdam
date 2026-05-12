@@ -79,11 +79,18 @@ const Footer = () => {
                 </div>
               </div>
               
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-blue-400" />
-                <a href="tel:+491622191290" className="text-gray-400 hover:text-white transition-colors">
-                  +49 162 2191290
-                </a>
+              <div className="flex items-start space-x-3">
+                <Phone className="w-5 h-5 text-blue-400 mt-1" />
+                <div className="text-gray-400 space-y-1">
+                  <div>
+                    <span className="text-xs text-gray-500">Festnetz: </span>
+                    <a href="tel:+4933196795854" className="hover:text-white transition-colors">+49 331 96795854</a>
+                  </div>
+                  <div>
+                    <span className="text-xs text-gray-500">Mobil: </span>
+                    <a href="tel:+4915172193111" className="hover:text-white transition-colors">+49 151 72193111</a>
+                  </div>
+                </div>
               </div>
               
               <div className="flex items-center space-x-3">

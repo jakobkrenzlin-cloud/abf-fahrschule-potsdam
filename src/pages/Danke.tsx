@@ -56,11 +56,21 @@ const Danke = () => {
                 Du hast dringliche Fragen?
               </h3>
               <div className="space-y-3 text-gray-600">
-                <div className="flex items-center justify-center gap-2">
-                  <Phone className="w-5 h-5 text-primary" />
-                  <a href="tel:+491622191290" className="hover:text-primary transition-colors">
-                    +49 331 123456
-                  </a>
+                <div className="flex flex-col items-center justify-center gap-1">
+                  <div className="flex items-center gap-2">
+                    <Phone className="w-5 h-5 text-primary" />
+                    <span>Festnetz: </span>
+                    <a href="tel:+4933196795854" className="hover:text-primary transition-colors">
+                      +49 331 96795854
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Phone className="w-5 h-5 text-primary" />
+                    <span>Mobil: </span>
+                    <a href="tel:+4915172193111" className="hover:text-primary transition-colors">
+                      +49 151 72193111
+                    </a>
+                  </div>
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   <Mail className="w-5 h-5 text-primary" />

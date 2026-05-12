@@ -258,9 +258,14 @@ const Preise = () => {
               Ruf uns an oder komm direkt im Weber Park vorbei. Wir beraten dich gerne persönlich.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:+491622191290" className="inline-block">
+              <a href="tel:+4933196795854" className="inline-block">
                 <Button size="lg" variant="outline">
-                  📞 +49 162 2191290
+                  📞 Festnetz: +49 331 96795854
+                </Button>
+              </a>
+              <a href="tel:+4915172193111" className="inline-block">
+                <Button size="lg" variant="outline">
+                  📱 Mobil: +49 151 72193111
                 </Button>
               </a>
               <Link to="/kontakt">

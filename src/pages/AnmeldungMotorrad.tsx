@@ -57,10 +57,13 @@ const AnmeldungMotorrad = () => {
           <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
             <img src="/abf-logo.png" alt="ABF Fahrschule Potsdam" className="h-12 w-auto" loading="eager" />
             <div className="hidden md:flex items-center gap-4">
-              <a href="tel:+491622191290" className="flex items-center gap-2 text-white hover:text-[#6d8fd4] transition-colors">
+              <div className="flex items-center gap-3 text-white text-sm">
                 <Phone className="w-4 h-4 text-[#3b5998]" />
-                <span className="font-semibold">+49 162 2191290</span>
-              </a>
+                <div className="leading-tight">
+                  <a href="tel:+4933196795854" className="block hover:text-[#6d8fd4] transition-colors"><span className="text-[#6d8fd4]">Festnetz:</span> <span className="font-semibold">+49 331 96795854</span></a>
+                  <a href="tel:+4915172193111" className="block hover:text-[#6d8fd4] transition-colors"><span className="text-[#6d8fd4]">Mobil:</span> <span className="font-semibold">+49 151 72193111</span></a>
+                </div>
+              </div>
               <Button
                 onClick={scrollToForm}
                 size="sm"

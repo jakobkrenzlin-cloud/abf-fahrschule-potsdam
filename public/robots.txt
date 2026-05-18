@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://abf-fahrschule-potsdam.de/sitemap.xml
+Sitemap: https://abf-fahrschule-potsdam.lovable.app/sitemap.xml

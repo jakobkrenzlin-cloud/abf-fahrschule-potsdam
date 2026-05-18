@@ -19,6 +19,11 @@ import MobileStickyFooter from '../components/MobileStickyFooter';
 const Index = () => {
   return (
     <div className="min-h-screen bg-white pb-20 md:pb-0">
+      <Helmet>
+        <title>ABF Fahrschule Potsdam | Führerschein in 4 Wochen</title>
+        <meta name="description" content="Führerschein Klasse B & Motorrad in Potsdam. Schnelle Theorie, moderne Ausbildung, faire Preise. Jetzt kostenlose Beratung sichern!" />
+        <link rel="canonical" href="https://abf-fahrschule-potsdam.lovable.app/" />
+      </Helmet>
       <Header />
       <Hero />
       

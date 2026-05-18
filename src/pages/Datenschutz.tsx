@@ -1,11 +1,17 @@
 
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const Datenschutz = () => {
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Datenschutz | ABF Fahrschule Potsdam</title>
+        <meta name="description" content="DSGVO-konforme Datenschutzerklärung der ABF Fahrschule Potsdam: Verarbeitung, Rechte und Cookies im Überblick." />
+        <link rel="canonical" href="https://abf-fahrschule-potsdam.lovable.app/datenschutz" />
+      </Helmet>
       <Header />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Datenschutzerklärung</h1>

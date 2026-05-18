@@ -1,9 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 const AGB = () => {
   return <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>AGB | ABF Fahrschule Potsdam</title>
+        <meta name="description" content="Allgemeine Geschäftsbedingungen der ABF Fahrschule Potsdam für PKW- und Motorrad-Führerscheinausbildung." />
+        <link rel="canonical" href="https://abf-fahrschule-potsdam.lovable.app/agb" />
+      </Helmet>
       <Header />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Allgemeine Geschäftsbedingungen (AGB)</h1>

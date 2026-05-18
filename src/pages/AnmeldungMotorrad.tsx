@@ -42,7 +42,7 @@ const AnmeldungMotorrad = () => {
   return (
     <>
       <Helmet>
-        <title>Motorradführerschein Potsdam | Klasse A/A2 für 599€ | ABF Fahrschule</title>
+        <title>Motorradführerschein Potsdam | A/A2 ab 599€</title>
         <meta 
           name="description" 
           content="Sichere dir jetzt deinen Motorradführerschein (A/A2) in Potsdam! Grundbetrag nur 599€ inkl. Erste Hilfe, LernApp & 100€ Louis und Polo Gutschein. Jetzt Platz sichern!" 

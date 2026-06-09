@@ -14,6 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
+      bewerbungen: {
+        Row: {
+          ausbildungsphase: string | null
+          created_at: string
+          email: string
+          id: string
+          name: string
+          phone: string
+          position: string | null
+          source: string | null
+        }
+        Insert: {
+          ausbildungsphase?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          name: string
+          phone: string
+          position?: string | null
+          source?: string | null
+        }
+        Update: {
+          ausbildungsphase?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          name?: string
+          phone?: string
+          position?: string | null
+          source?: string | null
+        }
+        Relationships: []
+      }
       leads: {
         Row: {
           consent: boolean | null

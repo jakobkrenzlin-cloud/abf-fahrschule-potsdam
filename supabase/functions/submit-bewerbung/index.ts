@@ -9,6 +9,15 @@ const corsHeaders = {
 const RATE_LIMIT_MAX = 5;
 const RATE_LIMIT_WINDOW_MINUTES = 30;
 
+const ALLOWED_POSITIONS = [
+  'Fahrlehrer/in (m/w/d) – Klasse B / BE / A',
+  'Fahrlehreranwärter/in (m/w/d) – Praktikumsstelle',
+  'Quereinsteiger/in (m/w/d) – Werde Fahrlehrer',
+  'Büromitarbeiter/in (m/w/d)',
+  'Aushilfe / Minijob (m/w/d)',
+  'Initiativbewerbung',
+];
+
 async function checkRateLimit(supabase: ReturnType<typeof createClient>, ip: string, endpoint: string): Promise<boolean> {
   const now = new Date();
   const windowStart = new Date(now.getTime() - RATE_LIMIT_WINDOW_MINUTES * 60 * 1000);
@@ -18,7 +27,7 @@ async function checkRateLimit(supabase: ReturnType<typeof createClient>, ip: str
     .select('id, request_count, window_start')
     .eq('ip_address', ip)
     .eq('endpoint', endpoint)
-    .single();
+    .maybeSingle();
 
   if (!existing) {
     await supabase.from('rate_limits').insert({
@@ -27,17 +36,17 @@ async function checkRateLimit(supabase: ReturnType<typeof createClient>, ip: str
     return false;
   }
 
-  if (new Date(existing.window_start) < windowStart) {
+  if (new Date(existing.window_start as string) < windowStart) {
     await supabase.from('rate_limits').update({
       request_count: 1, window_start: now.toISOString()
     }).eq('id', existing.id);
     return false;
   }
 
-  if (existing.request_count >= RATE_LIMIT_MAX) return true;
+  if ((existing.request_count as number) >= RATE_LIMIT_MAX) return true;
 
   await supabase.from('rate_limits').update({
-    request_count: existing.request_count + 1
+    request_count: (existing.request_count as number) + 1
   }).eq('id', existing.id);
   return false;
 }
@@ -80,6 +89,9 @@ serve(async (req) => {
     const phone = typeof body.phone === 'string' ? body.phone.trim() : '';
     const email = typeof body.email === 'string' ? body.email.trim() : '';
     const ausbildungsphase = typeof body.ausbildungsphase === 'string' ? body.ausbildungsphase.trim() : '';
+    const nachricht = typeof body.nachricht === 'string' ? body.nachricht.trim() : '';
+    const positionRaw = typeof body.position === 'string' ? body.position.trim() : '';
+    const position = ALLOWED_POSITIONS.includes(positionRaw) ? positionRaw : 'Initiativbewerbung';
 
     if (name.length < 2 || name.length > 100) {
       return new Response(JSON.stringify({ error: 'Name muss zwischen 2 und 100 Zeichen lang sein.' }), {
@@ -96,7 +108,7 @@ serve(async (req) => {
         status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       });
     }
-    if (ausbildungsphase.length > 500) {
+    if (ausbildungsphase.length > 500 || nachricht.length > 2000) {
       return new Response(JSON.stringify({ error: 'Text zu lang.' }), {
         status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       });
@@ -109,7 +121,8 @@ serve(async (req) => {
         phone: phone.slice(0, 30),
         email: email.slice(0, 255),
         ausbildungsphase: ausbildungsphase.slice(0, 500) || null,
-        position: 'Fahrlehreranwärter Praktikum',
+        nachricht: nachricht.slice(0, 2000) || null,
+        position,
         source: 'karriere',
       }])
       .select('id')
@@ -122,14 +135,13 @@ serve(async (req) => {
       });
     }
 
-    // Email notification — best-effort; logs only if no provider configured.
     try {
       await supabase.functions.invoke('send-transactional-email', {
         body: {
           templateName: 'bewerbung-notification',
           recipientEmail: 'potsdam@fahrschuleabf.de',
           idempotencyKey: `bewerbung-${data.id}`,
-          templateData: { name, phone, email, ausbildungsphase },
+          templateData: { name, phone, email, position, ausbildungsphase, nachricht },
         },
       }).catch((e) => console.log('Email notification skipped:', e?.message));
     } catch (e) {

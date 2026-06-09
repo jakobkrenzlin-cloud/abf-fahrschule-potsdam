@@ -37,6 +37,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://abf-fahrschule-potsdam.lovable.app/karriere</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://abf-fahrschule-potsdam.lovable.app/danke</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>yearly</changefreq>

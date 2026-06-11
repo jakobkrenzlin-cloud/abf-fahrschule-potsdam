@@ -114,10 +114,10 @@ const ContactSection = () => {
   const currentOffer = offerByClass[formData.licenseClass] || { price: '179€', note: '' };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/4915172193111', '_blank');
+    window.open('https://wa.me/491622191290', '_blank');
   };
   const handleCall = () => {
-    window.location.href = 'tel:+4915172193111';
+    window.location.href = 'tel:+491622191290';
   };
   return <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -274,7 +274,7 @@ Fahrstunden ab 67,50€/45 Min.</p>
                     <div className="font-medium text-gray-900">Telefon Fahrschule Potsdam</div>
                     <div className="space-y-0.5">
                       <div><span className="text-sm text-gray-500">Festnetz: </span><a href="tel:+4933196795854" className="text-blue-600 hover:text-blue-700">+49 331 96795854</a></div>
-                      <div><span className="text-sm text-gray-500">Mobil: </span><a href="tel:+4915172193111" className="text-blue-600 hover:text-blue-700">+49 151 72193111</a></div>
+                      <div><span className="text-sm text-gray-500">Mobil: </span><a href="tel:+491622191290" className="text-blue-600 hover:text-blue-700">+49 162 2191290</a></div>
                     </div>
                   </div>
                 </div>

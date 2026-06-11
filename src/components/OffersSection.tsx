@@ -132,7 +132,7 @@ const OffersSection = () => {
               <h4 className="font-semibold text-gray-900 mb-2">Telefon</h4>
               <div className="space-y-1 text-sm">
                 <div><span className="text-gray-500">Festnetz: </span><a href="tel:+4933196795854" className="text-blue-600 hover:text-blue-700 font-medium">+49 331 96795854</a></div>
-                <div><span className="text-gray-500">Mobil: </span><a href="tel:+4915172193111" className="text-blue-600 hover:text-blue-700 font-medium">+49 151 72193111</a></div>
+                <div><span className="text-gray-500">Mobil: </span><a href="tel:+491622191290" className="text-blue-600 hover:text-blue-700 font-medium">+49 162 2191290</a></div>
               </div>
             </div>
 

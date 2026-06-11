@@ -3,11 +3,11 @@ import { Phone, MessageCircle } from 'lucide-react';
 
 const MobileStickyFooter = () => {
   const handleCall = () => {
-    window.location.href = 'tel:+4915172193111';
+    window.location.href = 'tel:+491622191290';
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/4915172193111?text=Hallo,%20ich%20interessiere%20mich%20für%20den%20Führerschein%20bei%20ABF%20Fahrschule%20Potsdam.', '_blank');
+    window.open('https://wa.me/491622191290?text=Hallo,%20ich%20interessiere%20mich%20für%20den%20Führerschein%20bei%20ABF%20Fahrschule%20Potsdam.', '_blank');
   };
 
   return (

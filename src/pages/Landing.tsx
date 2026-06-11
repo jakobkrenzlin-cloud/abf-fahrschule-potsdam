@@ -120,11 +120,11 @@ const Landing = () => {
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/4915172193111?text=Hallo,%20ich%20möchte%20das%20179€%20Sommer-Angebot%20sichern!', '_blank');
+    window.open('https://wa.me/491622191290?text=Hallo,%20ich%20möchte%20das%20179€%20Sommer-Angebot%20sichern!', '_blank');
   };
 
   const handleCall = () => {
-    window.location.href = 'tel:+4915172193111';
+    window.location.href = 'tel:+491622191290';
   };
 
   // Inline CTA Component - Blue theme matching motorrad page
@@ -159,7 +159,7 @@ const Landing = () => {
                 <Phone className="w-4 h-4 text-[#3b5998]" />
                 <div className="leading-tight">
                   <a href="tel:+4933196795854" className="block hover:text-[#6d8fd4] transition-colors"><span className="text-[#6d8fd4]">Festnetz:</span> <span className="font-semibold">+49 331 96795854</span></a>
-                  <a href="tel:+4915172193111" className="block hover:text-[#6d8fd4] transition-colors"><span className="text-[#6d8fd4]">Mobil:</span> <span className="font-semibold">+49 151 72193111</span></a>
+                  <a href="tel:+491622191290" className="block hover:text-[#6d8fd4] transition-colors"><span className="text-[#6d8fd4]">Mobil:</span> <span className="font-semibold">+49 162 2191290</span></a>
                 </div>
               </div>
               <Button onClick={scrollToForm} size="sm" className="bg-[#3b5998] hover:bg-[#4a6cb3] text-white font-semibold rounded-lg">

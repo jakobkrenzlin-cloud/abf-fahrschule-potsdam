@@ -256,12 +256,14 @@ const MotorradContactForm: React.FC = () => {
                 WhatsApp
               </Button>
               <Button
-                onClick={handleCall}
+                asChild
                 variant="outline"
                 className="flex-1 border-[#3b5998] text-[#6d8fd4] hover:bg-[#3b5998] hover:text-white h-11 sm:h-12 font-semibold rounded-xl bg-transparent text-sm sm:text-base"
               >
-                <Phone className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
-                Anrufen
+                <a href="tel:+491622191290">
+                  <Phone className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
+                  Anrufen
+                </a>
               </Button>
             </div>
           </div>

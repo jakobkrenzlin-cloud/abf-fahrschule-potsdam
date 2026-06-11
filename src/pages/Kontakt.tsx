@@ -9,7 +9,7 @@ const Kontakt = () => {
   return <>
       <Helmet>
         <title>Kontakt & Standort Weber Park | ABF Fahrschule Potsdam-Babelsberg</title>
-        <meta name="description" content="ABF Fahrschule im Weber Park Potsdam-Babelsberg. Tuchmacherstraße 45 B. ☎ Festnetz +49 331 96795854 · Mobil +49 151 72193111. Öffnungszeiten, Anfahrt & direkter Kontakt." />
+        <meta name="description" content="ABF Fahrschule im Weber Park Potsdam-Babelsberg. Tuchmacherstraße 45 B. ☎ Festnetz +49 331 96795854 · Mobil +49 162 2191290. Öffnungszeiten, Anfahrt & direkter Kontakt." />
         <meta name="keywords" content="Fahrschule Potsdam Kontakt, ABF Fahrschule Babelsberg, Fahrschule Weber Park, Fahrschule Potsdam Adresse" />
         <link rel="canonical" href="https://www.abf-fahrschule.de/kontakt" />
         <script type="application/ld+json">
@@ -119,13 +119,13 @@ const Kontakt = () => {
                   Festnetz
                 </Button>
               </a>
-              <a href="tel:+4915172193111" className="block">
+              <a href="tel:+491622191290" className="block">
                 <Button size="lg" className="w-full text-base">
                   <Phone className="mr-2" size={20} />
                   Mobil
                 </Button>
               </a>
-              <a href="https://wa.me/4915172193111" target="_blank" rel="noopener noreferrer" className="block">
+              <a href="https://wa.me/491622191290" target="_blank" rel="noopener noreferrer" className="block">
                 <Button size="lg" variant="outline" className="w-full text-base">
                   💬 WhatsApp
                 </Button>
@@ -139,7 +139,7 @@ const Kontakt = () => {
             </div>
             <p className="text-center text-muted-foreground mt-4">
               📞 Festnetz: <a href="tel:+4933196795854" className="text-primary hover:underline">+49 331 96795854</a> •
-              📱 Mobil: <a href="tel:+4915172193111" className="text-primary hover:underline">+49 151 72193111</a> •
+              📱 Mobil: <a href="tel:+491622191290" className="text-primary hover:underline">+49 162 2191290</a> •
               ✉️ <a href="mailto:kontakt@abf-fahrschule.de" className="text-primary hover:underline">kontakt@abf-fahrschule.de</a>
             </p>
           </div>

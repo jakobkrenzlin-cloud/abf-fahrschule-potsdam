@@ -61,7 +61,7 @@ const AnmeldungMotorrad = () => {
                 <Phone className="w-4 h-4 text-[#3b5998]" />
                 <div className="leading-tight">
                   <a href="tel:+4933196795854" className="block hover:text-[#6d8fd4] transition-colors"><span className="text-[#6d8fd4]">Festnetz:</span> <span className="font-semibold">+49 331 96795854</span></a>
-                  <a href="tel:+4915172193111" className="block hover:text-[#6d8fd4] transition-colors"><span className="text-[#6d8fd4]">Mobil:</span> <span className="font-semibold">+49 151 72193111</span></a>
+                  <a href="tel:+491622191290" className="block hover:text-[#6d8fd4] transition-colors"><span className="text-[#6d8fd4]">Mobil:</span> <span className="font-semibold">+49 162 2191290</span></a>
                 </div>
               </div>
               <Button

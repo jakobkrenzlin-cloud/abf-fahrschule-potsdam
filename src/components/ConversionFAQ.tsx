@@ -82,13 +82,13 @@ const ConversionFAQ = () => {
                 Festnetz: +49 331 96795854
               </a>
               <a
-                href="tel:+4915172193111"
+                href="tel:+491622191290"
                 className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors"
               >
-                Mobil: +49 151 72193111
+                Mobil: +49 162 2191290
               </a>
               <a
-                href="https://wa.me/4915172193111"
+                href="https://wa.me/491622191290"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors"

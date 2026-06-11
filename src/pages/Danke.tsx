@@ -67,8 +67,8 @@ const Danke = () => {
                   <div className="flex items-center gap-2">
                     <Phone className="w-5 h-5 text-primary" />
                     <span>Mobil: </span>
-                    <a href="tel:+4915172193111" className="hover:text-primary transition-colors">
-                      +49 151 72193111
+                    <a href="tel:+491622191290" className="hover:text-primary transition-colors">
+                      +49 162 2191290
                     </a>
                   </div>
                 </div>

@@ -30,7 +30,7 @@ const Datenschutz = () => {
             Weber Park, Tuchmacherstraße 45 B<br />
             14482 Potsdam<br />
             Festnetz: +49 331 96795854<br />
-            Mobil: +49 151 72193111<br />
+            Mobil: +49 162 2191290<br />
             E-Mail: <a href="mailto:kontakt@abf-fahrschule.de" className="text-blue-600 hover:text-blue-800">kontakt@abf-fahrschule.de</a>
           </p>
           <p className="mb-4">Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, E-Mail-Adressen o. Ä.) entscheidet.</p>

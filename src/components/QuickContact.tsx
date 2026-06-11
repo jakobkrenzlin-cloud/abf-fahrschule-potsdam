@@ -13,7 +13,7 @@ const QuickContact = () => {
               <div className="text-sm font-medium">Jetzt anrufen</div>
               <div className="text-blue-100 text-sm leading-tight">
                 <div>Festnetz: <a href="tel:+4933196795854" className="hover:text-white transition-colors">+49 331 96795854</a></div>
-                <div>Mobil: <a href="tel:+4915172193111" className="hover:text-white transition-colors">+49 151 72193111</a></div>
+                <div>Mobil: <a href="tel:+491622191290" className="hover:text-white transition-colors">+49 162 2191290</a></div>
               </div>
             </div>
           </div>

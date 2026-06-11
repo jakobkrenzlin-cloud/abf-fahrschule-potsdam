@@ -50,57 +50,25 @@ export class CookieConsentManager {
     return consent ? consent[category] === true : false;
   }
 
-  // Apply consent by loading/blocking scripts
+  // Apply consent by updating Google Consent Mode v2
   static applyConsent(consent: ConsentStatus): void {
-    // Load Google Ads if marketing consent given
-    if (consent.marketing) {
-      this.loadGoogleAds();
-    }
-
-    // Load Google Analytics if statistics consent given
-    if (consent.statistics) {
-      this.loadGoogleAnalytics();
-    }
-  }
-
-  // Load Google Ads tracking
-  private static loadGoogleAds(): void {
-    if (document.querySelector('script[src*="googletagmanager.com/gtag"]')) {
-      return; // Already loaded
-    }
-
-    const script1 = document.createElement('script');
-    script1.async = true;
-    script1.src = 'https://www.googletagmanager.com/gtag/js?id=AW-17551238202';
-    document.head.appendChild(script1);
-
-    const script2 = document.createElement('script');
-    script2.innerHTML = `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-17551238202', { 'anonymize_ip': true });
-    `;
-    document.head.appendChild(script2);
-  }
-
-  // Load Google Analytics (optional)
-  private static loadGoogleAnalytics(): void {
-    // Implement if needed
-    // Similar to loadGoogleAds but with Analytics ID
-  }
-
-  // Trigger conversion event (only if consent given)
-  static triggerConversion(conversionId: string = 'AW-17551238202/UhzpCN_gq6YbELrIirFB'): void {
-    if (!this.hasConsentFor('marketing')) {
-      console.log('Conversion tracking blocked - no marketing consent');
-      return;
-    }
-
-    if (typeof (window as any).gtag === 'function') {
-      (window as any).gtag('event', 'conversion', {
-        'send_to': conversionId
+    const gtag = (window as any).gtag;
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        ad_storage: consent.marketing ? 'granted' : 'denied',
+        ad_user_data: consent.marketing ? 'granted' : 'denied',
+        ad_personalization: consent.marketing ? 'granted' : 'denied',
+        analytics_storage: consent.statistics ? 'granted' : 'denied',
       });
+    }
+  }
+
+  // Trigger Google Ads conversion event. Consent Mode v2 ensures the event is
+  // only recorded by Google when marketing consent is granted.
+  static triggerConversion(conversionId: string = 'AW-17551238202/UhzpCN_gq6YbELrIirFB'): void {
+    const gtag = (window as any).gtag;
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', { send_to: conversionId });
     }
   }
 

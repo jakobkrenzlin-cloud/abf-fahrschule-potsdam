@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Shield, Users, Award } from 'lucide-react';
+import { ArrowRight, Shield, Users, Award, Star } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
 const Hero = () => {
   const scrollToContact = () => {
@@ -36,21 +36,24 @@ const Hero = () => {
                 Sicher fahren lernen
               </h1>
               <p className="text-base md:text-xl text-gray-600 leading-relaxed">
-                ABF Fahrschule Potsdam: Mit ruhiger Hand, persönlicher Betreuung und moderner Fahrausbildung zum Führerschein. 
-                Seit über 15 Jahren Ihre vertrauensvolle Fahrschule in Potsdam.
+                ABF Fahrschule Potsdam: Mit ruhiger Hand, persönlicher Betreuung und moderner Fahrausbildung zum Führerschein.
+                Über 15 Jahre Erfahrung unserer Fahrlehrer – Ihre Fahrschule in Potsdam.
               </p>
             </div>
 
             {/* Trust Indicators */}
             <div className="flex flex-wrap gap-4 md:gap-6 text-sm text-gray-700">
+              <div className="flex items-center space-x-2 bg-yellow-50 border border-yellow-200 rounded-full px-3 py-1.5">
+                <Star className="w-4 h-4 fill-yellow-500 text-yellow-500 flex-shrink-0" />
+                <span className="font-semibold">4,9 ★ aus 120 Google-Bewertungen</span>
+              </div>
               <div className="flex items-center space-x-2">
                 <Shield className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                <span>Neue Fahrschule in Potsdam</span>
+                <span>Über 15 Jahre Erfahrung</span>
               </div>
-              
               <div className="flex items-center space-x-2">
                 <Award className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                <span>Beste Bewertungen</span>
+                <span>Hohe Erfolgsquote</span>
               </div>
             </div>
 

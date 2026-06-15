@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Phone, ArrowDown } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import MotorradHero from '@/components/motorrad/MotorradHero';
+import B196Offer from '@/components/motorrad/B196Offer';
 import MotorradOffer from '@/components/motorrad/MotorradOffer';
 import MotorradAdvantages from '@/components/motorrad/MotorradAdvantages';
 import MotorradTestimonials from '@/components/motorrad/MotorradTestimonials';
@@ -42,12 +43,12 @@ const AnmeldungMotorrad = () => {
   return (
     <>
       <Helmet>
-        <title>Motorradführerschein Potsdam | A/A2 ab 599€</title>
-        <meta 
-          name="description" 
-          content="Sichere dir jetzt deinen Motorradführerschein (A/A2) in Potsdam! Grundbetrag nur 599€ inkl. Erste Hilfe, LernApp & 100€ Louis und Polo Gutschein. Jetzt Platz sichern!" 
+        <title>B196 Führerschein Potsdam | Komplettpreis 750 € – auch Motorrad A/A2 – ABF</title>
+        <meta
+          name="description"
+          content="B196 in Potsdam: mit dem Autoführerschein 125ccm fahren. Komplettpreis 750 € inkl. Theorieunterricht, 100 € Louis/Polo-Gutschein & 1 Jahr ADAC. Jetzt Platz sichern."
         />
-        <meta name="keywords" content="Motorradführerschein Potsdam, Motorrad Fahrschule Potsdam, A2 Führerschein Potsdam, Motorradführerschein machen, Motorradführerschein Kosten" />
+        <meta name="keywords" content="B196 Potsdam, B196 Führerschein, 125ccm mit Autoführerschein, Motorradführerschein Potsdam, A2 Führerschein Potsdam" />
         <link rel="canonical" href="https://abf-fahrschule-potsdam.lovable.app/anmeldungmotorrad" />
       </Helmet>
 
@@ -79,9 +80,12 @@ const AnmeldungMotorrad = () => {
         <MotorradHero onCtaClick={scrollToForm} />
 
         {/* CTA after Hero */}
-        <InlineCTA text="Nur noch wenige Plätze für die Saison 2026 verfügbar!" />
+        <InlineCTA text="B196 oder Motorrad-Klasse A – jetzt Platz für 2026 sichern!" />
 
-        {/* Offer Section with Value Stacking */}
+        {/* B196 Offer (top priority – ~80% search intent) */}
+        <B196Offer onCtaClick={scrollToForm} />
+
+        {/* Klasse-A Offer Section (599€) */}
         <MotorradOffer />
 
         {/* Flyer Section */}

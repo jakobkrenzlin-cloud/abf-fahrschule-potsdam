@@ -45,7 +45,7 @@ const Hero = () => {
             <div className="flex flex-wrap gap-4 md:gap-6 text-sm text-gray-700">
               <div className="flex items-center space-x-2 bg-yellow-50 border border-yellow-200 rounded-full px-3 py-1.5">
                 <Star className="w-4 h-4 fill-yellow-500 text-yellow-500 flex-shrink-0" />
-                <span className="font-semibold">4,9 ★ aus 120 Google-Bewertungen</span>
+                <span className="font-semibold">5 ★ aus 17 Google-Bewertungen</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Shield className="w-5 h-5 text-blue-600 flex-shrink-0" />

@@ -39,15 +39,19 @@ const B196Offer: React.FC<B196OfferProps> = ({ onCtaClick }) => {
             </li>
             <li className="flex items-start gap-3">
               <CheckCircle className="w-5 sm:w-6 h-5 sm:h-6 text-[#6d8fd4] flex-shrink-0 mt-0.5" />
-              <span className="text-white text-sm sm:text-base">100 € Louis & Polo Gutschein geschenkt</span>
+              <span className="text-white text-sm sm:text-base">Keine praktische und keine theoretische Prüfung nötig</span>
             </li>
             <li className="flex items-start gap-3">
               <CheckCircle className="w-5 sm:w-6 h-5 sm:h-6 text-[#6d8fd4] flex-shrink-0 mt-0.5" />
-              <span className="text-white text-sm sm:text-base">1 Jahr ADAC-Mitgliedschaft gratis</span>
+              <span className="text-white text-sm sm:text-base">In wenigen Tagen startklar – auch am Wochenende möglich</span>
             </li>
             <li className="flex items-start gap-3">
               <CheckCircle className="w-5 sm:w-6 h-5 sm:h-6 text-[#6d8fd4] flex-shrink-0 mt-0.5" />
-              <span className="text-white text-sm sm:text-base">Keine versteckten Kosten</span>
+              <span className="text-white text-sm sm:text-base">Sofort 125ccm-Motorräder fahren (A1-Leichtkrafträder)</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckCircle className="w-5 sm:w-6 h-5 sm:h-6 text-[#6d8fd4] flex-shrink-0 mt-0.5" />
+              <span className="text-white text-sm sm:text-base">Komplettpreis 750 € – keine versteckten Kosten</span>
             </li>
           </ul>
 

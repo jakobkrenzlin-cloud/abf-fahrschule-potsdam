@@ -1,6 +1,6 @@
 import React from 'react';
 import { CheckCircle, Gift } from 'lucide-react';
-import storefrontImage from '@/assets/abf-motorrad-storefront.jpg';
+import storefrontImage from '@/assets/abf-motorrad-storefront.webp';
 
 const MotorradOffer: React.FC = () => {
   return (

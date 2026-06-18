@@ -1,7 +1,7 @@
 import React from 'react';
 import { CheckCircle, Star } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import heroImage from '@/assets/motorrad-hero.jpg';
+import heroImage from '@/assets/motorrad-hero.webp';
 
 interface MotorradHeroProps {
   onCtaClick: () => void;

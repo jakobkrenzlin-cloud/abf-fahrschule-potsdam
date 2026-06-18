@@ -1,5 +1,5 @@
 import React from 'react';
-import motorradFlyer from '@/assets/motorrad-flyer.jpg';
+import motorradFlyer from '@/assets/motorrad-flyer.webp';
 
 const MotorradFlyerSection: React.FC = () => {
   return (

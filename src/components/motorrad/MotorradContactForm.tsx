@@ -26,34 +26,27 @@ const MotorradContactForm: React.FC = () => {
     license_class: 'b196'
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showPrivacyConsent, setShowPrivacyConsent] = useState(false);
   const [privacyConsent, setPrivacyConsent] = useState(false);
   const { toast } = useToast();
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // First click: Show privacy consent
-    if (!showPrivacyConsent) {
-      const result = leadSchema.safeParse({
-        name: formData.name,
-        phone: formData.phone,
-        email: formData.email,
-        honeyPot: formData.honeyPot
+    const result = leadSchema.safeParse({
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      honeyPot: formData.honeyPot
+    });
+    if (!result.success) {
+      toast({
+        title: "Ungültige Eingabe",
+        description: result.error.errors[0].message,
+        variant: "destructive"
       });
-      if (!result.success) {
-        toast({
-          title: "Ungültige Eingabe",
-          description: result.error.errors[0].message,
-          variant: "destructive"
-        });
-        return;
-      }
-      setShowPrivacyConsent(true);
       return;
     }
 
-    // Second click: Submit with privacy consent
     if (!privacyConsent) {
       toast({
         title: "Bitte zustimmen",
@@ -206,26 +199,24 @@ const MotorradContactForm: React.FC = () => {
               />
             </div>
 
-            {/* Privacy Consent - Shows after first click */}
-            {showPrivacyConsent && (
-              <div className="bg-neutral-800 rounded-xl p-3 sm:p-4 space-y-3 animate-in fade-in slide-in-from-top-2">
-                <label className="flex items-start gap-2 sm:gap-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={privacyConsent}
-                    onChange={e => setPrivacyConsent(e.target.checked)}
-                    className="mt-1 h-5 w-5 rounded border-neutral-600 bg-neutral-700 text-[#3b5998] focus:ring-[#3b5998] flex-shrink-0"
-                  />
-                  <span className="text-xs sm:text-sm text-neutral-300 leading-tight">
-                    Ich stimme der{' '}
-                    <a href="/datenschutz" target="_blank" className="text-[#6d8fd4] underline font-medium hover:text-[#8aa8e0]">
-                      Datenschutzerklärung
-                    </a>{' '}
-                    zu und bin damit einverstanden, dass mich ABF Fahrschule kontaktiert.
-                  </span>
-                </label>
-              </div>
-            )}
+            {/* Privacy Consent - always visible for 1-click submit */}
+            <div className="bg-neutral-800 rounded-xl p-3 sm:p-4 space-y-3">
+              <label className="flex items-start gap-2 sm:gap-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={privacyConsent}
+                  onChange={e => setPrivacyConsent(e.target.checked)}
+                  className="mt-1 h-5 w-5 rounded border-neutral-600 bg-neutral-700 text-[#3b5998] focus:ring-[#3b5998] flex-shrink-0"
+                />
+                <span className="text-xs sm:text-sm text-neutral-300 leading-tight">
+                  Ich stimme der{' '}
+                  <a href="/datenschutz" target="_blank" className="text-[#6d8fd4] underline font-medium hover:text-[#8aa8e0]">
+                    Datenschutzerklärung
+                  </a>{' '}
+                  zu und bin damit einverstanden, dass mich ABF Fahrschule kontaktiert.
+                </span>
+              </label>
+            </div>
 
             {/* CTA Button - Blue theme */}
             <Button

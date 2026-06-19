@@ -33,7 +33,6 @@ const Landing = () => {
     license_class: 'b'
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showPrivacyConsent, setShowPrivacyConsent] = useState(false);
   const [privacyConsent, setPrivacyConsent] = useState(false);
   const { toast } = useToast();
 
@@ -55,27 +54,21 @@ const Landing = () => {
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // First click: Show privacy consent
-    if (!showPrivacyConsent) {
-      const result = leadSchema.safeParse({
-        name: formData.name,
-        phone: formData.phone,
-        email: formData.email,
-        honeyPot: formData.honeyPot
+    const result = leadSchema.safeParse({
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      honeyPot: formData.honeyPot
+    });
+    if (!result.success) {
+      toast({
+        title: "Ungültige Eingabe",
+        description: result.error.errors[0].message,
+        variant: "destructive"
       });
-      if (!result.success) {
-        toast({
-          title: "Ungültige Eingabe",
-          description: result.error.errors[0].message,
-          variant: "destructive"
-        });
-        return;
-      }
-      setShowPrivacyConsent(true);
       return;
     }
 
-    // Second click: Submit with privacy consent
     if (!privacyConsent) {
       toast({
         title: "Bitte zustimmen",
@@ -351,9 +344,8 @@ const Landing = () => {
 
                     </div>
 
-                    {/* Privacy Consent - Shows after first click */}
-                    {showPrivacyConsent &&
-                    <div className="bg-neutral-800 rounded-xl p-4 space-y-3 animate-in fade-in slide-in-from-top-2">
+                    {/* Privacy Consent - always visible for 1-click submit */}
+                    <div className="bg-neutral-800 rounded-xl p-4 space-y-3">
                         <label className="flex items-start gap-3 cursor-pointer">
                           <input
                           type="checkbox"
@@ -370,7 +362,6 @@ const Landing = () => {
                           </span>
                         </label>
                       </div>
-                    }
 
                     {/* CTA Button */}
                     <Button
@@ -378,7 +369,7 @@ const Landing = () => {
                       size="lg"
                       disabled={isSubmitting}
                       className="w-full bg-[#3b5998] hover:bg-[#4a6cb3] text-white h-16 text-xl font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50">
-                      {isSubmitting ? "Wird gesendet..." : showPrivacyConsent ? "Jetzt absenden" : `Ja, ${currentOffer.price} Angebot sichern!`}
+                      {isSubmitting ? "Wird gesendet..." : `Ja, ${currentOffer.price} Angebot sichern!`}
                     </Button>
 
                     {/* Trust Elements */}

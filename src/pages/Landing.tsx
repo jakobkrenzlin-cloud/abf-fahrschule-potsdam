@@ -344,9 +344,8 @@ const Landing = () => {
 
                     </div>
 
-                    {/* Privacy Consent - Shows after first click */}
-                    {showPrivacyConsent &&
-                    <div className="bg-neutral-800 rounded-xl p-4 space-y-3 animate-in fade-in slide-in-from-top-2">
+                    {/* Privacy Consent - always visible for 1-click submit */}
+                    <div className="bg-neutral-800 rounded-xl p-4 space-y-3">
                         <label className="flex items-start gap-3 cursor-pointer">
                           <input
                           type="checkbox"
@@ -363,7 +362,6 @@ const Landing = () => {
                           </span>
                         </label>
                       </div>
-                    }
 
                     {/* CTA Button */}
                     <Button

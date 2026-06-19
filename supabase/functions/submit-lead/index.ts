@@ -109,7 +109,7 @@ function validateLeadData(data: unknown): { valid: boolean; error?: string; sani
   }
 
   // License class validation
-  const validLicenseClasses = ['b', 'a1', 'a2', 'a', 'be', 'B', 'A1', 'A2', 'A', 'BE'];
+  const validLicenseClasses = ['b','a1','a2','a','be','b196','B','A1','A2','A','BE','B196'];
   if (license_class && !validLicenseClasses.includes(license_class as string)) {
     return { valid: false, error: 'Ungültige Führerscheinklasse' };
   }

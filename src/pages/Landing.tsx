@@ -36,7 +36,23 @@ const Landing = () => {
   const [privacyConsent, setPrivacyConsent] = useState(false);
   const { toast } = useToast();
 
-...
+  const offerByClass: Record<string, { price: string; note: string }> = {
+    b: { price: '179 €', note: 'gilt nur für Klasse B (PKW)' },
+    be: { price: '179 €', note: 'gilt nur für Klasse B/BE' },
+    a1: { price: '300 €', note: 'gilt nur für Klasse A1' },
+    a2: { price: '599 €', note: 'gilt nur für Klasse A2' },
+    a: { price: '599 €', note: 'gilt nur für Klasse A' },
+  };
+  const currentOffer = offerByClass[formData.license_class] || { price: '179 €', note: '' };
+
+  const scrollToForm = () => {
+    document.getElementById('contact-form')?.scrollIntoView({
+      behavior: 'smooth'
+    });
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
 
     const result = leadSchema.safeParse({
       name: formData.name,

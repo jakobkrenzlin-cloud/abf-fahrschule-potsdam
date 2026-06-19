@@ -33,49 +33,26 @@ const Landing = () => {
     license_class: 'b'
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showPrivacyConsent, setShowPrivacyConsent] = useState(false);
   const [privacyConsent, setPrivacyConsent] = useState(false);
   const { toast } = useToast();
 
-  const offerByClass: Record<string, { price: string; note: string }> = {
-    b: { price: '179 €', note: 'gilt nur für Klasse B (PKW)' },
-    be: { price: '179 €', note: 'gilt nur für Klasse B/BE' },
-    a1: { price: '300 €', note: 'gilt nur für Klasse A1' },
-    a2: { price: '599 €', note: 'gilt nur für Klasse A2' },
-    a: { price: '599 €', note: 'gilt nur für Klasse A' },
-  };
-  const currentOffer = offerByClass[formData.license_class] || { price: '179 €', note: '' };
+...
 
-  const scrollToForm = () => {
-    document.getElementById('contact-form')?.scrollIntoView({
-      behavior: 'smooth'
+    const result = leadSchema.safeParse({
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      honeyPot: formData.honeyPot
     });
-  };
-
-  const handleFormSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    // First click: Show privacy consent
-    if (!showPrivacyConsent) {
-      const result = leadSchema.safeParse({
-        name: formData.name,
-        phone: formData.phone,
-        email: formData.email,
-        honeyPot: formData.honeyPot
+    if (!result.success) {
+      toast({
+        title: "Ungültige Eingabe",
+        description: result.error.errors[0].message,
+        variant: "destructive"
       });
-      if (!result.success) {
-        toast({
-          title: "Ungültige Eingabe",
-          description: result.error.errors[0].message,
-          variant: "destructive"
-        });
-        return;
-      }
-      setShowPrivacyConsent(true);
       return;
     }
 
-    // Second click: Submit with privacy consent
     if (!privacyConsent) {
       toast({
         title: "Bitte zustimmen",

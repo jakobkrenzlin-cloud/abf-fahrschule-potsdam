@@ -26,34 +26,27 @@ const MotorradContactForm: React.FC = () => {
     license_class: 'b196'
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showPrivacyConsent, setShowPrivacyConsent] = useState(false);
   const [privacyConsent, setPrivacyConsent] = useState(false);
   const { toast } = useToast();
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // First click: Show privacy consent
-    if (!showPrivacyConsent) {
-      const result = leadSchema.safeParse({
-        name: formData.name,
-        phone: formData.phone,
-        email: formData.email,
-        honeyPot: formData.honeyPot
+    const result = leadSchema.safeParse({
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      honeyPot: formData.honeyPot
+    });
+    if (!result.success) {
+      toast({
+        title: "Ungültige Eingabe",
+        description: result.error.errors[0].message,
+        variant: "destructive"
       });
-      if (!result.success) {
-        toast({
-          title: "Ungültige Eingabe",
-          description: result.error.errors[0].message,
-          variant: "destructive"
-        });
-        return;
-      }
-      setShowPrivacyConsent(true);
       return;
     }
 
-    // Second click: Submit with privacy consent
     if (!privacyConsent) {
       toast({
         title: "Bitte zustimmen",

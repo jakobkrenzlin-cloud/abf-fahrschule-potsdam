@@ -369,7 +369,7 @@ const Landing = () => {
                       size="lg"
                       disabled={isSubmitting}
                       className="w-full bg-[#3b5998] hover:bg-[#4a6cb3] text-white h-16 text-xl font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50">
-                      {isSubmitting ? "Wird gesendet..." : showPrivacyConsent ? "Jetzt absenden" : `Ja, ${currentOffer.price} Angebot sichern!`}
+                      {isSubmitting ? "Wird gesendet..." : `Ja, ${currentOffer.price} Angebot sichern!`}
                     </Button>
 
                     {/* Trust Elements */}

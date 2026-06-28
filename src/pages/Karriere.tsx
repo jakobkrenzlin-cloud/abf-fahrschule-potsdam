@@ -242,33 +242,47 @@ const Karriere = () => {
     return 'FULL_TIME';
   };
 
-  const jobPostings = POSITIONS.map((p) => ({
-    '@context': 'https://schema.org/',
-    '@type': 'JobPosting',
-    title: p.title,
-    description: `<p>${p.short}</p><ul>${p.details.map((d) => `<li>${d}</li>`).join('')}</ul>`,
-    datePosted: today,
-    validThrough: '2026-12-31',
-    employmentType: employmentTypeFor(p.id),
-    hiringOrganization: {
-      '@type': 'Organization',
-      name: 'ABF Fahrschule Potsdam',
-      sameAs: 'https://abf-fahrschule.de',
-      logo: 'https://abf-fahrschule.de/favicon.ico',
-    },
-    jobLocation: {
-      '@type': 'Place',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: 'Tuchmacherstraße 45b',
-        addressLocality: 'Potsdam',
-        postalCode: '14482',
-        addressRegion: 'Brandenburg',
-        addressCountry: 'DE',
+  const jobPostings = POSITIONS.map((p) => {
+    const base: Record<string, unknown> = {
+      '@context': 'https://schema.org/',
+      '@type': 'JobPosting',
+      title: p.title,
+      description: `<p>${p.short}</p><ul>${p.details.map((d) => `<li>${d}</li>`).join('')}</ul>`,
+      datePosted: today,
+      validThrough: '2026-12-31',
+      employmentType: employmentTypeFor(p.id),
+      hiringOrganization: {
+        '@type': 'Organization',
+        name: 'ABF Fahrschule Potsdam',
+        sameAs: 'https://abf-fahrschule.de',
+        logo: 'https://abf-fahrschule.de/favicon.ico',
       },
-    },
-    directApply: true,
-  }));
+      jobLocation: {
+        '@type': 'Place',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Tuchmacherstraße 45b',
+          addressLocality: 'Potsdam',
+          postalCode: '14482',
+          addressRegion: 'Brandenburg',
+          addressCountry: 'DE',
+        },
+      },
+      directApply: true,
+    };
+    if (p.salaryValue && p.salaryValue > 0) {
+      base.baseSalary = {
+        '@type': 'MonetaryAmount',
+        currency: 'EUR',
+        value: {
+          '@type': 'QuantitativeValue',
+          value: p.salaryValue,
+          unitText: 'HOUR',
+        },
+      };
+    }
+    return base;
+  });
 
   return (
     <>

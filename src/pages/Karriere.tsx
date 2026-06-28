@@ -143,6 +143,7 @@ const bewerbungSchema = z.object({
 // ---------- Page ----------
 const Karriere = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [filter, setFilter] = useState<typeof CATEGORIES[number]>('Alle');
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);

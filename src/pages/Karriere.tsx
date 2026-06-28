@@ -36,6 +36,8 @@ const POSITIONS = [
     title: 'Fahrlehrer/in (m/w/d) – Klasse B / BE / A',
     type: 'Vollzeit / Teilzeit',
     category: 'Fahrlehrer',
+    salary: '30 €/Std',
+    salaryValue: 30,
     short: 'Erfahrener Fahrlehrer für unser wachsendes Team in Potsdam.',
     details: [
       'Gültige Fahrlehrerlaubnis (mind. Klasse BE, A von Vorteil) erforderlich',
@@ -50,6 +52,8 @@ const POSITIONS = [
     title: 'Fahrlehreranwärter/in (m/w/d) – Praktikumsstelle',
     type: 'Praktikum (4 Monate)',
     category: 'Praktikum/Ausbildung',
+    salary: '25 €/Std',
+    salaryValue: 25,
     short: 'Du machst die Fahrlehrerausbildung und suchst eine Ausbildungsfahrschule für dein Praktikum?',
     details: [
       'Persönliche Betreuung durch erfahrene Ausbildungsfahrlehrer',
@@ -64,6 +68,8 @@ const POSITIONS = [
     title: 'Quereinsteiger/in (m/w/d) – Werde Fahrlehrer',
     type: 'Vollzeit',
     category: 'Praktikum/Ausbildung',
+    salary: 'bis 30 €/Std',
+    salaryValue: 30,
     short: 'Du liebst das Fahren und den Umgang mit Menschen? Starte deine Karriere als Fahrlehrer – wir begleiten dich.',
     details: [
       'Voraussetzungen: abgeschlossene Berufsausbildung oder Abitur',
@@ -78,6 +84,8 @@ const POSITIONS = [
     title: 'Büromitarbeiter/in (m/w/d)',
     type: 'Teilzeit / Minijob',
     category: 'Büro & Verwaltung',
+    salary: '',
+    salaryValue: 0,
     short: 'Organisationstalent gesucht – Terminplanung, Schülerbetreuung und Verwaltung.',
     details: [
       'Freundlicher Kundenkontakt – persönlich, telefonisch & per Mail',
@@ -91,6 +99,8 @@ const POSITIONS = [
     title: 'Aushilfe / Minijob (m/w/d)',
     type: 'Minijob (538€)',
     category: 'Aushilfe/Minijob',
+    salary: '',
+    salaryValue: 0,
     short: 'Flexible Unterstützung im Fahrschulalltag.',
     details: [
       'Flexible Stunden – ideal für Studierende',

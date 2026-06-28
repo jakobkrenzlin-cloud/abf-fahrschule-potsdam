@@ -327,9 +327,17 @@ const Karriere = () => {
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Werde Teil des <span className="text-[#1A9CFF]">ABF-Teams</span> in Potsdam
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-6">
               Ob erfahrener Fahrlehrer, Quereinsteiger oder im Büro – bei uns gestaltest du die Mobilität von morgen mit.
             </p>
+            <div className="flex flex-wrap justify-center gap-2 mb-8">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 text-sm font-semibold">
+                <Euro className="w-4 h-4" /> Bis zu 30 €/Stunde
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 text-white border border-white/15 text-sm font-medium">
+                <GraduationCap className="w-4 h-4" /> Auch für Quereinsteiger
+              </span>
+            </div>
             <Button
               size="lg"
               onClick={() => scrollTo(jobsRef)}

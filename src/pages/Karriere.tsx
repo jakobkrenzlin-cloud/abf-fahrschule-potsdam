@@ -36,6 +36,8 @@ const POSITIONS = [
     title: 'Fahrlehrer/in (m/w/d) – Klasse B / BE / A',
     type: 'Vollzeit / Teilzeit',
     category: 'Fahrlehrer',
+    salary: '30 €/Std',
+    salaryValue: 30,
     short: 'Erfahrener Fahrlehrer für unser wachsendes Team in Potsdam.',
     details: [
       'Gültige Fahrlehrerlaubnis (mind. Klasse BE, A von Vorteil) erforderlich',
@@ -50,6 +52,8 @@ const POSITIONS = [
     title: 'Fahrlehreranwärter/in (m/w/d) – Praktikumsstelle',
     type: 'Praktikum (4 Monate)',
     category: 'Praktikum/Ausbildung',
+    salary: '25 €/Std',
+    salaryValue: 25,
     short: 'Du machst die Fahrlehrerausbildung und suchst eine Ausbildungsfahrschule für dein Praktikum?',
     details: [
       'Persönliche Betreuung durch erfahrene Ausbildungsfahrlehrer',
@@ -64,6 +68,8 @@ const POSITIONS = [
     title: 'Quereinsteiger/in (m/w/d) – Werde Fahrlehrer',
     type: 'Vollzeit',
     category: 'Praktikum/Ausbildung',
+    salary: 'bis 30 €/Std',
+    salaryValue: 30,
     short: 'Du liebst das Fahren und den Umgang mit Menschen? Starte deine Karriere als Fahrlehrer – wir begleiten dich.',
     details: [
       'Voraussetzungen: abgeschlossene Berufsausbildung oder Abitur',
@@ -78,6 +84,8 @@ const POSITIONS = [
     title: 'Büromitarbeiter/in (m/w/d)',
     type: 'Teilzeit / Minijob',
     category: 'Büro & Verwaltung',
+    salary: '',
+    salaryValue: 0,
     short: 'Organisationstalent gesucht – Terminplanung, Schülerbetreuung und Verwaltung.',
     details: [
       'Freundlicher Kundenkontakt – persönlich, telefonisch & per Mail',
@@ -91,6 +99,8 @@ const POSITIONS = [
     title: 'Aushilfe / Minijob (m/w/d)',
     type: 'Minijob (538€)',
     category: 'Aushilfe/Minijob',
+    salary: '',
+    salaryValue: 0,
     short: 'Flexible Unterstützung im Fahrschulalltag.',
     details: [
       'Flexible Stunden – ideal für Studierende',
@@ -232,33 +242,47 @@ const Karriere = () => {
     return 'FULL_TIME';
   };
 
-  const jobPostings = POSITIONS.map((p) => ({
-    '@context': 'https://schema.org/',
-    '@type': 'JobPosting',
-    title: p.title,
-    description: `<p>${p.short}</p><ul>${p.details.map((d) => `<li>${d}</li>`).join('')}</ul>`,
-    datePosted: today,
-    validThrough: '2026-12-31',
-    employmentType: employmentTypeFor(p.id),
-    hiringOrganization: {
-      '@type': 'Organization',
-      name: 'ABF Fahrschule Potsdam',
-      sameAs: 'https://abf-fahrschule.de',
-      logo: 'https://abf-fahrschule.de/favicon.ico',
-    },
-    jobLocation: {
-      '@type': 'Place',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: 'Tuchmacherstraße 45b',
-        addressLocality: 'Potsdam',
-        postalCode: '14482',
-        addressRegion: 'Brandenburg',
-        addressCountry: 'DE',
+  const jobPostings = POSITIONS.map((p) => {
+    const base: Record<string, unknown> = {
+      '@context': 'https://schema.org/',
+      '@type': 'JobPosting',
+      title: p.title,
+      description: `<p>${p.short}</p><ul>${p.details.map((d) => `<li>${d}</li>`).join('')}</ul>`,
+      datePosted: today,
+      validThrough: '2026-12-31',
+      employmentType: employmentTypeFor(p.id),
+      hiringOrganization: {
+        '@type': 'Organization',
+        name: 'ABF Fahrschule Potsdam',
+        sameAs: 'https://abf-fahrschule.de',
+        logo: 'https://abf-fahrschule.de/favicon.ico',
       },
-    },
-    directApply: true,
-  }));
+      jobLocation: {
+        '@type': 'Place',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Tuchmacherstraße 45b',
+          addressLocality: 'Potsdam',
+          postalCode: '14482',
+          addressRegion: 'Brandenburg',
+          addressCountry: 'DE',
+        },
+      },
+      directApply: true,
+    };
+    if (p.salaryValue && p.salaryValue > 0) {
+      base.baseSalary = {
+        '@type': 'MonetaryAmount',
+        currency: 'EUR',
+        value: {
+          '@type': 'QuantitativeValue',
+          value: p.salaryValue,
+          unitText: 'HOUR',
+        },
+      };
+    }
+    return base;
+  });
 
   return (
     <>
@@ -281,7 +305,7 @@ const Karriere = () => {
 
       <Header />
 
-      <main className="bg-black text-white pt-12 md:pt-16">
+      <main className="bg-black text-white pt-12 md:pt-16 pb-20 md:pb-0">
         {/* 1. HERO */}
         <section className="relative overflow-hidden">
           <div
@@ -303,9 +327,17 @@ const Karriere = () => {
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Werde Teil des <span className="text-[#1A9CFF]">ABF-Teams</span> in Potsdam
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-6">
               Ob erfahrener Fahrlehrer, Quereinsteiger oder im Büro – bei uns gestaltest du die Mobilität von morgen mit.
             </p>
+            <div className="flex flex-wrap justify-center gap-2 mb-8">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 text-sm font-semibold">
+                <Euro className="w-4 h-4" /> Bis zu 30 €/Stunde
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 text-white border border-white/15 text-sm font-medium">
+                <GraduationCap className="w-4 h-4" /> Auch für Quereinsteiger
+              </span>
+            </div>
             <Button
               size="lg"
               onClick={() => scrollTo(jobsRef)}
@@ -341,6 +373,65 @@ const Karriere = () => {
             </div>
           </div>
         </section>
+
+        {/* 2b. QUEREINSTEIGER */}
+        <section className="py-16 md:py-20 px-4">
+          <div className="max-w-6xl mx-auto">
+            <div
+              data-reveal
+              className="opacity-0 translate-y-4 transition-all duration-500 relative overflow-hidden rounded-3xl border border-[#1A9CFF]/30 p-6 md:p-10"
+              style={{
+                background:
+                  'radial-gradient(circle at 15% 20%, rgba(26,156,255,0.18), transparent 50%), radial-gradient(circle at 85% 80%, rgba(26,156,255,0.10), transparent 55%), linear-gradient(135deg, #13243A 0%, #1C1C1C 100%)',
+              }}
+            >
+              <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-center">
+                <div>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 text-xs font-semibold mb-4">
+                    <CheckCircle2 className="w-3.5 h-3.5" /> Kein Vorwissen nötig
+                  </span>
+                  <h2 className="text-2xl md:text-4xl font-bold mb-4 leading-tight">
+                    Quereinsteiger? <span className="text-[#1A9CFF]">Dein Weg zum Fahrlehrer.</span>
+                  </h2>
+                  <p className="text-gray-300 mb-4 leading-relaxed">
+                    Fahrlehrermangel = sicherer Job mit Zukunft. Wir begleiten dich von der Ausbildung
+                    bis zum ersten Fahrschüler – persönlich, ehrlich und mit fairer Bezahlung.
+                  </p>
+                  <p className="text-sm text-gray-400 mb-6">
+                    <strong className="text-gray-200">Voraussetzungen:</strong> abgeschlossene
+                    Berufsausbildung oder Abitur, mind. 3 Jahre Fahrpraxis Klasse B, mind. 21 Jahre.
+                  </p>
+                  <Button
+                    onClick={() => {
+                      setFormData((d) => ({ ...d, position: 'Quereinsteiger/in (m/w/d) – Werde Fahrlehrer' }));
+                      scrollTo(formRef);
+                    }}
+                    className="bg-[#1A9CFF] hover:bg-[#1A9CFF]/90 text-white font-semibold px-6 py-5 rounded-xl shadow-lg shadow-[#1A9CFF]/30"
+                  >
+                    Quereinstieg starten
+                  </Button>
+                </div>
+                <div className="grid grid-cols-2 gap-3 md:gap-4">
+                  {[
+                    { icon: Euro, title: 'Bis zu 30 €/Stunde', text: 'Faire Bezahlung ab dem ersten Tag als Fahrlehrer.' },
+                    { icon: TrendingUp, title: 'Zukunftssicher', text: 'Riesige Nachfrage, ein Beruf der nicht wegfällt.' },
+                    { icon: GraduationCap, title: 'Wir begleiten dich', text: 'Persönliche Betreuung durch erfahrene Ausbildungsfahrlehrer.' },
+                    { icon: Users, title: 'Arbeit mit Menschen', text: 'Sinnvoller Job mit Abwechslung statt Schreibtisch-Routine.' },
+                  ].map((f) => (
+                    <div key={f.title} className="p-4 rounded-2xl bg-black/30 border border-white/10 hover:border-[#1A9CFF]/40 transition-colors">
+                      <div className="w-10 h-10 rounded-xl bg-[#1A9CFF]/15 flex items-center justify-center mb-3">
+                        <f.icon className="w-5 h-5 text-[#1A9CFF]" />
+                      </div>
+                      <h3 className="font-semibold text-sm md:text-base mb-1">{f.title}</h3>
+                      <p className="text-xs md:text-sm text-gray-400 leading-snug">{f.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
 
         {/* 3. OFFENE STELLEN */}
         <section ref={jobsRef} className="py-16 md:py-24 px-4">
@@ -386,6 +477,11 @@ const Karriere = () => {
                       <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-[#1A9CFF]/15 text-[#1A9CFF] w-fit">
                         <Briefcase className="w-3 h-3" /> {job.type}
                       </span>
+                      {job.salary && (
+                        <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-semibold w-fit">
+                          <Euro className="w-3 h-3" /> {job.salary}
+                        </span>
+                      )}
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="pb-6">
@@ -605,6 +701,16 @@ const Karriere = () => {
           </div>
         </section>
       </main>
+
+      {/* Sticky mobile CTA */}
+      <div className="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-black/85 backdrop-blur border-t border-white/10">
+        <Button
+          onClick={() => scrollTo(formRef)}
+          className="w-full bg-[#1A9CFF] hover:bg-[#1A9CFF]/90 text-white font-semibold py-6 rounded-xl shadow-lg shadow-[#1A9CFF]/30"
+        >
+          In 60 Sekunden bewerben
+        </Button>
+      </div>
 
       <Footer />
     </>

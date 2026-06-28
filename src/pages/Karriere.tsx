@@ -702,6 +702,16 @@ const Karriere = () => {
         </section>
       </main>
 
+      {/* Sticky mobile CTA */}
+      <div className="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-black/85 backdrop-blur border-t border-white/10">
+        <Button
+          onClick={() => scrollTo(formRef)}
+          className="w-full bg-[#1A9CFF] hover:bg-[#1A9CFF]/90 text-white font-semibold py-6 rounded-xl shadow-lg shadow-[#1A9CFF]/30"
+        >
+          In 60 Sekunden bewerben
+        </Button>
+      </div>
+
       <Footer />
     </>
   );

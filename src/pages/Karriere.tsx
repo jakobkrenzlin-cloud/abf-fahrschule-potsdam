@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { z } from 'zod';
 import Header from '../components/Header';
@@ -220,7 +221,17 @@ const Karriere = () => {
       });
       if (error) throw error;
       setSuccess(true);
+      // Conversion tracking
+      try {
+        const w = window as unknown as { dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void };
+        w.dataLayer = w.dataLayer || [];
+        w.dataLayer.push({ event: 'bewerbung_abgeschlossen' });
+        if (typeof w.gtag === 'function') {
+          w.gtag('event', 'conversion_bewerbung');
+        }
+      } catch { /* noop */ }
       toast({ title: 'Bewerbung gesendet!', description: 'Wir melden uns innerhalb von 48 Stunden.' });
+      navigate('/karriere/danke');
     } catch (err) {
       toast({
         title: 'Fehler beim Senden',

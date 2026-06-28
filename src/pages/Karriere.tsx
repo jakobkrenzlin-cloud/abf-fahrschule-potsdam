@@ -305,7 +305,7 @@ const Karriere = () => {
 
       <Header />
 
-      <main className="bg-black text-white pt-12 md:pt-16">
+      <main className="bg-black text-white pt-12 md:pt-16 pb-20 md:pb-0">
         {/* 1. HERO */}
         <section className="relative overflow-hidden">
           <div

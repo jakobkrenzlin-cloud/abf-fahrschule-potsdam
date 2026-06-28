@@ -477,6 +477,11 @@ const Karriere = () => {
                       <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-[#1A9CFF]/15 text-[#1A9CFF] w-fit">
                         <Briefcase className="w-3 h-3" /> {job.type}
                       </span>
+                      {job.salary && (
+                        <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-semibold w-fit">
+                          <Euro className="w-3 h-3" /> {job.salary}
+                        </span>
+                      )}
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="pb-6">

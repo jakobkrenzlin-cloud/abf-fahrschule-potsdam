@@ -23,6 +23,7 @@ const leadSchema = z.object({
   })
 });
 const ContactSection = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -69,7 +70,8 @@ const ContactSection = () => {
           phone: formData.phone,
           ...(formData.email?.trim() ? { email: formData.email.trim() } : {}),
           license_class: formData.licenseClass,
-          source: 'homepage'
+          source: 'homepage',
+          ...getAttribution()
         })
       });
       if (!response.ok) {
@@ -77,24 +79,10 @@ const ContactSection = () => {
         throw new Error(errorData.error || 'Submission failed');
       }
 
-      (window as any).dataLayer = (window as any).dataLayer || [];
-      (window as any).dataLayer.push({ event: 'lead_submitted', form_type: 'contact' });
-      // Trigger Google Ads conversion tracking with consent check
-      CookieConsentManager.triggerConversion();
-      toast({
-        title: "Anfrage erfolgreich gesendet!",
-        description: "Wir melden uns innerhalb von 24h bei dir zurück."
-      });
+      (window as unknown as { dataLayer?: unknown[] }).dataLayer = (window as unknown as { dataLayer?: unknown[] }).dataLayer || [];
+      (window as unknown as { dataLayer: unknown[] }).dataLayer.push({ event: 'lead_submitted', form_type: 'contact' });
 
-      // Reset form
-      setFormData({
-        name: '',
-        phone: '',
-        email: '',
-        licenseClass: '',
-        honeyPot: '',
-        privacyConsent: false
-      });
+      navigate('/danke', { state: { lead: true } });
     } catch (error) {
       toast({
         title: "Fehler beim Senden",

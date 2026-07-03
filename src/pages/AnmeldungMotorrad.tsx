@@ -49,7 +49,7 @@ const AnmeldungMotorrad = () => {
           content="B196 in Potsdam: mit dem Autoführerschein 125ccm fahren. Komplettpreis 750 € inkl. komplettem Theorieunterricht, ohne erneute Prüfung. Jetzt Platz sichern."
         />
         <meta name="keywords" content="B196 Potsdam, B196 Führerschein, 125ccm mit Autoführerschein, Motorradführerschein Potsdam, A2 Führerschein Potsdam" />
-        <link rel="canonical" href="https://abf-fahrschule-potsdam.lovable.app/anmeldungmotorrad" />
+        <link rel="canonical" href="https://abf-fahrschule.de/anmeldungmotorrad" />
       </Helmet>
 
       <div className="min-h-screen bg-black">

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Phone, MessageCircle } from 'lucide-react';
+import { callPhone } from '@/lib/tracking';
 
 const MobileStickyFooter = () => {
   const handleCall = () => {
-    window.location.href = 'tel:+491622191290';
+    callPhone('+491622191290', 'sticky-footer');
   };
 
   const handleWhatsApp = () => {

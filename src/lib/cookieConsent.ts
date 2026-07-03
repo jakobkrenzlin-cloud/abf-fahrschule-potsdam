@@ -34,7 +34,7 @@ export class CookieConsentManager {
       }
     };
     localStorage.setItem(CONSENT_COOKIE_NAME, JSON.stringify(data));
-    
+
     // Apply consent immediately
     this.applyConsent(consent);
   }
@@ -52,7 +52,7 @@ export class CookieConsentManager {
 
   // Apply consent by updating Google Consent Mode v2
   static applyConsent(consent: ConsentStatus): void {
-    const gtag = (window as any).gtag;
+    const gtag = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
     if (typeof gtag === 'function') {
       gtag('consent', 'update', {
         ad_storage: consent.marketing ? 'granted' : 'denied',
@@ -60,15 +60,6 @@ export class CookieConsentManager {
         ad_personalization: consent.marketing ? 'granted' : 'denied',
         analytics_storage: consent.statistics ? 'granted' : 'denied',
       });
-    }
-  }
-
-  // Trigger Google Ads conversion event. Consent Mode v2 ensures the event is
-  // only recorded by Google when marketing consent is granted.
-  static triggerConversion(conversionId: string = 'AW-17551238202/UhzpCN_gq6YbELrIirFB'): void {
-    const gtag = (window as any).gtag;
-    if (typeof gtag === 'function') {
-      gtag('event', 'conversion', { send_to: conversionId });
     }
   }
 

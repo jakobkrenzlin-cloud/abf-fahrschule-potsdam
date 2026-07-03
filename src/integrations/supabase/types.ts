@@ -19,34 +19,58 @@ export type Database = {
           ausbildungsphase: string | null
           created_at: string
           email: string
+          gbraid: string | null
+          gclid: string | null
           id: string
+          landing_page: string | null
           nachricht: string | null
           name: string
           phone: string
           position: string | null
+          referrer: string | null
           source: string | null
+          utm_campaign: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          wbraid: string | null
         }
         Insert: {
           ausbildungsphase?: string | null
           created_at?: string
           email: string
+          gbraid?: string | null
+          gclid?: string | null
           id?: string
+          landing_page?: string | null
           nachricht?: string | null
           name: string
           phone: string
           position?: string | null
+          referrer?: string | null
           source?: string | null
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          wbraid?: string | null
         }
         Update: {
           ausbildungsphase?: string | null
           created_at?: string
           email?: string
+          gbraid?: string | null
+          gclid?: string | null
           id?: string
+          landing_page?: string | null
           nachricht?: string | null
           name?: string
           phone?: string
           position?: string | null
+          referrer?: string | null
           source?: string | null
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          wbraid?: string | null
         }
         Relationships: []
       }
@@ -55,43 +79,58 @@ export type Database = {
           consent: boolean | null
           created_at: string
           email: string | null
+          gbraid: string | null
+          gclid: string | null
           id: string
+          landing_page: string | null
           license_class: string | null
           message: string | null
           name: string | null
           phone: string | null
+          referrer: string | null
           source: string | null
           utm_campaign: string | null
           utm_medium: string | null
           utm_source: string | null
+          wbraid: string | null
         }
         Insert: {
           consent?: boolean | null
           created_at?: string
           email?: string | null
+          gbraid?: string | null
+          gclid?: string | null
           id?: string
+          landing_page?: string | null
           license_class?: string | null
           message?: string | null
           name?: string | null
           phone?: string | null
+          referrer?: string | null
           source?: string | null
           utm_campaign?: string | null
           utm_medium?: string | null
           utm_source?: string | null
+          wbraid?: string | null
         }
         Update: {
           consent?: boolean | null
           created_at?: string
           email?: string | null
+          gbraid?: string | null
+          gclid?: string | null
           id?: string
+          landing_page?: string | null
           license_class?: string | null
           message?: string | null
           name?: string | null
           phone?: string | null
+          referrer?: string | null
           source?: string | null
           utm_campaign?: string | null
           utm_medium?: string | null
           utm_source?: string | null
+          wbraid?: string | null
         }
         Relationships: []
       }

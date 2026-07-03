@@ -93,6 +93,33 @@ serve(async (req) => {
     const positionRaw = typeof body.position === 'string' ? body.position.trim() : '';
     const position = ALLOWED_POSITIONS.includes(positionRaw) ? positionRaw : 'Initiativbewerbung';
 
+    // Optional attribution fields
+    const clickIdRegex = /^[\w.\-~]{1,200}$/;
+    const readClickId = (k: string): string | null => {
+      const v = body[k];
+      if (typeof v !== 'string' || v.length === 0) return null;
+      if (!clickIdRegex.test(v)) return null;
+      return v;
+    };
+    const readShort = (k: string): string | null => {
+      const v = body[k];
+      if (typeof v !== 'string' || v.length === 0) return null;
+      return v.slice(0, 200);
+    };
+    const readLong = (k: string): string | null => {
+      const v = body[k];
+      if (typeof v !== 'string' || v.length === 0) return null;
+      return v.slice(0, 500);
+    };
+    const gclid = readClickId('gclid');
+    const wbraid = readClickId('wbraid');
+    const gbraid = readClickId('gbraid');
+    const utm_source = readShort('utm_source');
+    const utm_medium = readShort('utm_medium');
+    const utm_campaign = readShort('utm_campaign');
+    const landing_page = readLong('landing_page');
+    const referrer = readLong('referrer');
+
     if (name.length < 2 || name.length > 100) {
       return new Response(JSON.stringify({ error: 'Name muss zwischen 2 und 100 Zeichen lang sein.' }), {
         status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' }
@@ -114,19 +141,33 @@ serve(async (req) => {
       });
     }
 
-    const { data, error } = await supabase
+    const basePayload = {
+      name: name.slice(0, 100),
+      phone: phone.slice(0, 30),
+      email: email.slice(0, 255),
+      ausbildungsphase: ausbildungsphase.slice(0, 500) || null,
+      nachricht: nachricht.slice(0, 2000) || null,
+      position,
+      source: 'karriere',
+    };
+    const fullPayload = { ...basePayload, gclid, wbraid, gbraid, utm_source, utm_medium, utm_campaign, landing_page, referrer };
+
+    let insertResult = await supabase
       .from('bewerbungen')
-      .insert([{
-        name: name.slice(0, 100),
-        phone: phone.slice(0, 30),
-        email: email.slice(0, 255),
-        ausbildungsphase: ausbildungsphase.slice(0, 500) || null,
-        nachricht: nachricht.slice(0, 2000) || null,
-        position,
-        source: 'karriere',
-      }])
+      .insert([fullPayload])
       .select('id')
       .single();
+
+    if (insertResult.error && (insertResult.error.code === 'PGRST204' || insertResult.error.code === '42703')) {
+      console.warn('Attribution columns missing, retrying without them:', insertResult.error.code);
+      insertResult = await supabase
+        .from('bewerbungen')
+        .insert([basePayload])
+        .select('id')
+        .single();
+    }
+
+    const { data, error } = insertResult;
 
     if (error) {
       console.error('Insert error:', error);

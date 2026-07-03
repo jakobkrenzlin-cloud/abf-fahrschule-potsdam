@@ -96,7 +96,7 @@ function validateLeadData(data: unknown): { valid: boolean; error?: string; sani
     return { valid: false, error: 'Invalid request body' };
   }
 
-  const { name, phone, license_class, source, email, message, utm_source, utm_medium, utm_campaign } = data as Record<string, unknown>;
+  const { name, phone, license_class, source, email, message, utm_source, utm_medium, utm_campaign, gclid, wbraid, gbraid, landing_page, referrer } = data as Record<string, unknown>;
 
   // Name validation
   if (typeof name !== 'string' || name.trim().length < 2 || name.trim().length > 100) {
@@ -144,6 +144,26 @@ function validateLeadData(data: unknown): { valid: boolean; error?: string; sani
     }
   }
 
+  // Click-ID validation (Google Ads: gclid/wbraid/gbraid)
+  const clickIdRegex = /^[\w.\-~]{1,200}$/;
+  const clickIds = { gclid, wbraid, gbraid };
+  for (const [key, value] of Object.entries(clickIds)) {
+    if (value !== undefined && value !== null && value !== '') {
+      if (typeof value !== 'string' || !clickIdRegex.test(value)) {
+        return { valid: false, error: `Ungültige ${key}` };
+      }
+    }
+  }
+
+  // Landing page / referrer validation (strings, max 500)
+  for (const [key, value] of Object.entries({ landing_page, referrer })) {
+    if (value !== undefined && value !== null && value !== '') {
+      if (typeof value !== 'string' || value.length > 500) {
+        return { valid: false, error: `${key} darf maximal 500 Zeichen lang sein` };
+      }
+    }
+  }
+
   return {
     valid: true,
     sanitized: {
@@ -156,6 +176,11 @@ function validateLeadData(data: unknown): { valid: boolean; error?: string; sani
       utm_source: utm_source ? (utm_source as string).slice(0, 200) : null,
       utm_medium: utm_medium ? (utm_medium as string).slice(0, 200) : null,
       utm_campaign: utm_campaign ? (utm_campaign as string).slice(0, 200) : null,
+      gclid: gclid ? (gclid as string).slice(0, 200) : null,
+      wbraid: wbraid ? (wbraid as string).slice(0, 200) : null,
+      gbraid: gbraid ? (gbraid as string).slice(0, 200) : null,
+      landing_page: landing_page ? (landing_page as string).slice(0, 500) : null,
+      referrer: referrer ? (referrer as string).slice(0, 500) : null,
       consent: true,
     }
   };
@@ -214,12 +239,27 @@ serve(async (req) => {
       );
     }
 
-    // Insert the lead
-    const { data, error } = await supabase
+    // Insert the lead (with fallback if attribution columns don't exist yet)
+    const ATTRIBUTION_KEYS = ['gclid', 'wbraid', 'gbraid', 'landing_page', 'referrer'] as const;
+    const sanitized = validation.sanitized as Record<string, unknown>;
+    let insertResult = await supabase
       .from('leads')
-      .insert([validation.sanitized])
+      .insert([sanitized])
       .select('id')
       .single();
+
+    if (insertResult.error && (insertResult.error.code === 'PGRST204' || insertResult.error.code === '42703')) {
+      console.warn('Attribution columns missing, retrying without them:', insertResult.error.code);
+      const stripped: Record<string, unknown> = { ...sanitized };
+      for (const k of ATTRIBUTION_KEYS) delete stripped[k];
+      insertResult = await supabase
+        .from('leads')
+        .insert([stripped])
+        .select('id')
+        .single();
+    }
+
+    const { data, error } = insertResult;
 
     if (error) {
       console.error('Database insert error:', error);

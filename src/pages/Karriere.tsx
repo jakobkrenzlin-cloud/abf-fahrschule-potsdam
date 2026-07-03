@@ -24,6 +24,7 @@ import {
 import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+import { getAttribution } from '@/lib/tracking';
 import {
   Star, MapPin, Phone, Mail, CheckCircle2, Send,
   Euro, Car, Clock, Users, TrendingUp, GraduationCap,
@@ -218,21 +219,12 @@ const Karriere = () => {
           position: parsed.data.position,
           ausbildungsphase: parsed.data.ausbildungsphase || '',
           nachricht: parsed.data.nachricht || '',
+          ...getAttribution(),
         },
       });
       if (error) throw error;
       setSuccess(true);
-      // Conversion tracking
-      try {
-        const w = window as unknown as { dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void };
-        w.dataLayer = w.dataLayer || [];
-        w.dataLayer.push({ event: 'bewerbung_abgeschlossen' });
-        if (typeof w.gtag === 'function') {
-          w.gtag('event', 'conversion_bewerbung');
-        }
-      } catch { /* noop */ }
-      toast({ title: 'Bewerbung gesendet!', description: 'Wir melden uns innerhalb von 48 Stunden.' });
-      navigate('/karriere/danke');
+      navigate('/karriere/danke', { state: { bewerbung: true } });
     } catch (err) {
       toast({
         title: 'Fehler beim Senden',

@@ -1,19 +1,29 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import { CheckCircle, Phone, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { CookieConsentManager } from '@/lib/cookieConsent';
+import { fireConversion, CONVERSION_LABELS } from '@/lib/tracking';
 
 const Danke = () => {
+  const location = useLocation();
+
   useEffect(() => {
-    // Trigger Google Ads conversion tracking with consent check
-    CookieConsentManager.triggerConversion();
-  }, []);
+    const state = location.state as { lead?: boolean } | null;
+    if (state?.lead === true) {
+      fireConversion(CONVERSION_LABELS.LEAD);
+      window.history.replaceState({}, '');
+    }
+  }, [location.state]);
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-gray-50">
+      <Helmet>
+        <title>Danke für deine Anfrage | ABF Fahrschule Potsdam</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <Header />
       
       <main className="flex-grow flex items-center justify-center px-4 py-16">
@@ -91,7 +101,7 @@ const Danke = () => {
                   Zurück zur Startseite
                 </Button>
               </Link>
-              <Link to="/Anmeldung">
+              <Link to="/anmeldung">
                 <Button size="lg">
                   Weitere Informationen
                 </Button>

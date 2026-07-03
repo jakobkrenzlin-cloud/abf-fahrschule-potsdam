@@ -12,5 +12,9 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /danke
+Disallow: /karriere/danke
+Disallow: /admin
+Disallow: /auth
 
-Sitemap: https://abf-fahrschule-potsdam.lovable.app/sitemap.xml
+Sitemap: https://abf-fahrschule.de/sitemap.xml

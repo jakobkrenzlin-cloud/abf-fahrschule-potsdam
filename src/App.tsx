@@ -1,10 +1,11 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CookieConsent } from "@/components/CookieConsent";
+import { initTracking } from "@/lib/tracking";
 
 // Eager-load home route (most common entry, also drives LCP)
 import Index from "./pages/Index";
@@ -33,36 +34,42 @@ const RouteFallback = () => (
   </div>
 );
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <CookieConsent />
-        <Suspense fallback={<RouteFallback />}>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/Anmeldung" element={<Landing />} />
-            <Route path="/anmeldungmotorrad" element={<AnmeldungMotorrad />} />
-            <Route path="/auth" element={<Auth />} />
-            <Route path="/admin" element={<Admin />} />
-            <Route path="/impressum" element={<Impressum />} />
-            <Route path="/datenschutz" element={<Datenschutz />} />
-            <Route path="/agb" element={<AGB />} />
-            <Route path="/danke" element={<Danke />} />
-            <Route path="/preise" element={<Preise />} />
-            <Route path="/kontakt" element={<Kontakt />} />
-            <Route path="/theorie" element={<Theorie />} />
-            <Route path="/karriere" element={<Karriere />} />
-            <Route path="/karriere/danke" element={<KarriereDanke />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  useEffect(() => {
+    initTracking();
+  }, []);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <CookieConsent />
+          <Suspense fallback={<RouteFallback />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/anmeldung" element={<Landing />} />
+              <Route path="/anmeldungmotorrad" element={<AnmeldungMotorrad />} />
+              <Route path="/auth" element={<Auth />} />
+              <Route path="/admin" element={<Admin />} />
+              <Route path="/impressum" element={<Impressum />} />
+              <Route path="/datenschutz" element={<Datenschutz />} />
+              <Route path="/agb" element={<AGB />} />
+              <Route path="/danke" element={<Danke />} />
+              <Route path="/preise" element={<Preise />} />
+              <Route path="/kontakt" element={<Kontakt />} />
+              <Route path="/theorie" element={<Theorie />} />
+              <Route path="/karriere" element={<Karriere />} />
+              <Route path="/karriere/danke" element={<KarriereDanke />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

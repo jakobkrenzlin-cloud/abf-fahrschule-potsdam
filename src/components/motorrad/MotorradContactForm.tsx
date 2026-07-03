@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
-import { CookieConsentManager } from '@/lib/cookieConsent';
+import { getAttribution, callPhone } from '@/lib/tracking';
 
 // Validation schema
 const leadSchema = z.object({
@@ -65,10 +65,11 @@ const MotorradContactForm: React.FC = () => {
         },
         body: JSON.stringify({
           name: formData.name,
-          email: formData.email?.trim() ? formData.email.trim() : `${formData.phone.replace(/\D/g, '')}@no-email.local`,
           phone: formData.phone,
+          ...(formData.email?.trim() ? { email: formData.email.trim() } : {}),
           license_class: formData.license_class,
-          source: 'landingpage-motorrad'
+          source: 'landingpage-motorrad',
+          ...getAttribution()
         })
       });
 
@@ -77,10 +78,9 @@ const MotorradContactForm: React.FC = () => {
         throw new Error(errorData.error || 'Submission failed');
       }
 
-      (window as any).dataLayer = (window as any).dataLayer || [];
-      (window as any).dataLayer.push({ event: 'lead_submitted', form_type: 'contact' });
-      CookieConsentManager.triggerConversion();
-      navigate('/danke');
+      (window as unknown as { dataLayer?: unknown[] }).dataLayer = (window as unknown as { dataLayer?: unknown[] }).dataLayer || [];
+      (window as unknown as { dataLayer: unknown[] }).dataLayer.push({ event: 'lead_submitted', form_type: 'contact' });
+      navigate('/danke', { state: { lead: true } });
     } catch (error) {
       toast({
         title: "Fehler beim Senden",
@@ -97,7 +97,7 @@ const MotorradContactForm: React.FC = () => {
   };
 
   const handleCall = () => {
-    window.location.href = 'tel:+491622191290';
+    callPhone('+491622191290', 'landing-motorrad');
   };
 
   return (

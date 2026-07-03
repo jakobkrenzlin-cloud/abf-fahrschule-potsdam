@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
-import { CookieConsentManager } from '@/lib/cookieConsent';
+import { getAttribution, callPhone } from '@/lib/tracking';
 import CountdownTimer from '@/components/CountdownTimer';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -89,18 +89,18 @@ const Landing = () => {
           phone: formData.phone,
           ...(formData.email?.trim() ? { email: formData.email.trim() } : {}),
           license_class: formData.license_class,
-          source: 'landingpage-fruehling',
-          message: undefined
+          source: 'landingpage-sommer',
+          message: undefined,
+          ...getAttribution()
         })
       });
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
         throw new Error(errorData.error || 'Submission failed');
       }
-      (window as any).dataLayer = (window as any).dataLayer || [];
-      (window as any).dataLayer.push({ event: 'lead_submitted', form_type: 'contact' });
-      CookieConsentManager.triggerConversion();
-      navigate('/danke');
+      (window as unknown as { dataLayer?: unknown[] }).dataLayer = (window as unknown as { dataLayer?: unknown[] }).dataLayer || [];
+      (window as unknown as { dataLayer: unknown[] }).dataLayer.push({ event: 'lead_submitted', form_type: 'contact' });
+      navigate('/danke', { state: { lead: true } });
     } catch (error) {
       toast({
         title: "Fehler beim Senden",
@@ -117,7 +117,7 @@ const Landing = () => {
   };
 
   const handleCall = () => {
-    window.location.href = 'tel:+491622191290';
+    callPhone('+491622191290', 'landing-pkw');
   };
 
   // Inline CTA Component - Blue theme matching motorrad page

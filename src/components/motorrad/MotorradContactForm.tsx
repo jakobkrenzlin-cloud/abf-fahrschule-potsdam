@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
-import { getAttribution, callPhone } from '@/lib/tracking';
+import { getAttribution, callPhone, openWhatsApp } from '@/lib/tracking';
 
 // Validation schema
 const leadSchema = z.object({
@@ -93,7 +93,7 @@ const MotorradContactForm: React.FC = () => {
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/491622191290?text=Hallo,%20ich%20möchte%20das%20599€%20Motorrad-Angebot%20sichern!', '_blank');
+    openWhatsApp('https://wa.me/491622191290?text=Hallo,%20ich%20interessiere%20mich%20für%20B196%20bzw.%20den%20Motorradführerschein!', 'landing-motorrad');
   };
 
   const handleCall = () => {

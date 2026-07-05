@@ -4,6 +4,7 @@ export const CONVERSION_LABELS = {
   LEAD: 'AW-17551238202/UhzpCN_gq6YbELrIirFB', // "Submit lead form" (primär)
   BEWERBUNG: 'AW-17551238202/VR5XCLv-kcocELrIirFB', // "Bewerbung Karriere (Website)" (primär)
   ANRUF_KLICK: 'AW-17551238202/sRjcCJaAksocELrIirFB', // "Anruf-Klick (Website)" (sekundär)
+  WHATSAPP: 'AW-17551238202/SZu5CJn2_ckcELrIirFB', // "WhatsApp-Klick (Website)" (sekundär)
 } as const;
 
 const STORAGE_KEY = 'abf-attribution';
@@ -94,6 +95,17 @@ export function trackPhoneClick(source: string): void {
 export function callPhone(number: string, source: string): void {
   trackPhoneClick(source);
   window.location.href = `tel:${number}`;
+}
+
+export function trackWhatsAppClick(source: string): void {
+  (window as any).dataLayer = (window as any).dataLayer || [];
+  (window as any).dataLayer.push({ event: 'whatsapp_click', whatsapp_source: source });
+  fireConversion(CONVERSION_LABELS.WHATSAPP);
+}
+
+export function openWhatsApp(url: string, source: string): void {
+  trackWhatsAppClick(source);
+  window.open(url, '_blank');
 }
 
 function initTelClickTracking(): void {

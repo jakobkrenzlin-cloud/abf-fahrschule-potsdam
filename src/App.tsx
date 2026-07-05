@@ -12,6 +12,7 @@ import Index from "./pages/Index";
 
 // Lazy-load everything else to split bundles
 const Landing = lazy(() => import("./pages/Landing"));
+const B196 = lazy(() => import("./pages/B196"));
 const AnmeldungMotorrad = lazy(() => import("./pages/AnmeldungMotorrad"));
 const Admin = lazy(() => import("./pages/Admin"));
 const Auth = lazy(() => import("./pages/Auth"));
@@ -50,6 +51,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/anmeldung" element={<Landing />} />
+              <Route path="/b196" element={<B196 />} />
               <Route path="/anmeldungmotorrad" element={<AnmeldungMotorrad />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/admin" element={<Admin />} />

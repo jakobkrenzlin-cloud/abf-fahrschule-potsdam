@@ -16,7 +16,7 @@ const MotorradTestimonials: React.FC = () => {
               <Star key={i} className="w-5 h-5 text-[#6d8fd4] fill-[#6d8fd4]" />
               )}
             </div>
-            <span className="text-white font-bold text-lg">4,9</span>
+            <span className="text-white font-bold text-lg">5,0</span>
             <span className="text-neutral-400 text-sm">bei Google Maps</span>
           </div>
         </div>

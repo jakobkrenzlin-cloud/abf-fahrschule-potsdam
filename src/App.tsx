@@ -12,6 +12,7 @@ import Index from "./pages/Index";
 
 // Lazy-load everything else to split bundles
 const Landing = lazy(() => import("./pages/Landing"));
+const B196 = lazy(() => import("./pages/B196"));
 const AnmeldungMotorrad = lazy(() => import("./pages/AnmeldungMotorrad"));
 const Admin = lazy(() => import("./pages/Admin"));
 const Auth = lazy(() => import("./pages/Auth"));

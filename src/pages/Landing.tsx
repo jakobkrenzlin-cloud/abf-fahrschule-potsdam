@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
-import { getAttribution, callPhone } from '@/lib/tracking';
+import { getAttribution, callPhone, openWhatsApp } from '@/lib/tracking';
 import CountdownTimer from '@/components/CountdownTimer';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -113,7 +113,7 @@ const Landing = () => {
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/491622191290?text=Hallo,%20ich%20möchte%20das%20179€%20Sommer-Angebot%20sichern!', '_blank');
+    openWhatsApp('https://wa.me/491622191290?text=Hallo,%20ich%20möchte%20das%20179€%20Sommer-Angebot%20sichern!', 'landing-pkw');
   };
 
   const handleCall = () => {
@@ -138,7 +138,7 @@ const Landing = () => {
   return (
     <>
       <Helmet>
-        <title>Fahrschule Potsdam | Führerschein Klasse B ab 279€ | ABF</title>
+        <title>Fahrschule Potsdam | Führerschein Klasse B ab 179 € | ABF</title>
         <meta name="description" content="Führerschein machen in Potsdam? ABF Fahrschule bietet Klasse B ab 179€ inkl. Theorie & ADAC Mitgliedschaft. Jetzt Platz sichern!" />
       </Helmet>
       
@@ -205,7 +205,7 @@ const Landing = () => {
                   {/* SEO-optimized intro paragraph */}
                    <p className="text-xl lg:text-2xl text-neutral-300 mb-6 font-medium">
                      Willkommen bei der ABF Fahrschule in Potsdam! In nur einer Woche Theorie fertig – mit kompletter Theorieausbildung & ADAC.
-                    <span className="block mt-1 text-[#6d8fd4] font-bold"><span className="block mt-1 text-[#6d8fd4] font-bold">Sommer-Spezial nur bis 31. Juli!</span></span>
+                    <span className="block mt-1 text-[#6d8fd4] font-bold">Sommer-Spezial nur bis 31. Juli!</span>
                   </p>
                   
                   {/* Key Benefits - Visual Pills */}
@@ -651,11 +651,11 @@ const Landing = () => {
             </div>
             
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Bereit, frei in den Frühling zu starten?
+              Bereit, in deinen Führerschein-Sommer zu starten?
             </h2>
             
             <p className="text-xl text-white/90 mb-6">
-              Sicher dir jetzt deinen Platz. Angebot gültig bis 30. April 2026.
+              Sicher dir jetzt deinen Platz. Angebot gültig bis 31. Juli 2026.
             </p>
 
             <CountdownTimer targetDate={OFFER_END_DATE} className="justify-center mb-8" />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, MessageCircle } from 'lucide-react';
-import { callPhone } from '@/lib/tracking';
+import { callPhone, openWhatsApp } from '@/lib/tracking';
 
 const MobileStickyFooter = () => {
   const handleCall = () => {
@@ -8,7 +8,7 @@ const MobileStickyFooter = () => {
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/491622191290?text=Hallo,%20ich%20interessiere%20mich%20für%20den%20Führerschein%20bei%20ABF%20Fahrschule%20Potsdam.', '_blank');
+    openWhatsApp('https://wa.me/491622191290?text=Hallo,%20ich%20interessiere%20mich%20für%20den%20Führerschein%20bei%20ABF%20Fahrschule%20Potsdam.', 'sticky-footer');
   };
 
   return (

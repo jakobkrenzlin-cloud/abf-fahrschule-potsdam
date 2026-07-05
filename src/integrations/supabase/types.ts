@@ -74,6 +74,45 @@ export type Database = {
         }
         Relationships: []
       }
+      lead_log: {
+        Row: {
+          created_at: string
+          gbraid: string | null
+          gclid: string | null
+          id: string
+          license_class: string | null
+          source: string | null
+          utm_campaign: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          wbraid: string | null
+        }
+        Insert: {
+          created_at: string
+          gbraid?: string | null
+          gclid?: string | null
+          id: string
+          license_class?: string | null
+          source?: string | null
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          wbraid?: string | null
+        }
+        Update: {
+          created_at?: string
+          gbraid?: string | null
+          gclid?: string | null
+          id?: string
+          license_class?: string | null
+          source?: string | null
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          wbraid?: string | null
+        }
+        Relationships: []
+      }
       leads: {
         Row: {
           consent: boolean | null
@@ -89,6 +128,7 @@ export type Database = {
           phone: string | null
           referrer: string | null
           source: string | null
+          status: string
           utm_campaign: string | null
           utm_medium: string | null
           utm_source: string | null
@@ -108,6 +148,7 @@ export type Database = {
           phone?: string | null
           referrer?: string | null
           source?: string | null
+          status?: string
           utm_campaign?: string | null
           utm_medium?: string | null
           utm_source?: string | null
@@ -127,6 +168,7 @@ export type Database = {
           phone?: string | null
           referrer?: string | null
           source?: string | null
+          status?: string
           utm_campaign?: string | null
           utm_medium?: string | null
           utm_source?: string | null

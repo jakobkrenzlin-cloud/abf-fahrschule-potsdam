@@ -83,7 +83,7 @@ const POSITIONS = [
   {
     id: 'aushilfe',
     title: 'Aushilfe / Minijob (m/w/d)',
-    type: 'Minijob (538€)',
+    type: 'Minijob (603€)',
     category: 'Aushilfe/Minijob',
     salary: '',
     salaryValue: 0,

@@ -19,8 +19,8 @@ const leadSchema = z.object({
   honeyPot: z.string().max(0, 'Spam erkannt')
 });
 
-// Offer end date: July 31, 2026
-const OFFER_END_DATE = new Date('2026-07-31T23:59:59');
+// Offer end date: September 30, 2026
+const OFFER_END_DATE = new Date('2026-09-30T23:59:59');
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -37,13 +37,13 @@ const Landing = () => {
   const { toast } = useToast();
 
   const offerByClass: Record<string, { price: string; note: string }> = {
-    b: { price: '179 €', note: 'gilt nur für Klasse B (PKW)' },
-    be: { price: '179 €', note: 'gilt nur für Klasse B/BE' },
+    b: { price: '229 €', note: 'gilt nur für Klasse B (PKW)' },
+    be: { price: '229 €', note: 'gilt nur für Klasse B/BE' },
     a1: { price: '300 €', note: 'gilt nur für Klasse A1' },
     a2: { price: '599 €', note: 'gilt nur für Klasse A2' },
     a: { price: '599 €', note: 'gilt nur für Klasse A' },
   };
-  const currentOffer = offerByClass[formData.license_class] || { price: '179 €', note: '' };
+  const currentOffer = offerByClass[formData.license_class] || { price: '229 €', note: '' };
 
   const scrollToForm = () => {
     document.getElementById('contact-form')?.scrollIntoView({
@@ -113,7 +113,7 @@ const Landing = () => {
   };
 
   const handleWhatsApp = () => {
-    openWhatsApp('https://wa.me/491622191290?text=Hallo,%20ich%20möchte%20das%20179€%20Sommer-Angebot%20sichern!', 'landing-pkw');
+    openWhatsApp('https://wa.me/491622191290?text=Hallo,%20ich%20möchte%20das%20229€%20Sommer-Angebot%20sichern!', 'landing-pkw');
   };
 
   const handleCall = () => {
@@ -138,8 +138,8 @@ const Landing = () => {
   return (
     <>
       <Helmet>
-        <title>Fahrschule Potsdam | Führerschein Klasse B ab 179 € | ABF</title>
-        <meta name="description" content="Führerschein machen in Potsdam? ABF Fahrschule bietet Klasse B ab 179€ inkl. Theorie & ADAC Mitgliedschaft. Jetzt Platz sichern!" />
+        <title>Fahrschule Potsdam | Führerschein Klasse B ab 229 € | ABF</title>
+        <meta name="description" content="Führerschein machen in Potsdam? ABF Fahrschule bietet Klasse B ab 229€ inkl. Theorie & ADAC Mitgliedschaft. Jetzt Platz sichern!" />
       </Helmet>
       
       <div className="min-h-screen bg-black">
@@ -176,7 +176,7 @@ const Landing = () => {
             {/* Countdown Timer Bar */}
             <div className="bg-[#3b5998] text-white py-3 mb-6">
               <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-2">
-                <span className="text-sm font-medium"> <span className="text-sm font-medium"> ☀️ Sommer-Spezial – Nur bis 31. Juli 2026!</span></span>
+                <span className="text-sm font-medium"> <span className="text-sm font-medium"> ☀️ Sommer-Spezial – Nur bis 30. September 2026!</span></span>
                 <CountdownTimer targetDate={OFFER_END_DATE} className="text-sm" />
               </div>
             </div>
@@ -193,7 +193,7 @@ const Landing = () => {
                   
                   {/* Price Anchor - BIG & BOLD */}
                   <div className="mb-4">
-                    <span className="inline-block text-[#6d8fd4] text-5xl lg:text-7xl font-black">179 €</span>
+                    <span className="inline-block text-[#6d8fd4] text-5xl lg:text-7xl font-black">229 €</span>
                   </div>
                   
                   {/* Main Headline */}
@@ -205,7 +205,7 @@ const Landing = () => {
                   {/* SEO-optimized intro paragraph */}
                    <p className="text-xl lg:text-2xl text-neutral-300 mb-6 font-medium">
                      Willkommen bei der ABF Fahrschule in Potsdam! In nur einer Woche Theorie fertig – mit kompletter Theorieausbildung & ADAC.
-                    <span className="block mt-1 text-[#6d8fd4] font-bold">Sommer-Spezial nur bis 31. Juli!</span>
+                    <span className="block mt-1 text-[#6d8fd4] font-bold">Sommer-Spezial nur bis 30. September!</span>
                   </p>
                   
                   {/* Key Benefits - Visual Pills */}
@@ -249,7 +249,7 @@ const Landing = () => {
                   <div className="text-center mb-6">
                     <div className="inline-flex items-center gap-2 bg-[#3b5998]/20 text-[#6d8fd4] px-4 py-2 rounded-full text-sm font-bold mb-3">
                       <Sun className="w-4 h-4" />
-                      ☀️ Sommer-Spezial – nur bis 31. Juli 2026!
+                      ☀️ Sommer-Spezial – nur bis 30. September 2026!
                     </div>
                     <h2 className="text-2xl lg:text-3xl font-bold text-white mb-2">
                       Jetzt Platz sichern!
@@ -407,7 +407,7 @@ const Landing = () => {
           <div className="max-w-5xl mx-auto px-4">
             <div className="text-center mb-10">
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-3">
-                Das bekommst du für <span className="text-[#6d8fd4]">179 €</span> Grundbetrag
+                Das bekommst du für <span className="text-[#6d8fd4]">229 €</span> Grundbetrag
               </h2>
               <p className="text-lg text-neutral-400">
                 Der Grundbetrag umfasst den gesamten Theorieunterricht – komplett & ohne Aufpreis
@@ -563,7 +563,7 @@ const Landing = () => {
 
             <div className="text-center mt-10">
               <Button size="lg" onClick={scrollToForm} className="bg-[#3b5998] hover:bg-[#4a6cb3] text-white text-lg px-10 py-6 rounded-xl font-bold shadow-lg">
-                Jetzt 179 € Angebot sichern
+                Jetzt 229 € Angebot sichern
               </Button>
             </div>
           </div>
@@ -646,7 +646,7 @@ const Landing = () => {
         <section className="py-16 bg-[#3b5998]">
           <div className="max-w-3xl mx-auto px-4 text-center text-white">
             <div className="mb-6">
-              <span className="inline-block bg-white text-[#3b5998] text-4xl lg:text-5xl font-black px-6 py-3 rounded-xl">179 €</span>
+              <span className="inline-block bg-white text-[#3b5998] text-4xl lg:text-5xl font-black px-6 py-3 rounded-xl">229 €</span>
               <span className="block text-lg text-white/80 mt-2 font-normal">Grundbetrag – inkl. gesamter Theorieunterricht</span>
             </div>
             
@@ -655,13 +655,13 @@ const Landing = () => {
             </h2>
             
             <p className="text-xl text-white/90 mb-6">
-              Sicher dir jetzt deinen Platz. Angebot gültig bis 31. Juli 2026.
+              Sicher dir jetzt deinen Platz. Angebot gültig bis 30. September 2026.
             </p>
 
             <CountdownTimer targetDate={OFFER_END_DATE} className="justify-center mb-8" />
             
             <Button size="lg" onClick={scrollToForm} className="bg-white hover:bg-neutral-100 text-[#3b5998] text-xl px-12 py-7 rounded-xl font-bold shadow-lg">
-              Ja, 179 € Angebot sichern!
+              Ja, 229 € Angebot sichern!
             </Button>
 
             <p className="mt-6 text-sm text-white/80">

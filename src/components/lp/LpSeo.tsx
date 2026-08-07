@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import {
-  ADDRESS_LINE,
   LOGO_URL,
   PHONE_RAW,
   REVIEW_COUNT,

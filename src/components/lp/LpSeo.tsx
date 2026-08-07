@@ -69,7 +69,7 @@ const LpSeo: React.FC<LpSeoProps> = ({ title, description, path, faqs }) => {
       <meta name="twitter:url" content={url} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="description-note" content="" />
+      
       <script type="application/ld+json">
         {JSON.stringify({ ...localBusiness, url })}
       </script>

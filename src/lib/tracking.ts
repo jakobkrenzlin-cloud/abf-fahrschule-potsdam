@@ -60,6 +60,11 @@ export function captureAttribution(): void {
       ts: Date.now(),
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(record));
+    try {
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(record));
+    } catch {
+      // sessionStorage optional
+    }
   } catch {
     // localStorage nicht verfügbar – Tracking ist optional
   }
@@ -67,11 +72,15 @@ export function captureAttribution(): void {
 
 export function getAttribution(): Omit<Attribution, 'ts'> {
   const stored = readStored();
-  if (!stored) return {};
-  const { ts: _ts, ...fields } = stored;
-  return Object.fromEntries(
+  const fields = stored ? (({ ts: _ts, ...rest }) => rest)(stored) : {};
+  const cleaned = Object.fromEntries(
     Object.entries(fields).filter(([, v]) => typeof v === 'string' && v.length > 0)
-  );
+  ) as Omit<Attribution, 'ts'>;
+  // Fehlende Kampagnen-Parameter als "direkt" kennzeichnen
+  for (const key of UTM_KEYS) {
+    if (!cleaned[key]) cleaned[key] = 'direkt';
+  }
+  return cleaned;
 }
 
 function gtagEvent(params: Record<string, unknown>): void {
@@ -120,6 +129,17 @@ function initTelClickTracking(): void {
     },
     { capture: true }
   );
+}
+
+export function trackPageView(path: string): void {
+  const gtag = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
+  if (typeof gtag === 'function') {
+    gtag('event', 'page_view', {
+      page_path: path,
+      page_location: window.location.href,
+      page_title: document.title,
+    });
+  }
 }
 
 let initialized = false;

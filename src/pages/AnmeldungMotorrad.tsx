@@ -1,135 +1,238 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import { Phone, ArrowDown } from 'lucide-react';
-import { Button } from "@/components/ui/button";
-import MotorradHero from '@/components/motorrad/MotorradHero';
-import B196Offer from '@/components/motorrad/B196Offer';
-import MotorradOffer from '@/components/motorrad/MotorradOffer';
-import MotorradAdvantages from '@/components/motorrad/MotorradAdvantages';
-import MotorradTestimonials from '@/components/motorrad/MotorradTestimonials';
-import MotorradProcess from '@/components/motorrad/MotorradProcess';
-import MotorradContactForm from '@/components/motorrad/MotorradContactForm';
-import MotorradFlyerSection from '@/components/motorrad/MotorradFlyerSection';
+import React, { useState } from 'react';
+import { Bike, ArrowRight } from 'lucide-react';
+import LpSeo from '@/components/lp/LpSeo';
+import LpHeader from '@/components/lp/LpHeader';
+import UrgencyBar from '@/components/lp/UrgencyBar';
+import LpHero from '@/components/lp/LpHero';
+import LeadForm from '@/components/lp/LeadForm';
+import PriceBlock from '@/components/lp/PriceBlock';
+import SocialProof from '@/components/lp/SocialProof';
+import Steps from '@/components/lp/Steps';
+import WhyAbfCards from '@/components/lp/WhyAbfCards';
+import FaqBlock from '@/components/lp/FaqBlock';
+import LocationSection from '@/components/lp/LocationSection';
+import FinalCta from '@/components/lp/FinalCta';
+import StickyMobileCta from '@/components/lp/StickyMobileCta';
+import Reveal from '@/components/lp/Reveal';
+import type { Faq, Review, Step } from '@/components/lp/constants';
+
+const FORM_ID = 'lead-form-motorrad';
+const HERO_ID = 'hero-motorrad';
+
+const CLASS_OPTIONS = [
+  { value: 'a1', label: 'A1 – ab 16 Jahren (125 ccm)' },
+  { value: 'a2', label: 'A2 – ab 18 Jahren (bis 35 kW)' },
+  { value: 'a', label: 'A – unbegrenzt' },
+  { value: 'a_unklar', label: 'Weiß noch nicht – bitte beraten' },
+];
+
+const CLASS_CARDS = [
+  {
+    value: 'a1',
+    title: 'A1',
+    age: 'ab 16 Jahren',
+    power: 'bis 125 ccm / 11 kW',
+    tag: 'Der Einstieg',
+  },
+  {
+    value: 'a2',
+    title: 'A2',
+    age: 'ab 18 Jahren',
+    power: 'bis 35 kW',
+    tag: 'Der Stufenweg, Aufstieg nach 2 Jahren',
+  },
+  {
+    value: 'a',
+    title: 'A',
+    age: 'ab 24 Jahren (bzw. Aufstieg)',
+    power: 'unbegrenzt',
+    tag: 'Der Direkteinstieg',
+  },
+];
+
+const REVIEWS: Review[] = [
+  {
+    name: 'Bogdan Kotenko',
+    text: 'Fahrlehrer Mohamed - ist der beste Fahrlehrer!!! 100% Weiterempfehlung! Motorrad Führerschein beim ersten Versuch bekommen!! ABF Fahrschule - weiter so!',
+  },
+  {
+    name: 'Leander Fischer',
+    text: 'Ich habe bei der ABF Fahrschule meinen A1 Schein gemacht und beim ersten Mal bestanden. Mit meinem Fahrlehrer Mohamed bin ich auch super zufrieden gewesen und er hat mich sehr gut auf die Prüfung vorbereitet :)',
+  },
+  {
+    name: 'Yasin Dinc',
+    text: 'Top Fahrschule , Motorrad Führerschein da gemacht , lief alles reibungslos . Preis leistungs Verhältnis super . Sehr empfehlenswert',
+  },
+];
+
+const STEPS: Step[] = [
+  { title: 'Klasse wählen & Formular ausfüllen', text: 'A1, A2 oder A – oder wir beraten dich dazu.' },
+  { title: 'Rückmeldung in 24 Stunden', text: 'Kurzer Anruf, alles Weitere besprechen wir persönlich.' },
+  { title: 'Beratung & Klassencheck', text: 'Welche Klasse passt wirklich zu dir und deinem Alter?' },
+  { title: 'Theorie starten, im Frühjahr fahren', text: 'Winter für die Theorie nutzen – zur Saison bist du startklar.' },
+];
+
+const FAQS: Faq[] = [
+  {
+    question: 'Welche Klasse ist die richtige für mich?',
+    answer:
+      'Mit 16 kommt nur A1 in Frage (bis 125 ccm / 11 kW). Ab 18 ist A2 der übliche Weg (bis 35 kW), nach 2 Jahren A2 kannst du unkompliziert auf A aufsteigen. Den Direkteinstieg in Klasse A gibt es ab 24 Jahren. Wir schauen im Beratungsgespräch gemeinsam, was für dich am sinnvollsten ist.',
+  },
+  {
+    question: 'Lohnt es sich, im Herbst anzufangen?',
+    answer:
+      'Ja – genau deshalb gibt es das Herbst-Angebot. Du machst Theorie und Vorbereitung in der ruhigen Jahreszeit, wenn Termine gut verfügbar sind. Wenn im Frühjahr die Saison losgeht, fährst du bereits, statt auf einen Platz zu warten.',
+  },
+  {
+    question: 'Habt ihr eigene Motorräder zum Üben?',
+    answer:
+      'Ja, wir bilden auf unseren eigenen, gepflegten Schulungsmotorrädern aus. Du brauchst kein eigenes Motorrad.',
+  },
+  {
+    question: 'Brauche ich eigene Schutzkleidung?',
+    answer:
+      'Für die Fahrstunden brauchst du Motorradbekleidung (Helm, Handschuhe, Jacke, Hose, feste Stiefel). Sprich uns an – wir sagen dir genau, was nötig ist, und mit dem Louis- und Polo-Gutschein aus dem Angebot wird die Erstausstattung günstiger.',
+  },
+  {
+    question: 'Was kostet der Motorradführerschein insgesamt?',
+    answer:
+      'Der Grundbetrag beträgt im Herbst-Angebot 399 €. Dazu kommen die Fahrstunden: Übungsstunde (45 Min.) 75 €, Unterweisung (45 Min.) 75 €, besondere Ausbildungsfahrt (45 Min.) 85 €. Wie viele Stunden du brauchst, hängt von deiner Vorerfahrung ab – amtliche Gebühren kommen zusätzlich dazu.',
+  },
+  {
+    question: 'Kann ich später von A2 auf A aufsteigen?',
+    answer:
+      'Ja. Nach 2 Jahren Besitz der Klasse A2 ist der Aufstieg auf A über eine Aufstiegsschulung mit praktischer Prüfung möglich – ohne erneute Theorieprüfung.',
+  },
+  {
+    question: 'Ich habe schon Klasse B – bringt mir das etwas?',
+    answer:
+      'Ja. Wenn du mindestens 25 bist und deinen Autoführerschein seit mindestens 5 Jahren hast, kannst du mit der Schlüsselzahl B196 ohne Prüfung 125er fahren. Alle Infos dazu findest du auf unserer B196-Seite unter /b196.',
+  },
+];
 
 const AnmeldungMotorrad = () => {
+  const [licenseClass, setLicenseClass] = useState('a2');
+
   const scrollToForm = () => {
-    document.getElementById('motorrad-form')?.scrollIntoView({
-      behavior: 'smooth'
-    });
+    document.getElementById(FORM_ID)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
 
-  // Inline CTA Component - Updated to blue theme
-  const InlineCTA = ({ text, variant = "default" }: { text: string; variant?: "default" | "dark" }) => (
-    <div className={`py-6 sm:py-10 ${variant === "dark" ? "bg-gradient-to-r from-[#2a4a7f] to-black" : "bg-[#3b5998]"}`}>
-      <div className="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
-        <p className="text-white text-base sm:text-lg lg:text-xl font-semibold text-center sm:text-left">
-          {text}
-        </p>
-        <Button
-          onClick={scrollToForm}
-          size="lg"
-          className={`${variant === "dark" 
-            ? "bg-[#3b5998] hover:bg-[#4a6cb3]" 
-            : "bg-white text-[#3b5998] hover:bg-neutral-100"
-          } font-bold rounded-xl px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg whitespace-nowrap transition-all hover:scale-105 w-full sm:w-auto`}
-        >
-          Jetzt Platz sichern
-          <ArrowDown className="w-4 sm:w-5 h-4 sm:h-5 ml-2" />
-        </Button>
-      </div>
-    </div>
-  );
+  const chooseClass = (value: string) => {
+    setLicenseClass(value);
+    scrollToForm();
+  };
 
   return (
     <>
-      <Helmet>
-        <title>B196 Führerschein Potsdam | Komplettpreis 750 € – auch Motorrad A/A2 – ABF</title>
-        <meta
-          name="description"
-          content="B196 in Potsdam: mit dem Autoführerschein 125ccm fahren. Komplettpreis 750 € inkl. komplettem Theorieunterricht, ohne erneute Prüfung. Jetzt Platz sichern."
-        />
-        <meta name="keywords" content="B196 Potsdam, B196 Führerschein, 125ccm mit Autoführerschein, Motorradführerschein Potsdam, A2 Führerschein Potsdam" />
-        <link rel="canonical" href="https://abf-fahrschule.de/anmeldungmotorrad" />
-      </Helmet>
+      <LpSeo
+        title="Motorradführerschein Potsdam – A1, A2, A ab 399 € | ABF Fahrschule"
+        description="Motorradführerschein in Potsdam: A1 ab 16, A2 ab 18, Klasse A. Herbst-Angebot 399 € bis 31. Oktober – jetzt Theorie machen, im Frühjahr fahren."
+        path="/anmeldungmotorrad"
+        faqs={FAQS}
+      />
 
-      <div className="min-h-screen bg-black">
-        {/* Minimal Header - Blue gradient theme */}
-        <header className="bg-gradient-to-r from-[#1a2d4a] to-black py-3 border-b border-[#3b5998]/30">
-          <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
-            <img src="/abf-logo.png" alt="ABF Fahrschule Potsdam" className="h-12 w-auto" loading="eager" />
-            <div className="hidden md:flex items-center gap-4">
-              <div className="flex items-center gap-3 text-white text-sm">
-                <Phone className="w-4 h-4 text-[#3b5998]" />
-                <div className="leading-tight">
-                  <a href="tel:+4933196795854" className="block hover:text-[#6d8fd4] transition-colors"><span className="text-[#6d8fd4]">Festnetz:</span> <span className="font-semibold">+49 331 96795854</span></a>
-                  <a href="tel:+491622191290" className="block hover:text-[#6d8fd4] transition-colors"><span className="text-[#6d8fd4]">Mobil:</span> <span className="font-semibold">+49 162 2191290</span></a>
-                </div>
-              </div>
-              <Button
-                onClick={scrollToForm}
-                size="sm"
-                className="bg-[#3b5998] hover:bg-[#4a6cb3] text-white font-semibold rounded-lg"
-              >
-                Jetzt anmelden
-              </Button>
-            </div>
-          </div>
-        </header>
+      <div className="min-h-screen bg-white font-sans">
+        <LpHeader onCtaClick={scrollToForm} />
+        <UrgencyBar />
 
-        {/* Hero Section */}
-        <MotorradHero onCtaClick={scrollToForm} />
-
-        {/* CTA after Hero */}
-        <InlineCTA text="B196 oder Motorrad-Klasse A – jetzt Platz für 2026 sichern!" />
-
-        {/* B196 Offer (top priority – ~80% search intent) */}
-        <B196Offer onCtaClick={scrollToForm} />
-
-        {/* Klasse-A Offer Section (599€) */}
-        <MotorradOffer />
-
-        {/* Flyer Section */}
-        <MotorradFlyerSection />
-
-        {/* CTA after Offer */}
-        <InlineCTA text="Spare jetzt über 280€ – Angebot gilt nur bis 31. August!" variant="dark" />
-
-        {/* Trust & Authority Section */}
-        <MotorradAdvantages />
-
-        {/* Social Proof / Testimonials */}
-        <MotorradTestimonials />
-
-        {/* CTA after Testimonials */}
-        <InlineCTA text="Werde auch du Teil unserer Biker-Community!" />
-
-        {/* Process Steps */}
-        <MotorradProcess />
-
-        {/* Contact Form Section */}
-        <MotorradContactForm />
-
-        {/* Footer - Blue gradient */}
-        <footer className="bg-gradient-to-r from-[#1a2d4a] to-black text-neutral-400 py-8 pb-24 md:pb-8">
-          <div className="max-w-5xl mx-auto px-4 text-center">
-            <p className="text-sm">
-              © {new Date().getFullYear()} ABF Fahrschule Potsdam |{' '}
-              <a href="/impressum" className="hover:text-[#6d8fd4] underline">Impressum</a> |{' '}
-              <a href="/datenschutz" className="hover:text-[#6d8fd4] underline">Datenschutz</a> |{' '}
-              <a href="/agb" className="hover:text-[#6d8fd4] underline">AGB</a>
-            </p>
-          </div>
-        </footer>
-
-        {/* Mobile Sticky CTA - Blue theme */}
-        <div className="fixed bottom-0 left-0 right-0 p-4 bg-black/95 backdrop-blur-sm border-t border-[#3b5998]/30 md:hidden z-50 safe-area-inset-bottom">
-          <Button
-            onClick={scrollToForm}
-            className="w-full bg-[#3b5998] hover:bg-[#4a6cb3] text-white h-14 text-lg font-bold rounded-xl shadow-lg"
+        <main>
+          <LpHero
+            id={HERO_ID}
+            headline="Motorradführerschein Potsdam – jetzt starten, im Frühjahr fahren"
+            subline="A1 ab 16, A2 ab 18 oder Klasse A. Herbst-Angebot 399 € – Theorie im Winter, und wenn die Saison beginnt, bist du startklar. Nur bis 31. Oktober."
+            chips={[
+              'Eigene Schulungsmotorräder',
+              '5,0★ bei Google',
+              'Im Frühjahr sofort auf die Straße',
+            ]}
           >
-            Jetzt Platz sichern & 50€ sparen
-          </Button>
-        </div>
+            <LeadForm
+              id={FORM_ID}
+              ctaLabel="Motorrad-Platz sichern"
+              source="landingpage-motorrad"
+              classOptions={CLASS_OPTIONS}
+              licenseClass={licenseClass}
+              onLicenseClassChange={setLicenseClass}
+              whatsappText="Hallo, ich interessiere mich für den Motorradführerschein (Herbst-Angebot 399 €)."
+              trackingSource="landing-motorrad"
+            />
+          </LpHero>
+
+          {/* Klassen-Vergleich */}
+          <section className="py-12 md:py-16 bg-white" aria-labelledby="klassen-heading">
+            <div className="max-w-6xl mx-auto px-4">
+              <Reveal>
+                <h2
+                  id="klassen-heading"
+                  className="text-2xl md:text-4xl font-bold text-[#13243A] text-center"
+                >
+                  Welche Klasse passt zu dir?
+                </h2>
+              </Reveal>
+              <div className="mt-8 grid gap-5 md:grid-cols-3">
+                {CLASS_CARDS.map((c, i) => (
+                  <Reveal key={c.value} delay={i * 80}>
+                    <div className="h-full flex flex-col bg-[#F4F7FA] rounded-2xl p-6 border border-black/5">
+                      <Bike className="w-8 h-8 text-[#1A9CFF]" aria-hidden="true" />
+                      <h3 className="mt-3 text-3xl font-extrabold text-[#13243A]">{c.title}</h3>
+                      <p className="mt-2 text-[#1C1C1C]">{c.age}</p>
+                      <p className="text-[#1C1C1C]">{c.power}</p>
+                      <p className="mt-3 text-sm font-semibold text-[#1A9CFF]">{c.tag}</p>
+                      <button
+                        type="button"
+                        onClick={() => chooseClass(c.value)}
+                        className="mt-6 min-h-[56px] w-full rounded-xl bg-[#13243A] hover:bg-[#1b3357] text-white font-bold inline-flex items-center justify-center gap-2 transition-colors"
+                      >
+                        Diese Klasse wählen
+                        <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                      </button>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <PriceBlock
+            badge="Herbst-Angebot"
+            price="399 €"
+            title="399 € Herbst-Angebot – das ist drin"
+            included={[
+              'Anmeldung & Verwaltung',
+              'Kompletter Theorieunterricht',
+              'Motorrad-spezifische Theorie',
+              '100 € Louis und Polo Gutschein',
+              'Prüfungsvorbereitung',
+              '1 Jahr ADAC-Mitgliedschaft',
+            ]}
+            extras={[
+              { label: 'Übungsstunde (45 Min.)', price: '75 €' },
+              { label: 'Unterweisung (45 Min.)', price: '75 €' },
+              { label: 'Besondere Ausbildungsfahrten (45 Min.)', price: '85 €' },
+            ]}
+          />
+
+          <SocialProof reviews={REVIEWS} />
+          <Steps steps={STEPS} />
+          <WhyAbfCards />
+          <FaqBlock faqs={FAQS} />
+          <LocationSection />
+
+          <FinalCta
+            headline="Herbst-Angebot: 399 € – nur noch bis 31. Oktober"
+            subline="Theorie jetzt, Fahrspaß im Frühjahr. Kostenlos & unverbindlich anfragen."
+            buttonLabel="Motorrad-Platz sichern"
+            onClick={scrollToForm}
+          />
+        </main>
+
+        <div className="h-20 md:hidden" aria-hidden="true" />
+        <StickyMobileCta
+          heroId={HERO_ID}
+          formId={FORM_ID}
+          onCtaClick={scrollToForm}
+          trackingSource="landing-motorrad-sticky"
+        />
       </div>
     </>
   );

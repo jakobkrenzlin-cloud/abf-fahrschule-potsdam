@@ -3,9 +3,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { CookieConsent } from "@/components/CookieConsent";
-import { initTracking } from "@/lib/tracking";
+import { initTracking, trackPageView } from "@/lib/tracking";
 
 // Eager-load home route (most common entry, also drives LCP)
 import Index from "./pages/Index";
@@ -35,17 +36,27 @@ const RouteFallback = () => (
   </div>
 );
 
+const PageViewTracker = () => {
+  const location = useLocation();
+  useEffect(() => {
+    trackPageView(location.pathname + location.search);
+  }, [location.pathname, location.search]);
+  return null;
+};
+
 const App = () => {
   useEffect(() => {
     initTracking();
   }, []);
 
   return (
+    <HelmetProvider>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <PageViewTracker />
           <CookieConsent />
           <Suspense fallback={<RouteFallback />}>
             <Routes>
@@ -71,6 +82,7 @@ const App = () => {
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
+    </HelmetProvider>
   );
 };
 

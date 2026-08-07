@@ -60,6 +60,11 @@ export function captureAttribution(): void {
       ts: Date.now(),
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(record));
+    try {
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(record));
+    } catch {
+      // sessionStorage optional
+    }
   } catch {
     // localStorage nicht verfügbar – Tracking ist optional
   }
@@ -120,6 +125,17 @@ function initTelClickTracking(): void {
     },
     { capture: true }
   );
+}
+
+export function trackPageView(path: string): void {
+  const gtag = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
+  if (typeof gtag === 'function') {
+    gtag('event', 'page_view', {
+      page_path: path,
+      page_location: window.location.href,
+      page_title: document.title,
+    });
+  }
 }
 
 let initialized = false;

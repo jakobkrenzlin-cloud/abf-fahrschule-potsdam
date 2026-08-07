@@ -72,11 +72,15 @@ export function captureAttribution(): void {
 
 export function getAttribution(): Omit<Attribution, 'ts'> {
   const stored = readStored();
-  if (!stored) return {};
-  const { ts: _ts, ...fields } = stored;
-  return Object.fromEntries(
+  const fields = stored ? (({ ts: _ts, ...rest }) => rest)(stored) : {};
+  const cleaned = Object.fromEntries(
     Object.entries(fields).filter(([, v]) => typeof v === 'string' && v.length > 0)
-  );
+  ) as Omit<Attribution, 'ts'>;
+  // Fehlende Kampagnen-Parameter als "direkt" kennzeichnen
+  for (const key of UTM_KEYS) {
+    if (!cleaned[key]) cleaned[key] = 'direkt';
+  }
+  return cleaned;
 }
 
 function gtagEvent(params: Record<string, unknown>): void {

@@ -36,17 +36,27 @@ const RouteFallback = () => (
   </div>
 );
 
+const PageViewTracker = () => {
+  const location = useLocation();
+  useEffect(() => {
+    trackPageView(location.pathname + location.search);
+  }, [location.pathname, location.search]);
+  return null;
+};
+
 const App = () => {
   useEffect(() => {
     initTracking();
   }, []);
 
   return (
+    <HelmetProvider>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <PageViewTracker />
           <CookieConsent />
           <Suspense fallback={<RouteFallback />}>
             <Routes>

@@ -582,6 +582,7 @@ Auftrag; jede weitere braucht eine neue Freigabe.
 | **ENT-2** | **Motorrad Klasse A / A1 / A2 Grundbetrag = 399 € (Herbst-Angebot)** | `Preise.tsx:124-125` („statt 650 €" / „550 €") und `FAQSection.tsx:33` („ab 599 €") → beide müssen 399 € werden. Korrekt sind bereits: AnmeldungMotorrad.tsx:198, OffersSection.tsx:95, ContactSection.tsx:99-101 |
 | **ENT-3** | **B196 = 750 € Festpreis** | Keine Abweichung gefunden — B196.tsx:227 und OffersSection.tsx:125 stimmen bereits überein |
 | **ENT-4** | **Einzige gültige E-Mail-Adresse: `kontakt@abf-fahrschule.de`** | `potsdam@fahrschuleabf.de` an 8 Stellen (OffersSection.tsx:159-160, QuickContact.tsx:25-26, ContactSection.tsx:275-276, SuccessfulStudentsSection.tsx:99, JobSection.tsx:64, Karriere.tsx ~560/~619, KarriereDanke.tsx:75) und `info@abf-fahrschule-potsdam.de` an 1 Stelle (Danke.tsx:87-88) → alle ersetzen. Korrekt sind bereits: Impressum.tsx:38, Kontakt.tsx:35/133/143, Footer.tsx:98-99 |
+| **ENT-5** | **Fahrstundenpreise: die Werte der übrigen Website sind korrekt** — Übungsstunde/Übungsfahrt **67,50 €**, Sonderfahrten (Überland/Autobahn/Nacht) **75 €** | AGB § 3 nannte abweichend 69 € / 79 € → **korrigiert am 09.08.2026** in AGB.tsx:43-46. Einzige Ausnahme vom Rechtstext-Einfrieren (🔒 N01), ausdrücklich von Jakob freigegeben, weil § 3 die Preisaushangpflicht nach § 32 FahrlG erfüllt und falsche Preise dort ein Rechtsrisiko sind. |
 
 **AGB-Abgleich durchgeführt (Z13 aufgelöst → neuer Befund Z14):**
 Der Grundbetrag in den AGB stimmt mit ENT-1 überein („Grundbetrag (199 € Herbst-Angebot)",
@@ -607,7 +608,7 @@ Funnel für Bewerber, nicht Teil des Lead-Funnels). Sie kommen erst nach den Kun
 | Z11 | **„Vorstellung zur theoretischen Prüfung"**: `/anmeldung` und `/preise` sagen „im Grundbetrag enthalten", `/theorie` sagt zweimal „erfolgt **zusätzlich**" | Landing.tsx:139 · Preise.tsx:86,176 vs. Theorie.tsx:72,140 [V] |
 | Z12 | 404-Seite ist **auf Englisch** („Oops! Page not found", „Return to Home") und hat weder Header noch Footer | NotFound.tsx:14-23 [V] |
 | Z13 | ~~AGB-Preise noch nicht abgeglichen~~ → **erledigt 09.08.2026**, Ergebnis in Z14 | AGB.tsx:32-97 [V] |
-| **Z14** | 🚨 **Die AGB nennen andere Fahrstundenpreise als der Rest der Website.** AGB § 3: Übungsfahrt **69 €**, Sonderfahrt Überland/Autobahn/Nachtfahrt je **79 €**. Überall sonst: Übungsstunde **67,50 €**, Besondere Ausbildungsfahrten **75 €**. Da § 3 ausdrücklich „gemäß § 32 FahrlG" überschrieben ist, ist das eine **rechtlich relevante Abweichung**, kein Designproblem. **Nicht von mir zu entscheiden.** | AGB.tsx:43-46 vs. Preise.tsx:97-106, Landing.tsx:143-147, OffersSection.tsx:44 [V] |
+| Z14 | ~~AGB nannten abweichende Fahrstundenpreise (69 € / 79 €)~~ → **erledigt 09.08.2026**: auf 67,50 € / 75 € korrigiert, siehe ENT-5. Commit `AGB-Fahrstundenpreise korrigiert` | AGB.tsx:43-46 [V] |
 | **Z15** | In AGB § 3 steht der Punkt **„ADAC 1 Jahr kostenlos" doppelt** untereinander | AGB.tsx:36-37 [V] |
 
 ---

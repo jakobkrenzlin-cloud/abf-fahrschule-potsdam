@@ -30,7 +30,7 @@ const MotorradHero: React.FC<MotorradHeroProps> = ({ onCtaClick }) => {
           {/* Trust Badge */}
           <div className="inline-flex items-center gap-2 bg-[#3b5998]/20 border border-[#3b5998]/40 px-3 py-1.5 rounded-full text-xs sm:text-sm font-bold mb-4 text-white">
             <Star className="w-4 h-4 fill-current text-[#6d8fd4]" />
-            4,9 ★ aus 120 Google-Bewertungen
+            5,0 ★ aus 26 Google-Bewertungen
           </div>
 
           {/* H1 – B196 first */}

@@ -5,7 +5,7 @@ import { HelpCircle } from 'lucide-react';
 const ConversionFAQ = () => {
   const faqs = [
     {
-      question: "Wie schnell kann ich mit dem 179€ Sommer Angebot starten?",
+      question: "Wie schnell kann ich mit dem 199€ Herbst-Angebot starten?",
       answer: "Du kannst sofort nach der Anmeldung beginnen! Der Theorieunterricht startet wöchentlich neu, und in nur einer Woche bist du mit der Theorie fertig. Deine erste Fahrstunde kann bereits in der ersten Woche stattfinden."
     },
     {
@@ -13,7 +13,7 @@ const ConversionFAQ = () => {
       answer: "Selbstverständlich bieten wir auch BF17 (Begleitetes Fahren ab 17) an! Bei Minderjährigen benötigen wir die schriftliche Einwilligung der Erziehungsberechtigten. Die entsprechenden Formulare erhältst du nach der Anmeldung automatisch von uns zugeschickt."
     },
     {
-      question: "Kann ich das 179€ Sommer Angebot in Raten zahlen?", 
+      question: "Kann ich das 199€ Herbst-Angebot in Raten zahlen?", 
       answer: "Ja, das ist möglich! Du kannst das Paket in 2-3 bequemen Raten aufteilen. Weitere Fahrstunden können einzeln oder in Paketen dazu gebucht werden. Sprich uns einfach auf flexible Zahlungsmöglichkeiten an."
     },
     {
@@ -22,11 +22,11 @@ const ConversionFAQ = () => {
     },
     {
       question: "Was passiert, wenn ich länger brauche als geplant?",
-      answer: "Kein Problem! Jeder lernt in seinem eigenen Tempo. Das 179€ Sommer Angebot bleibt gültig und weitere Fahrstunden buchst du einfach dazu. Wir begleiten dich, bis du sicher fährst und die Prüfung bestehst."
+      answer: "Kein Problem! Jeder lernt in seinem eigenen Tempo. Das 199€ Herbst-Angebot bleibt gültig und weitere Fahrstunden buchst du einfach dazu. Wir begleiten dich, bis du sicher fährst und die Prüfung bestehst."
     },
     {
-       question: "Was ist im 179€ Grundbetrag enthalten?",
-       answer: "Der Grundbetrag von 179€ enthält den kompletten Theorieunterricht und ADAC 1 Jahr kostenlos. In nur einer Woche bist du mit der Theorie fertig! Zusätzlich: Fahrstunden 67,50€/45 Min., Übungsstunden 67,50€/45 Min., Besondere Ausbildungsfahrten 75€/45 Min. Alle Preise gemäß § 32 FahrlG transparent aufgelistet."
+       question: "Was ist im 199€ Grundbetrag enthalten?",
+       answer: "Der Grundbetrag von 199€ enthält den kompletten Theorieunterricht und ADAC 1 Jahr kostenlos. In nur einer Woche bist du mit der Theorie fertig! Zusätzlich: Fahrstunden 67,50€/45 Min., Übungsstunden 67,50€/45 Min., Besondere Ausbildungsfahrten 75€/45 Min. Alle Preise gemäß § 32 FahrlG transparent aufgelistet."
     }
   ];
 
@@ -41,7 +41,7 @@ const ConversionFAQ = () => {
             </h2>
           </div>
           <p className="text-lg text-gray-600">
-            Hier findest du Antworten auf die wichtigsten Fragen zu unserem 179€ Sommer Angebot
+            Hier findest du Antworten auf die wichtigsten Fragen zu unserem 199€ Herbst-Angebot
           </p>
         </div>
         

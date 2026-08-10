@@ -12,8 +12,8 @@ interface LpHeroProps {
 }
 
 const LpHero: React.FC<LpHeroProps> = ({ id, headline, subline, chips, children }) => (
-  <section id={id} className="bg-ink py-10 md:py-16">
-    <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
+  <section id={id} className="bg-ink section-y">
+    <div className="container-page grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
       <div>
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15">
           <Stars className="w-4 h-4" />

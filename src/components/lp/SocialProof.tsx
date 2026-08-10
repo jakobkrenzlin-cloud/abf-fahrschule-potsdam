@@ -12,12 +12,12 @@ export const Stars: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' 
 );
 
 const SocialProof: React.FC<{ reviews: Review[] }> = ({ reviews }) => (
-  <section className="py-12 md:py-16 bg-white" aria-labelledby="reviews-heading">
-    <div className="max-w-6xl mx-auto px-4">
+  <section className="section-y bg-card" aria-labelledby="reviews-heading">
+    <div className="container-page">
       <Reveal>
         <h2
           id="reviews-heading"
-          className="text-2xl md:text-4xl font-bold text-brand-dark text-center"
+          className="text-h2 md:text-h2-lg text-brand-dark text-center"
         >
           Das sagen unsere Fahrschüler
         </h2>
@@ -36,7 +36,7 @@ const SocialProof: React.FC<{ reviews: Review[] }> = ({ reviews }) => (
               </blockquote>
               <figcaption className="mt-4 flex items-center justify-between gap-3">
                 <span className="font-semibold text-brand-dark">{r.name}</span>
-                <span className="text-xs px-2 py-1 rounded bg-white border border-black/10 text-ink/70">
+                <span className="text-xs px-2 py-1 rounded bg-card border border-black/10 text-ink/70">
                   Google
                 </span>
               </figcaption>

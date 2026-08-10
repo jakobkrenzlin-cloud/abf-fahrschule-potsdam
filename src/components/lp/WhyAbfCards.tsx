@@ -12,10 +12,10 @@ const CARDS = [
 ];
 
 const WhyAbfCards: React.FC = () => (
-  <section className="py-12 md:py-16 bg-brand-dark" aria-labelledby="warum-heading">
-    <div className="max-w-6xl mx-auto px-4">
+  <section className="section-y bg-brand-dark" aria-labelledby="warum-heading">
+    <div className="container-page">
       <Reveal>
-        <h2 id="warum-heading" className="text-2xl md:text-4xl font-bold text-white text-center">
+        <h2 id="warum-heading" className="text-h2 md:text-h2-lg text-white text-center">
           Warum ABF
         </h2>
       </Reveal>

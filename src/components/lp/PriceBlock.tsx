@@ -19,10 +19,10 @@ const PriceBlock: React.FC<PriceBlockProps> = ({
   extras,
   closing = 'Keine versteckten Kosten. Du bekommst vor dem Start eine vollständige Übersicht.',
 }) => (
-  <section className="py-12 md:py-16 bg-surface" aria-labelledby="preis-heading">
+  <section className="section-y bg-surface" aria-labelledby="preis-heading">
     <div className="max-w-4xl mx-auto px-4">
       <Reveal>
-        <div className="bg-white rounded-2xl shadow-sm border border-black/5 p-6 md:p-10">
+        <div className="bg-card rounded-2xl shadow-sm border border-black/5 p-6 md:p-10">
           <span className="inline-block px-3 py-1 rounded-full bg-warning/15 text-warning text-sm font-bold">
             {badge}
           </span>

@@ -48,7 +48,7 @@ const StickyMobileCta: React.FC<StickyMobileCtaProps> = ({
 
   return (
     <div
-      className={`md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-black/10 shadow-[0_-4px_16px_rgba(0,0,0,0.08)] transition-transform duration-300 ${
+      className={`md:hidden fixed bottom-0 left-0 right-0 z-50 bg-card border-t border-black/10 shadow-[0_-4px_16px_rgba(0,0,0,0.08)] transition-transform duration-300 ${
         show ? 'translate-y-0' : 'translate-y-full'
       }`}
       style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}

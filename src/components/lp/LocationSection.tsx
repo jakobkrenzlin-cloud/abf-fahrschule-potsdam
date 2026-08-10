@@ -4,10 +4,10 @@ import Reveal from './Reveal';
 import { ADDRESS_LINE, MAPS_URL } from './constants';
 
 const LocationSection: React.FC = () => (
-  <section className="py-12 md:py-16 bg-white" aria-labelledby="standort-heading">
+  <section className="section-y bg-card" aria-labelledby="standort-heading">
     <div className="max-w-4xl mx-auto px-4">
       <Reveal>
-        <h2 id="standort-heading" className="text-2xl md:text-4xl font-bold text-brand-dark text-center">
+        <h2 id="standort-heading" className="text-h2 md:text-h2-lg text-brand-dark text-center">
           So findest du uns
         </h2>
         <div className="mt-8 bg-surface rounded-2xl p-6 md:p-8 border border-black/5 space-y-4">

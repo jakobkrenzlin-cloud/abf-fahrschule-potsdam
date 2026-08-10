@@ -3,17 +3,17 @@ import Reveal from './Reveal';
 import type { Step } from './constants';
 
 const Steps: React.FC<{ steps: Step[] }> = ({ steps }) => (
-  <section className="py-12 md:py-16 bg-surface" aria-labelledby="ablauf-heading">
-    <div className="max-w-6xl mx-auto px-4">
+  <section className="section-y bg-surface" aria-labelledby="ablauf-heading">
+    <div className="container-page">
       <Reveal>
-        <h2 id="ablauf-heading" className="text-2xl md:text-4xl font-bold text-brand-dark text-center">
+        <h2 id="ablauf-heading" className="text-h2 md:text-h2-lg text-brand-dark text-center">
           So läuft's ab
         </h2>
       </Reveal>
       <ol className="mt-8 grid gap-5 md:grid-cols-4">
         {steps.map((step, i) => (
           <Reveal key={step.title} delay={i * 80}>
-            <li className="h-full bg-white rounded-2xl p-6 border border-black/5 list-none">
+            <li className="h-full bg-card rounded-2xl p-6 border border-black/5 list-none">
               <span className="w-11 h-11 rounded-full bg-brand-strong text-white font-bold text-lg flex items-center justify-center">
                 {i + 1}
               </span>

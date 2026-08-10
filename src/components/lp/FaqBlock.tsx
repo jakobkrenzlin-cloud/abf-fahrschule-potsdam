@@ -4,10 +4,10 @@ import Reveal from './Reveal';
 import type { Faq } from './constants';
 
 const FaqBlock: React.FC<{ faqs: Faq[] }> = ({ faqs }) => (
-  <section className="py-12 md:py-16 bg-white" aria-labelledby="faq-heading">
-    <div className="max-w-3xl mx-auto px-4">
+  <section className="section-y bg-card" aria-labelledby="faq-heading">
+    <div className="container-narrow">
       <Reveal>
-        <h2 id="faq-heading" className="text-2xl md:text-4xl font-bold text-brand-dark text-center">
+        <h2 id="faq-heading" className="text-h2 md:text-h2-lg text-brand-dark text-center">
           Häufige Fragen
         </h2>
       </Reveal>

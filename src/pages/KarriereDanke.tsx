@@ -19,7 +19,7 @@ const KarriereDanke = () => {
   }, [location.state]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0D1B2A] text-white">
+    <div className="min-h-screen flex flex-col bg-brand-dark text-white">
       <Helmet>
         <title>Bewerbung eingegangen | ABF Fahrschule Potsdam</title>
         <meta name="robots" content="noindex, nofollow" />
@@ -29,16 +29,16 @@ const KarriereDanke = () => {
         <div className="max-w-2xl mx-auto">
           <Link
             to="/karriere"
-            className="inline-flex items-center gap-2 text-white/60 hover:text-[#1A9CFF] transition-colors text-sm mb-6"
+            className="inline-flex items-center gap-2 text-white/60 hover:text-brand transition-colors text-sm mb-6"
           >
             <ArrowLeft className="w-4 h-4" />
             Zurück zu Karriere
           </Link>
 
-          <div className="bg-[#13243A]/60 border border-white/10 rounded-2xl p-8 md:p-12">
+          <div className="bg-brand-dark/60 border border-white/10 rounded-2xl p-8 md:p-12">
             <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 rounded-full bg-[#1A9CFF]/10 border border-[#1A9CFF]/30 flex items-center justify-center">
-                <CheckCircle2 className="w-12 h-12 text-[#1A9CFF]" />
+              <div className="w-20 h-20 rounded-full bg-brand/10 border border-brand/30 flex items-center justify-center">
+                <CheckCircle2 className="w-12 h-12 text-brand" />
               </div>
             </div>
 
@@ -55,8 +55,8 @@ const KarriereDanke = () => {
                 { n: 2, t: 'Persönliches Gespräch & Probetag', d: 'Du lernst unser Team, die Fahrzeuge und den Alltag kennen.' },
                 { n: 3, t: 'Vertrag & Start', d: 'Wenn es für beide Seiten passt, planen wir deinen Einstieg.' },
               ].map((step) => (
-                <div key={step.n} className="flex gap-4 items-start bg-[#0D1B2A]/60 border border-white/5 rounded-xl p-4">
-                  <div className="w-8 h-8 rounded-full bg-[#1A9CFF] text-white flex items-center justify-center font-bold flex-shrink-0">
+                <div key={step.n} className="flex gap-4 items-start bg-brand-dark/60 border border-white/5 rounded-xl p-4">
+                  <div className="w-8 h-8 rounded-full bg-brand text-white flex items-center justify-center font-bold flex-shrink-0">
                     {step.n}
                   </div>
                   <div>
@@ -68,11 +68,11 @@ const KarriereDanke = () => {
             </div>
 
             <div className="border-t border-white/10 pt-6 mb-8 space-y-3 text-sm">
-              <a href="tel:+4933196795854" className="flex items-center justify-center gap-2 text-white/80 hover:text-[#1A9CFF] transition-colors">
+              <a href="tel:+4933196795854" className="flex items-center justify-center gap-2 text-white/80 hover:text-brand transition-colors">
                 <Phone className="w-4 h-4" />
                 +49 331 96795854
               </a>
-              <a href="mailto:potsdam@fahrschuleabf.de" className="flex items-center justify-center gap-2 text-white/80 hover:text-[#1A9CFF] transition-colors">
+              <a href="mailto:potsdam@fahrschuleabf.de" className="flex items-center justify-center gap-2 text-white/80 hover:text-brand transition-colors">
                 <Mail className="w-4 h-4" />
                 potsdam@fahrschuleabf.de
               </a>
@@ -80,7 +80,7 @@ const KarriereDanke = () => {
 
             <div className="flex justify-center">
               <Link to="/">
-                <Button size="lg" className="bg-[#1A9CFF] hover:bg-[#1A9CFF]/90 text-white">
+                <Button size="lg" className="bg-brand hover:bg-brand/90 text-white">
                   Zurück zur Startseite
                 </Button>
               </Link>

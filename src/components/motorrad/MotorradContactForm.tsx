@@ -101,13 +101,13 @@ const MotorradContactForm: React.FC = () => {
   };
 
   return (
-    <section id="motorrad-form" className="py-10 sm:py-16 lg:py-20 bg-gradient-to-b from-black to-[#1a2d4a]">
+    <section id="motorrad-form" className="py-10 sm:py-16 lg:py-20 bg-gradient-to-b from-black to-brand-dark">
       <div className="max-w-xl mx-auto px-4">
         <div className="text-center mb-6 sm:mb-8">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3">
             Sichere dir jetzt deinen Platz für die Saison 2026!
           </h2>
-          <div className="flex items-center justify-center gap-2 text-[#6d8fd4] mb-2">
+          <div className="flex items-center justify-center gap-2 text-brand mb-2">
             <Clock className="w-4 sm:w-5 h-4 sm:h-5" />
             <p className="font-semibold text-sm sm:text-base">Angebot nur gültig bis zum 31. August</p>
           </div>
@@ -116,7 +116,7 @@ const MotorradContactForm: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-neutral-900 rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 border border-[#3b5998]/20">
+        <div className="bg-neutral-900 rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 border border-brand-strong/20">
           <form onSubmit={handleFormSubmit} className="space-y-4 sm:space-y-5">
             {/* Name Field */}
             <div>
@@ -129,7 +129,7 @@ const MotorradContactForm: React.FC = () => {
                 required
                 value={formData.name}
                 onChange={e => setFormData({ ...formData, name: e.target.value })}
-                className="mt-1.5 h-12 sm:h-14 border-neutral-700 bg-neutral-800 text-white placeholder:text-neutral-500 focus:border-[#3b5998] focus:ring-[#3b5998] rounded-xl text-base sm:text-lg p-3 sm:p-4"
+                className="mt-1.5 h-12 sm:h-14 border-neutral-700 bg-neutral-800 text-white placeholder:text-neutral-500 focus:border-brand-strong focus:ring-brand-strong rounded-xl text-base sm:text-lg p-3 sm:p-4"
                 placeholder="Vor- und Nachname"
                 autoComplete="name"
               />
@@ -147,7 +147,7 @@ const MotorradContactForm: React.FC = () => {
                 required
                 value={formData.phone}
                 onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                className="mt-1.5 h-12 sm:h-14 border-neutral-700 bg-neutral-800 text-white placeholder:text-neutral-500 focus:border-[#3b5998] focus:ring-[#3b5998] rounded-xl text-base sm:text-lg p-3 sm:p-4"
+                className="mt-1.5 h-12 sm:h-14 border-neutral-700 bg-neutral-800 text-white placeholder:text-neutral-500 focus:border-brand-strong focus:ring-brand-strong rounded-xl text-base sm:text-lg p-3 sm:p-4"
                 placeholder="0151 12345678"
                 autoComplete="tel"
               />
@@ -163,7 +163,7 @@ const MotorradContactForm: React.FC = () => {
                 type="email"
                 value={formData.email}
                 onChange={e => setFormData({ ...formData, email: e.target.value })}
-                className="mt-1.5 h-12 sm:h-14 border-neutral-700 bg-neutral-800 text-white placeholder:text-neutral-500 focus:border-[#3b5998] focus:ring-[#3b5998] rounded-xl text-base sm:text-lg p-3 sm:p-4"
+                className="mt-1.5 h-12 sm:h-14 border-neutral-700 bg-neutral-800 text-white placeholder:text-neutral-500 focus:border-brand-strong focus:ring-brand-strong rounded-xl text-base sm:text-lg p-3 sm:p-4"
                 placeholder="deine@email.de"
                 autoComplete="email"
               />
@@ -178,7 +178,7 @@ const MotorradContactForm: React.FC = () => {
                 id="license_class"
                 value={formData.license_class}
                 onChange={e => setFormData({ ...formData, license_class: e.target.value })}
-                className="mt-1.5 w-full h-12 sm:h-14 border border-neutral-700 bg-neutral-800 text-white focus:border-[#3b5998] focus:ring-[#3b5998] rounded-xl text-base sm:text-lg px-4 appearance-none cursor-pointer"
+                className="mt-1.5 w-full h-12 sm:h-14 border border-neutral-700 bg-neutral-800 text-white focus:border-brand-strong focus:ring-brand-strong rounded-xl text-base sm:text-lg px-4 appearance-none cursor-pointer"
               >
                 <option value="b196">B196 – 125ccm mit Autoführerschein (vorausgewählt)</option>
                 <option value="a2">Motorradführerschein A2</option>
@@ -206,11 +206,11 @@ const MotorradContactForm: React.FC = () => {
                   type="checkbox"
                   checked={privacyConsent}
                   onChange={e => setPrivacyConsent(e.target.checked)}
-                  className="mt-1 h-5 w-5 rounded border-neutral-600 bg-neutral-700 text-[#3b5998] focus:ring-[#3b5998] flex-shrink-0"
+                  className="mt-1 h-5 w-5 rounded border-neutral-600 bg-neutral-700 text-brand-strong focus:ring-brand-strong flex-shrink-0"
                 />
                 <span className="text-xs sm:text-sm text-neutral-300 leading-tight">
                   Ich stimme der{' '}
-                  <a href="/datenschutz" target="_blank" className="text-[#6d8fd4] underline font-medium hover:text-[#8aa8e0]">
+                  <a href="/datenschutz" target="_blank" className="text-brand underline font-medium hover:text-[#8aa8e0]">
                     Datenschutzerklärung
                   </a>{' '}
                   zu und bin damit einverstanden, dass mich ABF Fahrschule kontaktiert.
@@ -223,14 +223,14 @@ const MotorradContactForm: React.FC = () => {
               type="submit"
               size="lg"
               disabled={isSubmitting}
-              className="w-full bg-[#3b5998] hover:bg-[#4a6cb3] text-white h-14 sm:h-16 text-base sm:text-lg font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50"
+              className="w-full bg-brand-strong hover:bg-brand text-white h-14 sm:h-16 text-base sm:text-lg font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50"
             >
               {isSubmitting ? "Wird gesendet..." : "Jetzt anfragen & Platz sichern"}
             </Button>
 
             {/* Trust Elements */}
             <div className="flex items-center justify-center gap-2 text-xs sm:text-sm text-neutral-400 pt-2 text-center">
-              <Lock className="w-4 h-4 text-[#3b5998] flex-shrink-0" />
+              <Lock className="w-4 h-4 text-brand-strong flex-shrink-0" />
               <span>Deine Daten sind sicher. Wir rufen dich zurück.</span>
             </div>
           </form>
@@ -242,7 +242,7 @@ const MotorradContactForm: React.FC = () => {
               <Button
                 onClick={handleWhatsApp}
                 variant="outline"
-                className="flex-1 border-[#3b5998] text-[#6d8fd4] hover:bg-[#3b5998] hover:text-white h-11 sm:h-12 font-semibold rounded-xl bg-transparent text-sm sm:text-base"
+                className="flex-1 border-brand-strong text-brand hover:bg-brand-strong hover:text-white h-11 sm:h-12 font-semibold rounded-xl bg-transparent text-sm sm:text-base"
               >
                 <MessageCircle className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
                 WhatsApp
@@ -250,7 +250,7 @@ const MotorradContactForm: React.FC = () => {
               <Button
                 asChild
                 variant="outline"
-                className="flex-1 border-[#3b5998] text-[#6d8fd4] hover:bg-[#3b5998] hover:text-white h-11 sm:h-12 font-semibold rounded-xl bg-transparent text-sm sm:text-base"
+                className="flex-1 border-brand-strong text-brand hover:bg-brand-strong hover:text-white h-11 sm:h-12 font-semibold rounded-xl bg-transparent text-sm sm:text-base"
               >
                 <a href="tel:+491622191290">
                   <Phone className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />

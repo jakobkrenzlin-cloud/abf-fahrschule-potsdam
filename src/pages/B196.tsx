@@ -135,16 +135,16 @@ const B196 = () => {
           </LpHero>
 
           {/* Voraussetzungs-Check */}
-          <section className="py-12 md:py-16 bg-[#F4F7FA]" aria-labelledby="check-heading">
+          <section className="py-12 md:py-16 bg-surface" aria-labelledby="check-heading">
             <div className="max-w-3xl mx-auto px-4">
               <Reveal>
                 <h2
                   id="check-heading"
-                  className="text-2xl md:text-4xl font-bold text-[#13243A] text-center"
+                  className="text-2xl md:text-4xl font-bold text-brand-dark text-center"
                 >
                   Erfüllst du die Voraussetzungen?
                 </h2>
-                <p className="mt-3 text-center text-[#1C1C1C]/70">
+                <p className="mt-3 text-center text-ink/70">
                   Drei kurze Fragen – du weißt es in 30 Sekunden.
                 </p>
 
@@ -154,7 +154,7 @@ const B196 = () => {
                       key={q.id}
                       className="bg-white rounded-2xl border border-black/5 p-5 flex flex-col sm:flex-row sm:items-center gap-4 justify-between"
                     >
-                      <p className="font-semibold text-[#13243A]">{q.text}</p>
+                      <p className="font-semibold text-brand-dark">{q.text}</p>
                       <div className="flex gap-2 shrink-0" role="group" aria-label={q.text}>
                         {[true, false].map((val) => (
                           <button
@@ -165,9 +165,9 @@ const B196 = () => {
                             className={`min-w-[84px] h-12 rounded-xl font-bold border-2 transition-colors ${
                               answers[q.id] === val
                                 ? val
-                                  ? 'bg-[#16A34A] border-[#16A34A] text-white'
-                                  : 'bg-[#13243A] border-[#13243A] text-white'
-                                : 'bg-white border-black/10 text-[#13243A] hover:bg-[#F4F7FA]'
+                                  ? 'bg-success border-success text-white'
+                                  : 'bg-brand-dark border-brand-dark text-white'
+                                : 'bg-white border-black/10 text-brand-dark hover:bg-surface'
                             }`}
                           >
                             {val ? 'Ja' : 'Nein'}
@@ -180,17 +180,17 @@ const B196 = () => {
 
                 {allAnswered && allYes && (
                   <div
-                    className="mt-6 rounded-2xl bg-[#16A34A]/10 border border-[#16A34A]/30 p-6 text-center"
+                    className="mt-6 rounded-2xl bg-success/10 border border-success/30 p-6 text-center"
                     role="status"
                   >
-                    <CheckCircle2 className="w-8 h-8 text-[#16A34A] mx-auto" aria-hidden="true" />
-                    <p className="mt-3 font-bold text-[#13243A] text-lg">
+                    <CheckCircle2 className="w-8 h-8 text-success mx-auto" aria-hidden="true" />
+                    <p className="mt-3 font-bold text-brand-dark text-lg">
                       Du erfüllst alle Voraussetzungen – du kannst sofort starten
                     </p>
                     <button
                       type="button"
                       onClick={scrollToForm}
-                      className="mt-5 min-h-[56px] px-8 rounded-xl bg-[#1A9CFF] hover:bg-[#0f86e0] text-white font-bold transition-colors"
+                      className="mt-5 min-h-[56px] px-8 rounded-xl bg-brand hover:bg-brand-strong text-white font-bold transition-colors"
                     >
                       Jetzt Platz anfragen
                     </button>
@@ -199,17 +199,17 @@ const B196 = () => {
 
                 {allAnswered && !allYes && (
                   <div
-                    className="mt-6 rounded-2xl bg-[#F59E0B]/10 border border-[#F59E0B]/40 p-6"
+                    className="mt-6 rounded-2xl bg-warning/10 border border-warning/40 p-6"
                     role="status"
                   >
-                    <p className="flex items-start gap-2.5 text-[#1C1C1C]">
-                      <Info className="w-5 h-5 text-[#F59E0B] shrink-0 mt-0.5" aria-hidden="true" />
+                    <p className="flex items-start gap-2.5 text-ink">
+                      <Info className="w-5 h-5 text-warning shrink-0 mt-0.5" aria-hidden="true" />
                       <span>
                         Für B196 fehlt dir aktuell noch eine Voraussetzung – kein Problem. Dann ist
                         vielleicht A1 oder A2 das Richtige für dich.{' '}
                         <a
                           href="/anmeldungmotorrad"
-                          className="font-semibold text-[#1A9CFF] underline"
+                          className="font-semibold text-brand underline"
                         >
                           Zur Motorrad-Seite
                         </a>

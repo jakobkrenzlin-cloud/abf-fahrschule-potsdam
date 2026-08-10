@@ -307,12 +307,12 @@ const Karriere = () => {
             backgroundSize: '48px 48px',
           }} />
           <div className="relative max-w-6xl mx-auto px-4 py-20 md:py-28 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1A9CFF]/10 border border-[#1A9CFF]/30 text-[#1A9CFF] text-sm font-medium mb-6">
-              <Star className="w-4 h-4 fill-[#1A9CFF]" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand/10 border border-brand/30 text-brand text-sm font-medium mb-6">
+              <Star className="w-4 h-4 fill-brand" />
               5,0 bei Google – ausgezeichnetes Team
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Werde Teil des <span className="text-[#1A9CFF]">ABF-Teams</span> in Potsdam
+              Werde Teil des <span className="text-brand">ABF-Teams</span> in Potsdam
             </h1>
             <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8">
               Ob erfahrener Fahrlehrer, angehender Fahrlehreranwärter oder im Büro – bei uns gestaltest du die Mobilität von morgen mit.
@@ -325,7 +325,7 @@ const Karriere = () => {
             <Button
               size="lg"
               onClick={() => scrollTo(jobsRef)}
-              className="bg-[#1A9CFF] hover:bg-[#1A9CFF]/90 text-white font-semibold px-8 py-6 text-base rounded-xl shadow-lg shadow-[#1A9CFF]/30 transition-transform hover:scale-105"
+              className="bg-brand hover:bg-brand/90 text-white font-semibold px-8 py-6 text-base rounded-xl shadow-lg shadow-brand/30 transition-transform hover:scale-105"
             >
               Offene Stellen ansehen
             </Button>
@@ -333,7 +333,7 @@ const Karriere = () => {
         </section>
 
         {/* 2. WARUM ABF */}
-        <section className="py-16 md:py-24 px-4 bg-[#1C1C1C]">
+        <section className="py-16 md:py-24 px-4 bg-ink">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12" data-reveal>
               <h2 className="text-3xl md:text-4xl font-bold mb-3">Warum ABF?</h2>
@@ -345,10 +345,10 @@ const Karriere = () => {
                   key={b.title}
                   data-reveal
                   style={{ transitionDelay: `${i * 60}ms` }}
-                  className="opacity-0 translate-y-4 transition-all duration-500 group p-6 rounded-2xl bg-[#13243A]/60 border border-white/5 hover:border-[#1A9CFF]/40 hover:shadow-xl hover:shadow-[#1A9CFF]/10 hover:-translate-y-1"
+                  className="opacity-0 translate-y-4 transition-all duration-500 group p-6 rounded-2xl bg-brand-dark/60 border border-white/5 hover:border-brand/40 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#1A9CFF]/15 flex items-center justify-center mb-4 group-hover:bg-[#1A9CFF]/25 transition-colors">
-                    <b.icon className="w-6 h-6 text-[#1A9CFF]" />
+                  <div className="w-12 h-12 rounded-xl bg-brand/15 flex items-center justify-center mb-4 group-hover:bg-brand/25 transition-colors">
+                    <b.icon className="w-6 h-6 text-brand" />
                   </div>
                   <h3 className="text-lg font-semibold mb-1">{b.title}</h3>
                   <p className="text-sm text-gray-400 leading-relaxed">{b.text}</p>
@@ -378,7 +378,7 @@ const Karriere = () => {
                     onClick={() => setFilter(c)}
                     className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                       active
-                        ? 'bg-[#1A9CFF] text-white shadow-md shadow-[#1A9CFF]/30'
+                        ? 'bg-brand text-white shadow-md shadow-brand/30'
                         : 'bg-white/5 text-gray-300 hover:bg-white/10 border border-white/10'
                     }`}
                   >
@@ -394,12 +394,12 @@ const Karriere = () => {
                 <AccordionItem
                   key={job.id}
                   value={job.id}
-                  className="border border-white/10 rounded-2xl bg-[#13243A]/40 px-5 hover:border-[#1A9CFF]/40 transition-colors data-[state=open]:border-[#1A9CFF]/60"
+                  className="border border-white/10 rounded-2xl bg-brand-dark/40 px-5 hover:border-brand/40 transition-colors data-[state=open]:border-brand/60"
                 >
-                  <AccordionTrigger className="hover:no-underline py-5 [&[data-state=open]>svg]:text-[#1A9CFF]">
+                  <AccordionTrigger className="hover:no-underline py-5 [&[data-state=open]>svg]:text-brand">
                     <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 text-left w-full pr-4">
                       <span className="font-semibold text-base md:text-lg">{job.title}</span>
-                      <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-[#1A9CFF]/15 text-[#1A9CFF] w-fit">
+                      <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-brand/15 text-brand w-fit">
                         <Briefcase className="w-3 h-3" /> {job.type}
                       </span>
                       {job.salary && (
@@ -414,14 +414,14 @@ const Karriere = () => {
                     <ul className="space-y-2 mb-5">
                       {job.details.map((d) => (
                         <li key={d} className="flex gap-2 text-gray-300 text-sm">
-                          <CheckCircle2 className="w-4 h-4 text-[#1A9CFF] shrink-0 mt-0.5" />
+                          <CheckCircle2 className="w-4 h-4 text-brand shrink-0 mt-0.5" />
                           <span>{d}</span>
                         </li>
                       ))}
                     </ul>
                     <Button
                       onClick={() => applyForPosition(job.title)}
-                      className="bg-[#1A9CFF] hover:bg-[#1A9CFF]/90 text-white font-medium"
+                      className="bg-brand hover:bg-brand/90 text-white font-medium"
                     >
                       Jetzt bewerben
                     </Button>
@@ -433,7 +433,7 @@ const Karriere = () => {
         </section>
 
         {/* 4. SO LÄUFT'S AB */}
-        <section className="py-16 md:py-24 px-4 bg-[#1C1C1C]">
+        <section className="py-16 md:py-24 px-4 bg-ink">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12" data-reveal>
               <h2 className="text-3xl md:text-4xl font-bold mb-3">So läuft's ab</h2>
@@ -443,16 +443,16 @@ const Karriere = () => {
               {STEPS.map((s, i) => (
                 <div key={s.title} className="relative flex md:flex-col items-start md:items-center gap-4 md:text-center" data-reveal style={{ transitionDelay: `${i * 80}ms` }}>
                   <div className="relative shrink-0">
-                    <div className="w-14 h-14 rounded-full bg-[#1A9CFF] flex items-center justify-center font-bold text-white shadow-lg shadow-[#1A9CFF]/30">
+                    <div className="w-14 h-14 rounded-full bg-brand flex items-center justify-center font-bold text-white shadow-lg shadow-brand/30">
                       {i + 1}
                     </div>
                     {i < STEPS.length - 1 && (
-                      <div className="hidden md:block absolute top-1/2 left-full w-full h-0.5 bg-gradient-to-r from-[#1A9CFF]/60 to-[#1A9CFF]/0" />
+                      <div className="hidden md:block absolute top-1/2 left-full w-full h-0.5 bg-gradient-to-r from-brand/60 to-brand/0" />
                     )}
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1 flex items-center md:justify-center gap-2">
-                      <s.icon className="w-4 h-4 text-[#1A9CFF] md:hidden" />
+                      <s.icon className="w-4 h-4 text-brand md:hidden" />
                       {s.title}
                     </h3>
                     <p className="text-sm text-gray-400">{s.text}</p>
@@ -472,9 +472,9 @@ const Karriere = () => {
             </div>
 
             {success ? (
-              <div className="bg-[#13243A]/60 border border-[#1A9CFF]/40 rounded-2xl p-8 text-center">
-                <div className="w-16 h-16 rounded-full bg-[#1A9CFF]/15 flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle2 className="w-8 h-8 text-[#1A9CFF]" />
+              <div className="bg-brand-dark/60 border border-brand/40 rounded-2xl p-8 text-center">
+                <div className="w-16 h-16 rounded-full bg-brand/15 flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle2 className="w-8 h-8 text-brand" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Vielen Dank!</h3>
                 <p className="text-gray-300">
@@ -482,11 +482,11 @@ const Karriere = () => {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="bg-[#13243A]/60 border border-white/10 rounded-2xl p-6 md:p-8 space-y-5">
+              <form onSubmit={handleSubmit} className="bg-brand-dark/60 border border-white/10 rounded-2xl p-6 md:p-8 space-y-5">
                 <div>
                   <Label htmlFor="position" className="text-white">Auf welche Stelle bewirbst du dich? *</Label>
                   <Select value={formData.position} onValueChange={(v) => setFormData({ ...formData, position: v })}>
-                    <SelectTrigger id="position" className="bg-[#1C1C1C] border-white/15 text-white mt-1.5">
+                    <SelectTrigger id="position" className="bg-ink border-white/15 text-white mt-1.5">
                       <SelectValue placeholder="Stelle wählen…" />
                     </SelectTrigger>
                     <SelectContent>
@@ -504,7 +504,7 @@ const Karriere = () => {
                     <Input
                       id="name" required value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="bg-[#1C1C1C] border-white/15 text-white mt-1.5"
+                      className="bg-ink border-white/15 text-white mt-1.5"
                     />
                   </div>
                   <div>
@@ -512,7 +512,7 @@ const Karriere = () => {
                     <Input
                       id="phone" type="tel" required value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="bg-[#1C1C1C] border-white/15 text-white mt-1.5"
+                      className="bg-ink border-white/15 text-white mt-1.5"
                     />
                   </div>
                 </div>
@@ -522,7 +522,7 @@ const Karriere = () => {
                   <Input
                     id="email" type="email" required value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="bg-[#1C1C1C] border-white/15 text-white mt-1.5"
+                    className="bg-ink border-white/15 text-white mt-1.5"
                   />
                 </div>
 
@@ -530,7 +530,7 @@ const Karriere = () => {
                   <div>
                     <Label htmlFor="ausbildungsphase" className="text-white">In welcher Ausbildungsphase befindest du dich?</Label>
                     <Select value={formData.ausbildungsphase} onValueChange={(v) => setFormData({ ...formData, ausbildungsphase: v })}>
-                      <SelectTrigger id="ausbildungsphase" className="bg-[#1C1C1C] border-white/15 text-white mt-1.5">
+                      <SelectTrigger id="ausbildungsphase" className="bg-ink border-white/15 text-white mt-1.5">
                         <SelectValue placeholder="Bitte wählen…" />
                       </SelectTrigger>
                       <SelectContent>
@@ -548,15 +548,15 @@ const Karriere = () => {
                     id="nachricht" rows={4} value={formData.nachricht}
                     onChange={(e) => setFormData({ ...formData, nachricht: e.target.value })}
                     placeholder="Erzähl uns kurz etwas über dich…"
-                    className="bg-[#1C1C1C] border-white/15 text-white mt-1.5"
+                    className="bg-ink border-white/15 text-white mt-1.5"
                   />
                 </div>
 
                 <div className="rounded-xl border border-dashed border-white/15 p-4 flex items-start gap-3 text-sm text-gray-400">
-                  <FileCheck className="w-5 h-5 text-[#1A9CFF] shrink-0 mt-0.5" />
+                  <FileCheck className="w-5 h-5 text-brand shrink-0 mt-0.5" />
                   <span>
                     Lebenslauf (PDF) gerne im Anschluss per E-Mail an{' '}
-                    <a href="mailto:potsdam@fahrschuleabf.de" className="text-[#1A9CFF] hover:underline">
+                    <a href="mailto:potsdam@fahrschuleabf.de" className="text-brand hover:underline">
                       potsdam@fahrschuleabf.de
                     </a>{' '}
                     – oder du bringst ihn zum Kennenlerntermin mit.
@@ -568,18 +568,18 @@ const Karriere = () => {
                     id="consent"
                     checked={formData.consent}
                     onCheckedChange={(v) => setFormData({ ...formData, consent: v === true })}
-                    className="mt-1 border-white/30 data-[state=checked]:bg-[#1A9CFF] data-[state=checked]:border-[#1A9CFF]"
+                    className="mt-1 border-white/30 data-[state=checked]:bg-brand data-[state=checked]:border-brand"
                   />
                   <Label htmlFor="consent" className="text-sm text-gray-300 leading-relaxed">
                     Ich willige in die Verarbeitung meiner Daten gemäß der{' '}
-                    <a href="/datenschutz" className="text-[#1A9CFF] hover:underline">Datenschutzerklärung</a> ein. *
+                    <a href="/datenschutz" className="text-brand hover:underline">Datenschutzerklärung</a> ein. *
                   </Label>
                 </div>
 
                 <Button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-[#1A9CFF] hover:bg-[#1A9CFF]/90 text-white font-semibold py-6 text-base rounded-xl shadow-lg shadow-[#1A9CFF]/30"
+                  className="w-full bg-brand hover:bg-brand/90 text-white font-semibold py-6 text-base rounded-xl shadow-lg shadow-brand/30"
                 >
                   {loading ? 'Wird gesendet…' : 'Bewerbung absenden'}
                 </Button>
@@ -589,12 +589,12 @@ const Karriere = () => {
         </section>
 
         {/* 6. STANDORT & KONTAKT */}
-        <section className="py-16 md:py-20 px-4 bg-[#1C1C1C] border-t border-white/5">
+        <section className="py-16 md:py-20 px-4 bg-ink border-t border-white/5">
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
             <div data-reveal className="opacity-0 translate-y-4 transition-all duration-500">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">Standort</h2>
               <div className="flex items-start gap-3 text-gray-300 mb-4">
-                <MapPin className="w-5 h-5 text-[#1A9CFF] mt-0.5 shrink-0" />
+                <MapPin className="w-5 h-5 text-brand mt-0.5 shrink-0" />
                 <span>
                   <strong className="text-white">ABF Fahrschule Potsdam</strong><br />
                   Weberpark, Tuchmacherstraße 45b<br />
@@ -607,16 +607,16 @@ const Karriere = () => {
             </div>
             <div data-reveal className="opacity-0 translate-y-4 transition-all duration-500">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">Direkt für Bewerber</h2>
-              <a href="tel:+4933196795854" className="flex items-center gap-3 text-gray-200 hover:text-[#1A9CFF] transition-colors mb-3">
-                <Phone className="w-5 h-5 text-[#1A9CFF]" />
+              <a href="tel:+4933196795854" className="flex items-center gap-3 text-gray-200 hover:text-brand transition-colors mb-3">
+                <Phone className="w-5 h-5 text-brand" />
                 <span>+49 331 96795854 (Festnetz)</span>
               </a>
-              <a href="tel:+491622191290" className="flex items-center gap-3 text-gray-200 hover:text-[#1A9CFF] transition-colors mb-3">
-                <Phone className="w-5 h-5 text-[#1A9CFF]" />
+              <a href="tel:+491622191290" className="flex items-center gap-3 text-gray-200 hover:text-brand transition-colors mb-3">
+                <Phone className="w-5 h-5 text-brand" />
                 <span>0162 2191290 (Mobil)</span>
               </a>
-              <a href="mailto:potsdam@fahrschuleabf.de" className="flex items-center gap-3 text-gray-200 hover:text-[#1A9CFF] transition-colors mb-4">
-                <Mail className="w-5 h-5 text-[#1A9CFF]" />
+              <a href="mailto:potsdam@fahrschuleabf.de" className="flex items-center gap-3 text-gray-200 hover:text-brand transition-colors mb-4">
+                <Mail className="w-5 h-5 text-brand" />
                 <span>potsdam@fahrschuleabf.de</span>
               </a>
               <p className="text-sm text-gray-400">
@@ -631,7 +631,7 @@ const Karriere = () => {
       <div className="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-black/85 backdrop-blur border-t border-white/10">
         <Button
           onClick={() => scrollTo(formRef)}
-          className="w-full bg-[#1A9CFF] hover:bg-[#1A9CFF]/90 text-white font-semibold py-6 rounded-xl shadow-lg shadow-[#1A9CFF]/30"
+          className="w-full bg-brand hover:bg-brand/90 text-white font-semibold py-6 rounded-xl shadow-lg shadow-brand/30"
         >
           In 60 Sekunden bewerben
         </Button>

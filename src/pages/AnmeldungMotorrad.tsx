@@ -164,7 +164,7 @@ const AnmeldungMotorrad = () => {
               <Reveal>
                 <h2
                   id="klassen-heading"
-                  className="text-2xl md:text-4xl font-bold text-[#13243A] text-center"
+                  className="text-2xl md:text-4xl font-bold text-brand-dark text-center"
                 >
                   Welche Klasse passt zu dir?
                 </h2>
@@ -172,16 +172,16 @@ const AnmeldungMotorrad = () => {
               <div className="mt-8 grid gap-5 md:grid-cols-3">
                 {CLASS_CARDS.map((c, i) => (
                   <Reveal key={c.value} delay={i * 80}>
-                    <div className="h-full flex flex-col bg-[#F4F7FA] rounded-2xl p-6 border border-black/5">
-                      <Bike className="w-8 h-8 text-[#1A9CFF]" aria-hidden="true" />
-                      <h3 className="mt-3 text-3xl font-extrabold text-[#13243A]">{c.title}</h3>
-                      <p className="mt-2 text-[#1C1C1C]">{c.age}</p>
-                      <p className="text-[#1C1C1C]">{c.power}</p>
-                      <p className="mt-3 text-sm font-semibold text-[#1A9CFF]">{c.tag}</p>
+                    <div className="h-full flex flex-col bg-surface rounded-2xl p-6 border border-black/5">
+                      <Bike className="w-8 h-8 text-brand" aria-hidden="true" />
+                      <h3 className="mt-3 text-3xl font-extrabold text-brand-dark">{c.title}</h3>
+                      <p className="mt-2 text-ink">{c.age}</p>
+                      <p className="text-ink">{c.power}</p>
+                      <p className="mt-3 text-sm font-semibold text-brand">{c.tag}</p>
                       <button
                         type="button"
                         onClick={() => chooseClass(c.value)}
-                        className="mt-6 min-h-[56px] w-full rounded-xl bg-[#13243A] hover:bg-[#1b3357] text-white font-bold inline-flex items-center justify-center gap-2 transition-colors"
+                        className="mt-6 min-h-[56px] w-full rounded-xl bg-brand-dark hover:bg-brand-dark text-white font-bold inline-flex items-center justify-center gap-2 transition-colors"
                       >
                         Diese Klasse wählen
                         <ArrowRight className="w-4 h-4" aria-hidden="true" />

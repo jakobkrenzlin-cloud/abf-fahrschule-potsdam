@@ -48,18 +48,18 @@ const MotorradProcess: React.FC = () => {
               <div key={index} className="relative">
                 {/* Connector Line - only on desktop */}
                 {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-8 sm:top-10 left-1/2 w-full h-0.5 bg-[#3b5998]/30" />
+                  <div className="hidden md:block absolute top-8 sm:top-10 left-1/2 w-full h-0.5 bg-brand-strong/30" />
                 )}
                 
-                <div className="relative bg-neutral-900 border border-[#3b5998]/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center shadow-md hover:border-[#3b5998]/40 hover:shadow-lg hover:shadow-[#3b5998]/10 transition-all duration-300 z-10">
+                <div className="relative bg-neutral-900 border border-brand-strong/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center shadow-md hover:border-brand-strong/40 hover:shadow-lg hover:shadow-brand-strong/10 transition-all duration-300 z-10">
                   {/* Step Number */}
-                  <div className="absolute -top-2 sm:-top-3 left-1/2 -translate-x-1/2 bg-[#3b5998] text-white w-6 sm:w-8 h-6 sm:h-8 rounded-full flex items-center justify-center font-bold text-xs sm:text-sm">
+                  <div className="absolute -top-2 sm:-top-3 left-1/2 -translate-x-1/2 bg-brand-strong text-white w-6 sm:w-8 h-6 sm:h-8 rounded-full flex items-center justify-center font-bold text-xs sm:text-sm">
                     {step.number}
                   </div>
                   
                   {/* Icon */}
-                  <div className="bg-[#3b5998]/20 w-12 sm:w-16 h-12 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 mt-2">
-                    <Icon className="w-6 sm:w-8 h-6 sm:h-8 text-[#6d8fd4]" />
+                  <div className="bg-brand-strong/20 w-12 sm:w-16 h-12 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 mt-2">
+                    <Icon className="w-6 sm:w-8 h-6 sm:h-8 text-brand" />
                   </div>
                   
                   <h3 className="font-bold text-base sm:text-lg text-white mb-1 sm:mb-2">{step.title}</h3>

@@ -36,9 +36,9 @@ const MotorradAdvantages: React.FC = () => {
           {advantages.map((advantage, index) => {
             const Icon = advantage.icon;
             return (
-              <div key={index} className="text-center p-5 sm:p-6 rounded-xl sm:rounded-2xl bg-neutral-900 border border-[#3b5998]/20 hover:border-[#3b5998]/40 hover:shadow-lg hover:shadow-[#3b5998]/10 transition-all duration-300">
-                <div className="bg-[#3b5998]/20 w-16 sm:w-20 h-16 sm:h-20 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
-                  <Icon className="w-8 sm:w-10 h-8 sm:h-10 text-[#6d8fd4]" />
+              <div key={index} className="text-center p-5 sm:p-6 rounded-xl sm:rounded-2xl bg-neutral-900 border border-brand-strong/20 hover:border-brand-strong/40 hover:shadow-lg hover:shadow-brand-strong/10 transition-all duration-300">
+                <div className="bg-brand-strong/20 w-16 sm:w-20 h-16 sm:h-20 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                  <Icon className="w-8 sm:w-10 h-8 sm:h-10 text-brand" />
                 </div>
                 <h3 className="font-bold text-lg sm:text-xl text-white mb-2 sm:mb-3">{advantage.title}</h3>
                 <p className="text-neutral-400 text-sm sm:text-base">

@@ -83,7 +83,7 @@ const OffersSection = () => {
 
           {/* Motorrad Angebot */}
           <div className="bg-black rounded-2xl shadow-lg overflow-hidden flex flex-col">
-            <div className="bg-gradient-to-r from-[#3b5998] to-[#1a2d4a] text-white p-4 md:p-6">
+            <div className="bg-gradient-to-r from-brand-strong to-brand-dark text-white p-4 md:p-6">
               <div className="flex items-center space-x-3 mb-3 md:mb-4">
                 <Bike className="w-7 h-7 md:w-8 md:h-8 flex-shrink-0" />
                 <div>
@@ -116,12 +116,12 @@ const OffersSection = () => {
 
               <div className="pt-4 mt-auto space-y-3">
                 <Link to="/anmeldungmotorrad">
-                  <Button className="w-full bg-[#3b5998] hover:bg-[#4a6cb3] text-white font-semibold py-3 text-lg">
+                  <Button className="w-full bg-brand-strong hover:bg-brand text-white font-semibold py-3 text-lg">
                     Jetzt für 399 € anmelden
                   </Button>
                 </Link>
                 <Link to="/b196">
-                  <Button variant="outline" className="w-full border-[#3b5998] text-white hover:bg-[#3b5998]/20 font-semibold py-3 bg-transparent">
+                  <Button variant="outline" className="w-full border-brand-strong text-white hover:bg-brand-strong/20 font-semibold py-3 bg-transparent">
                     Oder B196 für 750 € Festpreis
                   </Button>
                 </Link>

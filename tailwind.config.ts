@@ -58,6 +58,7 @@ export default {
 				surface: 'hsl(var(--surface))',
 				success: 'hsl(var(--success))',
 				warning: 'hsl(var(--warning))',
+				star: 'hsl(var(--star))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'

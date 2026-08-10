@@ -4,6 +4,7 @@ import { CheckCircle2, ArrowLeft, Phone, Mail } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import MobileStickyFooter from '../components/MobileStickyFooter';
 import { Button } from '@/components/ui/button';
 import { fireConversion, CONVERSION_LABELS } from '@/lib/tracking';
 
@@ -89,6 +90,7 @@ const KarriereDanke = () => {
         </div>
       </main>
       <Footer />
+      <MobileStickyFooter />
     </div>
   );
 };

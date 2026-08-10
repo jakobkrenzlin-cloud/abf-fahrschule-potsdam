@@ -5,6 +5,7 @@ import { CheckCircle, Phone, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import MobileStickyFooter from '@/components/MobileStickyFooter';
 import { fireConversion, CONVERSION_LABELS } from '@/lib/tracking';
 
 const Danke = () => {
@@ -112,6 +113,8 @@ const Danke = () => {
       </main>
       
       <Footer />
+      
+      <MobileStickyFooter />
     </div>
   );
 };

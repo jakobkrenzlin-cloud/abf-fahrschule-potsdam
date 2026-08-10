@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import MobileStickyFooter from '../components/MobileStickyFooter';
 import { Button } from '@/components/ui/button';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -174,6 +175,7 @@ const Kontakt = () => {
           </div>
         </main>
         <Footer />
+        <MobileStickyFooter />
       </div>
     </>;
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import MobileStickyFooter from '../components/MobileStickyFooter';
 import { Button } from '@/components/ui/button';
 import { BookOpen, Smartphone, CheckCircle, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -243,6 +244,7 @@ const Theorie = () => {
           </div>
         </main>
         <Footer />
+        <MobileStickyFooter />
       </div>
     </>;
 };

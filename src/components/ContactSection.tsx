@@ -296,7 +296,7 @@ Fahrstunden ab 67,50€/45 Min.</p>
               <div className="text-center space-y-4">
                 <MapPin className="w-16 h-16 text-brand-strong mx-auto" />
                 <div>
-                  <h4 className="text-xl font-semibold text-brand-dark">Google Maps - Fahrschule Potsdam</h4>
+                  <h3 className="text-xl font-semibold text-brand-dark">Google Maps - Fahrschule Potsdam</h3>
                   <p className="text-ink/75">Finden Sie unsere Fahrschule im WEBERPARK Potsdam</p>
                   <a href="https://maps.google.com/?q=ABF+Fahrschule+WEBERPARK+Tuchmacherstraße+45b+14482+Potsdam" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 text-brand-strong hover:text-brand-strong underline">
                     Route zur Fahrschule Potsdam planen

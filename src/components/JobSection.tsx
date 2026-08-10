@@ -34,7 +34,7 @@ const JobSection = () => {
         <div className="grid md:grid-cols-2 gap-10 mb-12">
           {/* Aufgaben */}
           <div>
-            <h4 className="text-lg font-bold mb-4 text-white/80">Deine Aufgaben</h4>
+            <h3 className="text-lg font-bold mb-4 text-white/80">Deine Aufgaben</h3>
             <ul className="space-y-4">
               {tasks.map((task, i) => (
                 <li key={i} className="flex items-start gap-3">
@@ -47,7 +47,7 @@ const JobSection = () => {
 
           {/* Benefits */}
           <div>
-            <h4 className="text-lg font-bold mb-4 text-white/80">Was wir bieten</h4>
+            <h3 className="text-lg font-bold mb-4 text-white/80">Was wir bieten</h3>
             <ul className="space-y-4">
               {benefits.map((b, i) => (
                 <li key={i} className="flex items-start gap-3">

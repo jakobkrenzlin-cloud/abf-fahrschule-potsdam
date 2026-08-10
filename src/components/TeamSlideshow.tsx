@@ -40,7 +40,7 @@ const TeamSlideshow = () => {
                   decoding="async"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent rounded-b-xl p-4">
-                  <h4 className="text-white font-semibold text-lg">{image.title}</h4>
+                  <h3 className="text-white font-semibold text-lg">{image.title}</h3>
                   <p className="text-white/90 text-sm">{image.description}</p>
                 </div>
               </div>

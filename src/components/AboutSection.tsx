@@ -65,7 +65,7 @@ const AboutSection = () => {
 
             {/* Certifications */}
             <div className="bg-surface rounded-xl p-6">
-              <h4 className="font-semibold text-brand-dark mb-4">Unsere Qualifikationen als Fahrschule Potsdam</h4>
+              <h3 className="font-semibold text-brand-dark mb-4">Unsere Qualifikationen als Fahrschule Potsdam</h3>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-brand-strong rounded-full"></div>

@@ -53,7 +53,7 @@ const OffersSection = () => {
                </p>
 
               <div className="space-y-3">
-                <h4 className="font-semibold text-brand-dark mb-3">Im Grundbetrag enthalten:</h4>
+                <h3 className="font-semibold text-brand-dark mb-3">Im Grundbetrag enthalten:</h3>
                 <div className="flex items-center space-x-3">
                   <Check className="w-5 h-5 text-success flex-shrink-0" />
                   <span className="text-ink">Kompletter Theorieunterricht</span>
@@ -61,7 +61,7 @@ const OffersSection = () => {
               </div>
 
                <div className="space-y-3">
-                <h4 className="font-semibold text-brand-dark mb-3">Im Grundbetrag zusätzlich:</h4>
+                <h3 className="font-semibold text-brand-dark mb-3">Im Grundbetrag zusätzlich:</h3>
                 {['ADAC 1 Jahr kostenlos'].map((item, index) => <div key={index} className="flex items-center space-x-3">
                     <Check className="w-5 h-5 text-success flex-shrink-0" />
                     <span className="text-ink">{item}</span>
@@ -105,7 +105,7 @@ const OffersSection = () => {
               </p>
 
               <div className="space-y-3">
-                <h4 className="font-semibold text-white mb-3">Im Grundbetrag zusätzlich:</h4>
+                <h3 className="font-semibold text-white mb-3">Im Grundbetrag zusätzlich:</h3>
                 {['Kompletter Theorieunterricht', 'LernApp für die Theorieprüfung', '100 € Louis und Polo Gutschein'].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <Check className="w-5 h-5 text-success flex-shrink-0" />
@@ -145,7 +145,7 @@ const OffersSection = () => {
             {/* Telefon */}
             <div className="text-center p-4 bg-surface rounded-xl">
               <Phone className="w-8 h-8 text-brand-strong mx-auto mb-3" />
-              <h4 className="font-semibold text-brand-dark mb-2">Telefon</h4>
+              <h3 className="font-semibold text-brand-dark mb-2">Telefon</h3>
               <div className="space-y-1 text-sm">
                 <div><span className="text-ink/60">Festnetz: </span><a href="tel:+4933196795854" className="text-brand-strong hover:text-brand-strong font-medium">+49 331 96795854</a></div>
                 <div><span className="text-ink/60">Mobil: </span><a href="tel:+491622191290" className="text-brand-strong hover:text-brand-strong font-medium">+49 162 2191290</a></div>
@@ -155,7 +155,7 @@ const OffersSection = () => {
             {/* E-Mail */}
             <div className="text-center p-4 bg-success/10 rounded-xl">
               <Mail className="w-8 h-8 text-success mx-auto mb-3" />
-              <h4 className="font-semibold text-brand-dark mb-2">E-Mail</h4>
+              <h3 className="font-semibold text-brand-dark mb-2">E-Mail</h3>
               <a href="mailto:kontakt@abf-fahrschule.de" className="text-success hover:text-success font-medium">
                 kontakt@abf-fahrschule.de
               </a>
@@ -164,7 +164,7 @@ const OffersSection = () => {
             {/* Adresse */}
             <div className="text-center p-4 bg-orange-50 rounded-xl">
               <MapPin className="w-8 h-8 text-orange-600 mx-auto mb-3" />
-              <h4 className="font-semibold text-brand-dark mb-2">Adresse</h4>
+              <h3 className="font-semibold text-brand-dark mb-2">Adresse</h3>
               <a href="https://maps.google.com/?q=ABF+Bildungszentrum+Fahrschule+Potsdam+Tuchmacherstraße+WEBERPARK" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:text-orange-700 font-medium">
                 WEBERPARK Potsdam<br />
                 Tuchmacherstraße

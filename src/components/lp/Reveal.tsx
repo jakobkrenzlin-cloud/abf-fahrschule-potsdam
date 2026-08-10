@@ -6,11 +6,20 @@ interface RevealProps {
   delay?: number;
 }
 
+const prefersReducedMotion = () =>
+  typeof window !== 'undefined' &&
+  typeof window.matchMedia === 'function' &&
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 const Reveal: React.FC<RevealProps> = ({ children, className = '', delay = 0 }) => {
   const ref = useRef<HTMLDivElement | null>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(() => prefersReducedMotion());
 
   useEffect(() => {
+    if (prefersReducedMotion()) {
+      setVisible(true);
+      return;
+    }
     const el = ref.current;
     if (!el) return;
     if (typeof IntersectionObserver === 'undefined') {
@@ -36,7 +45,7 @@ const Reveal: React.FC<RevealProps> = ({ children, className = '', delay = 0 }) 
     <div
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
-      className={`transition-all duration-700 ease-out motion-reduce:transition-none ${
+      className={`transition-all duration-700 ease-out motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-y-0 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
       } ${className}`}
     >

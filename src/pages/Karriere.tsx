@@ -443,7 +443,7 @@ const Karriere = () => {
               {STEPS.map((s, i) => (
                 <div key={s.title} className="relative flex md:flex-col items-start md:items-center gap-4 md:text-center" data-reveal style={{ transitionDelay: `${i * 80}ms` }}>
                   <div className="relative shrink-0">
-                    <div className="w-14 h-14 rounded-full bg-brand flex items-center justify-center font-bold text-white shadow-lg shadow-brand/30">
+                    <div className="w-14 h-14 rounded-full bg-brand-strong flex items-center justify-center font-bold text-white shadow-lg shadow-brand/30">
                       {i + 1}
                     </div>
                     {i < STEPS.length - 1 && (

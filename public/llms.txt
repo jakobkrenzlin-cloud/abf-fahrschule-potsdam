@@ -7,8 +7,8 @@ ABF Bildungszentrum und Fahrschule GmbH bildet seit über 15 Jahren in Potsdam a
 ## Pages
 
 - [Startseite](/): Übersicht der Fahrschule, Angebote und Anmeldung.
-- [Anmeldung PKW](/Anmeldung): Anmeldung Klasse B mit Sommer-Spezial ab 179 € Grundbetrag.
-- [Anmeldung Motorrad](/anmeldungmotorrad): Motorrad-Führerschein A/A1/A2 ab 599 € Grundbetrag inkl. Erste-Hilfe & Gutschein.
+- [Anmeldung PKW](/anmeldung): Anmeldung Klasse B mit Herbst-Angebot ab 199 € Grundbetrag.
+- [Anmeldung Motorrad](/anmeldungmotorrad): Motorrad-Führerschein A/A1/A2 ab 399 € Grundbetrag inkl. Erste-Hilfe & Gutschein.
 - [Preise](/preise): Preisliste nach § 32 FahrlG, Grundbetrag und Fahrstundenpreise.
 - [Theorie](/theorie): Theorieunterricht und Termine in Potsdam.
 - [Kontakt](/kontakt): Telefon, E-Mail, Anschrift, Öffnungszeiten.

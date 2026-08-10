@@ -69,7 +69,7 @@ const OffersSection = () => {
               </div>
 
               <div className="pt-4 space-y-3">
-                <Link to="/Anmeldung">
+                <Link to="/anmeldung">
                   <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 text-lg">
                     Jetzt für 199 € anmelden
                   </Button>
@@ -156,8 +156,8 @@ const OffersSection = () => {
             <div className="text-center p-4 bg-green-50 rounded-xl">
               <Mail className="w-8 h-8 text-green-600 mx-auto mb-3" />
               <h4 className="font-semibold text-gray-900 mb-2">E-Mail</h4>
-              <a href="mailto:potsdam@fahrschuleabf.de" className="text-green-600 hover:text-green-700 font-medium">
-                potsdam@fahrschuleabf.de
+              <a href="mailto:kontakt@abf-fahrschule.de" className="text-green-600 hover:text-green-700 font-medium">
+                kontakt@abf-fahrschule.de
               </a>
             </div>
 

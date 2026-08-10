@@ -74,7 +74,7 @@ const Theorie = () => {
               </div>
             </div>
             <div className="text-center pt-6 border-t border-border">
-              <Link to="/Anmeldung">
+              <Link to="/anmeldung">
                 <Button size="lg" className="text-lg px-8">
                   Jetzt Theorie-Kursplatz sichern
                 </Button>
@@ -230,7 +230,7 @@ const Theorie = () => {
               Sichere dir jetzt deinen Platz im nächsten Theoriekurs und starte durch!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/Anmeldung">
+              <Link to="/anmeldung">
                 <Button size="lg" className="text-lg px-8">
                   Jetzt Theorie-Kursplatz sichern
                 </Button>

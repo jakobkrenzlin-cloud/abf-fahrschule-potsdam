@@ -167,7 +167,7 @@ const Kontakt = () => {
             <p className="text-muted-foreground mb-6">
               Komm vorbei oder melde dich direkt online an. Wir freuen uns auf dich!
             </p>
-            <Link to="/Anmeldung">
+            <Link to="/anmeldung">
               <Button size="lg" className="text-lg px-8">
                 Jetzt Platz sichern
               </Button>

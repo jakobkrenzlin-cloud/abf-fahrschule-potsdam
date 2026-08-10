@@ -222,7 +222,7 @@ const Preise = () => {
             </div>
 
             <div className="text-center">
-              <Link to="/Anmeldung">
+              <Link to="/anmeldung">
                 <Button size="lg" className="text-lg px-8 py-6">
                   Jetzt Angebot sichern
                 </Button>

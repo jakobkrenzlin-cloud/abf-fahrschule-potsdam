@@ -61,7 +61,7 @@ const JobSection = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="mailto:potsdam@fahrschuleabf.de"
+            href="mailto:kontakt@abf-fahrschule.de"
             className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-center"
           >
             Jetzt per E-Mail bewerben

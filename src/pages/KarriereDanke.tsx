@@ -73,9 +73,9 @@ const KarriereDanke = () => {
                 <Phone className="w-4 h-4" />
                 +49 331 96795854
               </a>
-              <a href="mailto:potsdam@fahrschuleabf.de" className="flex items-center justify-center gap-2 text-white/80 hover:text-brand transition-colors">
+              <a href="mailto:kontakt@abf-fahrschule.de" className="flex items-center justify-center gap-2 text-white/80 hover:text-brand transition-colors">
                 <Mail className="w-4 h-4" />
-                potsdam@fahrschuleabf.de
+                kontakt@abf-fahrschule.de
               </a>
             </div>
 

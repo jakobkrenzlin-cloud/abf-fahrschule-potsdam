@@ -94,6 +94,7 @@ const OffersSection = () => {
               <div className="bg-white/20 rounded-lg p-4">
                 <div className="text-3xl font-bold mb-1">399 €</div>
                 <div className="text-sm text-white/80">Herbst-Angebot – Grundbetrag (A1, A2, A)</div>
+                <div className="text-xs text-white/80 mt-2">Einmalige Gebühr für Verwaltung und vollständige Theorieausbildung</div>
                 <div className="text-xs text-white/80 mt-2">Preis gemäß § 32 Fahrlehrergesetz: Unterweisungsstunde 75 €/45 Min., Übungsstunde 75 €/45 Min. und Besondere Ausbildungsfahrten 85 €/45 Min.</div>
               </div>
             </div>
@@ -105,8 +106,18 @@ const OffersSection = () => {
               </p>
 
               <div className="space-y-3">
+                <h3 className="font-semibold text-white mb-3">Im Grundbetrag enthalten:</h3>
+                {['Kompletter Theorieunterricht', 'Motorrad-spezifische Theorie'].map((item, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <Check className="w-5 h-5 text-success flex-shrink-0" />
+                    <span className="text-white/75">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="space-y-3">
                 <h3 className="font-semibold text-white mb-3">Im Grundbetrag zusätzlich:</h3>
-                {['Kompletter Theorieunterricht', 'LernApp für die Theorieprüfung', '100 € Louis und Polo Gutschein'].map((item, index) => (
+                {['Anmeldung & Verwaltung', '100 € Louis und Polo Gutschein', 'Prüfungsvorbereitung', '1 Jahr ADAC-Mitgliedschaft'].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <Check className="w-5 h-5 text-success flex-shrink-0" />
                     <span className="text-white/75">{item}</span>

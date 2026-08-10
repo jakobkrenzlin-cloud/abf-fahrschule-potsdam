@@ -119,7 +119,7 @@ const AGB = () => {
               14482 Potsdam<br />
               Festnetz: +49 331 96795854<br />
               Mobil: +49 162 2191290<br />
-              E-Mail: info@abf-fahrschule.de
+              E-Mail: potsdam@fahrschuleabf.de
             </p>
             <p className="mb-4">mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren.</p>
             

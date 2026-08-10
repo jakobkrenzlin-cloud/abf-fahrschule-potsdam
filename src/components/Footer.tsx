@@ -1,101 +1,79 @@
 import React from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { ADDRESS_LINE, PHONE_DISPLAY, PHONE_RAW } from '@/components/lp/constants';
+
+const linkClass =
+  'flex items-center min-h-[44px] text-white/70 hover:text-white transition-colors';
 
 const Footer = () => {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16 pb-24 md:pb-16">
+    <footer className="bg-brand-dark text-white">
+      <div className="container-page section-y pb-28 md:pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-3">
-              <img 
-                src="/lovable-uploads/be0365c9-6495-4129-8061-539de20befe7.png"
-                alt="ABF Fahrschule Potsdam Logo"
-                className="h-20 w-auto"
-              />
-            </div>
-            <p className="text-gray-400 leading-relaxed">
-              Ihre vertrauensvolle Fahrschule in Potsdam. Mit über 15 Jahren Erfahrung 
-              begleiten wir Sie sicher zum Führerschein.
+            <img
+              src="/lovable-uploads/be0365c9-6495-4129-8061-539de20befe7.png"
+              alt="ABF Fahrschule Potsdam"
+              width={180}
+              height={64}
+              className="h-16 w-auto"
+              loading="lazy"
+            />
+            <p className="text-white/70 text-small leading-relaxed">
+              Deine Fahrschule in Potsdam. Mit über 15 Jahren Erfahrung begleiten wir dich
+              sicher zum Führerschein.
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Schnellzugriff</h4>
-            <div className="space-y-2">
-              <button onClick={() => scrollToSection('home')} className="block text-gray-400 hover:text-white transition-colors">
-                Home
-              </button>
-              <button onClick={() => scrollToSection('about')} className="block text-gray-400 hover:text-white transition-colors">
-                Über uns
-              </button>
-              <button onClick={() => scrollToSection('process')} className="block text-gray-400 hover:text-white transition-colors">
-                Führerschein
-              </button>
-              <a href="https://maps.google.com/?q=ABF+Fahrschule+Potsdam" target="_blank" rel="noopener noreferrer" className="block text-gray-400 hover:text-white transition-colors">
-                Bewertungen
-              </a>
-              <button onClick={() => scrollToSection('contact')} className="block text-gray-400 hover:text-white transition-colors">
-                Kontakt
-              </button>
-              <Link to="/Anmeldung" className="block text-gray-400 hover:text-white transition-colors">
-                Anmeldung
-              </Link>
+          <div className="space-y-2">
+            <h2 className="text-h3 font-bold">Schnellzugriff</h2>
+            <div>
+              <Link to="/" className={linkClass}>Start</Link>
+              <Link to="/anmeldung" className={linkClass}>Anmeldung</Link>
+              <Link to="/preise" className={linkClass}>Preise</Link>
+              <Link to="/theorie" className={linkClass}>Theorie</Link>
+              <Link to="/kontakt" className={linkClass}>Kontakt</Link>
+              <Link to="/karriere" className={linkClass}>Karriere</Link>
             </div>
           </div>
 
-          {/* Services */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Unsere Leistungen</h4>
-            <div className="space-y-2 text-gray-400">
-              <div>Führerschein Klasse B</div>
-              <div>Theorieunterricht</div>
-              <div>Praktische Fahrstunden</div>
-              <div>Prüfungsvorbereitung</div>
-              <div>Auffrischungskurse</div>
-            </div>
+          <div className="space-y-2">
+            <h2 className="text-h3 font-bold">Unsere Leistungen</h2>
+            <ul className="text-white/70 text-small space-y-2">
+              <li>Führerschein Klasse B</li>
+              <li>Theorieunterricht</li>
+              <li>Praktische Fahrstunden</li>
+              <li>Prüfungsvorbereitung</li>
+              <li>Motorrad A / A1 / A2 und B196</li>
+            </ul>
           </div>
 
-          {/* Contact Info */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Kontakt</h4>
-            <div className="space-y-3">
-              <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-blue-400 mt-1" />
-                <div className="text-gray-400">
-                  WEBERPARK<br />
-                  Tuchmacherstraße 45b<br />
-                  14482 Potsdam
+          <div className="space-y-2">
+            <h2 className="text-h3 font-bold">Kontakt</h2>
+            <div className="space-y-3 text-small">
+              <p className="flex items-start gap-3 text-white/70">
+                <MapPin className="w-5 h-5 text-brand mt-0.5 shrink-0" aria-hidden="true" />
+                <span>{ADDRESS_LINE}</span>
+              </p>
+
+              <div className="flex items-start gap-3">
+                <Phone className="w-5 h-5 text-brand mt-3 shrink-0" aria-hidden="true" />
+                <div>
+                  <a href="tel:+4933196795854" className={linkClass}>
+                    Festnetz: +49 331 96795854
+                  </a>
+                  <a href={`tel:${PHONE_RAW}`} className={linkClass}>
+                    Mobil: {PHONE_DISPLAY}
+                  </a>
                 </div>
               </div>
-              
-              <div className="flex items-start space-x-3">
-                <Phone className="w-5 h-5 text-blue-400 mt-1" />
-                <div className="text-gray-400 space-y-1">
-                  <div>
-                    <span className="text-xs text-gray-500">Festnetz: </span>
-                    <a href="tel:+4933196795854" className="hover:text-white transition-colors">+49 331 96795854</a>
-                  </div>
-                  <div>
-                    <span className="text-xs text-gray-500">Mobil: </span>
-                    <a href="tel:+491622191290" className="hover:text-white transition-colors">+49 162 2191290</a>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-blue-400" />
-                <a href="mailto:kontakt@abf-fahrschule.de" className="text-gray-400 hover:text-white transition-colors">
+
+              <div className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-brand shrink-0" aria-hidden="true" />
+                <a href="mailto:kontakt@abf-fahrschule.de" className={linkClass}>
                   kontakt@abf-fahrschule.de
                 </a>
               </div>
@@ -103,26 +81,19 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Photo Consent Notice */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="text-center text-gray-500 text-xs mb-6">
+        <div className="border-t border-white/10 mt-12 pt-8">
+          <p className="text-center text-white/50 text-label mb-6">
             Alle abgebildeten Personen haben der Veröffentlichung ihrer Bilder zugestimmt.
-          </div>
-          
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-gray-400 text-sm">
-              © 2025 ABF Fahrschule Potsdam. Alle Rechte vorbehalten.
-            </div>
-            <div className="flex space-x-6 text-sm">
-              <Link to="/impressum" className="text-gray-400 hover:text-white transition-colors">
-                Impressum
-              </Link>
-              <Link to="/datenschutz" className="text-gray-400 hover:text-white transition-colors">
-                Datenschutz
-              </Link>
-              <Link to="/agb" className="text-gray-400 hover:text-white transition-colors">
-                AGB
-              </Link>
+          </p>
+
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-white/70 text-small">
+              © {year} ABF Fahrschule Potsdam. Alle Rechte vorbehalten.
+            </p>
+            <div className="flex gap-6 text-small">
+              <Link to="/impressum" className={linkClass}>Impressum</Link>
+              <Link to="/datenschutz" className={linkClass}>Datenschutz</Link>
+              <Link to="/agb" className={linkClass}>AGB</Link>
             </div>
           </div>
         </div>

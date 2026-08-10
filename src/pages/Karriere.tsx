@@ -556,8 +556,8 @@ const Karriere = () => {
                   <FileCheck className="w-5 h-5 text-brand shrink-0 mt-0.5" />
                   <span>
                     Lebenslauf (PDF) gerne im Anschluss per E-Mail an{' '}
-                    <a href="mailto:info@abf-fahrschule.de" className="text-brand hover:underline">
-                      info@abf-fahrschule.de
+                    <a href="mailto:potsdam@fahrschuleabf.de" className="text-brand hover:underline">
+                      potsdam@fahrschuleabf.de
                     </a>{' '}
                     – oder du bringst ihn zum Kennenlerntermin mit.
                   </span>
@@ -615,9 +615,9 @@ const Karriere = () => {
                 <Phone className="w-5 h-5 text-brand" />
                 <span>0162 2191290 (Mobil)</span>
               </a>
-              <a href="mailto:info@abf-fahrschule.de" className="flex items-center gap-3 text-white/75 hover:text-brand transition-colors mb-4">
+              <a href="mailto:potsdam@fahrschuleabf.de" className="flex items-center gap-3 text-white/75 hover:text-brand transition-colors mb-4">
                 <Mail className="w-5 h-5 text-brand" />
-                <span>info@abf-fahrschule.de</span>
+                <span>potsdam@fahrschuleabf.de</span>
               </a>
               <p className="text-sm text-ink/50">
                 Fragen vorab? Ruf uns einfach an – wir beraten dich unverbindlich.

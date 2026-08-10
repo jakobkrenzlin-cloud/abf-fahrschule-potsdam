@@ -167,8 +167,8 @@ const OffersSection = () => {
             <div className="text-center p-4 bg-success/10 rounded-xl">
               <Mail className="w-8 h-8 text-success mx-auto mb-3" />
               <h3 className="font-semibold text-brand-dark mb-2">E-Mail</h3>
-              <a href="mailto:info@abf-fahrschule.de" className="text-success hover:text-success font-medium">
-                info@abf-fahrschule.de
+              <a href="mailto:potsdam@fahrschuleabf.de" className="text-success hover:text-success font-medium">
+                potsdam@fahrschuleabf.de
               </a>
             </div>
 

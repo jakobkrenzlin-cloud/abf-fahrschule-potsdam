@@ -272,8 +272,8 @@ Fahrstunden ab 67,50€/45 Min.</p>
                   <Mail className="w-6 h-6 text-brand-strong mt-1" />
                   <div>
                     <div className="font-medium text-brand-dark">E-Mail Fahrschule Potsdam</div>
-                    <a href="mailto:info@abf-fahrschule.de" className="text-brand-strong hover:text-brand-strong">
-                      info@abf-fahrschule.de
+                    <a href="mailto:potsdam@fahrschuleabf.de" className="text-brand-strong hover:text-brand-strong">
+                      potsdam@fahrschuleabf.de
                     </a>
                   </div>
                 </div>

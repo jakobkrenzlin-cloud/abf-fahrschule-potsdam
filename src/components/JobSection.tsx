@@ -17,7 +17,7 @@ const JobSection = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-blue-600">
+    <section className="py-16 md:py-24 bg-brand-strong">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">
@@ -62,7 +62,7 @@ const JobSection = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="mailto:kontakt@abf-fahrschule.de"
-            className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-center"
+            className="bg-white text-brand-strong px-8 py-3 rounded-lg font-semibold hover:bg-surface transition-colors text-center"
           >
             Jetzt per E-Mail bewerben
           </a>

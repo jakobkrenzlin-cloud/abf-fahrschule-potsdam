@@ -337,7 +337,7 @@ const Karriere = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12" data-reveal>
               <h2 className="text-3xl md:text-4xl font-bold mb-3">Warum ABF?</h2>
-              <p className="text-gray-400">Was uns als Arbeitgeber besonders macht</p>
+              <p className="text-ink/50">Was uns als Arbeitgeber besonders macht</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {BENEFITS.map((b, i) => (
@@ -351,7 +351,7 @@ const Karriere = () => {
                     <b.icon className="w-6 h-6 text-brand" />
                   </div>
                   <h3 className="text-lg font-semibold mb-1">{b.title}</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">{b.text}</p>
+                  <p className="text-sm text-ink/50 leading-relaxed">{b.text}</p>
                 </div>
               ))}
             </div>
@@ -363,7 +363,7 @@ const Karriere = () => {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10" data-reveal>
               <h2 className="text-3xl md:text-4xl font-bold mb-3">Offene Stellen</h2>
-              <p className="text-gray-400">Finde deine Position – klick dich durch die Details</p>
+              <p className="text-ink/50">Finde deine Position – klick dich durch die Details</p>
             </div>
 
             {/* Filter chips */}
@@ -437,7 +437,7 @@ const Karriere = () => {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12" data-reveal>
               <h2 className="text-3xl md:text-4xl font-bold mb-3">So läuft's ab</h2>
-              <p className="text-gray-400">Vom Klick zum Job – in vier Schritten</p>
+              <p className="text-ink/50">Vom Klick zum Job – in vier Schritten</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4 relative">
               {STEPS.map((s, i) => (
@@ -455,7 +455,7 @@ const Karriere = () => {
                       <s.icon className="w-4 h-4 text-brand md:hidden" />
                       {s.title}
                     </h3>
-                    <p className="text-sm text-gray-400">{s.text}</p>
+                    <p className="text-sm text-ink/50">{s.text}</p>
                   </div>
                 </div>
               ))}
@@ -468,7 +468,7 @@ const Karriere = () => {
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8" data-reveal>
               <h2 className="text-3xl md:text-4xl font-bold mb-3">Jetzt bewerben</h2>
-              <p className="text-gray-400">Wir melden uns innerhalb von 48 Stunden bei dir.</p>
+              <p className="text-ink/50">Wir melden uns innerhalb von 48 Stunden bei dir.</p>
             </div>
 
             {success ? (
@@ -552,7 +552,7 @@ const Karriere = () => {
                   />
                 </div>
 
-                <div className="rounded-xl border border-dashed border-white/15 p-4 flex items-start gap-3 text-sm text-gray-400">
+                <div className="rounded-xl border border-dashed border-white/15 p-4 flex items-start gap-3 text-sm text-ink/50">
                   <FileCheck className="w-5 h-5 text-brand shrink-0 mt-0.5" />
                   <span>
                     Lebenslauf (PDF) gerne im Anschluss per E-Mail an{' '}
@@ -601,7 +601,7 @@ const Karriere = () => {
                   14482 Potsdam
                 </span>
               </div>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-ink/50">
                 Direkt im Weberpark Potsdam-Babelsberg – gut erreichbar mit ÖPNV und Auto.
               </p>
             </div>
@@ -619,7 +619,7 @@ const Karriere = () => {
                 <Mail className="w-5 h-5 text-brand" />
                 <span>kontakt@abf-fahrschule.de</span>
               </a>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-ink/50">
                 Fragen vorab? Ruf uns einfach an – wir beraten dich unverbindlich.
               </p>
             </div>

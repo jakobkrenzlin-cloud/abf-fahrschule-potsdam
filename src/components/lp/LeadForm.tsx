@@ -112,7 +112,7 @@ const LeadForm: React.FC<LeadFormProps> = ({
   };
 
   const inputClass =
-    'w-full h-14 rounded-xl bg-white/95 text-ink px-4 text-base border-2 border-transparent focus:border-brand focus:outline-none placeholder:text-gray-500';
+    'w-full h-14 rounded-xl bg-white/95 text-ink px-4 text-base border-2 border-transparent focus:border-brand focus:outline-none placeholder:text-ink/60';
 
   return (
     <div

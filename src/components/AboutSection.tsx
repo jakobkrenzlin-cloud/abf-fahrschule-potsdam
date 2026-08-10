@@ -9,11 +9,11 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-dark">
               Über ABF Fahrschule Potsdam - Ihre vertrauensvolle Fahrschule
             </h2>
             
-            <div className="space-y-4 text-gray-600 leading-relaxed">
+            <div className="space-y-4 text-ink/75 leading-relaxed">
               <p>
                 Seit über 15 Jahren bilden wir in Potsdam erfolgreich Fahrschüler aus. Unser erfahrenes Team der ABF Fahrschule Potsdam 
                 besteht aus geduldigen, lokalen Fahrlehrern, die mit Leidenschaft und Kompetenz jeden Fahrschüler individuell betreuen. 
@@ -35,53 +35,53 @@ const AboutSection = () => {
             {/* Team Values */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mt-6 md:mt-8">
               <div className="flex items-center space-x-3">
-                <Users className="w-6 h-6 text-blue-600" />
-                <span className="font-medium text-gray-900">Erfahrenes Fahrlehrer-Team Potsdam</span>
+                <Users className="w-6 h-6 text-brand-strong" />
+                <span className="font-medium text-brand-dark">Erfahrenes Fahrlehrer-Team Potsdam</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Clock className="w-6 h-6 text-blue-600" />
-                <span className="font-medium text-gray-900">Flexible Fahrstunden in Potsdam</span>
+                <Clock className="w-6 h-6 text-brand-strong" />
+                <span className="font-medium text-brand-dark">Flexible Fahrstunden in Potsdam</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Award className="w-6 h-6 text-blue-600" />
-                <span className="font-medium text-gray-900">Top Fahrausbildung Potsdam</span>
+                <Award className="w-6 h-6 text-brand-strong" />
+                <span className="font-medium text-brand-dark">Top Fahrausbildung Potsdam</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Heart className="w-6 h-6 text-blue-600" />
-                <span className="font-medium text-gray-900">Mit Herzblut in Potsdam</span>
+                <Heart className="w-6 h-6 text-brand-strong" />
+                <span className="font-medium text-brand-dark">Mit Herzblut in Potsdam</span>
               </div>
             </div>
           </div>
 
           {/* Right Content - Team Slideshow */}
           <div className="space-y-6">
-            <div className="bg-blue-50 rounded-2xl p-8 text-center">
+            <div className="bg-surface rounded-2xl p-8 text-center">
               <TeamSlideshow />
-              <h3 className="text-2xl font-bold text-gray-900 mb-2 mt-6">Unser Fahrlehrer-Team Potsdam</h3>
-              <p className="text-gray-600">
+              <h3 className="text-2xl font-bold text-brand-dark mb-2 mt-6">Unser Fahrlehrer-Team Potsdam</h3>
+              <p className="text-ink/75">
                 Erfahren, geduldig und immer für Sie da - lokale Fahrlehrer mit Potsdam-Expertise
               </p>
             </div>
 
             {/* Certifications */}
-            <div className="bg-gray-50 rounded-xl p-6">
-              <h4 className="font-semibold text-gray-900 mb-4">Unsere Qualifikationen als Fahrschule Potsdam</h4>
+            <div className="bg-surface rounded-xl p-6">
+              <h4 className="font-semibold text-brand-dark mb-4">Unsere Qualifikationen als Fahrschule Potsdam</h4>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span className="text-gray-700">Staatlich anerkannte Fahrschule in Potsdam</span>
+                  <div className="w-2 h-2 bg-brand-strong rounded-full"></div>
+                  <span className="text-ink">Staatlich anerkannte Fahrschule in Potsdam</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span className="text-gray-700">Zertifizierte Fahrlehrer für Potsdam</span>
+                  <div className="w-2 h-2 bg-brand-strong rounded-full"></div>
+                  <span className="text-ink">Zertifizierte Fahrlehrer für Potsdam</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span className="text-gray-700">Regelmäßige Weiterbildungen</span>
+                  <div className="w-2 h-2 bg-brand-strong rounded-full"></div>
+                  <span className="text-ink">Regelmäßige Weiterbildungen</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span className="text-gray-700">Moderne Fahrzeugflotte für Potsdam</span>
+                  <div className="w-2 h-2 bg-brand-strong rounded-full"></div>
+                  <span className="text-ink">Moderne Fahrzeugflotte für Potsdam</span>
                 </div>
               </div>
             </div>

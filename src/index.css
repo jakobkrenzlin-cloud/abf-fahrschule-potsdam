@@ -1,103 +1,90 @@
+/* Inter – lokal eingebunden (kein Google-CDN, DSGVO-konform) */
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/inter/800.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
+    /* ---- Markentokens ---- */
+    --brand: 206 100% 55%;          /* #1A9CFF */
+    --brand-strong: 207 85% 40%;    /* #0F6FBF */
+    --brand-dark: 214 51% 15%;      /* #13243A */
+    --ink: 0 0% 11%;                /* #1C1C1C */
+    --surface: 210 37% 97%;         /* #F4F7FA */
+    --success: 142 72% 29%;         /* #15803D */
+    --warning: 26 91% 37%;          /* #B45309 */
+    --star: 45 100% 52%;            /* Sterne-Gold */
+
+    /* ---- Semantische Tokens ---- */
     --background: 0 0% 100%;
-    --foreground: 0 0% 17%;
+    --foreground: var(--ink);
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 17%;
+    --card-foreground: var(--ink);
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 17%;
+    --popover-foreground: var(--ink);
 
-    --primary: 182 81% 26%;
+    --primary: var(--brand);
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 17%;
+    --secondary: var(--surface);
+    --secondary-foreground: var(--brand-dark);
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: var(--surface);
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 182 81% 26%;
+    --accent: var(--brand);
     --accent-foreground: 0 0% 100%;
-    
-    --cta: 182 81% 26%;
+
+    --cta: var(--brand-strong);
     --cta-foreground: 0 0% 100%;
-    --cta-hover: 185 90% 20%;
+    --cta-hover: 207 85% 33%;
 
-    --spring-green: 182 81% 26%;
-    --spring-green-foreground: 0 0% 100%;
-
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 72% 45%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 88%;
     --input: 0 0% 88%;
-    --ring: 182 81% 26%;
+    --ring: var(--brand);
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 182 81% 26%;
-
+    --sidebar-background: var(--surface);
+    --sidebar-foreground: var(--brand-dark);
+    --sidebar-primary: var(--brand-strong);
     --sidebar-primary-foreground: 0 0% 100%;
-
-    --sidebar-accent: 0 0% 96%;
-
-    --sidebar-accent-foreground: 0 0% 17%;
-
+    --sidebar-accent: var(--surface);
+    --sidebar-accent-foreground: var(--brand-dark);
     --sidebar-border: 0 0% 88%;
-
-    --sidebar-ring: 182 81% 26%;
+    --sidebar-ring: var(--brand);
   }
 
   .dark {
-    --background: 0 0% 9%;
+    --background: 214 51% 10%;
     --foreground: 0 0% 96%;
-
-    --card: 0 0% 12%;
+    --card: 214 51% 15%;
     --card-foreground: 0 0% 96%;
-
-    --popover: 0 0% 12%;
+    --popover: 214 51% 15%;
     --popover-foreground: 0 0% 96%;
-
-    --primary: 182 81% 35%;
+    --primary: var(--brand);
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 0 0% 18%;
+    --secondary: 214 30% 20%;
     --secondary-foreground: 0 0% 96%;
-
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 65%;
-
-    --accent: 182 81% 35%;
+    --muted: 214 30% 20%;
+    --muted-foreground: 0 0% 70%;
+    --accent: var(--brand);
     --accent-foreground: 0 0% 100%;
-
-    --cta: 182 81% 35%;
-    --cta-foreground: 0 0% 100%;
-    --cta-hover: 185 90% 28%;
-
-    --destructive: 0 62.8% 45%;
+    --destructive: 0 62% 45%;
     --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 22%;
-    --input: 0 0% 22%;
-    --ring: 182 81% 35%;
-    --sidebar-background: 0 0% 10%;
-    --sidebar-foreground: 0 0% 96%;
-    --sidebar-primary: 182 81% 35%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 16%;
-    --sidebar-accent-foreground: 0 0% 96%;
-    --sidebar-border: 0 0% 22%;
-    --sidebar-ring: 182 81% 35%;
+    --border: 214 25% 25%;
+    --input: 214 25% 25%;
+    --ring: var(--brand);
   }
 }
 
@@ -106,20 +93,74 @@
     @apply border-border;
   }
 
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    font-weight: 400;
+    overflow-x: hidden;
+  }
+
+  /* Typo-Skala */
+  h1 {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+  h2 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    hyphens: auto;
+    overflow-wrap: anywhere;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 48px;
+    }
+    h2 {
+      font-size: 36px;
+    }
+    h3 {
+      font-size: 24px;
+    }
   }
 }
 
-/* Safe area for mobile sticky footer */
+/* Safe area für die mobile Sticky-Leiste */
 .safe-area-inset-bottom {
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-/* Optimize touch targets for mobile */
 @layer utilities {
   .touch-target {
     min-height: 44px;
     min-width: 44px;
   }
+  .container-page {
+    @apply max-w-6xl mx-auto px-4 md:px-6;
+  }
+  .container-narrow {
+    @apply max-w-3xl mx-auto px-4 md:px-6;
+  }
+  .section-y {
+    @apply py-12 md:py-20;
+  }
 }
+

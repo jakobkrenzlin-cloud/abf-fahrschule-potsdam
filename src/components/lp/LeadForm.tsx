@@ -112,15 +112,15 @@ const LeadForm: React.FC<LeadFormProps> = ({
   };
 
   const inputClass =
-    'w-full h-14 rounded-xl bg-white/95 text-[#1C1C1C] px-4 text-base border-2 border-transparent focus:border-[#1A9CFF] focus:outline-none placeholder:text-gray-500';
+    'w-full h-14 rounded-xl bg-white/95 text-ink px-4 text-base border-2 border-transparent focus:border-brand focus:outline-none placeholder:text-ink/60';
 
   return (
     <div
       id={id}
-      className="bg-[#13243A] rounded-2xl p-5 sm:p-7 shadow-[0_0_40px_rgba(26,156,255,0.25)] ring-1 ring-[#1A9CFF]/30 scroll-mt-24"
+      className="bg-brand-dark rounded-2xl p-5 sm:p-7 shadow-[0_0_40px_rgba(26,156,255,0.25)] ring-1 ring-brand/30 scroll-mt-24"
     >
       <h2 className="text-2xl md:text-3xl font-bold text-white">{title}</h2>
-      <p className="mt-1.5 text-sm text-[#1A9CFF] font-medium flex items-center gap-1.5">
+      <p className="mt-1.5 text-sm text-brand font-medium flex items-center gap-1.5">
         <ShieldCheck className="w-4 h-4" aria-hidden="true" />
         Kostenlos &amp; unverbindlich · Antwort in 24 h
       </p>
@@ -144,7 +144,7 @@ const LeadForm: React.FC<LeadFormProps> = ({
             aria-describedby={errors.name ? `${id}-name-error` : undefined}
           />
           {errors.name && (
-            <p id={`${id}-name-error`} className="mt-1 text-sm text-[#F59E0B]">
+            <p id={`${id}-name-error`} className="mt-1 text-sm text-warning">
               {errors.name}
             </p>
           )}
@@ -169,7 +169,7 @@ const LeadForm: React.FC<LeadFormProps> = ({
             aria-describedby={errors.phone ? `${id}-phone-error` : undefined}
           />
           {errors.phone && (
-            <p id={`${id}-phone-error`} className="mt-1 text-sm text-[#F59E0B]">
+            <p id={`${id}-phone-error`} className="mt-1 text-sm text-warning">
               {errors.phone}
             </p>
           )}
@@ -207,7 +207,7 @@ const LeadForm: React.FC<LeadFormProps> = ({
                 aria-pressed={start === opt}
                 className={`px-4 py-2.5 rounded-full text-sm font-medium border transition-colors ${
                   start === opt
-                    ? 'bg-[#1A9CFF] text-white border-[#1A9CFF]'
+                    ? 'bg-brand-strong text-white border-brand'
                     : 'bg-white/10 text-white border-white/25 hover:bg-white/20'
                 }`}
               >
@@ -223,7 +223,7 @@ const LeadForm: React.FC<LeadFormProps> = ({
             type="checkbox"
             checked={consent}
             onChange={(e) => setConsent(e.target.checked)}
-            className="mt-1 w-5 h-5 rounded accent-[#1A9CFF]"
+            className="mt-1 w-5 h-5 rounded accent-brand"
           />
           <label htmlFor={`${id}-consent`} className="text-xs text-white/80 leading-relaxed">
             Ich stimme zu, dass meine Angaben zur Kontaktaufnahme gespeichert werden.{' '}
@@ -246,7 +246,7 @@ const LeadForm: React.FC<LeadFormProps> = ({
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full min-h-[56px] rounded-xl bg-[#1A9CFF] hover:bg-[#0f86e0] active:bg-[#0d76c7] disabled:opacity-70 text-white text-lg font-bold transition-colors flex items-center justify-center gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          className="w-full min-h-[56px] rounded-xl bg-brand-strong hover:bg-brand-strong/90 disabled:opacity-70 text-white text-lg font-bold transition-colors flex items-center justify-center gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
           {isSubmitting ? (
             <>
@@ -266,7 +266,7 @@ const LeadForm: React.FC<LeadFormProps> = ({
             onClick={() =>
               openWhatsApp(`${WHATSAPP_BASE}?text=${encodeURIComponent(whatsappText)}`, trackingSource)
             }
-            className="min-h-[56px] rounded-xl bg-[#16A34A] hover:bg-[#12813b] text-white font-semibold flex items-center justify-center gap-2 transition-colors"
+            className="min-h-[56px] rounded-xl bg-success hover:bg-success text-white font-semibold flex items-center justify-center gap-2 transition-colors"
           >
             <MessageCircle className="w-5 h-5" aria-hidden="true" /> WhatsApp
           </button>

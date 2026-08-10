@@ -1,10 +1,11 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import MobileStickyFooter from '../components/MobileStickyFooter';
 import { Button } from '@/components/ui/button';
 import { BookOpen, Smartphone, CheckCircle, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 const Theorie = () => {
   return <>
       <Helmet>
@@ -73,7 +74,7 @@ const Theorie = () => {
               </div>
             </div>
             <div className="text-center pt-6 border-t border-border">
-              <Link to="/Anmeldung">
+              <Link to="/anmeldung">
                 <Button size="lg" className="text-lg px-8">
                   Jetzt Theorie-Kursplatz sichern
                 </Button>
@@ -229,7 +230,7 @@ const Theorie = () => {
               Sichere dir jetzt deinen Platz im nächsten Theoriekurs und starte durch!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/Anmeldung">
+              <Link to="/anmeldung">
                 <Button size="lg" className="text-lg px-8">
                   Jetzt Theorie-Kursplatz sichern
                 </Button>
@@ -243,6 +244,7 @@ const Theorie = () => {
           </div>
         </main>
         <Footer />
+        <MobileStickyFooter />
       </div>
     </>;
 };

@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { CheckCircle, Phone, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import MobileStickyFooter from '@/components/MobileStickyFooter';
 import { fireConversion, CONVERSION_LABELS } from '@/lib/tracking';
 
 const Danke = () => {
@@ -30,22 +31,22 @@ const Danke = () => {
         <div className="max-w-2xl w-full text-center">
           <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
             <div className="mb-6 flex justify-center">
-              <CheckCircle className="w-20 h-20 text-green-500" />
+              <CheckCircle className="w-20 h-20 text-success" />
             </div>
             
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">
               Vielen Dank für deine Anfrage!
             </h1>
             
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-lg text-ink/75 mb-8">
               Wir haben deine Anmeldung erfolgreich erhalten und werden uns innerhalb von 24 Stunden bei dir melden.
             </p>
             
             <div className="bg-primary/5 rounded-lg p-6 mb-8">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">
+              <h2 className="text-xl font-semibold text-brand-dark mb-4">
                 Was passiert als Nächstes?
               </h2>
-              <ul className="text-left space-y-3 text-gray-700">
+              <ul className="text-left space-y-3 text-ink">
                 <li className="flex items-start">
                   <span className="text-primary mr-2">✓</span>
                   <span>Ein Mitarbeiter wird sich telefonisch oder per E-Mail bei dir melden</span>
@@ -62,10 +63,10 @@ const Danke = () => {
             </div>
             
             <div className="border-t pt-8 mb-8">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              <h3 className="text-lg font-semibold text-brand-dark mb-4">
                 Du hast dringliche Fragen?
               </h3>
-              <div className="space-y-3 text-gray-600">
+              <div className="space-y-3 text-ink/75">
                 <div className="flex flex-col items-center justify-center gap-1">
                   <div className="flex items-center gap-2">
                     <Phone className="w-5 h-5 text-primary" />
@@ -84,8 +85,8 @@ const Danke = () => {
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   <Mail className="w-5 h-5 text-primary" />
-                  <a href="mailto:info@abf-fahrschule-potsdam.de" className="hover:text-primary transition-colors">
-                    info@abf-fahrschule-potsdam.de
+                  <a href="mailto:kontakt@abf-fahrschule.de" className="hover:text-primary transition-colors">
+                    kontakt@abf-fahrschule.de
                   </a>
                 </div>
                 <div className="flex items-center justify-center gap-2">
@@ -112,6 +113,8 @@ const Danke = () => {
       </main>
       
       <Footer />
+      
+      <MobileStickyFooter />
     </div>
   );
 };

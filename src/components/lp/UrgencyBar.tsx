@@ -28,8 +28,8 @@ const UrgencyBar: React.FC<{ label?: string }> = ({
   if (!left) return null;
 
   return (
-    <div className="bg-[#F59E0B] text-[#1C1C1C]" role="region" aria-label="Angebotsfrist">
-      <div className="max-w-6xl mx-auto px-4 py-2 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm md:text-base font-semibold text-center">
+    <div className="bg-warning text-ink" role="region" aria-label="Angebotsfrist">
+      <div className="container-page py-2 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm md:text-base font-semibold text-center">
         <span className="inline-flex items-center gap-1.5">
           <Clock className="w-4 h-4" aria-hidden="true" />
           {label}

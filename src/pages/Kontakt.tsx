@@ -1,10 +1,11 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import MobileStickyFooter from '../components/MobileStickyFooter';
 import { Button } from '@/components/ui/button';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 const Kontakt = () => {
   return <>
       <Helmet>
@@ -102,7 +103,7 @@ const Kontakt = () => {
                 </div>
               </div>
               <p className="text-sm text-muted-foreground mt-4">
-                💡 Theorieunterricht findet auch außerhalb dieser Zeiten statt. <Link to="/theorie" className="text-primary hover:underline">Mehr zur Theorie</Link>
+                Theorieunterricht findet auch außerhalb dieser Zeiten statt. <Link to="/theorie" className="text-primary hover:underline">Mehr zur Theorie</Link>
               </p>
             </div>
           </div>
@@ -166,7 +167,7 @@ const Kontakt = () => {
             <p className="text-muted-foreground mb-6">
               Komm vorbei oder melde dich direkt online an. Wir freuen uns auf dich!
             </p>
-            <Link to="/Anmeldung">
+            <Link to="/anmeldung">
               <Button size="lg" className="text-lg px-8">
                 Jetzt Platz sichern
               </Button>
@@ -174,6 +175,7 @@ const Kontakt = () => {
           </div>
         </main>
         <Footer />
+        <MobileStickyFooter />
       </div>
     </>;
 };

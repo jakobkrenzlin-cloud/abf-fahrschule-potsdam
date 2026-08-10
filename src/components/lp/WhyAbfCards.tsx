@@ -12,10 +12,10 @@ const CARDS = [
 ];
 
 const WhyAbfCards: React.FC = () => (
-  <section className="py-12 md:py-16 bg-[#13243A]" aria-labelledby="warum-heading">
-    <div className="max-w-6xl mx-auto px-4">
+  <section className="section-y bg-brand-dark" aria-labelledby="warum-heading">
+    <div className="container-page">
       <Reveal>
-        <h2 id="warum-heading" className="text-2xl md:text-4xl font-bold text-white text-center">
+        <h2 id="warum-heading" className="text-h2 md:text-h2-lg text-white text-center">
           Warum ABF
         </h2>
       </Reveal>
@@ -23,7 +23,7 @@ const WhyAbfCards: React.FC = () => (
         {CARDS.map((c, i) => (
           <Reveal key={c.title} delay={i * 60}>
             <div className="h-full bg-white/5 border border-white/10 rounded-2xl p-6">
-              <c.icon className="w-8 h-8 text-[#1A9CFF]" aria-hidden="true" />
+              <c.icon className="w-8 h-8 text-brand" aria-hidden="true" />
               <h3 className="mt-4 font-bold text-white text-lg">{c.title}</h3>
               <p className="mt-1.5 text-white/70 leading-relaxed">{c.text}</p>
             </div>

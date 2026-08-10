@@ -1,129 +1,137 @@
-
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { PHONE_DISPLAY, PHONE_RAW, LOGO_URL } from '@/components/lp/constants';
+import { callPhone } from '@/lib/tracking';
 
-const Header = () => {
+interface HeaderProps {
+  /** 'lp' = schlanker Modus für die Anzeigen-Landingpages (ohne Navigation) */
+  variant?: 'full' | 'lp';
+  onCtaClick?: () => void;
+  ctaLabel?: string;
+}
+
+const NAV = [
+  { label: 'Start', to: '/' },
+  { label: 'Preise', to: '/preise' },
+  { label: 'Theorie', to: '/theorie' },
+  { label: 'Kontakt', to: '/kontakt' },
+  { label: 'Karriere', to: '/karriere' },
+];
+
+const Header: React.FC<HeaderProps> = ({ variant = 'full', onCtaClick, ctaLabel }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
-  const navigateToSection = (sectionId: string) => {
-    if (location.pathname === '/') {
-      // We're on the main page, scroll to section
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      // We're on a different page, navigate to main page first, then scroll
-      navigate('/');
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    }
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const isLp = variant === 'lp';
+
+  const handleCta = () => {
     setIsMenuOpen(false);
+    if (onCtaClick) {
+      onCtaClick();
+      return;
+    }
+    if (location.pathname === '/') {
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/anmeldung');
+    }
   };
 
   return (
-    <header className="bg-white shadow-sm fixed w-full top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-12 md:h-16">
-          {/* Logo - 30% smaller on mobile */}
-          <div className="flex-shrink-0">
-            <Link to="/" className="flex items-center">
-              <img 
-                src="/lovable-uploads/043122ac-3ad6-402e-85ea-565401e53982.png"
-                alt="ABF Fahrschule Potsdam Logo - Professionelle Fahrausbildung"
-                className="h-14 md:h-20 w-auto"
-                loading="eager"
-                fetchPriority="high"
-                title="ABF Fahrschule Potsdam - Ihr vertrauensvoller Partner für den Führerschein"
-              />
-            </Link>
-          </div>
+    <header
+      className={`sticky top-0 z-50 bg-background ${
+        scrolled ? 'shadow-card' : ''
+      } border-b border-black/[0.08] transition-shadow`}
+    >
+      <div className="container-page h-16 flex items-center justify-between gap-3">
+        <Link to="/" className="flex items-center shrink-0" aria-label="ABF Fahrschule Potsdam – Startseite">
+          <img
+            src={LOGO_URL}
+            alt="ABF Fahrschule Potsdam"
+            width={160}
+            height={48}
+            className="h-10 md:h-12 w-auto"
+            loading="eager"
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            <button onClick={() => navigateToSection('home')} className="text-gray-700 hover:text-blue-600 transition-colors">
-              Home
-            </button>
-            <button onClick={() => navigateToSection('about')} className="text-gray-700 hover:text-blue-600 transition-colors">
-              Über uns
-            </button>
-            <button onClick={() => navigateToSection('process')} className="text-gray-700 hover:text-blue-600 transition-colors">
-              Führerschein
-            </button>
-            <a href="https://maps.google.com/?q=ABF+Fahrschule+Potsdam" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-600 transition-colors">
-              Bewertungen
-            </a>
-            <Link to="/karriere" className="text-gray-700 hover:text-blue-600 transition-colors">
-              Karriere
-            </Link>
-            <button onClick={() => navigateToSection('contact')} className="text-gray-700 hover:text-blue-600 transition-colors">
-              Kontakt
-            </button>
+          />
+        </Link>
+
+        {!isLp && (
+          <nav className="hidden md:flex items-center gap-6" aria-label="Hauptnavigation">
+            {NAV.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                className="text-small font-semibold text-brand-dark hover:text-brand-strong transition-colors py-3"
+              >
+                {item.label}
+              </Link>
+            ))}
           </nav>
+        )}
 
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center space-x-4">
-            <button 
-              onClick={() => navigateToSection('contact')}
-              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2"
-            >
-              <Phone className="w-4 h-4" />
-              <span>Jetzt anfragen</span>
-            </button>
-          </div>
+        <div className="flex items-center gap-2 md:gap-4">
+          <a
+            href={`tel:${PHONE_RAW}`}
+            onClick={() => callPhone(PHONE_RAW, 'header')}
+            className="hidden sm:flex items-center gap-2 min-h-[44px] px-2 text-small font-semibold text-brand-dark hover:text-brand-strong transition-colors"
+            aria-label={`Anrufen unter ${PHONE_DISPLAY}`}
+          >
+            <Phone className="w-5 h-5" aria-hidden="true" />
+            <span className="hidden lg:inline">{PHONE_DISPLAY}</span>
+          </a>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          <Button type="button" onClick={handleCta} size="sm">
+            {ctaLabel ?? 'Jetzt anmelden'}
+          </Button>
+
+          {!isLp && (
             <button
+              type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className="md:hidden touch-target inline-flex items-center justify-center text-brand-dark"
+              aria-expanded={isMenuOpen}
+              aria-label={isMenuOpen ? 'Menü schließen' : 'Menü öffnen'}
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
-          </div>
+          )}
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            <button onClick={() => navigateToSection('home')} className="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">
-              Home
-            </button>
-            <button onClick={() => navigateToSection('about')} className="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">
-              Über uns
-            </button>
-            <button onClick={() => navigateToSection('process')} className="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">
-              Führerschein
-            </button>
-            <a href="https://maps.google.com/?q=ABF+Fahrschule+Potsdam" target="_blank" rel="noopener noreferrer" className="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">
-              Bewertungen
-            </a>
-            <Link to="/karriere" onClick={() => setIsMenuOpen(false)} className="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">
-              Karriere
-            </Link>
-            <button onClick={() => navigateToSection('contact')} className="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">
-              Kontakt
-            </button>
-            <div className="px-3 py-2">
-              <button 
-                onClick={() => navigateToSection('contact')}
-                className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2"
+      {!isLp && isMenuOpen && (
+        <nav className="md:hidden bg-background border-t border-black/[0.08]" aria-label="Mobile Navigation">
+          <div className="container-page py-2">
+            {NAV.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                onClick={() => setIsMenuOpen(false)}
+                className="flex items-center min-h-[48px] text-brand-dark font-semibold hover:text-brand-strong transition-colors"
               >
-                <Phone className="w-4 h-4" />
-                <span>Jetzt anfragen</span>
-              </button>
-            </div>
+                {item.label}
+              </Link>
+            ))}
+            <a
+              href={`tel:${PHONE_RAW}`}
+              className="flex items-center gap-2 min-h-[48px] text-brand-dark font-semibold"
+            >
+              <Phone className="w-5 h-5" aria-hidden="true" />
+              {PHONE_DISPLAY}
+            </a>
           </div>
-        </div>
+        </nav>
       )}
     </header>
   );

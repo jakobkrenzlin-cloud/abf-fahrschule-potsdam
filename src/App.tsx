@@ -32,7 +32,7 @@ const queryClient = new QueryClient();
 
 const RouteFallback = () => (
   <div className="min-h-screen bg-black flex items-center justify-center">
-    <div className="w-10 h-10 border-2 border-[#3b5998] border-t-transparent rounded-full animate-spin" />
+    <div className="w-10 h-10 border-2 border-brand-strong border-t-transparent rounded-full animate-spin" />
   </div>
 );
 

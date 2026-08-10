@@ -111,70 +111,70 @@ const ContactSection = () => {
   return <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-dark">
             Jetzt Kontakt aufnehmen
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Haben Sie Fragen zu unserer Fahrschule in Potsdam oder möchten Sie sich für den Führerschein anmelden? 
-            Wir freuen uns auf Ihre Nachricht und beraten Sie gerne kostenlos!
+          <p className="text-xl text-ink/75 max-w-3xl mx-auto">
+            Du hast Fragen zu unserer Fahrschule in Potsdam oder möchtest dich für den Führerschein anmelden? 
+            Wir freuen uns auf deine Nachricht und beraten dich gerne kostenlos!
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
           {/* Contact Form */}
-          <div className="bg-white rounded-2xl shadow-2xl p-8 lg:p-12 border border-gray-100">
+          <div className="bg-white rounded-2xl shadow-2xl p-8 lg:p-12 border border-black/[0.08]">
             {/* Offer Reminder */}
-            <div className="text-center mb-8 p-4 bg-gradient-to-r from-blue-600/10 to-blue-600/5 rounded-xl border-l-4 border-blue-600">
-              <p className="text-blue-600 font-bold text-lg"> 🍂 Herbst-Angebot: nur {currentOffer.price} Grundbetrag!</p>
+            <div className="text-center mb-8 p-4 bg-gradient-to-r from-brand-strong/10 to-blue-600/5 rounded-xl border-l-4 border-brand/30">
+              <p className="text-brand-strong font-bold text-lg"> Herbst-Angebot: nur {currentOffer.price} Grundbetrag!</p>
               {currentOffer.note && (
-                <p className="text-[11px] text-gray-500 mt-1 italic">{currentOffer.note}</p>
+                <p className="text-[11px] text-ink/60 mt-1 italic">{currentOffer.note}</p>
               )}
-               <p className="text-xs text-gray-600 mt-2">Zusätzlich: ADAC 1 Jahr kostenlos. 
+               <p className="text-xs text-ink/75 mt-2">Zusätzlich: ADAC 1 Jahr kostenlos. 
 Fahrstunden ab 67,50€/45 Min.</p>
-              <p className="text-xs text-gray-500 mt-1">
+              <p className="text-xs text-ink/60 mt-1">
                 Limitiertes Herbst-Angebot
               </p>
             </div>
 
-            <h3 className="text-2xl lg:text-3xl font-bold text-center mb-2 text-gray-900">
+            <h3 className="text-2xl lg:text-3xl font-bold text-center mb-2 text-brand-dark">
               Kostenlose Beratung sichern
             </h3>
-            <p className="text-center text-gray-600 mb-8">
+            <p className="text-center text-ink/75 mb-8">
               Wir melden uns innerhalb von 24h bei dir zurück
             </p>
             
             <form onSubmit={handleFormSubmit} className="space-y-6">
               <div>
-                <Label htmlFor="name" className="text-sm font-semibold text-gray-700">Vollständiger Name *</Label>
+                <Label htmlFor="name" className="text-sm font-semibold text-ink">Vollständiger Name *</Label>
                 <Input id="name" type="text" required value={formData.name} onChange={e => setFormData({
                 ...formData,
                 name: e.target.value
-              })} className="mt-2 h-12 border-2 border-gray-200 focus:border-blue-600 rounded-lg" placeholder="Dein vollständiger Name" />
+              })} className="mt-2 h-12 border-2 border-black/[0.08] focus:border-brand/30 rounded-lg" placeholder="Dein vollständiger Name" />
               </div>
               
               <div>
-                <Label htmlFor="phone" className="text-sm font-semibold text-gray-700">Telefonnummer *</Label>
+                <Label htmlFor="phone" className="text-sm font-semibold text-ink">Telefonnummer *</Label>
                 <Input id="phone" type="tel" required value={formData.phone} onChange={e => setFormData({
                 ...formData,
                 phone: e.target.value
-              })} className="mt-2 h-12 border-2 border-gray-200 focus:border-blue-600 rounded-lg" placeholder="Deine Telefonnummer" />
+              })} className="mt-2 h-12 border-2 border-black/[0.08] focus:border-brand/30 rounded-lg" placeholder="Deine Telefonnummer" />
               </div>
 
               <div>
-                <Label htmlFor="email" className="text-sm font-semibold text-gray-700">E-Mail <span className="text-gray-400 font-normal">(optional)</span></Label>
+                <Label htmlFor="email" className="text-sm font-semibold text-ink">E-Mail <span className="text-ink/50 font-normal">(optional)</span></Label>
                 <Input id="email" type="email" value={formData.email} onChange={e => setFormData({
                 ...formData,
                 email: e.target.value
-              })} className="mt-2 h-12 border-2 border-gray-200 focus:border-blue-600 rounded-lg" placeholder="deine@email.de" autoComplete="email" />
+              })} className="mt-2 h-12 border-2 border-black/[0.08] focus:border-brand/30 rounded-lg" placeholder="deine@email.de" autoComplete="email" />
               </div>
               
               <div>
-                <Label htmlFor="license" className="text-sm font-semibold text-gray-700">Führerscheinklasse *</Label>
+                <Label htmlFor="license" className="text-sm font-semibold text-ink">Führerscheinklasse *</Label>
                 <Select value={formData.licenseClass} onValueChange={value => setFormData({
                 ...formData,
                 licenseClass: value
               })}>
-                  <SelectTrigger className="mt-2 h-12 border-2 border-gray-200 focus:border-blue-600 rounded-lg">
+                  <SelectTrigger className="mt-2 h-12 border-2 border-black/[0.08] focus:border-brand/30 rounded-lg">
                     <SelectValue placeholder="Wähle deine Führerscheinklasse" />
                   </SelectTrigger>
                   <SelectContent>
@@ -202,10 +202,10 @@ Fahrstunden ab 67,50€/45 Min.</p>
                   <input type="checkbox" id="contact-privacyConsent" checked={formData.privacyConsent} onChange={e => setFormData({
                   ...formData,
                   privacyConsent: e.target.checked
-                })} className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-600" required />
-                  <Label htmlFor="contact-privacyConsent" className="text-sm text-gray-700 leading-tight cursor-pointer">
+                })} className="mt-1 h-4 w-4 rounded border-black/[0.08] text-brand-strong focus:ring-blue-600" required />
+                  <Label htmlFor="contact-privacyConsent" className="text-sm text-ink leading-tight cursor-pointer">
                     Ich stimme der Verarbeitung meiner Daten gemäß der{' '}
-                    <a href="/datenschutz" target="_blank" className="text-blue-600 underline hover:text-blue-700">
+                    <a href="/datenschutz" target="_blank" className="text-brand-strong underline hover:text-brand-strong">
                       Datenschutzerklärung
                     </a>{' '}
                     zu. *
@@ -213,24 +213,24 @@ Fahrstunden ab 67,50€/45 Min.</p>
                 </div>
               </div>
               
-              <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-blue-600 hover:bg-blue-700 h-14 text-base md:text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50">
+              <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-brand-strong hover:bg-brand-strong h-14 text-base md:text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50">
                 {isSubmitting ? "Wird gesendet..." : <><span className="hidden sm:inline">Jetzt Anfrage senden & {currentOffer.price} Herbst-Angebot sichern</span><span className="sm:hidden">Jetzt für {currentOffer.price} anmelden</span></>}
               </Button>
             </form>
             
             {/* WhatsApp & Call Buttons */}
             <div className="flex gap-4 mt-6">
-              <Button onClick={handleWhatsApp} variant="outline" size="lg" className="flex-1 border-2 border-green-500 text-green-600 hover:bg-green-50 h-12 font-semibold rounded-xl">
+              <Button onClick={handleWhatsApp} variant="outline" size="lg" className="flex-1 border-2 border-success text-success hover:bg-success/10 h-12 font-semibold rounded-xl">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 WhatsApp
               </Button>
-              <Button onClick={handleCall} variant="outline" size="lg" className="flex-1 border-2 border-blue-600 text-blue-600 hover:bg-blue-50 h-12 font-semibold rounded-xl">
+              <Button onClick={handleCall} variant="outline" size="lg" className="flex-1 border-2 border-brand/30 text-brand-strong hover:bg-surface h-12 font-semibold rounded-xl">
                 <Phone className="w-5 h-5 mr-2" />
                 Anrufen
               </Button>
             </div>
 
-            <div className="text-center mt-6 text-sm text-gray-500">
+            <div className="text-center mt-6 text-sm text-ink/60">
               <p>Deine Daten sind sicher und werden vertraulich behandelt</p>
             </div>
           </div>
@@ -238,17 +238,17 @@ Fahrstunden ab 67,50€/45 Min.</p>
           {/* Contact Info & Map */}
           <div className="space-y-8">
             {/* Contact Details */}
-            <div className="bg-white rounded-xl shadow-lg p-8 space-y-6 border border-gray-100">
-              <h3 className="text-2xl font-semibold text-gray-900">
-                ABF Fahrschule Potsdam - Ihr Kontakt
+            <div className="bg-white rounded-xl shadow-lg p-8 space-y-6 border border-black/[0.08]">
+              <h3 className="text-2xl font-semibold text-brand-dark">
+                ABF Fahrschule Potsdam – dein Kontakt
               </h3>
 
               <div className="space-y-4">
                 <div className="flex items-start space-x-4">
-                  <MapPin className="w-6 h-6 text-blue-600 mt-1" />
+                  <MapPin className="w-6 h-6 text-brand-strong mt-1" />
                   <div>
-                    <div className="font-medium text-gray-900">Fahrschule Potsdam Adresse</div>
-                    <div className="text-gray-600">
+                    <div className="font-medium text-brand-dark">Fahrschule Potsdam Adresse</div>
+                    <div className="text-ink/75">
                       WEBERPARK<br />
                       Tuchmacherstraße 45b<br />
                       14482 Potsdam<br />
@@ -258,31 +258,31 @@ Fahrstunden ab 67,50€/45 Min.</p>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <Phone className="w-6 h-6 text-blue-600 mt-1" />
+                  <Phone className="w-6 h-6 text-brand-strong mt-1" />
                   <div>
-                    <div className="font-medium text-gray-900">Telefon Fahrschule Potsdam</div>
+                    <div className="font-medium text-brand-dark">Telefon Fahrschule Potsdam</div>
                     <div className="space-y-0.5">
-                      <div><span className="text-sm text-gray-500">Festnetz: </span><a href="tel:+4933196795854" className="text-blue-600 hover:text-blue-700">+49 331 96795854</a></div>
-                      <div><span className="text-sm text-gray-500">Mobil: </span><a href="tel:+491622191290" className="text-blue-600 hover:text-blue-700">+49 162 2191290</a></div>
+                      <div><span className="text-sm text-ink/60">Festnetz: </span><a href="tel:+4933196795854" className="text-brand-strong hover:text-brand-strong">+49 331 96795854</a></div>
+                      <div><span className="text-sm text-ink/60">Mobil: </span><a href="tel:+491622191290" className="text-brand-strong hover:text-brand-strong">+49 162 2191290</a></div>
                     </div>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <Mail className="w-6 h-6 text-blue-600 mt-1" />
+                  <Mail className="w-6 h-6 text-brand-strong mt-1" />
                   <div>
-                    <div className="font-medium text-gray-900">E-Mail Fahrschule Potsdam</div>
-                    <a href="mailto:potsdam@fahrschuleabf.de" className="text-blue-600 hover:text-blue-700">
-                      potsdam@fahrschuleabf.de
+                    <div className="font-medium text-brand-dark">E-Mail Fahrschule Potsdam</div>
+                    <a href="mailto:kontakt@abf-fahrschule.de" className="text-brand-strong hover:text-brand-strong">
+                      kontakt@abf-fahrschule.de
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <Clock className="w-6 h-6 text-blue-600 mt-1" />
+                  <Clock className="w-6 h-6 text-brand-strong mt-1" />
                   <div>
-                    <div className="font-medium text-gray-900">Öffnungszeiten Fahrschule Potsdam</div>
-                    <div className="text-gray-600 space-y-1">
+                    <div className="font-medium text-brand-dark">Öffnungszeiten Fahrschule Potsdam</div>
+                    <div className="text-ink/75 space-y-1">
                       <div>Mo - Fr: 12:00 - 18:00 Uhr</div>
                       <div>Wochenende: Nach Absprache</div>
                     </div>
@@ -292,13 +292,13 @@ Fahrstunden ab 67,50€/45 Min.</p>
             </div>
 
             {/* Map Placeholder */}
-            <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8 h-64 flex items-center justify-center">
+            <div className="bg-white rounded-xl shadow-lg border border-black/[0.08] p-8 h-64 flex items-center justify-center">
               <div className="text-center space-y-4">
-                <MapPin className="w-16 h-16 text-blue-600 mx-auto" />
+                <MapPin className="w-16 h-16 text-brand-strong mx-auto" />
                 <div>
-                  <h4 className="text-xl font-semibold text-gray-900">Google Maps - Fahrschule Potsdam</h4>
-                  <p className="text-gray-600">Finden Sie unsere Fahrschule im WEBERPARK Potsdam</p>
-                  <a href="https://maps.google.com/?q=ABF+Fahrschule+WEBERPARK+Tuchmacherstraße+45b+14482+Potsdam" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 text-blue-600 hover:text-blue-700 underline">
+                  <h3 className="text-xl font-semibold text-brand-dark">Google Maps - Fahrschule Potsdam</h3>
+                  <p className="text-ink/75">So findest du unsere Fahrschule im Weberpark Potsdam</p>
+                  <a href="https://maps.google.com/?q=ABF+Fahrschule+WEBERPARK+Tuchmacherstraße+45b+14482+Potsdam" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 text-brand-strong hover:text-brand-strong underline">
                     Route zur Fahrschule Potsdam planen
                   </a>
                 </div>

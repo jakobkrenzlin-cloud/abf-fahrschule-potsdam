@@ -125,7 +125,7 @@ const ContactSection = () => {
           <div className="bg-white rounded-2xl shadow-2xl p-8 lg:p-12 border border-black/[0.08]">
             {/* Offer Reminder */}
             <div className="text-center mb-8 p-4 bg-gradient-to-r from-brand-strong/10 to-blue-600/5 rounded-xl border-l-4 border-brand/30">
-              <p className="text-brand-strong font-bold text-lg"> 🍂 Herbst-Angebot: nur {currentOffer.price} Grundbetrag!</p>
+              <p className="text-brand-strong font-bold text-lg"> Herbst-Angebot: nur {currentOffer.price} Grundbetrag!</p>
               {currentOffer.note && (
                 <p className="text-[11px] text-ink/60 mt-1 italic">{currentOffer.note}</p>
               )}

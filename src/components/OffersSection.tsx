@@ -35,7 +35,7 @@ const OffersSection = () => {
                 <Car className="w-7 h-7 md:w-8 md:h-8 flex-shrink-0" />
                 <div>
                   <h3 className="text-2xl font-bold">Führerschein-Ausbildung</h3>
-                  <p className="text-white/80">🍂 Herbst-Angebot bis zum 31. Oktober 2026 nur 199 €!</p>
+                  <p className="text-white/80">Herbst-Angebot bis zum 31. Oktober 2026 nur 199 €!</p>
                 </div>
               </div>
               <div className="bg-white/20 rounded-lg p-4">
@@ -88,7 +88,7 @@ const OffersSection = () => {
                 <Bike className="w-7 h-7 md:w-8 md:h-8 flex-shrink-0" />
                 <div>
                   <h3 className="text-2xl font-bold">Motorrad-Führerschein</h3>
-                  <p className="text-white/80">🍂 Herbst-Angebot bis zum 31. Oktober 2026</p>
+                  <p className="text-white/80">Herbst-Angebot bis zum 31. Oktober 2026</p>
                 </div>
               </div>
               <div className="bg-white/20 rounded-lg p-4">

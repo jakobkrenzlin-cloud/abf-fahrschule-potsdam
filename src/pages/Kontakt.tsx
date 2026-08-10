@@ -103,7 +103,7 @@ const Kontakt = () => {
                 </div>
               </div>
               <p className="text-sm text-muted-foreground mt-4">
-                💡 Theorieunterricht findet auch außerhalb dieser Zeiten statt. <Link to="/theorie" className="text-primary hover:underline">Mehr zur Theorie</Link>
+                Theorieunterricht findet auch außerhalb dieser Zeiten statt. <Link to="/theorie" className="text-primary hover:underline">Mehr zur Theorie</Link>
               </p>
             </div>
           </div>

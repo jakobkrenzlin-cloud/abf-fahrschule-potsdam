@@ -58,7 +58,7 @@ const Preise = () => {
           {/* Vollständige Preisliste gemäß § 32 FahrlG */}
           <div className="bg-card border-2 border-primary rounded-2xl p-8 mb-8 shadow-lg">
             <div className="text-center mb-8">
-              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">🍂 Herbst-Angebot – Jetzt sparen!</div>
+              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">Herbst-Angebot – Jetzt sparen!</div>
               <h2 className="text-3xl font-bold text-foreground mb-2">Preisliste Führerschein </h2>
               <p className="text-muted-foreground">Alle Preise inkl. MwSt. gemäß § 32 FahrlG</p>
             </div>
@@ -214,7 +214,7 @@ const Preise = () => {
             </div>
 
             <div className="bg-primary/5 rounded-xl p-6 mb-6">
-              <h3 className="font-semibold text-foreground mb-2">💡 Warum Qualität günstiger ist, als du denkst</h3>
+              <h3 className="font-semibold text-foreground mb-2">Warum Qualität günstiger ist, als du denkst</h3>
               <p className="text-muted-foreground">
                 Bei ABF Fahrschule investierst du in erfahrene Fahrlehrer, moderne Fahrzeuge und eine effiziente Ausbildung. 
                 Das bedeutet: weniger Fahrstunden nötig, schnellerer Prüfungserfolg und am Ende sogar niedrigere Gesamtkosten.

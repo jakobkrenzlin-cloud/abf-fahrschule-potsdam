@@ -36,7 +36,7 @@ const Impressum = () => {
             <h3 className="text-lg font-semibold text-brand-dark mb-2">Kontakt</h3>
             <p>Festnetz: +49 331 96795854<br />
             Mobil: +49 162 2191290<br />
-            E-Mail: <a href="mailto:kontakt@abf-fahrschule.de" className="text-brand-strong hover:text-brand-strong">kontakt@abf-fahrschule.de</a></p>
+            E-Mail: <a href="mailto:info@abf-fahrschule.de" className="text-brand-strong hover:text-brand-strong">info@abf-fahrschule.de</a></p>
           </div>
 
           <div className="mb-6">

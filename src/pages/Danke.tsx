@@ -85,8 +85,8 @@ const Danke = () => {
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   <Mail className="w-5 h-5 text-primary" />
-                  <a href="mailto:kontakt@abf-fahrschule.de" className="hover:text-primary transition-colors">
-                    kontakt@abf-fahrschule.de
+                  <a href="mailto:info@abf-fahrschule.de" className="hover:text-primary transition-colors">
+                    info@abf-fahrschule.de
                   </a>
                 </div>
                 <div className="flex items-center justify-center gap-2">

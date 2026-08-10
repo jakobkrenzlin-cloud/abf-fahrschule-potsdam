@@ -12,6 +12,8 @@ import FaqBlock from '@/components/lp/FaqBlock';
 import LocationSection from '@/components/lp/LocationSection';
 import FinalCta from '@/components/lp/FinalCta';
 import StickyMobileCta from '@/components/lp/StickyMobileCta';
+import LpFooterLinks from '@/components/lp/LpFooterLinks';
+import LpLegalBar from '@/components/lp/LpLegalBar';
 import Reveal from '@/components/lp/Reveal';
 import type { Faq, Review, Step } from '@/components/lp/constants';
 
@@ -250,7 +252,9 @@ const B196 = () => {
           />
         </main>
 
-        <div className="h-20 md:hidden" aria-hidden="true" />
+        <LpFooterLinks />
+        <LpLegalBar />
+
         <StickyMobileCta
           heroId={HERO_ID}
           formId={FORM_ID}

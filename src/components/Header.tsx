@@ -92,7 +92,7 @@ const Header: React.FC<HeaderProps> = ({ variant = 'full', onCtaClick, ctaLabel 
             <span className="hidden lg:inline">{PHONE_DISPLAY}</span>
           </a>
 
-          <Button type="button" onClick={handleCta} size="sm">
+          <Button type="button" onClick={handleCta} size="sm" className="text-white">
             {ctaLabel ?? 'Jetzt anmelden'}
           </Button>
 

@@ -1,45 +1,52 @@
-
 import React from 'react';
-import { Helmet } from 'react-helmet';
-import Header from '../components/Header';
+import { Helmet } from 'react-helmet-async';
+import SiteLayout from '../components/SiteLayout';
 import Hero from '../components/Hero';
-
-import QuickContact from '../components/QuickContact';
-import WhyABF from '../components/WhyABF';
-import ProcessSection from '../components/ProcessSection';
 import OffersSection from '../components/OffersSection';
+import SocialProof from '../components/lp/SocialProof';
+import Steps from '../components/lp/Steps';
+import WhyAbfCards from '../components/lp/WhyAbfCards';
 import AboutSection from '../components/AboutSection';
-import JobSection from '../components/JobSection';
-import SuccessfulStudentsSection from '../components/SuccessfulStudentsSection';
-import FAQSection from '../components/FAQSection';
+import FaqBlock from '../components/lp/FaqBlock';
+import LocationSection from '../components/lp/LocationSection';
 import ContactSection from '../components/ContactSection';
-import Footer from '../components/Footer';
-import MobileStickyFooter from '../components/MobileStickyFooter';
+import JobSection from '../components/JobSection';
+import { HOME_FAQS, HOME_REVIEWS, HOME_STEPS } from '../components/home/homeContent';
+import { SITE_URL } from '../components/lp/constants';
 
-const Index = () => {
-  return (
-    <div className="min-h-screen bg-white pb-20 md:pb-0">
-      <Helmet>
-        <title>ABF Fahrschule Potsdam | Führerschein in 4 Wochen</title>
-        <meta name="description" content="Führerschein Klasse B & Motorrad in Potsdam. Schnelle Theorie, moderne Ausbildung, faire Preise. Jetzt kostenlose Beratung sichern!" />
-        <link rel="canonical" href="https://abf-fahrschule-potsdam.lovable.app/" />
-      </Helmet>
-      <Header />
-      <Hero />
-      
-      <OffersSection />
-      <QuickContact />
-      <WhyABF />
-      <ProcessSection />
-      <AboutSection />
-      <JobSection />
-      <SuccessfulStudentsSection />
-      <FAQSection />
-      <ContactSection />
-      <Footer />
-      <MobileStickyFooter />
-    </div>
-  );
-};
+const Index = () => (
+  <SiteLayout stickyMode="form" formAnchor="contact">
+    <Helmet>
+      <title>Fahrschule Potsdam – Führerschein ab 199 € | ABF Fahrschule</title>
+      <meta
+        name="description"
+        content="Führerschein in Potsdam-Babelsberg: Theorie in einer Woche, erfahrene Fahrlehrer, 5,0★ bei Google. Grundbetrag Klasse B 199 €. Jetzt kostenlos beraten lassen."
+      />
+      <link rel="canonical" href={`${SITE_URL}/`} />
+      <script type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: HOME_FAQS.map((f) => ({
+            '@type': 'Question',
+            name: f.question,
+            acceptedAnswer: { '@type': 'Answer', text: f.answer },
+          })),
+        })}
+      </script>
+    </Helmet>
+
+    <Hero />
+    <OffersSection />
+    <SocialProof reviews={HOME_REVIEWS} />
+    <Steps steps={HOME_STEPS} />
+    <WhyAbfCards />
+    <AboutSection />
+    <FaqBlock faqs={HOME_FAQS} />
+    <LocationSection />
+    <ContactSection />
+    <JobSection />
+  </SiteLayout>
+);
 
 export default Index;

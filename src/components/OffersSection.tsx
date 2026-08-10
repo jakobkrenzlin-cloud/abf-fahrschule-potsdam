@@ -21,7 +21,7 @@ const OffersSection = () => {
             Unsere Angebote in Potsdam
           </h2>
           <p className="text-base md:text-xl text-ink/75 max-w-3xl mx-auto">
-            Starten Sie jetzt Ihre Fahrausbildung mit professioneller Betreuung und 
+            Starte jetzt deine Fahrausbildung mit professioneller Betreuung und 
             modernem Unterricht in Potsdam.
           </p>
         </div>
@@ -137,7 +137,7 @@ const OffersSection = () => {
               Jetzt Kontakt aufnehmen
             </h3>
             <p className="text-ink/75">
-              Wir beraten Sie gerne persönlich zu unseren Angeboten in Potsdam
+              Wir beraten dich gerne persönlich zu unseren Angeboten in Potsdam
             </p>
           </div>
 

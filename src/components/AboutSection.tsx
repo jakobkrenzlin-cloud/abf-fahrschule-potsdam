@@ -10,25 +10,25 @@ const AboutSection = () => {
           {/* Left Content */}
           <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-dark">
-              Über ABF Fahrschule Potsdam - Ihre vertrauensvolle Fahrschule
+              Über ABF Fahrschule Potsdam – deine vertrauensvolle Fahrschule
             </h2>
             
             <div className="space-y-4 text-ink/75 leading-relaxed">
               <p>
                 Seit über 15 Jahren bilden wir in Potsdam erfolgreich Fahrschüler aus. Unser erfahrenes Team der ABF Fahrschule Potsdam 
                 besteht aus geduldigen, lokalen Fahrlehrern, die mit Leidenschaft und Kompetenz jeden Fahrschüler individuell betreuen. 
-                Wir kennen die Straßen Potsdams perfekt und bereiten Sie optimal auf die Prüfung vor.
+                Wir kennen die Straßen Potsdams perfekt und bereiten dich optimal auf die Prüfung vor.
               </p>
               
               <p>
                 Wir glauben, dass eine gute Fahrschule in Potsdam mehr ist als nur das Bestehen einer Prüfung. Bei der ABF Fahrschule 
-                lernen Sie verantwortungsvolles Fahren für das ganze Leben. Mit ruhiger Hand und modernen Ausbildungsmethoden 
-                begleiten wir Sie sicher durch Ihre Führerscheinausbildung in Potsdam.
+                lernst du verantwortungsvolles Fahren für das ganze Leben. Mit ruhiger Hand und modernen Ausbildungsmethoden 
+                begleiten wir dich sicher durch deine Führerscheinausbildung in Potsdam.
               </p>
               
               <p>
                 Unsere Mission als Fahrschule in Potsdam ist es, jeden Fahrschüler mit Vertrauen, Geduld und Fachkompetenz zum Erfolg zu führen. 
-                Dabei setzen wir auf eine entspannte Lernatmosphäre, in der Sie ohne Stress und Druck Ihre Fahrkünste in Potsdam entwickeln können.
+                Dabei setzen wir auf eine entspannte Lernatmosphäre, in der du ohne Stress und Druck deine Fahrkünste in Potsdam entwickeln können.
               </p>
             </div>
 
@@ -59,7 +59,7 @@ const AboutSection = () => {
               <TeamSlideshow />
               <h3 className="text-2xl font-bold text-brand-dark mb-2 mt-6">Unser Fahrlehrer-Team Potsdam</h3>
               <p className="text-ink/75">
-                Erfahren, geduldig und immer für Sie da - lokale Fahrlehrer mit Potsdam-Expertise
+                Erfahren, geduldig und immer für dich da - lokale Fahrlehrer mit Potsdam-Expertise
               </p>
             </div>
 

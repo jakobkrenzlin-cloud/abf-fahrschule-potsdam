@@ -115,8 +115,8 @@ const ContactSection = () => {
             Jetzt Kontakt aufnehmen
           </h2>
           <p className="text-xl text-ink/75 max-w-3xl mx-auto">
-            Haben Sie Fragen zu unserer Fahrschule in Potsdam oder möchten Sie sich für den Führerschein anmelden? 
-            Wir freuen uns auf Ihre Nachricht und beraten Sie gerne kostenlos!
+            Du hast Fragen zu unserer Fahrschule in Potsdam oder möchtest dich für den Führerschein anmelden? 
+            Wir freuen uns auf deine Nachricht und beraten dich gerne kostenlos!
           </p>
         </div>
 
@@ -240,7 +240,7 @@ Fahrstunden ab 67,50€/45 Min.</p>
             {/* Contact Details */}
             <div className="bg-white rounded-xl shadow-lg p-8 space-y-6 border border-black/[0.08]">
               <h3 className="text-2xl font-semibold text-brand-dark">
-                ABF Fahrschule Potsdam - Ihr Kontakt
+                ABF Fahrschule Potsdam – dein Kontakt
               </h3>
 
               <div className="space-y-4">
@@ -297,7 +297,7 @@ Fahrstunden ab 67,50€/45 Min.</p>
                 <MapPin className="w-16 h-16 text-brand-strong mx-auto" />
                 <div>
                   <h3 className="text-xl font-semibold text-brand-dark">Google Maps - Fahrschule Potsdam</h3>
-                  <p className="text-ink/75">Finden Sie unsere Fahrschule im WEBERPARK Potsdam</p>
+                  <p className="text-ink/75">So findest du unsere Fahrschule im Weberpark Potsdam</p>
                   <a href="https://maps.google.com/?q=ABF+Fahrschule+WEBERPARK+Tuchmacherstraße+45b+14482+Potsdam" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 text-brand-strong hover:text-brand-strong underline">
                     Route zur Fahrschule Potsdam planen
                   </a>

@@ -117,7 +117,7 @@ const OffersSection = () => {
 
               <div className="space-y-3">
                 <h3 className="font-semibold text-white mb-3">Im Grundbetrag zusätzlich:</h3>
-                {['Anmeldung & Verwaltung', '100 € Louis und Polo Gutschein', 'Prüfungsvorbereitung', '1 Jahr ADAC-Mitgliedschaft'].map((item, index) => (
+                {['100 € Louis und Polo Gutschein', '1 Jahr ADAC-Mitgliedschaft'].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <Check className="w-5 h-5 text-success flex-shrink-0" />
                     <span className="text-white/75">{item}</span>

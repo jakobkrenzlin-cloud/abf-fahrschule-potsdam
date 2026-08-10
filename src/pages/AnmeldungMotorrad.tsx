@@ -199,10 +199,13 @@ const AnmeldungMotorrad = () => {
             badge="Herbst-Angebot"
             price="399 €"
             title="399 € Herbst-Angebot – das ist drin"
-            included={[
-              'Anmeldung & Verwaltung',
+            subtitle="Einmalige Gebühr für Verwaltung und vollständige Theorieausbildung"
+            includedBase={[
               'Kompletter Theorieunterricht',
               'Motorrad-spezifische Theorie',
+            ]}
+            includedAdditional={[
+              'Anmeldung & Verwaltung',
               '100 € Louis und Polo Gutschein',
               'Prüfungsvorbereitung',
               '1 Jahr ADAC-Mitgliedschaft',

@@ -156,7 +156,11 @@
   .container-page {
     @apply max-w-6xl mx-auto px-4 md:px-6;
   }
+  .container-narrow {
+    @apply max-w-3xl mx-auto px-4 md:px-6;
+  }
   .section-y {
     @apply py-12 md:py-20;
   }
 }
+

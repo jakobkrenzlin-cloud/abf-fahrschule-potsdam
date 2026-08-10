@@ -51,7 +51,7 @@ const Preise = () => {
               Faire Preise – volle Leistung
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Transparente Kosten gemäß § 32 Fahrlehrergesetz. Bei uns wissen Sie genau, was Sie erwartet.
+              Transparente Kosten gemäß § 32 Fahrlehrergesetz. Bei uns weißt du genau, was auf dich zukommt.
             </p>
           </div>
 
@@ -76,7 +76,7 @@ const Preise = () => {
                   </div>
                   <div className="text-right">
                     <div className="text-sm text-muted-foreground line-through">statt 479 €</div>
-                    <div className="text-4xl font-bold text-primary">279 €</div>
+                    <div className="text-4xl font-bold text-primary">199 €</div>
                   </div>
                 </div>
                 <div className="mt-4 pt-4 border-t border-primary/20">
@@ -123,7 +123,7 @@ const Preise = () => {
                   </div>
                   <div className="text-right">
                     <div className="text-sm text-muted-foreground line-through">statt 650 €</div>
-                    <div className="text-4xl font-bold text-primary">550 €</div>
+                    <div className="text-4xl font-bold text-primary">399 €</div>
                   </div>
                 </div>
                 <div className="mt-4 pt-4 border-t border-primary/20">
@@ -214,9 +214,9 @@ const Preise = () => {
             </div>
 
             <div className="bg-primary/5 rounded-xl p-6 mb-6">
-              <h3 className="font-semibold text-foreground mb-2">💡 Warum Qualität günstiger ist, als Sie denken</h3>
+              <h3 className="font-semibold text-foreground mb-2">💡 Warum Qualität günstiger ist, als du denkst</h3>
               <p className="text-muted-foreground">
-                Bei ABF Fahrschule investieren Sie in erfahrene Fahrlehrer, moderne Fahrzeuge und eine effiziente Ausbildung. 
+                Bei ABF Fahrschule investierst du in erfahrene Fahrlehrer, moderne Fahrzeuge und eine effiziente Ausbildung. 
                 Das bedeutet: weniger Fahrstunden nötig, schnellerer Prüfungserfolg und am Ende sogar niedrigere Gesamtkosten.
               </p>
             </div>
@@ -228,7 +228,7 @@ const Preise = () => {
                 </Button>
               </Link>
               <p className="text-sm text-muted-foreground mt-4">
-                Ratenzahlung möglich – sprechen Sie uns bei der Anmeldung darauf an.
+                Ratenzahlung möglich – sprich uns bei der Anmeldung darauf an.
               </p>
             </div>
           </div>

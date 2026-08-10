@@ -314,7 +314,7 @@ const Karriere = () => {
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Werde Teil des <span className="text-brand">ABF-Teams</span> in Potsdam
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-white/75 max-w-2xl mx-auto mb-8">
               Ob erfahrener Fahrlehrer, angehender Fahrlehreranwärter oder im Büro – bei uns gestaltest du die Mobilität von morgen mit.
             </p>
             <div className="flex flex-wrap justify-center gap-2 mb-8">
@@ -379,7 +379,7 @@ const Karriere = () => {
                     className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                       active
                         ? 'bg-brand-strong text-white shadow-md shadow-brand/30'
-                        : 'bg-white/5 text-gray-300 hover:bg-white/10 border border-white/10'
+                        : 'bg-white/5 text-white/75 hover:bg-white/10 border border-white/10'
                     }`}
                   >
                     {c}
@@ -410,10 +410,10 @@ const Karriere = () => {
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="pb-6">
-                    <p className="text-gray-300 mb-4">{job.short}</p>
+                    <p className="text-white/75 mb-4">{job.short}</p>
                     <ul className="space-y-2 mb-5">
                       {job.details.map((d) => (
-                        <li key={d} className="flex gap-2 text-gray-300 text-sm">
+                        <li key={d} className="flex gap-2 text-white/75 text-sm">
                           <CheckCircle2 className="w-4 h-4 text-brand shrink-0 mt-0.5" />
                           <span>{d}</span>
                         </li>
@@ -477,7 +477,7 @@ const Karriere = () => {
                   <CheckCircle2 className="w-8 h-8 text-brand" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Vielen Dank!</h3>
-                <p className="text-gray-300">
+                <p className="text-white/75">
                   Deine Bewerbung ist bei uns angekommen. Wir melden uns innerhalb von 48 Stunden bei dir.
                 </p>
               </div>
@@ -570,7 +570,7 @@ const Karriere = () => {
                     onCheckedChange={(v) => setFormData({ ...formData, consent: v === true })}
                     className="mt-1 border-white/30 data-[state=checked]:bg-brand data-[state=checked]:border-brand"
                   />
-                  <Label htmlFor="consent" className="text-sm text-gray-300 leading-relaxed">
+                  <Label htmlFor="consent" className="text-sm text-white/75 leading-relaxed">
                     Ich willige in die Verarbeitung meiner Daten gemäß der{' '}
                     <a href="/datenschutz" className="text-brand hover:underline">Datenschutzerklärung</a> ein. *
                   </Label>
@@ -593,7 +593,7 @@ const Karriere = () => {
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
             <div data-reveal className="opacity-0 translate-y-4 transition-all duration-500">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">Standort</h2>
-              <div className="flex items-start gap-3 text-gray-300 mb-4">
+              <div className="flex items-start gap-3 text-white/75 mb-4">
                 <MapPin className="w-5 h-5 text-brand mt-0.5 shrink-0" />
                 <span>
                   <strong className="text-white">ABF Fahrschule Potsdam</strong><br />
@@ -607,15 +607,15 @@ const Karriere = () => {
             </div>
             <div data-reveal className="opacity-0 translate-y-4 transition-all duration-500">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">Direkt für Bewerber</h2>
-              <a href="tel:+4933196795854" className="flex items-center gap-3 text-gray-200 hover:text-brand transition-colors mb-3">
+              <a href="tel:+4933196795854" className="flex items-center gap-3 text-white/75 hover:text-brand transition-colors mb-3">
                 <Phone className="w-5 h-5 text-brand" />
                 <span>+49 331 96795854 (Festnetz)</span>
               </a>
-              <a href="tel:+491622191290" className="flex items-center gap-3 text-gray-200 hover:text-brand transition-colors mb-3">
+              <a href="tel:+491622191290" className="flex items-center gap-3 text-white/75 hover:text-brand transition-colors mb-3">
                 <Phone className="w-5 h-5 text-brand" />
                 <span>0162 2191290 (Mobil)</span>
               </a>
-              <a href="mailto:kontakt@abf-fahrschule.de" className="flex items-center gap-3 text-gray-200 hover:text-brand transition-colors mb-4">
+              <a href="mailto:kontakt@abf-fahrschule.de" className="flex items-center gap-3 text-white/75 hover:text-brand transition-colors mb-4">
                 <Mail className="w-5 h-5 text-brand" />
                 <span>kontakt@abf-fahrschule.de</span>
               </a>

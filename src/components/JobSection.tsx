@@ -23,10 +23,10 @@ const JobSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold">
             Werde Teil unseres Teams!
           </h2>
-          <h3 className="text-xl md:text-2xl font-semibold text-blue-100">
+          <h3 className="text-xl md:text-2xl font-semibold text-white/80">
             Wir suchen: Bürokraft (m/w/d) in Teilzeit (30h/Woche)
           </h3>
-          <p className="text-lg text-blue-50 max-w-2xl mx-auto">
+          <p className="text-lg text-white/80 max-w-2xl mx-auto">
             Du bist ein Organisationstalent, liebst den Kontakt mit Menschen und willst Teil einer modernen, wachsenden Fahrschule in Potsdam werden? Dann bist du bei uns genau richtig!
           </p>
         </div>
@@ -34,12 +34,12 @@ const JobSection = () => {
         <div className="grid md:grid-cols-2 gap-10 mb-12">
           {/* Aufgaben */}
           <div>
-            <h4 className="text-lg font-bold mb-4 text-blue-100">Deine Aufgaben</h4>
+            <h4 className="text-lg font-bold mb-4 text-white/80">Deine Aufgaben</h4>
             <ul className="space-y-4">
               {tasks.map((task, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <task.icon className="w-6 h-6 text-blue-200 shrink-0 mt-0.5" />
-                  <span className="text-blue-50">{task.text}</span>
+                  <task.icon className="w-6 h-6 text-white/80 shrink-0 mt-0.5" />
+                  <span className="text-white/80">{task.text}</span>
                 </li>
               ))}
             </ul>
@@ -47,12 +47,12 @@ const JobSection = () => {
 
           {/* Benefits */}
           <div>
-            <h4 className="text-lg font-bold mb-4 text-blue-100">Was wir bieten</h4>
+            <h4 className="text-lg font-bold mb-4 text-white/80">Was wir bieten</h4>
             <ul className="space-y-4">
               {benefits.map((b, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-green-300 shrink-0 mt-0.5" />
-                  <span className="text-blue-50">{b}</span>
+                  <CheckCircle className="w-6 h-6 text-success shrink-0 mt-0.5" />
+                  <span className="text-white/80">{b}</span>
                 </li>
               ))}
             </ul>

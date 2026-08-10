@@ -35,13 +35,13 @@ const OffersSection = () => {
                 <Car className="w-7 h-7 md:w-8 md:h-8 flex-shrink-0" />
                 <div>
                   <h3 className="text-2xl font-bold">Führerschein-Ausbildung</h3>
-                  <p className="text-blue-100"> <p className="text-blue-100"> 🍂 Herbst-Angebot bis zum 31. Oktober 2026 nur 199 €!</p></p>
+                  <p className="text-white/80">🍂 Herbst-Angebot bis zum 31. Oktober 2026 nur 199 €!</p>
                 </div>
               </div>
               <div className="bg-white/20 rounded-lg p-4">
                 <div className="text-3xl font-bold mb-1">199 €</div>
-                <div className="text-sm text-blue-100">Herbst-Angebot - Grundbetrag</div>
-                <div className="text-xs text-blue-100 mt-2">Preis gemäß § 32 Fahrlehrergesetz: Unterweisungsstunde 67,50 €/45 Min., Übungsstunde 67,50 €/45 Min. und Besondere Ausbildungsfahrten 75 €/45 Min.</div>
+                <div className="text-sm text-white/80">Herbst-Angebot - Grundbetrag</div>
+                <div className="text-xs text-white/80 mt-2">Preis gemäß § 32 Fahrlehrergesetz: Unterweisungsstunde 67,50 €/45 Min., Übungsstunde 67,50 €/45 Min. und Besondere Ausbildungsfahrten 75 €/45 Min.</div>
               </div>
             </div>
 
@@ -88,18 +88,18 @@ const OffersSection = () => {
                 <Bike className="w-7 h-7 md:w-8 md:h-8 flex-shrink-0" />
                 <div>
                   <h3 className="text-2xl font-bold">Motorrad-Führerschein</h3>
-                  <p className="text-blue-100">🍂 Herbst-Angebot bis zum 31. Oktober 2026</p>
+                  <p className="text-white/80">🍂 Herbst-Angebot bis zum 31. Oktober 2026</p>
                 </div>
               </div>
               <div className="bg-white/20 rounded-lg p-4">
                 <div className="text-3xl font-bold mb-1">399 €</div>
-                <div className="text-sm text-blue-100">Herbst-Angebot – Grundbetrag (A1, A2, A)</div>
-                <div className="text-xs text-blue-100 mt-2">Preis gemäß § 32 Fahrlehrergesetz: Unterweisungsstunde 75 €/45 Min., Übungsstunde 75 €/45 Min. und Besondere Ausbildungsfahrten 85 €/45 Min.</div>
+                <div className="text-sm text-white/80">Herbst-Angebot – Grundbetrag (A1, A2, A)</div>
+                <div className="text-xs text-white/80 mt-2">Preis gemäß § 32 Fahrlehrergesetz: Unterweisungsstunde 75 €/45 Min., Übungsstunde 75 €/45 Min. und Besondere Ausbildungsfahrten 85 €/45 Min.</div>
               </div>
             </div>
 
             <div className="p-4 md:p-6 space-y-4 md:space-y-6 flex-1 flex flex-col">
-              <p className="text-gray-200 leading-relaxed">
+              <p className="text-white/75 leading-relaxed">
                 Theorie im Winter machen und startklar sein, wenn die Saison beginnt – A1 ab 16,
                 A2 ab 18 oder direkt Klasse A.
               </p>
@@ -109,7 +109,7 @@ const OffersSection = () => {
                 {['Kompletter Theorieunterricht', 'LernApp für die Theorieprüfung', '100 € Louis und Polo Gutschein'].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <Check className="w-5 h-5 text-success flex-shrink-0" />
-                    <span className="text-gray-200">{item}</span>
+                    <span className="text-white/75">{item}</span>
                   </div>
                 ))}
               </div>

@@ -220,7 +220,7 @@ Fahrstunden ab 67,50€/45 Min.</p>
             
             {/* WhatsApp & Call Buttons */}
             <div className="flex gap-4 mt-6">
-              <Button onClick={handleWhatsApp} variant="outline" size="lg" className="flex-1 border-2 border-green-500 text-success hover:bg-success/10 h-12 font-semibold rounded-xl">
+              <Button onClick={handleWhatsApp} variant="outline" size="lg" className="flex-1 border-2 border-success text-success hover:bg-success/10 h-12 font-semibold rounded-xl">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 WhatsApp
               </Button>

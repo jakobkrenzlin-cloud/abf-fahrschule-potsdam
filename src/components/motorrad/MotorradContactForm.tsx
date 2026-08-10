@@ -223,7 +223,7 @@ const MotorradContactForm: React.FC = () => {
               type="submit"
               size="lg"
               disabled={isSubmitting}
-              className="w-full bg-brand-strong hover:bg-brand text-white h-14 sm:h-16 text-base sm:text-lg font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50"
+              className="w-full bg-brand-strong hover:bg-brand-strong/90 text-white h-14 sm:h-16 text-base sm:text-lg font-bold rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] disabled:opacity-50"
             >
               {isSubmitting ? "Wird gesendet..." : "Jetzt anfragen & Platz sichern"}
             </Button>

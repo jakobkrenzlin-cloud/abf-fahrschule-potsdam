@@ -207,7 +207,7 @@ const LeadForm: React.FC<LeadFormProps> = ({
                 aria-pressed={start === opt}
                 className={`px-4 py-2.5 rounded-full text-sm font-medium border transition-colors ${
                   start === opt
-                    ? 'bg-brand text-white border-brand'
+                    ? 'bg-brand-strong text-white border-brand'
                     : 'bg-white/10 text-white border-white/25 hover:bg-white/20'
                 }`}
               >
@@ -246,7 +246,7 @@ const LeadForm: React.FC<LeadFormProps> = ({
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full min-h-[56px] rounded-xl bg-brand hover:bg-brand-strong active:bg-brand-strong disabled:opacity-70 text-white text-lg font-bold transition-colors flex items-center justify-center gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          className="w-full min-h-[56px] rounded-xl bg-brand-strong hover:bg-brand-strong/90 disabled:opacity-70 text-white text-lg font-bold transition-colors flex items-center justify-center gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
           {isSubmitting ? (
             <>

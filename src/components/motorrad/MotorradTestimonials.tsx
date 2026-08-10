@@ -40,7 +40,7 @@ const MotorradTestimonials: React.FC = () => {
 
             <Button
               size="lg"
-              className="bg-brand-strong hover:bg-brand text-white font-bold rounded-xl px-8 py-6 text-base sm:text-lg gap-2">
+              className="bg-brand-strong hover:bg-brand-strong/90 text-white font-bold rounded-xl px-8 py-6 text-base sm:text-lg gap-2">
 
               Alle Google Bewertungen lesen
               <ExternalLink className="w-5 h-5" />

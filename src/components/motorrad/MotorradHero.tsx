@@ -66,7 +66,7 @@ const MotorradHero: React.FC<MotorradHeroProps> = ({ onCtaClick }) => {
           <Button
             size="lg"
             onClick={onCtaClick}
-            className="w-full sm:w-auto bg-brand-strong hover:bg-brand text-white text-base sm:text-lg py-5 sm:py-6 px-6 sm:px-8 rounded-xl font-bold shadow-lg transition-all duration-300 hover:scale-105"
+            className="w-full sm:w-auto bg-brand-strong hover:bg-brand-strong/90 text-white text-base sm:text-lg py-5 sm:py-6 px-6 sm:px-8 rounded-xl font-bold shadow-lg transition-all duration-300 hover:scale-105"
           >
             Jetzt B196-Platz sichern
           </Button>

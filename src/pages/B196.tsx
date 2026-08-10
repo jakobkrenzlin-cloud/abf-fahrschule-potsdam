@@ -190,7 +190,7 @@ const B196 = () => {
                     <button
                       type="button"
                       onClick={scrollToForm}
-                      className="mt-5 min-h-[56px] px-8 rounded-xl bg-brand hover:bg-brand-strong text-white font-bold transition-colors"
+                      className="mt-5 min-h-[56px] px-8 rounded-xl bg-brand-strong hover:bg-brand-strong/90 text-white font-bold transition-colors"
                     >
                       Jetzt Platz anfragen
                     </button>

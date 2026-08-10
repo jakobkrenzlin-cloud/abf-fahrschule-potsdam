@@ -56,7 +56,7 @@ const KarriereDanke = () => {
                 { n: 3, t: 'Vertrag & Start', d: 'Wenn es für beide Seiten passt, planen wir deinen Einstieg.' },
               ].map((step) => (
                 <div key={step.n} className="flex gap-4 items-start bg-brand-dark/60 border border-white/5 rounded-xl p-4">
-                  <div className="w-8 h-8 rounded-full bg-brand text-white flex items-center justify-center font-bold flex-shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-brand-strong text-white flex items-center justify-center font-bold flex-shrink-0">
                     {step.n}
                   </div>
                   <div>
@@ -80,7 +80,7 @@ const KarriereDanke = () => {
 
             <div className="flex justify-center">
               <Link to="/">
-                <Button size="lg" className="bg-brand hover:bg-brand/90 text-white">
+                <Button size="lg" className="bg-brand-strong hover:bg-brand-strong/90 text-white">
                   Zurück zur Startseite
                 </Button>
               </Link>

@@ -325,7 +325,7 @@ const Karriere = () => {
             <Button
               size="lg"
               onClick={() => scrollTo(jobsRef)}
-              className="bg-brand hover:bg-brand/90 text-white font-semibold px-8 py-6 text-base rounded-xl shadow-lg shadow-brand/30 transition-transform hover:scale-105"
+              className="bg-brand-strong hover:bg-brand-strong/90 text-white font-semibold px-8 py-6 text-base rounded-xl shadow-lg shadow-brand/30 transition-transform hover:scale-105"
             >
               Offene Stellen ansehen
             </Button>
@@ -378,7 +378,7 @@ const Karriere = () => {
                     onClick={() => setFilter(c)}
                     className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                       active
-                        ? 'bg-brand text-white shadow-md shadow-brand/30'
+                        ? 'bg-brand-strong text-white shadow-md shadow-brand/30'
                         : 'bg-white/5 text-gray-300 hover:bg-white/10 border border-white/10'
                     }`}
                   >
@@ -421,7 +421,7 @@ const Karriere = () => {
                     </ul>
                     <Button
                       onClick={() => applyForPosition(job.title)}
-                      className="bg-brand hover:bg-brand/90 text-white font-medium"
+                      className="bg-brand-strong hover:bg-brand-strong/90 text-white font-medium"
                     >
                       Jetzt bewerben
                     </Button>
@@ -579,7 +579,7 @@ const Karriere = () => {
                 <Button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-brand hover:bg-brand/90 text-white font-semibold py-6 text-base rounded-xl shadow-lg shadow-brand/30"
+                  className="w-full bg-brand-strong hover:bg-brand-strong/90 text-white font-semibold py-6 text-base rounded-xl shadow-lg shadow-brand/30"
                 >
                   {loading ? 'Wird gesendet…' : 'Bewerbung absenden'}
                 </Button>
@@ -631,7 +631,7 @@ const Karriere = () => {
       <div className="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-black/85 backdrop-blur border-t border-white/10">
         <Button
           onClick={() => scrollTo(formRef)}
-          className="w-full bg-brand hover:bg-brand/90 text-white font-semibold py-6 rounded-xl shadow-lg shadow-brand/30"
+          className="w-full bg-brand-strong hover:bg-brand-strong/90 text-white font-semibold py-6 rounded-xl shadow-lg shadow-brand/30"
         >
           In 60 Sekunden bewerben
         </Button>

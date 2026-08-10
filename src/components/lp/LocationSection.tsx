@@ -27,7 +27,7 @@ const LocationSection: React.FC = () => (
             href={MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 min-h-[56px] px-6 rounded-xl bg-brand hover:bg-brand-strong text-white font-bold transition-colors"
+            className="inline-flex items-center gap-2 min-h-[56px] px-6 rounded-xl bg-brand-strong hover:bg-brand-strong/90 text-white font-bold transition-colors"
           >
             <Navigation className="w-5 h-5" aria-hidden="true" />
             Route in Google Maps öffnen

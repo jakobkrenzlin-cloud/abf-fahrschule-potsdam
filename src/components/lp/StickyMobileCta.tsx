@@ -59,7 +59,7 @@ const StickyMobileCta: React.FC<StickyMobileCtaProps> = ({
           type="button"
           onClick={onCtaClick}
           tabIndex={show ? 0 : -1}
-          className="flex-[2] h-[60px] rounded-xl bg-brand text-white font-bold text-base active:scale-[0.98] transition-transform"
+          className="flex-[2] h-[60px] rounded-xl bg-brand-strong text-white font-bold text-base active:scale-[0.98] transition-transform"
         >
           {label}
         </button>

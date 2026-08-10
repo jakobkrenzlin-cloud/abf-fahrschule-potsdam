@@ -116,7 +116,7 @@ const OffersSection = () => {
 
               <div className="pt-4 mt-auto space-y-3">
                 <Link to="/anmeldungmotorrad">
-                  <Button className="w-full bg-brand-strong hover:bg-brand text-white font-semibold py-3 text-lg">
+                  <Button className="w-full bg-brand-strong hover:bg-brand-strong/90 text-white font-semibold py-3 text-lg">
                     Jetzt für 399 € anmelden
                   </Button>
                 </Link>

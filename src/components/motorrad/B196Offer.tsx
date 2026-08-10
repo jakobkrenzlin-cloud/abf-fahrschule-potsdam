@@ -59,7 +59,7 @@ const B196Offer: React.FC<B196OfferProps> = ({ onCtaClick }) => {
           <Button
             onClick={onCtaClick}
             size="lg"
-            className="w-full bg-brand-strong hover:bg-brand text-white h-14 sm:h-16 text-base sm:text-lg font-bold rounded-xl shadow-lg transition-all hover:scale-[1.02]"
+            className="w-full bg-brand-strong hover:bg-brand-strong/90 text-white h-14 sm:h-16 text-base sm:text-lg font-bold rounded-xl shadow-lg transition-all hover:scale-[1.02]"
           >
             Jetzt B196-Platz sichern
             <ArrowDown className="w-5 h-5 ml-2" />

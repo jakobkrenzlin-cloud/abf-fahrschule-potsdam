@@ -14,7 +14,7 @@ const Steps: React.FC<{ steps: Step[] }> = ({ steps }) => (
         {steps.map((step, i) => (
           <Reveal key={step.title} delay={i * 80}>
             <li className="h-full bg-white rounded-2xl p-6 border border-black/5 list-none">
-              <span className="w-11 h-11 rounded-full bg-brand text-white font-bold text-lg flex items-center justify-center">
+              <span className="w-11 h-11 rounded-full bg-brand-strong text-white font-bold text-lg flex items-center justify-center">
                 {i + 1}
               </span>
               <h3 className="mt-4 font-bold text-brand-dark leading-snug">{step.title}</h3>

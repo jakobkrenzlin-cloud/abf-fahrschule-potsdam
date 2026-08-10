@@ -33,7 +33,7 @@ const Kontakt = () => {
             "longitude": 13.0967
           },
           "telephone": "+49-331-9679-5854",
-          "email": "kontakt@abf-fahrschule.de",
+          "email": "info@abf-fahrschule.de",
           "url": "https://www.abf-fahrschule.de",
           "openingHoursSpecification": [{
             "@type": "OpeningHoursSpecification",
@@ -131,7 +131,7 @@ const Kontakt = () => {
                   💬 WhatsApp
                 </Button>
               </a>
-              <a href="mailto:kontakt@abf-fahrschule.de" className="block">
+              <a href="mailto:info@abf-fahrschule.de" className="block">
                 <Button size="lg" variant="outline" className="w-full text-base">
                   <Mail className="mr-2" size={20} />
                   E-Mail
@@ -141,7 +141,7 @@ const Kontakt = () => {
             <p className="text-center text-muted-foreground mt-4">
               📞 Festnetz: <a href="tel:+4933196795854" className="text-primary hover:underline">+49 331 96795854</a> •
               📱 Mobil: <a href="tel:+491622191290" className="text-primary hover:underline">+49 162 2191290</a> •
-              ✉️ <a href="mailto:kontakt@abf-fahrschule.de" className="text-primary hover:underline">kontakt@abf-fahrschule.de</a>
+              ✉️ <a href="mailto:info@abf-fahrschule.de" className="text-primary hover:underline">info@abf-fahrschule.de</a>
             </p>
           </div>
 

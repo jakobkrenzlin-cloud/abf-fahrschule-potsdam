@@ -73,8 +73,8 @@ const Footer = () => {
 
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-brand shrink-0" aria-hidden="true" />
-                <a href="mailto:kontakt@abf-fahrschule.de" className={linkClass}>
-                  kontakt@abf-fahrschule.de
+                <a href="mailto:info@abf-fahrschule.de" className={linkClass}>
+                  info@abf-fahrschule.de
                 </a>
               </div>
             </div>

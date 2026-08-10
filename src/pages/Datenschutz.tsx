@@ -32,7 +32,7 @@ const Datenschutz = () => {
             14482 Potsdam<br />
             Festnetz: +49 331 96795854<br />
             Mobil: +49 162 2191290<br />
-            E-Mail: <a href="mailto:kontakt@abf-fahrschule.de" className="text-brand-strong hover:text-brand-strong">kontakt@abf-fahrschule.de</a>
+            E-Mail: <a href="mailto:info@abf-fahrschule.de" className="text-brand-strong hover:text-brand-strong">info@abf-fahrschule.de</a>
           </p>
           <p className="mb-4">Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, E-Mail-Adressen o. Ä.) entscheidet.</p>
 
@@ -149,7 +149,7 @@ const Datenschutz = () => {
             ABF Bildungszentrum und Fahrschule GmbH<br />
             Weber Park, Tuchmacherstraße 45 B<br />
             14482 Potsdam<br />
-            E-Mail: <a href="mailto:kontakt@abf-fahrschule.de" className="text-brand-strong hover:text-brand-strong">kontakt@abf-fahrschule.de</a>
+            E-Mail: <a href="mailto:info@abf-fahrschule.de" className="text-brand-strong hover:text-brand-strong">info@abf-fahrschule.de</a>
           </p>
 
           <p className="text-sm text-ink/75 mt-8">Stand: Januar 2025</p>

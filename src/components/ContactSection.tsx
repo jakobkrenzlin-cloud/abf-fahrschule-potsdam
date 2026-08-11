@@ -130,7 +130,7 @@ const ContactSection = () => {
                 <p className="text-[11px] text-ink/60 mt-1 italic">{currentOffer.note}</p>
               )}
                <p className="text-xs text-ink/75 mt-2">Zusätzlich: ADAC 1 Jahr kostenlos. 
-Fahrstunden ab 67,50€/45 Min.</p>
+Fahrstunden ab 73,12€/45 Min.</p>
               <p className="text-xs text-ink/60 mt-1">
                 Limitiertes Herbst-Angebot
               </p>

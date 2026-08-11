@@ -41,7 +41,7 @@ const OffersSection = () => {
               <div className="bg-white/20 rounded-lg p-4">
                 <div className="text-3xl font-bold mb-1">199 €</div>
                 <div className="text-sm text-white/80">Herbst-Angebot - Grundbetrag</div>
-                <div className="text-xs text-white/80 mt-2">Preis gemäß § 32 Fahrlehrergesetz: Unterweisungsstunde 67,50 €/45 Min., Übungsstunde 67,50 €/45 Min. und Besondere Ausbildungsfahrten 75 €/45 Min.</div>
+                <div className="text-xs text-white/80 mt-2">Preis gemäß § 32 Fahrlehrergesetz: Unterweisungsstunde 73,12 €/45 Min., Übungsstunde 73,12 €/45 Min. und Besondere Ausbildungsfahrten 80 €/45 Min.</div>
               </div>
             </div>
 
@@ -95,7 +95,7 @@ const OffersSection = () => {
                 <div className="text-3xl font-bold mb-1">399 €</div>
                 <div className="text-sm text-white/80">Herbst-Angebot – Grundbetrag (A1, A2, A)</div>
                 <div className="text-xs text-white/80 mt-2">Einmalige Gebühr für Verwaltung und vollständige Theorieausbildung</div>
-                <div className="text-xs text-white/80 mt-2">Preis gemäß § 32 Fahrlehrergesetz: Unterweisungsstunde 75 €/45 Min., Übungsstunde 75 €/45 Min. und Besondere Ausbildungsfahrten 85 €/45 Min.</div>
+                <div className="text-xs text-white/80 mt-2">Preis gemäß § 32 Fahrlehrergesetz: Unterweisungsstunde 80 €/45 Min., Übungsstunde 80 €/45 Min. und Besondere Ausbildungsfahrten 85 €/45 Min.</div>
               </div>
             </div>
 

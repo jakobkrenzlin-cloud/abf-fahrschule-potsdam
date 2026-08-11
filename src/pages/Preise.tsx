@@ -96,15 +96,15 @@ const Preise = () => {
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="flex justify-between items-center p-3 bg-background rounded-lg">
                     <span className="text-foreground">Unterweisung (45 Min.)</span>
-                    <span className="font-bold text-foreground">67,50 €</span>
+                    <span className="font-bold text-foreground">73,12 €</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-background rounded-lg">
                     <span className="text-foreground">Übungsstunde (45 Min.)</span>
-                    <span className="font-bold text-foreground">67,50 €</span>
+                    <span className="font-bold text-foreground">73,12 €</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-background rounded-lg">
                     <span className="text-foreground">Besondere Ausbildungsfahrten (45 Min.)</span>
-                    <span className="font-bold text-foreground">75 €</span>
+                    <span className="font-bold text-foreground">80 €</span>
                   </div>
                 </div>
                 <p className="text-xs text-muted-foreground mt-3">
@@ -155,11 +155,11 @@ const Preise = () => {
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="flex justify-between items-center p-3 bg-background rounded-lg">
                     <span className="text-foreground">Unterweisung (45 Min.)</span>
-                    <span className="font-bold text-foreground">75 €</span>
+                    <span className="font-bold text-foreground">80 €</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-background rounded-lg">
                     <span className="text-foreground">Übungsstunde (45 Min.)</span>
-                    <span className="font-bold text-foreground">75 €</span>
+                    <span className="font-bold text-foreground">80 €</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-background rounded-lg">
                     <span className="text-foreground">Besondere Ausbildungsfahrten (45 Min.)</span>

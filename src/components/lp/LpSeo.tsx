@@ -17,11 +17,14 @@ interface LpSeoProps {
 
 const localBusiness = {
   '@context': 'https://schema.org',
-  '@type': 'DrivingSchool',
+  '@type': ['DrivingSchool', 'LocalBusiness'],
+  '@id': `${SITE_URL}/#drivingschool`,
   name: 'ABF Fahrschule Potsdam',
   url: SITE_URL,
   telephone: PHONE_RAW,
+  email: 'potsdam@fahrschuleabf.de',
   image: `${SITE_URL}${LOGO_URL}`,
+  logo: `${SITE_URL}${LOGO_URL}`,
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Tuchmacherstraße 45b',
@@ -30,16 +33,31 @@ const localBusiness = {
     addressRegion: 'Brandenburg',
     addressCountry: 'DE',
   },
-  geo: { '@type': 'GeoCoordinates', latitude: '52.3906', longitude: '13.0645' },
-  openingHours: ['Mo-Fr 12:00-18:00'],
-  areaServed: { '@type': 'City', name: 'Potsdam' },
+  geo: { '@type': 'GeoCoordinates', latitude: 52.3906, longitude: 13.0645 },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '12:00',
+      closes: '18:00',
+    },
+  ],
+  areaServed: [
+    { '@type': 'City', name: 'Potsdam' },
+    { '@type': 'Place', name: 'Potsdam-Babelsberg' },
+    { '@type': 'City', name: 'Werder (Havel)' },
+    { '@type': 'City', name: 'Teltow' },
+    { '@type': 'City', name: 'Kleinmachnow' },
+  ],
   priceRange: '€€',
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '5.0',
+    bestRating: '5',
     reviewCount: String(REVIEW_COUNT),
   },
 };
+
 
 const LpSeo: React.FC<LpSeoProps> = ({ title, description, path, faqs }) => {
   const url = `${SITE_URL}${path}`;

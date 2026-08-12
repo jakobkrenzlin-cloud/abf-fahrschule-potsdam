@@ -227,20 +227,12 @@ const Preise = () => {
                   Jetzt Angebot sichern
                 </Button>
               </Link>
-              <p className="text-sm text-muted-foreground mt-4">
-                Ratenzahlung möglich – sprich uns bei der Anmeldung darauf an.
-              </p>
             </div>
           </div>
 
           {/* Weitere Informationen */}
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-card rounded-xl p-6 border border-border">
-              <h3 className="text-xl font-semibold text-foreground mb-3">📊 Ratenzahlung möglich</h3>
-              <p className="text-muted-foreground">
-                Wir bieten flexible Zahlungsoptionen an. Sprich uns einfach bei der Anmeldung darauf an.
-              </p>
-            </div>
+
 
             <div className="bg-card rounded-xl p-6 border border-border">
               <h3 className="text-xl font-semibold text-foreground mb-3">🎓 BF17 (Begleitetes Fahren)</h3>

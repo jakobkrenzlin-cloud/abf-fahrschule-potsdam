@@ -187,6 +187,32 @@ const LeadForm: React.FC<LeadFormProps> = ({
         </div>
 
         <div>
+          <label htmlFor={`${id}-email`} className="block text-sm font-medium text-white mb-1.5">
+            E-Mail <span className="text-white/60">(optional)</span>
+          </label>
+          <input
+            id={`${id}-email`}
+            name="email"
+            type="email"
+            inputMode="email"
+            autoComplete="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className={inputClass}
+            placeholder="deine@email.de"
+            aria-invalid={!!errors.email}
+            aria-describedby={errors.email ? `${id}-email-error` : undefined}
+          />
+          {errors.email && (
+            <p id={`${id}-email-error`} className="mt-1 text-sm text-warning">
+              {errors.email}
+            </p>
+          )}
+        </div>
+
+
+
+        <div>
           <label htmlFor={`${id}-class`} className="block text-sm font-medium text-white mb-1.5">
             Führerscheinklasse
           </label>

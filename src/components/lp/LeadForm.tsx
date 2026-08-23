@@ -55,20 +55,21 @@ const LeadForm: React.FC<LeadFormProps> = ({
   const { toast } = useToast();
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
   const [honeyPot, setHoneyPot] = useState('');
   const [start, setStart] = useState('');
   const [consent, setConsent] = useState(false);
-  const [errors, setErrors] = useState<{ name?: string; phone?: string }>({});
+  const [errors, setErrors] = useState<{ name?: string; phone?: string; email?: string }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const result = leadSchema.safeParse({ name, phone, honeyPot });
+    const result = leadSchema.safeParse({ name, phone, email, honeyPot });
     if (!result.success) {
-      const fieldErrors: { name?: string; phone?: string } = {};
+      const fieldErrors: { name?: string; phone?: string; email?: string } = {};
       result.error.errors.forEach((err) => {
-        const key = err.path[0] as 'name' | 'phone';
-        if (key === 'name' || key === 'phone') fieldErrors[key] = err.message;
+        const key = err.path[0] as 'name' | 'phone' | 'email';
+        if (key === 'name' || key === 'phone' || key === 'email') fieldErrors[key] = err.message;
       });
       setErrors(fieldErrors);
       return;
@@ -93,11 +94,13 @@ const LeadForm: React.FC<LeadFormProps> = ({
           body: JSON.stringify({
             name,
             phone,
+            ...(email.trim() ? { email: email.trim() } : {}),
             license_class: licenseClass,
             source,
             message: start ? `Startwunsch: ${start}` : undefined,
             ...getAttribution(),
           }),
+
         }
       );
       if (!response.ok) {

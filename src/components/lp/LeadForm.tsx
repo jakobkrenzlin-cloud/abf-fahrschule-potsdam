@@ -13,8 +13,16 @@ const leadSchema = z.object({
     .trim()
     .min(6, 'Bitte gib eine gültige Telefonnummer ein.')
     .max(30, 'Die Telefonnummer ist zu lang.'),
+  email: z
+    .string()
+    .trim()
+    .email('Bitte gib eine gültige E-Mail-Adresse ein.')
+    .max(255)
+    .optional()
+    .or(z.literal('')),
   honeyPot: z.string().max(0),
 });
+
 
 export type ClassOption = { value: string; label: string };
 

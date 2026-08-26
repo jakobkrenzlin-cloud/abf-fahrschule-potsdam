@@ -20,6 +20,10 @@
     --warning: 26 91% 37%;          /* #B45309 */
     --star: 45 100% 52%;            /* Sterne-Gold */
 
+    /* ---- Consent-Banner ---- */
+    --consent-accent: 29 100% 50%;   /* #FF7A00 */
+    --consent-surface: 210 24% 16%;  /* #1F2933 */
+
     /* ---- Semantische Tokens ---- */
     --background: 0 0% 100%;
     --foreground: var(--ink);

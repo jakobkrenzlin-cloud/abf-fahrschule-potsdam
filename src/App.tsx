@@ -60,7 +60,7 @@ const App = () => {
         <Sonner />
         <BrowserRouter>
           <PageViewTracker />
-          <CookieConsent />
+          
           <PostHogConsentBanner />
           <Suspense fallback={<RouteFallback />}>
             <Routes>

@@ -99,7 +99,21 @@ export class CookieConsentManager {
         analytics_storage: consent.statistics ? 'granted' : 'denied',
       });
     }
+
+    // PostHog folgt der Statistik-Entscheidung
+    initPostHog();
+    try {
+      if (consent.statistics) {
+        posthog.opt_in_capturing();
+      } else {
+        posthog.stopSessionRecording();
+        posthog.opt_out_capturing();
+      }
+    } catch {
+      /* PostHog evtl. nicht initialisiert */
+    }
   }
+
 
   // Reset consent (for testing or user request)
   static resetConsent(): void {

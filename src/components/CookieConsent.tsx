@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { X, Cookie, Shield, BarChart3, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
-import { CookieConsentManager, ConsentStatus } from '@/lib/cookieConsent';
+import { CookieConsentManager, ConsentStatus, CONSENT_OPEN_EVENT } from '@/lib/cookieConsent';
 import { Link } from 'react-router-dom';
 
 export const CookieConsent = () => {

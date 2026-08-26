@@ -2,7 +2,7 @@ import React from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { ADDRESS_LINE, PHONE_DISPLAY, PHONE_RAW } from '@/components/lp/constants';
-import { openConsentBanner } from '@/lib/posthogConsent';
+import { openConsentBanner } from '@/lib/cookieConsent';
 
 const linkClass =
   'flex items-center min-h-[44px] text-white/70 hover:text-white transition-colors';

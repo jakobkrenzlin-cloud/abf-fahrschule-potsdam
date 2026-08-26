@@ -1,4 +1,5 @@
 // Cookie Consent Management System - DSGVO-konform
+import posthog from 'posthog-js';
 
 export type ConsentStatus = {
   essential: boolean;
@@ -9,6 +10,43 @@ export type ConsentStatus = {
 
 const CONSENT_COOKIE_NAME = 'abf-cookie-consent';
 const CONSENT_VERSION = '1.0';
+
+/** Event, um das Consent-Banner erneut zu öffnen (z. B. Footer-Link). */
+export const CONSENT_OPEN_EVENT = 'abf-consent-open';
+export function openConsentBanner(): void {
+  window.dispatchEvent(new Event(CONSENT_OPEN_EVENT));
+}
+
+let posthogInitialized = false;
+
+/**
+ * Einzige PostHog-Initialisierung: lädt PostHog, erfasst aber standardmäßig nichts.
+ * Erfassung startet erst über applyConsent() bei Statistik-Zustimmung.
+ */
+export function initPostHog(): void {
+  if (posthogInitialized) return;
+
+  const token = import.meta.env.VITE_LOVABLE_CONNECTOR_POSTHOG_API_KEY as string | undefined;
+  if (!token) return;
+
+  const region = (import.meta.env.VITE_LOVABLE_CONNECTOR_POSTHOG_REGION as string | undefined) || 'eu';
+  const apiHost = region === 'us' ? 'https://us.i.posthog.com' : 'https://eu.i.posthog.com';
+
+  posthog.init(token, {
+    api_host: apiHost,
+    opt_out_capturing_by_default: true,
+    persistence: 'localStorage+cookie',
+    autocapture: true,
+    capture_pageview: true,
+    session_recording: {
+      maskAllInputs: true,
+      maskTextSelector: '.ph-mask',
+    },
+  });
+
+  posthogInitialized = true;
+}
+
 
 export class CookieConsentManager {
   // Get current consent status from localStorage

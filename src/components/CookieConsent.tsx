@@ -28,6 +28,12 @@ export const CookieConsent = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const reopen = () => setIsVisible(true);
+    window.addEventListener(CONSENT_OPEN_EVENT, reopen);
+    return () => window.removeEventListener(CONSENT_OPEN_EVENT, reopen);
+  }, []);
+
   const handleAcceptAll = () => {
     const fullConsent: ConsentStatus = {
       essential: true,

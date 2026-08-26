@@ -6,8 +6,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 
-import PostHogConsentBanner from "@/components/PostHogConsentBanner";
-import { initPostHog } from "@/lib/posthogConsent";
+import { CookieConsent } from "@/components/CookieConsent";
+import { initPostHog } from "@/lib/cookieConsent";
 import { initTracking, trackPageView } from "@/lib/tracking";
 
 // Eager-load home route (most common entry, also drives LCP)
@@ -61,7 +61,7 @@ const App = () => {
         <BrowserRouter>
           <PageViewTracker />
           
-          <PostHogConsentBanner />
+          <CookieConsent />
           <Suspense fallback={<RouteFallback />}>
             <Routes>
               <Route path="/" element={<Index />} />

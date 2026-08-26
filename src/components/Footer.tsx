@@ -2,6 +2,7 @@ import React from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { ADDRESS_LINE, PHONE_DISPLAY, PHONE_RAW } from '@/components/lp/constants';
+import { openConsentBanner } from '@/lib/posthogConsent';
 
 const linkClass =
   'flex items-center min-h-[44px] text-white/70 hover:text-white transition-colors';
@@ -90,10 +91,13 @@ const Footer = () => {
             <p className="text-white/70 text-small">
               © {year} ABF Fahrschule Potsdam. Alle Rechte vorbehalten.
             </p>
-            <div className="flex gap-6 text-small">
+            <div className="flex flex-wrap justify-center gap-6 text-small">
               <Link to="/impressum" className={linkClass}>Impressum</Link>
               <Link to="/datenschutz" className={linkClass}>Datenschutz</Link>
               <Link to="/agb" className={linkClass}>AGB</Link>
+              <button type="button" onClick={openConsentBanner} className={linkClass}>
+                Cookie-Einstellungen
+              </button>
             </div>
           </div>
         </div>

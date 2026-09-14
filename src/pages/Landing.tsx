@@ -45,7 +45,7 @@ const FAQS: Faq[] = [
   {
     question: 'Was genau ist im 199-€-Angebot enthalten?',
     answer:
-      'Enthalten sind Anmeldung und Verwaltung, der komplette Theorieunterricht, Lern-App und Unterlagen, die Vorstellung zur theoretischen Prüfung, die persönliche Beratung sowie 1 Jahr ADAC-Mitgliedschaft. Fahrstunden und amtliche Gebühren kommen wie überall zusätzlich dazu.',
+      'Enthalten sind Anmeldung und Verwaltung, der komplette Theorieunterricht, die Vorstellung zur theoretischen Prüfung, die persönliche Beratung sowie 1 Jahr ADAC-Mitgliedschaft. Fahrstunden, Lern-App und amtliche Gebühren kommen wie überall zusätzlich dazu.',
   },
   {
     question: 'Wie lange dauert der Führerschein bei euch insgesamt?',
@@ -137,7 +137,7 @@ const Landing = () => {
             included={[
               'Anmeldung & Verwaltung',
               'Kompletter Theorieunterricht',
-              'Lern-App & Unterlagen',
+              
               'Vorstellung zur theoretischen Prüfung',
               'Persönliche Beratung',
               '1 Jahr ADAC-Mitgliedschaft',

@@ -63,7 +63,7 @@ const Theorie = () => {
                   <Smartphone className="text-primary" size={32} />
                 </div>
                 <h3 className="font-bold text-foreground text-xl mb-2">LernApp</h3>
-                <p className="text-muted-foreground text-sm">Vogel Verlag – offizieller TÜV-Fragenkatalog</p>
+                <p className="text-muted-foreground text-sm">Vogel Verlag – offizieller TÜV-Fragenkatalog, zusätzlich buchbar</p>
               </div>
               <div className="text-center">
                 <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -94,9 +94,9 @@ const Theorie = () => {
                     1
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">Anmeldung & Zugang zur LernApp</h3>
+                    <h3 className="text-xl font-semibold text-foreground mb-2">Anmeldung & LernApp</h3>
                     <p className="text-muted-foreground">
-                      Nach deiner Anmeldung erhältst du sofort Zugang zur digitalen LernApp vom Vogel Verlag. Damit kannst du jederzeit und überall lernen – am Handy, Tablet oder PC.
+                      Nach deiner Anmeldung kannst du die digitale LernApp vom Vogel Verlag zusätzlich dazubuchen. Damit lernst du jederzeit und überall – am Handy, Tablet oder PC. Die LernApp ist nicht im Grundbetrag enthalten.
                     </p>
                   </div>
                 </div>

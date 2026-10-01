@@ -6,12 +6,13 @@ import { ADDRESS_LINE, RATING_VALUE, REVIEW_COUNT } from './constants';
 interface LpHeroProps {
   id: string;
   headline: string;
+  headlineNote?: React.ReactNode;
   subline: string;
   chips: string[];
   children: React.ReactNode; // Formular
 }
 
-const LpHero: React.FC<LpHeroProps> = ({ id, headline, subline, chips, children }) => (
+const LpHero: React.FC<LpHeroProps> = ({ id, headline, headlineNote, subline, chips, children }) => (
   <section id={id} className="bg-ink section-y">
     <div className="container-page grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
       <div>
@@ -25,6 +26,7 @@ const LpHero: React.FC<LpHeroProps> = ({ id, headline, subline, chips, children 
         <h1 className="mt-5 text-[2rem] leading-[1.15] md:text-5xl lg:text-[3.4rem] font-extrabold text-white">
           {headline}
         </h1>
+        {headlineNote && <p className="mt-3 text-sm text-white/70 leading-relaxed max-w-xl">{headlineNote}</p>}
         <p className="mt-5 text-lg text-white/80 leading-relaxed max-w-xl">{subline}</p>
 
         <ul className="mt-6 flex flex-wrap gap-2.5">

@@ -20,7 +20,6 @@ export const PRICES_B: ClassPrices = {
   items: [
     { label: 'Grundbetrag bei Nichtbestehen der theoretischen Prüfung und weitere Ausbildung', price: '0 € (kein zusätzlicher Grundbetrag)' },
     { label: 'Vorstellung zur theoretischen Prüfung', price: 'im Grundbetrag enthalten' },
-    { label: 'Vorstellung zur praktischen Prüfung', price: '189 €' },
     { label: 'Übungsstunde (45 Min.)', price: '73,12 €' },
     { label: 'Besondere Ausbildungsfahrt Überland (45 Min.)', price: '80 €' },
     { label: 'Besondere Ausbildungsfahrt Autobahn (45 Min.)', price: '80 €' },
@@ -38,7 +37,6 @@ export const PRICES_A: ClassPrices = {
   items: [
     { label: 'Grundbetrag bei Nichtbestehen der theoretischen Prüfung und weitere Ausbildung', price: '0 € (kein zusätzlicher Grundbetrag)' },
     { label: 'Vorstellung zur theoretischen Prüfung', price: 'im Grundbetrag enthalten' },
-    { label: 'Vorstellung zur praktischen Prüfung', price: '189 €' },
     { label: 'Übungsstunde (45 Min.)', price: '80 €' },
     { label: 'Besondere Ausbildungsfahrt Überland (45 Min.)', price: '85 €' },
     { label: 'Besondere Ausbildungsfahrt Autobahn (45 Min.)', price: '85 €' },

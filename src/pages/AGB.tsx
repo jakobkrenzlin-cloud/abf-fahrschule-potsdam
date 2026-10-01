@@ -49,7 +49,6 @@ const AGB = () => {
           <p className="mb-4"><strong>Vorstellung zur Prüfung:</strong></p>
           <ul className="mb-4 ml-6 list-disc">
             <li>Theoretische Prüfung: Im Grundbetrag enthalten</li>
-            <li>Praktische Prüfung: 189 €</li>
           </ul>
           <p className="mb-4"><strong>Externe Gebühren (nicht an die Fahrschule):</strong></p>
           <ul className="mb-4 ml-6 list-disc">

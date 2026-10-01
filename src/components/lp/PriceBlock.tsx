@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check } from 'lucide-react';
+import { Check, ChevronDown } from 'lucide-react';
 import Reveal from './Reveal';
 
 interface PriceBlockProps {
@@ -25,7 +25,7 @@ const PriceBlock: React.FC<PriceBlockProps> = ({
   includedAdditional,
   extras,
   note,
-  closing = 'Keine versteckten Kosten: Oben stehen alle Entgelte der Fahrschule. Amtliche Gebühren (TÜV/DEKRA, Führerscheinstelle) kommen hinzu.',
+  closing = 'Amtliche Gebühren (TÜV/DEKRA, Führerscheinstelle) kommen hinzu.',
 }) => (
   <section id="preisblock" className="section-y bg-surface scroll-mt-24" aria-labelledby="preis-heading">
     <div className="max-w-4xl mx-auto px-4">
@@ -88,17 +88,37 @@ const PriceBlock: React.FC<PriceBlockProps> = ({
           )}
 
           {extras && extras.length > 0 && (
-            <div className="mt-8">
-              <p className="font-bold text-brand-dark">Kommt dazu (alle Entgelte laut Preisaushang):</p>
-              <ul className="mt-3 divide-y divide-black/5 border-y border-black/5">
-                {extras.map((e) => (
-                  <li key={e.label} className="flex items-center justify-between gap-4 py-3">
-                    <span className="text-ink">{e.label}</span>
-                    <span className="font-bold text-brand-dark whitespace-nowrap">{e.price}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <details className="group mt-8 border-y border-black/5">
+              <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 font-bold text-brand-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand [&::-webkit-details-marker]:hidden">
+                <span>Kommt dazu</span>
+                <ChevronDown
+                  className="h-5 w-5 shrink-0 transition-transform duration-200 group-open:rotate-180"
+                  aria-hidden="true"
+                />
+              </summary>
+              <div className="overflow-x-auto pb-4">
+                <table className="w-full border-collapse text-left">
+                  <thead className="sr-only">
+                    <tr>
+                      <th scope="col">Leistung</th>
+                      <th scope="col">Preis</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-black/5 border-t border-black/5">
+                    {extras.map((extra) => (
+                      <tr key={extra.label}>
+                        <th scope="row" className="py-3 pr-4 font-normal leading-relaxed text-ink">
+                          {extra.label}
+                        </th>
+                        <td className="py-3 text-right font-bold text-brand-dark whitespace-nowrap">
+                          {extra.price}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </details>
           )}
 
           <p className="mt-6 text-sm text-ink/70 leading-relaxed">{closing}</p>

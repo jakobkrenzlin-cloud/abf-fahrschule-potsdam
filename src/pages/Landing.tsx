@@ -15,6 +15,7 @@ import StickyMobileCta from '@/components/lp/StickyMobileCta';
 import LpFooterLinks from '@/components/lp/LpFooterLinks';
 import LpLegalBar from '@/components/lp/LpLegalBar';
 import type { Faq, Review, Step } from '@/components/lp/constants';
+import { PRICES_B } from '@/data/prices';
 
 const FORM_ID = 'lead-form-pkw';
 const HERO_ID = 'hero-pkw';
@@ -60,7 +61,7 @@ const FAQS: Faq[] = [
   {
     question: 'Was kostet der Führerschein am Ende ungefähr komplett?',
     answer:
-      'Das hängt allein davon ab, wie viele Fahrstunden du brauchst – das ist bei jedem unterschiedlich. Bei uns kostet die Übungsstunde (45 Min.) 73,12 €, die Unterweisung 73,12 € und eine besondere Ausbildungsfahrt 80 €. Im Beratungsgespräch rechnen wir dir eine realistische Gesamtsumme aus. Amtliche Gebühren (TÜV/DEKRA, Führerscheinstelle, Sehtest, Erste Hilfe) kommen dazu.',
+      'Das hängt allein davon ab, wie viele Fahrstunden du brauchst – das ist bei jedem unterschiedlich. Bei uns kostet die Übungsstunde (45 Min.) 73,12 €, die Unterweisung 73,12 € und eine besondere Ausbildungsfahrt 80 €. Die Vorstellung zur praktischen Prüfung kostet 189 €. Im Beratungsgespräch rechnen wir dir eine realistische Gesamtsumme aus. Amtliche Gebühren (TÜV/DEKRA, Führerscheinstelle, Sehtest, Erste Hilfe) kommen dazu.',
   },
   {
     question: 'Muss ich bei der Anmeldung schon zahlen?',
@@ -101,8 +102,8 @@ const Landing = () => {
   return (
     <>
       <LpSeo
-        title="Führerschein Klasse B Potsdam – Herbst-Angebot 199 € | ABF Fahrschule"
-        description="PKW-Führerschein in Potsdam-Babelsberg. Theorie in 1 Woche, faire Preise, 5,0★ bei Google. Herbst-Angebot 199 € – nur bis 31. Oktober. Jetzt sichern!"
+        title="Führerschein Klasse B Potsdam – Herbst-Angebot | ABF Fahrschule"
+        description="PKW-Führerschein in Potsdam-Babelsberg. Theorie in 1 Woche, faire Preise, 5,0★ bei Google. Herbst-Angebot nur bis 31. Oktober. Jetzt sichern!"
         path="/anmeldung"
         faqs={FAQS}
       />
@@ -114,7 +115,8 @@ const Landing = () => {
         <main>
           <LpHero
             id={HERO_ID}
-            headline="Dein Führerschein in Potsdam – Herbst-Angebot für 199 €"
+            headline="Führerschein Klasse B in Potsdam – Herbst-Angebot: Grundbetrag 199 €"
+            headlineNote={<a href="#preisblock" className="underline underline-offset-2 hover:text-white">Fahrstunden, Prüfungsvorstellung und amtliche Gebühren kommen hinzu – alle Preise weiter unten.</a>}
             subline="Klasse B bei der ABF Fahrschule in Babelsberg. Theorie in nur einer Woche, erfahrene Fahrlehrer, faire Preise. Nur bis 31. Oktober."
             chips={['Theorie in 1 Woche', '5,0★ bei Google', 'Keine versteckten Kosten']}
           >
@@ -132,8 +134,8 @@ const Landing = () => {
 
           <PriceBlock
             badge="Herbst-Angebot"
-            price="199 €"
-            title="199 € Herbst-Angebot – das ist drin"
+            price={PRICES_B.basePrice}
+            title={`Grundbetrag ${PRICES_B.basePrice} (Herbst-Angebot) – das ist drin`}
             included={[
               'Anmeldung & Verwaltung',
               'Kompletter Theorieunterricht',
@@ -142,11 +144,7 @@ const Landing = () => {
               'Persönliche Beratung',
               '1 Jahr ADAC-Mitgliedschaft',
             ]}
-            extras={[
-              { label: 'Übungsstunde (45 Min.)', price: '73,12 €' },
-              { label: 'Unterweisung (45 Min.)', price: '73,12 €' },
-              { label: 'Besondere Ausbildungsfahrten (45 Min.)', price: '80 €' },
-            ]}
+            extras={PRICES_B.items}
           />
 
           <SocialProof reviews={REVIEWS} />
@@ -156,7 +154,7 @@ const Landing = () => {
           <LocationSection />
 
           <FinalCta
-            headline="Herbst-Angebot: 199 € – nur noch bis 31. Oktober"
+            headline="Herbst-Angebot: Grundbetrag 199 € – nur noch bis 31. Oktober"
             subline="Sichere dir deinen Platz im nächsten Theoriekurs. Kostenlos & unverbindlich anfragen."
             buttonLabel="Herbst-Angebot sichern"
             onClick={scrollToForm}

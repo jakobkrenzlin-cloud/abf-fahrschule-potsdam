@@ -17,6 +17,7 @@ import LpFooterLinks from '@/components/lp/LpFooterLinks';
 import LpLegalBar from '@/components/lp/LpLegalBar';
 import Reveal from '@/components/lp/Reveal';
 import type { Faq, Review, Step } from '@/components/lp/constants';
+import { PRICES_A } from '@/data/prices';
 
 const FORM_ID = 'lead-form-motorrad';
 const HERO_ID = 'hero-motorrad';
@@ -98,7 +99,7 @@ const FAQS: Faq[] = [
   {
     question: 'Was kostet der Motorradführerschein insgesamt?',
     answer:
-      'Der Grundbetrag beträgt im Herbst-Angebot 399 €. Dazu kommen die Fahrstunden: Übungsstunde (45 Min.) 80 €, Unterweisung (45 Min.) 80 €, besondere Ausbildungsfahrt (45 Min.) 85 €. Wie viele Stunden du brauchst, hängt von deiner Vorerfahrung ab – amtliche Gebühren kommen zusätzlich dazu.',
+      'Der Grundbetrag beträgt im Herbst-Angebot 399 €. Dazu kommen die Fahrstunden: Übungsstunde (45 Min.) 80 €, Unterweisung (45 Min.) 80 €, besondere Ausbildungsfahrt (45 Min.) 85 €. Die Vorstellung zur praktischen Prüfung kostet 189 €. Wie viele Stunden du brauchst, hängt von deiner Vorerfahrung ab – amtliche Gebühren kommen zusätzlich dazu.',
   },
   {
     question: 'Kann ich später von A2 auf A aufsteigen?',
@@ -127,8 +128,8 @@ const AnmeldungMotorrad = () => {
   return (
     <>
       <LpSeo
-        title="Motorradführerschein Potsdam – A1, A2, A ab 399 € | ABF Fahrschule"
-        description="Motorradführerschein in Potsdam: A1 ab 16, A2 ab 18, Klasse A. Herbst-Angebot 399 € bis 31. Oktober – jetzt Theorie machen, im Frühjahr fahren."
+        title="Motorradführerschein A1, A2, A in Potsdam | ABF Fahrschule"
+        description="Motorradführerschein in Potsdam: A1 ab 16, A2 ab 18, Klasse A. Herbst-Angebot bis 31. Oktober – jetzt Theorie machen, im Frühjahr fahren."
         path="/anmeldungmotorrad"
         faqs={FAQS}
       />
@@ -141,7 +142,7 @@ const AnmeldungMotorrad = () => {
           <LpHero
             id={HERO_ID}
             headline="Motorradführerschein Potsdam – jetzt starten, im Frühjahr fahren"
-            subline="A1 ab 16, A2 ab 18 oder Klasse A. Herbst-Angebot 399 € – Theorie im Winter, und wenn die Saison beginnt, bist du startklar. Nur bis 31. Oktober."
+            subline="A1 ab 16, A2 ab 18 oder Klasse A. Herbst-Angebot: Grundbetrag 399 € – Theorie im Winter, und wenn die Saison beginnt, bist du startklar. Nur bis 31. Oktober."
             chips={[
               'Eigene Schulungsmotorräder',
               '5,0★ bei Google',
@@ -197,8 +198,8 @@ const AnmeldungMotorrad = () => {
 
           <PriceBlock
             badge="Herbst-Angebot"
-            price="399 €"
-            title="399 € Herbst-Angebot – das ist drin"
+            price={PRICES_A.basePrice}
+            title={`Grundbetrag ${PRICES_A.basePrice} (Herbst-Angebot) – das ist drin`}
             subtitle="Einmalige Gebühr für Verwaltung und vollständige Theorieausbildung"
             includedBase={[
               'Kompletter Theorieunterricht',
@@ -210,11 +211,7 @@ const AnmeldungMotorrad = () => {
               'Prüfungsvorbereitung',
               '1 Jahr ADAC-Mitgliedschaft',
             ]}
-            extras={[
-              { label: 'Übungsstunde (45 Min.)', price: '80 €' },
-              { label: 'Unterweisung (45 Min.)', price: '80 €' },
-              { label: 'Besondere Ausbildungsfahrten (45 Min.)', price: '85 €' },
-            ]}
+            extras={PRICES_A.items}
           />
 
           <SocialProof reviews={REVIEWS} />
@@ -224,7 +221,7 @@ const AnmeldungMotorrad = () => {
           <LocationSection />
 
           <FinalCta
-            headline="Herbst-Angebot: 399 € – nur noch bis 31. Oktober"
+            headline="Herbst-Angebot: Grundbetrag 399 € – nur noch bis 31. Oktober"
             subline="Theorie jetzt, Fahrspaß im Frühjahr. Kostenlos & unverbindlich anfragen."
             buttonLabel="Motorrad-Platz sichern"
             onClick={scrollToForm}

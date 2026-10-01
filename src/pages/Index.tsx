@@ -17,10 +17,10 @@ import { SITE_URL } from '../components/lp/constants';
 const Index = () => (
   <SiteLayout stickyMode="form" formAnchor="contact">
     <Helmet>
-      <title>Fahrschule Potsdam – Führerschein ab 199 € | ABF Fahrschule</title>
+      <title>Fahrschule Potsdam-Babelsberg – Klasse B & Motorrad | ABF Fahrschule</title>
       <meta
         name="description"
-        content="Führerschein in Potsdam-Babelsberg: Theorie in einer Woche, erfahrene Fahrlehrer, 5,0★ bei Google. Grundbetrag Klasse B 199 €. Jetzt kostenlos beraten lassen."
+        content="Führerschein in Potsdam-Babelsberg: Theorie in einer Woche, erfahrene Fahrlehrer, 5,0★ bei Google. Jetzt kostenlos beraten lassen."
       />
       <link rel="canonical" href={`${SITE_URL}/`} />
       <script type="application/ld+json">

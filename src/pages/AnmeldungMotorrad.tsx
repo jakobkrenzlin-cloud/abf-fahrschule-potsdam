@@ -99,7 +99,7 @@ const FAQS: Faq[] = [
   {
     question: 'Was kostet der Motorradführerschein insgesamt?',
     answer:
-      'Der Grundbetrag beträgt im Herbst-Angebot 399 €. Dazu kommen die Fahrstunden: Übungsstunde (45 Min.) 80 €, Unterweisung (45 Min.) 80 €, besondere Ausbildungsfahrt (45 Min.) 85 €. Die Vorstellung zur praktischen Prüfung kostet 189 €. Wie viele Stunden du brauchst, hängt von deiner Vorerfahrung ab – amtliche Gebühren kommen zusätzlich dazu.',
+      'Der Grundbetrag beträgt im Herbst-Angebot 399 €. Dazu kommen die Fahrstunden: Übungsstunde (45 Min.) 80 €, Unterweisung (45 Min.) 80 €, besondere Ausbildungsfahrt (45 Min.) 85 €. Wie viele Stunden du brauchst, hängt von deiner Vorerfahrung ab – amtliche Gebühren kommen zusätzlich dazu.',
   },
   {
     question: 'Kann ich später von A2 auf A aufsteigen?',

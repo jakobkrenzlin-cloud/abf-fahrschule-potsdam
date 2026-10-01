@@ -61,7 +61,7 @@ const FAQS: Faq[] = [
   {
     question: 'Was kostet der Führerschein am Ende ungefähr komplett?',
     answer:
-      'Das hängt allein davon ab, wie viele Fahrstunden du brauchst – das ist bei jedem unterschiedlich. Bei uns kostet die Übungsstunde (45 Min.) 73,12 €, die Unterweisung 73,12 € und eine besondere Ausbildungsfahrt 80 €. Die Vorstellung zur praktischen Prüfung kostet 189 €. Im Beratungsgespräch rechnen wir dir eine realistische Gesamtsumme aus. Amtliche Gebühren (TÜV/DEKRA, Führerscheinstelle, Sehtest, Erste Hilfe) kommen dazu.',
+      'Das hängt allein davon ab, wie viele Fahrstunden du brauchst – das ist bei jedem unterschiedlich. Bei uns kostet die Übungsstunde (45 Min.) 73,12 €, die Unterweisung 73,12 € und eine besondere Ausbildungsfahrt 80 €. Im Beratungsgespräch rechnen wir dir eine realistische Gesamtsumme aus. Amtliche Gebühren (TÜV/DEKRA, Führerscheinstelle, Sehtest, Erste Hilfe) kommen dazu.',
   },
   {
     question: 'Muss ich bei der Anmeldung schon zahlen?',

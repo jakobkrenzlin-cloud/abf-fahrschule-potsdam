@@ -11,6 +11,7 @@ interface PriceBlockProps {
   includedBase?: string[];
   includedAdditional?: string[];
   extras?: { label: string; price: string }[];
+  note?: string;
   closing?: string;
 }
 
@@ -23,9 +24,10 @@ const PriceBlock: React.FC<PriceBlockProps> = ({
   includedBase,
   includedAdditional,
   extras,
-  closing = 'Keine versteckten Kosten. Du bekommst vor dem Start eine vollständige Übersicht.',
+  note,
+  closing = 'Keine versteckten Kosten: Oben stehen alle Entgelte der Fahrschule. Amtliche Gebühren (TÜV/DEKRA, Führerscheinstelle) kommen hinzu.',
 }) => (
-  <section className="section-y bg-surface" aria-labelledby="preis-heading">
+  <section id="preisblock" className="section-y bg-surface scroll-mt-24" aria-labelledby="preis-heading">
     <div className="max-w-4xl mx-auto px-4">
       <Reveal>
         <div className="bg-card rounded-2xl shadow-sm border border-black/5 p-6 md:p-10">
@@ -53,6 +55,7 @@ const PriceBlock: React.FC<PriceBlockProps> = ({
                   </li>
                 ))}
               </ul>
+              {note && <p className="mt-3 text-sm text-ink/70">{note}</p>}
             </>
           )}
 
@@ -86,7 +89,7 @@ const PriceBlock: React.FC<PriceBlockProps> = ({
 
           {extras && extras.length > 0 && (
             <div className="mt-8">
-              <p className="font-bold text-brand-dark">Kommt dazu (echte Preise):</p>
+              <p className="font-bold text-brand-dark">Kommt dazu (alle Entgelte laut Preisaushang):</p>
               <ul className="mt-3 divide-y divide-black/5 border-y border-black/5">
                 {extras.map((e) => (
                   <li key={e.label} className="flex items-center justify-between gap-4 py-3">

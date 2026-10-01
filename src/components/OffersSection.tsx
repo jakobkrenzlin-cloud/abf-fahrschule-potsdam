@@ -2,6 +2,7 @@ import React from 'react';
 import { Check, Phone, Mail, MapPin, Car, Clock, Award, Bike } from 'lucide-react';
 import { Button } from './ui/button';
 import { Link } from 'react-router-dom';
+import { PRICES_A, PRICES_B } from '@/data/prices';
 
 const OffersSection = () => {
   const scrollToContact = () => {
@@ -34,14 +35,13 @@ const OffersSection = () => {
               <div className="flex items-center space-x-3 mb-3 md:mb-4">
                 <Car className="w-7 h-7 md:w-8 md:h-8 flex-shrink-0" />
                 <div>
-                  <h3 className="text-2xl font-bold">Führerschein-Ausbildung</h3>
-                  <p className="text-white/80">Herbst-Angebot bis zum 31. Oktober 2026 nur 199 €!</p>
+                  <h3 className="text-2xl font-bold">Klasse B – Grundbetrag</h3>
+                  <p className="text-white/80">Herbst-Angebot bis 31. Oktober 2026: Grundbetrag 199 €</p>
                 </div>
               </div>
               <div className="bg-white/20 rounded-lg p-4">
                 <div className="text-3xl font-bold mb-1">199 €</div>
                 <div className="text-sm text-white/80">Herbst-Angebot - Grundbetrag</div>
-                <div className="text-xs text-white/80 mt-2">Preis gemäß § 32 Fahrlehrergesetz: Unterweisungsstunde 73,12 €/45 Min., Übungsstunde 73,12 €/45 Min. und Besondere Ausbildungsfahrten 80 €/45 Min.</div>
               </div>
             </div>
 
@@ -71,7 +71,7 @@ const OffersSection = () => {
               <div className="pt-4 space-y-3">
                 <Link to="/anmeldung">
                   <Button className="w-full bg-brand-strong hover:bg-brand-strong text-white font-semibold py-3 text-lg">
-                    Jetzt für 199 € anmelden
+                    Herbst-Angebot sichern
                   </Button>
                 </Link>
                 <Button onClick={scrollToContact} variant="outline" className="w-full border-brand/30 text-brand-strong hover:bg-surface font-semibold py-3">
@@ -95,7 +95,6 @@ const OffersSection = () => {
                 <div className="text-3xl font-bold mb-1">399 €</div>
                 <div className="text-sm text-white/80">Herbst-Angebot – Grundbetrag (A1, A2, A)</div>
                 <div className="text-xs text-white/80 mt-2">Einmalige Gebühr für Verwaltung und vollständige Theorieausbildung</div>
-                <div className="text-xs text-white/80 mt-2">Preis gemäß § 32 Fahrlehrergesetz: Unterweisungsstunde 80 €/45 Min., Übungsstunde 80 €/45 Min. und Besondere Ausbildungsfahrten 85 €/45 Min.</div>
               </div>
             </div>
 
@@ -128,7 +127,7 @@ const OffersSection = () => {
               <div className="pt-4 mt-auto space-y-3">
                 <Link to="/anmeldungmotorrad">
                   <Button className="w-full bg-brand-strong hover:bg-brand-strong/90 text-white font-semibold py-3 text-lg">
-                    Jetzt für 399 € anmelden
+                    Motorrad-Angebot sichern
                   </Button>
                 </Link>
                 <Link to="/b196">
@@ -139,6 +138,31 @@ const OffersSection = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Alle Entgelte auf einen Blick (§ 32 FahrlG) */}
+        <div id="preise-uebersicht" className="scroll-mt-24 bg-white rounded-2xl shadow-lg border border-black/[0.08] p-5 md:p-8 mb-10 md:mb-16">
+          <h3 className="text-2xl font-bold text-brand-dark mb-6 text-center">Alle Entgelte auf einen Blick</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {[PRICES_B, PRICES_A].map((c) => (
+              <div key={c.key}>
+                <h4 className="font-bold text-brand-dark mb-3">{c.name}</h4>
+                <ul className="divide-y divide-black/5 border-y border-black/5">
+                  <li className="flex items-start justify-between gap-4 py-3">
+                    <span className="text-ink text-sm">{c.baseLabel}</span>
+                    <span className="font-bold text-brand-dark whitespace-nowrap">{c.basePrice}</span>
+                  </li>
+                  {c.items.map((i) => (
+                    <li key={i.label} className="flex items-start justify-between gap-4 py-3">
+                      <span className="text-ink text-sm">{i.label}</span>
+                      <span className="font-bold text-brand-dark text-right text-sm">{i.price}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-xs text-ink/60">Externe Gebühren (TÜV/DEKRA, Führerscheinstelle, Sehtest/Passfoto) werden nicht an uns gezahlt und kommen hinzu.</p>
         </div>
 
         {/* Kontaktinformationen */}

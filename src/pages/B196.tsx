@@ -234,7 +234,10 @@ const B196 = () => {
               'Nutzung unserer Schulungsmotorräder',
               'Bescheinigung für die Führerscheinstelle',
               'Keine Prüfungsgebühren (weil keine Prüfung nötig)',
+              '100 € Louis- und Polo-Gutschein',
+              '1 Jahr ADAC-Mitgliedschaft',
             ]}
+            note="Louis-/Polo-Gutschein (100 €) und 1 Jahr ADAC-Mitgliedschaft gibt es bei Anmeldung bis 31. Oktober 2026 dazu."
             closing="Fester Komplettpreis. Keine Nachberechnung, keine Überraschungen."
           />
 

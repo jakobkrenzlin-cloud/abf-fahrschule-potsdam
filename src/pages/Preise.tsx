@@ -6,11 +6,26 @@ import { Button } from '@/components/ui/button';
 import { Check, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { PRICES_A, PRICES_B, type PriceItem } from '@/data/prices';
+
+const PriceList = ({ title, items }: { title: string; items: PriceItem[] }) => (
+  <div className="bg-secondary/30 rounded-xl p-6">
+    <h3 className="text-xl font-bold text-foreground mb-4">{title}</h3>
+    <div className="grid md:grid-cols-2 gap-4">
+      {items.map((i) => (
+        <div key={i.label} className="flex justify-between items-center gap-4 p-3 bg-background rounded-lg">
+          <span className="text-foreground">{i.label}</span>
+          <span className="font-bold text-foreground text-right">{i.price}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+);
 const Preise = () => {
   return <>
       <Helmet>
         <title>Faire Preise für deinen Führerschein | ABF Fahrschule Potsdam</title>
-        <meta name="description" content="Transparente Preise für Führerschein Klasse B in Potsdam-Babelsberg. 199€ Herbst-Angebot Grundbetrag. Zusätzlich: Kompletter Theorieunterricht & 1 Jahr ADAC. Jetzt Angebot sichern!" />
+        <meta name="description" content="Transparente Preise für Führerschein Klasse B in Potsdam-Babelsberg. Zusätzlich: Kompletter Theorieunterricht & 1 Jahr ADAC. Jetzt Angebot sichern!" />
         <meta name="keywords" content="Fahrschule Potsdam Preise, Führerschein Kosten Potsdam, Fahrschule Babelsberg Preise, Führerschein Klasse B Kosten" />
         <link rel="canonical" href="https://www.abf-fahrschule.de/preise" />
         <script type="application/ld+json">
@@ -76,7 +91,7 @@ const Preise = () => {
                   </div>
                   <div className="text-right">
                     <div className="text-sm text-muted-foreground line-through">statt 479 €</div>
-                    <div className="text-4xl font-bold text-primary">199 €</div>
+                    <div className="text-4xl font-bold text-primary">{PRICES_B.basePrice}</div>
                   </div>
                 </div>
                 <div className="mt-4 pt-4 border-t border-primary/20">
@@ -90,40 +105,20 @@ const Preise = () => {
                 </div>
               </div>
 
-              {/* Fahrstunden Klasse B */}
-              <div className="bg-secondary/30 rounded-xl p-6">
-                <h3 className="text-xl font-bold text-foreground mb-4">Praktische Fahrstunden – Klasse B</h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
-                    <span className="text-foreground">Unterweisung (45 Min.)</span>
-                    <span className="font-bold text-foreground">73,12 €</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
-                    <span className="text-foreground">Übungsstunde (45 Min.)</span>
-                    <span className="font-bold text-foreground">73,12 €</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
-                    <span className="text-foreground">Besondere Ausbildungsfahrten (45 Min.)</span>
-                    <span className="font-bold text-foreground">80 €</span>
-                  </div>
-                </div>
-                <p className="text-xs text-muted-foreground mt-3">
-                  Besondere Ausbildungsfahrten: 5× Überland, 4× Autobahn, 3× Nachtfahrt (gesetzlich vorgeschrieben)
-                </p>
-              </div>
-
-              {/* Grundbetrag Klasse A + A2 */}
+              {/* Entgelte Klasse B */}
+              <PriceList title="Fahrstunden & weitere Entgelte – Klasse B" items={PRICES_B.items} />
+              {/* Grundbetrag Klassen A1, A2 und A */}
               <div className="bg-primary/5 rounded-xl p-6 border-2 border-primary">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                   <div>
-                    <h3 className="text-2xl font-bold text-foreground">Grundbetrag Klasse A + A2</h3>
+                    <h3 className="text-2xl font-bold text-foreground">Grundbetrag Klassen A1, A2 und A</h3>
                     <p className="text-muted-foreground mt-1">
                       Einmalige Gebühr für Verwaltung und vollständige Theorieausbildung
                     </p>
                   </div>
                   <div className="text-right">
                     <div className="text-sm text-muted-foreground line-through">statt 650 €</div>
-                    <div className="text-4xl font-bold text-primary">399 €</div>
+                    <div className="text-4xl font-bold text-primary">{PRICES_A.basePrice}</div>
                   </div>
                 </div>
                 <div className="mt-4 pt-4 border-t border-primary/20">
@@ -145,40 +140,7 @@ const Preise = () => {
                 </div>
               </div>
 
-              {/* Fahrstunden Klasse A + A2 */}
-              <div className="bg-secondary/30 rounded-xl p-6">
-                <h3 className="text-xl font-bold text-foreground mb-4">Praktische Fahrstunden – Klasse A + A2</h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
-                    <span className="text-foreground">Unterweisung (45 Min.)</span>
-                    <span className="font-bold text-foreground">80 €</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
-                    <span className="text-foreground">Übungsstunde (45 Min.)</span>
-                    <span className="font-bold text-foreground">80 €</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
-                    <span className="text-foreground">Besondere Ausbildungsfahrten (45 Min.)</span>
-                    <span className="font-bold text-foreground">85 €</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Prüfungsvorstellung */}
-              <div className="bg-secondary/30 rounded-xl p-6">
-                <h3 className="text-xl font-bold text-foreground mb-4">Vorstellung zur Prüfung</h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
-                    <span className="text-foreground">Theoretische Prüfung</span>
-                    <span className="font-bold text-primary">Im Grundbetrag enthalten</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-background rounded-lg">
-                    <span className="text-foreground">Praktische Prüfung</span>
-                    <span className="font-bold text-foreground">189 €</span>
-                  </div>
-                </div>
-              </div>
-
+              <PriceList title="Praktische Fahrstunden – Klassen A1, A2 und A" items={PRICES_A.items} />
               {/* Externe Gebühren */}
               <div className="bg-muted/50 rounded-xl p-6">
                 <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">

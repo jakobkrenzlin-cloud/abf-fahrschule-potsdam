@@ -6,8 +6,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MobileStickyFooter from '@/components/MobileStickyFooter';
 import { fireConversion, CONVERSION_LABELS, callPhone, openWhatsApp } from '@/lib/tracking';
-import { formatLong, formatLongDate, localDay, localTime } from '@/lib/appointmentFormat';
-import { AUTUMN_OFFER_LAST_DAY } from '@/config/booking';
 import AppointmentThanks from '@/components/AppointmentThanks';
 import { MAPS_URL, OFFER_END, PHONE_RAW, WHATSAPP_BASE } from '@/components/lp/constants';
 
@@ -31,6 +29,8 @@ const Danke = () => {
       window.history.replaceState({}, '');
     }
   }, [location.state]);
+
+  if (appointment) return <AppointmentThanks appointment={appointment} />;
 
   const steps = [
     { title: 'Terminanfrage geschickt', state: 'done' as const },

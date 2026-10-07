@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.49.1";
+import { validateAppointment, formatAppointment } from "../_shared/booking-rules.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -242,6 +243,40 @@ serve(async (req) => {
     // Insert the lead (with fallback if attribution columns don't exist yet)
     const ATTRIBUTION_KEYS = ['gclid', 'wbraid', 'gbraid', 'landing_page', 'referrer'] as const;
     const sanitized = validation.sanitized as Record<string, unknown>;
+
+    // Optional: form_variant + appointment_start
+    const { appointment_start, form_variant } = body as Record<string, unknown>;
+    const VARIANTS = ['booking', 'classic', 'booking_fallback'];
+    if (form_variant !== undefined && form_variant !== null && form_variant !== '') {
+      if (typeof form_variant !== 'string' || !VARIANTS.includes(form_variant)) {
+        return new Response(JSON.stringify({ error: 'Ungültige form_variant' }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+      }
+      sanitized.form_variant = form_variant;
+    }
+    if (appointment_start !== undefined && appointment_start !== null && appointment_start !== '') {
+      const invalid = () => new Response(JSON.stringify({ error: 'APPOINTMENT_INVALID' }),
+        { status: 422, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+      if (typeof appointment_start !== 'string' || appointment_start.length > 40 ||
+          !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?(Z|[+-]\d{2}:\d{2})$/.test(appointment_start)) {
+        return invalid();
+      }
+      const start = new Date(appointment_start);
+      const { data: blockedRows, error: blockedErr } = await supabase.rpc('get_blocked_days');
+      if (blockedErr) console.error('get_blocked_days error:', blockedErr);
+      const blocked = ((blockedRows as unknown[]) || []).map((r) =>
+        typeof r === 'string' ? r : String((r as Record<string, unknown>).get_blocked_days ?? ''));
+      const check = validateAppointment(start, new Date(), blocked, 30);
+      if (!check.valid) {
+        console.warn('Appointment rejected:', check.reason, appointment_start);
+        return invalid();
+      }
+      sanitized.appointment_start = start.toISOString();
+      sanitized.appointment_status = 'gebucht';
+      const prefix = `Termin gebucht: ${formatAppointment(start)}`;
+      const msg = sanitized.message as string | null;
+      sanitized.message = (msg ? `${prefix}\n${msg}` : prefix).slice(0, 1100);
+    }
     let insertResult = await supabase
       .from('leads')
       .insert([sanitized])

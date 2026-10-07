@@ -74,6 +74,27 @@ export type Database = {
         }
         Relationships: []
       }
+      booking_blocked_days: {
+        Row: {
+          created_at: string
+          day: string
+          id: string
+          reason: string | null
+        }
+        Insert: {
+          created_at?: string
+          day: string
+          id?: string
+          reason?: string | null
+        }
+        Update: {
+          created_at?: string
+          day?: string
+          id?: string
+          reason?: string | null
+        }
+        Relationships: []
+      }
       lead_log: {
         Row: {
           created_at: string
@@ -115,9 +136,12 @@ export type Database = {
       }
       leads: {
         Row: {
+          appointment_start: string | null
+          appointment_status: string | null
           consent: boolean | null
           created_at: string
           email: string | null
+          form_variant: string | null
           gbraid: string | null
           gclid: string | null
           id: string
@@ -127,6 +151,7 @@ export type Database = {
           name: string | null
           phone: string | null
           referrer: string | null
+          reminded_at: string | null
           source: string | null
           status: string
           utm_campaign: string | null
@@ -135,9 +160,12 @@ export type Database = {
           wbraid: string | null
         }
         Insert: {
+          appointment_start?: string | null
+          appointment_status?: string | null
           consent?: boolean | null
           created_at?: string
           email?: string | null
+          form_variant?: string | null
           gbraid?: string | null
           gclid?: string | null
           id?: string
@@ -147,6 +175,7 @@ export type Database = {
           name?: string | null
           phone?: string | null
           referrer?: string | null
+          reminded_at?: string | null
           source?: string | null
           status?: string
           utm_campaign?: string | null
@@ -155,9 +184,12 @@ export type Database = {
           wbraid?: string | null
         }
         Update: {
+          appointment_start?: string | null
+          appointment_status?: string | null
           consent?: boolean | null
           created_at?: string
           email?: string | null
+          form_variant?: string | null
           gbraid?: string | null
           gclid?: string | null
           id?: string
@@ -167,6 +199,7 @@ export type Database = {
           name?: string | null
           phone?: string | null
           referrer?: string | null
+          reminded_at?: string | null
           source?: string | null
           status?: string
           utm_campaign?: string | null
@@ -230,6 +263,7 @@ export type Database = {
     }
     Functions: {
       cleanup_expired_rate_limits: { Args: never; Returns: undefined }
+      get_blocked_days: { Args: never; Returns: string[] }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]

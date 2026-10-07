@@ -69,13 +69,18 @@ const REVIEWS: Review[] = [
 ];
 
 const STEPS: Step[] = [
-  { title: 'Klasse wählen & Formular ausfüllen', text: 'A1, A2 oder A – oder wir beraten dich dazu.' },
-  { title: 'Rückmeldung in 24 Stunden', text: 'Kurzer Anruf, alles Weitere besprechen wir persönlich.' },
-  { title: 'Beratung & Klassencheck', text: 'Welche Klasse passt wirklich zu dir und deinem Alter?' },
-  { title: 'Theorie starten, im Frühjahr fahren', text: 'Winter für die Theorie nutzen – zur Saison bist du startklar.' },
+  { title: 'Klasse wählen und Termin anfragen', text: 'A1, A2 oder A. Wenn du unsicher bist, beraten wir dich.' },
+  { title: 'Rückruf in 24 Stunden', text: 'Wir klären deine Fragen und machen deinen Anmeldetermin aus.' },
+  { title: 'Anmeldetermin im Weberpark', text: 'Wir schauen zusammen, welche Klasse zu dir passt, und du meldest dich direkt an.' },
+  { title: 'Theorie starten, im Frühjahr fahren', text: 'Den Winter für die Theorie nutzen. Zur Saison bist du startklar.' },
 ];
 
 const FAQS: Faq[] = [
+  {
+    question: 'Bin ich nach dem Formular schon angemeldet?',
+    answer:
+      'Noch nicht. Anmelden kannst du dich nur persönlich bei uns im Weberpark. Nach dem Formular rufen wir dich innerhalb von 24 Stunden an und machen einen Termin aus. Der Herbstpreis von 399 € gilt, wenn du dich bis 31. Oktober vor Ort anmeldest.',
+  },
   {
     question: 'Welche Klasse ist die richtige für mich?',
     answer:
@@ -135,14 +140,14 @@ const AnmeldungMotorrad = () => {
       />
 
       <div className="min-h-screen bg-white font-sans">
-        <LpHeader onCtaClick={scrollToForm} />
-        <UrgencyBar />
+        <LpHeader onCtaClick={scrollToForm} ctaLabel="Termin anfragen" />
+        <UrgencyBar label="Herbstpreis 399 €: Anmeldung vor Ort bis 31. Oktober" />
 
         <main>
           <LpHero
             id={HERO_ID}
             headline="Motorradführerschein Potsdam – jetzt starten, im Frühjahr fahren"
-            subline="A1 ab 16, A2 ab 18 oder Klasse A. Herbst-Angebot: Grundbetrag 399 € – Theorie im Winter, und wenn die Saison beginnt, bist du startklar. Nur bis 31. Oktober."
+            subline="A1 ab 16, A2 ab 18 oder Klasse A. Herbstpreis: Grundbetrag 399 € bei Anmeldung vor Ort bis 31. Oktober. Theorie im Winter, und wenn die Saison beginnt, bist du startklar."
             chips={[
               'Eigene Schulungsmotorräder',
               '5,0★ bei Google',
@@ -151,15 +156,18 @@ const AnmeldungMotorrad = () => {
           >
             <LeadForm
               id={FORM_ID}
-              ctaLabel="Motorrad-Platz sichern"
+              ctaLabel="Anmeldetermin anfragen"
               source="landingpage-motorrad"
               classOptions={CLASS_OPTIONS}
               licenseClass={licenseClass}
               onLicenseClassChange={setLicenseClass}
-              whatsappText="Hallo, ich interessiere mich für den Motorradführerschein (Herbst-Angebot 399 €)."
+              whatsappText="Hallo, ich möchte einen Anmeldetermin für den Motorradführerschein ausmachen (Herbstpreis 399 €). Wann kann ich vorbeikommen?"
+              onsiteNote="Angemeldet wirst du beim Termin vor Ort. Der Herbstpreis von 399 € gilt bei Anmeldung bis 31. Oktober."
               trackingSource="landing-motorrad"
             />
           </LpHero>
+
+          <Steps steps={STEPS} />
 
           {/* Klassen-Vergleich */}
           <section className="py-12 md:py-16 bg-white" aria-labelledby="klassen-heading">
@@ -212,18 +220,18 @@ const AnmeldungMotorrad = () => {
               '1 Jahr ADAC-Mitgliedschaft',
             ]}
             extras={PRICES_A.items}
+            footnote="Das Herbst-Angebot gilt bei Anmeldung vor Ort bis 31. Oktober."
           />
 
           <SocialProof reviews={REVIEWS} />
-          <Steps steps={STEPS} />
           <WhyAbfCards />
           <FaqBlock faqs={FAQS} />
           <LocationSection />
 
           <FinalCta
-            headline="Herbst-Angebot: Grundbetrag 399 € – nur noch bis 31. Oktober"
-            subline="Theorie jetzt, Fahrspaß im Frühjahr. Kostenlos & unverbindlich anfragen."
-            buttonLabel="Motorrad-Platz sichern"
+            headline="Herbstpreis 399 €: Anmeldung vor Ort bis 31. Oktober"
+            subline="Theorie jetzt, Fahrspaß im Frühjahr. Frag deinen Anmeldetermin an, wir rufen dich innerhalb von 24 Stunden an."
+            buttonLabel="Anmeldetermin anfragen"
             onClick={scrollToForm}
           />
         </main>
@@ -235,6 +243,7 @@ const AnmeldungMotorrad = () => {
           heroId={HERO_ID}
           formId={FORM_ID}
           onCtaClick={scrollToForm}
+          label="Termin anfragen"
           trackingSource="landing-motorrad-sticky"
         />
       </div>

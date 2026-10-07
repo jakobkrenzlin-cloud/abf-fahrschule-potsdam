@@ -10,7 +10,6 @@ import AboutSection from '../components/AboutSection';
 import FaqBlock from '../components/lp/FaqBlock';
 import LocationSection from '../components/lp/LocationSection';
 import ContactSection from '../components/ContactSection';
-import JobSection from '../components/JobSection';
 import { HOME_FAQS, HOME_REVIEWS, HOME_STEPS } from '../components/home/homeContent';
 import { SITE_URL } from '../components/lp/constants';
 
@@ -45,7 +44,6 @@ const Index = () => (
     <FaqBlock faqs={HOME_FAQS} />
     <LocationSection />
     <ContactSection />
-    <JobSection />
   </SiteLayout>
 );
 

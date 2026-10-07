@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, Phone, Mail, MapPin, Car, Clock, Award, Bike } from 'lucide-react';
+import { Check, ChevronDown, Phone, Mail, MapPin, Car, Clock, Award, Bike } from 'lucide-react';
 import { Button } from './ui/button';
 import { Link } from 'react-router-dom';
 import { PRICES_A, PRICES_B } from '@/data/prices';
@@ -143,23 +143,47 @@ const OffersSection = () => {
         {/* Alle Entgelte auf einen Blick (§ 32 FahrlG) */}
         <div id="preise-uebersicht" className="scroll-mt-24 bg-white rounded-2xl shadow-lg border border-black/[0.08] p-5 md:p-8 mb-10 md:mb-16">
           <h3 className="text-2xl font-bold text-brand-dark mb-6 text-center">Alle Entgelte auf einen Blick</h3>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="max-w-2xl mx-auto">
             {[PRICES_B, PRICES_A].map((c) => (
-              <div key={c.key}>
-                <h4 className="font-bold text-brand-dark mb-3">{c.name}</h4>
-                <ul className="divide-y divide-black/5 border-y border-black/5">
-                  <li className="flex items-start justify-between gap-4 py-3">
-                    <span className="text-ink text-sm">{c.baseLabel}</span>
-                    <span className="font-bold text-brand-dark whitespace-nowrap">{c.basePrice}</span>
-                  </li>
-                  {c.items.map((i) => (
-                    <li key={i.label} className="flex items-start justify-between gap-4 py-3">
-                      <span className="text-ink text-sm">{i.label}</span>
-                      <span className="font-bold text-brand-dark text-right text-sm">{i.price}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <details key={c.key} className="group border-b border-black/5">
+                <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 font-bold text-brand-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand [&::-webkit-details-marker]:hidden">
+                  <span>{c.name}</span>
+                  <ChevronDown
+                    className="h-5 w-5 shrink-0 transition-transform duration-200 group-open:rotate-180"
+                    aria-hidden="true"
+                  />
+                </summary>
+                <div className="overflow-x-auto pb-4">
+                  <table className="w-full border-collapse text-left">
+                    <thead className="sr-only">
+                      <tr>
+                        <th scope="col">Leistung</th>
+                        <th scope="col">Preis</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-black/5 border-t border-black/5">
+                      <tr>
+                        <th scope="row" className="py-3 pr-4 font-normal leading-relaxed text-ink text-sm">
+                          {c.baseLabel}
+                        </th>
+                        <td className="py-3 text-right font-bold text-brand-dark whitespace-nowrap">
+                          {c.basePrice}
+                        </td>
+                      </tr>
+                      {c.items.map((i) => (
+                        <tr key={i.label}>
+                          <th scope="row" className="py-3 pr-4 font-normal leading-relaxed text-ink text-sm">
+                            {i.label}
+                          </th>
+                          <td className="py-3 text-right font-bold text-brand-dark whitespace-nowrap text-sm">
+                            {i.price}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </details>
             ))}
           </div>
           <p className="mt-4 text-xs text-ink/60">Externe Gebühren (TÜV/DEKRA, Führerscheinstelle, Sehtest/Passfoto) werden nicht an uns gezahlt und kommen hinzu.</p>

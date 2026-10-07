@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, Phone, Mail, MapPin, Car, Clock, Award, Bike } from 'lucide-react';
+import { Check, ChevronDown, Phone, Mail, MapPin, Car, Clock, Award, Bike } from 'lucide-react';
 import { Button } from './ui/button';
 import { Link } from 'react-router-dom';
 import { PRICES_A, PRICES_B } from '@/data/prices';

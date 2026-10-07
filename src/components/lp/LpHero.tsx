@@ -47,7 +47,7 @@ const LpHero: React.FC<LpHeroProps> = ({ id, headline, headlineNote, subline, ch
         </p>
       </div>
 
-      <div className="lg:pt-2">{children}</div>
+      <div className="lg:pt-2 min-w-0">{children}</div>
     </div>
   </section>
 );

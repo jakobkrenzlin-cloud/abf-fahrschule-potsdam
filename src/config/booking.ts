@@ -8,6 +8,10 @@ export const BOOKING_WEEKDAYS = [1, 2, 3, 4, 5];
 export const BOOKING_HOURS = [12, 13, 14, 15, 16, 17];
 export const BOOKING_LEAD_HOURS = 24;
 export const BOOKING_RANGE_DAYS = 14;
+/** Formular-Variante: "ab" = 50/50-Test, sonst feste Variante für alle */
+export const BOOKING_MODE: "ab" | "booking" | "classic" = "ab";
+/** Letzter Öffnungstag für das Herbst-Angebot (31.10.2026 ist Samstag + Feiertag) */
+export const AUTUMN_OFFER_LAST_DAY = "2026-10-30";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 export const ymd = (y: number, m: number, d: number) => `${y}-${pad(m)}-${pad(d)}`;

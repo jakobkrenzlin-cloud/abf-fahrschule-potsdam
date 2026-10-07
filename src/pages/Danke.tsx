@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Check, Phone, Mail, MapPin, MessageCircle, Navigation, AlertCircle } from 'lucide-react';
@@ -6,6 +6,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MobileStickyFooter from '@/components/MobileStickyFooter';
 import { fireConversion, CONVERSION_LABELS, callPhone, openWhatsApp } from '@/lib/tracking';
+import { formatLong, formatLongDate, localDay, localTime } from '@/lib/appointmentFormat';
+import { AUTUMN_OFFER_LAST_DAY } from '@/config/booking';
+import AppointmentThanks from '@/components/AppointmentThanks';
 import { MAPS_URL, OFFER_END, PHONE_RAW, WHATSAPP_BASE } from '@/components/lp/constants';
 
 const WHATSAPP_TEXT =
@@ -14,6 +17,12 @@ const WHATSAPP_TEXT =
 const Danke = () => {
   const location = useLocation();
   const offerActive = Date.now() <= OFFER_END.getTime();
+  const [appointment] = useState<Date | null>(() => {
+    const st = location.state as { lead?: boolean; appointment?: string } | null;
+    if (st?.lead !== true || typeof st.appointment !== 'string') return null;
+    const d = new Date(st.appointment);
+    return isNaN(d.getTime()) ? null : d;
+  });
 
   useEffect(() => {
     const state = location.state as { lead?: boolean } | null;

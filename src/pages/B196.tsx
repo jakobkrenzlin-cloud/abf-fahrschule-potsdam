@@ -51,7 +51,7 @@ const FAQS: Faq[] = [
   {
     question: 'Bin ich nach dem Formular schon angemeldet?',
     answer:
-      'Noch nicht. Anmelden kannst du dich nur persönlich bei uns im Weberpark. Nach dem Formular rufen wir dich innerhalb von 24 Stunden an und machen einen Termin aus. Gutschein und ADAC-Mitgliedschaft gibt es, wenn du dich bis 31. Oktober vor Ort anmeldest.',
+      'Noch nicht. Anmelden kannst du dich nur persönlich bei uns im Weberpark. Nach dem Formular rufen wir dich innerhalb von 24 Stunden an und machen einen Termin aus. 1 Jahr ADAC-Mitgliedschaft gibt es, wenn du dich bis 31. Oktober vor Ort anmeldest.',
   },
   {
     question: 'Was genau ist B196?',
@@ -137,7 +137,7 @@ const B196 = () => {
               licenseClass={licenseClass}
               onLicenseClassChange={setLicenseClass}
               whatsappText="Hallo, ich möchte einen Anmeldetermin für die B196-Schulung ausmachen (750 € Festpreis). Wann kann ich vorbeikommen?"
-              onsiteNote="Angemeldet wirst du beim Termin vor Ort. Gutschein und ADAC-Mitgliedschaft gibt es bei Anmeldung bis 31. Oktober."
+              onsiteNote="Angemeldet wirst du beim Termin vor Ort. 1 Jahr ADAC-Mitgliedschaft gibt es bei Anmeldung bis 31. Oktober."
               trackingSource="landing-b196"
             />
           </LpHero>
@@ -242,10 +242,9 @@ const B196 = () => {
               'Nutzung unserer Schulungsmotorräder',
               'Bescheinigung für die Führerscheinstelle',
               'Keine Prüfungsgebühren (weil keine Prüfung nötig)',
-              '100 € Louis- und Polo-Gutschein',
               '1 Jahr ADAC-Mitgliedschaft',
             ]}
-            note="Louis-/Polo-Gutschein (100 €) und 1 Jahr ADAC-Mitgliedschaft gibt es bei Anmeldung vor Ort bis 31. Oktober 2026 dazu."
+            note="1 Jahr ADAC-Mitgliedschaft gibt es bei Anmeldung vor Ort bis 31. Oktober 2026 dazu."
             closing="Fester Komplettpreis. Keine Nachberechnung, keine Überraschungen."
           />
 

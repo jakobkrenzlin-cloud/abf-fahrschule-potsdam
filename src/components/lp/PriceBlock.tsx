@@ -13,6 +13,7 @@ interface PriceBlockProps {
   extras?: { label: string; price: string }[];
   note?: string;
   closing?: string;
+  footnote?: string;
 }
 
 const PriceBlock: React.FC<PriceBlockProps> = ({
@@ -25,6 +26,7 @@ const PriceBlock: React.FC<PriceBlockProps> = ({
   includedAdditional,
   extras,
   note,
+  footnote,
   closing = 'Amtliche Gebühren (TÜV/DEKRA, Führerscheinstelle) kommen hinzu.',
 }) => (
   <section id="preisblock" className="section-y bg-surface scroll-mt-24" aria-labelledby="preis-heading">
@@ -122,6 +124,7 @@ const PriceBlock: React.FC<PriceBlockProps> = ({
           )}
 
           <p className="mt-6 text-sm text-ink/70 leading-relaxed">{closing}</p>
+          {footnote && <p className="mt-2 text-sm font-semibold text-brand-dark leading-relaxed">{footnote}</p>}
         </div>
       </Reveal>
     </div>

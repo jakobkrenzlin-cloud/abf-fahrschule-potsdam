@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Phone, MessageCircle, Loader2, ShieldCheck } from 'lucide-react';
+import { Phone, MessageCircle, Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
 import { getAttribution, callPhone, openWhatsApp } from '@/lib/tracking';
@@ -26,7 +26,9 @@ const leadSchema = z.object({
 
 export type ClassOption = { value: string; label: string };
 
-const START_OPTIONS = ['Sofort', 'In 1–2 Monaten', 'Weiß noch nicht'];
+const START_OPTIONS = ['12 bis 15 Uhr', '15 bis 18 Uhr', 'Ist mir egal'];
+
+const FLOW_STEPS = ['Termin anfragen', 'Rückruf in 24 h', 'Anmeldung vor Ort'];
 
 interface LeadFormProps {
   id?: string;
@@ -38,11 +40,12 @@ interface LeadFormProps {
   onLicenseClassChange: (value: string) => void;
   whatsappText: string;
   trackingSource: string;
+  onsiteNote?: string;
 }
 
 const LeadForm: React.FC<LeadFormProps> = ({
   id = 'lead-form',
-  title = 'Jetzt Platz sichern',
+  title = 'Dein Anmeldetermin im Weberpark',
   ctaLabel,
   source,
   classOptions,
@@ -50,6 +53,7 @@ const LeadForm: React.FC<LeadFormProps> = ({
   onLicenseClassChange,
   whatsappText,
   trackingSource,
+  onsiteNote,
 }) => {
   const navigate = useNavigate();
   const { toast } = useToast();
@@ -97,7 +101,7 @@ const LeadForm: React.FC<LeadFormProps> = ({
             ...(email.trim() ? { email: email.trim() } : {}),
             license_class: licenseClass,
             source,
-            message: start ? `Startwunsch: ${start}` : undefined,
+            message: start ? `Besuchszeit: ${start}` : undefined,
             ...getAttribution(),
           }),
 
@@ -131,10 +135,34 @@ const LeadForm: React.FC<LeadFormProps> = ({
       className="bg-brand-dark rounded-2xl p-5 sm:p-7 shadow-[0_0_40px_rgba(26,156,255,0.25)] ring-1 ring-brand/30 scroll-mt-24"
     >
       <h2 className="text-2xl md:text-3xl font-bold text-white">{title}</h2>
-      <p className="mt-1.5 text-sm text-brand font-medium flex items-center gap-1.5">
-        <ShieldCheck className="w-4 h-4" aria-hidden="true" />
-        Kostenlos &amp; unverbindlich · Antwort in 24 h
-      </p>
+
+      <ol className="mt-4 grid grid-cols-3 gap-2" aria-label="Ablauf">
+        {FLOW_STEPS.map((step, i) => {
+          const active = i === 0;
+          return (
+            <li
+              key={step}
+              className={`flex flex-col items-center text-center gap-1.5 ${active ? '' : 'opacity-55'}`}
+              aria-current={active ? 'step' : undefined}
+            >
+              <span
+                className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
+                  active ? 'bg-brand text-white ring-4 ring-brand/30' : 'bg-white/15 text-white'
+                }`}
+              >
+                {i + 1}
+              </span>
+              <span className={`text-xs leading-tight font-semibold ${active ? 'text-white' : 'text-white/80'}`}>
+                {step}
+              </span>
+              {active && (
+                <span className="text-[10px] uppercase tracking-wide font-bold text-brand">Du bist hier</span>
+              )}
+            </li>
+          );
+        })}
+      </ol>
+      {onsiteNote && <p className="mt-3 text-xs text-white/75 leading-relaxed">{onsiteNote}</p>}
 
       <form onSubmit={handleSubmit} className="mt-5 space-y-4" noValidate>
         <div>
@@ -233,7 +261,7 @@ const LeadForm: React.FC<LeadFormProps> = ({
 
         <fieldset>
           <legend className="block text-sm font-medium text-white mb-2">
-            Wann möchtest du starten? <span className="text-white/60">(optional)</span>
+            Wann kannst du am besten vorbeikommen? <span className="text-white/60">(optional)</span>
           </legend>
           <div className="flex flex-wrap gap-2">
             {START_OPTIONS.map((opt) => (
@@ -252,6 +280,7 @@ const LeadForm: React.FC<LeadFormProps> = ({
               </button>
             ))}
           </div>
+          <p className="mt-2 text-xs text-white/70">Wir sind Montag bis Freitag für dich da.</p>
         </fieldset>
 
         <div className="flex items-start gap-2.5">
@@ -294,10 +323,11 @@ const LeadForm: React.FC<LeadFormProps> = ({
           )}
         </button>
         <p className="text-center text-xs text-white/70">
-          Kostenlos &amp; unverbindlich. Keine Vorkasse.
+          Kostenlos und unverbindlich, keine Vorkasse. Wir rufen dich innerhalb von 24 Stunden an.
         </p>
 
-        <div className="grid grid-cols-2 gap-3 pt-1">
+        <p className="pt-1 text-center text-sm font-medium text-white/85">Lieber direkt einen Termin ausmachen?</p>
+        <div className="grid grid-cols-2 gap-3">
           <button
             type="button"
             onClick={() =>

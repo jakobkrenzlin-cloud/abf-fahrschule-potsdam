@@ -45,6 +45,8 @@ export function initPostHog(): void {
   });
 
   posthogInitialized = true;
+  // Für Formular-Events (window.posthog.capture). Opt-out-Status gilt weiterhin.
+  (window as unknown as { posthog?: unknown }).posthog = posthog;
 }
 
 

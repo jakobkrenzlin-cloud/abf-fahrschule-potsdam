@@ -41,13 +41,18 @@ const REVIEWS: Review[] = [
 ];
 
 const STEPS: Step[] = [
-  { title: 'Voraussetzungen prüfen', text: 'Dauert 30 Sekunden – direkt hier auf der Seite.' },
-  { title: 'Formular ausfüllen', text: 'Name und Telefonnummer reichen uns.' },
-  { title: 'Rückmeldung in 24 Stunden', text: 'Wir melden uns mit einem konkreten Terminvorschlag.' },
-  { title: 'Schulung an 2–3 Terminen', text: 'Danach Eintrag holen und direkt losfahren.' },
+  { title: 'Voraussetzungen prüfen', text: 'Dauert 30 Sekunden, direkt hier auf der Seite.' },
+  { title: 'Termin anfragen', text: 'Name und Telefonnummer reichen uns.' },
+  { title: 'Rückruf in 24 Stunden', text: 'Wir machen deinen Anmeldetermin im Weberpark aus.' },
+  { title: 'Anmeldung vor Ort, dann Schulung', text: 'Nach der Anmeldung schulen wir dich an 2 bis 3 Terminen. Danach holst du dir den Eintrag und fährst los.' },
 ];
 
 const FAQS: Faq[] = [
+  {
+    question: 'Bin ich nach dem Formular schon angemeldet?',
+    answer:
+      'Noch nicht. Anmelden kannst du dich nur persönlich bei uns im Weberpark. Nach dem Formular rufen wir dich innerhalb von 24 Stunden an und machen einen Termin aus. Gutschein und ADAC-Mitgliedschaft gibt es, wenn du dich bis 31. Oktober vor Ort anmeldest.',
+  },
   {
     question: 'Was genau ist B196?',
     answer:
@@ -115,23 +120,24 @@ const B196 = () => {
       />
 
       <div className="min-h-screen bg-white font-sans">
-        <LpHeader onCtaClick={scrollToForm} ctaLabel="Platz anfragen" />
+        <LpHeader onCtaClick={scrollToForm} ctaLabel="Termin anfragen" />
 
         <main>
           <LpHero
             id={HERO_ID}
             headline="125er fahren – mit deinem Autoführerschein, ohne neue Prüfung"
-            subline="Die Schlüsselzahl B196 erweitert deinen bestehenden Führerschein Klasse B. Kein Theorie-, keine Praxisprüfung – nur eine kompakte Schulung. Bei ABF in Potsdam für 750 € Festpreis."
+            subline="Die Schlüsselzahl B196 erweitert deinen bestehenden Führerschein Klasse B. Keine Theorie- und keine Praxisprüfung, nur eine kompakte Schulung. Bei ABF in Potsdam für 750 € Festpreis."
             chips={['Keine Prüfung nötig', 'In 2–3 Wochen fertig', 'Fester Komplettpreis']}
           >
             <LeadForm
               id={FORM_ID}
-              ctaLabel="B196-Platz anfragen"
+              ctaLabel="Anmeldetermin anfragen"
               source="landingpage-b196"
               classOptions={CLASS_OPTIONS}
               licenseClass={licenseClass}
               onLicenseClassChange={setLicenseClass}
-              whatsappText="Hallo, ich interessiere mich für die B196-Schulung (750 € Festpreis)."
+              whatsappText="Hallo, ich möchte einen Anmeldetermin für die B196-Schulung ausmachen (750 € Festpreis). Wann kann ich vorbeikommen?"
+              onsiteNote="Angemeldet wirst du beim Termin vor Ort. Gutschein und ADAC-Mitgliedschaft gibt es bei Anmeldung bis 31. Oktober."
               trackingSource="landing-b196"
             />
           </LpHero>
@@ -194,7 +200,7 @@ const B196 = () => {
                       onClick={scrollToForm}
                       className="mt-5 min-h-[56px] px-8 rounded-xl bg-brand-strong hover:bg-brand-strong/90 text-white font-bold transition-colors"
                     >
-                      Jetzt Platz anfragen
+                      Anmeldetermin anfragen
                     </button>
                   </div>
                 )}
@@ -224,6 +230,8 @@ const B196 = () => {
             </div>
           </section>
 
+          <Steps steps={STEPS} />
+
           <PriceBlock
             badge="Festpreis"
             price="750 €"
@@ -237,20 +245,19 @@ const B196 = () => {
               '100 € Louis- und Polo-Gutschein',
               '1 Jahr ADAC-Mitgliedschaft',
             ]}
-            note="Louis-/Polo-Gutschein (100 €) und 1 Jahr ADAC-Mitgliedschaft gibt es bei Anmeldung bis 31. Oktober 2026 dazu."
+            note="Louis-/Polo-Gutschein (100 €) und 1 Jahr ADAC-Mitgliedschaft gibt es bei Anmeldung vor Ort bis 31. Oktober 2026 dazu."
             closing="Fester Komplettpreis. Keine Nachberechnung, keine Überraschungen."
           />
 
           <SocialProof reviews={REVIEWS} />
-          <Steps steps={STEPS} />
           <WhyAbfCards />
           <FaqBlock faqs={FAQS} />
           <LocationSection />
 
           <FinalCta
-            headline="B196 bei ABF – 750 € Festpreis, jetzt Platz sichern"
+            headline="B196 bei ABF: 750 € Festpreis. Jetzt Termin anfragen."
             subline="Kompakte Schulung, keine Prüfung, danach direkt auf die 125er."
-            buttonLabel="B196-Platz anfragen"
+            buttonLabel="Anmeldetermin anfragen"
             onClick={scrollToForm}
           />
         </main>
@@ -262,7 +269,7 @@ const B196 = () => {
           heroId={HERO_ID}
           formId={FORM_ID}
           onCtaClick={scrollToForm}
-          label="Platz anfragen"
+          label="Termin anfragen"
           trackingSource="landing-b196-sticky"
         />
       </div>

@@ -36,17 +36,22 @@ const REVIEWS: Review[] = [
 ];
 
 const STEPS: Step[] = [
-  { title: 'Formular ausfüllen', text: 'Dauert keine 2 Minuten – Name und Telefonnummer reichen.' },
-  { title: 'Wir melden uns innerhalb von 24 Stunden', text: 'Kurzer Anruf, alle offenen Fragen geklärt.' },
-  { title: 'Persönliches Beratungsgespräch im Weberpark', text: 'Wir zeigen dir alles und planen deinen Start.' },
-  { title: 'Theoriekurs starten', text: 'Theorie in einer Woche – danach direkt in die Praxis.' },
+  { title: 'Termin anfragen', text: 'Dauert keine 2 Minuten. Name und Telefonnummer reichen.' },
+  { title: 'Wir rufen dich innerhalb von 24 Stunden an', text: 'Wir klären deine Fragen und machen deinen Anmeldetermin aus.' },
+  { title: 'Anmeldetermin im Weberpark', text: 'Wir rechnen dir deinen Gesamtpreis aus, planen deinen Start, und du meldest dich an.' },
+  { title: 'Theoriekurs starten', text: 'Theorie in einer Woche, danach direkt in die Praxis.' },
 ];
 
 const FAQS: Faq[] = [
   {
+    question: 'Bin ich nach dem Formular schon angemeldet?',
+    answer:
+      'Noch nicht. Anmelden kannst du dich nur persönlich bei uns im Weberpark. Nach dem Formular rufen wir dich innerhalb von 24 Stunden an und machen einen Termin aus. Der Herbstpreis von 199 € gilt, wenn du dich bis 31. Oktober vor Ort anmeldest.',
+  },
+  {
     question: 'Was genau ist im 199-€-Angebot enthalten?',
     answer:
-      'Enthalten sind Anmeldung und Verwaltung, der komplette Theorieunterricht, die Vorstellung zur theoretischen Prüfung, die persönliche Beratung sowie 1 Jahr ADAC-Mitgliedschaft. Fahrstunden, Lern-App und amtliche Gebühren kommen wie überall zusätzlich dazu.',
+      'Enthalten sind Anmeldung und Verwaltung, der komplette Theorieunterricht, die Vorstellung zur theoretischen Prüfung, die persönliche Beratung sowie 1 Jahr ADAC-Mitgliedschaft. Fahrstunden, Lern-App und amtliche Gebühren kommen wie überall zusätzlich dazu. Das Angebot gilt bei Anmeldung vor Ort bis 31. Oktober.',
   },
   {
     question: 'Wie lange dauert der Führerschein bei euch insgesamt?',
@@ -66,7 +71,7 @@ const FAQS: Faq[] = [
   {
     question: 'Muss ich bei der Anmeldung schon zahlen?',
     answer:
-      'Nein. Deine Anfrage über das Formular ist kostenlos und unverbindlich. Es gibt keine Vorkasse – wir sprechen erst persönlich miteinander.',
+      'Nein. Das Formular ist nur die Terminanfrage und kostet nichts. Alles Weitere besprechen wir beim Anmeldetermin vor Ort, und auch dort gibt es keine Vorkasse.',
   },
   {
     question: 'Bietet ihr auch Automatik (B197) an?',
@@ -109,28 +114,31 @@ const Landing = () => {
       />
 
       <div className="min-h-screen bg-white font-sans">
-        <LpHeader onCtaClick={scrollToForm} />
-        <UrgencyBar />
+        <LpHeader onCtaClick={scrollToForm} ctaLabel="Termin anfragen" />
+        <UrgencyBar label="Herbstpreis 199 €: Anmeldung vor Ort bis 31. Oktober" />
 
         <main>
           <LpHero
             id={HERO_ID}
             headline="Führerschein Klasse B in Potsdam – Herbst-Angebot: Grundbetrag 199 €"
             headlineNote={<a href="#preisblock" className="underline underline-offset-2 hover:text-white">Fahrstunden, Prüfungsvorstellung und amtliche Gebühren kommen hinzu – alle Preise weiter unten.</a>}
-            subline="Klasse B bei der ABF Fahrschule in Babelsberg. Theorie in nur einer Woche, erfahrene Fahrlehrer, faire Preise. Nur bis 31. Oktober."
+            subline="Klasse B bei der ABF Fahrschule in Babelsberg: Theorie in einer Woche, erfahrene Fahrlehrer, faire Preise. Termin anfragen, im Weberpark vorbeikommen und bis 31. Oktober vor Ort anmelden."
             chips={['Theorie in 1 Woche', '5,0★ bei Google', 'Keine versteckten Kosten']}
           >
             <LeadForm
               id={FORM_ID}
-              ctaLabel="Herbst-Angebot sichern"
+              ctaLabel="Anmeldetermin anfragen"
               source="landingpage-pkw"
               classOptions={CLASS_OPTIONS}
               licenseClass={licenseClass}
               onLicenseClassChange={setLicenseClass}
-              whatsappText="Hallo, ich möchte das Herbst-Angebot (199 €) für den Führerschein Klasse B sichern."
+              whatsappText="Hallo, ich möchte einen Anmeldetermin für den Führerschein Klasse B ausmachen (Herbstpreis 199 €). Wann kann ich vorbeikommen?"
+              onsiteNote="Angemeldet wirst du beim Termin vor Ort. Der Herbstpreis von 199 € gilt bei Anmeldung bis 31. Oktober."
               trackingSource="landing-pkw"
             />
           </LpHero>
+
+          <Steps steps={STEPS} />
 
           <PriceBlock
             badge="Herbst-Angebot"
@@ -145,18 +153,18 @@ const Landing = () => {
               '1 Jahr ADAC-Mitgliedschaft',
             ]}
             extras={PRICES_B.items}
+            footnote="Das Herbst-Angebot gilt bei Anmeldung vor Ort bis 31. Oktober."
           />
 
           <SocialProof reviews={REVIEWS} />
-          <Steps steps={STEPS} />
           <WhyAbfCards />
           <FaqBlock faqs={FAQS} />
           <LocationSection />
 
           <FinalCta
-            headline="Herbst-Angebot: Grundbetrag 199 € – nur noch bis 31. Oktober"
-            subline="Sichere dir deinen Platz im nächsten Theoriekurs. Kostenlos & unverbindlich anfragen."
-            buttonLabel="Herbst-Angebot sichern"
+            headline="Herbstpreis 199 €: Anmeldung vor Ort bis 31. Oktober"
+            subline="Frag jetzt deinen Anmeldetermin an. Wir rufen dich innerhalb von 24 Stunden an."
+            buttonLabel="Anmeldetermin anfragen"
             onClick={scrollToForm}
           />
         </main>
@@ -168,6 +176,7 @@ const Landing = () => {
           heroId={HERO_ID}
           formId={FORM_ID}
           onCtaClick={scrollToForm}
+          label="Termin anfragen"
           trackingSource="landing-pkw-sticky"
         />
       </div>

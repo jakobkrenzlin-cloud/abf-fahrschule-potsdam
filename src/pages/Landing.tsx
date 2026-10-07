@@ -15,6 +15,7 @@ import StickyMobileCta from '@/components/lp/StickyMobileCta';
 import LpFooterLinks from '@/components/lp/LpFooterLinks';
 import LpLegalBar from '@/components/lp/LpLegalBar';
 import type { Faq, Review, Step } from '@/components/lp/constants';
+import { useFormVariant } from '@/lib/formVariant';
 import { PRICES_B } from '@/data/prices';
 
 const FORM_ID = 'lead-form-pkw';
@@ -40,6 +41,13 @@ const STEPS: Step[] = [
   { title: 'Wir rufen dich innerhalb von 24 Stunden an', text: 'Wir klären deine Fragen und machen deinen Anmeldetermin aus.' },
   { title: 'Anmeldetermin im Weberpark', text: 'Wir rechnen dir deinen Gesamtpreis aus, planen deinen Start, und du meldest dich an.' },
   { title: 'Theoriekurs starten', text: 'Theorie in einer Woche, danach direkt in die Praxis.' },
+];
+
+const STEPS_BOOKING: Step[] = [
+  { title: 'Termin wählen', text: 'Tag und Uhrzeit aussuchen, dazu Name und Telefonnummer. Dauert keine 2 Minuten.' },
+  { title: 'Bestätigung per WhatsApp', text: 'Wir bestätigen dir deinen Termin. Fragen klären wir gleich mit.' },
+  STEPS[2],
+  STEPS[3],
 ];
 
 const FAQS: Faq[] = [
@@ -97,7 +105,18 @@ const CLASS_OPTIONS = [
   { value: 'be', label: 'Klasse BE – PKW mit Anhänger' },
 ];
 
+const FAQS_BOOKING: Faq[] = FAQS.map((f) =>
+  f.question === 'Bin ich nach dem Formular schon angemeldet?'
+    ? { ...f, answer: 'Noch nicht. Mit dem Formular buchst du deinen Termin, angemeldet wirst du bei diesem Termin persönlich bei uns im Weberpark. Der Herbstpreis von 199 € gilt bei Anmeldung vor Ort bis 31. Oktober, unser letzter Öffnungstag davor ist Freitag, 30. Oktober.' }
+    : f,
+);
+
 const Landing = () => {
+  const variant = useFormVariant();
+  const isBooking = variant === 'booking';
+  const steps = isBooking ? STEPS_BOOKING : STEPS;
+  const faqs = isBooking ? FAQS_BOOKING : FAQS;
+  const ctaLabel = isBooking ? 'Termin wählen' : 'Termin anfragen';
   const [licenseClass, setLicenseClass] = useState('b');
 
   const scrollToForm = () => {
@@ -110,11 +129,11 @@ const Landing = () => {
         title="Führerschein Klasse B Potsdam – Herbst-Angebot | ABF Fahrschule"
         description="PKW-Führerschein in Potsdam-Babelsberg. Theorie in 1 Woche, faire Preise, 5,0★ bei Google. Herbst-Angebot nur bis 31. Oktober. Jetzt sichern!"
         path="/anmeldung"
-        faqs={FAQS}
+        faqs={faqs}
       />
 
       <div className="min-h-screen bg-white font-sans">
-        <LpHeader onCtaClick={scrollToForm} ctaLabel="Termin anfragen" />
+        <LpHeader onCtaClick={scrollToForm} ctaLabel={ctaLabel} />
         <UrgencyBar label="Herbstpreis 199 €: Anmeldung vor Ort bis 31. Oktober" />
 
         <main>
@@ -127,6 +146,7 @@ const Landing = () => {
           >
             <LeadForm
               id={FORM_ID}
+              variant={variant}
               ctaLabel="Anmeldetermin anfragen"
               source="landingpage-pkw"
               classOptions={CLASS_OPTIONS}
@@ -138,7 +158,7 @@ const Landing = () => {
             />
           </LpHero>
 
-          <Steps steps={STEPS} />
+          <Steps steps={steps} />
 
           <PriceBlock
             badge="Herbst-Angebot"
@@ -158,7 +178,7 @@ const Landing = () => {
 
           <SocialProof reviews={REVIEWS} />
           <WhyAbfCards />
-          <FaqBlock faqs={FAQS} />
+          <FaqBlock faqs={faqs} />
           <LocationSection />
 
           <FinalCta
@@ -176,7 +196,7 @@ const Landing = () => {
           heroId={HERO_ID}
           formId={FORM_ID}
           onCtaClick={scrollToForm}
-          label="Termin anfragen"
+          label={ctaLabel}
           trackingSource="landing-pkw-sticky"
         />
       </div>

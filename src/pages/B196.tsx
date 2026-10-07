@@ -16,6 +16,7 @@ import LpFooterLinks from '@/components/lp/LpFooterLinks';
 import LpLegalBar from '@/components/lp/LpLegalBar';
 import Reveal from '@/components/lp/Reveal';
 import type { Faq, Review, Step } from '@/components/lp/constants';
+import { useFormVariant } from '@/lib/formVariant';
 
 const FORM_ID = 'lead-form-b196';
 const HERO_ID = 'hero-b196';
@@ -45,6 +46,13 @@ const STEPS: Step[] = [
   { title: 'Termin anfragen', text: 'Name und Telefonnummer reichen uns.' },
   { title: 'Rückruf in 24 Stunden', text: 'Wir machen deinen Anmeldetermin im Weberpark aus.' },
   { title: 'Anmeldung vor Ort, dann Schulung', text: 'Nach der Anmeldung schulen wir dich an 2 bis 3 Terminen. Danach holst du dir den Eintrag und fährst los.' },
+];
+
+const STEPS_BOOKING: Step[] = [
+  STEPS[0],
+  { title: 'Termin wählen', text: 'Tag und Uhrzeit aussuchen, dazu Name und Telefonnummer.' },
+  { title: 'Bestätigung per WhatsApp', text: 'Wir bestätigen dir deinen Termin im Weberpark.' },
+  STEPS[3],
 ];
 
 const FAQS: Faq[] = [
@@ -95,7 +103,18 @@ const FAQS: Faq[] = [
   },
 ];
 
+const FAQS_BOOKING: Faq[] = FAQS.map((f) =>
+  f.question === 'Bin ich nach dem Formular schon angemeldet?'
+    ? { ...f, answer: 'Noch nicht. Mit dem Formular buchst du deinen Termin, angemeldet wirst du bei diesem Termin persönlich bei uns im Weberpark. Die ADAC-Mitgliedschaft gibt es bei Anmeldung vor Ort bis 31. Oktober, unser letzter Öffnungstag davor ist Freitag, 30. Oktober.' }
+    : f,
+);
+
 const B196 = () => {
+  const variant = useFormVariant();
+  const isBooking = variant === 'booking';
+  const steps = isBooking ? STEPS_BOOKING : STEPS;
+  const faqs = isBooking ? FAQS_BOOKING : FAQS;
+  const ctaLabel = isBooking ? 'Termin wählen' : 'Termin anfragen';
   const [licenseClass, setLicenseClass] = useState('b196');
   const [answers, setAnswers] = useState<Record<string, boolean | null>>({
     alter: null,
@@ -116,11 +135,11 @@ const B196 = () => {
         title="B196 Potsdam – 125er fahren mit Autoführerschein | ABF Fahrschule"
         description="Mit dem B-Führerschein 125er fahren – ohne zusätzliche Prüfung. B196 in Potsdam-Babelsberg für 750 €. 5,0★ bei Google. Jetzt Platz sichern."
         path="/b196"
-        faqs={FAQS}
+        faqs={faqs}
       />
 
       <div className="min-h-screen bg-white font-sans">
-        <LpHeader onCtaClick={scrollToForm} ctaLabel="Termin anfragen" />
+        <LpHeader onCtaClick={scrollToForm} ctaLabel={ctaLabel} />
 
         <main>
           <LpHero
@@ -131,6 +150,9 @@ const B196 = () => {
           >
             <LeadForm
               id={FORM_ID}
+              variant={variant}
+              offerLine="Für die ADAC-Mitgliedschaft: Termin bis Freitag, 30. Oktober wählen."
+              offerTag="Bonus"
               ctaLabel="Anmeldetermin anfragen"
               source="landingpage-b196"
               classOptions={CLASS_OPTIONS}
@@ -230,7 +252,7 @@ const B196 = () => {
             </div>
           </section>
 
-          <Steps steps={STEPS} />
+          <Steps steps={steps} />
 
           <PriceBlock
             badge="Festpreis"
@@ -250,7 +272,7 @@ const B196 = () => {
 
           <SocialProof reviews={REVIEWS} />
           <WhyAbfCards />
-          <FaqBlock faqs={FAQS} />
+          <FaqBlock faqs={faqs} />
           <LocationSection />
 
           <FinalCta
@@ -268,7 +290,7 @@ const B196 = () => {
           heroId={HERO_ID}
           formId={FORM_ID}
           onCtaClick={scrollToForm}
-          label="Termin anfragen"
+          label={ctaLabel}
           trackingSource="landing-b196-sticky"
         />
       </div>

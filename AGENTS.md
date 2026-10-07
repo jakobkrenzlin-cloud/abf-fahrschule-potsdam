@@ -1,0 +1,1 @@
+- Landingpage-Formular-Variante (A/B) wird zentral über BOOKING_MODE in src/config/booking.ts und useFormVariant() gesteuert; LeadForm kapselt die Terminwahl in einer Error Boundary mit Fallback aufs klassische Formular – so bleibt die Lead-Erfassung auch bei Fehlern intakt.

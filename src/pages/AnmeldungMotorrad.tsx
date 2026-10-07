@@ -17,6 +17,7 @@ import LpFooterLinks from '@/components/lp/LpFooterLinks';
 import LpLegalBar from '@/components/lp/LpLegalBar';
 import Reveal from '@/components/lp/Reveal';
 import type { Faq, Review, Step } from '@/components/lp/constants';
+import { useFormVariant } from '@/lib/formVariant';
 import { PRICES_A } from '@/data/prices';
 
 const FORM_ID = 'lead-form-motorrad';
@@ -75,6 +76,13 @@ const STEPS: Step[] = [
   { title: 'Theorie starten, im Frühjahr fahren', text: 'Den Winter für die Theorie nutzen. Zur Saison bist du startklar.' },
 ];
 
+const STEPS_BOOKING: Step[] = [
+  { title: 'Klasse und Termin wählen', text: 'A1, A2 oder A. Wenn du unsicher bist, beraten wir dich beim Termin.' },
+  { title: 'Bestätigung per WhatsApp', text: 'Wir bestätigen dir deinen Termin.' },
+  STEPS[2],
+  STEPS[3],
+];
+
 const FAQS: Faq[] = [
   {
     question: 'Bin ich nach dem Formular schon angemeldet?',
@@ -118,7 +126,18 @@ const FAQS: Faq[] = [
   },
 ];
 
+const FAQS_BOOKING: Faq[] = FAQS.map((f) =>
+  f.question === 'Bin ich nach dem Formular schon angemeldet?'
+    ? { ...f, answer: 'Noch nicht. Mit dem Formular buchst du deinen Termin, angemeldet wirst du bei diesem Termin persönlich bei uns im Weberpark. Der Herbstpreis von 399 € gilt bei Anmeldung vor Ort bis 31. Oktober, unser letzter Öffnungstag davor ist Freitag, 30. Oktober.' }
+    : f,
+);
+
 const AnmeldungMotorrad = () => {
+  const variant = useFormVariant();
+  const isBooking = variant === 'booking';
+  const steps = isBooking ? STEPS_BOOKING : STEPS;
+  const faqs = isBooking ? FAQS_BOOKING : FAQS;
+  const ctaLabel = isBooking ? 'Termin wählen' : 'Termin anfragen';
   const [licenseClass, setLicenseClass] = useState('a2');
 
   const scrollToForm = () => {
@@ -136,11 +155,11 @@ const AnmeldungMotorrad = () => {
         title="Motorradführerschein A1, A2, A in Potsdam | ABF Fahrschule"
         description="Motorradführerschein in Potsdam: A1 ab 16, A2 ab 18, Klasse A. Herbst-Angebot bis 31. Oktober – jetzt Theorie machen, im Frühjahr fahren."
         path="/anmeldungmotorrad"
-        faqs={FAQS}
+        faqs={faqs}
       />
 
       <div className="min-h-screen bg-white font-sans">
-        <LpHeader onCtaClick={scrollToForm} ctaLabel="Termin anfragen" />
+        <LpHeader onCtaClick={scrollToForm} ctaLabel={ctaLabel} />
         <UrgencyBar label="Herbstpreis 399 €: Anmeldung vor Ort bis 31. Oktober" />
 
         <main>
@@ -156,6 +175,7 @@ const AnmeldungMotorrad = () => {
           >
             <LeadForm
               id={FORM_ID}
+              variant={variant}
               ctaLabel="Anmeldetermin anfragen"
               source="landingpage-motorrad"
               classOptions={CLASS_OPTIONS}
@@ -167,7 +187,7 @@ const AnmeldungMotorrad = () => {
             />
           </LpHero>
 
-          <Steps steps={STEPS} />
+          <Steps steps={steps} />
 
           {/* Klassen-Vergleich */}
           <section className="py-12 md:py-16 bg-white" aria-labelledby="klassen-heading">
@@ -225,7 +245,7 @@ const AnmeldungMotorrad = () => {
 
           <SocialProof reviews={REVIEWS} />
           <WhyAbfCards />
-          <FaqBlock faqs={FAQS} />
+          <FaqBlock faqs={faqs} />
           <LocationSection />
 
           <FinalCta
@@ -243,7 +263,7 @@ const AnmeldungMotorrad = () => {
           heroId={HERO_ID}
           formId={FORM_ID}
           onCtaClick={scrollToForm}
-          label="Termin anfragen"
+          label={ctaLabel}
           trackingSource="landing-motorrad-sticky"
         />
       </div>

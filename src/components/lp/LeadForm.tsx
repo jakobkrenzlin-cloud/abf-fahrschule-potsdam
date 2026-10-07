@@ -509,14 +509,14 @@ const BookingLeadForm: React.FC<LeadFormProps> = (props) => {
                         type="button"
                         aria-pressed={selected}
                         onClick={() => { setDay(d.day); setSlot(null); setInvalidMsg(false); }}
-                        className={`${chipBase} shrink-0 w-[76px] py-2 flex flex-col items-center justify-center leading-tight ${
+                        className={`${chipBase} shrink-0 w-[92px] py-2 flex flex-col items-center justify-center leading-tight ${
                           selected ? 'bg-brand-strong border-brand text-white' : 'bg-white/10 border-white/25 text-white hover:bg-white/20'
                         }`}
                       >
                         <span className="text-xs">{d.day === tomorrowLocal ? 'Morgen' : dayShortWeekday(d.day)}</span>
                         <span className="text-sm font-bold">{dayShortDate(d.day)}</span>
                         {d.day <= AUTUMN_OFFER_LAST_DAY && offerTag && (
-                          <span className="mt-1 text-[10px] font-bold uppercase tracking-wide text-brand bg-white rounded px-1">
+                          <span className="mt-1 text-[9px] font-bold uppercase tracking-wide text-brand-strong bg-white rounded px-1">
                             {offerTag}
                           </span>
                         )}

@@ -222,7 +222,7 @@ const B196 = () => {
                       onClick={scrollToForm}
                       className="mt-5 min-h-[56px] px-8 rounded-xl bg-brand-strong hover:bg-brand-strong/90 text-white font-bold transition-colors"
                     >
-                      Anmeldetermin anfragen
+                      Kostenlos Beraten lassen
                     </button>
                   </div>
                 )}

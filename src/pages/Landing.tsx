@@ -116,7 +116,7 @@ const Landing = () => {
   const isBooking = variant === 'booking';
   const steps = isBooking ? STEPS_BOOKING : STEPS;
   const faqs = isBooking ? FAQS_BOOKING : FAQS;
-  const ctaLabel = isBooking ? 'Termin wählen' : 'Termin anfragen';
+  const ctaLabel = 'Kostenlos Beraten lassen';
   const [licenseClass, setLicenseClass] = useState('b');
 
   const scrollToForm = () => {
@@ -147,7 +147,7 @@ const Landing = () => {
             <LeadForm
               id={FORM_ID}
               variant={variant}
-              ctaLabel="Anmeldetermin anfragen"
+              ctaLabel="Kostenlos Beraten lassen"
               source="landingpage-pkw"
               classOptions={CLASS_OPTIONS}
               licenseClass={licenseClass}
@@ -184,7 +184,7 @@ const Landing = () => {
           <FinalCta
             headline="Herbstpreis 199 €: Anmeldung vor Ort bis 31. Oktober"
             subline="Frag jetzt deinen Anmeldetermin an. Wir rufen dich innerhalb von 24 Stunden an."
-            buttonLabel="Anmeldetermin anfragen"
+            buttonLabel="Kostenlos Beraten lassen"
             onClick={scrollToForm}
           />
         </main>

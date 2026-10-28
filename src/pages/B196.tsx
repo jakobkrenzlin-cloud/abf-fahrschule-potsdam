@@ -114,7 +114,7 @@ const B196 = () => {
   const isBooking = variant === 'booking';
   const steps = isBooking ? STEPS_BOOKING : STEPS;
   const faqs = isBooking ? FAQS_BOOKING : FAQS;
-  const ctaLabel = isBooking ? 'Termin wählen' : 'Termin anfragen';
+  const ctaLabel = 'Kostenlos Beraten lassen';
   const [licenseClass, setLicenseClass] = useState('b196');
   const [answers, setAnswers] = useState<Record<string, boolean | null>>({
     alter: null,
@@ -153,7 +153,7 @@ const B196 = () => {
               variant={variant}
               offerLine="Für die ADAC-Mitgliedschaft: Termin bis Freitag, 30. Oktober wählen."
               offerTag="Bonus"
-              ctaLabel="Anmeldetermin anfragen"
+              ctaLabel="Kostenlos Beraten lassen"
               source="landingpage-b196"
               classOptions={CLASS_OPTIONS}
               licenseClass={licenseClass}
@@ -222,7 +222,7 @@ const B196 = () => {
                       onClick={scrollToForm}
                       className="mt-5 min-h-[56px] px-8 rounded-xl bg-brand-strong hover:bg-brand-strong/90 text-white font-bold transition-colors"
                     >
-                      Anmeldetermin anfragen
+                      Kostenlos Beraten lassen
                     </button>
                   </div>
                 )}
@@ -278,7 +278,7 @@ const B196 = () => {
           <FinalCta
             headline="B196 bei ABF: 750 € Festpreis. Jetzt Termin anfragen."
             subline="Kompakte Schulung, keine Prüfung, danach direkt auf die 125er."
-            buttonLabel="Anmeldetermin anfragen"
+            buttonLabel="Kostenlos Beraten lassen"
             onClick={scrollToForm}
           />
         </main>

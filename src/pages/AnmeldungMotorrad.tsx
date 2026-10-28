@@ -137,7 +137,7 @@ const AnmeldungMotorrad = () => {
   const isBooking = variant === 'booking';
   const steps = isBooking ? STEPS_BOOKING : STEPS;
   const faqs = isBooking ? FAQS_BOOKING : FAQS;
-  const ctaLabel = isBooking ? 'Termin wählen' : 'Termin anfragen';
+  const ctaLabel = 'Kostenlos Beraten lassen';
   const [licenseClass, setLicenseClass] = useState('a2');
 
   const scrollToForm = () => {
@@ -176,7 +176,7 @@ const AnmeldungMotorrad = () => {
             <LeadForm
               id={FORM_ID}
               variant={variant}
-              ctaLabel="Anmeldetermin anfragen"
+              ctaLabel="Kostenlos Beraten lassen"
               source="landingpage-motorrad"
               classOptions={CLASS_OPTIONS}
               licenseClass={licenseClass}
@@ -251,7 +251,7 @@ const AnmeldungMotorrad = () => {
           <FinalCta
             headline="Herbstpreis 399 €: Anmeldung vor Ort bis 31. Oktober"
             subline="Theorie jetzt, Fahrspaß im Frühjahr. Frag deinen Anmeldetermin an, wir rufen dich innerhalb von 24 Stunden an."
-            buttonLabel="Anmeldetermin anfragen"
+            buttonLabel="Kostenlos Beraten lassen"
             onClick={scrollToForm}
           />
         </main>

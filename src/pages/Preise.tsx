@@ -211,17 +211,17 @@ const Preise = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="tel:+4933196795854" className="inline-block">
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className="h-auto min-h-11 whitespace-normal">
                   📞 Festnetz: +49 331 96795854
                 </Button>
               </a>
               <a href="tel:+491622191290" className="inline-block">
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className="h-auto min-h-11 whitespace-normal">
                   📱 Mobil: +49 162 2191290
                 </Button>
               </a>
               <Link to="/kontakt">
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className="h-auto min-h-11 whitespace-normal">
                   📍 Standort & Öffnungszeiten
                 </Button>
               </Link>

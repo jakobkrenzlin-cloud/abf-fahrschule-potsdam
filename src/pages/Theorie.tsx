@@ -232,12 +232,12 @@ const Theorie = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/anmeldung">
-                <Button size="lg" className="text-lg px-8">
+                <Button size="lg" className="text-lg px-8 h-auto min-h-11 whitespace-normal">
                   Jetzt Theorie-Kursplatz sichern
                 </Button>
               </Link>
               <Link to="/kontakt">
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className="h-auto min-h-11 whitespace-normal">
                   Fragen? Ruf uns an
                 </Button>
               </Link>

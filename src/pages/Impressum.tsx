@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { SITE_URL } from '@/components/lp/constants';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MobileStickyFooter from '../components/MobileStickyFooter';
@@ -11,7 +12,7 @@ const Impressum = () => {
       <Helmet>
         <title>Impressum | ABF Fahrschule Potsdam</title>
         <meta name="description" content="Impressum und Anbieterkennzeichnung gemäß § 5 TMG der ABF Bildungszentrum und Fahrschule GmbH in Potsdam." />
-        <link rel="canonical" href="https://abf-fahrschule-potsdam.lovable.app/impressum" />
+        <link rel="canonical" href={`${SITE_URL}/impressum`} />
       </Helmet>
       <Header />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

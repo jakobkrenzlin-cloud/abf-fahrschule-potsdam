@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Check, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { SITE_URL } from '@/components/lp/constants';
 import { PRICES_A, PRICES_B, type PriceItem } from '@/data/prices';
 
 const PriceList = ({ title, items }: { title: string; items: PriceItem[] }) => (
@@ -27,7 +28,7 @@ const Preise = () => {
         <title>Faire Preise für deinen Führerschein | ABF Fahrschule Potsdam</title>
         <meta name="description" content="Transparente Preise für Führerschein Klasse B in Potsdam-Babelsberg. Zusätzlich: Kompletter Theorieunterricht & 1 Jahr ADAC. Jetzt Angebot sichern!" />
         <meta name="keywords" content="Fahrschule Potsdam Preise, Führerschein Kosten Potsdam, Fahrschule Babelsberg Preise, Führerschein Klasse B Kosten" />
-        <link rel="canonical" href="https://www.abf-fahrschule.de/preise" />
+        <link rel="canonical" href={`${SITE_URL}/preise`} />
         <script type="application/ld+json">
           {JSON.stringify({
           "@context": "https://schema.org",

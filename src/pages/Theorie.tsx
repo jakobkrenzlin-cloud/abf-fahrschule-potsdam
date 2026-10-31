@@ -6,13 +6,14 @@ import { Button } from '@/components/ui/button';
 import { BookOpen, Smartphone, CheckCircle, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { SITE_URL } from '@/components/lp/constants';
 const Theorie = () => {
   return <>
       <Helmet>
         <title>Theorieunterricht Führerschein Klasse B | ABF Fahrschule Potsdam</title>
         <meta name="description" content="Kompletter Theorieunterricht kompakt & effektiv. LernApp vom Vogel Verlag zusätzlich. Flexible Kurszeiten in Potsdam-Babelsberg. Jetzt Theorie-Kursplatz sichern!" />
         <meta name="keywords" content="Theorieunterricht Potsdam, Führerschein Theorie Babelsberg, Fahrschule Theorie Potsdam, Führerschein Klasse B Theorie" />
-        <link rel="canonical" href="https://www.abf-fahrschule.de/theorie" />
+        <link rel="canonical" href={`${SITE_URL}/theorie`} />
         <script type="application/ld+json">
           {JSON.stringify({
           "@context": "https://schema.org",

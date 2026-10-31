@@ -1,0 +1,3 @@
+- [ ] Zentrale Angebotskonfiguration und Datums-/Countdown-Steuerung ergänzen.
+- [ ] Angebotstexte, Preise, Metadaten und strukturierte Daten websiteweit aktualisieren.
+- [ ] Regeln testen und öffentliche Seiten prüfen; Gestaltung, Formulare und Tracking unverändert lassen.

@@ -62,14 +62,16 @@ const Hero = () => {
 
         <div className="rounded-2xl overflow-hidden border border-white/10 shadow-elevated">
           <img
-            src="/lovable-uploads/942a3ff6-c3ad-407e-8bda-5cd7d40335d8.png"
+            src="/lovable-uploads/942a3ff6-c3ad-407e-8bda-5cd7d40335d8-960.webp"
+            srcSet="/lovable-uploads/942a3ff6-c3ad-407e-8bda-5cd7d40335d8-480.webp 480w, /lovable-uploads/942a3ff6-c3ad-407e-8bda-5cd7d40335d8-960.webp 960w"
+            sizes="(min-width: 1024px) 50vw, 100vw"
             alt="Gebäude der ABF Fahrschule Potsdam im Weberpark"
             width={960}
             height={720}
             className="w-full h-full object-cover aspect-[4/3]"
             loading="eager"
-
-            decoding="sync"
+            decoding="async"
+            fetchPriority="high"
           />
         </div>
       </div>

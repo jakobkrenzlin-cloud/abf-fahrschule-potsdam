@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { SITE_URL } from '@/components/lp/constants';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MobileStickyFooter from '../components/MobileStickyFooter';
@@ -11,7 +12,7 @@ const Datenschutz = () => {
       <Helmet>
         <title>Datenschutz | ABF Fahrschule Potsdam</title>
         <meta name="description" content="DSGVO-konforme Datenschutzerklärung der ABF Fahrschule Potsdam: Verarbeitung, Rechte und Cookies im Überblick." />
-        <link rel="canonical" href="https://abf-fahrschule-potsdam.lovable.app/datenschutz" />
+        <link rel="canonical" href={`${SITE_URL}/datenschutz`} />
       </Helmet>
       <Header />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

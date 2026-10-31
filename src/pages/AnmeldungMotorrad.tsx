@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Bike, ArrowRight } from 'lucide-react';
 import LpSeo from '@/components/lp/LpSeo';
 import LpHeader from '@/components/lp/LpHeader';
@@ -27,6 +28,7 @@ const CLASS_OPTIONS = [
   { value: 'a1', label: 'A1 – ab 16 Jahren (125 ccm)' },
   { value: 'a2', label: 'A2 – ab 18 Jahren (bis 35 kW)' },
   { value: 'a', label: 'A – unbegrenzt' },
+  { value: 'b196', label: 'B196 – 125er mit Autoführerschein' },
   { value: 'a_unklar', label: 'Weiß noch nicht – bitte beraten' },
 ];
 
@@ -122,7 +124,18 @@ const FAQS: Faq[] = [
   {
     question: 'Ich habe schon Klasse B – bringt mir das etwas?',
     answer:
-      'Ja. Wenn du mindestens 25 bist und deinen Autoführerschein seit mindestens 5 Jahren hast, kannst du mit der Schlüsselzahl B196 ohne Prüfung 125er fahren. Alle Infos dazu findest du auf unserer B196-Seite unter /b196.',
+      'Ja. Wenn du mindestens 25 bist und deinen Autoführerschein seit mindestens 5 Jahren hast, kannst du mit der Schlüsselzahl B196 ohne Prüfung 125er fahren. Alle Infos dazu findest du auf unserer B196-Seite.',
+    answerNode: (
+      <>
+        Ja. Wenn du mindestens 25 bist und deinen Autoführerschein seit mindestens 5 Jahren hast,
+        kannst du mit der Schlüsselzahl B196 ohne Prüfung 125er fahren. Alle Infos dazu findest du
+        auf unserer{' '}
+        <Link to="/b196" className="text-brand-strong underline underline-offset-2">
+          B196-Seite
+        </Link>
+        .
+      </>
+    ),
   },
 ];
 

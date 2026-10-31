@@ -6,13 +6,14 @@ import { Button } from '@/components/ui/button';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { SITE_URL } from '@/components/lp/constants';
 const Kontakt = () => {
   return <>
       <Helmet>
         <title>Kontakt & Standort Weber Park | ABF Fahrschule Potsdam-Babelsberg</title>
         <meta name="description" content="ABF Fahrschule im Weber Park Potsdam-Babelsberg. Tuchmacherstraße 45 B. ☎ Festnetz +49 331 96795854 · Mobil +49 162 2191290. Öffnungszeiten, Anfahrt & direkter Kontakt." />
         <meta name="keywords" content="Fahrschule Potsdam Kontakt, ABF Fahrschule Babelsberg, Fahrschule Weber Park, Fahrschule Potsdam Adresse" />
-        <link rel="canonical" href="https://www.abf-fahrschule.de/kontakt" />
+        <link rel="canonical" href={`${SITE_URL}/kontakt`} />
         <script type="application/ld+json">
           {JSON.stringify({
           "@context": "https://schema.org",

@@ -6,13 +6,14 @@ import { Button } from '@/components/ui/button';
 import { BookOpen, Smartphone, CheckCircle, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { SITE_URL } from '@/components/lp/constants';
 const Theorie = () => {
   return <>
       <Helmet>
         <title>Theorieunterricht Führerschein Klasse B | ABF Fahrschule Potsdam</title>
         <meta name="description" content="Kompletter Theorieunterricht kompakt & effektiv. LernApp vom Vogel Verlag zusätzlich. Flexible Kurszeiten in Potsdam-Babelsberg. Jetzt Theorie-Kursplatz sichern!" />
         <meta name="keywords" content="Theorieunterricht Potsdam, Führerschein Theorie Babelsberg, Fahrschule Theorie Potsdam, Führerschein Klasse B Theorie" />
-        <link rel="canonical" href="https://www.abf-fahrschule.de/theorie" />
+        <link rel="canonical" href={`${SITE_URL}/theorie`} />
         <script type="application/ld+json">
           {JSON.stringify({
           "@context": "https://schema.org",
@@ -75,7 +76,7 @@ const Theorie = () => {
             </div>
             <div className="text-center pt-6 border-t border-border">
               <Link to="/anmeldung">
-                <Button size="lg" className="text-lg px-8">
+                <Button size="lg" className="text-lg px-8 h-auto min-h-11 whitespace-normal">
                   Jetzt Theorie-Kursplatz sichern
                 </Button>
               </Link>
@@ -231,12 +232,12 @@ const Theorie = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/anmeldung">
-                <Button size="lg" className="text-lg px-8">
+                <Button size="lg" className="text-lg px-8 h-auto min-h-11 whitespace-normal">
                   Jetzt Theorie-Kursplatz sichern
                 </Button>
               </Link>
               <Link to="/kontakt">
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className="h-auto min-h-11 whitespace-normal">
                   Fragen? Ruf uns an
                 </Button>
               </Link>

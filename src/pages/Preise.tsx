@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Check, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { SITE_URL } from '@/components/lp/constants';
 import { PRICES_A, PRICES_B, type PriceItem } from '@/data/prices';
 
 const PriceList = ({ title, items }: { title: string; items: PriceItem[] }) => (
@@ -27,7 +28,7 @@ const Preise = () => {
         <title>Faire Preise für deinen Führerschein | ABF Fahrschule Potsdam</title>
         <meta name="description" content="Transparente Preise für Führerschein Klasse B in Potsdam-Babelsberg. Zusätzlich: Kompletter Theorieunterricht & 1 Jahr ADAC. Jetzt Angebot sichern!" />
         <meta name="keywords" content="Fahrschule Potsdam Preise, Führerschein Kosten Potsdam, Fahrschule Babelsberg Preise, Führerschein Klasse B Kosten" />
-        <link rel="canonical" href="https://www.abf-fahrschule.de/preise" />
+        <link rel="canonical" href={`${SITE_URL}/preise`} />
         <script type="application/ld+json">
           {JSON.stringify({
           "@context": "https://schema.org",
@@ -210,17 +211,17 @@ const Preise = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="tel:+4933196795854" className="inline-block">
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className="h-auto min-h-11 whitespace-normal">
                   📞 Festnetz: +49 331 96795854
                 </Button>
               </a>
               <a href="tel:+491622191290" className="inline-block">
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className="h-auto min-h-11 whitespace-normal">
                   📱 Mobil: +49 162 2191290
                 </Button>
               </a>
               <Link to="/kontakt">
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className="h-auto min-h-11 whitespace-normal">
                   📍 Standort & Öffnungszeiten
                 </Button>
               </Link>

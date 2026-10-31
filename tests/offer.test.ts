@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import { OFFER, OFFER_COPY, getOfferCountdown, getOfferDateLabel, getOfferDeadline, withOfferDate } from './offer';
+import { OFFER, OFFER_COPY, getOfferCountdown, getOfferDateLabel, getOfferDeadline, withOfferDate } from '../src/config/offer';
 
 describe('Aktuelle Angebotsregeln', () => {
   test('Klasse B kostet 219 Euro statt 479 Euro', () => {

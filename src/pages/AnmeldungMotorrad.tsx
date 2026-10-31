@@ -90,7 +90,7 @@ const FAQS: Faq[] = [
   {
     question: 'Bin ich nach dem Formular schon angemeldet?',
     answer:
-      `Noch nicht. Anmelden kannst du dich nur persönlich bei uns im Weberpark. Nach dem Formular rufen wir dich innerhalb von 24 Stunden an und machen einen Termin aus. ${OFFER_COPY.motorradOnsite}',
+      `Noch nicht. Anmelden kannst du dich nur persönlich bei uns im Weberpark. Nach dem Formular rufen wir dich innerhalb von 24 Stunden an und machen einen Termin aus. ${OFFER_COPY.motorradOnsite}`,
   },
   {
     question: 'Welche Klasse ist die richtige für mich?',
@@ -142,7 +142,7 @@ const FAQS: Faq[] = [
 
 const FAQS_BOOKING: Faq[] = FAQS.map((f) =>
   f.question === 'Bin ich nach dem Formular schon angemeldet?'
-    ? { ...f, answer: `Noch nicht. Mit dem Formular buchst du deinen Termin, angemeldet wirst du bei diesem Termin persönlich bei uns im Weberpark. ${OFFER_COPY.motorradOnsite}' }
+    ? { ...f, answer: `Noch nicht. Mit dem Formular buchst du deinen Termin, angemeldet wirst du bei diesem Termin persönlich bei uns im Weberpark. ${OFFER_COPY.motorradOnsite}` }
     : f,
 );
 

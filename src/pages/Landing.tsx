@@ -55,7 +55,7 @@ const FAQS: Faq[] = [
   {
     question: 'Bin ich nach dem Formular schon angemeldet?',
     answer:
-      `Noch nicht. Anmelden kannst du dich nur persönlich bei uns im Weberpark. Nach dem Formular rufen wir dich innerhalb von 24 Stunden an und machen einen Termin aus. ${OFFER_COPY.pkwOnsite}',
+      `Noch nicht. Anmelden kannst du dich nur persönlich bei uns im Weberpark. Nach dem Formular rufen wir dich innerhalb von 24 Stunden an und machen einen Termin aus. ${OFFER_COPY.pkwOnsite}`,
   },
   {
     question: `Was genau ist im Grundbetrag von ${formatOfferPrice(OFFER.pkwGrundbetrag)} enthalten?`,
@@ -108,7 +108,7 @@ const CLASS_OPTIONS = [
 
 const FAQS_BOOKING: Faq[] = FAQS.map((f) =>
   f.question === 'Bin ich nach dem Formular schon angemeldet?'
-    ? { ...f, answer: `Noch nicht. Mit dem Formular buchst du deinen Termin, angemeldet wirst du bei diesem Termin persönlich bei uns im Weberpark. ${OFFER_COPY.pkwOnsite}' }
+    ? { ...f, answer: `Noch nicht. Mit dem Formular buchst du deinen Termin, angemeldet wirst du bei diesem Termin persönlich bei uns im Weberpark. ${OFFER_COPY.pkwOnsite}` }
     : f,
 );
 

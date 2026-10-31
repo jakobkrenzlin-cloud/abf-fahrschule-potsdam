@@ -5,10 +5,11 @@ import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
 import { getAttribution, callPhone, openWhatsApp } from '@/lib/tracking';
 import { supabase } from '@/integrations/supabase/client';
-import { AUTUMN_OFFER_LAST_DAY, getAvailableSlots } from '@/config/booking';
+import { getAvailableSlots } from '@/config/booking';
 import { phCapture, type FormVariant, type SubmitVariant } from '@/lib/formVariant';
 import { dayShortDate, dayShortWeekday, formatLong, formatShort, localDay, localTime } from '@/lib/appointmentFormat';
 import { PHONE_RAW, WHATSAPP_BASE } from './constants';
+import { OFFER, withOfferDate } from '@/config/offer';
 
 const leadSchema = z.object({
   name: z.string().trim().min(2, 'Bitte gib deinen Namen ein (mind. 2 Zeichen).').max(100),
@@ -47,9 +48,9 @@ interface LeadFormProps {
   onsiteNote?: string;
   /** Formular-Variante (A/B-Test). Standard: classic */
   variant?: FormVariant;
-  /** Hinweis in Schritt 1 bis AUTUMN_OFFER_LAST_DAY */
+  /** Optionaler Angebotshinweis bei gesetzter Angebotsfrist */
   offerLine?: string;
-  /** Label auf Tages-Chips bis AUTUMN_OFFER_LAST_DAY */
+  /** Optionales Label für Tage innerhalb der Angebotsfrist */
   offerTag?: string;
 }
 
@@ -398,7 +399,7 @@ type Step = 'pick' | 'details' | 'callback';
 const BookingLeadForm: React.FC<LeadFormProps> = (props) => {
   const { id = 'lead-form', title = 'Dein Anmeldetermin im Weberpark', source, classOptions, licenseClass,
     onLicenseClassChange, whatsappText, trackingSource, onsiteNote,
-    offerLine = 'Für den Herbstpreis: Termin bis Freitag, 30. Oktober wählen.', offerTag = 'Herbstpreis' } = props;
+    offerLine = withOfferDate('Termin für den Aktionspreis wählen'), offerTag = OFFER.label } = props;
   const navigate = useNavigate();
   const { toast } = useToast();
   const f = useLeadFields();
@@ -421,7 +422,7 @@ const BookingLeadForm: React.FC<LeadFormProps> = (props) => {
   const days = useMemo(() => getAvailableSlots(now, blocked), [now, blocked]);
   const todayLocal = localDay(now);
   const tomorrowLocal = localDay(new Date(now.getTime() + 86400_000));
-  const offerOpen = todayLocal <= AUTUMN_OFFER_LAST_DAY;
+  const offerOpen = OFFER.endDate !== null && todayLocal <= OFFER.endDate;
 
   // Ersten Tag vorauswählen bzw. Auswahl korrigieren, wenn der Tag wegfällt
   useEffect(() => {
@@ -515,7 +516,7 @@ const BookingLeadForm: React.FC<LeadFormProps> = (props) => {
                       >
                         <span className="text-xs">{d.day === tomorrowLocal ? 'Morgen' : dayShortWeekday(d.day)}</span>
                         <span className="text-sm font-bold">{dayShortDate(d.day)}</span>
-                        {d.day <= AUTUMN_OFFER_LAST_DAY && offerTag && (
+                        {OFFER.endDate && d.day <= OFFER.endDate && offerTag && (
                           <span className="mt-1 text-[9px] font-bold uppercase tracking-wide text-brand-strong bg-white rounded px-1">
                             {offerTag}
                           </span>

@@ -1,7 +1,9 @@
 import React from 'react';
 import { ArrowRight, Shield, Award, Clock } from 'lucide-react';
 import { Stars } from '@/components/lp/SocialProof';
-import { RATING_VALUE, REVIEW_COUNT, OFFER_DEADLINE_LABEL } from '@/components/lp/constants';
+import { RATING_VALUE, REVIEW_COUNT } from '@/components/lp/constants';
+
+import { OFFER, OFFER_COPY, formatOfferPrice, withOfferDate } from '@/config/offer';
 
 const Hero = () => {
   const scrollTo = (id: string) =>
@@ -13,7 +15,7 @@ const Hero = () => {
         <div className="space-y-6">
           <span className="inline-flex items-center gap-2 rounded-full bg-brand/15 border border-brand/40 px-3.5 py-2 text-small font-medium text-white">
             <Clock className="w-4 h-4" aria-hidden="true" />
-            Herbst-Angebot – nur noch bis {OFFER_DEADLINE_LABEL}
+            {withOfferDate(OFFER_COPY.pkwBanner)}
           </span>
 
           <h1 className="text-h1 md:text-h1-lg text-white">
@@ -22,7 +24,7 @@ const Hero = () => {
 
           <p className="text-body text-white/75 leading-relaxed max-w-xl">
             Theorie in einer Woche, erfahrene Fahrlehrer und faire Preise. Grundbetrag Klasse B
-            aktuell 199 € – Fahrstunden und amtliche Gebühren kommen zusätzlich dazu.
+            aktuell {formatOfferPrice(OFFER.pkwGrundbetrag)} – Fahrstunden und amtliche Gebühren kommen zusätzlich dazu.
           </p>
 
           <div className="flex items-center gap-3">

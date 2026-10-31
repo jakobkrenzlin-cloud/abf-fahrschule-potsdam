@@ -1,3 +1,4 @@
+import { OFFER, OFFER_COPY, formatOfferPrice, withOfferDate } from '@/config/offer';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
@@ -94,13 +95,13 @@ const ContactSection = () => {
     }
   };
   const offerByClass: Record<string, { price: string; note: string }> = {
-    b: { price: '199€', note: 'gilt nur für Klasse B (PKW)' },
-    be: { price: '199€', note: 'gilt nur für Klasse B/BE' },
-    a1: { price: '399€', note: 'gilt nur für Klasse A1' },
-    a2: { price: '399€', note: 'gilt nur für Klasse A2' },
-    a: { price: '399€', note: 'gilt nur für Klasse A' },
+    b: { price: formatOfferPrice(OFFER.pkwGrundbetrag), note: 'gilt nur für Klasse B (PKW)' },
+    be: { price: formatOfferPrice(OFFER.pkwGrundbetrag), note: 'gilt nur für Klasse B/BE' },
+    a1: { price: formatOfferPrice(OFFER.motorradGrundbetrag), note: 'gilt nur für Klasse A1' },
+    a2: { price: formatOfferPrice(OFFER.motorradGrundbetrag), note: 'gilt nur für Klasse A2' },
+    a: { price: formatOfferPrice(OFFER.motorradGrundbetrag), note: 'gilt nur für Klasse A' },
   };
-  const currentOffer = offerByClass[formData.licenseClass] || { price: '199€', note: '' };
+  const currentOffer = offerByClass[formData.licenseClass] || { price: formatOfferPrice(OFFER.pkwGrundbetrag), note: '' };
 
   const handleWhatsApp = () => {
     window.open('https://wa.me/491622191290', '_blank');
@@ -125,14 +126,12 @@ const ContactSection = () => {
           <div className="min-w-0 bg-white rounded-2xl shadow-2xl p-8 lg:p-12 border border-black/[0.08]">
             {/* Offer Reminder */}
             <div className="text-center mb-8 p-4 bg-gradient-to-r from-brand-strong/10 to-blue-600/5 rounded-xl border-l-4 border-brand/30">
-              <p className="text-brand-strong font-bold text-lg"> Herbst-Angebot: nur {currentOffer.price} Grundbetrag!</p>
+              <p className="text-brand-strong font-bold text-lg"> {OFFER.label}: nur {currentOffer.price} Grundbetrag!</p>
               {currentOffer.note && (
                 <p className="text-[11px] text-ink/60 mt-1 italic">{currentOffer.note}</p>
               )}
                <p className="text-xs text-ink/75 mt-2">Zusätzlich: 1 Jahr ADAC-Mitgliedschaft. Alle Entgelte siehe <a href="#preise-uebersicht" className="underline underline-offset-2 text-brand-strong">Preisübersicht</a>.</p>
-              <p className="text-xs text-ink/60 mt-1">
-                Limitiertes Herbst-Angebot
-              </p>
+              {OFFER.endDate && <p className="text-xs text-ink/60 mt-1">{withOfferDate(OFFER.label)}</p>}
             </div>
 
             <h3 className="text-2xl lg:text-3xl font-bold text-center mb-2 text-brand-dark">
@@ -213,7 +212,7 @@ const ContactSection = () => {
               </div>
               
               <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-brand-strong hover:bg-brand-strong h-14 text-base md:text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50">
-                {isSubmitting ? "Wird gesendet..." : <><span className="hidden sm:inline">Jetzt Anfrage senden & {currentOffer.price} Herbst-Angebot sichern</span><span className="sm:hidden">Jetzt für {currentOffer.price} anmelden</span></>}
+                {isSubmitting ? "Wird gesendet..." : <><span className="hidden sm:inline">Jetzt Anfrage senden & {OFFER.label} sichern</span><span className="sm:hidden">Jetzt für {currentOffer.price} anmelden</span></>}
               </Button>
             </form>
             

@@ -1,5 +1,6 @@
 // Zentrale Preisdatei – alle Entgelte gemäß § 32 FahrlG je Klasse.
 // Alle Seiten lesen ihre Preise aus dieser Datei.
+import { OFFER, formatOfferPrice, withOfferDate } from '@/config/offer';
 
 export type PriceItem = { label: string; price: string };
 
@@ -14,9 +15,9 @@ export type ClassPrices = {
 export const PRICES_B: ClassPrices = {
   key: 'b',
   name: 'Klasse B (gilt auch für B197 und BF17)',
-  basePrice: '199 €',
+  basePrice: formatOfferPrice(OFFER.pkwGrundbetrag),
   baseLabel:
-    'Grundbetrag (allgemeine Aufwendungen inkl. Theorieunterricht), Herbst-Angebot bis 31.10.2026',
+    withOfferDate('Grundbetrag (allgemeine Aufwendungen inkl. Theorieunterricht)'),
   items: [
     { label: 'Grundbetrag bei Nichtbestehen der theoretischen Prüfung und weitere Ausbildung', price: '0 € (kein zusätzlicher Grundbetrag)' },
     { label: 'Vorstellung zur theoretischen Prüfung', price: 'im Grundbetrag enthalten' },
@@ -31,9 +32,9 @@ export const PRICES_B: ClassPrices = {
 export const PRICES_A: ClassPrices = {
   key: 'a',
   name: 'Klassen A1, A2 und A',
-  basePrice: '399 €',
+  basePrice: formatOfferPrice(OFFER.motorradGrundbetrag),
   baseLabel:
-    'Grundbetrag (allgemeine Aufwendungen inkl. Theorieunterricht), Herbst-Angebot bis 31.10.2026',
+    withOfferDate('Grundbetrag (allgemeine Aufwendungen inkl. Theorieunterricht)'),
   items: [
     { label: 'Grundbetrag bei Nichtbestehen der theoretischen Prüfung und weitere Ausbildung', price: '0 € (kein zusätzlicher Grundbetrag)' },
     { label: 'Vorstellung zur theoretischen Prüfung', price: 'im Grundbetrag enthalten' },

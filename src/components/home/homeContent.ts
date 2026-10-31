@@ -1,3 +1,4 @@
+import { OFFER, OFFER_COPY, formatOfferPrice, withOfferDate } from '@/config/offer';
 import type { Faq, Review, Step } from '@/components/lp/constants';
 
 export const HOME_REVIEWS: Review[] = [
@@ -26,7 +27,7 @@ export const HOME_FAQS: Faq[] = [
   {
     question: 'Was kostet der Führerschein bei der ABF Fahrschule in Potsdam?',
     answer:
-      'Der Grundbetrag für die Klasse B beträgt im Herbst-Angebot 199 €. Darin enthalten sind Anmeldung, kompletter Theorieunterricht und 1 Jahr ADAC-Mitgliedschaft. Fahrstunden (ab 73,12 € je 45 Min.), Lern-App und amtliche Gebühren kommen zusätzlich dazu.',
+      withOfferDate(`Der Grundbetrag für die Klasse B beträgt aktuell ${formatOfferPrice(OFFER.pkwGrundbetrag)}. Darin enthalten sind Anmeldung, kompletter Theorieunterricht und 1 Jahr ADAC-Mitgliedschaft. Fahrstunden (ab 73,12 € je 45 Min.), Lern-App und amtliche Gebühren kommen zusätzlich dazu.`),
   },
   {
     question: 'Wie lange dauert die Ausbildung?',
@@ -41,7 +42,7 @@ export const HOME_FAQS: Faq[] = [
   {
     question: 'Bietet ihr auch den Motorradführerschein an?',
     answer:
-      'Ja. Wir bilden in den Klassen A, A1 und A2 aus. Der Grundbetrag liegt im Herbst-Angebot bei 399 €. Zusätzlich bieten wir die Schlüsselzahl B196 für 750 € Festpreis an.',
+      withOfferDate(`Ja. Wir bilden in den Klassen A, A1 und A2 aus. Der Grundbetrag liegt bei ${formatOfferPrice(OFFER.motorradGrundbetrag)}. Zusätzlich bieten wir die Schlüsselzahl B196 für ${formatOfferPrice(OFFER.b196Festpreis)} Festpreis an.`),
   },
   {
     question: 'Muss ich bei der Anmeldung schon etwas bezahlen?',

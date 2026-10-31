@@ -120,9 +120,9 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
           {/* Contact Form */}
-          <div className="bg-white rounded-2xl shadow-2xl p-8 lg:p-12 border border-black/[0.08]">
+          <div className="min-w-0 bg-white rounded-2xl shadow-2xl p-8 lg:p-12 border border-black/[0.08]">
             {/* Offer Reminder */}
             <div className="text-center mb-8 p-4 bg-gradient-to-r from-brand-strong/10 to-blue-600/5 rounded-xl border-l-4 border-brand/30">
               <p className="text-brand-strong font-bold text-lg"> Herbst-Angebot: nur {currentOffer.price} Grundbetrag!</p>
@@ -235,7 +235,7 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Info & Map */}
-          <div className="space-y-8">
+          <div className="min-w-0 space-y-8">
             {/* Contact Details */}
             <div className="bg-white rounded-xl shadow-lg p-8 space-y-6 border border-black/[0.08]">
               <h3 className="text-2xl font-semibold text-brand-dark">
@@ -271,7 +271,7 @@ const ContactSection = () => {
                   <Mail className="w-6 h-6 text-brand-strong mt-1" />
                   <div>
                     <div className="font-medium text-brand-dark">E-Mail Fahrschule Potsdam</div>
-                    <a href="mailto:potsdam@fahrschuleabf.de" className="text-brand-strong hover:text-brand-strong">
+                    <a href="mailto:potsdam@fahrschuleabf.de" className="text-brand-strong hover:text-brand-strong break-all">
                       potsdam@fahrschuleabf.de
                     </a>
                   </div>

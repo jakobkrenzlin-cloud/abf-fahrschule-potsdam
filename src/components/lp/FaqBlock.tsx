@@ -22,7 +22,7 @@ const FaqBlock: React.FC<{ faqs: Faq[] }> = ({ faqs }) => (
               {faq.question}
             </AccordionTrigger>
             <AccordionContent className="text-ink/80 text-base leading-relaxed pb-4">
-              {faq.answer}
+              {faq.answerNode ?? faq.answer}
             </AccordionContent>
           </AccordionItem>
         ))}

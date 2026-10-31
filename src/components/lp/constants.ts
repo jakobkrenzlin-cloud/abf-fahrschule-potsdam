@@ -18,4 +18,4 @@ export const OFFER_DEADLINE_LABEL = '31. Oktober';
 
 export type Review = { name: string; text: string };
 export type Step = { title: string; text?: string };
-export type Faq = { question: string; answer: string };
+export type Faq = { question: string; answer: string; answerNode?: React.ReactNode };

@@ -27,6 +27,7 @@ const CLASS_OPTIONS = [
   { value: 'a1', label: 'A1 – ab 16 Jahren (125 ccm)' },
   { value: 'a2', label: 'A2 – ab 18 Jahren (bis 35 kW)' },
   { value: 'a', label: 'A – unbegrenzt' },
+  { value: 'b196', label: 'B196 – 125er mit Autoführerschein' },
   { value: 'a_unklar', label: 'Weiß noch nicht – bitte beraten' },
 ];
 

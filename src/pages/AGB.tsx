@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { SITE_URL } from '@/components/lp/constants';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MobileStickyFooter from '../components/MobileStickyFooter';
@@ -9,7 +10,7 @@ const AGB = () => {
       <Helmet>
         <title>AGB | ABF Fahrschule Potsdam</title>
         <meta name="description" content="Allgemeine Geschäftsbedingungen der ABF Fahrschule Potsdam für PKW- und Motorrad-Führerscheinausbildung." />
-        <link rel="canonical" href="https://abf-fahrschule-potsdam.lovable.app/agb" />
+        <link rel="canonical" href={`${SITE_URL}/agb`} />
       </Helmet>
       <Header />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

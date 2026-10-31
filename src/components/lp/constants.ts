@@ -1,4 +1,5 @@
 // Zentrale Daten für die Landingpages (PKW, Motorrad, B196)
+import type { ReactNode } from 'react';
 
 export const PHONE_DISPLAY = '+49 162 2191290';
 export const PHONE_RAW = '+491622191290';
@@ -18,4 +19,4 @@ export const OFFER_DEADLINE_LABEL = '31. Oktober';
 
 export type Review = { name: string; text: string };
 export type Step = { title: string; text?: string };
-export type Faq = { question: string; answer: string; answerNode?: React.ReactNode };
+export type Faq = { question: string; answer: string; answerNode?: ReactNode };

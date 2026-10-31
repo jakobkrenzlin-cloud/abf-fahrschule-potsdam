@@ -71,7 +71,7 @@ const Hero = () => {
             className="w-full h-full object-cover aspect-[4/3]"
             loading="eager"
             decoding="async"
-            fetchpriority="high"
+            fetchPriority="high"
           />
         </div>
       </div>

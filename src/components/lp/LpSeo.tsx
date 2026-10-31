@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { OFFER } from '@/config/offer';
 import {
   LOGO_URL,
   PHONE_RAW,
@@ -61,6 +62,22 @@ const localBusiness = {
 
 const LpSeo: React.FC<LpSeoProps> = ({ title, description, path, faqs }) => {
   const url = `${SITE_URL}${path}`;
+  const price = path === '/anmeldung' ? OFFER.pkwGrundbetrag
+    : path === '/anmeldungmotorrad' ? OFFER.motorradGrundbetrag
+    : path === '/b196' ? OFFER.b196Festpreis : undefined;
+  const businessSchema = {
+    ...localBusiness,
+    ...(price === undefined ? {} : {
+      makesOffer: {
+        '@type': 'Offer',
+        name: path === '/b196' ? 'B196 – Festpreis' : `${OFFER.label} – Grundbetrag`,
+        price: String(price),
+        priceCurrency: 'EUR',
+        url,
+        ...(path !== '/b196' && OFFER.endDate ? { priceValidUntil: OFFER.endDate } : {}),
+      },
+    }),
+  };
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -88,7 +105,7 @@ const LpSeo: React.FC<LpSeoProps> = ({ title, description, path, faqs }) => {
       <meta name="twitter:description" content={description} />
       
       <script type="application/ld+json">
-        {JSON.stringify(localBusiness)}
+        {JSON.stringify(businessSchema)}
       </script>
       <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
     </Helmet>

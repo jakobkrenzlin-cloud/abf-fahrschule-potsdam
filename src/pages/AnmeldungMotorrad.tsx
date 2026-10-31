@@ -1,3 +1,4 @@
+import { OFFER, OFFER_COPY, formatOfferPrice, withOfferDate } from '@/config/offer';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Bike, ArrowRight } from 'lucide-react';
@@ -89,7 +90,7 @@ const FAQS: Faq[] = [
   {
     question: 'Bin ich nach dem Formular schon angemeldet?',
     answer:
-      'Noch nicht. Anmelden kannst du dich nur persönlich bei uns im Weberpark. Nach dem Formular rufen wir dich innerhalb von 24 Stunden an und machen einen Termin aus. Der Herbstpreis von 399 € gilt, wenn du dich bis 31. Oktober vor Ort anmeldest.',
+      `Noch nicht. Anmelden kannst du dich nur persönlich bei uns im Weberpark. Nach dem Formular rufen wir dich innerhalb von 24 Stunden an und machen einen Termin aus. ${OFFER_COPY.motorradOnsite}',
   },
   {
     question: 'Welche Klasse ist die richtige für mich?',
@@ -97,9 +98,9 @@ const FAQS: Faq[] = [
       'Mit 16 kommt nur A1 in Frage (bis 125 ccm / 11 kW). Ab 18 ist A2 der übliche Weg (bis 35 kW), nach 2 Jahren A2 kannst du unkompliziert auf A aufsteigen. Den Direkteinstieg in Klasse A gibt es ab 24 Jahren. Wir schauen im Beratungsgespräch gemeinsam, was für dich am sinnvollsten ist.',
   },
   {
-    question: 'Lohnt es sich, im Herbst anzufangen?',
+    question: 'Lohnt es sich, schon im Winter anzufangen?',
     answer:
-      'Ja – genau deshalb gibt es das Herbst-Angebot. Du machst Theorie und Vorbereitung in der ruhigen Jahreszeit, wenn Termine gut verfügbar sind. Wenn im Frühjahr die Saison losgeht, fährst du bereits, statt auf einen Platz zu warten.',
+      'Ja. Du machst Theorie und Vorbereitung in der ruhigen Jahreszeit, wenn Termine gut verfügbar sind. Wenn im Frühjahr die Saison losgeht, fährst du bereits, statt auf einen Platz zu warten.',
   },
   {
     question: 'Habt ihr eigene Motorräder zum Üben?',
@@ -109,12 +110,12 @@ const FAQS: Faq[] = [
   {
     question: 'Brauche ich eigene Schutzkleidung?',
     answer:
-      'Für die Fahrstunden brauchst du Motorradbekleidung (Helm, Handschuhe, Jacke, Hose, feste Stiefel). Sprich uns an – wir sagen dir genau, was nötig ist, und mit dem Louis- und Polo-Gutschein aus dem Angebot wird die Erstausstattung günstiger.',
+      'Für die Fahrstunden brauchst du Motorradbekleidung (Helm, Handschuhe, Jacke, Hose, feste Stiefel). Sprich uns an – wir sagen dir genau, was nötig ist.',
   },
   {
     question: 'Was kostet der Motorradführerschein insgesamt?',
     answer:
-      'Der Grundbetrag beträgt im Herbst-Angebot 399 €. Dazu kommen die Fahrstunden: Übungsstunde (45 Min.) 80 €, Unterweisung (45 Min.) 80 €, besondere Ausbildungsfahrt (45 Min.) 85 €. Wie viele Stunden du brauchst, hängt von deiner Vorerfahrung ab – amtliche Gebühren kommen zusätzlich dazu.',
+      `Der Grundbetrag beträgt ${formatOfferPrice(OFFER.motorradGrundbetrag)}. Dazu kommen die Fahrstunden: Übungsstunde (45 Min.) 80 €, Unterweisung (45 Min.) 80 €, besondere Ausbildungsfahrt (45 Min.) 85 €. Wie viele Stunden du brauchst, hängt von deiner Vorerfahrung ab – amtliche Gebühren kommen zusätzlich dazu.`,
   },
   {
     question: 'Kann ich später von A2 auf A aufsteigen?',
@@ -141,7 +142,7 @@ const FAQS: Faq[] = [
 
 const FAQS_BOOKING: Faq[] = FAQS.map((f) =>
   f.question === 'Bin ich nach dem Formular schon angemeldet?'
-    ? { ...f, answer: 'Noch nicht. Mit dem Formular buchst du deinen Termin, angemeldet wirst du bei diesem Termin persönlich bei uns im Weberpark. Der Herbstpreis von 399 € gilt bei Anmeldung vor Ort bis 31. Oktober, unser letzter Öffnungstag davor ist Freitag, 30. Oktober.' }
+    ? { ...f, answer: `Noch nicht. Mit dem Formular buchst du deinen Termin, angemeldet wirst du bei diesem Termin persönlich bei uns im Weberpark. ${OFFER_COPY.motorradOnsite}' }
     : f,
 );
 
@@ -165,21 +166,21 @@ const AnmeldungMotorrad = () => {
   return (
     <>
       <LpSeo
-        title="Motorradführerschein A1, A2, A in Potsdam | ABF Fahrschule"
-        description="Motorradführerschein in Potsdam: A1 ab 16, A2 ab 18, Klasse A. Herbst-Angebot bis 31. Oktober – jetzt Theorie machen, im Frühjahr fahren."
+        title={OFFER_COPY.motorradTitle}
+        description={OFFER_COPY.motorradDescription}
         path="/anmeldungmotorrad"
         faqs={faqs}
       />
 
       <div className="min-h-screen bg-white font-sans">
         <LpHeader onCtaClick={scrollToForm} ctaLabel={ctaLabel} />
-        <UrgencyBar label="Herbstpreis 399 €: Anmeldung vor Ort bis 31. Oktober" />
+        <UrgencyBar label={OFFER_COPY.motorradBanner} />
 
         <main>
           <LpHero
             id={HERO_ID}
             headline="Motorradführerschein Potsdam – jetzt starten, im Frühjahr fahren"
-            subline="A1 ab 16, A2 ab 18 oder Klasse A. Herbstpreis: Grundbetrag 399 € bei Anmeldung vor Ort bis 31. Oktober. Theorie im Winter, und wenn die Saison beginnt, bist du startklar."
+            subline={withOfferDate(`A1 ab 16, A2 ab 18 oder Klasse A. Grundbetrag ${formatOfferPrice(OFFER.motorradGrundbetrag)}. Theorie im Winter, und wenn die Saison beginnt, bist du startklar.`)}
             chips={[
               'Eigene Schulungsmotorräder',
               '5,0★ bei Google',
@@ -194,8 +195,8 @@ const AnmeldungMotorrad = () => {
               classOptions={CLASS_OPTIONS}
               licenseClass={licenseClass}
               onLicenseClassChange={setLicenseClass}
-              whatsappText="Hallo, ich möchte einen Anmeldetermin für den Motorradführerschein ausmachen (Herbstpreis 399 €). Wann kann ich vorbeikommen?"
-              onsiteNote="Angemeldet wirst du beim Termin vor Ort. Der Herbstpreis von 399 € gilt bei Anmeldung bis 31. Oktober."
+              whatsappText={`Hallo, ich möchte einen Anmeldetermin für den Motorradführerschein ausmachen (Grundbetrag ${formatOfferPrice(OFFER.motorradGrundbetrag)}). Wann kann ich vorbeikommen?`}
+              onsiteNote={`Angemeldet wirst du beim Termin vor Ort. ${OFFER_COPY.motorradOnsite}`}
               trackingSource="landing-motorrad"
             />
           </LpHero>
@@ -238,22 +239,16 @@ const AnmeldungMotorrad = () => {
           </section>
 
           <PriceBlock
-            badge="Herbst-Angebot"
+            badge={OFFER.label}
             price={PRICES_A.basePrice}
-            title={`Grundbetrag ${PRICES_A.basePrice} (Herbst-Angebot) – das ist drin`}
+            title={`Grundbetrag ${PRICES_A.basePrice} – das ist drin`}
             subtitle="Einmalige Gebühr für Verwaltung und vollständige Theorieausbildung"
             includedBase={[
               'Kompletter Theorieunterricht',
               'Motorrad-spezifische Theorie',
             ]}
-            includedAdditional={[
-              'Anmeldung & Verwaltung',
-              '100 € Louis und Polo Gutschein',
-              'Prüfungsvorbereitung',
-              '1 Jahr ADAC-Mitgliedschaft',
-            ]}
+            includedAdditional={OFFER_COPY.motorradAdditional}
             extras={PRICES_A.items}
-            footnote="Das Herbst-Angebot gilt bei Anmeldung vor Ort bis 31. Oktober."
           />
 
           <SocialProof reviews={REVIEWS} />
@@ -262,7 +257,7 @@ const AnmeldungMotorrad = () => {
           <LocationSection />
 
           <FinalCta
-            headline="Herbstpreis 399 €: Anmeldung vor Ort bis 31. Oktober"
+            headline={withOfferDate(`Grundbetrag ${formatOfferPrice(OFFER.motorradGrundbetrag)}: jetzt Anmeldetermin anfragen`)}
             subline="Theorie jetzt, Fahrspaß im Frühjahr. Frag deinen Anmeldetermin an, wir rufen dich innerhalb von 24 Stunden an."
             buttonLabel="Kostenlos Beraten lassen"
             onClick={scrollToForm}

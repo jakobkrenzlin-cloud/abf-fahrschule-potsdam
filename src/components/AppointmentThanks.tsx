@@ -6,7 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MobileStickyFooter from '@/components/MobileStickyFooter';
 import { openWhatsApp } from '@/lib/tracking';
-import { AUTUMN_OFFER_LAST_DAY } from '@/config/booking';
+import { OFFER, getOfferDateLabel } from '@/config/offer';
 import { formatLong, formatLongDate, localDay, localTime } from '@/lib/appointmentFormat';
 import { MAPS_URL, WHATSAPP_BASE } from '@/components/lp/constants';
 
@@ -58,7 +58,7 @@ function downloadIcs(start: Date) {
 
 const AppointmentThanks = ({ appointment }: { appointment: Date }) => {
   const [calOpen, setCalOpen] = useState(false);
-  const beforeOfferEnd = localDay(appointment) <= AUTUMN_OFFER_LAST_DAY;
+  const beforeOfferEnd = OFFER.endDate !== null && localDay(appointment) <= OFFER.endDate;
   const rescheduleText = `Hallo, ich habe für ${formatLongDate(appointment)} um ${localTime(appointment)} Uhr einen Anmeldetermin gebucht und möchte ihn verschieben.`;
 
   const steps = [
@@ -164,7 +164,7 @@ const AppointmentThanks = ({ appointment }: { appointment: Date }) => {
             <div className="mt-6 rounded-xl bg-brand/10 border border-brand/30 p-4 flex gap-3" role="note">
               <Info className="w-5 h-5 text-brand-strong shrink-0 mt-0.5" aria-hidden="true" />
               <p className="text-sm text-ink leading-relaxed">
-                Dein Termin liegt vor dem 31. Oktober. Meldest du dich dabei an, gilt für dich das Herbst-Angebot.
+                Dein Termin liegt innerhalb der Angebotsfrist bis {getOfferDateLabel()}. Meldest du dich dabei an, gilt für dich der {OFFER.label}.
               </p>
             </div>
           )}

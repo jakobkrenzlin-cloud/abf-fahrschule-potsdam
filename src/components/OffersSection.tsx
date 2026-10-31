@@ -1,3 +1,4 @@
+import { OFFER, OFFER_COPY, formatOfferPrice, withOfferDate } from '@/config/offer';
 import React from 'react';
 import { Check, ChevronDown, Phone, Mail, MapPin, Car, Clock, Award, Bike } from 'lucide-react';
 import { Button } from './ui/button';
@@ -36,12 +37,12 @@ const OffersSection = () => {
                 <Car className="w-7 h-7 md:w-8 md:h-8 flex-shrink-0" />
                 <div>
                   <h3 className="text-2xl font-bold">Klasse B – Grundbetrag</h3>
-                  <p className="text-white/80">Herbst-Angebot bis 31. Oktober 2026: Grundbetrag 199 €</p>
+                  <p className="text-white/80">{withOfferDate(`${OFFER.label}: Grundbetrag ${formatOfferPrice(OFFER.pkwGrundbetrag)}`)}</p>
                 </div>
               </div>
               <div className="bg-white/20 rounded-lg p-4">
-                <div className="text-3xl font-bold mb-1">199 €</div>
-                <div className="text-sm text-white/80">Herbst-Angebot - Grundbetrag</div>
+                <div className="text-3xl font-bold mb-1">{formatOfferPrice(OFFER.pkwGrundbetrag)}</div>
+                <div className="text-sm text-white/80">{OFFER.label} - Grundbetrag</div>
               </div>
             </div>
 
@@ -71,7 +72,7 @@ const OffersSection = () => {
               <div className="pt-4 space-y-3">
                 <Link to="/anmeldung">
                   <Button className="w-full bg-brand-strong hover:bg-brand-strong text-white font-semibold py-3 text-lg">
-                    Herbst-Angebot sichern
+                    {OFFER.label} sichern
                   </Button>
                 </Link>
                 <Button onClick={scrollToContact} variant="outline" className="w-full border-brand/30 text-brand-strong hover:bg-surface font-semibold py-3">
@@ -88,12 +89,12 @@ const OffersSection = () => {
                 <Bike className="w-7 h-7 md:w-8 md:h-8 flex-shrink-0" />
                 <div>
                   <h3 className="text-2xl font-bold">Motorrad-Führerschein</h3>
-                  <p className="text-white/80">Herbst-Angebot bis zum 31. Oktober 2026</p>
+                  <p className="text-white/80">{withOfferDate(OFFER.label)}</p>
                 </div>
               </div>
               <div className="bg-white/20 rounded-lg p-4">
-                <div className="text-3xl font-bold mb-1">399 €</div>
-                <div className="text-sm text-white/80">Herbst-Angebot – Grundbetrag (A1, A2, A)</div>
+                <div className="text-3xl font-bold mb-1">{formatOfferPrice(OFFER.motorradGrundbetrag)}</div>
+                <div className="text-sm text-white/80">{OFFER.label} – Grundbetrag (A1, A2, A)</div>
                 <div className="text-xs text-white/80 mt-2">Einmalige Gebühr für Verwaltung und vollständige Theorieausbildung</div>
               </div>
             </div>
@@ -116,7 +117,7 @@ const OffersSection = () => {
 
               <div className="space-y-3">
                 <h3 className="font-semibold text-white mb-3">Im Grundbetrag zusätzlich:</h3>
-                {['100 € Louis und Polo Gutschein', '1 Jahr ADAC-Mitgliedschaft'].map((item, index) => (
+                {['1 Jahr ADAC-Mitgliedschaft'].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <Check className="w-5 h-5 text-success flex-shrink-0" />
                     <span className="text-white/75">{item}</span>
@@ -132,7 +133,7 @@ const OffersSection = () => {
                 </Link>
                 <Link to="/b196">
                   <Button variant="outline" className="w-full border-brand-strong text-white hover:bg-brand-strong/20 font-semibold py-3 bg-transparent">
-                    Oder B196 für 750 € Festpreis
+                    Oder B196 für {formatOfferPrice(OFFER.b196Festpreis)} Festpreis
                   </Button>
                 </Link>
               </div>

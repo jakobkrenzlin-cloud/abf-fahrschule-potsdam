@@ -1,3 +1,4 @@
+import { OFFER, OFFER_COPY, formatOfferPrice, withOfferDate } from '@/config/offer';
 import React, { useState } from 'react';
 import LpSeo from '@/components/lp/LpSeo';
 import LpHeader from '@/components/lp/LpHeader';
@@ -54,12 +55,12 @@ const FAQS: Faq[] = [
   {
     question: 'Bin ich nach dem Formular schon angemeldet?',
     answer:
-      'Noch nicht. Anmelden kannst du dich nur persönlich bei uns im Weberpark. Nach dem Formular rufen wir dich innerhalb von 24 Stunden an und machen einen Termin aus. Der Herbstpreis von 199 € gilt, wenn du dich bis 31. Oktober vor Ort anmeldest.',
+      `Noch nicht. Anmelden kannst du dich nur persönlich bei uns im Weberpark. Nach dem Formular rufen wir dich innerhalb von 24 Stunden an und machen einen Termin aus. ${OFFER_COPY.pkwOnsite}',
   },
   {
-    question: 'Was genau ist im 199-€-Angebot enthalten?',
+    question: `Was genau ist im Grundbetrag von ${formatOfferPrice(OFFER.pkwGrundbetrag)} enthalten?`,
     answer:
-      'Enthalten sind Anmeldung und Verwaltung, der komplette Theorieunterricht, die Vorstellung zur theoretischen Prüfung, die persönliche Beratung sowie 1 Jahr ADAC-Mitgliedschaft. Fahrstunden, Lern-App und amtliche Gebühren kommen wie überall zusätzlich dazu. Das Angebot gilt bei Anmeldung vor Ort bis 31. Oktober.',
+      'Enthalten sind Anmeldung und Verwaltung, der komplette Theorieunterricht, die Vorstellung zur theoretischen Prüfung, die persönliche Beratung sowie 1 Jahr ADAC-Mitgliedschaft. Fahrstunden, Lern-App und amtliche Gebühren kommen wie überall zusätzlich dazu.',
   },
   {
     question: 'Wie lange dauert der Führerschein bei euch insgesamt?',
@@ -107,7 +108,7 @@ const CLASS_OPTIONS = [
 
 const FAQS_BOOKING: Faq[] = FAQS.map((f) =>
   f.question === 'Bin ich nach dem Formular schon angemeldet?'
-    ? { ...f, answer: 'Noch nicht. Mit dem Formular buchst du deinen Termin, angemeldet wirst du bei diesem Termin persönlich bei uns im Weberpark. Der Herbstpreis von 199 € gilt bei Anmeldung vor Ort bis 31. Oktober, unser letzter Öffnungstag davor ist Freitag, 30. Oktober.' }
+    ? { ...f, answer: `Noch nicht. Mit dem Formular buchst du deinen Termin, angemeldet wirst du bei diesem Termin persönlich bei uns im Weberpark. ${OFFER_COPY.pkwOnsite}' }
     : f,
 );
 
@@ -126,22 +127,22 @@ const Landing = () => {
   return (
     <>
       <LpSeo
-        title="Führerschein Klasse B Potsdam – Herbst-Angebot | ABF Fahrschule"
-        description="PKW-Führerschein in Potsdam-Babelsberg. Theorie in 1 Woche, faire Preise, 5,0★ bei Google. Herbst-Angebot nur bis 31. Oktober. Jetzt sichern!"
+        title={OFFER_COPY.pkwTitle}
+        description={OFFER_COPY.pkwDescription}
         path="/anmeldung"
         faqs={faqs}
       />
 
       <div className="min-h-screen bg-white font-sans">
         <LpHeader onCtaClick={scrollToForm} ctaLabel={ctaLabel} />
-        <UrgencyBar label="Herbstpreis 199 €: Anmeldung vor Ort bis 31. Oktober" />
+        <UrgencyBar label={OFFER_COPY.pkwBanner} />
 
         <main>
           <LpHero
             id={HERO_ID}
-            headline="Führerschein Klasse B in Potsdam – Herbst-Angebot: Grundbetrag 199 €"
+            headline={withOfferDate(`Führerschein Klasse B in Potsdam – Grundbetrag ${formatOfferPrice(OFFER.pkwGrundbetrag)}`)}
             headlineNote={<a href="#preisblock" className="underline underline-offset-2 hover:text-white">Fahrstunden, Prüfungsvorstellung und amtliche Gebühren kommen hinzu – alle Preise weiter unten.</a>}
-            subline="Klasse B bei der ABF Fahrschule in Babelsberg: Theorie in einer Woche, erfahrene Fahrlehrer, faire Preise. Termin anfragen, im Weberpark vorbeikommen und bis 31. Oktober vor Ort anmelden."
+            subline="Klasse B bei der ABF Fahrschule in Babelsberg: Theorie in einer Woche, erfahrene Fahrlehrer, faire Preise. Termin anfragen, im Weberpark vorbeikommen und vor Ort anmelden."
             chips={['Theorie in 1 Woche', '5,0★ bei Google', 'Keine versteckten Kosten']}
           >
             <LeadForm
@@ -152,8 +153,8 @@ const Landing = () => {
               classOptions={CLASS_OPTIONS}
               licenseClass={licenseClass}
               onLicenseClassChange={setLicenseClass}
-              whatsappText="Hallo, ich möchte einen Anmeldetermin für den Führerschein Klasse B ausmachen (Herbstpreis 199 €). Wann kann ich vorbeikommen?"
-              onsiteNote="Angemeldet wirst du beim Termin vor Ort. Der Herbstpreis von 199 € gilt bei Anmeldung bis 31. Oktober."
+              whatsappText={`Hallo, ich möchte einen Anmeldetermin für den Führerschein Klasse B ausmachen (${OFFER.label} ${formatOfferPrice(OFFER.pkwGrundbetrag)}). Wann kann ich vorbeikommen?`}
+              onsiteNote={`Angemeldet wirst du beim Termin vor Ort. ${OFFER_COPY.pkwOnsite}`}
               trackingSource="landing-pkw"
             />
           </LpHero>
@@ -161,19 +162,11 @@ const Landing = () => {
           <Steps steps={steps} />
 
           <PriceBlock
-            badge="Herbst-Angebot"
+            badge={OFFER.label}
             price={PRICES_B.basePrice}
-            title={`Grundbetrag ${PRICES_B.basePrice} (Herbst-Angebot) – das ist drin`}
-            included={[
-              'Anmeldung & Verwaltung',
-              'Kompletter Theorieunterricht',
-              
-              'Vorstellung zur theoretischen Prüfung',
-              'Persönliche Beratung',
-              '1 Jahr ADAC-Mitgliedschaft',
-            ]}
+            title={`Grundbetrag ${PRICES_B.basePrice} – das ist drin`}
+            included={OFFER_COPY.pkwIncluded}
             extras={PRICES_B.items}
-            footnote="Das Herbst-Angebot gilt bei Anmeldung vor Ort bis 31. Oktober."
           />
 
           <SocialProof reviews={REVIEWS} />
@@ -182,7 +175,7 @@ const Landing = () => {
           <LocationSection />
 
           <FinalCta
-            headline="Herbstpreis 199 €: Anmeldung vor Ort bis 31. Oktober"
+            headline={withOfferDate(`Grundbetrag ${formatOfferPrice(OFFER.pkwGrundbetrag)}: jetzt Anmeldetermin anfragen`)}
             subline="Frag jetzt deinen Anmeldetermin an. Wir rufen dich innerhalb von 24 Stunden an."
             buttonLabel="Kostenlos Beraten lassen"
             onClick={scrollToForm}

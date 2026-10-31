@@ -1,3 +1,4 @@
+import { OFFER, OFFER_COPY, formatOfferPrice, withOfferDate } from '@/config/offer';
 import React, { useState } from 'react';
 import { CheckCircle2, Info } from 'lucide-react';
 import LpSeo from '@/components/lp/LpSeo';
@@ -59,7 +60,7 @@ const FAQS: Faq[] = [
   {
     question: 'Bin ich nach dem Formular schon angemeldet?',
     answer:
-      'Noch nicht. Anmelden kannst du dich nur persönlich bei uns im Weberpark. Nach dem Formular rufen wir dich innerhalb von 24 Stunden an und machen einen Termin aus. 1 Jahr ADAC-Mitgliedschaft gibt es, wenn du dich bis 31. Oktober vor Ort anmeldest.',
+      'Noch nicht. Anmelden kannst du dich nur persönlich bei uns im Weberpark. Nach dem Formular rufen wir dich innerhalb von 24 Stunden an und machen einen Termin aus.',
   },
   {
     question: 'Was genau ist B196?',
@@ -105,7 +106,7 @@ const FAQS: Faq[] = [
 
 const FAQS_BOOKING: Faq[] = FAQS.map((f) =>
   f.question === 'Bin ich nach dem Formular schon angemeldet?'
-    ? { ...f, answer: 'Noch nicht. Mit dem Formular buchst du deinen Termin, angemeldet wirst du bei diesem Termin persönlich bei uns im Weberpark. Die ADAC-Mitgliedschaft gibt es bei Anmeldung vor Ort bis 31. Oktober, unser letzter Öffnungstag davor ist Freitag, 30. Oktober.' }
+    ? { ...f, answer: 'Noch nicht. Mit dem Formular buchst du deinen Termin, angemeldet wirst du bei diesem Termin persönlich bei uns im Weberpark.' }
     : f,
 );
 
@@ -132,8 +133,8 @@ const B196 = () => {
   return (
     <>
       <LpSeo
-        title="B196 Potsdam – 125er fahren mit Autoführerschein | ABF Fahrschule"
-        description="Mit dem B-Führerschein 125er fahren – ohne zusätzliche Prüfung. B196 in Potsdam-Babelsberg für 750 €. 5,0★ bei Google. Jetzt Platz sichern."
+        title={OFFER_COPY.b196Title}
+        description={OFFER_COPY.b196Description}
         path="/b196"
         faqs={faqs}
       />
@@ -145,21 +146,21 @@ const B196 = () => {
           <LpHero
             id={HERO_ID}
             headline="125er fahren – mit deinem Autoführerschein, ohne neue Prüfung"
-            subline="Die Schlüsselzahl B196 erweitert deinen bestehenden Führerschein Klasse B. Keine Theorie- und keine Praxisprüfung, nur eine kompakte Schulung. Bei ABF in Potsdam für 750 € Festpreis."
+            subline={`Die Schlüsselzahl B196 erweitert deinen bestehenden Führerschein Klasse B. Keine Theorie- und keine Praxisprüfung, nur eine kompakte Schulung. Bei ABF in Potsdam für ${formatOfferPrice(OFFER.b196Festpreis)} Festpreis.`}
             chips={['Keine Prüfung nötig', 'In 2–3 Wochen fertig', 'Fester Komplettpreis']}
           >
             <LeadForm
               id={FORM_ID}
               variant={variant}
-              offerLine="Für die ADAC-Mitgliedschaft: Termin bis Freitag, 30. Oktober wählen."
-              offerTag="Bonus"
+              offerLine=""
+              offerTag=""
               ctaLabel="Kostenlos Beraten lassen"
               source="landingpage-b196"
               classOptions={CLASS_OPTIONS}
               licenseClass={licenseClass}
               onLicenseClassChange={setLicenseClass}
-              whatsappText="Hallo, ich möchte einen Anmeldetermin für die B196-Schulung ausmachen (750 € Festpreis). Wann kann ich vorbeikommen?"
-              onsiteNote="Angemeldet wirst du beim Termin vor Ort. 1 Jahr ADAC-Mitgliedschaft gibt es bei Anmeldung bis 31. Oktober."
+              whatsappText={`Hallo, ich möchte einen Anmeldetermin für die B196-Schulung ausmachen (${formatOfferPrice(OFFER.b196Festpreis)} Festpreis). Wann kann ich vorbeikommen?`}
+              onsiteNote="Angemeldet wirst du beim Termin vor Ort."
               trackingSource="landing-b196"
             />
           </LpHero>
@@ -256,17 +257,9 @@ const B196 = () => {
 
           <PriceBlock
             badge="Festpreis"
-            price="750 €"
-            title="750 € Festpreis – alles drin"
-            included={[
-              '4 Einheiten Theorie',
-              '5 Einheiten Praxis auf 125er',
-              'Nutzung unserer Schulungsmotorräder',
-              'Bescheinigung für die Führerscheinstelle',
-              'Keine Prüfungsgebühren (weil keine Prüfung nötig)',
-              '1 Jahr ADAC-Mitgliedschaft',
-            ]}
-            note="1 Jahr ADAC-Mitgliedschaft gibt es bei Anmeldung vor Ort bis 31. Oktober 2026 dazu."
+            price={formatOfferPrice(OFFER.b196Festpreis)}
+            title={`${formatOfferPrice(OFFER.b196Festpreis)} Festpreis – alles drin`}
+            included={OFFER_COPY.b196Included}
             closing="Fester Komplettpreis. Keine Nachberechnung, keine Überraschungen."
           />
 
@@ -276,7 +269,7 @@ const B196 = () => {
           <LocationSection />
 
           <FinalCta
-            headline="B196 bei ABF: 750 € Festpreis. Jetzt Termin anfragen."
+            headline={`B196 bei ABF: ${formatOfferPrice(OFFER.b196Festpreis)} Festpreis. Jetzt Termin anfragen.`}
             subline="Kompakte Schulung, keine Prüfung, danach direkt auf die 125er."
             buttonLabel="Kostenlos Beraten lassen"
             onClick={scrollToForm}

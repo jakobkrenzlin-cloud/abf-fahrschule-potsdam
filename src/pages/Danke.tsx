@@ -7,14 +7,17 @@ import Footer from '@/components/Footer';
 import MobileStickyFooter from '@/components/MobileStickyFooter';
 import { fireConversion, CONVERSION_LABELS, callPhone, openWhatsApp } from '@/lib/tracking';
 import AppointmentThanks from '@/components/AppointmentThanks';
-import { MAPS_URL, OFFER_END, PHONE_RAW, WHATSAPP_BASE } from '@/components/lp/constants';
+import { MAPS_URL, PHONE_RAW, WHATSAPP_BASE } from '@/components/lp/constants';
+
+import { OFFER, getOfferDeadline, withOfferDate } from '@/config/offer';
 
 const WHATSAPP_TEXT =
   'Hallo, ich habe gerade das Formular auf eurer Website ausgefüllt und möchte meinen Anmeldetermin ausmachen. Ich kann am ';
 
 const Danke = () => {
   const location = useLocation();
-  const offerActive = Date.now() <= OFFER_END.getTime();
+  const deadline = getOfferDeadline();
+  const offerActive = deadline !== null && Date.now() <= deadline.getTime();
   const [appointment] = useState<Date | null>(() => {
     const st = location.state as { lead?: boolean; appointment?: string } | null;
     if (st?.lead !== true || typeof st.appointment !== 'string') return null;
@@ -95,8 +98,7 @@ const Danke = () => {
             <div className="mt-8 rounded-xl bg-warning/10 border border-warning/40 p-4 flex gap-3" role="note">
               <AlertCircle className="w-5 h-5 text-warning shrink-0 mt-0.5" aria-hidden="true" />
               <p className="text-sm text-ink leading-relaxed">
-                <strong>Wichtig:</strong> Der Herbstpreis gilt nur bei Anmeldung vor Ort bis 31. Oktober. Plan deinen
-                Termin also rechtzeitig vor dem 31. Oktober ein.
+                <strong>Wichtig:</strong> {withOfferDate(`Der ${OFFER.label} gilt bei Anmeldung vor Ort`)}. Plan deinen Termin rechtzeitig ein.
               </p>
             </div>
           )}

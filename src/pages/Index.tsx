@@ -1,3 +1,4 @@
+import { OFFER_COPY } from '@/config/offer';
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import SiteLayout from '../components/SiteLayout';
@@ -16,10 +17,10 @@ import { SITE_URL } from '../components/lp/constants';
 const Index = () => (
   <SiteLayout stickyMode="form" formAnchor="contact">
     <Helmet>
-      <title>Fahrschule Potsdam-Babelsberg – Klasse B & Motorrad | ABF Fahrschule</title>
+      <title>{OFFER_COPY.homeTitle}</title>
       <meta
         name="description"
-        content="Führerschein in Potsdam-Babelsberg: Theorie in einer Woche, erfahrene Fahrlehrer, 5,0★ bei Google. Jetzt kostenlos beraten lassen."
+        content={OFFER_COPY.homeDescription}
       />
       <link rel="canonical" href={`${SITE_URL}/`} />
       <script type="application/ld+json">

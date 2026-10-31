@@ -1,3 +1,4 @@
+import { OFFER, OFFER_COPY, formatOfferPrice, withOfferDate } from '@/config/offer';
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -25,8 +26,8 @@ const PriceList = ({ title, items }: { title: string; items: PriceItem[] }) => (
 const Preise = () => {
   return <>
       <Helmet>
-        <title>Faire Preise für deinen Führerschein | ABF Fahrschule Potsdam</title>
-        <meta name="description" content="Transparente Preise für Führerschein Klasse B in Potsdam-Babelsberg. Zusätzlich: Kompletter Theorieunterricht & 1 Jahr ADAC. Jetzt Angebot sichern!" />
+        <title>{OFFER_COPY.pricesTitle}</title>
+        <meta name="description" content={OFFER_COPY.pricesDescription} />
         <meta name="keywords" content="Fahrschule Potsdam Preise, Führerschein Kosten Potsdam, Fahrschule Babelsberg Preise, Führerschein Klasse B Kosten" />
         <link rel="canonical" href={`${SITE_URL}/preise`} />
         <script type="application/ld+json">
@@ -74,7 +75,7 @@ const Preise = () => {
           {/* Vollständige Preisliste gemäß § 32 FahrlG */}
           <div className="bg-card border-2 border-primary rounded-2xl p-8 mb-8 shadow-lg">
             <div className="text-center mb-8">
-              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">Herbst-Angebot – Jetzt sparen!</div>
+              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">{withOfferDate(`${OFFER.label} – jetzt sparen!`)}</div>
               <h2 className="text-3xl font-bold text-foreground mb-2">Preisliste Führerschein </h2>
               <p className="text-muted-foreground">Alle Preise inkl. MwSt. gemäß § 32 FahrlG</p>
             </div>
@@ -91,7 +92,7 @@ const Preise = () => {
                     </p>
                   </div>
                   <div className="text-right">
-                    <div className="text-sm text-muted-foreground line-through">statt 479 €</div>
+                    <div className="text-sm text-muted-foreground line-through">statt {formatOfferPrice(OFFER.pkwRegulaer)}</div>
                     <div className="text-4xl font-bold text-primary">{PRICES_B.basePrice}</div>
                   </div>
                 </div>
@@ -118,7 +119,7 @@ const Preise = () => {
                     </p>
                   </div>
                   <div className="text-right">
-                    <div className="text-sm text-muted-foreground line-through">statt 650 €</div>
+                    <div className="text-sm text-muted-foreground line-through">statt {formatOfferPrice(OFFER.motorradRegulaer)}</div>
                     <div className="text-4xl font-bold text-primary">{PRICES_A.basePrice}</div>
                   </div>
                 </div>
@@ -128,10 +129,6 @@ const Preise = () => {
                     <li className="flex items-center gap-2">
                       <Check className="text-primary flex-shrink-0" size={16} />
                       Erste-Hilfe-Kurs
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="text-primary flex-shrink-0" size={16} />
-                      100 € Louis und Polo Gutschein (Motorradzubehör)
                     </li>
                     <li className="flex items-center gap-2">
                       <Check className="text-primary flex-shrink-0" size={16} />

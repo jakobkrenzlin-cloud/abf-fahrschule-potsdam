@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Bike, ArrowRight } from 'lucide-react';
 import LpSeo from '@/components/lp/LpSeo';
 import LpHeader from '@/components/lp/LpHeader';
@@ -123,7 +124,18 @@ const FAQS: Faq[] = [
   {
     question: 'Ich habe schon Klasse B – bringt mir das etwas?',
     answer:
-      'Ja. Wenn du mindestens 25 bist und deinen Autoführerschein seit mindestens 5 Jahren hast, kannst du mit der Schlüsselzahl B196 ohne Prüfung 125er fahren. Alle Infos dazu findest du auf unserer B196-Seite unter /b196.',
+      'Ja. Wenn du mindestens 25 bist und deinen Autoführerschein seit mindestens 5 Jahren hast, kannst du mit der Schlüsselzahl B196 ohne Prüfung 125er fahren. Alle Infos dazu findest du auf unserer B196-Seite.',
+    answerNode: (
+      <>
+        Ja. Wenn du mindestens 25 bist und deinen Autoführerschein seit mindestens 5 Jahren hast,
+        kannst du mit der Schlüsselzahl B196 ohne Prüfung 125er fahren. Alle Infos dazu findest du
+        auf unserer{' '}
+        <Link to="/b196" className="text-brand-strong underline underline-offset-2">
+          B196-Seite
+        </Link>
+        .
+      </>
+    ),
   },
 ];
 

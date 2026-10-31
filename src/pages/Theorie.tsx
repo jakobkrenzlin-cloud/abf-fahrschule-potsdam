@@ -76,7 +76,7 @@ const Theorie = () => {
             </div>
             <div className="text-center pt-6 border-t border-border">
               <Link to="/anmeldung">
-                <Button size="lg" className="text-lg px-8">
+                <Button size="lg" className="text-lg px-8 h-auto min-h-11 whitespace-normal">
                   Jetzt Theorie-Kursplatz sichern
                 </Button>
               </Link>

@@ -153,6 +153,7 @@ const AnmeldungMotorrad = () => {
   const faqs = isBooking ? FAQS_BOOKING : FAQS;
   const ctaLabel = 'Kostenlos Beraten lassen';
   const [licenseClass, setLicenseClass] = useState('a2');
+  const whatsappText = `Hallo, ich möchte einen Anmeldetermin für den Motorradführerschein ausmachen (Grundbetrag ${formatOfferPrice(OFFER.motorradGrundbetrag)}). Wann kann ich vorbeikommen?`;
 
   const scrollToForm = () => {
     document.getElementById(FORM_ID)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -186,6 +187,7 @@ const AnmeldungMotorrad = () => {
               '5,0★ bei Google',
               'Im Frühjahr sofort auf die Straße',
             ]}
+            directContact={{ whatsappText, trackingSource: 'landing-motorrad' }}
           >
             <LeadForm
               id={FORM_ID}
@@ -195,7 +197,7 @@ const AnmeldungMotorrad = () => {
               classOptions={CLASS_OPTIONS}
               licenseClass={licenseClass}
               onLicenseClassChange={setLicenseClass}
-              whatsappText={`Hallo, ich möchte einen Anmeldetermin für den Motorradführerschein ausmachen (Grundbetrag ${formatOfferPrice(OFFER.motorradGrundbetrag)}). Wann kann ich vorbeikommen?`}
+              whatsappText={whatsappText}
               onsiteNote={`Angemeldet wirst du beim Termin vor Ort. ${OFFER_COPY.motorradOnsite}`}
               trackingSource="landing-motorrad"
             />
@@ -241,7 +243,7 @@ const AnmeldungMotorrad = () => {
           <PriceBlock
             badge={OFFER.label}
             price={PRICES_A.basePrice}
-            title={`Grundbetrag ${PRICES_A.basePrice} – das ist drin`}
+            title={`${OFFER.label}: Grundbetrag ${PRICES_A.basePrice} – das ist drin`}
             subtitle="Einmalige Gebühr für Verwaltung und vollständige Theorieausbildung"
             includedBase={[
               'Kompletter Theorieunterricht',
@@ -257,7 +259,7 @@ const AnmeldungMotorrad = () => {
           <LocationSection />
 
           <FinalCta
-            headline={withOfferDate(`Grundbetrag ${formatOfferPrice(OFFER.motorradGrundbetrag)}: jetzt Anmeldetermin anfragen`)}
+            headline={withOfferDate(`${OFFER.label}: Grundbetrag ${formatOfferPrice(OFFER.motorradGrundbetrag)} – jetzt Anmeldetermin anfragen`)}
             subline="Theorie jetzt, Fahrspaß im Frühjahr. Frag deinen Anmeldetermin an, wir rufen dich innerhalb von 24 Stunden an."
             buttonLabel="Kostenlos Beraten lassen"
             onClick={scrollToForm}

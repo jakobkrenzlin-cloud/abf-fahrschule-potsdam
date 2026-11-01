@@ -119,6 +119,7 @@ const Landing = () => {
   const faqs = isBooking ? FAQS_BOOKING : FAQS;
   const ctaLabel = 'Kostenlos Beraten lassen';
   const [licenseClass, setLicenseClass] = useState('b');
+  const whatsappText = `Hallo, ich möchte einen Anmeldetermin für den Führerschein Klasse B ausmachen (${OFFER.label} ${formatOfferPrice(OFFER.pkwGrundbetrag)}). Wann kann ich vorbeikommen?`;
 
   const scrollToForm = () => {
     document.getElementById(FORM_ID)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -140,10 +141,11 @@ const Landing = () => {
         <main>
           <LpHero
             id={HERO_ID}
-            headline={withOfferDate(`Führerschein Klasse B in Potsdam – Grundbetrag ${formatOfferPrice(OFFER.pkwGrundbetrag)}`)}
+            headline={withOfferDate(`Führerschein Klasse B in Potsdam – ${OFFER.label}: Grundbetrag ${formatOfferPrice(OFFER.pkwGrundbetrag)}`)}
             headlineNote={<a href="#preisblock" className="underline underline-offset-2 hover:text-white">Fahrstunden, Prüfungsvorstellung und amtliche Gebühren kommen hinzu – alle Preise weiter unten.</a>}
             subline="Klasse B bei der ABF Fahrschule in Babelsberg: Theorie in einer Woche, erfahrene Fahrlehrer, faire Preise. Termin anfragen, im Weberpark vorbeikommen und vor Ort anmelden."
             chips={['Theorie in 1 Woche', '5,0★ bei Google', 'Keine versteckten Kosten']}
+            directContact={{ whatsappText, trackingSource: 'landing-pkw' }}
           >
             <LeadForm
               id={FORM_ID}
@@ -153,7 +155,7 @@ const Landing = () => {
               classOptions={CLASS_OPTIONS}
               licenseClass={licenseClass}
               onLicenseClassChange={setLicenseClass}
-              whatsappText={`Hallo, ich möchte einen Anmeldetermin für den Führerschein Klasse B ausmachen (${OFFER.label} ${formatOfferPrice(OFFER.pkwGrundbetrag)}). Wann kann ich vorbeikommen?`}
+              whatsappText={whatsappText}
               onsiteNote={`Angemeldet wirst du beim Termin vor Ort. ${OFFER_COPY.pkwOnsite}`}
               trackingSource="landing-pkw"
             />
@@ -164,7 +166,7 @@ const Landing = () => {
           <PriceBlock
             badge={OFFER.label}
             price={PRICES_B.basePrice}
-            title={`Grundbetrag ${PRICES_B.basePrice} – das ist drin`}
+            title={`${OFFER.label}: Grundbetrag ${PRICES_B.basePrice} – das ist drin`}
             included={OFFER_COPY.pkwIncluded}
             extras={PRICES_B.items}
           />
@@ -175,7 +177,7 @@ const Landing = () => {
           <LocationSection />
 
           <FinalCta
-            headline={withOfferDate(`Grundbetrag ${formatOfferPrice(OFFER.pkwGrundbetrag)}: jetzt Anmeldetermin anfragen`)}
+            headline={withOfferDate(`${OFFER.label}: Grundbetrag ${formatOfferPrice(OFFER.pkwGrundbetrag)} – jetzt Anmeldetermin anfragen`)}
             subline="Frag jetzt deinen Anmeldetermin an. Wir rufen dich innerhalb von 24 Stunden an."
             buttonLabel="Kostenlos Beraten lassen"
             onClick={scrollToForm}

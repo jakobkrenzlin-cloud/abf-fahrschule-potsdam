@@ -98,7 +98,7 @@ const Danke = () => {
             <div className="mt-8 rounded-xl bg-warning/10 border border-warning/40 p-4 flex gap-3" role="note">
               <AlertCircle className="w-5 h-5 text-warning shrink-0 mt-0.5" aria-hidden="true" />
               <p className="text-sm text-ink leading-relaxed">
-                <strong>Wichtig:</strong> {withOfferDate(`Der ${OFFER.label} gilt bei Anmeldung vor Ort`)}. Plan deinen Termin rechtzeitig ein.
+                <strong>Wichtig:</strong> {withOfferDate(`Das ${OFFER.label} gilt bei Anmeldung vor Ort`)}. Plan deinen Termin rechtzeitig ein.
               </p>
             </div>
           )}

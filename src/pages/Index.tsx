@@ -18,6 +18,10 @@ const Index = () => (
   <SiteLayout stickyMode="form" formAnchor="contact">
     <Helmet>
       <title>{OFFER_COPY.homeTitle}</title>
+      <meta property="og:title" content={OFFER_COPY.homeTitle} />
+      <meta property="og:description" content={OFFER_COPY.homeDescription} />
+      <meta name="twitter:title" content={OFFER_COPY.homeTitle} />
+      <meta name="twitter:description" content={OFFER_COPY.homeDescription} />
       <meta
         name="description"
         content={OFFER_COPY.homeDescription}

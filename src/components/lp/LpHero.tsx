@@ -1,7 +1,9 @@
 import React from 'react';
-import { Check, MapPin } from 'lucide-react';
+import { Check, MapPin, Phone, MessageCircle } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { callPhone, openWhatsApp } from '@/lib/tracking';
 import { Stars } from './SocialProof';
-import { ADDRESS_LINE, RATING_VALUE, REVIEW_COUNT } from './constants';
+import { ADDRESS_LINE, RATING_VALUE, REVIEW_COUNT, PHONE_RAW, WHATSAPP_BASE } from './constants';
 
 interface LpHeroProps {
   id: string;
@@ -9,10 +11,11 @@ interface LpHeroProps {
   headlineNote?: React.ReactNode;
   subline: string;
   chips: string[];
+  directContact?: { whatsappText: string; trackingSource: string };
   children: React.ReactNode; // Formular
 }
 
-const LpHero: React.FC<LpHeroProps> = ({ id, headline, headlineNote, subline, chips, children }) => (
+const LpHero: React.FC<LpHeroProps> = ({ id, headline, headlineNote, subline, chips, directContact, children }) => (
   <section id={id} className="bg-ink section-y">
     <div className="container-page grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
       <div>
@@ -40,6 +43,19 @@ const LpHero: React.FC<LpHeroProps> = ({ id, headline, headlineNote, subline, ch
             </li>
           ))}
         </ul>
+
+        {directContact && (
+          <div className="mt-4 flex flex-wrap gap-3" aria-label="Direkter Kontakt">
+            <Button type="button" variant="secondary" size="sm" className="text-primary-foreground border-primary-foreground/40 hover:bg-primary-foreground/10"
+              onClick={() => callPhone(PHONE_RAW, directContact.trackingSource)}>
+              <Phone aria-hidden="true" /> Anrufen
+            </Button>
+            <Button type="button" variant="secondary" size="sm" className="text-primary-foreground border-primary-foreground/40 hover:bg-primary-foreground/10"
+              onClick={() => openWhatsApp(`${WHATSAPP_BASE}?text=${encodeURIComponent(directContact.whatsappText)}`, directContact.trackingSource)}>
+              <MessageCircle aria-hidden="true" /> WhatsApp
+            </Button>
+          </div>
+        )}
 
         <p className="mt-6 flex items-start gap-2 text-white/70">
           <MapPin className="w-5 h-5 text-brand shrink-0 mt-0.5" aria-hidden="true" />

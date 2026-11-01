@@ -30,19 +30,6 @@ const LpHero: React.FC<LpHeroProps> = ({ id, headline, headlineNote, subline, ch
           {headline}
         </h1>
         {headlineNote && <p className="mt-3 text-sm text-white/70 leading-relaxed max-w-xl">{headlineNote}</p>}
-        <p className="mt-5 text-lg text-white/80 leading-relaxed max-w-xl">{subline}</p>
-
-        <ul className="mt-6 flex flex-wrap gap-2.5">
-          {chips.map((chip) => (
-            <li
-              key={chip}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-brand/15 border border-brand/40 text-white text-sm font-medium"
-            >
-              <Check className="w-4 h-4 text-brand" aria-hidden="true" />
-              {chip}
-            </li>
-          ))}
-        </ul>
 
         {directContact && (
           <div className="mt-4 flex flex-wrap gap-3" aria-label="Direkter Kontakt">
@@ -56,6 +43,20 @@ const LpHero: React.FC<LpHeroProps> = ({ id, headline, headlineNote, subline, ch
             </Button>
           </div>
         )}
+
+        <p className="mt-5 text-lg text-white/80 leading-relaxed max-w-xl">{subline}</p>
+
+        <ul className="mt-6 flex flex-wrap gap-2.5">
+          {chips.map((chip) => (
+            <li
+              key={chip}
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-brand/15 border border-brand/40 text-white text-sm font-medium"
+            >
+              <Check className="w-4 h-4 text-brand" aria-hidden="true" />
+              {chip}
+            </li>
+          ))}
+        </ul>
 
         <p className="mt-6 flex items-start gap-2 text-white/70">
           <MapPin className="w-5 h-5 text-brand shrink-0 mt-0.5" aria-hidden="true" />

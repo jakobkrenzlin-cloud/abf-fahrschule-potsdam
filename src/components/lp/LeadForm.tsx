@@ -399,7 +399,7 @@ type Step = 'pick' | 'details' | 'callback';
 const BookingLeadForm: React.FC<LeadFormProps> = (props) => {
   const { id = 'lead-form', title = 'Dein Anmeldetermin im Weberpark', source, classOptions, licenseClass,
     onLicenseClassChange, whatsappText, trackingSource, onsiteNote,
-    offerLine = withOfferDate('Termin für den Aktionspreis wählen'), offerTag = OFFER.label } = props;
+    offerLine = withOfferDate(`Termin für das ${OFFER.label} wählen`), offerTag = OFFER.label } = props;
   const navigate = useNavigate();
   const { toast } = useToast();
   const f = useLeadFields();

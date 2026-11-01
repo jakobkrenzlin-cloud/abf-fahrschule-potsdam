@@ -1,3 +1,6 @@
 - [x] Zentrale Angebotskonfiguration und Datums-/Countdown-Steuerung ergänzen.
 - [x] Angebotstexte, Preise, Metadaten und strukturierte Daten websiteweit aktualisieren.
 - [x] Acht Regeltests und sieben öffentliche Seiten auf Computer/Handy geprüft; Gestaltung, Formularversand und Tracking unverändert.
+- [ ] Winter-Angebot websiteweit benennen; Preise unverändert und Streichpreise entfernen.
+- [ ] Google-/Social-Texte ohne B-/Motorrad-Eurobeträge synchronisieren.
+- [ ] Direkte Kontaktbuttons auf beiden Landingpages ergänzen und mobil samt Tracking prüfen.

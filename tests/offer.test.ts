@@ -2,13 +2,11 @@ import { describe, expect, test } from 'bun:test';
 import { OFFER, OFFER_COPY, getOfferCountdown, getOfferDateLabel, getOfferDeadline, withOfferDate } from '../src/config/offer';
 
 describe('Aktuelle Angebotsregeln', () => {
-  test('Klasse B kostet 219 Euro statt 479 Euro', () => {
+  test('Klasse B kostet unverändert 219 Euro', () => {
     expect(OFFER.pkwGrundbetrag).toBe(219);
-    expect(OFFER.pkwRegulaer).toBe(479);
   });
-  test('Motorrad kostet 399 Euro statt 650 Euro', () => {
+  test('Motorrad kostet unverändert 399 Euro', () => {
     expect(OFFER.motorradGrundbetrag).toBe(399);
-    expect(OFFER.motorradRegulaer).toBe(650);
   });
   test('B196 kostet weiterhin 750 Euro', () => {
     expect(OFFER.b196Festpreis).toBe(750);

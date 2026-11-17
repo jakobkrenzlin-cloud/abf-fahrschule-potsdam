@@ -18,9 +18,9 @@ const Footer = () => {
             <img
               src="/lovable-uploads/be0365c9-6495-4129-8061-539de20befe7.png"
               alt="ABF Fahrschule Potsdam"
-              width={180}
-              height={64}
-              className="h-16 w-auto"
+              width={225}
+              height={80}
+              className="h-20 w-auto"
               loading="lazy"
             />
             <p className="text-white/70 text-small leading-relaxed">

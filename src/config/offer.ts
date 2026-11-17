@@ -74,5 +74,5 @@ export const OFFER_COPY = {
     'Keine Prüfungsgebühren (weil keine Prüfung nötig)',
   ],
   motorradAdditional: ['Anmeldung & Verwaltung', 'Prüfungsvorbereitung', '1 Jahr ADAC-Mitgliedschaft'],
-  pkwIncluded: ['Anmeldung & Verwaltung', 'Kompletter Theorieunterricht', 'Vorstellung zur theoretischen Prüfung', 'Persönliche Beratung', '1 Jahr ADAC-Mitgliedschaft'],
+  pkwIncluded: ['Anmeldung & Verwaltung', '14 × 90 Min. Theorieunterricht', 'Vorstellung zur theoretischen Prüfung', 'Persönliche Beratung', 'Erste-Hilfe-Kurs'],
 };

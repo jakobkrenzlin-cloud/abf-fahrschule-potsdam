@@ -76,6 +76,14 @@ const PriceBlock: React.FC<PriceBlockProps> = ({
             </>
           )}
 
+          {highlight && (
+            <div className="mt-6 rounded-xl bg-brand-dark p-5 text-primary-foreground">
+              <p className="text-sm font-semibold text-primary-foreground/75">{highlight.title}</p>
+              <p className="mt-1 text-2xl font-extrabold">{highlight.price}</p>
+              <p className="mt-2 text-sm leading-relaxed text-primary-foreground/75">{highlight.description}</p>
+            </div>
+          )}
+
           {includedBase && includedBase.length > 0 && (
             <div className="mt-6">
               <p className="font-bold text-brand-dark">Im Grundbetrag enthalten:</p>

@@ -63,7 +63,7 @@ export const OFFER_COPY = {
   b196Title: 'B196 Potsdam – 125er fahren mit Autoführerschein | ABF Fahrschule',
   b196Description: `Mit dem B-Führerschein 125er fahren – ohne zusätzliche Prüfung. B196 in Potsdam-Babelsberg für ${formatOfferPrice(OFFER.b196Festpreis)}. 5,0★ bei Google. Jetzt Platz sichern.`,
   homeTitle: withOfferDate('Fahrschule Potsdam-Babelsberg – Klasse B & Motorrad | ABF Fahrschule'),
-  homeDescription: withOfferDate(`Führerschein in Potsdam-Babelsberg: ${OFFER.label} für Klasse B und Motorrad, Theorie in einer Woche, erfahrene Fahrlehrer, 5,0★ bei Google. Jetzt kostenlos beraten lassen.`),
+  homeDescription: withOfferDate(`Führerschein in Potsdam-Babelsberg: ${OFFER.label} für Klasse B mit Erste-Hilfe-Kurs und B197-Vorteil sowie Motorrad-Angebot. Theorie in einer Woche, 5,0★ bei Google.`),
   pricesTitle: withOfferDate('Faire Preise für deinen Führerschein | ABF Fahrschule Potsdam'),
   pricesDescription: withOfferDate(`Transparente Preise in Potsdam-Babelsberg: alle Entgelte für Klasse B und Motorrad auf einen Blick, kompletter Theorieunterricht im Grundbetrag. Jetzt ${OFFER.label} ansehen.`),
   b196Included: [

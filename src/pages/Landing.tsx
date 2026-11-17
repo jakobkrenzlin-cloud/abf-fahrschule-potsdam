@@ -142,7 +142,7 @@ const Landing = () => {
           <LpHero
             id={HERO_ID}
             headline={withOfferDate(`Führerschein Klasse B in Potsdam – ${OFFER.label}: Grundbetrag ${formatOfferPrice(OFFER.pkwGrundbetrag)}`)}
-            headlineNote={<a href="#preisblock" className="underline underline-offset-2 hover:text-white">Fahrstunden, Prüfungsvorstellung und amtliche Gebühren kommen hinzu – alle Preise weiter unten.</a>}
+            headlineNote={<a href="#preisblock" className="underline underline-offset-2 hover:text-white">Weitere Fahrstunden, Lern-App und amtliche Gebühren kommen hinzu – alle Preise weiter unten.</a>}
             subline="Klasse B bei der ABF Fahrschule in Babelsberg: Theorie in einer Woche, erfahrene Fahrlehrer, faire Preise. Termin anfragen, im Weberpark vorbeikommen und vor Ort anmelden."
             chips={['Theorie in 1 Woche', '5,0★ bei Google', 'Keine versteckten Kosten']}
             directContact={{ whatsappText, trackingSource: 'landing-pkw' }}

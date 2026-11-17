@@ -46,7 +46,7 @@ describe('Aktuelle Angebotsregeln', () => {
     expect(OFFER_COPY.motorradAdditional).toContain('1 Jahr ADAC-Mitgliedschaft');
     expect(OFFER_COPY.motorradAdditional.some((item) => /gutsche[i]n/i.test(item))).toBe(false);
   });
-  test('Das PKW-Angebot enthält 14 Theoriestunden und Erste Hilfe, aber kein ADAC', () => {
+  test('Das PKW-Angebot enthält 14 Theorieeinheiten und Erste Hilfe, aber kein ADAC', () => {
     expect(OFFER_COPY.pkwIncluded).toEqual([
       'Anmeldung & Verwaltung',
       '14 × 90 Min. Theorieunterricht',

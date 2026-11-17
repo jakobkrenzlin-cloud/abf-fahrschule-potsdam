@@ -5,6 +5,10 @@ interface OfferFlyerProps {
   className?: string;
 }
 
+const flyerUrl = import.meta.env.DEV
+  ? `https://abf-fahrschule.de${flyerAsset.url}`
+  : flyerAsset.url;
+
 const OfferFlyer = ({ className = '' }: OfferFlyerProps) => (
   <figure className={`mx-auto max-w-xl overflow-hidden rounded-xl border border-border bg-card shadow-sm ${className}`}>
     <a

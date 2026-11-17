@@ -14,6 +14,12 @@ interface PriceBlockProps {
   note?: string;
   closing?: string;
   footnote?: string;
+  savings?: string;
+  highlight?: {
+    title: string;
+    price: string;
+    description: string;
+  };
 }
 
 const PriceBlock: React.FC<PriceBlockProps> = ({

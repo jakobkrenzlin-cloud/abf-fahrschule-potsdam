@@ -2,13 +2,24 @@ import { fromZonedTime } from 'date-fns-tz';
 
 export const OFFER = {
   label: 'Winter-Angebot',
-  pkwGrundbetrag: 219,
+  pkwGrundbetrag: 299,
+  pkwPreviousGrundbetrag: 599,
+  b197Schaltstunden: 10,
+  b197SchaltstundenMinuten: 45,
+  b197SchaltstundenPreis: 0,
+  b197PreviousSchaltstundenPreis: 732,
   motorradGrundbetrag: 399,
   b196Festpreis: 750,
   endDate: null as string | null,
 };
 
 export const formatOfferPrice = (price: number) => `${price.toLocaleString('de-DE')} €`;
+
+export const PKW_OFFER_SAVINGS = OFFER.pkwPreviousGrundbetrag - OFFER.pkwGrundbetrag
+  + OFFER.b197PreviousSchaltstundenPreis - OFFER.b197SchaltstundenPreis;
+export const PKW_B197_BENEFIT = `${OFFER.b197Schaltstunden} × ${OFFER.b197SchaltstundenMinuten} Min. Schaltstunden für ${formatOfferPrice(OFFER.b197SchaltstundenPreis)}`;
+export const PKW_SAVINGS_LABEL = `${formatOfferPrice(PKW_OFFER_SAVINGS)} Gesamtvorteil bei B197*`;
+export const PKW_SAVINGS_NOTE = `*Rechenbeispiel für B197: bisheriger Grundbetrag ${formatOfferPrice(OFFER.pkwPreviousGrundbetrag)} statt jetzt ${formatOfferPrice(OFFER.pkwGrundbetrag)} = ${formatOfferPrice(OFFER.pkwPreviousGrundbetrag - OFFER.pkwGrundbetrag)} Vorteil; dazu ${OFFER.b197Schaltstunden} Schaltstunden à ${OFFER.b197SchaltstundenMinuten} Min. für ${formatOfferPrice(OFFER.b197SchaltstundenPreis)} statt bisher ${formatOfferPrice(OFFER.b197PreviousSchaltstundenPreis)} = ${formatOfferPrice(OFFER.b197PreviousSchaltstundenPreis)} Vorteil. Gesamtvorteil: ${formatOfferPrice(PKW_OFFER_SAVINGS)}.`;
 
 export function getOfferDeadline(endDate: string | null = OFFER.endDate) {
   if (!endDate) return null;

@@ -168,7 +168,15 @@ const Landing = () => {
             price={PRICES_B.basePrice}
             title={`${OFFER.label}: Grundbetrag ${PRICES_B.basePrice} – das ist drin`}
             included={OFFER_COPY.pkwIncluded}
+            savings={PKW_SAVINGS_LABEL}
+            highlight={{
+              title: 'B197: Automatik + Schaltung',
+              price: PKW_B197_BENEFIT,
+              description: 'Die gesetzlich vorgeschriebenen Schaltstunden für deine B197-Ausbildung sind im Winter-Angebot enthalten.',
+            }}
             extras={PRICES_B.items}
+            closing="Weitere Fahrstunden, die Lern-App und amtliche Gebühren (TÜV/DEKRA, Führerscheinstelle, Sehtest/Passfoto) kommen hinzu."
+            footnote={PKW_SAVINGS_NOTE}
           />
 
           <SocialProof reviews={REVIEWS} />

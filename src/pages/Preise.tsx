@@ -1,5 +1,6 @@
-import { OFFER, OFFER_COPY, PKW_B197_BENEFIT, PKW_SAVINGS_LABEL, PKW_SAVINGS_NOTE } from '@/config/offer';
+import { OFFER, OFFER_COPY, PKW_B197_BENEFIT, PKW_SAVINGS_LABEL } from '@/config/offer';
 import React from 'react';
+import OfferFlyer from '@/components/OfferFlyer';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MobileStickyFooter from '../components/MobileStickyFooter';
@@ -118,9 +119,7 @@ const Preise = () => {
                     <p className="mt-1 text-xl font-extrabold text-brand-dark">{PKW_B197_BENEFIT}</p>
                     <p className="mt-1 text-sm text-muted-foreground">Die gesetzlich vorgeschriebenen Schaltstunden für deine B197-Ausbildung.</p>
                   </div>
-                  <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-                    {PKW_SAVINGS_NOTE} Weitere Fahrstunden, Lern-App und amtliche Gebühren kommen hinzu.
-                  </p>
+                  <OfferFlyer className="mt-5" />
                 </div>
               </div>
 

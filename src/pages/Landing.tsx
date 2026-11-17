@@ -6,6 +6,7 @@ import UrgencyBar from '@/components/lp/UrgencyBar';
 import LpHero from '@/components/lp/LpHero';
 import LeadForm from '@/components/lp/LeadForm';
 import PriceBlock from '@/components/lp/PriceBlock';
+import OfferFlyer from '@/components/OfferFlyer';
 import SocialProof from '@/components/lp/SocialProof';
 import Steps from '@/components/lp/Steps';
 import WhyAbfCards from '@/components/lp/WhyAbfCards';
@@ -162,6 +163,15 @@ const Landing = () => {
           </LpHero>
 
           <Steps steps={steps} />
+
+          <section aria-labelledby="pkw-flyer-heading" className="bg-surface py-10 md:py-16">
+            <div className="container-narrow">
+              <h2 id="pkw-flyer-heading" className="mb-6 text-center text-2xl md:text-3xl font-bold text-brand-dark">
+                Dein Winter-Angebot als Flyer
+              </h2>
+              <OfferFlyer />
+            </div>
+          </section>
 
           <PriceBlock
             badge={OFFER.label}

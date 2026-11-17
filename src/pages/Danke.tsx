@@ -33,6 +33,11 @@ const Danke = () => {
     }
   }, [location.state]);
 
+  // Nach dem Absenden steht die Seite sonst auf der Scrollhöhe des Formulars (mobil beim Footer)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (appointment) return <AppointmentThanks appointment={appointment} />;
 
   const steps = [

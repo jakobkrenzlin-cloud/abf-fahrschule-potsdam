@@ -52,7 +52,7 @@ export function getOfferCountdown(now = Date.now(), endDate: string | null = OFF
 }
 
 export const OFFER_COPY = {
-  pkwBanner: `${OFFER.label}: Grundbetrag ${formatOfferPrice(OFFER.pkwGrundbetrag)} – jetzt Anmeldetermin anfragen`,
+  pkwBanner: `${OFFER.label}: ${formatOfferPrice(OFFER.pkwGrundbetrag)} Grundbetrag + Erste-Hilfe-Kurs + B197-Vorteil`,
   motorradBanner: `${OFFER.label}: Grundbetrag ${formatOfferPrice(OFFER.motorradGrundbetrag)} – Theorie im Winter, im Frühjahr fahren`,
   pkwOnsite: withOfferDate(`Das ${OFFER.label} von ${formatOfferPrice(OFFER.pkwGrundbetrag)} gilt bei Anmeldung vor Ort.`),
   motorradOnsite: withOfferDate(`Das ${OFFER.label} von ${formatOfferPrice(OFFER.motorradGrundbetrag)} gilt bei Anmeldung vor Ort.`),

@@ -1,4 +1,4 @@
-import { OFFER, OFFER_COPY, formatOfferPrice, withOfferDate } from '@/config/offer';
+import { OFFER, OFFER_COPY, PKW_B197_BENEFIT, PKW_SAVINGS_LABEL, PKW_SAVINGS_NOTE, formatOfferPrice, withOfferDate } from '@/config/offer';
 import React, { useState } from 'react';
 import LpSeo from '@/components/lp/LpSeo';
 import LpHeader from '@/components/lp/LpHeader';

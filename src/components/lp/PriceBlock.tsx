@@ -33,6 +33,8 @@ const PriceBlock: React.FC<PriceBlockProps> = ({
   extras,
   note,
   footnote,
+  savings,
+  highlight,
   closing = 'Amtliche Gebühren (TÜV/DEKRA, Führerscheinstelle) kommen hinzu.',
 }) => (
   <section id="preisblock" className="section-y bg-surface scroll-mt-24" aria-labelledby="preis-heading">

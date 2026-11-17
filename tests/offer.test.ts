@@ -1,9 +1,36 @@
 import { describe, expect, test } from 'bun:test';
-import { OFFER, OFFER_COPY, getOfferCountdown, getOfferDateLabel, getOfferDeadline, withOfferDate } from '../src/config/offer';
+import {
+  OFFER,
+  OFFER_COPY,
+  PKW_B197_BENEFIT,
+  PKW_OFFER_SAVINGS,
+  PKW_SAVINGS_NOTE,
+  getOfferCountdown,
+  getOfferDateLabel,
+  getOfferDeadline,
+  withOfferDate,
+} from '../src/config/offer';
 
 describe('Aktuelle Angebotsregeln', () => {
-  test('Klasse B kostet unverändert 219 Euro', () => {
-    expect(OFFER.pkwGrundbetrag).toBe(219);
+  test('Der PKW-Grundbetrag im Winter-Angebot beträgt 299 Euro', () => {
+    expect(OFFER.pkwGrundbetrag).toBe(299);
+  });
+  test('Der bisherige PKW-Grundbetrag von 599 Euro bleibt als Berechnungsgrundlage hinterlegt', () => {
+    expect(OFFER.pkwPreviousGrundbetrag).toBe(599);
+  });
+  test('B197 umfasst zehn Schaltstunden à 45 Minuten für 0 Euro', () => {
+    expect(OFFER.b197Schaltstunden).toBe(10);
+    expect(OFFER.b197SchaltstundenMinuten).toBe(45);
+    expect(OFFER.b197SchaltstundenPreis).toBe(0);
+    expect(PKW_B197_BENEFIT).toBe('10 × 45 Min. Schaltstunden für 0 €');
+  });
+  test('Der B197-Gesamtvorteil beträgt nachvollziehbar 1.032 Euro', () => {
+    expect(OFFER.b197PreviousSchaltstundenPreis).toBe(732);
+    expect(PKW_OFFER_SAVINGS).toBe(1032);
+    expect(PKW_SAVINGS_NOTE).toContain('599 €');
+    expect(PKW_SAVINGS_NOTE).toContain('299 €');
+    expect(PKW_SAVINGS_NOTE).toContain('732 €');
+    expect(PKW_SAVINGS_NOTE).toContain('1.032 €');
   });
   test('Motorrad kostet unverändert 399 Euro', () => {
     expect(OFFER.motorradGrundbetrag).toBe(399);
@@ -19,11 +46,15 @@ describe('Aktuelle Angebotsregeln', () => {
     expect(OFFER_COPY.motorradAdditional).toContain('1 Jahr ADAC-Mitgliedschaft');
     expect(OFFER_COPY.motorradAdditional.some((item) => /gutsche[i]n/i.test(item))).toBe(false);
   });
-  test('Klasse B behält alle fünf Leistungen', () => {
+  test('Das PKW-Angebot enthält 14 Theoriestunden und Erste Hilfe, aber kein ADAC', () => {
     expect(OFFER_COPY.pkwIncluded).toEqual([
-      'Anmeldung & Verwaltung', 'Kompletter Theorieunterricht',
-      'Vorstellung zur theoretischen Prüfung', 'Persönliche Beratung', '1 Jahr ADAC-Mitgliedschaft',
+      'Anmeldung & Verwaltung',
+      '14 × 90 Min. Theorieunterricht',
+      'Vorstellung zur theoretischen Prüfung',
+      'Persönliche Beratung',
+      'Erste-Hilfe-Kurs',
     ]);
+    expect(OFFER_COPY.pkwIncluded.some((item) => /ADAC/i.test(item))).toBe(false);
   });
   test('Ohne Enddatum gibt es keine Frist und keinen Countdown', () => {
     expect(OFFER.endDate).toBeNull();

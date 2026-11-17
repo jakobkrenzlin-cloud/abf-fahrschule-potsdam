@@ -23,8 +23,8 @@ const Hero = () => {
           </h1>
 
           <p className="text-body text-white/75 leading-relaxed max-w-xl">
-            Theorie in einer Woche, erfahrene Fahrlehrer und faire Preise. Grundbetrag Klasse B
-            aktuell {formatOfferPrice(OFFER.pkwGrundbetrag)} – Fahrstunden und amtliche Gebühren kommen zusätzlich dazu.
+            Winter-Angebot Klasse B: Grundbetrag {formatOfferPrice(OFFER.pkwGrundbetrag)}, Erste-Hilfe-Kurs enthalten
+            und bei B197 zehn Schaltstunden à 45 Min. für 0 €. Weitere Fahrstunden und amtliche Gebühren kommen hinzu.
           </p>
 
           <div className="flex items-center gap-3">

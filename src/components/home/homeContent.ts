@@ -27,7 +27,7 @@ export const HOME_FAQS: Faq[] = [
   {
     question: 'Was kostet der Führerschein bei der ABF Fahrschule in Potsdam?',
     answer:
-      withOfferDate(`Der Grundbetrag für die Klasse B beträgt aktuell ${formatOfferPrice(OFFER.pkwGrundbetrag)}. Darin enthalten sind Anmeldung, kompletter Theorieunterricht und 1 Jahr ADAC-Mitgliedschaft. Fahrstunden (ab 73,12 € je 45 Min.), Lern-App und amtliche Gebühren kommen zusätzlich dazu.`),
+      withOfferDate(`Der Grundbetrag für die Klasse B beträgt im Winter-Angebot ${formatOfferPrice(OFFER.pkwGrundbetrag)}. Enthalten sind Anmeldung und Verwaltung, 14 × 90 Min. Theorieunterricht, die Vorstellung zur theoretischen Prüfung, persönliche Beratung und der Erste-Hilfe-Kurs. Bei B197 kommen 10 Schaltstunden à 45 Min. für 0 € hinzu. Weitere Fahrstunden (ab 73,12 € je 45 Min.), Lern-App und amtliche Gebühren kommen zusätzlich dazu.`),
   },
   {
     question: 'Wie lange dauert die Ausbildung?',

@@ -130,7 +130,12 @@ const ContactSection = () => {
               {currentOffer.note && (
                 <p className="text-[11px] text-ink/60 mt-1 italic">{currentOffer.note}</p>
               )}
-               <p className="text-xs text-ink/75 mt-2">Zusätzlich: 1 Jahr ADAC-Mitgliedschaft. Alle Entgelte siehe <a href="#preise-uebersicht" className="underline underline-offset-2 text-brand-strong">Preisübersicht</a>.</p>
+               <p className="text-xs text-ink/75 mt-2">
+                 {['a1', 'a2', 'a'].includes(formData.licenseClass)
+                   ? 'Zusätzlich: 1 Jahr ADAC-Mitgliedschaft.'
+                   : 'PKW: Erste-Hilfe-Kurs enthalten. Bei B197 zusätzlich 10 × 45 Min. Schaltstunden für 0 €.'}{' '}
+                 Alle Entgelte siehe <a href="#preise-uebersicht" className="underline underline-offset-2 text-brand-strong">Preisübersicht</a>.
+               </p>
               {OFFER.endDate && <p className="text-xs text-ink/60 mt-1">{withOfferDate(OFFER.label)}</p>}
             </div>
 

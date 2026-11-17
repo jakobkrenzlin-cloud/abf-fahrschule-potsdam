@@ -11,7 +11,7 @@ import { dayShortDate, dayShortWeekday, formatLong, formatShort, localDay, local
 import { PHONE_RAW, WHATSAPP_BASE } from './constants';
 import { OFFER, withOfferDate } from '@/config/offer';
 
-const leadSchema = z.object({
+export const leadSchema = z.object({
   name: z.string().trim().min(2, 'Bitte gib deinen Namen ein (mind. 2 Zeichen).').max(100),
   phone: z
     .string()
@@ -100,7 +100,7 @@ function useValidate() {
   };
 }
 
-async function postLead(payload: Record<string, unknown>): Promise<{ ok: boolean; status: number; error?: string }> {
+export async function postLead(payload: Record<string, unknown>): Promise<{ ok: boolean; status: number; error?: string }> {
   const response = await fetch('https://jxxhrldcmwjnjqfpfeti.supabase.co/functions/v1/submit-lead', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

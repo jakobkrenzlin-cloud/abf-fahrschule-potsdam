@@ -11,6 +11,8 @@ export const OFFER = {
   motorradGrundbetrag: 399,
   b196Festpreis: 750,
   endDate: null as string | null,
+  /** PKW-Winter-Angebot: nur Anzeige im Text (steht so auf dem PKW-Flyer). Löst keinen Countdown aus. */
+  pkwValidUntilLabel: '31. März 2027' as string | null,
 };
 
 export const formatOfferPrice = (price: number) => `${price.toLocaleString('de-DE')} €`;

@@ -21,6 +21,7 @@ export const PRICES_B: ClassPrices = {
   items: [
     { label: 'Grundbetrag bei Nichtbestehen der theoretischen Prüfung und weitere Ausbildung', price: '0 € (kein zusätzlicher Grundbetrag)' },
     { label: 'Vorstellung zur theoretischen Prüfung', price: 'im Grundbetrag enthalten' },
+    { label: 'Vorstellung zur praktischen Prüfung', price: '200 €' },
     { label: 'Erste-Hilfe-Kurs', price: 'im Winter-Angebot enthalten' },
     { label: 'B197: 10 Schaltstunden (je 45 Min.)', price: '0 € im Winter-Angebot' },
     { label: 'Übungsstunde (45 Min.)', price: '73,12 €' },

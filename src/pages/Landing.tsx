@@ -1,218 +1,79 @@
-import { OFFER, OFFER_COPY, PKW_B197_BENEFIT, PKW_SAVINGS_LABEL, PKW_SAVINGS_NOTE, formatOfferPrice, withOfferDate } from '@/config/offer';
-import React, { useState } from 'react';
+// /anmeldung – Haupt-Landingpage für Google Ads (PKW Klasse B, B197, BF17).
+// Neu aufgebaut im November 2026 (Analyse: PostHog, Lead-Datenbank, Sitzungsaufnahmen).
+// Grundidee: erst kostenlos beraten lassen, dann entscheiden. Kosten offen erklären, Reform-Einwand ehrlich beantworten.
+// Alte Fassung: git-Historie von src/pages/Landing.tsx (Stand origin/main f80f4a8).
+
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import LpSeo from '@/components/lp/LpSeo';
 import LpHeader from '@/components/lp/LpHeader';
-import UrgencyBar from '@/components/lp/UrgencyBar';
-import LpHero from '@/components/lp/LpHero';
-import LeadForm from '@/components/lp/LeadForm';
-import PriceBlock from '@/components/lp/PriceBlock';
-import OfferFlyer from '@/components/OfferFlyer';
-import SocialProof from '@/components/lp/SocialProof';
-import Steps from '@/components/lp/Steps';
-import WhyAbfCards from '@/components/lp/WhyAbfCards';
 import FaqBlock from '@/components/lp/FaqBlock';
-import LocationSection from '@/components/lp/LocationSection';
-import FinalCta from '@/components/lp/FinalCta';
-import StickyMobileCta from '@/components/lp/StickyMobileCta';
-import LpFooterLinks from '@/components/lp/LpFooterLinks';
 import LpLegalBar from '@/components/lp/LpLegalBar';
-import type { Faq, Review, Step } from '@/components/lp/constants';
-import { useFormVariant } from '@/lib/formVariant';
-import { PRICES_B } from '@/data/prices';
+import type { Faq } from '@/components/lp/constants';
+import { OFFER_COPY } from '@/config/offer';
+import Hero from '@/components/anmeldung/Hero';
+import {
+  AblaufSection,
+  KontaktSection,
+  KostenSection,
+  ReformSection,
+  StickyBar,
+  StimmenSection,
+} from '@/components/anmeldung/Sections';
+import { FAQS, scrollToForm } from '@/components/anmeldung/content';
 
-const FORM_ID = 'lead-form-pkw';
-const HERO_ID = 'hero-pkw';
+const REFORM_QUESTION = 'Soll ich mit dem Führerschein auf die Reform warten?';
 
-const REVIEWS: Review[] = [
-  {
-    name: 'Zaplatix',
-    text: 'Ich kann es hier nur empfehlen, bin hier hin gewechselt und innerhalb von 3 Monaten beim ersten Versuch bestanden, sowohl Serdar als auch Ali sind super Fahrlehrer, meine klare Empfehlung',
-  },
-  {
-    name: 'Janne Stuer',
-    text: 'Sehr nett alle und habe schnell viele Termine bekommen. Hab nur knapp 2 Monate für alle Fahrstunden gebraucht.',
-  },
-  {
-    name: 'THS KALLE Boss',
-    text: 'Ein gute Fahrschule mit kompetente Fahrlehrer und alles beim ersten Mal bestanden.( hat nur 2 Monate gedauert)',
-  },
-];
-
-const STEPS: Step[] = [
-  { title: 'Termin anfragen', text: 'Dauert keine 2 Minuten. Name und Telefonnummer reichen.' },
-  { title: 'Wir rufen dich innerhalb von 24 Stunden an', text: 'Wir klären deine Fragen und machen deinen Anmeldetermin aus.' },
-  { title: 'Anmeldetermin im Weberpark', text: 'Wir rechnen dir deinen Gesamtpreis aus, planen deinen Start, und du meldest dich an.' },
-  { title: 'Theoriekurs starten', text: 'Theorie in einer Woche, danach direkt in die Praxis.' },
-];
-
-const STEPS_BOOKING: Step[] = [
-  { title: 'Termin wählen', text: 'Tag und Uhrzeit aussuchen, dazu Name und Telefonnummer. Dauert keine 2 Minuten.' },
-  { title: 'Bestätigung per WhatsApp', text: 'Wir bestätigen dir deinen Termin. Fragen klären wir gleich mit.' },
-  STEPS[2],
-  STEPS[3],
-];
-
-const FAQS: Faq[] = [
-  {
-    question: 'Bin ich nach dem Formular schon angemeldet?',
-    answer:
-      `Noch nicht. Anmelden kannst du dich nur persönlich bei uns im Weberpark. Nach dem Formular rufen wir dich innerhalb von 24 Stunden an und machen einen Termin aus. ${OFFER_COPY.pkwOnsite}`,
-  },
-  {
-    question: `Was genau ist im Grundbetrag von ${formatOfferPrice(OFFER.pkwGrundbetrag)} enthalten?`,
-    answer:
-      'Enthalten sind Anmeldung und Verwaltung, 14 × 90 Min. Theorieunterricht, die Vorstellung zur theoretischen Prüfung, persönliche Beratung und der Erste-Hilfe-Kurs. Bei B197 sind zusätzlich 10 Schaltstunden à 45 Min. für 0 € enthalten. Weitere Fahrstunden, Lern-App und amtliche Gebühren kommen zusätzlich dazu.',
-  },
-  {
-    question: 'Wie lange dauert der Führerschein bei euch insgesamt?',
-    answer:
-      'Die Theorie schaffst du bei uns in einer Woche. Wie schnell es insgesamt geht, hängt vor allem davon ab, wie viele Fahrstunden du pro Woche nehmen kannst. Viele unserer Fahrschüler sind in 2 bis 3 Monaten fertig.',
-  },
-  {
-    question: 'Kann ich auch mit 17 anfangen (BF17)?',
-    answer:
-      'Ja. Beim Begleiteten Fahren ab 17 kannst du dich bereits mit 16,5 Jahren anmelden und mit 17 die Prüfung machen. Danach fährst du bis 18 mit einer eingetragenen Begleitperson.',
-  },
-  {
-    question: 'Was kostet der Führerschein am Ende ungefähr komplett?',
-    answer:
-      'Das hängt vor allem davon ab, wie viele Fahrstunden du brauchst – das ist bei jedem unterschiedlich. Bei uns kostet die Übungsstunde (45 Min.) 73,12 €, die Unterweisung 73,12 € und eine besondere Ausbildungsfahrt 80 €. Im Beratungsgespräch rechnen wir dir eine realistische Gesamtsumme aus. Der Erste-Hilfe-Kurs ist im Winter-Angebot enthalten; amtliche Gebühren (TÜV/DEKRA, Führerscheinstelle, Sehtest) kommen dazu.',
-  },
-  {
-    question: 'Muss ich bei der Anmeldung schon zahlen?',
-    answer:
-      'Nein. Das Formular ist nur die Terminanfrage und kostet nichts. Alles Weitere besprechen wir beim Anmeldetermin vor Ort, und auch dort gibt es keine Vorkasse.',
-  },
-  {
-    question: 'Bietet ihr auch Automatik (B197) an?',
-    answer:
-      'Ja. Bei B197 lernst du überwiegend auf dem Automatikfahrzeug. Im Winter-Angebot sind die 10 vorgeschriebenen Schaltstunden à 45 Min. für 0 € enthalten. Nach einer kurzen Testfahrt im Schaltwagen darfst du beides fahren – ohne Automatik-Eintrag im Führerschein.',
-  },
-  {
-    question: 'Wie flexibel sind die Fahrstunden-Termine?',
-    answer:
-      'Sehr flexibel. Wir planen die Fahrstunden gemeinsam mit dir – auch außerhalb der Bürozeiten sind Termine nach Absprache möglich.',
-  },
-  {
-    question: 'Wo genau finde ich euch?',
-    answer:
-      'Im Weberpark, Tuchmacherstraße 45b, 14482 Potsdam-Babelsberg. Parkplätze sind direkt vor der Tür, der Bahnhof Babelsberg sowie Tram und Bus sind in wenigen Minuten zu Fuß erreichbar.',
-  },
-];
-
-const CLASS_OPTIONS = [
-  { value: 'b', label: 'Klasse B – PKW' },
-  { value: 'b197', label: 'Klasse B197 – Automatik & Schalter' },
-  { value: 'bf17', label: 'BF17 – Begleitetes Fahren ab 17' },
-  { value: 'be', label: 'Klasse BE – PKW mit Anhänger' },
-];
-
-const FAQS_BOOKING: Faq[] = FAQS.map((f) =>
-  f.question === 'Bin ich nach dem Formular schon angemeldet?'
-    ? { ...f, answer: `Noch nicht. Mit dem Formular buchst du deinen Termin, angemeldet wirst du bei diesem Termin persönlich bei uns im Weberpark. ${OFFER_COPY.pkwOnsite}` }
+const faqsWithLinks: Faq[] = FAQS.map((f) =>
+  f.question === REFORM_QUESTION
+    ? {
+        ...f,
+        answerNode: (
+          <>
+            {f.answer.replace(' Alle Details findest du auf unserer Seite zur Führerscheinreform.', '')}{' '}
+            Alle Details findest du auf unserer{' '}
+            <Link to="/reform" className="font-semibold text-brand-strong underline underline-offset-2">
+              Seite zur Führerscheinreform
+            </Link>
+            .
+          </>
+        ),
+      }
     : f,
 );
 
 const Landing = () => {
-  const variant = useFormVariant();
-  const isBooking = variant === 'booking';
-  const steps = isBooking ? STEPS_BOOKING : STEPS;
-  const faqs = isBooking ? FAQS_BOOKING : FAQS;
-  const ctaLabel = 'Kostenlos Beraten lassen';
-  const [licenseClass, setLicenseClass] = useState('b');
-  const whatsappText = `Hallo, ich möchte einen Anmeldetermin für den Führerschein Klasse B ausmachen (${OFFER.label} ${formatOfferPrice(OFFER.pkwGrundbetrag)}). Wann kann ich vorbeikommen?`;
+  const location = useLocation();
 
-  const scrollToForm = () => {
-    document.getElementById(FORM_ID)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  };
+  // Sprungmarken wie /anmeldung#beratung (z. B. von /reform) nach dem Laden anspringen
+  useEffect(() => {
+    if (!location.hash) return;
+    const id = location.hash.slice(1);
+    const t = window.setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 80);
+    return () => window.clearTimeout(t);
+  }, [location.hash]);
 
   return (
     <>
-      <LpSeo
-        title={OFFER_COPY.pkwTitle}
-        description={OFFER_COPY.pkwDescription}
-        path="/anmeldung"
-        faqs={faqs}
-      />
+      <LpSeo title={OFFER_COPY.pkwTitle} description={OFFER_COPY.pkwDescription} path="/anmeldung" faqs={FAQS} />
 
-      <div className="min-h-screen bg-white font-sans">
-        <LpHeader onCtaClick={scrollToForm} ctaLabel={ctaLabel} />
-        <UrgencyBar label={OFFER_COPY.pkwBanner} />
+      <div className="min-h-screen bg-white font-sans [&_h1]:[hyphens:manual] [&_h2]:[hyphens:manual] [&_h3]:[hyphens:manual]">
+        <LpHeader onCtaClick={scrollToForm} ctaLabel="Beratung anfragen" />
 
         <main>
-          <LpHero
-            id={HERO_ID}
-            headline={withOfferDate(`Führerschein Klasse B in Potsdam – ${OFFER.label}: Grundbetrag ${formatOfferPrice(OFFER.pkwGrundbetrag)}`)}
-            headlineNote={<a href="#preisblock" className="underline underline-offset-2 hover:text-white">Weitere Fahrstunden, Lern-App und amtliche Gebühren kommen hinzu – alle Preise weiter unten.</a>}
-            subline="Klasse B bei der ABF Fahrschule in Babelsberg: Theorie in einer Woche, erfahrene Fahrlehrer, faire Preise. Termin anfragen, im Weberpark vorbeikommen und vor Ort anmelden."
-            chips={['Theorie in 1 Woche', '5,0★ bei Google', 'Keine versteckten Kosten']}
-            directContact={{ whatsappText, trackingSource: 'landing-pkw' }}
-            reviews={REVIEWS}
-          >
-            <LeadForm
-              id={FORM_ID}
-              variant={variant}
-              ctaLabel="Kostenlos Beraten lassen"
-              source="landingpage-pkw"
-              classOptions={CLASS_OPTIONS}
-              licenseClass={licenseClass}
-              onLicenseClassChange={setLicenseClass}
-              whatsappText={whatsappText}
-              onsiteNote={`Angemeldet wirst du beim Termin vor Ort. ${OFFER_COPY.pkwOnsite}`}
-              trackingSource="landing-pkw"
-            />
-          </LpHero>
-
-          <Steps steps={steps} />
-
-          <section aria-labelledby="pkw-flyer-heading" className="bg-surface py-10 md:py-16">
-            <div className="container-narrow">
-              <h2 id="pkw-flyer-heading" className="mb-6 text-center text-2xl md:text-3xl font-bold text-brand-dark">
-                Dein Winter-Angebot als Flyer
-              </h2>
-              <OfferFlyer />
-            </div>
-          </section>
-
-          <PriceBlock
-            badge={OFFER.label}
-            price={PRICES_B.basePrice}
-            title={`${OFFER.label}: Grundbetrag ${PRICES_B.basePrice} – das ist drin`}
-            included={OFFER_COPY.pkwIncluded}
-            savings={PKW_SAVINGS_LABEL}
-            highlight={{
-              title: 'B197: Automatik + Schaltung',
-              price: PKW_B197_BENEFIT,
-              description: 'Die gesetzlich vorgeschriebenen Schaltstunden für deine B197-Ausbildung sind im Winter-Angebot enthalten.',
-            }}
-            extras={PRICES_B.items}
-            closing="Weitere Fahrstunden, die Lern-App und amtliche Gebühren (TÜV/DEKRA, Führerscheinstelle, Sehtest/Passfoto) kommen hinzu."
-            footnote={PKW_SAVINGS_NOTE}
-          />
-
-          <SocialProof reviews={REVIEWS} />
-          <WhyAbfCards />
-          <FaqBlock faqs={faqs} />
-          <LocationSection />
-
-          <FinalCta
-            headline={withOfferDate(`${OFFER.label}: Grundbetrag ${formatOfferPrice(OFFER.pkwGrundbetrag)} – jetzt Anmeldetermin anfragen`)}
-            subline="Frag jetzt deinen Anmeldetermin an. Wir rufen dich innerhalb von 24 Stunden an."
-            buttonLabel="Kostenlos Beraten lassen"
-            onClick={scrollToForm}
-          />
+          <Hero />
+          <KostenSection />
+          <ReformSection />
+          <AblaufSection />
+          <StimmenSection />
+          <FaqBlock faqs={faqsWithLinks} />
+          <KontaktSection />
         </main>
 
-        <LpFooterLinks />
         <LpLegalBar />
-
-        <StickyMobileCta
-          heroId={HERO_ID}
-          formId={FORM_ID}
-          onCtaClick={scrollToForm}
-          label={ctaLabel}
-          trackingSource="landing-pkw-sticky"
-        />
+        <StickyBar />
       </div>
     </>
   );

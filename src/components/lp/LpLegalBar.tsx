@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { openConsentBanner } from '@/lib/cookieConsent';
 
 /** Schmale Rechtszeile für die Anzeigen-Landingpages. */
 const LpLegalBar: React.FC = () => (
@@ -12,6 +13,9 @@ const LpLegalBar: React.FC = () => (
       <Link to="/datenschutz" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors">
         Datenschutz
       </Link>
+      <button type="button" onClick={openConsentBanner} className="inline-flex items-center min-h-[44px] hover:text-white transition-colors">
+        Cookie-Einstellungen
+      </button>
     </div>
   </footer>
 );

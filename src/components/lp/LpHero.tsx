@@ -3,7 +3,8 @@ import { Check, MapPin, Phone, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { callPhone, openWhatsApp } from '@/lib/tracking';
 import { Stars } from './SocialProof';
-import { ADDRESS_LINE, RATING_VALUE, REVIEW_COUNT, PHONE_RAW, WHATSAPP_BASE } from './constants';
+import CompactReviews from './CompactReviews';
+import { ADDRESS_LINE, RATING_VALUE, REVIEW_COUNT, PHONE_RAW, WHATSAPP_BASE, type Review } from './constants';
 
 interface LpHeroProps {
   id: string;
@@ -12,10 +13,11 @@ interface LpHeroProps {
   subline: string;
   chips: string[];
   directContact?: { whatsappText: string; trackingSource: string };
+  reviews?: Review[];
   children: React.ReactNode; // Formular
 }
 
-const LpHero: React.FC<LpHeroProps> = ({ id, headline, headlineNote, subline, chips, directContact, children }) => (
+const LpHero: React.FC<LpHeroProps> = ({ id, headline, headlineNote, subline, chips, directContact, reviews, children }) => (
   <section id={id} className="bg-ink section-y">
     <div className="container-page grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
       <div>
@@ -64,7 +66,10 @@ const LpHero: React.FC<LpHeroProps> = ({ id, headline, headlineNote, subline, ch
         </p>
       </div>
 
-      <div className="lg:pt-2 min-w-0">{children}</div>
+      <div className="lg:pt-2 min-w-0">
+        {children}
+        {reviews && <CompactReviews reviews={reviews} />}
+      </div>
     </div>
   </section>
 );

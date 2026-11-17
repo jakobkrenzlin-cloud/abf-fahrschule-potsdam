@@ -9,6 +9,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 import { getAttribution, callPhone } from '@/lib/tracking';
+import CompactReviews from './lp/CompactReviews';
+import { HOME_REVIEWS } from './home/homeContent';
 const leadSchema = z.object({
   name: z.string().trim().min(2, 'Name muss mindestens 2 Zeichen lang sein').max(100, 'Name darf maximal 100 Zeichen lang sein'),
   phone: z.string().trim().regex(/^[+]?[0-9\s()-]{6,20}$/, 'Ungültige Telefonnummer'),
@@ -232,6 +234,8 @@ const ContactSection = () => {
                 Anrufen
               </Button>
             </div>
+
+            <CompactReviews reviews={HOME_REVIEWS} tone="light" />
 
             <div className="text-center mt-6 text-sm text-ink/60">
               <p>Deine Daten sind sicher und werden vertraulich behandelt</p>

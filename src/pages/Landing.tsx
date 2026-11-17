@@ -147,6 +147,7 @@ const Landing = () => {
             subline="Klasse B bei der ABF Fahrschule in Babelsberg: Theorie in einer Woche, erfahrene Fahrlehrer, faire Preise. Termin anfragen, im Weberpark vorbeikommen und vor Ort anmelden."
             chips={['Theorie in 1 Woche', '5,0★ bei Google', 'Keine versteckten Kosten']}
             directContact={{ whatsappText, trackingSource: 'landing-pkw' }}
+            reviews={REVIEWS}
           >
             <LeadForm
               id={FORM_ID}

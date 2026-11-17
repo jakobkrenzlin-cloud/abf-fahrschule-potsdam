@@ -22,15 +22,16 @@ describe('Aktuelle Angebotsregeln', () => {
     expect(OFFER.b197Schaltstunden).toBe(10);
     expect(OFFER.b197SchaltstundenMinuten).toBe(45);
     expect(OFFER.b197SchaltstundenPreis).toBe(0);
-    expect(PKW_B197_BENEFIT).toBe('10 × 45 Min. Schaltstunden für 0 €');
+    expect(PKW_B197_BENEFIT.replace(/ /g, ' ')).toBe('10 × 45 Min. Schaltstunden für 0 €');
   });
   test('Der B197-Gesamtvorteil beträgt nachvollziehbar 1.032 Euro', () => {
     expect(OFFER.b197PreviousSchaltstundenPreis).toBe(732);
     expect(PKW_OFFER_SAVINGS).toBe(1032);
-    expect(PKW_SAVINGS_NOTE).toContain('599 €');
-    expect(PKW_SAVINGS_NOTE).toContain('299 €');
-    expect(PKW_SAVINGS_NOTE).toContain('732 €');
-    expect(PKW_SAVINGS_NOTE).toContain('1.032 €');
+    const readableNote = PKW_SAVINGS_NOTE.replace(/ /g, ' ');
+    expect(readableNote).toContain('599 €');
+    expect(readableNote).toContain('299 €');
+    expect(readableNote).toContain('732 €');
+    expect(readableNote).toContain('1.032 €');
   });
   test('Motorrad kostet unverändert 399 Euro', () => {
     expect(OFFER.motorradGrundbetrag).toBe(399);

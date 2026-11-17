@@ -13,7 +13,7 @@ export const OFFER = {
   endDate: null as string | null,
 };
 
-export const formatOfferPrice = (price: number) => `${price.toLocaleString('de-DE')} €`;
+export const formatOfferPrice = (price: number) => `${price.toLocaleString('de-DE')} €`;
 
 export const PKW_OFFER_SAVINGS = OFFER.pkwPreviousGrundbetrag - OFFER.pkwGrundbetrag
   + OFFER.b197PreviousSchaltstundenPreis - OFFER.b197SchaltstundenPreis;

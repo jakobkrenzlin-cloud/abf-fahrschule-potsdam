@@ -12,14 +12,14 @@ const flyerUrl = import.meta.env.DEV
 const OfferFlyer = ({ className = '' }: OfferFlyerProps) => (
   <figure className={`mx-auto max-w-xl overflow-hidden rounded-xl border border-border bg-card shadow-sm ${className}`}>
     <a
-      href={flyerAsset.url}
+      href={flyerUrl}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="PKW-Winter-Angebotsflyer in voller Größe öffnen"
       className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
     >
       <img
-        src={flyerAsset.url}
+        src={flyerUrl}
         alt="PKW-Winter-Angebot: Grundbetrag 299 Euro statt bisher 599 Euro, 14 Theorieeinheiten und Erste-Hilfe-Kurs enthalten. Bei B197 zehn Schaltstunden à 45 Minuten für 0 Euro statt bisher 732 Euro."
         width={896}
         height={1200}

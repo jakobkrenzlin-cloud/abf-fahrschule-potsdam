@@ -153,7 +153,7 @@ const OffersSection = () => {
             {[PRICES_B, PRICES_A].map((c) => (
               <details key={c.key} className="group border-b border-black/5">
                 <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 font-bold text-brand-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand [&::-webkit-details-marker]:hidden">
-                  <span>{c.name}</span>
+                  <span className="min-w-0 break-words">{c.name}</span>
                   <ChevronDown
                     className="h-5 w-5 shrink-0 transition-transform duration-200 group-open:rotate-180"
                     aria-hidden="true"

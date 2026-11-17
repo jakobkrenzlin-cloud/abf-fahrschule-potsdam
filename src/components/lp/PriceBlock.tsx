@@ -132,10 +132,10 @@ const PriceBlock: React.FC<PriceBlockProps> = ({
                   <tbody className="divide-y divide-black/5 border-t border-black/5">
                     {extras.map((extra) => (
                       <tr key={extra.label}>
-                        <th scope="row" className="py-3 pr-4 font-normal leading-relaxed text-ink">
+                        <th scope="row" className="w-[58%] py-3 pr-3 align-top font-normal leading-relaxed text-ink">
                           {extra.label}
                         </th>
-                        <td className="py-3 text-right font-bold text-brand-dark whitespace-nowrap">
+                        <td className="w-[42%] py-3 align-top break-words text-right font-bold text-brand-dark">
                           {extra.price}
                         </td>
                       </tr>

@@ -169,19 +169,19 @@ const OffersSection = () => {
                     </thead>
                     <tbody className="divide-y divide-black/5 border-t border-black/5">
                       <tr>
-                        <th scope="row" className="py-3 pr-4 font-normal leading-relaxed text-ink text-sm">
+                        <th scope="row" className="w-[58%] py-3 pr-3 align-top font-normal leading-relaxed text-ink text-sm">
                           {c.baseLabel}
                         </th>
-                        <td className="py-3 text-right font-bold text-brand-dark whitespace-nowrap">
+                        <td className="w-[42%] py-3 align-top break-words text-right font-bold text-brand-dark">
                           {c.basePrice}
                         </td>
                       </tr>
                       {c.items.map((i) => (
                         <tr key={i.label}>
-                          <th scope="row" className="py-3 pr-4 font-normal leading-relaxed text-ink text-sm">
+                          <th scope="row" className="w-[58%] py-3 pr-3 align-top font-normal leading-relaxed text-ink text-sm">
                             {i.label}
                           </th>
-                          <td className="py-3 text-right font-bold text-brand-dark whitespace-nowrap text-sm">
+                          <td className="w-[42%] py-3 align-top break-words text-right font-bold text-brand-dark text-sm">
                             {i.price}
                           </td>
                         </tr>

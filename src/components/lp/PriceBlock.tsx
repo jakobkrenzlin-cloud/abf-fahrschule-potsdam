@@ -41,9 +41,16 @@ const PriceBlock: React.FC<PriceBlockProps> = ({
     <div className="max-w-4xl mx-auto px-4">
       <Reveal>
         <div className="bg-card rounded-2xl shadow-sm border border-black/5 p-6 md:p-10">
-          <span className="inline-block px-3 py-1 rounded-full bg-warning/15 text-warning text-sm font-bold">
-            {badge}
-          </span>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="inline-block px-3 py-1 rounded-full bg-warning/15 text-warning text-sm font-bold">
+              {badge}
+            </span>
+            {savings && (
+              <span className="inline-block px-3 py-1 rounded-full bg-success/10 text-success text-sm font-bold">
+                {savings}
+              </span>
+            )}
+          </div>
           <div className="mt-4 flex items-end gap-3 flex-wrap">
             <span className="text-5xl md:text-6xl font-extrabold text-brand-dark leading-none">
               {price}

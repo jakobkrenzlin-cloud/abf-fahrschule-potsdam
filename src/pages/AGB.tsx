@@ -43,10 +43,10 @@ const AGB = () => {
           </ul>
           <p className="mb-4"><strong>Preise für praktische Fahrstunden (je 45 Minuten):</strong></p>
           <ul className="mb-4 ml-6 list-disc">
-            <li>Übungsfahrt: 69 €</li>
-            <li>Sonderfahrt Überland: 79 €</li>
-            <li>Sonderfahrt Autobahn: 79 €</li>
-            <li>Sonderfahrt Nachtfahrt: 79 €</li>
+            <li>Übungsfahrt und Unterweisung am Fahrzeug: 73,12 €</li>
+            <li>Sonderfahrt Überland: 80 €</li>
+            <li>Sonderfahrt Autobahn: 80 €</li>
+            <li>Sonderfahrt Nachtfahrt: 80 €</li>
           </ul>
           <p className="mb-4"><strong>Vorstellung zur Prüfung:</strong></p>
           <ul className="mb-4 ml-6 list-disc">

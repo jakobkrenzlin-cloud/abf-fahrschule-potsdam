@@ -31,47 +31,52 @@ const OffersSection = () => {
         {/* Two Column Grid: Auto + Motorrad */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-10 md:mb-16">
           {/* Führerschein Angebot */}
-          <div className="bg-white rounded-2xl shadow-lg border border-black/[0.08] overflow-hidden">
-            <div className="bg-brand-strong text-white p-4 md:p-6">
+          <div className="bg-card rounded-2xl shadow-lg border border-black/[0.08] overflow-hidden">
+            <div className="bg-brand-strong text-primary-foreground p-4 md:p-6">
               <div className="flex items-center space-x-3 mb-3 md:mb-4">
                 <Car className="w-7 h-7 md:w-8 md:h-8 flex-shrink-0" />
                 <div>
-                  <h3 className="text-2xl font-bold">Klasse B – Grundbetrag</h3>
-                  <p className="text-white/80">{withOfferDate(`${OFFER.label}: Grundbetrag ${formatOfferPrice(OFFER.pkwGrundbetrag)}`)}</p>
+                  <h3 className="text-2xl font-bold">Klasse B – Winter-Angebot</h3>
+                  <p className="text-primary-foreground/80">Theorie, Erste-Hilfe-Kurs und B197-Vorteil</p>
                 </div>
               </div>
-              <div className="bg-white/20 rounded-lg p-4">
-                <div className="text-3xl font-bold mb-1">{formatOfferPrice(OFFER.pkwGrundbetrag)}</div>
-                <div className="text-sm text-white/80">{OFFER.label} - Grundbetrag</div>
+              <div className="bg-primary-foreground/15 rounded-lg p-4">
+                <div className="text-4xl font-bold mb-1">{formatOfferPrice(OFFER.pkwGrundbetrag)}</div>
+                <div className="text-sm text-primary-foreground/80">Grundbetrag · einmalig</div>
+                <div className="mt-3 inline-flex rounded-full bg-card px-3 py-1.5 text-sm font-bold text-brand-strong">
+                  {PKW_SAVINGS_LABEL}
+                </div>
               </div>
             </div>
 
             <div className="p-4 md:p-6 space-y-4 md:space-y-6">
+              <p className="text-ink leading-relaxed">
+                Starte mit 14 × 90 Min. Theorieunterricht und Erste-Hilfe-Kurs. Bei B197 sind die zehn vorgeschriebenen Schaltstunden ebenfalls im Angebot enthalten.
+              </p>
 
-               <p className="text-ink leading-relaxed">
-                Werde Teil unserer erfolgreichen Fahrschüler – starte deine Ausbildung in Potsdam mit 
-                kompletter Theorie in nur einer Woche und ADAC 1 Jahr kostenlos!
-               </p>
+              <div className="rounded-xl bg-brand-dark p-4 text-primary-foreground">
+                <p className="text-sm font-semibold text-primary-foreground/75">B197: Automatik + Schaltung</p>
+                <p className="mt-1 text-xl font-extrabold">{PKW_B197_BENEFIT}</p>
+                <p className="mt-1 text-sm text-primary-foreground/75">Die gesetzlich vorgeschriebenen Schaltstunden für deine B197-Ausbildung.</p>
+              </div>
 
               <div className="space-y-3">
-                <h3 className="font-semibold text-brand-dark mb-3">Im Grundbetrag enthalten:</h3>
-                <div className="flex items-center space-x-3">
-                  <Check className="w-5 h-5 text-success flex-shrink-0" />
-                  <span className="text-ink">Kompletter Theorieunterricht</span>
-                </div>
-              </div>
-
-               <div className="space-y-3">
-                <h3 className="font-semibold text-brand-dark mb-3">Im Grundbetrag zusätzlich:</h3>
-                {['ADAC 1 Jahr kostenlos'].map((item, index) => <div key={index} className="flex items-center space-x-3">
+                <h3 className="font-semibold text-brand-dark mb-3">Im Winter-Angebot enthalten:</h3>
+                {OFFER_COPY.pkwIncluded.map((item) => (
+                  <div key={item} className="flex items-start space-x-3">
                     <Check className="w-5 h-5 text-success flex-shrink-0" />
                     <span className="text-ink">{item}</span>
-                  </div>)}
+                  </div>
+                ))}
               </div>
+
+              <p className="text-xs leading-relaxed text-ink/60">
+                {PKW_SAVINGS_NOTE} Weitere Fahrstunden, Lern-App und amtliche Gebühren kommen hinzu.
+              </p>
 
               <div className="pt-4 space-y-3">
                 <Link to="/anmeldung">
-                  <Button className="w-full bg-brand-strong hover:bg-brand-strong text-white font-semibold py-3 text-lg">
+                  <Button className="w-full bg-brand-strong hover:bg-brand-strong text-primary-foreground font-semibold py-3 text-lg">
                     {OFFER.label} sichern
                   </Button>
                 </Link>

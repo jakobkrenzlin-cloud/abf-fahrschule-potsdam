@@ -37,7 +37,7 @@ export const HOME_FAQS: Faq[] = [
   {
     question: 'Was ist die B197-Ausbildung?',
     answer:
-      'Bei B197 lernst du überwiegend auf dem Automatikfahrzeug. Nach mindestens 10 Fahrstunden machst du eine kurze Testfahrt im Schaltwagen und darfst danach beides fahren – ohne Automatik-Eintrag.',
+      'Bei B197 lernst du überwiegend auf dem Automatikfahrzeug. Im Winter-Angebot sind die 10 vorgeschriebenen Schaltstunden à 45 Min. für 0 € enthalten. Nach einer kurzen Testfahrt im Schaltwagen darfst du beides fahren – ohne Automatik-Eintrag.',
   },
   {
     question: 'Bietet ihr auch den Motorradführerschein an?',

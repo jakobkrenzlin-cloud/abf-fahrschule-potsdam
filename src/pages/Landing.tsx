@@ -60,7 +60,7 @@ const FAQS: Faq[] = [
   {
     question: `Was genau ist im Grundbetrag von ${formatOfferPrice(OFFER.pkwGrundbetrag)} enthalten?`,
     answer:
-      'Enthalten sind Anmeldung und Verwaltung, der komplette Theorieunterricht, die Vorstellung zur theoretischen Prüfung, die persönliche Beratung sowie 1 Jahr ADAC-Mitgliedschaft. Fahrstunden, Lern-App und amtliche Gebühren kommen wie überall zusätzlich dazu.',
+      'Enthalten sind Anmeldung und Verwaltung, 14 × 90 Min. Theorieunterricht, die Vorstellung zur theoretischen Prüfung, persönliche Beratung und der Erste-Hilfe-Kurs. Bei B197 sind zusätzlich 10 Schaltstunden à 45 Min. für 0 € enthalten. Weitere Fahrstunden, Lern-App und amtliche Gebühren kommen zusätzlich dazu.',
   },
   {
     question: 'Wie lange dauert der Führerschein bei euch insgesamt?',

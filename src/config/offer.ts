@@ -57,7 +57,7 @@ export const OFFER_COPY = {
   pkwOnsite: withOfferDate(`Das ${OFFER.label} von ${formatOfferPrice(OFFER.pkwGrundbetrag)} gilt bei Anmeldung vor Ort.`),
   motorradOnsite: withOfferDate(`Das ${OFFER.label} von ${formatOfferPrice(OFFER.motorradGrundbetrag)} gilt bei Anmeldung vor Ort.`),
   pkwTitle: withOfferDate(`Führerschein Klasse B Potsdam – ${OFFER.label} | ABF Fahrschule`),
-  pkwDescription: withOfferDate(`PKW-Führerschein in Potsdam-Babelsberg: ${OFFER.label}, Theorie in 1 Woche, transparente Preise, 5,0★ bei Google. Jetzt Termin anfragen.`),
+  pkwDescription: withOfferDate(`PKW-Führerschein in Potsdam-Babelsberg: ${OFFER.label} mit Erste-Hilfe-Kurs und B197-Schaltstunden im Angebot. Theorie in 1 Woche, 5,0★ bei Google. Jetzt Termin anfragen.`),
   motorradTitle: withOfferDate('Motorradführerschein A1, A2, A in Potsdam | ABF Fahrschule'),
   motorradDescription: withOfferDate(`Motorradführerschein in Potsdam: A1 ab 16, A2 ab 18, Klasse A. ${OFFER.label} – jetzt Theorie machen, im Frühjahr fahren.`),
   b196Title: 'B196 Potsdam – 125er fahren mit Autoführerschein | ABF Fahrschule',

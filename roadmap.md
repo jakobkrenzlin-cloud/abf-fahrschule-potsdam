@@ -4,4 +4,4 @@
 - [x] Winter-Angebot websiteweit benennen; Preise unverändert und Streichpreise entfernen; Textsuche ohne Treffer.
 - [x] Google-/Social-Texte ohne B-/Motorrad-Eurobeträge synchronisieren; gerenderte Angaben auf vier Seiten geprüft.
 - [x] Direkte Kontaktbuttons auf beiden Landingpages ergänzen; 390-px-Ansicht ohne Überlauf, gleiche Klick-/Conversion-Ereignisse und WhatsApp-Vortexte bestätigt.
-- [ ] Kleine Google-Bewertungs-Zeile direkt unter dem Formular: drei Anmeldeseiten + Startseite.
+- [x] Kleine Google-Bewertungs-Zeile direkt unter dem Formular: drei Anmeldeseiten + Startseite; 390-px- und Desktop-Ansicht ohne Überlauf geprüft.

@@ -85,7 +85,7 @@ const FAQS: Faq[] = [
   {
     question: 'Bietet ihr auch Automatik (B197) an?',
     answer:
-      'Ja. Bei B197 lernst du überwiegend auf dem Automatikfahrzeug und machst nach mindestens 10 Fahrstunden eine kurze Testfahrt im Schaltwagen. Danach darfst du beides fahren – ohne Automatik-Eintrag im Führerschein.',
+      'Ja. Bei B197 lernst du überwiegend auf dem Automatikfahrzeug. Im Winter-Angebot sind die 10 vorgeschriebenen Schaltstunden à 45 Min. für 0 € enthalten. Nach einer kurzen Testfahrt im Schaltwagen darfst du beides fahren – ohne Automatik-Eintrag im Führerschein.',
   },
   {
     question: 'Wie flexibel sind die Fahrstunden-Termine?',

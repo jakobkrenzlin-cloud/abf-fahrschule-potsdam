@@ -1,5 +1,6 @@
-import { OFFER, OFFER_COPY, PKW_B197_BENEFIT, PKW_SAVINGS_LABEL, PKW_SAVINGS_NOTE } from '@/config/offer';
+import { OFFER, OFFER_COPY, PKW_B197_BENEFIT, PKW_SAVINGS_LABEL } from '@/config/offer';
 import React from 'react';
+import OfferFlyer from '@/components/OfferFlyer';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MobileStickyFooter from '../components/MobileStickyFooter';

@@ -1,5 +1,6 @@
-import { OFFER, OFFER_COPY, PKW_B197_BENEFIT, PKW_SAVINGS_LABEL, PKW_SAVINGS_NOTE, formatOfferPrice, withOfferDate } from '@/config/offer';
+import { OFFER, OFFER_COPY, PKW_B197_BENEFIT, PKW_SAVINGS_LABEL, formatOfferPrice, withOfferDate } from '@/config/offer';
 import React from 'react';
+import OfferFlyer from '@/components/OfferFlyer';
 import { Check, ChevronDown, Phone, Mail, MapPin, Car, Clock, Award, Bike } from 'lucide-react';
 import { Button } from './ui/button';
 import { Link } from 'react-router-dom';

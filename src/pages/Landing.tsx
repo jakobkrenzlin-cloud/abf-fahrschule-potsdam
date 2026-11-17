@@ -6,6 +6,7 @@ import UrgencyBar from '@/components/lp/UrgencyBar';
 import LpHero from '@/components/lp/LpHero';
 import LeadForm from '@/components/lp/LeadForm';
 import PriceBlock from '@/components/lp/PriceBlock';
+import OfferFlyer from '@/components/OfferFlyer';
 import SocialProof from '@/components/lp/SocialProof';
 import Steps from '@/components/lp/Steps';
 import WhyAbfCards from '@/components/lp/WhyAbfCards';

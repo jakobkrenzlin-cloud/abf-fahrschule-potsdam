@@ -164,6 +164,15 @@ const Landing = () => {
 
           <Steps steps={steps} />
 
+          <section aria-labelledby="pkw-flyer-heading" className="bg-surface py-10 md:py-16">
+            <div className="container-narrow">
+              <h2 id="pkw-flyer-heading" className="mb-6 text-center text-2xl md:text-3xl font-bold text-brand-dark">
+                Dein Winter-Angebot als Flyer
+              </h2>
+              <OfferFlyer />
+            </div>
+          </section>
+
           <PriceBlock
             badge={OFFER.label}
             price={PRICES_B.basePrice}

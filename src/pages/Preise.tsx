@@ -119,9 +119,7 @@ const Preise = () => {
                     <p className="mt-1 text-xl font-extrabold text-brand-dark">{PKW_B197_BENEFIT}</p>
                     <p className="mt-1 text-sm text-muted-foreground">Die gesetzlich vorgeschriebenen Schaltstunden für deine B197-Ausbildung.</p>
                   </div>
-                  <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-                    {PKW_SAVINGS_NOTE} Weitere Fahrstunden, Lern-App und amtliche Gebühren kommen hinzu.
-                  </p>
+                  <OfferFlyer className="mt-5" />
                 </div>
               </div>
 

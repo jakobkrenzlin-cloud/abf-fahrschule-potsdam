@@ -71,9 +71,7 @@ const OffersSection = () => {
                 ))}
               </div>
 
-              <p className="text-xs leading-relaxed text-ink/60">
-                {PKW_SAVINGS_NOTE} Weitere Fahrstunden, Lern-App und amtliche Gebühren kommen hinzu.
-              </p>
+              <OfferFlyer />
 
               <div className="pt-4 space-y-3">
                 <Link to="/anmeldung">

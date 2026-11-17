@@ -159,8 +159,8 @@ const OffersSection = () => {
                     aria-hidden="true"
                   />
                 </summary>
-                <div className="overflow-x-auto pb-4">
-                  <table className="w-full border-collapse text-left">
+                <div className="pb-4">
+                  <table className="w-full table-fixed border-collapse text-left">
                     <thead className="sr-only">
                       <tr>
                         <th scope="col">Leistung</th>

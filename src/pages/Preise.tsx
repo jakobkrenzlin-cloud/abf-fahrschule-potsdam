@@ -15,9 +15,9 @@ const PriceList = ({ title, items }: { title: string; items: PriceItem[] }) => (
     <h3 className="text-xl font-bold text-foreground mb-4">{title}</h3>
     <div className="grid md:grid-cols-2 gap-4">
       {items.map((i) => (
-        <div key={i.label} className="flex justify-between items-center gap-4 p-3 bg-background rounded-lg">
-          <span className="text-foreground">{i.label}</span>
-          <span className="font-bold text-foreground text-right">{i.price}</span>
+        <div key={i.label} className="flex items-start justify-between gap-3 p-3 bg-background rounded-lg">
+          <span className="min-w-0 text-foreground">{i.label}</span>
+          <span className="max-w-[45%] shrink-0 break-words text-right font-bold text-foreground">{i.price}</span>
         </div>
       ))}
     </div>

@@ -188,6 +188,7 @@ const AnmeldungMotorrad = () => {
               'Im Frühjahr sofort auf die Straße',
             ]}
             directContact={{ whatsappText, trackingSource: 'landing-motorrad' }}
+            reviews={REVIEWS}
           >
             <LeadForm
               id={FORM_ID}

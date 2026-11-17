@@ -148,6 +148,7 @@ const B196 = () => {
             headline="125er fahren – mit deinem Autoführerschein, ohne neue Prüfung"
             subline={`Die Schlüsselzahl B196 erweitert deinen bestehenden Führerschein Klasse B. Keine Theorie- und keine Praxisprüfung, nur eine kompakte Schulung. Bei ABF in Potsdam für ${formatOfferPrice(OFFER.b196Festpreis)} Festpreis.`}
             chips={['Keine Prüfung nötig', 'In 2–3 Wochen fertig', 'Fester Komplettpreis']}
+            reviews={REVIEWS}
           >
             <LeadForm
               id={FORM_ID}

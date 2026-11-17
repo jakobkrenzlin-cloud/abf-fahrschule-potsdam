@@ -36,17 +36,17 @@ const AGB = () => {
           <p className="mb-4"><strong>Grundbetrag ({formatOfferPrice(OFFER.pkwGrundbetrag)} {OFFER.label}) beinhaltet:</strong></p>
           <ul className="mb-4 ml-6 list-disc">
              <li>Kompletter Theorieunterricht (12 × Grundstoff à 90 Minuten + 2 × klassenspezifischer Zusatzstoff à 90 Minuten)</li>
-             <li>ADAC 1 Jahr kostenlos</li>
-            <li>ADAC 1 Jahr kostenlos</li>
-            <li>Vorstellung zur theoretischen Prüfung</li>
-            <li>Anmeldebearbeitung und Verwaltung</li>
+             <li>Erste-Hilfe-Kurs im Winter-Angebot enthalten</li>
+             <li>Bei B197: 10 Schaltstunden à 45 Minuten für 0 € im Winter-Angebot</li>
+             <li>Vorstellung zur theoretischen Prüfung</li>
+             <li>Anmeldebearbeitung und Verwaltung</li>
           </ul>
           <p className="mb-4"><strong>Preise für praktische Fahrstunden (je 45 Minuten):</strong></p>
           <ul className="mb-4 ml-6 list-disc">
-            <li>Übungsfahrt: 69 €</li>
-            <li>Sonderfahrt Überland: 79 €</li>
-            <li>Sonderfahrt Autobahn: 79 €</li>
-            <li>Sonderfahrt Nachtfahrt: 79 €</li>
+            <li>Übungsfahrt und Unterweisung am Fahrzeug: 73,12 €</li>
+            <li>Sonderfahrt Überland: 80 €</li>
+            <li>Sonderfahrt Autobahn: 80 €</li>
+            <li>Sonderfahrt Nachtfahrt: 80 €</li>
           </ul>
           <p className="mb-4"><strong>Vorstellung zur Prüfung:</strong></p>
           <ul className="mb-4 ml-6 list-disc">

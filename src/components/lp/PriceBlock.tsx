@@ -14,6 +14,12 @@ interface PriceBlockProps {
   note?: string;
   closing?: string;
   footnote?: string;
+  savings?: string;
+  highlight?: {
+    title: string;
+    price: string;
+    description: string;
+  };
 }
 
 const PriceBlock: React.FC<PriceBlockProps> = ({
@@ -27,15 +33,24 @@ const PriceBlock: React.FC<PriceBlockProps> = ({
   extras,
   note,
   footnote,
+  savings,
+  highlight,
   closing = 'Amtliche Gebühren (TÜV/DEKRA, Führerscheinstelle) kommen hinzu.',
 }) => (
   <section id="preisblock" className="section-y bg-surface scroll-mt-24" aria-labelledby="preis-heading">
     <div className="max-w-4xl mx-auto px-4">
       <Reveal>
         <div className="bg-card rounded-2xl shadow-sm border border-black/5 p-6 md:p-10">
-          <span className="inline-block px-3 py-1 rounded-full bg-warning/15 text-warning text-sm font-bold">
-            {badge}
-          </span>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="inline-block px-3 py-1 rounded-full bg-warning/15 text-warning text-sm font-bold">
+              {badge}
+            </span>
+            {savings && (
+              <span className="inline-block px-3 py-1 rounded-full bg-success/10 text-success text-sm font-bold">
+                {savings}
+              </span>
+            )}
+          </div>
           <div className="mt-4 flex items-end gap-3 flex-wrap">
             <span className="text-5xl md:text-6xl font-extrabold text-brand-dark leading-none">
               {price}
@@ -59,6 +74,14 @@ const PriceBlock: React.FC<PriceBlockProps> = ({
               </ul>
               {note && <p className="mt-3 text-sm text-ink/70">{note}</p>}
             </>
+          )}
+
+          {highlight && (
+            <div className="mt-6 rounded-xl bg-brand-dark p-5 text-primary-foreground">
+              <p className="text-sm font-semibold text-primary-foreground/75">{highlight.title}</p>
+              <p className="mt-1 text-2xl font-extrabold">{highlight.price}</p>
+              <p className="mt-2 text-sm leading-relaxed text-primary-foreground/75">{highlight.description}</p>
+            </div>
           )}
 
           {includedBase && includedBase.length > 0 && (
@@ -98,8 +121,8 @@ const PriceBlock: React.FC<PriceBlockProps> = ({
                   aria-hidden="true"
                 />
               </summary>
-              <div className="overflow-x-auto pb-4">
-                <table className="w-full border-collapse text-left">
+              <div className="pb-4">
+                <table className="w-full table-fixed border-collapse text-left">
                   <thead className="sr-only">
                     <tr>
                       <th scope="col">Leistung</th>
@@ -109,10 +132,10 @@ const PriceBlock: React.FC<PriceBlockProps> = ({
                   <tbody className="divide-y divide-black/5 border-t border-black/5">
                     {extras.map((extra) => (
                       <tr key={extra.label}>
-                        <th scope="row" className="py-3 pr-4 font-normal leading-relaxed text-ink">
+                        <th scope="row" className="w-[58%] py-3 pr-3 align-top font-normal leading-relaxed text-ink">
                           {extra.label}
                         </th>
-                        <td className="py-3 text-right font-bold text-brand-dark whitespace-nowrap">
+                        <td className="w-[42%] py-3 align-top break-words text-right font-bold text-brand-dark">
                           {extra.price}
                         </td>
                       </tr>

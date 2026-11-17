@@ -1,4 +1,4 @@
-import { OFFER, OFFER_COPY } from '@/config/offer';
+import { OFFER, OFFER_COPY, PKW_B197_BENEFIT, PKW_SAVINGS_LABEL, PKW_SAVINGS_NOTE } from '@/config/offer';
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -15,9 +15,9 @@ const PriceList = ({ title, items }: { title: string; items: PriceItem[] }) => (
     <h3 className="text-xl font-bold text-foreground mb-4">{title}</h3>
     <div className="grid md:grid-cols-2 gap-4">
       {items.map((i) => (
-        <div key={i.label} className="flex justify-between items-center gap-4 p-3 bg-background rounded-lg">
-          <span className="text-foreground">{i.label}</span>
-          <span className="font-bold text-foreground text-right">{i.price}</span>
+        <div key={i.label} className="flex flex-col gap-1 p-3 bg-background rounded-lg sm:flex-row sm:items-start sm:justify-between sm:gap-3">
+          <span className="min-w-0 text-foreground">{i.label}</span>
+          <span className="max-w-full break-words text-left font-bold text-brand-dark sm:max-w-[45%] sm:shrink-0 sm:text-right sm:text-foreground">{i.price}</span>
         </div>
       ))}
     </div>
@@ -87,26 +87,40 @@ const Preise = () => {
             {/* Hauptpreistabelle */}
             <div className="space-y-6 mb-8">
               {/* Grundbetrag */}
-              <div className="bg-primary/5 rounded-xl p-6 border-2 border-primary">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                  <div>
-                    <h3 className="text-2xl font-bold text-foreground">Grundbetrag Klasse B</h3>
-                    <p className="text-muted-foreground mt-1">
-                      Einmalige Gebühr für Verwaltung und vollständige Theorieausbildung
-                    </p>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-4xl font-bold text-primary">{PRICES_B.basePrice}</div>
+              <div className="overflow-hidden rounded-xl border-2 border-primary bg-primary/5">
+                <div className="bg-brand-dark p-6 text-primary-foreground">
+                  <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+                    <div>
+                      <p className="text-sm font-bold uppercase tracking-wide text-primary-foreground/75">{OFFER.label} · Klasse B</p>
+                      <h3 className="mt-1 text-2xl font-bold">Theorie + Erste Hilfe + B197-Vorteil</h3>
+                      <p className="mt-2 text-sm text-primary-foreground/75">Grundbetrag · einmalig</p>
+                    </div>
+                    <div className="md:text-right">
+                      <div className="text-5xl font-extrabold">{PRICES_B.basePrice}</div>
+                      <div className="mt-2 inline-flex rounded-full bg-card px-3 py-1.5 text-sm font-bold text-brand-strong">
+                        {PKW_SAVINGS_LABEL}
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="mt-4 pt-4 border-t border-primary/20">
-                   <p className="text-sm font-semibold text-foreground mb-2">Im Grundbetrag zusätzlich:</p>
-                   <ul className="grid md:grid-cols-2 gap-2 text-sm text-muted-foreground">
-                     <li className="flex items-center gap-2">
-                       <Check className="text-primary flex-shrink-0" size={16} />
-                       Vorstellung zur theoretischen Prüfung
-                     </li>
-                   </ul>
+                <div className="p-6">
+                  <p className="text-sm font-semibold text-foreground mb-3">Im Winter-Angebot enthalten:</p>
+                  <ul className="grid md:grid-cols-2 gap-2 text-sm text-muted-foreground">
+                    {OFFER_COPY.pkwIncluded.map((item) => (
+                      <li key={item} className="flex items-start gap-2">
+                        <Check className="mt-0.5 text-success flex-shrink-0" size={16} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-5 rounded-xl border border-primary/20 bg-card p-4">
+                    <p className="text-sm font-semibold text-muted-foreground">B197: Automatik + Schaltung</p>
+                    <p className="mt-1 text-xl font-extrabold text-brand-dark">{PKW_B197_BENEFIT}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">Die gesetzlich vorgeschriebenen Schaltstunden für deine B197-Ausbildung.</p>
+                  </div>
+                  <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
+                    {PKW_SAVINGS_NOTE} Weitere Fahrstunden, Lern-App und amtliche Gebühren kommen hinzu.
+                  </p>
                 </div>
               </div>
 

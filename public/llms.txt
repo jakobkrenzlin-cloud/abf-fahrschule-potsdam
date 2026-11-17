@@ -2,12 +2,12 @@
 
 > Fahrschule in Potsdam für Führerschein Klasse B (Auto) und Klasse A/A1/A2 (Motorrad) mit schneller Theorie, moderner Ausbildung und fairen Preisen.
 
-ABF Bildungszentrum und Fahrschule GmbH bildet seit über 15 Jahren in Potsdam aus. Theorie in einer Woche, B197-Automatik-Ausbildung, Motorrad-Angebot und persönliche Betreuung am Standort Weberpark, Tuchmacherstraße 45b, 14482 Potsdam.
+ABF Bildungszentrum und Fahrschule GmbH bildet seit über 15 Jahren in Potsdam aus. Winter-Angebot Klasse B mit Theorie, Erste-Hilfe-Kurs und zehn B197-Schaltstunden für 0 €, Motorrad-Angebot und persönliche Betreuung am Standort Weberpark, Tuchmacherstraße 45b, 14482 Potsdam.
 
 ## Pages
 
 - [Startseite](/): Übersicht der Fahrschule, Angebote und Anmeldung.
-- [Anmeldung PKW](/anmeldung): Anmeldung Klasse B, Winter-Angebot.
+- [Anmeldung PKW](/anmeldung): Winter-Angebot Klasse B: Grundbetrag 299 €, 14 × 90 Min. Theorie, Erste-Hilfe-Kurs enthalten; bei B197 10 Schaltstunden à 45 Min. für 0 €. Weitere Fahrstunden und amtliche Gebühren kommen hinzu.
 - [Anmeldung Motorrad](/anmeldungmotorrad): Motorrad-Führerschein A/A1/A2, Winter-Angebot, inkl. Erste-Hilfe.
 - [Preise](/preise): Preisliste nach § 32 FahrlG, Grundbetrag und Fahrstundenpreise.
 - [Theorie](/theorie): Theorieunterricht und Termine in Potsdam.

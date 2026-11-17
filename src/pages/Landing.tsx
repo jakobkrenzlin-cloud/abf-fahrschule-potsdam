@@ -1,4 +1,4 @@
-import { OFFER, OFFER_COPY, formatOfferPrice, withOfferDate } from '@/config/offer';
+import { OFFER, OFFER_COPY, PKW_B197_BENEFIT, PKW_SAVINGS_LABEL, PKW_SAVINGS_NOTE, formatOfferPrice, withOfferDate } from '@/config/offer';
 import React, { useState } from 'react';
 import LpSeo from '@/components/lp/LpSeo';
 import LpHeader from '@/components/lp/LpHeader';
@@ -60,7 +60,7 @@ const FAQS: Faq[] = [
   {
     question: `Was genau ist im Grundbetrag von ${formatOfferPrice(OFFER.pkwGrundbetrag)} enthalten?`,
     answer:
-      'Enthalten sind Anmeldung und Verwaltung, der komplette Theorieunterricht, die Vorstellung zur theoretischen Prüfung, die persönliche Beratung sowie 1 Jahr ADAC-Mitgliedschaft. Fahrstunden, Lern-App und amtliche Gebühren kommen wie überall zusätzlich dazu.',
+      'Enthalten sind Anmeldung und Verwaltung, 14 × 90 Min. Theorieunterricht, die Vorstellung zur theoretischen Prüfung, persönliche Beratung und der Erste-Hilfe-Kurs. Bei B197 sind zusätzlich 10 Schaltstunden à 45 Min. für 0 € enthalten. Weitere Fahrstunden, Lern-App und amtliche Gebühren kommen zusätzlich dazu.',
   },
   {
     question: 'Wie lange dauert der Führerschein bei euch insgesamt?',
@@ -75,7 +75,7 @@ const FAQS: Faq[] = [
   {
     question: 'Was kostet der Führerschein am Ende ungefähr komplett?',
     answer:
-      'Das hängt allein davon ab, wie viele Fahrstunden du brauchst – das ist bei jedem unterschiedlich. Bei uns kostet die Übungsstunde (45 Min.) 73,12 €, die Unterweisung 73,12 € und eine besondere Ausbildungsfahrt 80 €. Im Beratungsgespräch rechnen wir dir eine realistische Gesamtsumme aus. Amtliche Gebühren (TÜV/DEKRA, Führerscheinstelle, Sehtest, Erste Hilfe) kommen dazu.',
+      'Das hängt vor allem davon ab, wie viele Fahrstunden du brauchst – das ist bei jedem unterschiedlich. Bei uns kostet die Übungsstunde (45 Min.) 73,12 €, die Unterweisung 73,12 € und eine besondere Ausbildungsfahrt 80 €. Im Beratungsgespräch rechnen wir dir eine realistische Gesamtsumme aus. Der Erste-Hilfe-Kurs ist im Winter-Angebot enthalten; amtliche Gebühren (TÜV/DEKRA, Führerscheinstelle, Sehtest) kommen dazu.',
   },
   {
     question: 'Muss ich bei der Anmeldung schon zahlen?',
@@ -85,7 +85,7 @@ const FAQS: Faq[] = [
   {
     question: 'Bietet ihr auch Automatik (B197) an?',
     answer:
-      'Ja. Bei B197 lernst du überwiegend auf dem Automatikfahrzeug und machst nach mindestens 10 Fahrstunden eine kurze Testfahrt im Schaltwagen. Danach darfst du beides fahren – ohne Automatik-Eintrag im Führerschein.',
+      'Ja. Bei B197 lernst du überwiegend auf dem Automatikfahrzeug. Im Winter-Angebot sind die 10 vorgeschriebenen Schaltstunden à 45 Min. für 0 € enthalten. Nach einer kurzen Testfahrt im Schaltwagen darfst du beides fahren – ohne Automatik-Eintrag im Führerschein.',
   },
   {
     question: 'Wie flexibel sind die Fahrstunden-Termine?',
@@ -142,7 +142,7 @@ const Landing = () => {
           <LpHero
             id={HERO_ID}
             headline={withOfferDate(`Führerschein Klasse B in Potsdam – ${OFFER.label}: Grundbetrag ${formatOfferPrice(OFFER.pkwGrundbetrag)}`)}
-            headlineNote={<a href="#preisblock" className="underline underline-offset-2 hover:text-white">Fahrstunden, Prüfungsvorstellung und amtliche Gebühren kommen hinzu – alle Preise weiter unten.</a>}
+            headlineNote={<a href="#preisblock" className="underline underline-offset-2 hover:text-white">Weitere Fahrstunden, Lern-App und amtliche Gebühren kommen hinzu – alle Preise weiter unten.</a>}
             subline="Klasse B bei der ABF Fahrschule in Babelsberg: Theorie in einer Woche, erfahrene Fahrlehrer, faire Preise. Termin anfragen, im Weberpark vorbeikommen und vor Ort anmelden."
             chips={['Theorie in 1 Woche', '5,0★ bei Google', 'Keine versteckten Kosten']}
             directContact={{ whatsappText, trackingSource: 'landing-pkw' }}
@@ -168,7 +168,15 @@ const Landing = () => {
             price={PRICES_B.basePrice}
             title={`${OFFER.label}: Grundbetrag ${PRICES_B.basePrice} – das ist drin`}
             included={OFFER_COPY.pkwIncluded}
+            savings={PKW_SAVINGS_LABEL}
+            highlight={{
+              title: 'B197: Automatik + Schaltung',
+              price: PKW_B197_BENEFIT,
+              description: 'Die gesetzlich vorgeschriebenen Schaltstunden für deine B197-Ausbildung sind im Winter-Angebot enthalten.',
+            }}
             extras={PRICES_B.items}
+            closing="Weitere Fahrstunden, die Lern-App und amtliche Gebühren (TÜV/DEKRA, Führerscheinstelle, Sehtest/Passfoto) kommen hinzu."
+            footnote={PKW_SAVINGS_NOTE}
           />
 
           <SocialProof reviews={REVIEWS} />

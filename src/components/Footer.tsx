@@ -16,11 +16,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
             <img
-              src="/lovable-uploads/be0365c9-6495-4129-8061-539de20befe7.png"
+              src="/images/abf-logo-dunkel.png"
               alt="ABF Fahrschule Potsdam"
-              width={225}
-              height={80}
-              className="h-20 w-auto"
+              width={640}
+              height={199}
+              className="h-14 w-auto mix-blend-lighten"
               loading="lazy"
             />
             <p className="text-white/70 text-small leading-relaxed">

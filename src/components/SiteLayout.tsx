@@ -5,7 +5,7 @@ import MobileStickyFooter from '@/components/MobileStickyFooter';
 
 interface SiteLayoutProps {
   children: React.ReactNode;
-  /** 'form' zeigt "Jetzt anmelden" in der Sticky-Leiste, 'contact' zeigt Anrufen + WhatsApp */
+  /** 'form' zeigt "Kostenlos beraten" in der Sticky-Leiste, 'contact' zeigt Anrufen + WhatsApp */
   stickyMode?: 'form' | 'contact';
   formAnchor?: string;
   className?: string;

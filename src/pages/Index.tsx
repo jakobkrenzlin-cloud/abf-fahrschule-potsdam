@@ -1,54 +1,58 @@
-import { OFFER_COPY } from '@/config/offer';
+// Startseite. Neu aufgebaut am 18.11.2026 nach derselben Methode wie /anmeldung:
+// orientieren (Klasse wählen), Kosten offen erklären, Reform-Einwand kurz beantworten, Vertrauen, kostenlose Beratung.
+// Analyse: analysen/2026-11-18-startseite-neu/bericht.md im ABF-Ordner.
+
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import SiteLayout from '../components/SiteLayout';
-import Hero from '../components/Hero';
-import OffersSection from '../components/OffersSection';
-import SocialProof from '../components/lp/SocialProof';
-import Steps from '../components/lp/Steps';
-import WhyAbfCards from '../components/lp/WhyAbfCards';
-import AboutSection from '../components/AboutSection';
+import LpSeo from '../components/lp/LpSeo';
 import FaqBlock from '../components/lp/FaqBlock';
-import LocationSection from '../components/lp/LocationSection';
-import ContactSection from '../components/ContactSection';
-import { HOME_FAQS, HOME_REVIEWS, HOME_STEPS } from '../components/home/homeContent';
-import { SITE_URL } from '../components/lp/constants';
+import type { Faq } from '../components/lp/constants';
+import { OFFER_COPY } from '@/config/offer';
+import HomeHero from '../components/home/HomeHero';
+import {
+  ClassChooser,
+  HomeKontaktSection,
+  PreiseSection,
+  ReformBand,
+  WeberparkSection,
+} from '../components/home/HomeSections';
+import { AblaufSection, StimmenSection } from '../components/anmeldung/Sections';
+import { HOME_FAQS, REFORM_FAQ_QUESTION } from '../components/home/homeContent';
+
+const REFORM_LINK_SENTENCE = ' Alle Details findest du auf unserer Seite zur Führerscheinreform.';
+
+const faqsWithLinks: Faq[] = HOME_FAQS.map((f) =>
+  f.question === REFORM_FAQ_QUESTION
+    ? {
+        ...f,
+        answerNode: (
+          <>
+            {f.answer.replace(REFORM_LINK_SENTENCE, '')} Alle Details findest du auf unserer{' '}
+            <Link to="/reform" className="font-semibold text-brand-strong underline underline-offset-2">
+              Seite zur Führerscheinreform
+            </Link>
+            .
+          </>
+        ),
+      }
+    : f,
+);
 
 const Index = () => (
   <SiteLayout stickyMode="form" formAnchor="contact">
-    <Helmet>
-      <title>{OFFER_COPY.homeTitle}</title>
-      <meta property="og:title" content={OFFER_COPY.homeTitle} />
-      <meta property="og:description" content={OFFER_COPY.homeDescription} />
-      <meta name="twitter:title" content={OFFER_COPY.homeTitle} />
-      <meta name="twitter:description" content={OFFER_COPY.homeDescription} />
-      <meta
-        name="description"
-        content={OFFER_COPY.homeDescription}
-      />
-      <link rel="canonical" href={`${SITE_URL}/`} />
-      <script type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'FAQPage',
-          mainEntity: HOME_FAQS.map((f) => ({
-            '@type': 'Question',
-            name: f.question,
-            acceptedAnswer: { '@type': 'Answer', text: f.answer },
-          })),
-        })}
-      </script>
-    </Helmet>
-
-    <Hero />
-    <OffersSection />
-    <SocialProof reviews={HOME_REVIEWS} />
-    <Steps steps={HOME_STEPS} />
-    <WhyAbfCards />
-    <AboutSection />
-    <FaqBlock faqs={HOME_FAQS} />
-    <LocationSection />
-    <ContactSection />
+    <LpSeo title={OFFER_COPY.homeTitle} description={OFFER_COPY.homeDescription} path="/" faqs={HOME_FAQS} />
+    <div className="[&_h1]:[hyphens:manual] [&_h2]:[hyphens:manual] [&_h3]:[hyphens:manual]">
+      <HomeHero />
+      <ClassChooser />
+      <PreiseSection />
+      <ReformBand />
+      <AblaufSection />
+      <StimmenSection />
+      <WeberparkSection />
+      <FaqBlock faqs={faqsWithLinks} />
+      <HomeKontaktSection />
+    </div>
   </SiteLayout>
 );
 

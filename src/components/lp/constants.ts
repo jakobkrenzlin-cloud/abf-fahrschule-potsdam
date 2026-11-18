@@ -11,7 +11,7 @@ export const GOOGLE_REVIEWS_URL = 'https://maps.google.com/?q=ABF+Fahrschule+Pot
 export const RATING_VALUE = '5,0';
 export const REVIEW_COUNT = 40; // Stand Google-Profil November 2026, bei Änderung anpassen
 export const SITE_URL = 'https://abf-fahrschule.de';
-export const LOGO_URL = '/lovable-uploads/043122ac-3ad6-402e-85ea-565401e53982.png';
+export const LOGO_URL = '/images/abf-logo-hell.png'; // zugeschnitten aus /lovable-uploads/043122ac-…png
 
 export type Review = { name: string; text: string };
 export type Step = { title: string; text?: string };

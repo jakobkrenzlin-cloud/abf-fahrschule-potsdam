@@ -4,9 +4,9 @@ import { callPhone, openWhatsApp } from '@/lib/tracking';
 import { PHONE_RAW, WHATSAPP_BASE } from '@/components/lp/constants';
 
 interface MobileStickyFooterProps {
-  /** 'form' = Seite mit Formular ("Jetzt anmelden" + Anrufen), 'contact' = Anrufen + WhatsApp */
+  /** 'form' = Seite mit Formular ("Kostenlos beraten" + Anrufen), 'contact' = Anrufen + WhatsApp */
   mode?: 'form' | 'contact';
-  /** Ziel-Anker für "Jetzt anmelden" (Standard: #contact) */
+  /** Ziel-Anker für "Kostenlos beraten" (Standard: #contact) */
   formAnchor?: string;
   source?: string;
 }
@@ -37,7 +37,7 @@ const MobileStickyFooter: React.FC<MobileStickyFooterProps> = ({
               onClick={scrollToForm}
               className="flex-[2] min-h-[48px] rounded-xl bg-brand-strong text-white font-semibold active:scale-[0.98] transition-transform"
             >
-              Jetzt anmelden
+              Kostenlos beraten
             </button>
             <button
               type="button"

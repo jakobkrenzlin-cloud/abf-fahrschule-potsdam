@@ -16,19 +16,43 @@ const PHONE_PATTERN = /^[+]?[0-9\s()-]{6,30}$/;
 const inputClass =
   'w-full h-14 rounded-xl bg-white text-ink px-4 text-base border-2 border-black/10 focus:border-brand focus:outline-none placeholder:text-ink/45 transition-colors';
 
+export interface BeratungFormProps {
+  formId?: string;
+  source?: string;
+  lpVersion?: string;
+  trackingSource?: string;
+  whatsappText?: string;
+  classOptions?: { value: string; label: string }[];
+  defaultClass?: string;
+  eyebrow?: string;
+  title?: string;
+  intro?: string;
+}
+
 /**
- * Beratungsformular für /anmeldung.
+ * Beratungsformular für /anmeldung und die Startseite (über Props).
  * Schickt dasselbe Format an `submit-lead` wie das bisherige Formular (Quelle landingpage-pkw,
  * form_variant classic, Startwunsch im Feld message) und leitet wie gehabt auf /danke weiter,
  * wo die Google-Ads-Conversion feuert.
  */
-const BeratungForm: React.FC = () => {
+const BeratungForm: React.FC<BeratungFormProps> = ({
+  formId = FORM_ID,
+  source = SOURCE,
+  lpVersion = LP_VERSION,
+  trackingSource = TRACKING_SOURCE,
+  whatsappText = WHATSAPP_TEXT,
+  classOptions = CLASS_OPTIONS,
+  defaultClass = 'b',
+  eyebrow = 'Kostenlos und unverbindlich',
+  title = 'Lass dich beraten',
+  intro = 'Wir rufen dich an, beantworten deine Fragen und rechnen dir deinen Preis aus. Ob du dich anmeldest, entscheidest du danach.',
+}) => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const rootRef = useRef<HTMLDivElement | null>(null);
   const startedRef = useRef(false);
 
-  const [licenseClass, setLicenseClass] = useState('b');
+  const [licenseClass, setLicenseClass] = useState(defaultClass);
   const [start, setStart] = useState('');
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -44,7 +68,7 @@ const BeratungForm: React.FC = () => {
     const o = new IntersectionObserver(
       ([e]) => {
         if (e.isIntersecting) {
-          phCapture('lead_form_viewed', { form_variant: FORM_VARIANT, lp_version: LP_VERSION });
+          phCapture('lead_form_viewed', { form_variant: FORM_VARIANT, lp_version: lpVersion });
           o.disconnect();
         }
       },
@@ -52,12 +76,12 @@ const BeratungForm: React.FC = () => {
     );
     o.observe(el);
     return () => o.disconnect();
-  }, []);
+  }, [lpVersion]);
 
   const markStarted = (field: string) => {
     if (startedRef.current) return;
     startedRef.current = true;
-    phCapture('lead_form_started', { form_variant: FORM_VARIANT, lp_version: LP_VERSION, first_field: field });
+    phCapture('lead_form_started', { form_variant: FORM_VARIANT, lp_version: lpVersion, first_field: field });
   };
 
   const validate = (): boolean => {
@@ -81,7 +105,7 @@ const BeratungForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) {
-      phCapture('lead_form_invalid', { form_variant: FORM_VARIANT, lp_version: LP_VERSION });
+      phCapture('lead_form_invalid', { form_variant: FORM_VARIANT, lp_version: lpVersion });
       return;
     }
     setBusy(true);
@@ -90,7 +114,7 @@ const BeratungForm: React.FC = () => {
         name,
         phone,
         license_class: licenseClass,
-        source: SOURCE,
+        source: source,
         message: start ? `Startwunsch: ${start}` : undefined,
         form_variant: FORM_VARIANT,
         ...getAttribution(),
@@ -99,11 +123,11 @@ const BeratungForm: React.FC = () => {
 
       const w = window as unknown as { dataLayer?: unknown[] };
       w.dataLayer = w.dataLayer || [];
-      w.dataLayer.push({ event: 'lead_submitted', form_type: SOURCE, form_variant: FORM_VARIANT, has_appointment: false });
+      w.dataLayer.push({ event: 'lead_submitted', form_type: source, form_variant: FORM_VARIANT, has_appointment: false });
       phCapture('lead_form_submitted', {
         form_variant: FORM_VARIANT,
         has_appointment: false,
-        lp_version: LP_VERSION,
+        lp_version: lpVersion,
         start_wish: start || 'keine Angabe',
         license_class: licenseClass,
       });
@@ -121,27 +145,26 @@ const BeratungForm: React.FC = () => {
 
   return (
     <div
-      id={FORM_ID}
+      id={formId}
       ref={rootRef}
       className="scroll-mt-24 rounded-2xl bg-white p-5 sm:p-7 shadow-[0_12px_40px_rgba(19,36,58,0.12)] ring-1 ring-black/[0.06] min-w-0"
     >
-      <p className="text-xs font-bold uppercase tracking-wider text-brand-strong">Kostenlos und unverbindlich</p>
+      <p className="text-xs font-bold uppercase tracking-wider text-brand-strong">{eyebrow}</p>
       <h2 className="mt-1.5 text-[1.6rem] md:text-3xl font-extrabold leading-tight text-brand-dark">
-        Lass dich beraten
+        {title}
       </h2>
       <p className="mt-2 text-[15px] leading-relaxed text-ink/75">
-        Wir rufen dich an, beantworten deine Fragen und rechnen dir deinen Preis aus. Ob du dich anmeldest,
-        entscheidest du danach.
+        {intro}
       </p>
 
       <form onSubmit={handleSubmit} className="mt-5 space-y-4" noValidate>
         <div>
-          <label htmlFor={`${FORM_ID}-class`} className="mb-1.5 block text-sm font-semibold text-brand-dark">
+          <label htmlFor={`${formId}-class`} className="mb-1.5 block text-sm font-semibold text-brand-dark">
             Welcher Führerschein?
           </label>
           <div className="relative">
             <select
-              id={`${FORM_ID}-class`}
+              id={`${formId}-class`}
               name="license_class"
               value={licenseClass}
               onChange={(e) => {
@@ -150,7 +173,7 @@ const BeratungForm: React.FC = () => {
               }}
               className={`${inputClass} appearance-none pr-11`}
             >
-              {CLASS_OPTIONS.map((opt) => (
+              {classOptions.map((opt) => (
                 <option key={opt.value} value={opt.value}>
                   {opt.label}
                 </option>
@@ -193,11 +216,11 @@ const BeratungForm: React.FC = () => {
         </fieldset>
 
         <div>
-          <label htmlFor={`${FORM_ID}-name`} className="mb-1.5 block text-sm font-semibold text-brand-dark">
+          <label htmlFor={`${formId}-name`} className="mb-1.5 block text-sm font-semibold text-brand-dark">
             Dein Name
           </label>
           <input
-            id={`${FORM_ID}-name`}
+            id={`${formId}-name`}
             name="name"
             type="text"
             autoComplete="name"
@@ -208,21 +231,21 @@ const BeratungForm: React.FC = () => {
             className={inputClass}
             placeholder="Vorname reicht"
             aria-invalid={!!errors.name}
-            aria-describedby={errors.name ? `${FORM_ID}-name-error` : undefined}
+            aria-describedby={errors.name ? `${formId}-name-error` : undefined}
           />
           {errors.name && (
-            <p id={`${FORM_ID}-name-error`} className="mt-1 text-sm font-medium text-destructive">
+            <p id={`${formId}-name-error`} className="mt-1 text-sm font-medium text-destructive">
               {errors.name}
             </p>
           )}
         </div>
 
         <div>
-          <label htmlFor={`${FORM_ID}-phone`} className="mb-1.5 block text-sm font-semibold text-brand-dark">
+          <label htmlFor={`${formId}-phone`} className="mb-1.5 block text-sm font-semibold text-brand-dark">
             Telefonnummer für den Rückruf
           </label>
           <input
-            id={`${FORM_ID}-phone`}
+            id={`${formId}-phone`}
             name="phone"
             type="tel"
             inputMode="tel"
@@ -234,13 +257,13 @@ const BeratungForm: React.FC = () => {
             className={inputClass}
             placeholder="z. B. 0151 23456789"
             aria-invalid={!!errors.phone}
-            aria-describedby={`${FORM_ID}-phone-hint${errors.phone ? ` ${FORM_ID}-phone-error` : ''}`}
+            aria-describedby={`${formId}-phone-hint${errors.phone ? ` ${formId}-phone-error` : ''}`}
           />
-          <p id={`${FORM_ID}-phone-hint`} className="mt-1.5 text-xs text-ink/60">
+          <p id={`${formId}-phone-hint`} className="mt-1.5 text-xs text-ink/60">
             Nur für unseren Rückruf.
           </p>
           {errors.phone && (
-            <p id={`${FORM_ID}-phone-error`} className="mt-1 text-sm font-medium text-destructive">
+            <p id={`${formId}-phone-error`} className="mt-1 text-sm font-medium text-destructive">
               {errors.phone}
             </p>
           )}
@@ -249,7 +272,7 @@ const BeratungForm: React.FC = () => {
         <div>
           <div className="flex min-h-[44px] items-start gap-3">
             <input
-              id={`${FORM_ID}-consent`}
+              id={`${formId}-consent`}
               type="checkbox"
               checked={consent}
               onChange={(e) => {
@@ -259,9 +282,9 @@ const BeratungForm: React.FC = () => {
               }}
               className="mt-0.5 h-6 w-6 shrink-0 rounded accent-brand-strong"
               aria-invalid={!!errors.consent}
-              aria-describedby={errors.consent ? `${FORM_ID}-consent-error` : undefined}
+              aria-describedby={errors.consent ? `${formId}-consent-error` : undefined}
             />
-            <label htmlFor={`${FORM_ID}-consent`} className="text-xs leading-relaxed text-ink/70">
+            <label htmlFor={`${formId}-consent`} className="text-xs leading-relaxed text-ink/70">
               Ich stimme zu, dass meine Angaben zur Kontaktaufnahme gespeichert werden.{' '}
               <a href="/datenschutz" className="underline underline-offset-2 hover:text-brand-dark">
                 Datenschutzerklärung
@@ -269,7 +292,7 @@ const BeratungForm: React.FC = () => {
             </label>
           </div>
           {errors.consent && (
-            <p id={`${FORM_ID}-consent-error`} className="mt-1 text-sm font-medium text-destructive">
+            <p id={`${formId}-consent-error`} className="mt-1 text-sm font-medium text-destructive">
               {errors.consent}
             </p>
           )}
@@ -310,14 +333,14 @@ const BeratungForm: React.FC = () => {
         <div className="mt-3 grid grid-cols-2 gap-3">
           <button
             type="button"
-            onClick={() => openWhatsApp(`${WHATSAPP_BASE}?text=${encodeURIComponent(WHATSAPP_TEXT)}`, TRACKING_SOURCE)}
+            onClick={() => openWhatsApp(`${WHATSAPP_BASE}?text=${encodeURIComponent(whatsappText)}`, trackingSource)}
             className="flex min-h-[52px] items-center justify-center gap-2 rounded-xl bg-success font-semibold text-white transition-opacity hover:opacity-90"
           >
             <MessageCircle className="h-5 w-5" aria-hidden="true" /> WhatsApp
           </button>
           <button
             type="button"
-            onClick={() => callPhone(PHONE_RAW, TRACKING_SOURCE)}
+            onClick={() => callPhone(PHONE_RAW, trackingSource)}
             className="flex min-h-[52px] items-center justify-center gap-2 rounded-xl border-2 border-brand-dark/15 font-semibold text-brand-dark transition-colors hover:bg-surface"
           >
             <Phone className="h-5 w-5" aria-hidden="true" /> Anrufen

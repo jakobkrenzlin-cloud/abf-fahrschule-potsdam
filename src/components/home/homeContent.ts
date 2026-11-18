@@ -1,57 +1,131 @@
-import { OFFER, OFFER_COPY, formatOfferPrice, withOfferDate } from '@/config/offer';
-import type { Faq, Review, Step } from '@/components/lp/constants';
+// Texte der Startseite. Neu aufgebaut am 18.11.2026 (Analyse: PostHog, 65 Sitzungsaufnahmen, Lead-Datenbank).
+// Preise kommen aus src/config/offer.ts und src/data/prices.ts, Reform-Fakten aus src/config/reform.ts.
+// Bewertungen kommen aus src/components/anmeldung/content.ts (REVIEWS, wörtlich übernommen).
 
-export const HOME_REVIEWS: Review[] = [
+import { OFFER, formatOfferPrice } from '@/config/offer';
+import { PRICES_A, PRICES_B, priceOf } from '@/data/prices';
+import type { Faq } from '@/components/lp/constants';
+
+/** Versionskennung für PostHog, um alte und neue Startseite vergleichen zu können. */
+export const HOME_LP_VERSION = 'home-2026-11';
+export const HOME_FORM_ID = 'contact';
+export const HOME_SOURCE = 'homepage';
+export const HOME_TRACKING_SOURCE = 'homepage-kontakt';
+
+export const HOME_WHATSAPP_TEXT =
+  'Hallo, ich interessiere mich für einen Führerschein bei der ABF Fahrschule. Könnt ihr mich beraten?';
+
+export const HOME_CLASS_OPTIONS = [
+  { value: 'b', label: 'Klasse B – Auto, Schaltwagen' },
+  { value: 'b197', label: 'Klasse B197 – Automatik, Schalten erlaubt' },
+  { value: 'bf17', label: 'BF17 – Begleitetes Fahren ab 17' },
+  { value: 'be', label: 'Klasse BE – mit Anhänger' },
+  { value: 'a1', label: 'Klasse A1 – Motorrad ab 16' },
+  { value: 'a2', label: 'Klasse A2 – Motorrad ab 18' },
+  { value: 'a', label: 'Klasse A – Motorrad' },
+  { value: 'b196', label: 'B196 – 125er mit Autoführerschein' },
+];
+
+export const PKW_GRUNDBETRAG = formatOfferPrice(OFFER.pkwGrundbetrag);
+export const PKW_GRUNDBETRAG_VORHER = formatOfferPrice(OFFER.pkwPreviousGrundbetrag);
+export const MOTORRAD_GRUNDBETRAG = formatOfferPrice(OFFER.motorradGrundbetrag);
+export const B196_FESTPREIS = formatOfferPrice(OFFER.b196Festpreis);
+export const PKW_FAHRSTUNDE = priceOf(PRICES_B, 'Übungsstunde');
+export const PKW_SONDERFAHRT = priceOf(PRICES_B, 'Besondere Ausbildungsfahrt Überland');
+export const PKW_PRAXISPRUEFUNG = priceOf(PRICES_B, 'Vorstellung zur praktischen Prüfung');
+export const MOTORRAD_FAHRSTUNDE = priceOf(PRICES_A, 'Übungsstunde');
+
+export type ClassCard = {
+  key: string;
+  kicker: string;
+  title: string;
+  text: string;
+  price?: string;
+  to?: string;
+  cta: string;
+};
+
+export const CLASS_CARDS: ClassCard[] = [
   {
-    name: 'Zaplatix',
-    text: 'Ich kann es hier nur empfehlen, bin hier hin gewechselt und innerhalb von 3 Monaten beim ersten Versuch bestanden, sowohl Serdar als auch Ali sind super Fahrlehrer, meine klare Empfehlung',
+    key: 'b',
+    kicker: 'Auto',
+    title: 'Klasse B, B197 und BF17',
+    text: 'Ab 17 mit Begleitung oder ab 18. Im Schaltwagen oder auf Automatik mit Erlaubnis zum Schalten (B197).',
+    price: `${OFFER.label}: Grundbetrag ${PKW_GRUNDBETRAG}`,
+    to: '/anmeldung',
+    cta: 'Zum Auto-Führerschein',
   },
   {
-    name: 'Janne Stuer',
-    text: 'Sehr nett alle und habe schnell viele Termine bekommen. Hab nur knapp 2 Monate für alle Fahrstunden gebraucht.',
+    key: 'a',
+    kicker: 'Motorrad',
+    title: 'Klasse A1, A2 und A',
+    text: 'A1 ab 16, A2 ab 18, Klasse A direkt ab 24 oder nach zwei Jahren A2. Theorie im Winter, im Frühjahr aufs Motorrad.',
+    price: `${OFFER.label}: Grundbetrag ${MOTORRAD_GRUNDBETRAG}`,
+    to: '/anmeldungmotorrad',
+    cta: 'Zum Motorrad-Führerschein',
   },
   {
-    name: 'THS KALLE Boss',
-    text: 'Ein gute Fahrschule mit kompetente Fahrlehrer und alles beim ersten Mal bestanden.( hat nur 2 Monate gedauert)',
+    key: 'b196',
+    kicker: '125er',
+    title: 'B196 mit Autoführerschein',
+    text: 'Mit dem Autoführerschein Leichtkrafträder bis 125 cm³ fahren, ohne Prüfung. In der Regel in zwei bis drei Wochen.',
+    price: `Festpreis ${B196_FESTPREIS}`,
+    to: '/b196',
+    cta: 'Zu B196',
+  },
+  {
+    key: 'be',
+    kicker: 'Anhänger',
+    title: 'Klasse BE',
+    text: 'Für das Fahren mit größerem Anhänger. Wir sagen dir, ob du BE brauchst.',
+    cta: 'Beratung anfragen',
   },
 ];
 
-export const HOME_STEPS: Step[] = [
-  { title: 'Anfrage stellen', text: 'Formular ausfüllen – Name und Telefonnummer reichen aus.' },
-  { title: 'Beratung im Weberpark', text: 'Wir klären alle Fragen und planen deinen Start.' },
-  { title: 'Theorie in einer Woche', text: 'Kompakter Unterricht, danach die theoretische Prüfung.' },
-  { title: 'Praxis und Prüfung', text: 'Flexible Fahrstunden bis zur bestandenen Prüfung.' },
-];
+const bis = OFFER.pkwValidUntilLabel ? ` bis ${OFFER.pkwValidUntilLabel}` : '';
+
+export const REFORM_FAQ_QUESTION = 'Soll ich mit dem Führerschein auf die Reform warten?';
 
 export const HOME_FAQS: Faq[] = [
   {
-    question: 'Was kostet der Führerschein bei der ABF Fahrschule in Potsdam?',
-    answer:
-      withOfferDate(`Der Grundbetrag für die Klasse B beträgt im Winter-Angebot ${formatOfferPrice(OFFER.pkwGrundbetrag)}. Enthalten sind Anmeldung und Verwaltung, 14 × 90 Min. Theorieunterricht, die Vorstellung zur theoretischen Prüfung, persönliche Beratung und der Erste-Hilfe-Kurs. Bei B197 kommen 10 Schaltstunden à 45 Min. für 0 € hinzu. Weitere Fahrstunden (ab 73,12 € je 45 Min.), Lern-App und amtliche Gebühren kommen zusätzlich dazu.`),
+    question: 'Was kostet der Führerschein bei euch?',
+    answer: `Für Klasse B liegt der Grundbetrag im ${OFFER.label} bei ${PKW_GRUNDBETRAG} (gilt bei Anmeldung${bis}), inklusive Theorie und Erste-Hilfe-Kurs. Dazu kommen die 12 vorgeschriebenen Sonderfahrten zu je ${PKW_SONDERFAHRT}, deine Übungsstunden zu je ${PKW_FAHRSTUNDE} (45 Min.), die Vorstellung zur praktischen Prüfung (${PKW_PRAXISPRUEFUNG}), die Lern-App und die amtlichen Gebühren. Wie viele Übungsstunden du brauchst, ist sehr unterschiedlich. Im Beratungsgespräch rechnen wir dir eine realistische Gesamtsumme aus.`,
   },
   {
-    question: 'Wie lange dauert die Ausbildung?',
+    question: REFORM_FAQ_QUESTION,
     answer:
-      'Die Theorie schaffst du bei uns in einer Woche. Wie schnell es insgesamt geht, hängt davon ab, wie viele Fahrstunden du pro Woche nehmen kannst. Viele Fahrschüler sind in 2 bis 3 Monaten fertig.',
+      'Nach heutigem Stand bringt Warten keinen belegten Vorteil. Die Reform gilt noch nicht, das Gesetz soll frühestens am 1. Juli 2027 in Kraft treten, und eine Ersparnis für den Führerschein über die Fahrschule nennt das Gesetz nicht. Alle Details findest du auf unserer Seite zur Führerscheinreform.',
   },
   {
-    question: 'Was ist die B197-Ausbildung?',
+    question: 'Wie lange dauert der Führerschein bei euch?',
     answer:
-      'Bei B197 lernst du überwiegend auf dem Automatikfahrzeug. Im Winter-Angebot sind die 10 vorgeschriebenen Schaltstunden à 45 Min. für 0 € enthalten. Nach einer kurzen Testfahrt im Schaltwagen darfst du beides fahren – ohne Automatik-Eintrag.',
+      'Die Theorie schaffst du bei uns in einer Woche. Wie schnell es danach geht, hängt vor allem davon ab, wie viele Fahrstunden du pro Woche nehmen kannst. Viele unserer Fahrschüler sind in 2 bis 3 Monaten fertig.',
   },
   {
-    question: 'Bietet ihr auch den Motorradführerschein an?',
-    answer:
-      withOfferDate(`Ja. Wir bilden in den Klassen A, A1 und A2 aus. Der Grundbetrag liegt bei ${formatOfferPrice(OFFER.motorradGrundbetrag)}. Zusätzlich bieten wir die Schlüsselzahl B196 für ${formatOfferPrice(OFFER.b196Festpreis)} Festpreis an.`),
+    question: 'Was ist B197?',
+    answer: `Bei B197 lernst du überwiegend auf einem Automatikauto. Dazu kommen 10 Schaltstunden und eine kurze Testfahrt im Schaltwagen. Danach darfst du beides fahren, ohne Automatik-Eintrag im Führerschein. Im ${OFFER.label} kosten dich die 10 Schaltstunden à 45 Min. 0 €.`,
   },
   {
-    question: 'Muss ich bei der Anmeldung schon etwas bezahlen?',
-    answer:
-      'Nein. Deine Anfrage über das Formular ist kostenlos und unverbindlich. Es gibt keine Vorkasse – wir sprechen erst persönlich miteinander.',
+    question: 'Bietet ihr Motorrad und B196 an?',
+    answer: `Ja. Wir bilden in den Klassen A1, A2 und A aus, der Grundbetrag liegt im ${OFFER.label} bei ${MOTORRAD_GRUNDBETRAG}. Die Schlüsselzahl B196 für 125er mit dem Autoführerschein kostet ${B196_FESTPREIS} Festpreis.`,
   },
   {
-    question: 'Wo genau finde ich euch und wann habt ihr geöffnet?',
+    question: 'Kann ich mit 17 anfangen (BF17)?',
     answer:
-      'Im Weberpark, Tuchmacherstraße 45b, 14482 Potsdam-Babelsberg. Das Büro ist Montag bis Freitag von 12:00 bis 18:00 Uhr geöffnet. Fahrstunden sind nach Absprache auch außerhalb dieser Zeiten möglich.',
+      'Ja. Anmelden kannst du dich schon mit 16,5 Jahren, die Prüfung machst du mit 17. Bis 18 fährst du dann mit einer eingetragenen Begleitperson.',
+  },
+  {
+    question: 'Ich war schon bei einer anderen Fahrschule. Kann ich wechseln?',
+    answer:
+      'Ja. Im Beratungsgespräch schauen wir gemeinsam, was du schon geschafft hast und wie es bei uns für dich weitergeht.',
+  },
+  {
+    question: 'Muss ich vorab etwas zahlen?',
+    answer: 'Nein. Die Beratung kostet nichts, und auch bei der Anmeldung gibt es keine Vorkasse.',
+  },
+  {
+    question: 'Wann habt ihr geöffnet und wo finde ich euch?',
+    answer:
+      'Im Weberpark, Tuchmacherstraße 45b, 14482 Potsdam-Babelsberg. Das Büro ist Montag bis Freitag von 12 bis 18 Uhr besetzt. Fahrstunden sind nach Absprache auch außerhalb dieser Zeiten möglich.',
   },
 ];

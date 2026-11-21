@@ -1,5 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2.49.1";
+import { createClient, type SupabaseClient } from "https://esm.sh/@supabase/supabase-js@2.49.1";
 import { validateAppointment, formatAppointment } from "../_shared/booking-rules.ts";
 
 const corsHeaders = {
@@ -11,7 +11,7 @@ const RATE_LIMIT_MAX = 10; // Max submissions per window
 const RATE_LIMIT_WINDOW_MINUTES = 30; // 30 min window
 
 // Persistent rate limiting using database
-async function checkRateLimit(supabase: ReturnType<typeof createClient>, ip: string, endpoint: string): Promise<{ limited: boolean; error?: string }> {
+async function checkRateLimit(supabase: SupabaseClient<any, "public", any>, ip: string, endpoint: string): Promise<{ limited: boolean; error?: string }> {
   try {
     const now = new Date();
     const windowStart = new Date(now.getTime() - RATE_LIMIT_WINDOW_MINUTES * 60 * 1000);
@@ -49,8 +49,14 @@ async function checkRateLimit(supabase: ReturnType<typeof createClient>, ip: str
       return { limited: false };
     }
 
+    const record = existingRecord as {
+      id: string;
+      request_count: number;
+      window_start: string;
+    };
+
     // Check if window has expired
-    const recordWindowStart = new Date(existingRecord.window_start);
+    const recordWindowStart = new Date(record.window_start);
     if (recordWindowStart < windowStart) {
       // Window expired, reset the counter
       const { error: updateError } = await supabase
@@ -59,7 +65,7 @@ async function checkRateLimit(supabase: ReturnType<typeof createClient>, ip: str
           request_count: 1,
           window_start: now.toISOString()
         })
-        .eq('id', existingRecord.id);
+        .eq('id', record.id);
 
       if (updateError) {
         console.error('Rate limit update error:', updateError);
@@ -69,15 +75,15 @@ async function checkRateLimit(supabase: ReturnType<typeof createClient>, ip: str
     }
 
     // Window still active, check count
-    if (existingRecord.request_count >= RATE_LIMIT_MAX) {
+    if (record.request_count >= RATE_LIMIT_MAX) {
       return { limited: true };
     }
 
     // Increment counter
     const { error: incrementError } = await supabase
       .from('rate_limits')
-      .update({ request_count: existingRecord.request_count + 1 })
-      .eq('id', existingRecord.id);
+      .update({ request_count: record.request_count + 1 })
+      .eq('id', record.id);
 
     if (incrementError) {
       console.error('Rate limit increment error:', incrementError);

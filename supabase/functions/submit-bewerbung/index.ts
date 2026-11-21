@@ -1,5 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2.49.1";
+import { createClient, type SupabaseClient } from "https://esm.sh/@supabase/supabase-js@2.49.1";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -18,7 +18,7 @@ const ALLOWED_POSITIONS = [
   'Initiativbewerbung',
 ];
 
-async function checkRateLimit(supabase: ReturnType<typeof createClient>, ip: string, endpoint: string): Promise<boolean> {
+async function checkRateLimit(supabase: SupabaseClient<any, "public", any>, ip: string, endpoint: string): Promise<boolean> {
   const now = new Date();
   const windowStart = new Date(now.getTime() - RATE_LIMIT_WINDOW_MINUTES * 60 * 1000);
 

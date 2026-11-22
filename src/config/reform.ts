@@ -4,25 +4,27 @@
 // (Primärdokumente: BT-Drs. 21/7404, 21/8979, BR-Drs. 365/26, BMV-PM 043/2026, Bundesrat TOP 62).
 //
 // WICHTIG beim Aktualisieren:
-// - Nach der Bundesratssitzung am 20.11.2026 und nach jeder weiteren Sitzung (laut Fachseiten 18.12.2026)
-//   REFORM_STAND und die betroffenen Sätze anpassen. Alle Seiten lesen von hier.
+// - Stand 22.11.2026: Bundesrat hat dem Gesetz am 20.11.2026 zugestimmt (BundesratKOMPAKT 1070, TOP 62).
+// - Nächste Prüfung: Bundesratssitzung 18.12.2026 (Verordnung?) und Verkündung im Bundesgesetzblatt.
+//   Dann REFORM_STAND und die betroffenen Sätze anpassen. Alle Seiten lesen von hier, /reform hat zusätzlich
+//   eigene FAQ-Texte in src/pages/Reform.tsx.
 // - Nicht schreiben: „gilt ab …“ für Theorie und Sonderfahrten, „Führerschein wird um X € billiger“,
 //   „Online-Theorie ab Januar 2027“, „Bestehensquoten öffentlich“. Keine Eurobeträge zur Ersparnis.
 
-export const REFORM_STAND = '17. November 2026';
-export const REFORM_STAND_ISO = '2026-11-17';
+export const REFORM_STAND = '22. November 2026';
+export const REFORM_STAND_ISO = '2026-11-22';
 
 /** Kurze, belegte Kernsätze. Reihenfolge = Reihenfolge auf /anmeldung. */
 export const REFORM_FACTS = {
   heute: {
-    title: 'Heute gelten die bisherigen Regeln',
+    title: 'Heute gelten noch die bisherigen Regeln',
     text:
-      'Der Bundestag hat die Reform am 5. November 2026 beschlossen. Der Bundesrat muss noch zustimmen, und die Details zu Theorie und Sonderfahrten hängen an einer Verordnung, die noch nicht beschlossen ist. Das Gesetz soll frühestens am 1. Juli 2027 in Kraft treten.',
+      'Bundestag und Bundesrat haben das Gesetz beschlossen, am 5. und am 20. November 2026. Es tritt zum größten Teil am 1. Juli 2027 in Kraft. Die Details zu Theorie, Sonderfahrten und Prüfung regelt eine Verordnung, über die der Bundesrat noch entscheidet.',
   },
   preis: {
     title: 'Ob es billiger wird, ist offen',
     text:
-      'Das Gesetz regelt, dass Fahrschulen ihre Preise melden und vergleichbar machen. Wie hoch die Preise sind, regelt es nicht. Eine Beispielrechnung mit Ersparnis gibt es nur im Verordnungsentwurf, und nur für das Üben mit Angehörigen.',
+      'Das Gesetz macht die Preise aller Fahrschulen vergleichbar und soll den Führerschein so günstiger machen. Wie hoch die Preise sind, regelt es nicht, und eine Ersparnis nennt es nicht. Eine Beispielrechnung gibt es nur im Verordnungsentwurf, und nur für das Üben mit Angehörigen.',
   },
   warteschlange: {
     title: 'Der Entwurf rechnet mit einer „Bugwelle“',
@@ -36,17 +38,17 @@ export const REFORM_FACTS = {
   },
 } as const;
 
-/** Was sich laut Gesetz oder Entwurf ändern soll. `basis` sagt, wie verbindlich es ist. */
+/** Was sich laut Gesetz oder Entwurf ändert. `basis` sagt, wie verbindlich es ist ("Beschlossen…" = grünes Badge). */
 export const REFORM_CHANGES = [
   {
     topic: 'Theorie',
-    text: 'Du sollst wählen können, ob du per App, online oder vor Ort lernst. Fahrschulen müssen nicht jedes Format anbieten.',
-    basis: 'Verordnungsentwurf',
+    text: 'Die Pflicht, vor Ort am Theorieunterricht teilzunehmen, fällt weg. Du kannst die Theorie dann auch digital oder per App lernen. Fahrschulen entscheiden selbst, ob und wie sie Theoriestunden anbieten.',
+    basis: 'Beschlossen',
   },
   {
     topic: 'Sonderfahrten',
-    text: 'Überland, Autobahn und Dunkelheit bleiben Pflicht. Nur die feste Anzahl soll wegfallen, der Umfang richtet sich dann nach deinem Ausbildungsstand.',
-    basis: 'Verordnungsentwurf',
+    text: 'Überland-, Autobahn- und Nachtfahrten bleiben Pflicht. Die feste Zahl von 12 fällt weg, den Umfang legt künftig dein Fahrlehrer im Einzelfall fest.',
+    basis: 'Beschlossen',
   },
   {
     topic: 'Praktische Prüfung',
@@ -55,18 +57,18 @@ export const REFORM_CHANGES = [
   },
   {
     topic: 'Theorieprüfung',
-    text: 'Das Ministerium hat einen um etwa ein Drittel kleineren Fragenkatalog angekündigt. Die Zahl der Fragen je Prüfung bleibt gleich.',
-    basis: 'Ankündigung des Ministeriums',
+    text: 'Das Bewertungssystem wird einfacher und der Fragenkatalog kleiner. Fragen zur Verkehrssicherheit bleiben ein Schwerpunkt.',
+    basis: 'Beschlossen, Details per Verordnung',
   },
   {
     topic: 'Üben mit Angehörigen',
-    text: 'Als befristeter Versuch: nach bestandener Theorie und mindestens 6 Fahrstunden, mit einer Begleitperson, die seit 7 Jahren den Führerschein hat. Die Länder können aussteigen. Ob Brandenburg mitmacht, ist offen.',
-    basis: 'Gesetz (Rahmen) und Verordnungsentwurf (Details)',
+    text: 'Als Erprobung: nach bestandener Theorieprüfung und mindestens 6 Fahrstunden, nach einer Einweisung durch eine Fahrlehrkraft. Die Details regelt die Verordnung, die Länder entscheiden, ob sie das zulassen. Ob Brandenburg mitmacht, ist offen.',
+    basis: 'Beschlossen, Details per Verordnung',
   },
   {
     topic: 'Preise',
-    text: 'Fahrschulen melden ihre Preise, sie werden öffentlich vergleichbar. Erstmals bis 1. Oktober 2027.',
-    basis: 'Gesetz',
+    text: 'Fahrschulen melden ihre Preise, sie werden in der Mobilithek vergleichbar. Erstmals bis 1. Oktober 2027.',
+    basis: 'Beschlossen',
   },
 ] as const;
 
@@ -76,9 +78,9 @@ export const REFORM_TIMELINE = [
   { date: '20. Mai 2026', done: true, text: 'Das Bundeskabinett beschließt den Gesetzentwurf.' },
   { date: '24. September 2026', done: true, text: 'Erste Lesung im Bundestag.' },
   { date: '5. November 2026', done: true, text: 'Der Bundestag beschließt das Gesetz.' },
-  { date: '20. November 2026', done: false, text: 'Der Bundesrat berät das Gesetz.' },
-  { date: 'offen', done: false, text: 'Bundesrat zur Verordnung (Theorie, Sonderfahrten, Prüfung). Der Entwurf nennt den 1. Januar und den 1. Juli 2027, beschlossen ist er nicht.' },
-  { date: 'frühestens 1. Juli 2027', done: false, text: 'Das Gesetz tritt in Kraft.' },
+  { date: '20. November 2026', done: true, text: 'Der Bundesrat stimmt dem Gesetz zu.' },
+  { date: 'offen', done: false, text: 'Der Bundesrat berät die Verordnung mit den Details zu Theorie, Sonderfahrten und Prüfung. Laut Bundesrat in einer seiner nächsten Sitzungen, die nächste ist am 18. Dezember 2026.' },
+  { date: '1. Juli 2027', done: false, text: 'Das Gesetz tritt zum größten Teil in Kraft.' },
 ] as const;
 
 export const REFORM_SOURCES = [
@@ -99,7 +101,7 @@ export const REFORM_SOURCES = [
     url: 'https://dserver.bundestag.de/brd/2026/0365-26.pdf',
   },
   {
-    label: 'Bundesrat: Tagesordnung 20. November 2026, TOP 62',
+    label: 'Bundesrat: Zustimmung am 20. November 2026, TOP 62',
     url: 'https://www.bundesrat.de/DE/plenum/bundesrat-kompakt/26/1070/62.html',
   },
   {

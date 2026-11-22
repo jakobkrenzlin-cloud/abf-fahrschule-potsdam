@@ -250,7 +250,7 @@ export const ReformSection: React.FC = () => (
         id="reform-heading"
         eyebrow={`Führerscheinreform · Stand ${REFORM_STAND}`}
         title="Lohnt es sich, auf die Reform zu warten?"
-        intro="Unsere Einschätzung nach heutigem Stand: Warten bringt dir keinen belegten Vorteil. Das sind die Fakten."
+        intro="Das Gesetz ist beschlossen, die Details noch nicht. Unsere Einschätzung: Dass sich Warten finanziell lohnt, ist nicht belegt. Das sind die Fakten."
       />
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2">

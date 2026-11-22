@@ -94,7 +94,7 @@ export const HOME_FAQS: Faq[] = [
   {
     question: REFORM_FAQ_QUESTION,
     answer:
-      'Nach heutigem Stand bringt Warten keinen belegten Vorteil. Die Reform gilt noch nicht, das Gesetz soll frühestens am 1. Juli 2027 in Kraft treten, und eine Ersparnis für den Führerschein über die Fahrschule nennt das Gesetz nicht. Alle Details findest du auf unserer Seite zur Führerscheinreform.',
+      'Nach heutigem Stand ist nicht belegt, dass Warten günstiger wird. Die Reform gilt noch nicht: Bundestag und Bundesrat haben das Gesetz beschlossen, es tritt zum größten Teil am 1. Juli 2027 in Kraft. Eine Ersparnis für den Führerschein nennt das Gesetz nicht. Alle Details findest du auf unserer Seite zur Führerscheinreform.',
   },
   {
     question: 'Wie lange dauert der Führerschein bei euch?',

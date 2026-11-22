@@ -29,27 +29,27 @@ const FAQS: Faq[] = [
   {
     question: 'Gilt die Reform schon?',
     answer:
-      'Nein. Der Bundestag hat das Gesetz am 5. November 2026 beschlossen, der Bundesrat muss noch zustimmen. Das Gesetz soll frühestens am 1. Juli 2027 in Kraft treten. Die Details zu Theorie und Sonderfahrten stehen in einer Verordnung, die noch nicht beschlossen ist. Bis dahin gelten die bisherigen Regeln.',
+      'Nein. Bundestag und Bundesrat haben das Gesetz beschlossen, am 5. und am 20. November 2026. Es tritt zum größten Teil am 1. Juli 2027 in Kraft. Die Details zu Theorie, Sonderfahrten und Prüfung regelt eine Verordnung, über die der Bundesrat noch entscheidet. Bis dahin gelten die bisherigen Regeln.',
   },
   {
     question: 'Wann kommt die Online-Theorie?',
     answer:
-      'Laut Verordnungsentwurf sollst du das Lernformat wählen können: App, online oder vor Ort. Fahrschulen müssen nicht jedes Format anbieten. Die Verordnung ist noch nicht beschlossen. Der Entwurf nennt als Termine den 1. Januar und den 1. Juli 2027, festgelegt ist davon nichts.',
+      'Das Gesetz schafft die Pflicht ab, vor Ort am Theorieunterricht teilzunehmen. Du kannst dann auch digital oder per App lernen, Fahrschulen entscheiden selbst, ob und wie sie Theoriestunden anbieten. Das Gesetz tritt zum größten Teil am 1. Juli 2027 in Kraft, die Details regelt eine Verordnung, über die der Bundesrat noch entscheidet.',
   },
   {
     question: 'Fallen die Sonderfahrten weg?',
     answer:
-      'Nein. Überland, Autobahn und Dunkelheit bleiben laut Verordnungsentwurf Pflicht. Wegfallen soll nur die feste Anzahl. Der Umfang richtet sich dann nach deinem Ausbildungsstand. Auch das ist noch nicht beschlossen.',
+      'Nein. Überland-, Autobahn- und Nachtfahrten bleiben Pflicht. Die feste Zahl von 12 fällt weg, den Umfang legt künftig dein Fahrlehrer im Einzelfall fest. Bis die neuen Regeln gelten, bleibt es bei 12 Sonderfahrten.',
   },
   {
     question: 'Darf ich bald mit meinen Eltern üben?',
     answer:
-      'Das Gesetz schafft den Rahmen für einen befristeten Versuch. Laut Verordnungsentwurf setzt er bestandene Theorie, mindestens 6 Fahrstunden und eine Begleitperson voraus, die seit 7 Jahren den Führerschein hat. Die Länder können aussteigen. Ob Brandenburg mitmacht, ist offen, und die Verordnung ist noch nicht beschlossen.',
+      'Das Gesetz erlaubt das als Erprobung: nach bestandener Theorieprüfung und mindestens 6 Fahrstunden, nach einer Einweisung durch eine Fahrlehrkraft. Die Details regelt eine Verordnung, die Länder entscheiden, ob sie das zulassen. Ob Brandenburg mitmacht, ist offen.',
   },
   {
     question: 'Wird der Führerschein billiger?',
     answer:
-      'Das ist offen. Das Gesetz regelt, dass Fahrschulen ihre Preise melden und vergleichbar machen, nicht wie hoch die Preise sind. Das Gesetz nennt keine Ersparnis. Der Verordnungsentwurf rechnet nur für das Üben mit Angehörigen ein Beispiel vor, mit Annahmen zu Auto, Versicherung und Fahrleistung.',
+      'Das ist offen. Das Gesetz macht die Preise aller Fahrschulen vergleichbar und soll den Führerschein so günstiger machen. Eine Ersparnis nennt es nicht. Der Verordnungsentwurf rechnet nur für das Üben mit Angehörigen ein Beispiel vor, mit Annahmen zu Auto, Versicherung und Fahrleistung.',
   },
   {
     question: 'Was passiert, wenn ich jetzt anfange?',
@@ -83,10 +83,8 @@ const jsonLd = [
   },
 ];
 
-const BASIS_STYLE: Record<string, string> = {
-  Gesetz: 'bg-success/10 text-success',
-};
-const basisClass = (basis: string) => BASIS_STYLE[basis] ?? 'bg-brand/10 text-brand-strong';
+const basisClass = (basis: string) =>
+  basis.startsWith('Beschlossen') ? 'bg-success/10 text-success' : 'bg-brand/10 text-brand-strong';
 
 const prose = 'text-[17px] leading-relaxed text-ink/80';
 const btnBase =
@@ -135,8 +133,8 @@ const Reform = () => {
                 <h2 className="text-h3 text-brand-dark">Das Wichtigste in 30 Sekunden</h2>
                 <ul className="mt-4 space-y-3">
                   {[
-                    'Heute gelten die bisherigen Regeln.',
-                    'Das Gesetz soll frühestens am 1. Juli 2027 in Kraft treten. Für die Verordnung gibt es keinen Termin.',
+                    'Heute gelten noch die bisherigen Regeln.',
+                    'Bundestag und Bundesrat haben das Gesetz beschlossen. Es tritt zum größten Teil am 1. Juli 2027 in Kraft, die Verordnung mit den Details steht noch aus.',
                     'Ob der Führerschein billiger wird, ist offen.',
                     'Wer vorher anfängt, darf laut Entwurf nach bisherigem Recht abschließen.',
                   ].map((point) => (
@@ -197,11 +195,12 @@ const Reform = () => {
           <section className="section-y bg-surface" aria-labelledby="reform-aenderungen-heading">
             <div className="container-narrow">
               <h2 id="reform-aenderungen-heading" className="text-h2 md:text-h2-lg text-brand-dark">
-                Was sich ändern soll
+                Was sich ändert
               </h2>
               <p className={`mt-4 ${prose}`}>
-                Gesetz heißt: vom Bundestag beschlossen, der Bundesrat steht aus. Entwurf heißt: ein Vorschlag, der noch
-                nicht beschlossen ist. Das Badge an jeder Karte zeigt, worauf die Aussage beruht.
+                Beschlossen heißt: steht im Gesetz, dem Bundestag und Bundesrat zugestimmt haben. Verordnungsentwurf heißt:
+                ein Vorschlag der Regierung, über den der Bundesrat noch entscheidet. Das Badge an jeder Karte zeigt, worauf
+                die Aussage beruht.
               </p>
               <div className="mt-8 space-y-4">
                 {REFORM_CHANGES.map((c) => (
@@ -227,9 +226,9 @@ const Reform = () => {
               </h2>
               <ul className="mt-6 space-y-3">
                 {[
-                  'Sonderfahrten (Überland, Autobahn, Dunkelheit) bleiben laut Entwurf Pflicht. Nur die feste Anzahl soll wegfallen.',
-                  'Theorieprüfung und praktische Prüfung gibt es weiter. Laut Entwurf ändern sich Dauer und Bewertung.',
-                  'Auch wer mit Angehörigen üben will, braucht laut Entwurf vorher die bestandene Theorie und mindestens 6 Fahrstunden in der Fahrschule.',
+                  'Sonderfahrten (Überland, Autobahn, Dunkelheit) bleiben Pflicht. Nur die feste Anzahl fällt weg.',
+                  'Theorieprüfung und praktische Prüfung gibt es weiter. Bewertung und Fragenkatalog der Theorieprüfung ändern sich, laut Verordnungsentwurf auch die Dauer der Praxisprüfung.',
+                  'Auch wer mit Angehörigen üben will, braucht vorher die bestandene Theorieprüfung und mindestens 6 Fahrstunden in der Fahrschule.',
                 ].map((t) => (
                   <li key={t} className="flex gap-3 text-[17px] leading-relaxed text-ink/80">
                     <Check className="mt-1 h-5 w-5 shrink-0 text-success" aria-hidden="true" />
@@ -266,7 +265,7 @@ const Reform = () => {
                 <div className="rounded-2xl border border-black/5 bg-surface p-5">
                   <h3 className="text-h3 text-brand-dark">Wenn du wartest</h3>
                   <ul className="mt-3 space-y-3 text-[17px] leading-relaxed text-ink/80">
-                    <li>Der Termin für Theorie und Sonderfahrten ist offen.</li>
+                    <li>Die neuen Regeln gelten zum größten Teil erst ab 1. Juli 2027, die Details stehen noch aus.</li>
                     <li>Ob es billiger wird, ist offen.</li>
                     <li>
                       Der Verordnungsentwurf rechnet mit einer „Bugwelle“ an Fahrschülern und längeren Wartezeiten auf

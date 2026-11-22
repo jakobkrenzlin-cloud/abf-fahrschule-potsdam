@@ -151,7 +151,7 @@ const AnmeldungMotorrad = () => {
   const isBooking = variant === 'booking';
   const steps = isBooking ? STEPS_BOOKING : STEPS;
   const faqs = isBooking ? FAQS_BOOKING : FAQS;
-  const ctaLabel = 'Kostenlos Beraten lassen';
+  const ctaLabel = 'Kostenlos beraten lassen';
   const [licenseClass, setLicenseClass] = useState('a2');
   const whatsappText = `Hallo, ich möchte einen Anmeldetermin für den Motorradführerschein ausmachen (Grundbetrag ${formatOfferPrice(OFFER.motorradGrundbetrag)}). Wann kann ich vorbeikommen?`;
 
@@ -193,7 +193,7 @@ const AnmeldungMotorrad = () => {
             <LeadForm
               id={FORM_ID}
               variant={variant}
-              ctaLabel="Kostenlos Beraten lassen"
+              ctaLabel="Kostenlos beraten lassen"
               source="landingpage-motorrad"
               classOptions={CLASS_OPTIONS}
               licenseClass={licenseClass}
@@ -262,7 +262,7 @@ const AnmeldungMotorrad = () => {
           <FinalCta
             headline={withOfferDate(`${OFFER.label}: Grundbetrag ${formatOfferPrice(OFFER.motorradGrundbetrag)} – jetzt Anmeldetermin anfragen`)}
             subline="Theorie jetzt, Fahrspaß im Frühjahr. Frag deinen Anmeldetermin an, wir rufen dich innerhalb von 24 Stunden an."
-            buttonLabel="Kostenlos Beraten lassen"
+            buttonLabel="Kostenlos beraten lassen"
             onClick={scrollToForm}
           />
         </main>

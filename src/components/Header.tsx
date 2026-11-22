@@ -61,7 +61,7 @@ const Header: React.FC<HeaderProps> = ({ variant = 'full', onCtaClick, ctaLabel 
             alt="ABF Fahrschule Potsdam"
             width={640}
             height={199}
-            className="h-11 md:h-12 w-auto"
+            className="h-8 max-[359px]:h-6 sm:h-11 md:h-10 lg:h-12 w-auto"
             loading="eager"
 
           />
@@ -92,8 +92,13 @@ const Header: React.FC<HeaderProps> = ({ variant = 'full', onCtaClick, ctaLabel 
             <span className="hidden lg:inline">{PHONE_DISPLAY}</span>
           </a>
 
-          <Button type="button" onClick={handleCta} size="sm" className="text-white">
-            {ctaLabel ?? 'Beratung anfragen'}
+          <Button type="button" onClick={handleCta} size="sm" className="text-white whitespace-nowrap max-[359px]:px-2.5 max-[359px]:text-[13px]">
+            {ctaLabel ?? (
+              <>
+                <span className="sm:hidden">Beratung</span>
+                <span className="hidden sm:inline">Beratung anfragen</span>
+              </>
+            )}
           </Button>
 
           {!isLp && (

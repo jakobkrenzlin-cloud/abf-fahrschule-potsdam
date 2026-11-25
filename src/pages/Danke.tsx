@@ -44,7 +44,7 @@ const Danke = () => {
     { title: 'Terminanfrage geschickt', state: 'done' as const },
     {
       title: 'Wir rufen dich innerhalb von 24 Stunden an',
-      text: 'Von 0162 2191290 oder 0331 96795854. Geh bitte ran, auch wenn du die Nummer nicht kennst.',
+      text: 'Von 0175 8756463 oder 0331 96795854. Geh bitte ran, auch wenn du die Nummer nicht kennst.',
       state: 'current' as const,
     },
     {
@@ -136,7 +136,7 @@ const Danke = () => {
               Route in Google Maps
             </a>
             <a
-              href="tel:+491622191290"
+              href="tel:+491758756463"
               onClick={(e) => {
                 e.preventDefault();
                 callPhone(PHONE_RAW, 'danke-page');
@@ -159,7 +159,7 @@ const Danke = () => {
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
                 Mobil:{' '}
-                <a href="tel:+491622191290" className="hover:text-primary">+49 162 2191290</a>
+                <a href="tel:+491758756463" className="hover:text-primary">+49 175 8756463</a>
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary shrink-0" aria-hidden="true" />

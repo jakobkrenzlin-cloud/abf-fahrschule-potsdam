@@ -611,9 +611,9 @@ const Karriere = () => {
                 <Phone className="w-5 h-5 text-brand" />
                 <span>+49 331 96795854 (Festnetz)</span>
               </a>
-              <a href="tel:+491622191290" className="flex items-center gap-3 text-white/75 hover:text-brand transition-colors mb-3">
+              <a href="tel:+491758756463" className="flex items-center gap-3 text-white/75 hover:text-brand transition-colors mb-3">
                 <Phone className="w-5 h-5 text-brand" />
-                <span>0162 2191290 (Mobil)</span>
+                <span>0175 8756463 (Mobil)</span>
               </a>
               <a href="mailto:potsdam@fahrschuleabf.de" className="flex items-center gap-3 text-white/75 hover:text-brand transition-colors mb-4">
                 <Mail className="w-5 h-5 text-brand" />

@@ -1,9 +1,9 @@
 // Zentrale Daten für die Landingpages (PKW, Motorrad, B196)
 import type { ReactNode } from 'react';
 
-export const PHONE_DISPLAY = '+49 162 2191290';
-export const PHONE_RAW = '+491622191290';
-export const WHATSAPP_BASE = 'https://wa.me/491622191290';
+export const PHONE_DISPLAY = '+49 175 8756463';
+export const PHONE_RAW = '+491758756463';
+export const WHATSAPP_BASE = 'https://wa.me/491758756463';
 export const ADDRESS_LINE = 'Weberpark, Tuchmacherstraße 45b, 14482 Potsdam-Babelsberg';
 export const MAPS_URL =
   'https://www.google.com/maps/dir/?api=1&destination=ABF+Fahrschule+Tuchmacherstra%C3%9Fe+45b+14482+Potsdam';

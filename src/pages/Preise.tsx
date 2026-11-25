@@ -227,9 +227,9 @@ const Preise = () => {
                   📞 Festnetz: +49 331 96795854
                 </Button>
               </a>
-              <a href="tel:+491622191290" className="inline-block">
+              <a href="tel:+491758756463" className="inline-block">
                 <Button size="lg" variant="outline" className="h-auto min-h-11 whitespace-normal">
-                  📱 Mobil: +49 162 2191290
+                  📱 Mobil: +49 175 8756463
                 </Button>
               </a>
               <Link to="/kontakt">

@@ -36,7 +36,7 @@ const Impressum = () => {
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-brand-dark mb-2">Kontakt</h3>
             <p>Festnetz: +49 331 96795854<br />
-            Mobil: +49 162 2191290<br />
+            Mobil: +49 175 8756463<br />
             E-Mail: <a href="mailto:potsdam@fahrschuleabf.de" className="text-brand-strong hover:text-brand-strong">potsdam@fahrschuleabf.de</a></p>
           </div>
 

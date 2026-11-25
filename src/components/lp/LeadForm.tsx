@@ -144,7 +144,7 @@ const ContactFields: React.FC<{
       <input
         id={`${id}-phone`} name="phone" type="tel" inputMode="tel" autoComplete="tel" required
         value={f.phone} onChange={(e) => f.setPhone(e.target.value)} className={inputClass}
-        placeholder="z. B. 0162 2191290" aria-invalid={!!f.errors.phone}
+        placeholder="z. B. 0175 8756463" aria-invalid={!!f.errors.phone}
         aria-describedby={f.errors.phone ? `${id}-phone-error` : undefined}
       />
       {f.errors.phone && <p id={`${id}-phone-error`} className="mt-1 text-sm text-warning">{f.errors.phone}</p>}

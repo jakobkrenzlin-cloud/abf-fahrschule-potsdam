@@ -119,7 +119,7 @@ const AGB = () => {
               Weber Park, Tuchmacherstraße 45 B<br />
               14482 Potsdam<br />
               Festnetz: +49 331 96795854<br />
-              Mobil: +49 162 2191290<br />
+              Mobil: +49 175 8756463<br />
               E-Mail: potsdam@fahrschuleabf.de
             </p>
             <p className="mb-4">mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren.</p>

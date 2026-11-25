@@ -65,7 +65,7 @@ const AppointmentThanks = ({ appointment }: { appointment: Date }) => {
     { title: 'Termin gebucht', state: 'done' as const },
     {
       title: 'Wir bestätigen dir den Termin per WhatsApp',
-      text: 'An die Nummer, die du angegeben hast. Absender ist 0162 2191290.',
+      text: 'An die Nummer, die du angegeben hast. Absender ist 0175 8756463.',
       state: 'current' as const,
     },
     {
@@ -191,7 +191,7 @@ const AppointmentThanks = ({ appointment }: { appointment: Date }) => {
               </p>
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
-                Mobil: <a href="tel:+491622191290" className="hover:text-primary">+49 162 2191290</a>
+                Mobil: <a href="tel:+491758756463" className="hover:text-primary">+49 175 8756463</a>
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
